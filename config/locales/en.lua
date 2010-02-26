@@ -2,12 +2,14 @@ module("kutkevich", package.seeall)
 
 i18n.translate.en = {
    bookmarks = {
-      title = "Bookmarks",
+      title = "Bookmarks"
    },
    cv = {
-      title = "Danil Kutkevich",
+      last_modified = "Last modified:",
+      print = "Print",
+      title = "Danil Kutkevich"
    },
    homepages = {
-      title = "Danil Kutkevich",
+      title = "Danil Kutkevich"
    }
 }

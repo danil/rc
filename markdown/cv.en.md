@@ -1,8 +1,3 @@
-<!--#l="en"-->
-<!--#title="Danil Kutkevich."-->
-<!--#p="Print"-->
-<!--#m="Last modified:"-->
-
 Danil Kutkevich
 ===============
 

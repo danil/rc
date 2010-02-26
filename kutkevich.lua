@@ -48,11 +48,11 @@ function homepages(web, mapping_pattern, locale)
    local view = load_view("homepages/index")
    if view then
       local env = {}
+      env.url_for = url_for
       env.i18n = {
          locale = i18n.locale,
          title  = i18n.translate[i18n.locale].homepages.title
       }
-      env.url_for = url_for
       return layout(view(env), env)
    else
       return not_found(web)
@@ -64,11 +64,13 @@ function cv(web, mapping_pattern, locale)
    local view = load_view("cv/index")
    if view then
       local env = {}
+      env.data = load_data("cv")
+      env.url_for = url_for
       env.i18n = {
          locale = i18n.locale,
          title  = i18n.translate[i18n.locale].cv.title,
       }
-      return layout(load_data("cv"), env)
+      return layout(view(env), env)
    else
       return not_found(web)
    end
@@ -79,11 +81,13 @@ function bookmarks(web, mapping_pattern, locale)
    local view = load_view("bookmarks/index")
    if view then
       local env = {}
+      env.data = load_data("bookmark")
+      env.url_for = url_for
       env.i18n = {
          locale = i18n.locale,
          title  = i18n.translate[i18n.locale].bookmarks.title,
       }
-      return layout(load_data("bookmark"), env)
+      return layout(view(env), env)
    else
       return not_found(web)
    end
@@ -91,9 +95,9 @@ end
 
 -- Builds the application's dispatch table, you can pass multiple
 -- patterns, and any captures get passed to the controller.
-kutkevich:dispatch_get(homepages, "/",         "(/(%l%l))")
-kutkevich:dispatch_get(cv,        "/cv",       "(/(%l%l)/cv)")
-kutkevich:dispatch_get(bookmarks, "/bookmark", "(/(%l%l)/bookmark)")
+kutkevich:dispatch_get(homepages, "/",           "(/([er][nu])/?)")
+kutkevich:dispatch_get(cv,        "/cv/?",       "(/([er][nu])/cv/?)")
+kutkevich:dispatch_get(bookmarks, "/bookmark/?", "(/([er][nu])/bookmark/?)")
 
 -- These are the view functions referenced by the controllers.
 -- orbit.htmlify does through the functions in the table passed
