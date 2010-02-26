@@ -1,4 +1,4 @@
 .htpasswd
 public/jquery.js
-public/css/blueprint/*
+public/stylesheets/blueprint/*
 public/prettify/*
