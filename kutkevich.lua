@@ -50,8 +50,9 @@ function homepages(web, mapping_pattern, locale)
       local env = {}
       env.url_for = url_for
       env.i18n = {
-         locale = i18n.locale,
-         title  = i18n.translate[i18n.locale].homepages.title
+         last_modified = i18n.translate[i18n.locale].layouts.homepage.last_modified,
+         locale        = i18n.locale,
+         title         = i18n.translate[i18n.locale].homepages.title
       }
       return layout(view(env), env)
    else
@@ -67,8 +68,9 @@ function cv(web, mapping_pattern, locale)
       env.data = load_data("cv")
       env.url_for = url_for
       env.i18n = {
-         locale = i18n.locale,
-         title  = i18n.translate[i18n.locale].cv.title,
+         last_modified = i18n.translate[i18n.locale].layouts.homepage.last_modified,
+         locale        = i18n.locale,
+         title         = i18n.translate[i18n.locale].cv.title,
       }
       return layout(view(env), env)
    else
@@ -84,8 +86,9 @@ function bookmarks(web, mapping_pattern, locale)
       env.data = load_data("bookmark")
       env.url_for = url_for
       env.i18n = {
-         locale = i18n.locale,
-         title  = i18n.translate[i18n.locale].bookmarks.title,
+         last_modified = i18n.translate[i18n.locale].layouts.homepage.last_modified,
+         locale        = i18n.locale,
+         title         = i18n.translate[i18n.locale].bookmarks.title,
       }
       return layout(view(env), env)
    else

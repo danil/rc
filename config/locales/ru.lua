@@ -5,11 +5,15 @@ i18n.translate.ru = {
       title = "Закладки"
    },
    cv = {
-      last_modified = "Последнее изменение:",
       print = "Напечатать",
       title = "Данил Куткевич - веб-программист"
    },
    homepages = {
       title = "Данил Куткевич"
+   },
+   layouts = {
+      homepage = {
+         last_modified = "Последнее изменение:"
+      }
    }
 }

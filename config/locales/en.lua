@@ -5,11 +5,15 @@ i18n.translate.en = {
       title = "Bookmarks"
    },
    cv = {
-      last_modified = "Last modified:",
       print = "Print",
       title = "Danil Kutkevich"
    },
    homepages = {
       title = "Danil Kutkevich"
+   },
+   layouts = {
+      homepage = {
+         last_modified = "Last modified:"
+      }
    }
 }
