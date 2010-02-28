@@ -35,14 +35,19 @@ p, address {margin: 0;}
 address {font-size: 85%;}
 /*]]>*/</style>
 
+$yield|style
+
 </head>
 <body>
 <div class="container">
-  $view
+  $yield|layout
   <address>
     $i18n|last_modified $flastmod
   </address>
+  $yield|footer
 </div>
+
+$yield|javascript
 
 <!-- Google Analytics -->
 <script type="text/javascript">/*<![CDATA[*/

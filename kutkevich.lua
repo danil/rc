@@ -45,55 +45,55 @@ end
 
 function homepages(web, mapping_pattern, locale)
    i18n.locale = locale or i18n.default_locale
-   local view = load_view("homepages/index")
-   if view then
-      local env = {}
-      env.url_for = url_for
-      env.i18n = {
-         last_modified = i18n.translate[i18n.locale].layouts.homepage.last_modified,
-         locale        = i18n.locale,
-         title         = i18n.translate[i18n.locale].homepages.title
-      }
-      return layout(view(env), env)
-   else
-      return not_found(web)
-   end
+   local env = {}
+   env.url_for = url_for
+   env.i18n = {
+      last_modified = i18n.translate[i18n.locale].layouts.homepage.last_modified,
+      locale        = i18n.locale,
+      title         = i18n.translate[i18n.locale].homepages.title
+   }
+   env.yield = {}
+   env.yield.layout     = load_view("homepages/index")(env)
+   env.yield.style      = ""
+   env.yield.javascript = ""
+   env.yield.footer     = ""
+   return load_view("layouts/homepage")(env)
 end
 
 function cv(web, mapping_pattern, locale)
    i18n.locale = locale or i18n.default_locale
-   local view = load_view("cv/index")
-   if view then
-      local env = {}
-      env.data = load_data("cv")
-      env.url_for = url_for
-      env.i18n = {
-         last_modified = i18n.translate[i18n.locale].layouts.homepage.last_modified,
-         locale        = i18n.locale,
-         title         = i18n.translate[i18n.locale].cv.title,
-      }
-      return layout(view(env), env)
-   else
-      return not_found(web)
-   end
+   local env = {}
+   env.url_for = url_for
+   env.render  = render
+   env.i18n = {
+      last_modified = i18n.translate[i18n.locale].layouts.homepage.last_modified,
+      locale        = i18n.locale,
+      print         = i18n.translate[i18n.locale].cv.print,
+      title         = i18n.translate[i18n.locale].cv.title
+   }
+   env.yield = {}
+   env.yield.layout     = load_data("cv")
+   env.yield.style      = load_view("cv/_style")(env)
+   env.yield.javascript = load_view("cv/_javascript")(env)
+   env.yield.footer     = load_view("cv/_footer")(env)
+   return load_view("layouts/homepage")(env)
 end
 
 function bookmarks(web, mapping_pattern, locale)
    i18n.locale = locale or i18n.default_locale
-   local view = load_view("bookmarks/index")
-   if view then
-      local env = {}
-      env.data = load_data("bookmark")
-      env.url_for = url_for
-      env.i18n = {
-         last_modified = i18n.translate[i18n.locale].layouts.homepage.last_modified,
-         locale        = i18n.locale,
-         title         = i18n.translate[i18n.locale].bookmarks.title,
-      }
-      return layout(view(env), env)
-   else
-      return not_found(web)
-   end
+   local env = {}
+   env.url_for = url_for
+   env.i18n = {
+      last_modified = i18n.translate[i18n.locale].layouts.homepage.last_modified,
+      locale        = i18n.locale,
+      title         = i18n.translate[i18n.locale].bookmarks.title,
+   }
+   env.yield = {}
+   env.yield.layout     = load_data("bookmark")
+   env.yield.style      = ""
+   env.yield.javascript = ""
+   env.yield.footer     = ""
+   return load_view("layouts/homepage")(env)
 end
 
 -- Builds the application's dispatch table, you can pass multiple
@@ -133,14 +133,21 @@ function load_view(name)
    return view
 end
 
-function layout(view, env)
-   local layout_template = load_view("layouts/homepage")
-   if layout_template then
-      env.view = view
-      return layout_template(env)
-   else
-      return view
+local partial_cache = {}
+
+function render(arg)
+   partial_cache[i18n.locale] = partial_cache[i18n.locale] or {}
+   local partial = partial_cache[i18n.locale][arg.partial]
+   if not partial then
+      local partial_file = io.open("app/views/" .. arg.partial .. "." .. i18n.locale .. ".html", "rb")
+      or io.open("app/views/" .. arg.partial .. ".html", "rb")
+      if partial_file then
+         partial = cosmo.fill(partial_file:read("*a"), arg)
+         partial_cache[i18n.locale][arg.partial] = partial
+         partial_file:close()
+      end
    end
+   return partial
 end
 
 local url_cache = {}
