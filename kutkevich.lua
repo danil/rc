@@ -43,17 +43,17 @@ end
 -- it's not 200, then return the response. It's good form to delegate
 -- the generation of the response to a view function.
 
-function homepages(web, mapping_pattern, locale)
+function bookmarks(web, mapping_pattern, locale)
    i18n.locale = locale or i18n.default_locale
    local env = {}
    env.url_for = url_for
    env.i18n = {
       last_modified = i18n.translate[i18n.locale].layouts.homepage.last_modified,
       locale        = i18n.locale,
-      title         = i18n.translate[i18n.locale].homepages.title
+      title         = i18n.translate[i18n.locale].bookmarks.title,
    }
    env.yield = {}
-   env.yield.layout     = load_view("homepages/index")(env)
+   env.yield.layout     = load_data("bookmark")
    env.yield.style      = ""
    env.yield.javascript = ""
    env.yield.footer     = ""
@@ -79,28 +79,56 @@ function cv(web, mapping_pattern, locale)
    return load_view("layouts/homepage")(env)
 end
 
-function bookmarks(web, mapping_pattern, locale)
+function homepages(web, mapping_pattern, locale)
    i18n.locale = locale or i18n.default_locale
    local env = {}
    env.url_for = url_for
    env.i18n = {
       last_modified = i18n.translate[i18n.locale].layouts.homepage.last_modified,
       locale        = i18n.locale,
-      title         = i18n.translate[i18n.locale].bookmarks.title,
+      title         = i18n.translate[i18n.locale].homepages.title
    }
    env.yield = {}
-   env.yield.layout     = load_data("bookmark")
+   env.yield.layout     = load_view("homepages/index")(env)
    env.yield.style      = ""
    env.yield.javascript = ""
    env.yield.footer     = ""
    return load_view("layouts/homepage")(env)
 end
 
+function rc(web, arg1, arg2)
+   local name
+   if arg2 then
+      i18n.locale = arg1
+      name = arg2
+   else
+      i18n.locale = i18n.default_locale
+      name = arg1
+   end
+   local env = {}
+   env.url_for = url_for
+   env.render  = render
+   env.i18n = {
+      last_modified = i18n.translate[i18n.locale].layouts.homepage.last_modified,
+      locale        = i18n.locale,
+      title         = i18n.translate[i18n.locale].rc[name].title
+   }
+   env.yield = {}
+   env.yield.layout     = load_data("rc/" .. name)
+   env.yield.style      = load_view("rc/_style")(env)
+   env.yield.javascript = load_view("rc/_javascript")(env)
+   env.yield.footer     = load_view("rc/_footer")(env)
+   return load_view("layouts/homepage")(env)
+end
+
 -- Builds the application's dispatch table, you can pass multiple
 -- patterns, and any captures get passed to the controller.
-kutkevich:dispatch_get(homepages, "/",           "(/([er][nu])/?)")
-kutkevich:dispatch_get(cv,        "/cv/?",       "(/([er][nu])/cv/?)")
-kutkevich:dispatch_get(bookmarks, "/bookmark/?", "(/([er][nu])/bookmark/?)")
+kutkevich:dispatch_get( bookmarks,
+                       "/bookmark/?",
+                       "(/([er][nu])/bookmark/?)" )
+kutkevich:dispatch_get(cv,        "/cv/?", "(/([er][nu])/cv/?)")
+kutkevich:dispatch_get(homepages, "/",     "(/([er][nu])/?)")
+kutkevich:dispatch_get(rc,  "/rc/(%l+)/?", "/([er][nu])/rc/(%l+)/?")
 
 -- These are the view functions referenced by the controllers.
 -- orbit.htmlify does through the functions in the table passed

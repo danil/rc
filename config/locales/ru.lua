@@ -15,5 +15,10 @@ i18n.translate.ru = {
       homepage = {
          last_modified = "Последнее изменение:"
       }
+   },
+   rc = {
+      gentoo = {
+         title = "Gentoo reference card"
+      }
    }
 }
