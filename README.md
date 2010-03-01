@@ -9,6 +9,7 @@ Depends:
 * Lua (>= 5.1.4-r4) <http://lua.org>
 * Kepler (>= 1.1.1-1) <http://keplerproject.org>
 * Orbit (>= 2.0.2-1) <http://orbit.luaforge.net>
+* Cosmo (>= 9.09.22-1) <http://cosmo.luaforge.net>
 * Markdown (>= 0.32-1) <http://luaforge.net/projects/markdown>
 * jQuery (>= 1.3.2) <http://jquery.com>
 * Blueprint (>= 0.9) <http://blueprintcss.org>
