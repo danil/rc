@@ -17,8 +17,23 @@ i18n.translate.en = {
       }
    },
    rc = {
+      emacs = {
+         title = "Emacs reference card"
+      },
       gentoo = {
          title = "Gentoo reference card"
+      },
+      git = {
+         title = "Git reference card"
+      },
+      lua = {
+         title = "Lua reference card"
+      },
+      postgresql = {
+         title = "PostgreSQL reference card"
+      },
+      vim = {
+         title = "Vim reference card"
       }
    }
 }

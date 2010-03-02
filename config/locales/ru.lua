@@ -17,8 +17,23 @@ i18n.translate.ru = {
       }
    },
    rc = {
+      emacs = {
+         title = "Emacs шпаргалка"
+      },
       gentoo = {
-         title = "Gentoo reference card"
+         title = "Gentoo шпаргалка"
+      },
+      git = {
+         title = "Git шпаргалка"
+      },
+      lua = {
+         title = "Lua шпаргалка"
+      },
+      postgresql = {
+         title = "PostgreSQL шпаргалка"
+      },
+      vim = {
+         title = "Vim шпаргалка"
       }
    }
 }
