@@ -1,4 +1,6 @@
 *~
+*#
+*.#*
 .htpasswd
 public/jquery.js
 public/stylesheets/blueprint/*

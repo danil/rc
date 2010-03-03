@@ -20,8 +20,20 @@ i18n.translate.ru = {
       bash = {
          title = "Bash шпаргалка"
       },
+      cvs = {
+         title = "CVS шпаргалка"
+      },
+      django = {
+         title = "Django шпаргалка"
+      },
       emacs = {
          title = "Emacs шпаргалка"
+      },
+      env = {
+         title = "env шпаргалка"
+      },
+      fallout = {
+         title = "Fallout шпаргалка"
       },
       gentoo = {
          title = "Gentoo шпаргалка"
@@ -32,8 +44,32 @@ i18n.translate.ru = {
       lua = {
          title = "Lua шпаргалка"
       },
+      mplayer = {
+         title = "MPlayer шпаргалка"
+      },
+      mysql = {
+         title = "MySQL шпаргалка"
+      },
+      nginx = {
+         title = "nginx шпаргалка"
+      },
+      partition = {
+         title = "Partition шпаргалка"
+      },
       postgresql = {
          title = "PostgreSQL шпаргалка"
+      },
+      rails = {
+         title = "Ruby on Rails шпаргалка"
+      },
+      sqlite = {
+         title = "SQLite шпаргалка"
+      },
+      svn = {
+         title = "SVN шпаргалка"
+      },
+      synaptics = {
+         title = "Synaptics шпаргалка"
       },
       vim = {
          title = "Vim шпаргалка"
