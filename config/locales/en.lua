@@ -17,6 +17,9 @@ i18n.translate.en = {
       }
    },
    rc = {
+      bash = {
+         title = "Bash reference card"
+      },
       emacs = {
          title = "Emacs reference card"
       },

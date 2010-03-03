@@ -53,9 +53,10 @@ function bookmarks(web, mapping_pattern, locale)
       title         = i18n.translate[i18n.locale].bookmarks.title,
    }
    env.yield = {}
-   env.yield.layout     = load_data("bookmark")
-   env.yield.style      = ""
-   env.yield.javascript = ""
+   env.yield.data       = load_data("bookmark")
+   env.yield.layout     = load_view("bookmarks/index")(env)
+   env.yield.style      = load_view("bookmarks/_style")(env)
+   env.yield.javascript = load_view("bookmarks/_javascript")(env)
    env.yield.footer     = ""
    return load_view("layouts/homepage")(env)
 end

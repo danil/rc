@@ -17,6 +17,9 @@ i18n.translate.ru = {
       }
    },
    rc = {
+      bash = {
+         title = "Bash шпаргалка"
+      },
       emacs = {
          title = "Emacs шпаргалка"
       },
