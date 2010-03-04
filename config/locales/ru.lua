@@ -41,6 +41,9 @@ i18n.translate.ru = {
       git = {
          title = "Git шпаргалка"
       },
+      gnus = {
+         title = "Gnus шпаргалка"
+      },
       lua = {
          title = "Lua шпаргалка"
       },

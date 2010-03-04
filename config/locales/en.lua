@@ -41,6 +41,9 @@ i18n.translate.en = {
       git = {
          title = "Git reference card"
       },
+      gnus = {
+         title = "Gnus reference card"
+      },
       lua = {
          title = "Lua reference card"
       },

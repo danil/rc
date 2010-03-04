@@ -43,7 +43,7 @@
     vmstat
     iostat
     netstat -l -t -p
-    ngrep -d lo |leess
+    ngrep -d lo |less
     nmap -sP 192.168.0.0/16
     cat /etc/passwd
     cat /etc/group
