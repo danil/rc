@@ -43,6 +43,13 @@ USE flags
     grep -i "ogg - " /usr/portage/profiles/use.local.desc
     euse --info ogg
 
+Layman
+------
+
+    layman --add=allenjb
+    layman --sync=sunrise
+    layman --sync-all
+
 Other
 -----
 
