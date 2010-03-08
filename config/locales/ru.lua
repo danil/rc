@@ -65,6 +65,9 @@ i18n.translate.ru = {
       rails = {
          title = "Ruby on Rails шпаргалка"
       },
+      ruby = {
+         title = "Ruby шпаргалка"
+      },
       sqlite = {
          title = "SQLite шпаргалка"
       },

@@ -65,6 +65,9 @@ i18n.translate.en = {
       rails = {
          title = "Ruby on Rails reference card"
       },
+      ruby = {
+         title = "Ruby reference card"
+      },
       sqlite = {
          title = "SQLite reference card"
       },

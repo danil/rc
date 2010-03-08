@@ -1,14 +1,7 @@
 <!-- -*- coding: utf-8; -*- -->
+Rails
+=====
 
-    #export GEM_HOME=~/lib/ruby/gems/1.8 
-    #export RUBYLIB=~/lib/ruby:~/lib/site_ruby/1.8
-    export RUBYOPT=rubygems
-    ./ruby-1.8.7-p72/configure --prefix=$HOME --enable-shared \
-                               --enable-pthread --with-readline-dir=/lib \
-                               --enable-install-doc
-    ruby ./rubygems-1.3.0/setup.rb --no-rdoc --no-ri
-    gem install --include-dependencies --no-rdoc --no-ri rails
-    gem install rails -s http://gems.rubyonrails.org
     rails -d postgresql hello_world
     mongrel_rails cluster::configure -e production -p 8000 -a 127.0.0.1 \
                   -N 2 -c /home/danil/var/www/hello_rails/current
