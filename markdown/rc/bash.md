@@ -1,8 +1,17 @@
-    # Some The GNU Bourne-Again SHell commands.
-    # C-r  reverse search history
-    # C-s  pausing all output on the terminal
-    # C-q  resume output on the terminal
-    # /etc/acpi/actions/suspend.sh
+Bash
+====
+
+Manuals
+-------
+
+    man 1 -L en -P "less -I" ls
+    man share/man/man1/ruby.1
+    apropos
+    whatis
+
+Other
+-----
+
     uname -a
     hostname -f
     id
@@ -11,12 +20,6 @@
     updatedb
     whereis vsftpd
     alias
-
-    # Manuals.
-    man 1 -L en -P "less -I" ls
-    man -l share/man/man1/ruby.1
-    apropos
-    whatis 
 
     echo -e "1\n2"
     echo -n "Some text line"; echo -en "all the same text line.\n"
@@ -204,14 +207,18 @@
     cdrecord dev=/dev/hdc <downloaded iso file>
     PAGER=cat man man
 
-    # DCTC.
+DCTC
+----
+
     dctc -n danil -s /home/danil/tmp/_video/ -f -g worm.interzet.ru:411
     rccp -H dctc-00006D13-worm.interzet.ru:411 -s lalala
 
     # Create a file of any given size.
     dd if=/dev/zero of=bigfile bs=1024 count=1048576
 
-    # Wine.
+Wine
+----
+
     cabextract file.cab
     msiexec /i file.msi
     wine start FluffyBunnySetup.msi
@@ -228,7 +235,9 @@
     screen -RD
     screen -x debian_torrent # Reconnect to screen.
 
-    # Users and groups.
+Users and groups
+----------------
+
     chmod -R ug+w ./smarty/templates_c/ ./smarty/cach/
     chown -R www-data:www-data ./smarty/templates_c/ ./smarty/cache/
     groups danil
@@ -246,7 +255,11 @@
     deluser --remove-all-files --backup --backup-to /home/danil/ danil
     passwd danil
 
-    # Advanced Packaging Tool (APT).
+APT
+---
+
+Advanced Packaging Tool
+
     apt-get update
     apt-get -u upgrade
     apt-get -u dist-upgrade
@@ -273,7 +286,9 @@
                       |awk '{ FS = " " ; OFS = " " ; print $2 }' \
                       |less -SI
 
-    # Debian package
+Debian package
+--------------
+
     dpkg -l emacs*
     dpkg -L emacs21-nox
     dpkg -S stdio.h
@@ -281,16 +296,20 @@
     dpkg-reconfigure xserver-xorg locales
     dpkg -x xlibs_4.3.0.dfsg.1-14sarge7_all.deb ./
 
-    emerge -pv ktorrent
+RPM
+---
 
-    # RPM Package Manager (Red Hat Package Manager).
+Red Hat Package Manager
+
     rpm -qa |grep -i emacs
     rpm -qfa |grep -i xyz\.so
     rpm -ihv emacs
     rpm -Uhv emacs
     rpm -e package
 
-    # Yellowdog Updater Modified.
+Yellowdog Updater Modified
+--------------------------
+
     yum list emacs\*
     yum search PalmPilot
     yum install emacs
@@ -300,7 +319,9 @@
     yum remove emacs
     yum groupremove "MySQL Database"
 
-    # X.
+X
+---
+
     echo "lalala" |xclip -selection clip
     echo -en "trulala" | xsel -i -b -p
     xev
@@ -321,17 +342,27 @@
     # Hardware information-gathering tool for VESA PnP monitors.
     get-edid |parse-edid
 
-    # ALSA sound cards start with 0, so 0 is the first card, 1 is the
-    # second card, etc.
+ALSA
+----
+
+ALSA sound cards start with 0, so 0 is the first card, 1 is the second
+card, etc.
+
     alsamixer -c 0
 
-    # CentOS.
+CentOS
+------
+
     setup
 
-    # nginx.
+nginx
+-----
+
     nginx -t -c nginx.conf
 
-    # Apache.
+Apache
+------
+
     htpasswd -c /home/danil/.htpasswd danil
     apache2ctl -t -D DUMP_MODULES # Show the loaded modules.
     a2enmod proxy_balancer
@@ -345,26 +376,38 @@
     httperf --num-conns 10 --rate 120 \
             --server kutkevich.org --port 80 --wsesslog=10,1,wsesslog_ska
 
-    # iptables
+iptables
+--------
+
     iptables -L traffic -vx
     iptables -t nat -A POSTROUTING -o eth0 \
              -s 192.168.0.202/32 -j MASQUERADE
 
-    # ntpdate
+ntpdate
+-------
+
     ntpdate -u -d 192.168.91.2
 
-    # ntpd
+ntpd
+----
+
     ntpdc -c sysinfo -n # Stratum 3 is good enough.
     ntpq -c readvar
     ntpq -c peers
 
-    # mpd
+mpd
+---
+
     mpc clear
     mpd --create-db
     mpc add /
     mpc ls |mpc add
     mpc play
     mpc save p
+
+
+MPlayer
+-------
 
     mplayer -vf cropdetect
     mplayer -vo xv -spuaa 3 -zoom m -xy 1.6 -vf crop=624:272:8:102 \
@@ -375,6 +418,20 @@
     vobcopy
     evolution --force-shutdown
 
-    # GTK.
+GTK
+---
+
     gconftool-2 --set /desktop/gnome/url-handlers/http/command -t string 'firefox %s'
     gconftool-2 --set /desktop/gnome/url-handlers/https/command -t string 'firefox %s'
+
+Keyboard shortcut
+-----------------
+
+* `C-r` reverse search history
+* `C-s` pausing all output on the terminal
+* `C-q` resume output on the terminal
+
+Files
+-----
+
+    /etc/acpi/actions/suspend.sh
