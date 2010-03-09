@@ -15,6 +15,11 @@ Environment
     export RUBYLIB="~/lib/ruby:~/lib/site_ruby/1.8"
     export RUBYOPT=rubygems
 
+Other
+-----
+
+    ruby -r rubygems ts_feed2imap.rb
+
 RubyGems
 ========
 
