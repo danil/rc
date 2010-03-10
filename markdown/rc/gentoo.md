@@ -43,10 +43,29 @@ USE flags
     grep -i "ogg - " /usr/portage/profiles/use.local.desc
     euse --info ogg
 
+
+Overlays
+--------
+
+List packages install from overlay or repository?
+<http://bugs.gentoo.org/204324>, <http://bugs.gentoo.org/138622>.
+
+Пекеты вошедшие в с писок установленных и пренадлежаших оверлею
+(посчитанные дважды) _могут быть установленны_ из оверлея.
+
+    equery list -o |sort |uniq -c |sort -n
+
 Layman
 ------
 
+<http://gentoo.org/proj/en/overlays/userguide.xml?style=printable#doc_chap2_sect2>,
+<http://en.gentoo-wiki.com/wiki/Overlay#Layman> and
+<http://overlays.gentoo.org/proj/sunrise>
+
+    layman --list
+    layman --list-local
     layman --add=allenjb
+    layman --delete=sunrise
     layman --sync=sunrise
     layman --sync-all
 
