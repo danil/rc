@@ -1,10 +1,14 @@
-    ;; GNU Emacs manual.
-    ;; <http://gnu.org/software/emacs/manual/html_mono/emacs.html>
+Emacs
+=====
 
-    ;; C = Control
-    ;; M = Meta = Alt = Esc
+<http://gnu.org/software/emacs/manual/html_mono/emacs.html>
 
-    ;; Basics.
+    C = Control
+    M = Meta = Alt = Esc
+
+Basics
+------
+
     C-x C-w
         (write-file) Write the text to an alternate name.
     C-x C-v
@@ -12,7 +16,9 @@
     C-x i
         Insert file at cursor position.
 
-    ;; Motion.
+Motion
+------
+
     C-f
         Forward char.
     C-b
@@ -42,16 +48,22 @@
     M-g g
         Go to line number (goto-line).
 
-    ;; 11 Mark
-    ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Marking-Objects.html>.
+11 Mark
+-------
+
+<http://gnu.org/software/emacs/manual/html_node/emacs/Marking-Objects.html>.
+
     C-x h
         (mark-whole-buffer) sets up the entire buffer as the region, by
         putting point at the beginning and the mark at the end. In some
         programs this is called "select all".
 
-    ;; 12.1 Deletion
-    ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Deletion.html>,
-    ;; <http://emacswiki.org/DeletingWhitespace>.
+12.1 Deletion
+-------------
+
+<http://gnu.org/software/emacs/manual/html_node/emacs/Deletion.html>,
+<http://emacswiki.org/DeletingWhitespace>.
+
     M-\
         Delete spaces and tabs around point (delete-horizontal-space).
     M-<SPC>
@@ -63,7 +75,9 @@
         Join two lines by deleting the intervening newline, along with any
         indentation following it (delete-indentation).
 
-    ;; Commands.
+Commands
+--------
+
     C-x z
         (repeat) Repeats the previous Emacs command.
     C-u
@@ -82,8 +96,11 @@
     C-x C-t
         Transpose lines.
 
-    ;; 9.2 Editing in the Minibuffer
-    ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Minibuffer-Edit.html>.
+9.2 Editing in the Minibuffer
+-----------------------------
+
+<http://gnu.org/software/emacs/manual/html_node/emacs/Minibuffer-Edit.html>.
+
     C-o
     C-q C-j
         Insert a newline in the minibuffer. (The newline character is
@@ -110,7 +127,9 @@
     M-x recover-session RETURN
         If you edited several files.
 
-    ;; Online-Help.
+Online-Help
+-----------
+
     C-h c
         Which command does this keystroke invoke.
     C-h k
@@ -128,12 +147,16 @@
     C-h i
         Start the info reader.
 
-    ;; Replace.
+Replace
+-------
+
     M-% string <RET> newstring <RET>
     M-x query-replace <RET> string <RET> newstring <RET>
         Replace some occurrences of string with newstring. 
 
-    ;; Search/Replace with regular expressions.
+Search/Replace with regular expressions
+---------------------------------------
+
     M C-s RETURN
         (isearch-forward-regexp) Search for regular expression forward.
     M C-r RETURN
@@ -151,7 +174,9 @@
     M-x apropos
         Finding a command by a regular expression.
 
-    ;; Window commands.
+Window commands
+---------------
+
     C-x 2
         (split-window-vertically)
     C-x 3
@@ -165,18 +190,24 @@
     C-x 4 0
         Kill buffer and window.
 
-    ;; Variables.
+Variables
+---------
+
     M-x set-variable <RET> var <RET> value <RET>
         Set variable.
     M-x indent-tabs-mode
 
-    ;; Frame commands.
+Frame commands
+--------------
+
     C-x 5 1
         Delete all frames except the selected one.
     C-x 5 f
         Find file in other frame.
 
-    ;; Bookmark commands.
+Bookmark commands
+-----------------
+
     C-x r m
         Set a bookmark at current cursor pos.
     C-x r b
@@ -191,7 +222,9 @@
     M-x bookmark-load
         Load bookmark from given file.
 
-    ;; Bookmark window commands.
+Bookmark window commands
+------------------------
+
     d
         Mark bookmark for deletion.
     r
@@ -213,8 +246,11 @@
     q
         Quit bookmark list.
 
-    ;; 27.11 Specifying a Coding System for File Text
-    ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Text-Coding.html#Text-Coding>
+27.11 Specifying a Coding System for File Text
+----------------------------------------------
+
+<http://gnu.org/software/emacs/manual/html_node/emacs/Text-Coding.html#Text-Coding>
+
     C-x <RET> r coding <RET>
         Revisit the current file using the coding system coding
         (revert-buffer-with-coding-system).
@@ -222,12 +258,18 @@
         Use coding system coding for keyboard input
         (set-keyboard-coding-system).
 
-    ;; 23.13 Accessing Compressed Files
-    ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Compressed-Files.html>
+23.13 Accessing Compressed Files
+--------------------------------
+
+<http://gnu.org/software/emacs/manual/html_node/emacs/Compressed-Files.html>
+
     M-x auto-compression-mode
 
-    ;; Dired (DIRectory EDitor)
-    ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Dired.html>.
+Dired (DIRectory EDitor)
+------------------------
+
+<http://gnu.org/software/emacs/manual/html_node/emacs/Dired.html>.
+
     M-x speedbar
         Starts up a separate window with a directory view.
     G
@@ -370,7 +412,9 @@
         Search backwards or forwards for old shell commands that match
         regexp.
 
-    ;; Text.
+Text
+----
+
     M-x text-mode
         Mode for editing text files.
     M-s
@@ -380,7 +424,9 @@
     M-x
         Center-region name says.
 
-    ;; Macro-command.
+Macro-command
+-------------
+
     C-x (
         Start macro definition.
     C-x )
@@ -398,7 +444,9 @@
     M-x macroname
         Execute macroname.
 
-    ;;C, C++, PHP and Java Modes.
+C, C++, PHP and Java Modes
+--------------------------
+
     M-a
         Beginning of statement.
     M-e
@@ -425,7 +473,9 @@
         given a CC Mode binding for convenience.
     M-x uncomment-region
 
-    ;; More general.
+More general
+------------
+
     M-x outline-minor-mode
         Collapses function definitions in a file to a mere {...}.
     M-x show-subtree
@@ -440,12 +490,17 @@
     M-x tags-query-replace
         This lets you replace some text in all the tagged files.
 
-    ;; GDB (debugger).
+GDB (debugger)
+--------------
+
     M-x gdb
         Starts up gdm in an extra window.
 
-    ;; Filling Text.
-    ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Filling.html>.
+Filling Text
+------------
+
+<http://gnu.org/software/emacs/manual/html_node/emacs/Filling.html>.
+
     M-x auto-fill-mode
         Enable or disable Auto Fill mode. Breaking happens only when you
         type a <SPC> or <RET>.
@@ -458,8 +513,11 @@
     M-x fill-region
         Fill each paragraph in the region (fill-region).
 
-    ;; Version Control (vc.el)
-    ;; <http://gnu.org/software/emacs/manual/html_node/emacs/Version-Control.html>.
+Version Control (vc.el)
+-----------------------
+
+<http://gnu.org/software/emacs/manual/html_node/emacs/Version-Control.html>
+
     C-x C-q
         Commit to CVS.
     C-x v d
@@ -498,8 +556,11 @@
     C-x v a
         Create changelog file in gnu-style.
 
-    ;; PCL-CVS
-    ;; <http://gnu.org/software/emacs/manual/html_mono/pcl-cvs.html>.
+PCL-CVS
+-------
+
+<http://gnu.org/software/emacs/manual/html_mono/pcl-cvs.html>.
+
     M-x cvs-update
         Run a `cvs update' command. You will be asked for the directory
         in which the `cvs update' will be run.
@@ -522,7 +583,9 @@
         repository is far away. But of course, it will not be able to
         detect when a file needs to be updated or merged.
 
-    ;; Whitespace-manipulation.
+Whitespace-manipulation
+-----------------------
+
     C-x C-o
         (delete-blank-lines)
 
