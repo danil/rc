@@ -9,6 +9,47 @@ Manuals
     apropos
     whatis
 
+Search and replace
+------------------
+
+### find
+
+    find "/etc/" -mount -maxdepth 3 -type f -size -100k -name "*.conf" \
+     |xargs grep -ilE "192\.168\.1\.[0-9]+"
+    grep -R eth0 /etc
+    find ./ -type d -exec chmod 755 '{}' \;
+    find ./ -type f |while read I; do \
+        NEWNAME1=$( md5sum "$I" |cut -d " " -f 1 ); \
+        NEWNAME2=$(dirname "$I")/$NEWNAME1_$( basename "$I"); \
+        mv "$I" "$NEWNAME2"; done;
+
+#### Remove empty dirs
+
+    find -depth -type d -empty -exec rmdir {} \;
+
+    find ./ -mount -type f -iname "*~" -exec rm {} \;
+    find /lib/modules/2.6.30/ -type f -iname '*.o' -or -iname '*.ko'
+
+### sed
+
+Stream Editor
+
+    find ./ -type f -iregex ".*e?rb" -exec sed -i -r \
+         -e 's|http://tinyerp\.(org\|com)(/edoc)?/?|./|g' '{}' \;
+    echo 'Hello, World!' |sed -e s/World/work/
+    svn status |grep '^[I?]' |sed 's/^[I?]//' |xargs rm -rf
+
+#### Remove the 7rd line
+
+    sed -i '7d' ~/.ssh/known_hosts
+
+### AWK
+
+    awk '{ FS = "\t" ; OFS = "\t" ; print $1,"ru",$2,$3 }' \
+        infile > outfile
+    awk '{ FS = "\t" ; OFS = "\t" ; if ( NR > 1 ) print $1,$3 }' \
+        infile > outfile
+
 Other
 -----
 
@@ -20,7 +61,6 @@ Other
     updatedb
     whereis vsftpd
     alias
-
     echo -e "1\n2"
     echo -n "Some text line"; echo -en "all the same text line.\n"
     md5sum -c ./file
@@ -63,22 +103,7 @@ Other
     tail -f ./access.log
     head ./access.log
     strings binary.pdf
-    find "/etc/" -mount -maxdepth 3 -type f -size -100k -name "*.conf" \
-     |xargs grep -ilE "192\.168\.1\.[0-9]+"
-    grep -R eth0 /etc
-    find ./ -type d -exec chmod 755 '{}' \;
-    find ./ -type f |while read I; do \
-        NEWNAME1=$( md5sum "$I" |cut -d " " -f 1 ); \
-        NEWNAME2=$(dirname "$I")/$NEWNAME1_$( basename "$I"); \
-        mv "$I" "$NEWNAME2"; done;
-    find -depth -type d -empty -exec rmdir {} \; # Remove empty dirs.
-    find ./ -mount -type f -iname "*~" -exec rm {} \;
-    find ./ -type f -iregex ".*e?rb" -exec sed -i -r \
-         -e 's|http://tinyerp\.(org\|com)(/edoc)?/?|./|g' '{}' \;
-    find /lib/modules/2.6.30/ -type f -iname '*.o' -or -iname '*.ko'
     cat /proc/modules
-    echo 'Hello, World!' |sed -e s/World/work/
-    svn status |grep '^[I?]' |sed 's/^[I?]//' |xargs rm -rf
     sort ./file
     cat list-1 list-2 list-3 |sort |uniq > final.list
     msort --quiet --line \
@@ -90,10 +115,6 @@ Other
           --tag HTTP_USER_AGENT= \
           --tag Time= \
           unsortedfile > file
-    awk '{ FS = "\t" ; OFS = "\t" ; print $1,"ru",$2,$3 }' \
-        infile > outfile
-    awk '{ FS = "\t" ; OFS = "\t" ; if ( NR > 1 ) print $1,$3 }' \
-        infile > outfile
     expand # Converts tabs to spaces.
     unexpand # Converts spaces to tabs.
     ps auxf

@@ -106,17 +106,23 @@ Commands
         Insert a newline in the minibuffer. (The newline character is
         really the ASCII character control-J.)
 
-    ;; Indentation.
+Indentation
+-----------
+
     C-M-\
         (indent-region) Indent lines in the region to the same column.
     C-x <TAB>
         (indent-rigidly) Shift lines in the region rigidly right or left.
 
-    ;; Programming.
+Programming
+-----------
+
     M-;
         Formatize and indent comment.
 
-    ;; Important.
+Important
+---------
+
     C-x u
     C-_
     C-/
@@ -355,8 +361,11 @@ Dired (DIRectory EDitor)
     M-x find-dired <RET> /home/danil/ <RET> -type f -name "*html"
         Find and list files inside a directory, including subdirectories.
 
-    ; Operating on Files
-    ; <http://gnu.org/software/emacs/manual/html_node/emacs/Operating-on-Files.html>.
+Operating on Files
+------------------
+
+<http://gnu.org/software/emacs/manual/html_node/emacs/Operating-on-Files.html>.
+
     A regexp <RET>
         Search all the specified files for the regular expression regexp
         (dired-do-search).
@@ -371,7 +380,9 @@ Dired (DIRectory EDitor)
         query replace loop, you can use M-, to resume the scan and replace
         more matches. See Tags Search.
 
-    ;; Buffer List.
+Buffer List
+-----------
+
     C-d
         Request to delete and move up afterwards instead of down.
     s
@@ -387,7 +398,9 @@ Dired (DIRectory EDitor)
     b
         Bury the buffer listed on this line.
 
-    ;; Shell.
+Shell
+-----
+
     M-x shell
         Start a shell in window *shell*.
     C-c C-u
@@ -411,6 +424,23 @@ Dired (DIRectory EDitor)
     M-s regexp <RET>
         Search backwards or forwards for old shell commands that match
         regexp.
+
+41.9 Term Mode
+--------------
+
+<http://gnu.org/software/emacs/manual/html_node/emacs/Term-Mode.html>
+
+    C-c C-j
+        Switch to line mode.
+
+    C-c C-k
+        Switch to char mode.
+
+The following commands are only available in char mode:
+
+    C-c C-c
+        Send a literal <C-c> to the sub-shell. 
+
 
 Text
 ----
