@@ -69,6 +69,11 @@ Layman
     layman --sync=sunrise
     layman --sync-all
 
+Ebuild
+------
+
+    ebuild msort-8.53.ebuild manifest
+
 Other
 -----
 
