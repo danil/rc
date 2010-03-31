@@ -1,4 +1,4 @@
-<!-- -*- coding: utf-8; -*- -->
+<!--*- coding: utf-8; -*-->
 Git
 ===
 
@@ -6,7 +6,7 @@ Git
     git config --global user.email danil.kutkevich.org
     git init
     git add .
-    git clone --bare --shared /var/git/kutkevich-org.git
+    git clone --bare --shared ssh://danil@kutkevich.org/var/git/kutkevich-org.git
     git reset file1 file2
     git reset # Reset whole index.
 
