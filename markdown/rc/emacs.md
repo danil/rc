@@ -380,6 +380,18 @@ Operating on Files
         query replace loop, you can use M-, to resume the scan and replace
         more matches. See Tags Search.
 
+37.8 Shell Commands in Dired
+----------------------------
+
+### dired-do-shell-command
+
+    !
+
+Runs tar on the entire list of file names, putting them into one tar
+file foo.tar:
+
+    ! tar cf foo.tar * <RET>
+
 Buffer List
 -----------
 
