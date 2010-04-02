@@ -445,6 +445,11 @@ GTK
     gconftool-2 --set /desktop/gnome/url-handlers/http/command -t string 'firefox %s'
     gconftool-2 --set /desktop/gnome/url-handlers/https/command -t string 'firefox %s'
 
+upsc
+----
+
+    upsc ippon@localhost
+
 Keyboard shortcut
 -----------------
 
