@@ -8,6 +8,9 @@ i18n.translate.en = {
       print = "Print",
       title = "Danil Kutkevich"
    },
+   gentoo = {
+      title = "Gentoo"
+   },
    homepages = {
       title = "Danil Kutkevich"
    },

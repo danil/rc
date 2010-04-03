@@ -80,6 +80,24 @@ function cv(web, mapping_pattern, locale)
    return load_view("layouts/homepage")(env)
 end
 
+function gentoo(web, mapping_pattern, locale)
+   i18n.locale = locale or i18n.default_locale
+   local env = {}
+   env.url_for = url_for
+   env.render  = render
+   env.i18n = {
+      last_modified = i18n.translate[i18n.locale].layouts.homepage.last_modified,
+      locale        = i18n.locale,
+      title         = i18n.translate[i18n.locale].gentoo.title
+   }
+   env.yield = {}
+   env.yield.layout     = load_data("gentoo")
+   env.yield.style      = ""
+   env.yield.javascript = ""
+   env.yield.footer     = ""
+   return load_view("layouts/homepage")(env)
+end
+
 function homepages(web, mapping_pattern, locale)
    i18n.locale = locale or i18n.default_locale
    local env = {}
@@ -128,6 +146,7 @@ kutkevich:dispatch_get( bookmarks,
                        "/bookmark/?",
                        "(/([er][nu])/bookmark/?)" )
 kutkevich:dispatch_get(cv,        "/cv/?", "(/([er][nu])/cv/?)")
+kutkevich:dispatch_get(gentoo,    "/gentoo/?", "(/([er][nu])/gentoo/?)")
 kutkevich:dispatch_get(homepages, "/",     "(/([er][nu])/?)")
 kutkevich:dispatch_get(rc,  "/rc/(%l+)/?", "/([er][nu])/rc/(%l+)/?")
 

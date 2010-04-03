@@ -8,6 +8,9 @@ i18n.translate.ru = {
       print = "Напечатать",
       title = "Данил Куткевич - веб-программист"
    },
+   gentoo = {
+      title = "Gentoo"
+   },
    homepages = {
       title = "Данил Куткевич"
    },
