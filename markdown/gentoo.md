@@ -2,12 +2,13 @@
 Gentoo
 ======
 
-[Дженту](http://gentoo.org) замечательный дестрибутив:
+[Дженту](http://gentoo.org) — замечательный дестрибутив.
 
-Для работы — в нём легко установить интерпретатор
-[Руби](http://ruby-lang.org).
+Для работы в нём легко установить интерпретатор
+[Руби](http://ruby-lang.org) подходящий для [Ruby on
+Rails](http://rubyonrails.org).
 
-Для игр-стрелялок — например [Nexuiz](http://alientrap.org/nexuiz).
+Для игр например в 3D-стрелялку [Nexuiz](http://alientrap.org/nexuiz).
 
 Ebuild
 ------
