@@ -61,6 +61,40 @@ function bookmarks(web, mapping_pattern, locale)
    return load_view("layouts/homepage")(env)
 end
 
+function bookmarks_tags(web, mapping_pattern, locale)
+   i18n.locale = locale or i18n.default_locale
+   local env = {}
+   env.url_for = url_for
+   env.i18n = {
+      last_modified = i18n.translate[i18n.locale].layouts.homepage.last_modified,
+      locale        = i18n.locale,
+      title         = i18n.translate[i18n.locale].bookmarks.tags.title,
+   }
+   env.yield = {}
+   env.yield.layout     = load_data("bookmarks_tags")
+   env.yield.style      = ""
+   env.yield.javascript = ""
+   env.yield.footer     = ""
+   return load_view("layouts/homepage")(env)
+end
+
+function bookmarks_tags_tmp(web, mapping_pattern, locale)
+   i18n.locale = locale or i18n.default_locale
+   local env = {}
+   env.url_for = url_for
+   env.i18n = {
+      last_modified = i18n.translate[i18n.locale].layouts.homepage.last_modified,
+      locale        = i18n.locale,
+      title         = i18n.translate[i18n.locale].bookmarks.tags.tmp.title,
+   }
+   env.yield = {}
+   env.yield.layout     = load_data("bookmarks_tags_tmp")
+   env.yield.style      = ""
+   env.yield.javascript = ""
+   env.yield.footer     = ""
+   return load_view("layouts/homepage")(env)
+end
+
 function cv(web, mapping_pattern, locale)
    i18n.locale = locale or i18n.default_locale
    local env = {}
@@ -143,12 +177,20 @@ end
 -- Builds the application's dispatch table, you can pass multiple
 -- patterns, and any captures get passed to the controller.
 kutkevich:dispatch_get( bookmarks,
-                       "/bookmark/?",
-                       "(/([er][nu])/bookmark/?)" )
-kutkevich:dispatch_get(cv,        "/cv/?", "(/([er][nu])/cv/?)")
-kutkevich:dispatch_get(gentoo,    "/gentoo/?", "(/([er][nu])/gentoo/?)")
-kutkevich:dispatch_get(homepages, "/",     "(/([er][nu])/?)")
-kutkevich:dispatch_get(rc,  "/rc/(%l+)/?", "/([er][nu])/rc/(%l+)/?")
+                       "/bookmarks/?",
+                       "(/([er][nu])/bookmarks/?)" )
+kutkevich:dispatch_get( bookmarks_tags,
+                       "/bookmarks/tags/?",
+                       "(/([er][nu])/bookmarks/tags/?)" )
+kutkevich:dispatch_get( bookmarks_tags_tmp,
+                       "/bookmarks/tags/tmp/?",
+                       "(/([er][nu])/bookmarks/tags/tmp/?)" )
+kutkevich:dispatch_get(cv, "/cv/?", "(/([er][nu])/cv/?)")
+kutkevich:dispatch_get( gentoo,
+                       "/gentoo/?",
+                       "(/([er][nu])/gentoo/?)" )
+kutkevich:dispatch_get(homepages, "/", "(/([er][nu])/?)")
+kutkevich:dispatch_get(rc, "/rc/(%l+)/?", "/([er][nu])/rc/(%l+)/?")
 
 -- These are the view functions referenced by the controllers.
 -- orbit.htmlify does through the functions in the table passed

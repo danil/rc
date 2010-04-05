@@ -2,6 +2,12 @@ module("kutkevich", package.seeall)
 
 i18n.translate.ru = {
    bookmarks = {
+      tags = {
+         title = "Теги",
+         tmp = {
+            title = "Тег tmp"
+         }
+      },
       title = "Закладки"
    },
    cv = {

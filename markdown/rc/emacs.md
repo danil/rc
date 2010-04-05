@@ -163,6 +163,8 @@ Replace
 Search/Replace with regular expressions
 ---------------------------------------
 
+`$` anchor in regexp is not allowed. Use `C-j` instead.
+
     M C-s RETURN
         (isearch-forward-regexp) Search for regular expression forward.
     M C-r RETURN

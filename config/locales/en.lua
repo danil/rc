@@ -2,6 +2,12 @@ module("kutkevich", package.seeall)
 
 i18n.translate.en = {
    bookmarks = {
+      tags = {
+         title = "Tags",
+         tmp = {
+            title = "tmp tag"
+         }
+      },
       title = "Bookmarks"
    },
    cv = {
