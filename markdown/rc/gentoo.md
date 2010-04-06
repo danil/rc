@@ -72,9 +72,13 @@ Layman
 Ebuild
 ------
 
-### Manifest
+### [Ebuild policy][]
 
-<http://devmanual.gentoo.org/general-concepts/manifest/index.html>
+[Ebuild policy]: <http://gentoo.org/proj/en/devrel/handbook/handbook.xml?style=printable&part=3&chap=1>
+
+### [Manifest][]
+
+[Manifest]: <http://devmanual.gentoo.org/general-concepts/manifest/index.html>
 
     ebuild msort-8.53.ebuild manifest
 
