@@ -72,6 +72,10 @@ Layman
 Ebuild
 ------
 
+### Manifest
+
+<http://devmanual.gentoo.org/general-concepts/manifest/index.html>
+
     ebuild msort-8.53.ebuild manifest
 
 Other
