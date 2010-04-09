@@ -50,6 +50,17 @@ Stream Editor
     awk '{ FS = "\t" ; OFS = "\t" ; if ( NR > 1 ) print $1,$3 }' \
         infile > outfile
 
+env
+---
+
+    env LANG=ru_RU.UTF-8 xedit
+    export LANG=ru_RU.KOI8-R
+
+To clear the environment:
+
+    env -i /bin/sh
+
+
 Other
 -----
 
@@ -125,8 +136,6 @@ Other
     fmt FILE # Reformat each paragraph in the FILE.
     ln -s TARGET [LINK_NAME]
     touch access.log error.log
-    env LANG=ru_RU.UTF-8 xedit
-    export LANG=ru_RU.KOI8-R
     dmesg |tail -n 25 # Diagnostic message.
     lspci
     lsusb
