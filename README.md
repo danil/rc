@@ -1,20 +1,10 @@
 kutkevch.org
 ============
 
-This is Danil Kutkevich homepage <http://kutkevich.org>. My homepage
+This is Danil Kutkevich's homepage <http://kutkevich.org>. My homepage
 use Lua programming language with Orbit MVC web framework.
 
-Depends:
-
-* Lua (>= 5.1.4-r4) <http://lua.org>
-* Kepler (>= 1.1.1-1) <http://keplerproject.org>
-* Orbit (>= 2.0.2-1) <http://orbit.luaforge.net>
-* Cosmo (>= 9.09.22-1) <http://cosmo.luaforge.net>
-* Markdown (>= 0.32-1) <http://luaforge.net/projects/markdown>
-* jQuery (>= 1.3.2) <http://jquery.com>
-* Blueprint (>= 0.9) <http://blueprintcss.org>
-
-Copyright (C) 2007, 2009, 2010 Danil Kutkevich
+Copyright (C) 2007, 2008, 2009, 2010 Danil Kutkevich
 <http://danil.kutkevich.org>
 
 This program is free software: you can redistribute it and/or modify
