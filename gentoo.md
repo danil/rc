@@ -34,6 +34,7 @@ Portage-utils
     qlist emacs
     quse nls
     qsearch emacs
+    emaint --check world
 
 USE flags
 ---------
