@@ -82,6 +82,12 @@ Ebuild
 
     ebuild msort-8.53.ebuild manifest
 
+eix
+---
+
+    eix --world -c
+    eix-test-obsolete detail
+
 Other
 -----
 
