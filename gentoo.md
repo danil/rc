@@ -107,4 +107,10 @@ Other
     module-rebuild list
     module-rebuild populate; module-rebuild rebuild
 
+Clean out your world file with app-portage/udept
+<http://forums.gentoo.org/viewtopic-t-142475.html>.
+
+    dep --pretend --pruneworld
+
+
 <!-- Created: 10 Jul 2009. -->
