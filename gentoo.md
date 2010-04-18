@@ -43,6 +43,7 @@ USE flags
     grep -i "ogg - " /usr/portage/profiles/use.desc
     grep -i "ogg - " /usr/portage/profiles/use.local.desc
     euse --info ogg
+    equery uses app-editors/emacs
 
 
 Overlays
