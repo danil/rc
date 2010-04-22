@@ -107,6 +107,7 @@ Other
     eselect kernel set 1
     module-rebuild list
     module-rebuild populate; module-rebuild rebuild
+    repoman full
 
 Clean out your world file with app-portage/udept
 <http://forums.gentoo.org/viewtopic-t-142475.html>:
