@@ -6,7 +6,7 @@ Git
     git config --global user.email danil.kutkevich.org
     git init
     git add .
-    git clone --bare --shared ssh://danil@kutkevich.org/var/git/kutkevich-org.git
+    git clone --bare --shared git://kutkevich.org/kutkevich-org.git
     git reset file1 file2
     git reset # Reset whole index.
 
@@ -22,7 +22,7 @@ Git
     git ls-files
     git commit -a -m 'Some commit.'
     git cat-file blob HEAD^:htdocs/bookmarks/index.md
-    git remote add origin git@github.com:danil/test.git
+    git remote add origin ssh://danil@kutkevich.org/var/git/kutkevich-org.git
     git push origin master
     git pull origin master
     git branch
