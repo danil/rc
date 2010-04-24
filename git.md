@@ -7,6 +7,22 @@ Git
     git init
     git add .
     git clone --bare --shared git://kutkevich.org/kutkevich-org.git
+    git status
+    git push origin master
+    git pull origin master
+
+[Submodules][]
+------------
+
+    git submodule add git://kutkevich.org/rc.git markdown/rc
+    git submodule init
+    git submodule update
+
+[Submodules]: http://progit.org/book/ru/ch5-8.html
+
+Other
+-----
+
     git reset file1 file2
     git reset # Reset whole index.
 
@@ -18,13 +34,10 @@ Git
 
     git mv oldname newname
     git rm file1 \*.md
-    git status
     git ls-files
     git commit -a -m 'Some commit.'
     git cat-file blob HEAD^:htdocs/bookmarks/index.md
     git remote add origin ssh://danil@kutkevich.org/var/git/kutkevich-org.git
-    git push origin master
-    git pull origin master
     git branch
     git branch new-feature
     git checkout new-feature
