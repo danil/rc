@@ -20,6 +20,12 @@ Git
 
 [Submodules]: http://progit.org/book/ru/ch5-8.html
 
+Diff
+----
+
+    git diff --color-words --cached
+    git diff HEAD^^^ HEAD
+
 Other
 -----
 
@@ -45,5 +51,4 @@ Other
     git merge new-feature
     git log -p --since="1 day 2 hours" README
     git grep -e 'first' --and -e 'another'
-    git diff --color-words HEAD^^^ HEAD
     git fsck
