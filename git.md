@@ -6,7 +6,7 @@ Git
     git config --global user.email danil.kutkevich.org
     git init
     git add .
-    git clone --bare --shared git://kutkevich.org/kutkevich-org.git
+    git clone --bare git://kutkevich.org/kutkevich-org.git
     git status
     git push origin master
     git pull origin master
