@@ -633,6 +633,23 @@ Whitespace-manipulation
     C-x C-o
         (delete-blank-lines)
 
+Local Variables in Files
+------------------------
+
+[Local Variables in Files]: http://gnu.org/software/emacs/manual/html_node/emacs/File-Variables.html
+
+### First line
+
+    # -*- coding: utf-8; -*-
+
+
+### Local variables list
+
+    # Local Variables:
+    # truncate-lines: t
+    # End:
+
+
 Other
 -----
 

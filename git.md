@@ -26,6 +26,14 @@ Diff
     git diff --color-words --cached
     git diff HEAD^^^ HEAD
 
+Subversion
+----------
+
+* [Subversion repository as a git submodule](http://stackoverflow.com/questions/465042)
+* [Fork and sync google code svn into github](http://stackoverflow.com/questions/796991)
+
+    git svn clone -s http://google-code-prettify.googlecode.com/svn/trunk
+
 Other
 -----
 
