@@ -29,10 +29,25 @@ Diff
 Subversion
 ----------
 
-* [Subversion repository as a git submodule](http://stackoverflow.com/questions/465042)
-* [Fork and sync google code svn into github](http://stackoverflow.com/questions/796991)
+<https://git.wiki.kernel.org/index.php/GitFaq#How_do_I_mirror_a_SVN_repository_to_git.3F>
 
-    git svn clone -s http://google-code-prettify.googlecode.com/svn/trunk
+Initialize bare repo
+
+    git init --bare
+    git symbolic-ref HEAD refs/heads/trunk
+
+Initialize "fetch" repo
+
+    git svn clone -s http://google-code-prettify.googlecode.com/svn \
+        google-code-prettify
+    git remote add bare /var/git/vendor/google-code-prettify.git
+    git config --unset remote.bare.fetch
+    git config remote.bare.push 'refs/remotes/*:refs/heads/*'
+    git push bare
+
+Update "fetch" repo
+
+    git svn fetch
 
 Other
 -----
