@@ -26,10 +26,12 @@ Diff
     git diff --color-words --cached
     git diff HEAD^^^ HEAD
 
-Subversion
-----------
+Mirror Subversion repository to Git
+-----------------------------------
 
 <https://git.wiki.kernel.org/index.php/GitFaq#How_do_I_mirror_a_SVN_repository_to_git.3F>
+
+### With bare
 
 Initialize bare repo
 
@@ -48,6 +50,24 @@ Initialize "fetch" repo
 Update "fetch" repo
 
     git svn fetch
+
+### Without bare
+
+    git svn init -s http://google-code-prettify.googlecode.com/svn \
+        google-code-prettify3
+    git config svn.authorsfile .git/authors_file
+    git svn fetch
+
+Migrate Subversion repository to Git
+------------------------------------
+
+### Users file
+
+Users file that maps all your Subversion users to your Git users. Just
+make a file. Map the users using this format:
+
+    jmaddox = Jon Maddox <jon@gmail.com>
+    bigpappa = Brian Biggs <bigpappa@gmail.com>
 
 Other
 -----
