@@ -67,6 +67,8 @@ Undo stupid monkey changes
 
 ### Bare repository
 
+[Git reset allow soft in a bare repo](http://kerneltrap.org/mailarchive/git/2007/7/14/251527)
+
     git reset --soft HEAD~1
 
 Other
