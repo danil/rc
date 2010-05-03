@@ -6,10 +6,19 @@ Git
     git config --global user.email danil.kutkevich.org
     git init
     git add .
-    git clone --bare git://kutkevich.org/kutkevich-org.git
+    git clone git://kutkevich.org/kutkevich-org.git
     git status
     git push origin master
     git pull origin master
+
+[Mirror Git repository][]
+-----------------------
+
+    git clone --bare git://github.com/sebnow/lake.git
+    git remote add origin git://github.com/sebnow/lake.git
+    git fetch
+
+[Mirror Git repository]: http://toolmantim.com/thoughts/setting_up_a_new_remote_git_repository
 
 [Submodules][]
 ------------
