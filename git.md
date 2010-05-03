@@ -45,17 +45,32 @@ Mirror Subversion repository to Git
 
 [Migrate Subversion repository to Git]: http://jonmaddox.com/2008/03/05/cleanly-migrate-your-subversion-repository-to-a-git-repository/
 
-Other
+Reset
 -----
+
+Undo stupid monkey changes
+
+### Work tree
+
+#### Reset index
 
     git reset file1 file2
     git reset # Reset whole index.
 
+#### Reset commit
+
 "Жёсткий" реcет (следует использовать с осторожностью) вернет дерево
 проекта и индекс в состояние, соответствующее указанному коммиту,
-удалив изменения последующих коммитов:
+удалив изменения последующих коммитов.
 
     git reset --hard HEAD~1
+
+### Bare repository
+
+    git reset --soft HEAD~1
+
+Other
+-----
 
     git mv oldname newname
     git rm file1 \*.md
