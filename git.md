@@ -29,27 +29,9 @@ Diff
 Mirror Subversion repository to Git
 -----------------------------------
 
-<https://git.wiki.kernel.org/index.php/GitFaq#How_do_I_mirror_a_SVN_repository_to_git.3F>
+### [With bare][]
 
-### With bare
-
-Initialize bare repo
-
-    git init --bare
-    git symbolic-ref HEAD refs/heads/trunk
-
-Initialize "fetch" repo
-
-    git svn clone -s http://google-code-prettify.googlecode.com/svn \
-        google-code-prettify
-    git remote add bare /var/git/vendor/google-code-prettify.git
-    git config --unset remote.bare.fetch
-    git config remote.bare.push 'refs/remotes/*:refs/heads/*'
-    git push bare
-
-Update "fetch" repo
-
-    git svn fetch
+[With bare]: https://git.wiki.kernel.org/index.php/GitFaq#How_do_I_mirror_a_SVN_repository_to_git.3F
 
 ### Without bare
 
@@ -58,16 +40,10 @@ Update "fetch" repo
     git config svn.authorsfile .git/authors_file
     git svn fetch
 
-Migrate Subversion repository to Git
-------------------------------------
+[Migrate Subversion repository to Git][]
+--------------------------------------
 
-### Users file
-
-Users file that maps all your Subversion users to your Git users. Just
-make a file. Map the users using this format:
-
-    jmaddox = Jon Maddox <jon@gmail.com>
-    bigpappa = Brian Biggs <bigpappa@gmail.com>
+[Migrate Subversion repository to Git]: http://jonmaddox.com/2008/03/05/cleanly-migrate-your-subversion-repository-to-a-git-repository/
 
 Other
 -----
