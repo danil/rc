@@ -158,7 +158,7 @@ Replace
 
     M-% string <RET> newstring <RET>
     M-x query-replace <RET> string <RET> newstring <RET>
-        Replace some occurrences of string with newstring. 
+        Replace some occurrences of string with newstring.
 
 Search/Replace with regular expressions
 ---------------------------------------
@@ -182,21 +182,33 @@ Search/Replace with regular expressions
     M-x apropos
         Finding a command by a regular expression.
 
-Window commands
----------------
+[Window commands][]
+-----------------
+
+<http://gnu.org/software/emacs/manual/html_node/emacs/Change-Window.html>
 
     C-x 2
         (split-window-vertically)
     C-x 3
         (split-window-horizontally)
+    C-x ^
+        (enlarge-window)
+    C-u C-x ^
+        (shrink-window)
+    C-x }
+        (enlarge-window-horizontally)
+    C-x {
+        (shrink-window-horizontally)
     C-x +
-        Make all windows the same height (balance-windows).
+        Make all windows the same height and width (balance-windows)
     M C-v
-        Scroll other window.
+        Scroll other window
     C-x 4 f
-        Find file in other window.
+        Find file in other window
     C-x 4 0
-        Kill buffer and window.
+        Kill buffer and window
+
+[Window commands]: http://gnu.org/software/emacs/manual/html_node/emacs/Windows.html
 
 Variables
 ---------
@@ -453,7 +465,7 @@ Shell
 The following commands are only available in char mode:
 
     C-c C-c
-        Send a literal <C-c> to the sub-shell. 
+        Send a literal <C-c> to the sub-shell.
 
 
 Text
