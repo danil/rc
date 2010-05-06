@@ -193,7 +193,7 @@ Search/Replace with regular expressions
         (split-window-horizontally)
     C-x ^
         (enlarge-window)
-    C-u C-x ^
+    C-u - C-x ^
         (shrink-window)
     C-x }
         (enlarge-window-horizontally)
