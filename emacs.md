@@ -690,6 +690,11 @@ Other
         To kill the Emacs process, when Emacs is started as a daemon.
     C-x h
         (mark-whole-buffer)
+    M-x load-file RET ~/.emacs RET
+        Execute a file of Emacs Lisp code (reload .emacs without
+        restarting for example) ([load-file][])
+
+[load-file]: http://gnu.org/software/emacs/manual/html_node/emacs/Lisp-Libraries.html#index-load_002dfile-2360
 
 ### toggle-read-only
 

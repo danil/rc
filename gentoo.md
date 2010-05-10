@@ -89,6 +89,14 @@ eix
 
     eix --world -c
     eix-test-obsolete detail
+    eix -vsSC dev-ruby
+
+repoman
+-------
+
+    repoman full --without-mask --include-dev
+    repoman manifest
+
 
 Other
 -----
@@ -107,7 +115,6 @@ Other
     eselect kernel set 1
     module-rebuild list
     module-rebuild populate; module-rebuild rebuild
-    repoman full
 
 Clean out your world file with app-portage/udept
 <http://forums.gentoo.org/viewtopic-t-142475.html>:
