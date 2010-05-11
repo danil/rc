@@ -89,7 +89,7 @@ eix
 
     eix --world -c
     eix-test-obsolete detail
-    eix -vsSC dev-ruby
+    eix -vsSCA dev-ruby
 
 repoman
 -------
