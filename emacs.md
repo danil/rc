@@ -642,8 +642,48 @@ PCL-CVS
 Whitespace-manipulation
 -----------------------
 
+### (delete-blank-lines)
+
     C-x C-o
-        (delete-blank-lines)
+
+[Spelling][]
+----------
+
+### (ispell-word)
+
+Check and correct spelling of the active region or the word at point
+
+    M-$
+
+### (ispell)
+
+Check and correct spelling in the active region or the entire buffer.
+
+### (ispell-buffer)
+
+Check and correct spelling in the buffer.
+
+### (ispell-region)
+
+Check and correct spelling in the region.
+
+### (ispell-message)
+
+Check and correct spelling in a draft mail message, excluding cited
+material.
+
+### (ispell-change-dictionary)
+
+Restart the Aspell/Ispell/Hunspell process, using dict as the
+dictionary.
+
+    M-x ispell-change-dictionary <RET> dict <RET>
+
+### (ispell-kill-ispell)
+
+Kill the Aspell/Ispell/Hunspell subprocess.
+
+[Spelling]: http://gnu.org/software/emacs/manual/html_node/emacs/Spelling.html
 
 Local Variables in Files
 ------------------------
@@ -696,7 +736,7 @@ Other
 
 [load-file]: http://gnu.org/software/emacs/manual/html_node/emacs/Lisp-Libraries.html#index-load_002dfile-2360
 
-### toggle-read-only
+### (toggle-read-only)
 
     C-x C-q
 

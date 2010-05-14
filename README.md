@@ -3,7 +3,6 @@ Reference cards
 
 Danil Kutkevich's reference cards <http://kutkevich.org/rc>. I use for
 my reference cards Markdown lightweight markup language.
-
 Copyright (C) 2007, 2008, 2009, 2010 Danil Kutkevich
 <http://danil.kutkevich.org>
 
