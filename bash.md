@@ -169,6 +169,7 @@ Other
     iwconfig ath0 key s:dfvgbh1234567
     killall wpa_supplicant && sleep 5 \
      && wpa_supplicant -i ath0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+    wvdial megafon
     echo 'Hello, work' |mail -s 'Hello, World!' anonymous@kutkevich.org
     /usr/sbin/sendmail -bV
     exim -brw danil
