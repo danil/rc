@@ -1,4 +1,4 @@
-<!-- -*- coding: utf-8; -*- -->
+<!--*- coding: utf-8-unix; -*-->
 
     Section "InputDevice"
       Identifier "Synaptics Touchpad"

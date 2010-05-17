@@ -1,4 +1,4 @@
-<!-- -*- coding: utf-8; -*- -->
+<!-- -*- coding: utf-8-unix; -*- -->
 
     kill -HUP `cat /usr/local/nginx/logs/nginx.pid`
     nginx -V

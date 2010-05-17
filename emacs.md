@@ -692,7 +692,7 @@ Local Variables in Files
 
 ### First line
 
-    # -*- coding: utf-8; -*-
+    # -*- coding: utf-8-unix; -*-
 
 
 ### Local variables list
@@ -735,6 +735,10 @@ Other
         restarting for example) ([load-file][])
 
 [load-file]: http://gnu.org/software/emacs/manual/html_node/emacs/Lisp-Libraries.html#index-load_002dfile-2360
+
+### (normal-mode)
+
+Choose the major mode for this buffer automatically
 
 ### (toggle-read-only)
 
