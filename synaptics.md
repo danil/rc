@@ -13,8 +13,8 @@
 Synaptics touchpad
 ==================
 
-<http://en.wikipedia.org/wiki/Synaptics>
-<http://en.gentoo-wiki.com/wiki/Synaptics_Touchpad>
+<http://en.wikipedia.org/wiki/Synaptics>,  
+<http://en.gentoo-wiki.com/wiki/Synaptics_Touchpad>.
 
     Section "InputDevice"
       Identifier "Synaptics Touchpad"
@@ -28,8 +28,8 @@ Synaptics touchpad
 Real-Time Tweaking
 ------------------
 
-<http://en.gentoo-wiki.com/wiki/Synaptics_Touchpad#.22Can.27t_access_shared_memory_area._SHMConfig_disabled.3F.22_error>
-<http://wiki.archlinux.org/index.php/Touchpad_Synaptics#Fine-tuning_with_synclient>
+<http://en.gentoo-wiki.com/wiki/Synaptics_Touchpad#.22Can.27t_access_shared_memory_area._SHMConfig_disabled.3F.22_error>,  
+<http://wiki.archlinux.org/index.php/Touchpad_Synaptics#Fine-tuning_with_synclient>.
 
 Options: "on" or "off".
 
@@ -101,7 +101,7 @@ Touchpad device file
 Circular scrolling
 ------------------
 
-<http://wiki.archlinux.org/index.php/Touchpad_Synaptics#Circular_scrolling>,
+<http://wiki.archlinux.org/index.php/Touchpad_Synaptics#Circular_scrolling>,  
 <http://wiki.archlinux.org/index.php/Тачпад_Synaptics#.D0.9A.D1.80.D1.83.D0.B3.D0.BE.D0.B2.D0.B0.D1.8F_.D0.BF.D1.80.D0.BE.D0.BA.D1.80.D1.83.D1.82.D0.BA.D0.B0>.
 
 * `0` — All Edges
