@@ -91,6 +91,12 @@ Options: "on" or "off".
 
 <http://wiki.archlinux.org/index.php/Тачпад_Synaptics#.D0.94.D0.B5.D1.82.D0.B0.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F>
 
+Reduce delay between a button tap and the actual click.
+
+<http://wiki.archlinux.org/index.php/Touchpad_Synaptics#Delay_between_a_button_tap_and_the_actual_click>
+
+      Option "FastTaps" "1"
+
 Max time in ms for detecting tap.
 
       Option "MaxTapTime" "180"
