@@ -89,7 +89,7 @@ Remote shell
 
 <http://revsys.com/writings/quicktips/ssh-tunnel.html>
 
-    ssh -f root@stampy -L 2000:danil@homer:22 -N
+    ssh -f root@stampy -L 2000:homer:22 -N
     ssh -p 2000 danil@localhost
 
 Other
