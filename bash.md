@@ -72,6 +72,25 @@ To clear the environment:
 
     env -i /bin/sh
 
+Remote shell
+------------
+
+    telnet mail.omskportal.ru 25
+
+### SSH
+
+    ssh -t root@santaslittlehelper "ssh danil@homer"
+    scp -P 61022 [-r] foo.tar.gz bar.tar.gz anonymous@kutkevich.org:/home/danil/
+    ssh-keygen -t rsa
+    ssh-copy-id -i ~/.ssh/id_rsa.pub anonymous@kutkevich.org
+    sshfs -p 61022 kutkevich.org:/home/danil/ mnt/kutkevich_org/
+
+### SSH tunneling
+
+<http://revsys.com/writings/quicktips/ssh-tunnel.html>
+
+    ssh -f root@stampy -L 2000:danil@homer:22 -N
+    ssh -p 2000 danil@localhost
 
 Other
 -----
@@ -188,14 +207,6 @@ Other
     exim -bV
     mailq
     exim -Mvl <message_id>
-    telnet mail.omskportal.ru 25
-    ssh -p 61022 kutkevich.org
-    ssh -t root@santaslittlehelper "ssh danil@homer"
-    scp -P 61022 [-r] foo.tar.gz bar.tar.gz \
-        anonymous@kutkevich.org:/home/danil/
-    ssh-keygen -t rsa
-    ssh-copy-id -i ~/.ssh/id_rsa.pub anonymous@kutkevich.org
-    sshfs kutkevich.org:/home/danil/ mnt/kutkevich_org/
     dd if=/dev/cdrom of=myimage.iso
     dd if=/dev/sdb of=mybackup.img bs=130M count=1
     dd if=bootldr.rom of=/dev/sdb
