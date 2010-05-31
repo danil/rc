@@ -65,10 +65,14 @@ Mirror Subversion repository to Git
 
 [Migrate Subversion repository to Git]: http://jonmaddox.com/2008/03/05/cleanly-migrate-your-subversion-repository-to-a-git-repository/
 
-Reset
------
+Undoing in Git - Reset, Checkout and Revert
+-------------------------------------------
 
-Undo stupid monkey changes
+<http://book.git-scm.com/4_undoing_in_git_-_reset,_checkout_and_revert.html>
+
+### Fixing un-committed mistakes
+
+    git checkout -- app/views/homepages/index.en.html
 
 ### Work tree
 
