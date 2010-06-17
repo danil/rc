@@ -58,17 +58,6 @@ USE flags
     equery uses app-editors/emacs
 
 
-Overlays
---------
-
-List packages install from overlay or repository?
-<http://bugs.gentoo.org/204324>, <http://bugs.gentoo.org/138622>.
-
-Пекеты вошедшие в список установленных и пренадлежаших оверлею
-(посчитанные дважды) _возможно_ были установленны из оверлея.
-
-    equery list -o |sort |uniq -c |sort -n
-
 Layman
 ------
 
@@ -99,9 +88,24 @@ Ebuild
 eix
 ---
 
-    eix --world -c
+    eix -vAS dev-ruby
+    eix --world --categor
     eix-test-obsolete detail
-    eix -vsSCA dev-ruby
+
+### Overlays
+
+List packages install from overlay <http://bugs.gentoo.org/204324>,
+<http://bugs.gentoo.org/138622>.
+
+    eix --installed-overlay
+
+Without `eix` _very ugly matching_ only packages which have been
+installed from some overlay.
+
+Пекеты вошедшие в список установленных и пренадлежаших оверлею
+(посчитанные дважды) _возможно_ были установленны из оверлея.
+
+    equery list -o |sort |uniq -c |sort -n
 
 repoman
 -------
@@ -125,6 +129,7 @@ Other
     CCACHE_DIR="/var/tmp/ccache" ccache -s
     eselect kernel list
     eselect kernel set 1
+    eselect news list
     module-rebuild list
     module-rebuild populate; module-rebuild rebuild
 
