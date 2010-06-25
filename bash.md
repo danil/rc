@@ -92,6 +92,14 @@ Remote shell
     ssh -f root@stampy -L 2000:homer:22 -N
     ssh -p 2000 danil@localhost
 
+Nmap
+----
+
+Discover (scanner) hosts and services on a computer network.
+
+    nmap --open 217.197.232.218
+    nmap -sP 192.168.0.0/16
+
 Other
 -----
 
@@ -129,7 +137,6 @@ Other
     iostat
     netstat -l -t -p
     ngrep -d lo |less
-    nmap -sP 192.168.0.0/16
     cat /etc/passwd
     cat /etc/group
     grep bogo /proc/cpuinfo

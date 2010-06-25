@@ -45,7 +45,7 @@ Show system variables
 Create user
 -----------
 
-    GRANT CREATE, INSERT, DELETE, UPDATE, SELECT 
+    GRANT CREATE, INSERT, DELETE, UPDATE, SELECT
      ON danil.* TO 'danil'@'localhost' IDENTIFIED BY 'password';
 
 Privileges: ALL, CREATE, DELETE, GRANT OPTION, INSERT, SELECT, SHOW
@@ -82,9 +82,9 @@ Show databases
     +--------------------+
     | Database           |
     +--------------------+
-    | danil              | 
-    | information_schema | 
-    | mysql              | 
+    | danil              |
+    | information_schema |
+    | mysql              |
     +--------------------+
     3 rows in set (0.00 sec)
 
@@ -95,7 +95,7 @@ Show character sets
     +---------+---------------+-------------------+--------+
     | Charset | Description   | Default collation | Maxlen |
     +---------+---------------+-------------------+--------+
-    | utf8    | UTF-8 Unicode | utf8_general_ci   |      3 | 
+    | utf8    | UTF-8 Unicode | utf8_general_ci   |      3 |
     +---------+---------------+-------------------+--------+
     1 row in set (0.00 sec)
 
@@ -134,7 +134,7 @@ Drop database
 Describe database
 -----------------
 
-    SELECT * FROM INFORMATION_SCHEMA.SCHEMATA 
+    SELECT * FROM INFORMATION_SCHEMA.SCHEMATA
      WHERE SCHEMA_NAME LIKE 'danil';
     +--------------+-------------+----------------------------+
     | CATALOG_NAME | SCHEMA_NAME | DEFAULT_CHARACTER_SET_NAME |
@@ -168,7 +168,7 @@ Show tables
     +-------------------------+------------+
     | Tables_in_danil (test%) | Table_type |
     +-------------------------+------------+
-    | test_table              | BASE TABLE | 
+    | test_table              | BASE TABLE |
     +-------------------------+------------+
     1 row in set (0.00 sec)
 
