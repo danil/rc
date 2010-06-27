@@ -651,6 +651,47 @@ PCL-CVS
         repository is far away. But of course, it will not be able to
         detect when a file needs to be updated or merged.
 
+Tags
+----
+
+### (find-tag)
+
+    M-.
+
+Find a tag, that is, use the Tags file to look up a definition.
+If there are multiple tags in the project with the same name,
+use `C-u M-.` to go to the next match.
+
+### (pop-tag-mark)
+
+Jump back
+
+    M-*
+
+### (tags-search)
+
+Regexp-search through the source files indexed by a tags file.
+
+`M-,` go to the next match.
+
+### (tags-query-replace)
+
+Query-replace through the source files indexed by a tags file
+
+### (tags-loop-continue)
+
+    M-,
+
+Resume `tags-search` or `tags-query-replace` starting at point in a source file
+
+### (tags-apropos)
+
+List all tags in a tags file that match a regexp
+
+### (list-tags)
+
+List all tags defined in a source file
+
 Whitespace-manipulation
 -----------------------
 
