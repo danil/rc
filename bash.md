@@ -100,6 +100,17 @@ Discover (scanner) hosts and services on a computer network.
     nmap --open 217.197.232.218
     nmap -sP 192.168.0.0/16
 
+ACPI
+----
+
+    grep bogo /proc/cpuinfo
+    grep -E "charging|remaining" /proc/acpi/battery/BAT0/state
+    cpufreq-info
+    cat /proc/acpi/ac_adapter/AC/state
+    cat /proc/acpi/thermal_zone/THR0/temperature
+    cat /sys/class/power_supply
+    cat /sys/devices/system/cpu/cpu1/online
+
 Other
 -----
 
@@ -139,14 +150,8 @@ Other
     ngrep -d lo |less
     cat /etc/passwd
     cat /etc/group
-    grep bogo /proc/cpuinfo
     grep MemTotal /proc/meminfo
-    grep -E "charging|remaining" /proc/acpi/battery/BAT0/state
     diff --recursive --brief ~/dir1 ~/dir2| grep Only
-    cat /proc/acpi/ac_adapter/AC/state
-    cat /proc/acpi/thermal_zone/THR0/temperature
-    cat /sys/class/power_supply
-    cat /sys/devices/system/cpu/cpu1/online
     emacs /boot/grub/menu.lst
     less -IS ./access.log
     tail -f ./access.log
@@ -267,6 +272,9 @@ Other
     nohup ./scripts/bootstrap.sh &
     cdrecord dev=/dev/hdc <downloaded iso file>
     PAGER=cat man man
+    vlc -I ncurses
+    vobcopy
+    evolution --force-shutdown
 
 DCTC
 ----
