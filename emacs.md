@@ -548,15 +548,6 @@ More general
         Collapses function definitions in a file to a mere {...}.
     M-x show-subtree
         If you are in one of the collapsed functions, this un-collapses it.
-    M-.
-        If you are in a function call, this will take you
-        to it's definition (thats Meta dot).
-    M-x tags-search ENTER
-        Searches through all you etaged.
-    M-,
-        Jumps to the next occurence for tags-search (Meta comma).
-    M-x tags-query-replace
-        This lets you replace some text in all the tagged files.
 
 GDB (debugger)
 --------------
@@ -656,11 +647,20 @@ Tags
 
 ### (find-tag)
 
+<http://gnu.org/software/emacs/manual/html_node/emacs/Find-Tag.html>
+
+Find first definition of tag
+
     M-.
 
-Find a tag, that is, use the Tags file to look up a definition.
-If there are multiple tags in the project with the same name,
-use `C-u M-.` to go to the next match.
+Find next alternate definition of last tag specified
+
+    C-u M-.
+
+Go back to previous tag found
+
+    C-u - M-.
+
 
 ### (pop-tag-mark)
 
@@ -670,19 +670,20 @@ Jump back
 
 ### (tags-search)
 
-Regexp-search through the source files indexed by a tags file.
+<http://gnu.org/software/emacs/manual/html_node/emacs/Tags-Search.html>
 
-`M-,` go to the next match.
+Search for regexp through the files in the selected tags table
 
 ### (tags-query-replace)
 
-Query-replace through the source files indexed by a tags file
+Perform a query-replace-regexp on each file in the selected tags table
 
 ### (tags-loop-continue)
 
-    M-,
+Restart `tags-search` or `tags-query-replace`, from the current
+location of point (Meta comma)
 
-Resume `tags-search` or `tags-query-replace` starting at point in a source file
+    M-,
 
 ### (tags-apropos)
 
