@@ -800,3 +800,10 @@ Choose the major mode for this buffer automatically
 
 Toggle read-only status of buffer
 <http://gnu.org/software/emacs/manual/html_node/emacs/Misc-Buffer.html>.
+
+Interactively Do Things
+-----------------------
+
+### (ido-edit-input function)
+
+    C-e
