@@ -13,20 +13,20 @@
 PostgreSQL
 ==========
 
-    psql -h kutkevich.org.ru -U danil -d mydb
-    psql -h kutkevich.org.ru -U danil dbname < infile
-    psql -E
+    psql --host=kutkevich.org.ru --username=danil --dbname=mydb
+    psql --host=kutkevich.org.ru --username=danil dbname < infile
+    psql --echo-hidden
 
 Dump
 ----
 
-    pg_dump -h localhost -U danil --table="news" --attribute-inserts \
+    pg_dump --host=localhost --username=danil --table="news" --attribute-inserts \
      ska_production > outfile
 
 Change output format
 --------------------
 
-    psql ska_production -A -c "SELECT id,name FROM foobars;" \
+    psql ska_production --no-align --command="SELECT id,name FROM foobars;" \
      |sed G |tr '|' '\n' |sed '/./,/^$/!d'
 
 Version
@@ -52,19 +52,13 @@ when the command is spelled CREATE USER, LOGIN is assumed by default.
 
 ### Superuser
 
-The command line option `-a` specifies that this user can add other
-users. `-d` means that this user can create databases. `-P` let's you
-enter a password for the user and `-E` will encrypt it for security
-purposes.
-
-    createuser -a -d -P -E -U postgres -W danil
+    createuser --createrole --createdb --superuser --pwprompt \
+               --encrypted --username=postgres --password danil
 
 ### Standard user
 
-`-A` and `-D` options do the opposite of `-a` and `-d`, and instead
-deny the user the ability to create other users and databases.
-
-    createuser -A -D -P -E -U danil -W testuser
+    createuser --no-createrole --no-createdb --no-superuser --pwprompt \
+               --encrypted --username=danil --password testuser
 
 Alter role
 ----------
@@ -99,19 +93,13 @@ Create database
 ---------------
 
     CREATE DATABASE "danil" WITH OWNER danil ENCODING = 'UTF8';
-
-`-W` option to request the password.
-
-    createdb -O danil -U postgres -W danil
+    createdb --owner=danil --username=postgres --password danil
 
 Drop database
 -------------
 
     DROP DATABASE danil;
-
-`-W` option to request the password.
-
-    dropdb -U danil -W test
+    dropdb --username=danil --password test
 
 Tables list
 -----------
