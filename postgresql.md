@@ -20,8 +20,8 @@ PostgreSQL
 Dump
 ----
 
-    pg_dump --host=localhost --username=danil --table="news" --attribute-inserts \
-     ska_production > outfile
+    pg_dump --host=localhost --username=danil --table="news" \
+            --attribute-inserts ska_production > outfile
 
 Change output format
 --------------------
