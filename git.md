@@ -65,6 +65,15 @@ Mirror Subversion repository to Git
 
 [Migrate Subversion repository to Git]: http://jonmaddox.com/2008/03/05/cleanly-migrate-your-subversion-repository-to-a-git-repository/
 
+Migrate CVS to Git
+------------------
+
+     git cvsimport -k -d :ext:barm@ssh.barm.nichost.ru:/home/barm/cvsroot \
+                   -C test johnstudio/barmadmin
+
+* `man gitcvs-migration`
+* <http://www.chem.helsinki.fi/~jonas/git_guides/HTML/CVS2git>
+
 Undoing in Git - Reset, Checkout and Revert
 -------------------------------------------
 
