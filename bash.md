@@ -391,6 +391,24 @@ Yellowdog Updater Modified
 X
 ---
 
+### Restart X
+
+In a tty terminal, not a terminal window (get there with [Ctrl] +
+[Alt] + [F1]).
+
+    /etc/init.d/xdm stop
+
+### Hardware information for VESA PnP monitors
+
+    get-edid |parse-edid
+
+### DPI and display size
+
+    xdpyinfo | grep "dots per inch"
+    xdpyinfo | grep dimensions
+
+### Other
+
     echo "lalala" |xclip -selection clip
     echo -en "trulala" | xsel -i -b -p
     xev
@@ -403,13 +421,6 @@ X
     xvidtune
     xdpyinfo |grep "depth of root"
     xrandr # .xinitc, .xsesson, .gnomerc
-
-    # In a tty terminal, not a terminal window (get there with
-    # [Ctrl] + [Alt] + [F1]).
-    /etc/init.d/xdm stop
-
-    # Hardware information-gathering tool for VESA PnP monitors.
-    get-edid |parse-edid
 
 ALSA
 ----
