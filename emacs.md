@@ -329,8 +329,8 @@ Dired (DIRectory EDitor)
     C-u * /
         Removes that mark again.
     * s
-        Mark all the files in the current subdirectory, aside from `.'
-        and `..' (`dired-mark-subdir-files').
+        Mark all the files in the current subdirectory, aside from `.`
+        and `..` (dired-mark-subdir-files).
     * !
     U
          Remove all marks from all the files in this Dired buffer

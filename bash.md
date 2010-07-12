@@ -126,7 +126,7 @@ Other
     echo -n "Some text line"; echo -en "all the same text line.\n"
     md5sum -c ./file
     echo "1539bad48e984ae1441052dc074c0995  /dev/hdc" |md5sum -c
-    echo "26733b170052a01eb48ed2d5495a5cb51c00bdd0  /dev/hdc" |sha1sum -c
+    echo "26733b170052a01eb48ed2d5495a5cb51c00bdd0 /dev/hdc" |sha1sum -c
     gpg --keyserver subkeys.pgp.net --recv-keys 17072058
     gpg --verify <signature file> <downloaded iso>
     free
@@ -488,8 +488,10 @@ mpd
 GTK
 ---
 
-    gconftool-2 --set /desktop/gnome/url-handlers/http/command -t string 'firefox %s'
-    gconftool-2 --set /desktop/gnome/url-handlers/https/command -t string 'firefox %s'
+    gconftool-2 --set /desktop/gnome/url-handlers/http/command \
+                -t string 'firefox %s'
+    gconftool-2 --set /desktop/gnome/url-handlers/https/command \
+                -t string 'firefox %s'
 
 upsc
 ----
