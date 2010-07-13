@@ -13,7 +13,7 @@ Git
 ===
 
     git config --global user.name "Danil Kutkevich"
-    git config --global user.email danil.kutkevich.org
+    git config --global user.email danil@kutkevich.org
     git init
     git add .
     git clone git://kutkevich.org/kutkevich-org.git
