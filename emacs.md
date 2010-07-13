@@ -1,7 +1,6 @@
 <!-- -*- coding: utf-8-unix; -*-
      Danil Kutkevich's reference cards <http://kutkevich.org/rc>.
-     Copyright (C) 2007, 2008, 2009,
-     2010 Danil Kutkevich <http://danil.kutkevich.org>
+     Copyright (C) 2007, 2008, 2009, 2010 Danil Kutkevich <danil@kutkevich.org>
 
      This reference cards is licensed under the Creative Commons
      Attribution-Share Alike 3.0 Unported License. To view a copy of this
@@ -394,18 +393,10 @@ Unmark by regexp
 
 ### (find-dired)
 
-    M-x find-dired <RET> /home/danil/ <RET> -type f -name "*html"
+    M-x find-dired <RET> ~/ <RET> -type f -iname "*.rb" -size -100k \
+                                  -exec grep -q -e danil\\.kutkevich \{\} \;
 
 Find and list files inside a directory, including subdirectories.
-
-### (find-grep)
-
-    M-x grep-find
-    M-x rgrep
-    M-x find-grep <RET> find ~/ -mount -size -100k -type f 2> /dev/null \
-                         |xargs grep -il "danil\.kutkevich" 2> /dev/null
-
-Run grep via find, and collect output in the buffer named `*grep*`.
 
 Operating on Files
 ------------------
