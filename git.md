@@ -69,7 +69,7 @@ Migrate CVS to Git
 ------------------
 
      git cvsimport -k -d :ext:barm@ssh.barm.nichost.ru:/home/barm/cvsroot \
-                   -C test johnstudio/barmadmin
+                   -C to_dir johnstudio/barmadmin
 
 * `man gitcvs-migration`
 * <http://www.chem.helsinki.fi/~jonas/git_guides/HTML/CVS2git>
