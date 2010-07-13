@@ -355,15 +355,22 @@ Dired (DIRectory EDitor)
         Compare this file.
     M-=
         Compare this file with it's backup file.
+
     % m regexp <RET>
     * % regexp <RET>
-        Mark (with `*') all files whose names match the regular expression
-        regexp (dired-mark-files-regexp). This command is like % d, except
-        that it marks files with `*' instead of flagging with `D'.
 
-        Only the non-directory part of the file name is used in
-        matching. Use `^' and `$' to anchor matches. You can exclude
-        subdirectories by temporarily hiding them (see Hiding Subdirectories).
+Mark (with `*`) all files whose names match the regular expression
+regexp (dired-mark-files-regexp). This command is like % d, except
+that it marks files with `*` instead of flagging with `D`.
+
+Only the non-directory part of the file name is used in
+matching. Use `^` and `$` to anchor matches. You can exclude
+subdirectories by temporarily hiding them (see Hiding Subdirectories).
+
+    C-u * % regexp <RET>
+
+Unmark by regexp
+
     C-x u
     C-_
     C-/
@@ -384,8 +391,21 @@ Dired (DIRectory EDitor)
     C-u s SWITCHES <RET>
         Refresh the Dired buffer using SWITCHES as
         dired-listing-switches.
+
+### (find-dired)
+
     M-x find-dired <RET> /home/danil/ <RET> -type f -name "*html"
-        Find and list files inside a directory, including subdirectories.
+
+Find and list files inside a directory, including subdirectories.
+
+### (find-grep)
+
+    M-x grep-find
+    M-x rgrep
+    M-x find-grep <RET> find ~/ -mount -size -100k -type f 2> /dev/null \
+                         |xargs grep -il "danil\.kutkevich" 2> /dev/null
+
+Run grep via find, and collect output in the buffer named `*grep*`.
 
 Operating on Files
 ------------------
