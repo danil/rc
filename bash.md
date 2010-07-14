@@ -112,6 +112,12 @@ ACPI
     cat /sys/class/power_supply
     cat /sys/devices/system/cpu/cpu1/online
 
+diff
+----
+
+    diff --recursive --brief ~/dir1 ~/dir2| grep Only
+    colordiff --ignore-space-change postgresql-8.4 ._cfg0000_postgresql-8.4
+
 Other
 -----
 
@@ -152,7 +158,6 @@ Other
     cat /etc/passwd
     cat /etc/group
     grep MemTotal /proc/meminfo
-    diff --recursive --brief ~/dir1 ~/dir2| grep Only
     emacs /boot/grub/menu.lst
     less -IS ./access.log
     tail -f ./access.log
