@@ -112,6 +112,13 @@ repoman
     repoman full --without-mask --include-dev
     repoman manifest
 
+Freeing Up Disk Space
+---------------------
+
+    eclean-dist
+    eclean distfiles
+
+<http://en.gentoo-wiki.com/wiki/Freeing_Up_Disk_Space#Removing_Ancient_Distfiles_and_Binaries>
 
 Other
 -----
@@ -123,7 +130,6 @@ Other
     rc-update del xdm default
     env-update && source /etc/profile
     eselect bashcomp enable --global gvfs
-    eclean distfiles
     find /etc -iname "._cfg????_*" 2> /dev/null
     CCACHE_DIR="/var/tmp/ccache" ccache -s
     eselect kernel list

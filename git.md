@@ -68,9 +68,10 @@ Migrate CVS to Git
 ------------------
 
      git cvsimport -k -d :ext:barm@ssh.barm.nichost.ru:/home/barm/cvsroot \
-                   -C to_dir johnstudio/barmadmin
+                   -A ~/tmp/authors_file -C to_dir johnstudio/barmadmin
 
 * `man gitcvs-migration`
+* `man git-cvsimport`
 * <http://www.chem.helsinki.fi/~jonas/git_guides/HTML/CVS2git>
 
 Undoing in Git - Reset, Checkout and Revert
