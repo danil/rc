@@ -21,23 +21,23 @@ Git
     git push origin master
     git pull origin master
 
-[Mirror Git repository][]
------------------------
+Mirror Git repository
+---------------------
+
+<http://toolmantim.com/thoughts/setting_up_a_new_remote_git_repository>
 
     git clone --bare git://github.com/sebnow/lake.git
     git remote add origin git://github.com/sebnow/lake.git
     git fetch
 
-[Mirror Git repository]: http://toolmantim.com/thoughts/setting_up_a_new_remote_git_repository
+Submodules
+----------
 
-[Submodules][]
-------------
+<http://progit.org/book/ru/ch5-8.html>
 
     git submodule add git://kutkevich.org/rc.git markdown/rc
     git submodule init
     git submodule update
-
-[Submodules]: http://progit.org/book/ru/ch5-8.html
 
 Diff
 ----
@@ -48,9 +48,9 @@ Diff
 Mirror Subversion repository to Git
 -----------------------------------
 
-### [With bare][]
+### With bare
 
-[With bare]: https://git.wiki.kernel.org/index.php/GitFaq#How_do_I_mirror_a_SVN_repository_to_git.3F
+<https://git.wiki.kernel.org/index.php/GitFaq#How_do_I_mirror_a_SVN_repository_to_git.3F>
 
 ### Without bare
 
@@ -62,7 +62,7 @@ Mirror Subversion repository to Git
 Migrate Subversion repository to Git
 ------------------------------------
 
-[Migrate Subversion repository to Git](http://jonmaddox.com/2008/03/05/cleanly-migrate-your-subversion-repository-to-a-git-repository/)
+<http://jonmaddox.com/2008/03/05/cleanly-migrate-your-subversion-repository-to-a-git-repository/>
 
 You have three steps there:
 
