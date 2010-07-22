@@ -44,10 +44,3 @@ Subversion
       "rails http://dev.rubyonrails.org/svn/rails/trunk" vendor
     svn up vendor
     svn propget svn:externals vendor
-
-Get a list of all Subversion commit author usernames
-----------------------------------------------------
-
-<http://stackoverflow.com/questions/2494984>
-
-    svn log --quiet | awk '/^r/ {print $3}' | sort -u

@@ -55,14 +55,40 @@ Mirror Subversion repository to Git
 ### Without bare
 
     git svn init -s http://google-code-prettify.googlecode.com/svn \
-        google-code-prettify3
-    git config svn.authorsfile .git/authors_file
+        google-code-prettify
+    cd google-code-prettify; git config svn.authorsfile .git/authors_file
     git svn fetch
 
-[Migrate Subversion repository to Git][]
---------------------------------------
+Migrate Subversion repository to Git
+------------------------------------
 
-[Migrate Subversion repository to Git]: http://jonmaddox.com/2008/03/05/cleanly-migrate-your-subversion-repository-to-a-git-repository/
+[Migrate Subversion repository to Git](http://jonmaddox.com/2008/03/05/cleanly-migrate-your-subversion-repository-to-a-git-repository/)
+
+You have three steps there:
+
+### Temporary repository
+
+    git svn init --no-metadata \
+     svn+ssh://li42-44.members.linode.com/var/svn/ska/skaonrails/trunk \
+     skaonrails_tmp
+    cd skaonrails_tmp; git config svn.authorsfile ~/tmp/authors_file_ska
+    git svn fetch
+
+#### Get all Subversion commit usernames
+
+<http://stackoverflow.com/questions/2494984>
+
+    svn log --quiet |awk '/^r/ {print $3}' |sort -u > ~/tmp/authors_file_ska
+
+### Clone from temporary repository
+
+    git --bare clone skaonrails_tmp skaonrails.git
+
+### Push to Gitorious
+
+<http://gitorious.org/about/faq>
+
+    git push git@gitorious.org:ska/skaonrails.git master
 
 Migrate CVS to Git
 ------------------

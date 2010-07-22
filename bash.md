@@ -118,6 +118,28 @@ diff
     diff --recursive --brief ~/dir1 ~/dir2| grep Only
     colordiff --ignore-space-change postgresql-8.4 ._cfg0000_postgresql-8.4
 
+
+Archiving and compression
+-------------------------
+
+### Tar
+
+    tar -xvvzf foobar.tar.gz
+
+### Gzip
+
+    gzip -v access.log
+    gzip -vd access.log.gz
+
+### Bzip2
+
+    bzip2 -v access.log
+    bzip2 -vd access.log.gz
+
+### Zip
+
+    zip -r foo.zip foo/
+
 Other
 -----
 
@@ -143,10 +165,6 @@ Other
     tzselect # Show what value to use for TZ environment variable.
     cal -3
     time tar -cvvzf foobar.tar.gz ./lib/ ./mobotix/ /usr/share/doc/
-    tar -xvvzf foobar.tar.gz
-    gzip -v access.log
-    gzip -vd access.log.gz
-    zip -r foo.zip foo/
     cp -a ~/var/www/ ~/tmp/
     top -b -n1
     uptime # load average: <last minute>, <last 5 minutes>, <15 minutes>
@@ -281,6 +299,7 @@ Other
     vlc -I ncurses
     vobcopy
     evolution --force-shutdown
+    feh --draw-filename --sort name --recursive --thumbnails ~/tmp
 
 DCTC
 ----
