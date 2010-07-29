@@ -129,7 +129,6 @@ Other
     rc-update add xdm default
     rc-update del xdm default
     env-update && source /etc/profile
-    eselect bashcomp enable --global gvfs
     find /etc -iname "._cfg????_*" 2> /dev/null
     CCACHE_DIR="/var/tmp/ccache" ccache -s
     eselect kernel list
