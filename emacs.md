@@ -653,6 +653,12 @@ PCL-CVS
         repository is far away. But of course, it will not be able to
         detect when a file needs to be updated or merged.
 
+Subversion
+----------
+
+<http://emacswiki.org/SvnStatusMode>,
+<http://svn.apache.org/repos/asf/subversion/trunk/contrib/client-side/emacs/psvn.el>
+
 Tags
 ----
 
