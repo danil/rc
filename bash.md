@@ -117,7 +117,7 @@ diff
 
     diff --recursive --brief ~/dir1 ~/dir2| grep Only
     colordiff --ignore-space-change postgresql-8.4 ._cfg0000_postgresql-8.4
-
+    colordiff --recursive prealpha.kutkevich-org/ alpha.kutkevich-org/
 
 Archiving and compression
 -------------------------
