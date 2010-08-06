@@ -761,6 +761,11 @@ Local Variables in Files
 
 [Local Variables in Files]: http://gnu.org/software/emacs/manual/html_node/emacs/File-Variables.html
 
+    /* Local Variables: */
+    /* mode:c           */
+    /* comment-column:0 */
+    /* End:             */
+
 ### First line
 
     # -*- coding: utf-8-unix; -*-
