@@ -123,6 +123,7 @@ Freeing Up Disk Space
 Other
 -----
 
+    revdep-rebuild --ignore
     revdep-rebuild --verbose --pretend --library libreadline.so.5
     lafilefixer --justfixit
     rc-update -v show
