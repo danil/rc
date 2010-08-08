@@ -215,7 +215,8 @@ Other
     wget ftp://anonymous@kutkevich.org/pub/ruby-1.8.7-p72.tar.gz
     wget -c -t inf --waitretry=30 -b --retry-connrefused \
          [-O output_file ] "ftp://192.168.1.1/file"
-    wget -r -l 0 "http://tinyerp.org/edoc/"
+    wget --recursive --level=0 \
+         --restrict-file-names=nocontrol "http://tinyerp.org/edoc/"
     host 192.168.132.44 192.168.8.1
     nslookup 172.16.81.4
     whois kutkevich.org
