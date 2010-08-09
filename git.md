@@ -109,6 +109,12 @@ Undoing in Git - Reset, Checkout and Revert
 
     git checkout -- app/views/homepages/index.en.html
 
+### Correct commit message
+
+<http://stackoverflow.com/questions/179123/how-do-i-edit-an-incorrect-commit-message-in-git>
+
+    git commit --amend -m "Your new message"
+
 ### Work tree
 
 #### Reset index
