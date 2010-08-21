@@ -36,6 +36,11 @@ Search and replace
         NEWNAME2=$(dirname "$I")/$NEWNAME1_$( basename "$I"); \
         mv "$I" "$NEWNAME2"; done;
 
+### ack
+
+    ack Webpage ~/src/jobtest-aviasales-ru/
+    ack -g array
+
 #### Remove empty dirs
 
     find -depth -type d -empty -exec rmdir {} \;
@@ -222,6 +227,7 @@ Other
          [-O output_file ] "ftp://192.168.1.1/file"
     wget --recursive --level=0 \
          --restrict-file-names=nocontrol "http://tinyerp.org/edoc/"
+    rtorrent -s ./.rtorrent
     host 192.168.132.44 192.168.8.1
     nslookup 172.16.81.4
     whois kutkevich.org
