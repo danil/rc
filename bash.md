@@ -68,6 +68,12 @@ Stream Editor
     awk '{ FS = "\t" ; OFS = "\t" ; if ( NR > 1 ) print $1,$3 }' \
         infile > outfile
 
+### tr
+
+#### Replacing returns with space
+
+    cat ./file |tr '\n' ' '
+
 env
 ---
 

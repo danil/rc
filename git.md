@@ -93,8 +93,8 @@ You have three steps there:
 Migrate CVS to Git
 ------------------
 
-     git cvsimport -k -d :ext:barm@ssh.barm.nichost.ru:/home/barm/cvsroot \
-                   -A ~/tmp/authors_file -C to_dir johnstudio/barmadmin
+    git cvsimport -k -d :ext:barm@ssh.barm.nichost.ru:/home/barm/cvsroot \
+                  -A ~/tmp/authors_file -C to_dir johnstudio/barmadmin
 
 * `man gitcvs-migration`
 * `man git-cvsimport`

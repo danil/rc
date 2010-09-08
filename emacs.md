@@ -777,7 +777,6 @@ Local Variables in Files
     # truncate-lines: t
     # End:
 
-
 Other
 -----
 
