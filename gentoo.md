@@ -98,11 +98,10 @@ List packages install from overlay <http://bugs.gentoo.org/204324>,
 
     eix --installed-overlay
 
-Without `eix` _very ugly matching_ only packages which have been
-installed from some overlay.
+#### Deprecated
 
-Пекеты вошедшие в список установленных и пренадлежаших оверлею
-(посчитанные дважды) _возможно_ были установленны из оверлея.
+Installed packages and listed in overlay (this command counts then
+twice) might be installed from overlay
 
     equery list -o |sort |uniq -c |sort -n
 
