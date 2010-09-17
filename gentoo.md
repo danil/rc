@@ -27,6 +27,10 @@ Emerge
     emerge --verbose --ask --depclean dev-lang/python
     emerge --info
 
+### Recompiling all packages on the system
+
+    emerge --emptytree world
+
 Equery
 -----
 
