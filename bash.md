@@ -122,6 +122,7 @@ ACPI
     cat /proc/acpi/thermal_zone/THR0/temperature
     cat /sys/class/power_supply
     cat /sys/devices/system/cpu/cpu1/online
+    cat /proc/cmdline
 
 diff
 ----
