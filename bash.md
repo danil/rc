@@ -157,6 +157,11 @@ Archiving and compression
 
     zip -r foo.zip foo/
 
+### Power Management
+
+    hibernate-ram
+    hibernate
+
 Other
 -----
 
