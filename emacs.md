@@ -777,6 +777,27 @@ Local Variables in Files
     # truncate-lines: t
     # End:
 
+Interactively Do Things
+-----------------------
+
+### (ido-edit-input function)
+
+    C-e
+
+Customization Interface
+-----------------------
+
+[See](http://gnu.org/software/emacs/manual/html_node/emacs/Easy-Customization.html)
+
+### (customize)
+
+Browse settings and change them.
+
+### (customize-group)
+
+Creates a customization buffer that shows the top-level Emacs group
+and the second-level groups immediately under it.
+
 Other
 -----
 
@@ -821,10 +842,3 @@ Choose the major mode for this buffer automatically
 
 Toggle read-only status of buffer
 <http://gnu.org/software/emacs/manual/html_node/emacs/Misc-Buffer.html>.
-
-Interactively Do Things
------------------------
-
-### (ido-edit-input function)
-
-    C-e
