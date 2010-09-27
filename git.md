@@ -21,6 +21,14 @@ Git
     git push origin master
     git pull origin master
 
+Branching
+---------
+
+<http://book.git-scm.com/3_basic_branching_and_merging.html>
+
+    git checkout production
+    git branch
+
 Mirror Git repository
 ---------------------
 
