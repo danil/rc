@@ -22,6 +22,7 @@ Rails
     ruby script/generate controller admin
     ruby script/generate migration add_price_to_product price:decimal
     cap -T
+    cap production deploy
     rake db:migrate VERSION=0
     RAILS_ENV=production rake db:migrate
     rake RAILS_ENV=production db:schema:load
