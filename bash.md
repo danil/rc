@@ -39,7 +39,7 @@ Search and replace
 ### ack
 
     ack Webpage ~/src/jobtest-aviasales-ru/
-    ack -g array
+    ack -g [a-z]+array
 
 #### Remove empty dirs
 
