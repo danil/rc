@@ -29,6 +29,7 @@ Branching and Merging
     git checkout production
     git branch
     git merge production
+    git branch breadcrumbs_1423
 
 Mirror Git repository
 ---------------------
