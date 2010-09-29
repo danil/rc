@@ -188,7 +188,7 @@ Other
     cal -3
     time tar -cvvzf foobar.tar.gz ./lib/ ./mobotix/ /usr/share/doc/
     cp -a ~/var/www/ ~/tmp/
-    top -b -n1
+    top -b -n1 |grep wpa
     uptime # load average: <last minute>, <last 5 minutes>, <15 minutes>
     hdparm -tT /dev/sda
     vmstat

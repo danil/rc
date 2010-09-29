@@ -2,7 +2,7 @@ Ruby Version Manager
 ====================
 
 rvm list known
-rvm install 1.9.2
+rvm --force install 1.9.2
 rvm use 1.9.2
 rvm info
 rvm use 1.8.7 --default
