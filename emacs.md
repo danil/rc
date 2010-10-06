@@ -182,7 +182,7 @@ Search/Replace with regular expressions
         (isearch-backward-regexp) Search for regular expression backward.
     M-x list-matching-lines
         Lines in a buffer that match regexp.
-    M-x replace-regexp <RET> regexp <RET> newstring <RET>
+    M-x replace-regexp <RET> {{\([^}]*\)}} <RET> %{\1} <RET>
         Replace every match for regexp with newstring.
     M-x query-replace-regexp <RET> regexp <RET> newstring <RET>
         Replace some matches for regexp with newstring.
@@ -779,6 +779,19 @@ Local Variables in Files
 
 Interactively Do Things
 -----------------------
+
+### History
+
+Recently visited files and directories
+
+Change to previous/next directories from the history:
+
+    M-p
+    M-n
+
+Search for a file matching your input:
+
+    M-s
 
 ### (ido-edit-input function)
 

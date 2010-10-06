@@ -12,6 +12,17 @@
 Rails
 =====
 
+Concole
+-------
+
+### Redirecting output to a file
+
+<http://stackoverflow.com/questions/2461503/rails-redirecting-console-output-to-a-file>
+
+    $stdout = File.new('console.out', 'w')
+
+Other
+-----
     rails -d postgresql hello_world
     mongrel_rails cluster::configure -e production -p 8000 -a 127.0.0.1 \
                   -N 2 -c /home/danil/var/www/hello_rails/current
