@@ -16,8 +16,8 @@ Git
     git config --global user.email danil@kutkevich.org
     git init
     git add .
-    git clone git://kutkevich.org/kutkevich-org.git
-    git status
+    git clone git://kutkevich.org/rc.git
+    git --git-dir=/home/danil/src/rc/.git --work-tree=/home/danil/src/rc status
     git push origin master
     git pull origin master
 
@@ -163,3 +163,5 @@ Other
     git log -p --since="1 day 2 hours" README
     git grep -e 'first' --and -e 'another'
     git fsck
+    for P in $(find /home/danil/src/ -mount -type d -name ".git" -exec echo '{}' \; |sed -e 's/\.git//'); \
+      do echo $P; done

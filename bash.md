@@ -169,6 +169,14 @@ Archiving and compression
     hibernate-ram
     hibernate
 
+### Mail
+
+<http://debian-administration.org/article/171/Send_an_HTML_file_as_email_from_the_command_line>
+
+    mail -a "Content-type: text/html;" \
+         -s "Employer" \
+         danil@kutkevich.org < ./htdocs/index.html
+
 Other
 -----
 

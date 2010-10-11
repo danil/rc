@@ -44,7 +44,7 @@ Show system variables
 Create user
 -----------
 
-    GRANT CREATE, INSERT, DELETE, UPDATE, SELECT
+    GRANT CREATE, INSERT, DELETE, UPDATE, SELECT, DROP, INDEX, ALTER
      ON danil.* TO 'danil'@'localhost' IDENTIFIED BY 'password';
 
 Privileges: ALL, CREATE, DELETE, GRANT OPTION, INSERT, SELECT, SHOW

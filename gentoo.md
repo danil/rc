@@ -60,7 +60,6 @@ USE flags
     euse --info ogg
     equery uses app-editors/emacs
 
-
 Layman
 ------
 
@@ -122,6 +121,14 @@ Freeing Up Disk Space
     eclean distfiles
 
 <http://en.gentoo-wiki.com/wiki/Freeing_Up_Disk_Space#Removing_Ancient_Distfiles_and_Binaries>
+
+TAB-Completion
+--------------
+
+<http://en.gentoo-wiki.com/wiki/TAB-Completion#Other_commands>:
+
+    for i in $(ls --color=no /usr/share/bash-completion/); \
+      do eselect bashcomp enable $i; done
 
 Other
 -----
