@@ -151,7 +151,7 @@ Find not commited changes
 
     for P in $(find /home/danil/ -mount -name ".git" -exec echo '{}' \; \
                |sed -e 's/\.git//' ) ; do \
-        echo "$P" ;
+        echo "$P" ; \
         git --git-dir="$P.git" --work-tree="$P" status --short ; \
     done
 
