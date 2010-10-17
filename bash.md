@@ -163,6 +163,7 @@ Archiving and compression
 ### Zip
 
     zip -r foo.zip foo/
+    unzip foo.zip
 
 ### Power Management
 
@@ -254,6 +255,16 @@ Other
          [-O output_file ] "ftp://192.168.1.1/file"
     wget --recursive --level=0 \
          --restrict-file-names=nocontrol "http://tinyerp.org/edoc/"
+    wget --recursive \
+         --domains=www.prohq.ru,prohq.ru \
+         --level=999 \
+         --restrict-file-names=nocontrol \
+         --ignore-tags=img \
+         http://www.prohq.ru
+    wget --page-requisites \
+         --convert-links \
+         --reject "robots.txt" \
+         http://localhost:3000/maillists-invitations-contractor.html
     rtorrent -s ./.rtorrent
     host 192.168.132.44 192.168.8.1
     nslookup 172.16.81.4
@@ -470,6 +481,11 @@ In a tty terminal, not a terminal window (get there with [Ctrl] +
 
     xdpyinfo | grep "dots per inch"
     xdpyinfo | grep dimensions
+
+### xautolock
+
+    xautolock -disable
+    xautolock -enable
 
 ### Other
 

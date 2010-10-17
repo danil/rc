@@ -146,6 +146,13 @@ Undoing in Git - Reset, Checkout and Revert
 
     git reset --soft HEAD~1
 
+Find not commited changes
+-------------------------
+
+    for P in $(find /home/danil/src/ -mount -name ".git" -exec echo '{}' \; \
+               |sed -e 's/\.git//' ); do \
+        echo -e "\n$P" ; git --git-dir="$P.git" --work-tree="$P" status ; done
+
 Other
 -----
 
@@ -163,5 +170,3 @@ Other
     git log -p --since="1 day 2 hours" README
     git grep -e 'first' --and -e 'another'
     git fsck
-    for P in $(find /home/danil/src/ -mount -type d -name ".git" -exec echo '{}' \; |sed -e 's/\.git//'); \
-      do echo $P; done
