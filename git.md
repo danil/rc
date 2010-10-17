@@ -149,7 +149,7 @@ Undoing in Git - Reset, Checkout and Revert
 Find not commited changes
 -------------------------
 
-    for P in $(find . -mount -name ".git" -exec echo '{}' \; \
+    for P in $(find /home/danil/ -mount -name ".git" -exec echo '{}' \; \
                |sed -e 's/\.git//' ) ; do \
         echo "$P" ;
         git --git-dir="$P.git" --work-tree="$P" status --short ; \
