@@ -178,6 +178,24 @@ Archiving and compression
          -s "Employer" \
          danil@kutkevich.org < ./htdocs/index.html
 
+Random
+------
+
+### Random number (integer) within a range from 4 to 9
+
+    echo $(( 4+(`od -An -N2 -i /dev/random` )%(9-4+1) ))
+
+### String generator
+
+    dd if=/dev/random bs=1 count=16 |base64
+
+### Other
+
+    dd if=/dev/urandom count=1 2> /dev/null \
+     | uuencode -m - \
+     | sed -ne 2p \
+     | cut -c-8
+
 Other
 -----
 
@@ -297,9 +315,6 @@ Other
     dd if=/dev/sdb of=mybackup.img bs=130M count=1
     dd if=bootldr.rom of=/dev/sdb
     dd if=debian-eeepc.img of=/dev/sdf
-    # Random number (integer) within a range from 4 to 9.
-    echo $(( 4+(`od -An -N2 -i /dev/random` )%(9-4+1) ))
-    dd if=/dev/random bs=1 count=16 |base64 # String generator.
     modprobe loop; mount -t iso9660 -o loop tmp/fdfullcd.iso mnt/iso
     mount -t vfat /dev/sdc1 mnt/usbdisk/ \
           -o uid=danil,gid=danil,nosuid,shortname=mixed,umask=077

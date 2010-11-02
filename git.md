@@ -31,6 +31,13 @@ Branching and Merging
     git merge production
     git branch breadcrumbs_1423
 
+Stash
+-----
+
+    git stash
+    git pop
+    git apply
+
 Mirror Git repository
 ---------------------
 
@@ -54,6 +61,10 @@ Diff
 
     git diff --color-words --cached
     git diff HEAD^^^ HEAD
+
+### Between two branches
+
+    git diff --name-status production..master
 
 Mirror Subversion repository to Git
 -----------------------------------

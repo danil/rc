@@ -21,6 +21,15 @@ Concole
 
     $stdout = File.new('console.out', 'w')
 
+Mail
+----
+
+PROhq mail view test:
+
+    u = User.find_by_email("danil@kutkevich.org")
+    p = Project.suitable_for(u)
+    SubscriptionMailer.deliver_suitable_projects(u, p)
+
 Other
 -----
     rails -d postgresql hello_world
