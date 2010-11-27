@@ -40,6 +40,7 @@ Show system variables
 ---------------------
 
     SHOW VARIABLES LIKE '%character%';
+    SELECT @@global.time_zone, @@session.time_zone;
 
 Create user
 -----------

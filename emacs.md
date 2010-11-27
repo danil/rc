@@ -479,6 +479,8 @@ Shell
 
 <http://gnu.org/software/emacs/manual/html_node/emacs/Term-Mode.html>
 
+    M-x term
+
     C-c C-j
         Switch to line mode.
 

@@ -12,6 +12,16 @@
 Rails
 =====
 
+Server
+------
+
+    ./script/server --environment=development_accounting
+
+Rake
+----
+
+    rake RAILS_ENV=production ts:in:delta
+
 Concole
 -------
 

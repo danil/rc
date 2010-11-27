@@ -429,8 +429,14 @@ Advanced Packaging Tool
     apt-get --purge remove xyz
     apt-get clean
     apt-cdrom [-d /home/danil/mnt/cdrom] add
+
+### Finding which package contains a file
+
+<http://debian-administration.org/articles/334>
+
     apt-file update
     apt-file search stdio.h
+
     apt-key add archive-key-eeepc.asc
     apt-mark unmarkauto
     reprepro

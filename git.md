@@ -166,6 +166,12 @@ Find not commited changes
         git --git-dir="$P.git" --work-tree="$P" status --short ; \
     done
 
+Log
+---
+
+    git log --reverse
+    git log -p --since="1 day 2 hours" README
+
 Other
 -----
 
@@ -180,6 +186,5 @@ Other
     git checkout new-feature
     git branch -d new-branch
     git merge new-feature
-    git log -p --since="1 day 2 hours" README
     git grep -e 'first' --and -e 'another'
     git fsck
