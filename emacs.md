@@ -857,3 +857,7 @@ Choose the major mode for this buffer automatically
 
 Toggle read-only status of buffer
 <http://gnu.org/software/emacs/manual/html_node/emacs/Misc-Buffer.html>.
+
+<!-- Local Variables: -->
+<!-- mode: markdown   -->
+<!-- End:             -->

@@ -364,7 +364,7 @@ Other
     vlc -I ncurses
     vobcopy
     evolution --force-shutdown
-    feh --draw-filename --sort name --recursive --thumbnails ~/tmp
+    feh --draw-filename --sort name --recursive --thumbnails --fullscreen ~/tmp
 
 DCTC
 ----
@@ -450,6 +450,7 @@ Advanced Packaging Tool
     aptitude search . |grep "^i   " \
                       |awk '{ FS = " " ; OFS = " " ; print $2 }' \
                       |less -SI
+    aptitude show catdoc
 
 Debian package
 --------------
