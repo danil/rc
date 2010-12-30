@@ -33,8 +33,9 @@ Dump
 with latin1 character set.  But data stored in database may be utf8.
 
     mysqldump -h 172.168.1.2 -u danil -p \
-     --default-character-set=latin1 -r ~/backup.sql db_name \
-     my_table, my_table_2
+     --default-character-set=latin1 -r   \
+     --no-create-info --complete-insert  \
+     ~/backup.sql db_name my_table, my_table_2
 
 Show system variables
 ---------------------
@@ -220,3 +221,10 @@ Update columns
 
     UPDATE mobotix.menus SET article_text='' WHERE id='63';
     Query OK, 1 row affected (0.01 sec)
+
+Disable foreign key constraint check
+------------------------------------
+
+    SET FOREIGN_KEY_CHECKS = 0;
+    SOURCE dump_file_name;
+    SET FOREIGN_KEY_CHECKS = 1;
