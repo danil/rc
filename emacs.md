@@ -813,6 +813,15 @@ Browse settings and change them.
 Creates a customization buffer that shows the top-level Emacs group
 and the second-level groups immediately under it.
 
+Haskell
+-------
+
+### Load the code into the GHC intepreter
+
+<http://learnhaskell.blogspot.com/2007/09/lesson-1-hello-world.html>
+
+    C-c C-l
+
 Other
 -----
 
