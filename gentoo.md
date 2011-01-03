@@ -18,12 +18,12 @@ Emerge
     MAKEOPTS="-j1" emerge --verbose --ask --oneshot sys-libs/glibc
     emerge --verbose --search emacs
     emerge --sync
-    USE="-mmx" emerge --verbose --pretend --deep --update --newuse world
+    USE="-mmx" emerge --pretend -1 --verbose --deep --update --newuse world
     emerge --verbose --ask --deep --emptytree --newuse world
     emerge --verbose --ask --unmerge mail-mta/ssmtp
     emerge --prune gentoo-sources
     emerge --verbose --ask --deep --noreplace =gentoo-sources-2.6.30-r4
-    emerge --verbose --ask --deep --depclean
+    emerge --pretend -1 --verbose --deep --depclean
     emerge --verbose --ask --depclean dev-lang/python
     emerge --info
 
