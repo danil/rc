@@ -193,6 +193,20 @@ Search/Replace with regular expressions
     M-x apropos
         Finding a command by a regular expression.
 
+### (ibuffer-do-occur)
+
+Do an occur on the selected buffers
+
+In Ibuffer mode <http://emacswiki.org/emacs/IbufferMode>,
+<http://emacsmirror.org/package/ibuffer.html>:
+
+    O
+
+### (find-grep)
+
+<http://gnu.org/software/emacs/manual/html_node/emacs/Dired-and-Find.html>,
+<http://gnu.org/software/emacs/manual/html_node/emacs/Grep-Searching.html>.
+
 [Window commands][]
 -----------------
 
@@ -397,6 +411,13 @@ Unmark by regexp
                                   -exec grep -q -e danil\\.kutkevich \{\} \;
 
 Find and list files inside a directory, including subdirectories.
+
+### (find-grep-dired)
+
+Test the contents of files
+<http://gnu.org/software/emacs/manual/html_node/emacs/Grep-Searching.html>,
+<http://gnu.org/software/emacs/manual/html_node/emacs/Dired-and-Find.html>,
+<http://www.gnu.org/software/emacs/windows/Text-and-Utility-modes.html>.
 
 Operating on Files
 ------------------

@@ -133,6 +133,7 @@ TAB-Completion
 Other
 -----
 
+    revdep-rebuild --pretend
     revdep-rebuild --ignore
     revdep-rebuild --verbose --pretend --library libreadline.so.5
     lafilefixer --justfixit

@@ -35,7 +35,7 @@ with latin1 character set.  But data stored in database may be utf8.
     mysqldump -h 172.168.1.2 -u danil -p \
      --default-character-set=latin1 -r   \
      --no-create-info --complete-insert  \
-     ~/backup.sql db_name my_table, my_table_2
+     --result-file=~/backup.sql db_name my_table, my_table_2
 
 Show system variables
 ---------------------

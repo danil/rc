@@ -31,6 +31,10 @@ Branching and Merging
     git merge production
     git branch breadcrumbs_1423
 
+### Delete remoute branch
+
+    git push origin :accounting
+
 Stash
 -----
 
@@ -62,7 +66,13 @@ Diff
     git diff --color-words --cached
     git diff HEAD^^^ HEAD
 
+### diffstat of binary files
+
+    git diff --stat public/images/article_pics/1.jpg
+
 ### Between two branches
+
+<http://stackoverflow.com/questions/822811/differences-in-git-branches#answer-822859>
 
     git diff --name-status production..master
 
@@ -170,7 +180,17 @@ Log
 ---
 
     git log --reverse
-    git log -p --since="1 day 2 hours" README
+    git log --patch --since="1 day 2 hours" README
+    git log --author="Danil" HEAD^^^ HEAD
+
+History of a file
+-----------------
+
+<http://stackoverflow.com/questions/278192/git-how-do-i-view-the-change-history-of-a-file>
+
+    gitk app/controllers/accounting/addresses_controller.rb
+    git log --patch app/controllers/accounting/addresses_controller.rb
+
 
 Other
 -----
@@ -188,3 +208,4 @@ Other
     git merge new-feature
     git grep -e 'first' --and -e 'another'
     git fsck
+    git cherry-pick 92117a11fdfdb75a72dd8d3f1c5f25800e827589

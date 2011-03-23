@@ -36,6 +36,14 @@ Search and replace
         NEWNAME2=$(dirname "$I")/$NEWNAME1_$( basename "$I"); \
         mv "$I" "$NEWNAME2"; done;
 
+#### Search and remove file with inode number
+
+<http://unix.com/solaris/23278-file-no-name.html>
+<http://www.cyberciti.biz/tips/delete-remove-files-with-inode-number.html>
+
+    ls -il /var/ftp/incoming
+    find /var/ftp/incoming -inum [inode-number] -exec rm {} \;
+
 ### ack
 
     ack Webpage ~/src/jobtest-aviasales-ru/
@@ -80,6 +88,30 @@ Stream Editor
 #### Replacing returns with space
 
     cat ./file |tr '\n' ' '
+
+Date and time
+-------------
+
+    date +%z
+    date -s "2008-04-30 08:48:0" # YYYY-mm-dd HH:MM:S (ISO 8601).
+    date -s "041501482008" # mmddHHMMYYYY (OpenWRT).
+    tzselect # Show what value to use for TZ environment variable.
+
+### Hardware clock (RTC)
+
+<http://en.qi-hardware.com/wiki/Ben_NanoNote_TimeZone_Date_and_Calendar_HOWTO>
+
+    hwclock --systohc --localtime
+
+### ntpdate
+
+    ntpdate -u -d 192.168.91.2
+
+### ntpd
+
+    ntpdc -c sysinfo -n # Stratum 3 is good enough.
+    ntpq -c readvar
+    ntpq -c peers
 
 env
 ---
@@ -215,10 +247,6 @@ Other
     gpg --keyserver subkeys.pgp.net --recv-keys 17072058
     gpg --verify <signature file> <downloaded iso>
     free
-    date +%z
-    date -s "2008-04-30 08:48:0" # YYYY-mm-dd HH:MM:S (ISO 8601).
-    date -s "041501482008" # mmddHHMMYYYY (OpenWRT).
-    tzselect # Show what value to use for TZ environment variable.
     cal -3
     time tar -cvvzf foobar.tar.gz ./lib/ ./mobotix/ /usr/share/doc/
     cp -a ~/var/www/ ~/tmp/
@@ -273,7 +301,8 @@ Other
          [-O output_file ] "ftp://192.168.1.1/file"
     wget --recursive --level=0 \
          --restrict-file-names=nocontrol "http://tinyerp.org/edoc/"
-    wget --recursive \
+    wget --load-cookies=cookies.txt \
+         --recursive \
          --domains=www.prohq.ru,prohq.ru \
          --level=999 \
          --restrict-file-names=nocontrol \
@@ -324,6 +353,9 @@ Other
     mount --rbind olddir newdir
     df -hi
     du -hx ./ |grep -E ^[0-9.,]+[MG]
+    find  -ctime +30 -daystart -type d \
+      | xargs du -b 2>/dev/null \
+      | awk '{total += $1; print $0} END{print total}'
     fsck /dev/sdg1
     touch /forcefsck
     fdisk -l /dev/sdb
@@ -413,6 +445,7 @@ Users and groups
     userdel -r danil
     deluser --remove-all-files --backup --backup-to /home/danil/ danil
     passwd danil
+    grpck
 
 APT
 ---
@@ -507,7 +540,6 @@ In a tty terminal, not a terminal window (get there with [Ctrl] +
 ### xautolock
 
     xautolock -disable
-    xautolock -enable
 
 ### Other
 
@@ -564,18 +596,6 @@ iptables
     iptables -L traffic -vx
     iptables -t nat -A POSTROUTING -o eth0 \
              -s 192.168.0.202/32 -j MASQUERADE
-
-ntpdate
--------
-
-    ntpdate -u -d 192.168.91.2
-
-ntpd
-----
-
-    ntpdc -c sysinfo -n # Stratum 3 is good enough.
-    ntpq -c readvar
-    ntpq -c peers
 
 mpd
 ---
