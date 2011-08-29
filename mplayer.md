@@ -17,6 +17,12 @@ MPlayer
             -stop-xscreensave -alang ru \
             -sub Pioneer.One.srt big_buck_bunny_720_stereo.ogg
     mplayer dvd://1 -dvd-device "mnt/tmp/dir"
+
+Webcam
+------
+
+<http://en.gentoo-wiki.com/wiki/Webcam#Mplayer>
+
     mplayer tv:// -tv driver=v4l2:width=160:height=120:device=/dev/video0
 
 Smooth playback

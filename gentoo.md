@@ -17,7 +17,6 @@ Emerge
 
     MAKEOPTS="-j1" emerge --verbose --ask --oneshot sys-libs/glibc
     emerge --verbose --search emacs
-    emerge --sync
     USE="-mmx" emerge --pretend -1 --verbose --deep --update --newuse world
     emerge --verbose --ask --deep --emptytree --newuse world
     emerge --verbose --ask --unmerge mail-mta/ssmtp
@@ -29,6 +28,7 @@ Emerge
 
 ### Recompiling all packages on the system
 
+    emerge --emptytree system
     emerge --emptytree world
 
 Equery
@@ -72,7 +72,6 @@ Layman
     layman --add=allenjb
     layman --delete=sunrise
     layman --sync=sunrise
-    layman --sync-all
 
 Ebuild
 ------
@@ -130,9 +129,24 @@ TAB-Completion
     for i in $(ls --color=no /usr/share/bash-completion/); \
       do eselect bashcomp enable $i; done
 
+Updates
+-------
+
+### Kernel
+
+    module-rebuild list
+    module-rebuild populate && module-rebuild rebuild
+
+### Other
+
+    python-updater
+    emacs-updater
+    haskell-updater
+
 Other
 -----
 
+    sudo sh -c "layman --sync-all ; sudo emerge --sync ; sudo eix-update"
     revdep-rebuild --pretend
     revdep-rebuild --ignore
     revdep-rebuild --verbose --pretend --library libreadline.so.5
@@ -146,8 +160,6 @@ Other
     eselect kernel list
     eselect kernel set 1
     eselect news list
-    module-rebuild list
-    module-rebuild populate; module-rebuild rebuild
 
 Clean out your world file with app-portage/udept
 <http://forums.gentoo.org/viewtopic-t-142475.html>:

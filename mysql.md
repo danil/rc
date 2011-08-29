@@ -222,6 +222,11 @@ Update columns
     UPDATE mobotix.menus SET article_text='' WHERE id='63';
     Query OK, 1 row affected (0.01 sec)
 
+    UPDATE users
+        SET portfolio_projects_count=(
+            SELECT COUNT(id) FROM portfolio_projects WHERE user_id=users.id
+            );
+
 Disable foreign key constraint check
 ------------------------------------
 

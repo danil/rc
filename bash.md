@@ -123,8 +123,16 @@ To clear the environment:
 
     env -i /bin/sh
 
-Remote shell
-------------
+Network
+-------
+
+    ngrep -d lo |less
+
+### Used ports
+
+    netstat -tnlp
+
+### Remote shell
 
     telnet mail.omskportal.ru 25
 
@@ -136,15 +144,14 @@ Remote shell
     ssh-copy-id -i ~/.ssh/id_rsa.pub "anonymous@kutkevich.org -p 2000"
     sshfs -p 61022 kutkevich.org:/home/danil/ mnt/kutkevich_org/
 
-### SSH tunneling
+#### SSH tunneling
 
 <http://revsys.com/writings/quicktips/ssh-tunnel.html>
 
     ssh -f root@stampy -L 2000:homer:22 -N
     ssh -p 2000 danil@localhost
 
-Nmap
-----
+### Nmap
 
 Discover (scanner) hosts and services on a computer network.
 
@@ -162,6 +169,7 @@ ACPI
     cat /sys/class/power_supply
     cat /sys/devices/system/cpu/cpu1/online
     cat /proc/cmdline
+    zcat /proc/config.gz |grep CONFIG_SYSVIPC
 
 diff
 ----
@@ -194,6 +202,7 @@ Archiving and compression
 
 ### Zip
 
+    zip file-to-archive.zip file-to-archive
     zip -r foo.zip foo/
     unzip foo.zip
 
@@ -213,13 +222,13 @@ Archiving and compression
 Random
 ------
 
-### Random number (integer) within a range from 4 to 9
-
-    echo $(( 4+(`od -An -N2 -i /dev/random` )%(9-4+1) ))
-
 ### String generator
 
     dd if=/dev/random bs=1 count=16 |base64
+
+### Password within a range from 5 to 9 length
+
+    pwgen --symbols $(( 5+(`od -An -N2 -i /dev/random` )%(9-5+1) )) 1
 
 ### Other
 
@@ -227,6 +236,24 @@ Random
      | uuencode -m - \
      | sed -ne 2p \
      | cut -c-8
+
+Kernel modules
+--------------
+
+    lsmod |grep vb
+    rmmod vboxdrv
+    modprobe vboxdrv
+
+Images
+------
+
+### View
+
+    feh --draw-filename --sort name --recursive --thumbnails --fullscreen ~/tmp
+
+### ImageMagick
+
+    convert ~/tmp/screenshot.png -quality 30 ~/tmp/screenshot.jpg
 
 Other
 -----
@@ -255,8 +282,6 @@ Other
     hdparm -tT /dev/sda
     vmstat
     iostat
-    netstat -l -t -p
-    ngrep -d lo |less
     cat /etc/passwd
     cat /etc/group
     grep MemTotal /proc/meminfo
@@ -291,10 +316,9 @@ Other
     lspci
     lsusb
     ethtool -i eth0
-    lsmod |grep fuse
-    modprobe fuse
     nohup iceweasel
     setterm -blength 0
+    tput colors
     curl -v -H "Accept: application/xrds+xml" -X HEAD http://www.yahoo.com/
     wget ftp://anonymous@kutkevich.org/pub/ruby-1.8.7-p72.tar.gz
     wget -c -t inf --waitretry=30 -b --retry-connrefused \
@@ -344,7 +368,8 @@ Other
     dd if=/dev/sdb of=mybackup.img bs=130M count=1
     dd if=bootldr.rom of=/dev/sdb
     dd if=debian-eeepc.img of=/dev/sdf
-    modprobe loop; mount -t iso9660 -o loop tmp/fdfullcd.iso mnt/iso
+    bchunk Dungeon_Keeper.BIN Dungeon_Keeper.cue Dungeon_Keeper.iso
+    modprobe loop && mount -t iso9660 -o loop tmp/fdfullcd.iso mnt/iso
     mount -t vfat /dev/sdc1 mnt/usbdisk/ \
           -o uid=danil,gid=danil,nosuid,shortname=mixed,umask=077
     mount -t ext2 ~/restore.img /mnt/img -o ro,loop,offset=32256
@@ -396,7 +421,6 @@ Other
     vlc -I ncurses
     vobcopy
     evolution --force-shutdown
-    feh --draw-filename --sort name --recursive --thumbnails --fullscreen ~/tmp
 
 DCTC
 ----
@@ -414,18 +438,6 @@ Wine
     msiexec /i file.msi
     wine start FluffyBunnySetup.msi
 
-    ./configure --prefix=$HOME --with-baseruby="/home/danil/bin/ruby" \
-                --enable-shared --enable-pthread --enable-install-doc
-    su -c make -f Makefile.cvs install
-    make && make install
-    make menuconfig # make oldconfig
-    echo $?
-    screen btdownloadcurses some.torrent
-    screen -S debian_torrent
-    screen -r <PID> # Reconnect to screen.
-    screen -RD
-    screen -x debian_torrent # Reconnect to screen.
-
 Users and groups
 ----------------
 
@@ -438,8 +450,8 @@ Users and groups
     groupdel danil
     delgroup --only-if-empty danil
     useradd -D
-    useradd -c "Danil Kutkevich" -U -G fuse,cvs \
-            -m -b /home/.rails/ -s /bin/bash danil
+    useradd --comment "Danil Kutkevich" --user-group --groups fuse,cvs \
+            --create-home --base-dir /home/.rails/ --shell /bin/bash danil
     usermod -c "Danil Kutkevich" -d /home/danil -m \
             -g danil -G fuse,cvs -a -l danil -s /bin/bash danil
     userdel -r danil
@@ -458,7 +470,7 @@ Advanced Packaging Tool
     apt-cash [--full] search emacs
     apt-cash show emacs
     apt-cache depends penguin-command
-    sudo apt-get -t testing install emacs22-nox
+    apt-get -t testing install emacs22-nox
     apt-get --purge remove xyz
     apt-get clean
     apt-cdrom [-d /home/danil/mnt/cdrom] add
@@ -555,6 +567,17 @@ In a tty terminal, not a terminal window (get there with [Ctrl] +
     xvidtune
     xdpyinfo |grep "depth of root"
     xrandr # .xinitc, .xsesson, .gnomerc
+    ./configure --prefix=$HOME --with-baseruby="/home/danil/bin/ruby" \
+                --enable-shared --enable-pthread --enable-install-doc
+    su -c make -f Makefile.cvs install
+    make && make install
+    make menuconfig # make oldconfig
+    echo $?
+    screen btdownloadcurses some.torrent
+    screen -S debian_torrent
+    screen -r <PID> # Reconnect to screen.
+    screen -RD
+    screen -x debian_torrent # Reconnect to screen.
 
 ALSA
 ----
@@ -618,6 +641,8 @@ GTK
 upsc
 ----
 
+Network UPS Tools (NUT) <http://en.gentoo-wiki.com/wiki/NUT>.
+
     upsc ippon@localhost
 
 Keyboard shortcut
@@ -631,3 +656,9 @@ Files
 -----
 
     /etc/acpi/actions/suspend.sh
+
+VirtualBox
+----------
+
+    mount -t vboxsf -o uid=1000,gid=1000 share ~/mnt/share
+    VBoxManage clonevdi xp_ie7.vdi xp_ie8.vd

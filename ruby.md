@@ -30,17 +30,3 @@ Other
 -----
 
     ruby -r rubygems ts_feed2imap.rb
-
-RubyGems
-========
-
-Installation
-------------
-
-    ruby ./rubygems-1.3.0/setup.rb --no-rdoc --no-ri
-
-Commands
---------
-
-    gem install --include-dependencies --no-rdoc --no-ri rails
-    gem install rails -s http://gems.rubyonrails.org

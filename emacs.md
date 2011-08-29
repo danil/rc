@@ -69,6 +69,18 @@ Motion
         putting point at the beginning and the mark at the end. In some
         programs this is called "select all".
 
+### 11.1 Setting the Mark
+
+Here are some commands for setting the mark:
+
+#### (exchange-point-and-mark)
+
+Set the mark at point, and move point where the mark was:
+
+    C-x C-x
+
+Useful with `(isearch-forward)` to go back to where you were.
+
 12.1 Deletion
 -------------
 
@@ -124,12 +136,6 @@ Indentation
         (indent-region) Indent lines in the region to the same column.
     C-x <TAB>
         (indent-rigidly) Shift lines in the region rigidly right or left.
-
-Programming
------------
-
-    M-;
-        Formatize and indent comment.
 
 Important
 ---------
@@ -567,13 +573,30 @@ C, C++, PHP and Java Modes
         with one del-press.
     C-c C-u
         Go to beginning of this preprocessor statement.
+
+30.5.1 Comment Commands
+-----------------------
+
+<http://gnu.org/software/libtool/manual/emacs/Comment-Commands.html>
+
+    M-;
+Insert or realign comment on current line; alternatively, comment or
+uncomment the region (comment-dwim).
+
+    C-u M-;
+Kill comment on current line (comment-kill).
+
+### Other
+
     C-c C-c (comment-region)
-        This command comments out the lines that start in the region. With
-        a negative argument, it does the opposite - it deletes the comment
-        delimiters from these lines. See Multi-Line Comments, for fuller
-        details. comment-region isn't actually part of CC Mode - it is
-        given a CC Mode binding for convenience.
+This command comments out the lines that start in the region. With
+a negative argument, it does the opposite - it deletes the comment
+delimiters from these lines. See Multi-Line Comments, for fuller
+details. comment-region isn't actually part of CC Mode - it is
+given a CC Mode binding for convenience.
+
     M-x uncomment-region
+
 
 More general
 ------------

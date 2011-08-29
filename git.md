@@ -27,9 +27,32 @@ Branching and Merging
 <http://book.git-scm.com/3_basic_branching_and_merging.html>
 
     git checkout production
-    git branch
+    git branch -a
     git merge production
-    git branch breadcrumbs_1423
+    git branch breadcrumbs-1423
+
+<http://stackoverflow.com/questions/658885/how-do-you-get-git-to-always-pull-from-a-specific-branch#answer-659804>
+    git config branch.breadcrumbs-1423.remote origin
+    git config branch.breadcrumbs-1423.merge refs/heads/production
+
+    git branch -d breadcrumbs-1423
+
+### Rename
+
+    git branch -m guarantee-with-admin guarantee-with-admin-production
+
+#### Remote branch
+
+origin/master to origin/master-old
+<http://stackoverflow.com/questions/1526794/git-rename-remote-branch#answer-1527004>
+
+    git branch -m master master-old
+
+Delete master
+    git push origin :master
+
+Create master-old on remote
+    git push origin master-old
 
 ### Delete remoute branch
 
@@ -41,6 +64,7 @@ Stash
     git stash
     git pop
     git apply
+    git stash show --patch
 
 Mirror Git repository
 ---------------------
@@ -60,10 +84,18 @@ Submodules
     git submodule init
     git submodule update
 
+Remove submodule
+----------------
+
+<http://stackoverflow.com/questions/1260748/how-do-i-remove-a-git-submodule>
+
+* Delete the relevant line from the `.gitmodules`
+* Delete the relevant section from `.git/config`
+
 Diff
 ----
 
-    git diff --color-words --cached
+    git diff --cached --color-words
     git diff HEAD^^^ HEAD
 
 ### diffstat of binary files
@@ -155,6 +187,12 @@ Undoing in Git - Reset, Checkout and Revert
 
 #### Reset commit
 
+<http://stackoverflow.com/questions/927358/git-undo-last-commit#answer-927386>
+
+    git reset --soft HEAD^
+
+##### Hard
+
 "Жёсткий" реcет (следует использовать с осторожностью) вернет дерево
 проекта и индекс в состояние, соответствующее указанному коммиту,
 удалив изменения последующих коммитов.
@@ -166,6 +204,27 @@ Undoing in Git - Reset, Checkout and Revert
 [Git reset allow soft in a bare repo](http://kerneltrap.org/mailarchive/git/2007/7/14/251527)
 
     git reset --soft HEAD~1
+
+Patch
+-----
+
+<http://ariejan.net/2009/10/26/how-to-create-and-apply-a-patch-with-git>
+
+    git format-patch master --stdout > guarantee-with-admin.patch
+    git apply --stat guarantee-with-admin.patch
+    git apply --check guarantee-with-admin.patch
+    git am --reject guarantee-with-admin.patch
+    git am --abort
+
+Rebase
+------
+
+    git checkout guarantee-with-admin
+    git branch guarantee-with-admin-for-rebase
+    git rebase --onto production master guarantee-with-admin-for-rebase
+    git checkout production
+    git merge guarantee-with-admin-for-rebase
+    git branch -D guarantee-with-admin-for-rebase
 
 Find not commited changes
 -------------------------
@@ -191,6 +250,25 @@ History of a file
     gitk app/controllers/accounting/addresses_controller.rb
     git log --patch app/controllers/accounting/addresses_controller.rb
 
+grep
+----
+
+    git grep -e 'first' --and -e 'another'
+
+### Through all commits
+
+<http://stackoverflow.com/questions/2928584/how-to-grep-in-the-git-history#answer-2929502>
+
+    git grep 'TODO' $(git rev-list --all)
+
+Show
+----
+
+Get a file from a specific revision
+<http://stackoverflow.com/questions/610208/how-to-retrieve-a-single-file-from-specific-revision-in-git#answer-610315>.
+
+    git show HEAD^^^:public/javascripts/jquery.maskedinput.js \
+             > public/javascripts/jquery.maskedinput.js
 
 Other
 -----
@@ -201,11 +279,6 @@ Other
     git commit -a -m 'Some commit.'
     git cat-file blob HEAD^:htdocs/bookmarks/index.md
     git remote add origin ssh://danil@kutkevich.org/var/git/kutkevich-org.git
-    git branch
-    git branch new-feature
-    git checkout new-feature
-    git branch -d new-branch
-    git merge new-feature
-    git grep -e 'first' --and -e 'another'
     git fsck
     git cherry-pick 92117a11fdfdb75a72dd8d3f1c5f25800e827589
+    git tag -l
