@@ -12,9 +12,9 @@
 AWK
 ====
 
-     function to_mysql_data(data) {
-          return gensub(/([0-9]+)\.([0-9]+)\.([0-9]+)/, "\\3-\\2-\\1", "g", data)
-     }
+    function to_mysql_data(data) {
+        return gensub(/([0-9]+)\.([0-9]+)\.([0-9]+)/, "\\3-\\2-\\1", "g", data)
+    }
     {
         FS = "|"
         OFS = "|"

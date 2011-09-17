@@ -201,6 +201,13 @@ Describe columns
     +------------+----------+------+-----+---------+----------------+
     5 rows in set (0.00 sec)
 
+Truncate
+--------
+
+Empties a table completely.
+
+    TRUNCATE TABLE accounting_spro_spro1s;
+
 Insert
 ------
 

@@ -178,6 +178,12 @@ Undoing in Git - Reset, Checkout and Revert
 
     git commit --amend -m "Your new message"
 
+### Correct commit date
+
+<http://stackoverflow.com/questions/454734/how-can-one-change-the-timestamp-of-an-old-commit-in-git#answer-5017265>
+
+    git commit --amend --date="Wed Feb 16 14:00 2011 +0400"
+
 ### Work tree
 
 #### Reset index

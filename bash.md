@@ -16,6 +16,7 @@ Manuals
 -------
 
     man 1 -L en -P "less -I" ls
+    man -k sex
     man share/man/man1/ruby.1
     apropos
     whatis
@@ -206,12 +207,18 @@ Archiving and compression
     zip -r foo.zip foo/
     unzip foo.zip
 
-### Power Management
+### RAR
+
+    unrar x file.rar
+
+Power Management
+----------------
 
     hibernate-ram
     hibernate
 
-### Mail
+Mail
+----
 
 <http://debian-administration.org/article/171/Send_an_HTML_file_as_email_from_the_command_line>
 
@@ -254,6 +261,17 @@ Images
 ### ImageMagick
 
     convert ~/tmp/screenshot.png -quality 30 ~/tmp/screenshot.jpg
+
+Character encodings
+-------------------
+
+    convmv -f windows-1251 -t utf-8 *.* --notest -r
+    iconv -fWINDOWS-1251 -tUTF-8 -ooutfile infile
+    dos2unix filename
+
+### Find ASCII/UTF-8 text files
+
+    ack -g . . |xargs file * |grep UTF
 
 Other
 -----
@@ -400,9 +418,6 @@ Other
     smbmount "//172.16.84.14/d$" mnt/cdp0002 \
      -o workgroup=darout,username=dkutkevich,iocharset=UTF-8,codepage=windows-1251
     rdesktop -g 99% -k en 192.168.91.5
-    convmv -f windows-1251 -t utf-8 *.* --notest -r
-    iconv -fWINDOWS-1251 -tUTF-8 -ooutfile infile
-    dos2unix filename
     sudo -u nobody ls
     chroot /mnt/gentoo /bin/bash
     env-update && source /etc/profile
