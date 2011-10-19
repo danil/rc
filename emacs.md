@@ -85,18 +85,26 @@ Useful with `(isearch-forward)` to go back to where you were.
 -------------
 
 <http://gnu.org/software/emacs/manual/html_node/emacs/Deletion.html>,
-<http://emacswiki.org/DeletingWhitespace>.
+<http://emacswiki.org/DeletingWhitespace>,
+<http://emacswiki.org/EmacsNiftyTricks#toc11>.
 
-    M-\
-        Delete spaces and tabs around point (delete-horizontal-space).
-    M-<SPC>
-        Delete spaces and tabs around point, leaving one space
-        (just-one-space).
-    C-x C-o
-        Delete blank lines around the current line (delete-blank-lines).
-    M-^
-        Join two lines by deleting the intervening newline, along with any
-        indentation following it (delete-indentation).
+### (delete-horizontal-space)
+
+`M-\` Delete spaces and tabs around point.
+
+### (just-one-space)
+
+`M-<SPC>` Delete spaces and tabs around point, leaving one space.
+
+### (delete-blank-lines)
+
+`C-x C-o` Delete blank lines around the current line.
+
+
+### (delete-indentation)
+
+`M-^` Join two lines by deleting the intervening newline, along with
+      any indentation following it.
 
 Commands
 --------
@@ -136,6 +144,17 @@ Indentation
         (indent-region) Indent lines in the region to the same column.
     C-x <TAB>
         (indent-rigidly) Shift lines in the region rigidly right or left.
+
+Rectangles
+----------
+
+<http://gnu.org/s/libtool/manual/emacs/Rectangles.html>
+
+### (open-rectangle)
+
+`C-x r o` Insert blank space to fill the space of the
+          region-rectangle. This pushes the previous contents of the
+          region-rectangle rightward.
 
 Important
 ---------
@@ -755,13 +774,6 @@ List all tags in a tags file that match a regexp
 ### (list-tags)
 
 List all tags defined in a source file
-
-Whitespace-manipulation
------------------------
-
-### (delete-blank-lines)
-
-    C-x C-o
 
 [Spelling][]
 ----------

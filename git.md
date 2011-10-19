@@ -39,7 +39,7 @@ Branching and Merging
 
 ### Rename
 
-    git branch -m guarantee-with-admin guarantee-with-admin-production
+    git branch -m old_branch new_branch
 
 #### Remote branch
 
@@ -65,6 +65,14 @@ Stash
     git pop
     git apply
     git stash show --patch
+
+### Stash specific file
+
+<http://stackoverflow.com/questions/5506339/how-can-i-git-stash-a-specific-file/5506483#answer-5506483>.
+
+    git stash --patch
+
+`d` to skip, `a` to stash, and then `q` to quit.
 
 Mirror Git repository
 ---------------------
@@ -273,8 +281,25 @@ Show
 Get a file from a specific revision
 <http://stackoverflow.com/questions/610208/how-to-retrieve-a-single-file-from-specific-revision-in-git#answer-610315>.
 
-    git show HEAD^^^:public/javascripts/jquery.maskedinput.js \
-             > public/javascripts/jquery.maskedinput.js
+    git show HEAD^^^:lib/paginable_by_date.rb > lib/paginable_by_date.rb
+
+Bisect
+------
+
+Binary Search <http://progit.org/book/ru/ch6-5.html>.
+
+    git bisect start
+    git bisect bad
+    git bisect good v1.0
+    ...
+    git stash
+    git bisect reset
+    git stash pop
+
+Search filenames
+----------------
+
+    git ls-tree -r HEAD | grep fetcher_log
 
 Other
 -----
@@ -288,3 +313,4 @@ Other
     git fsck
     git cherry-pick 92117a11fdfdb75a72dd8d3f1c5f25800e827589
     git tag -l
+    git blame production ~/src/vendor/avers/prohq/app/views/layouts/project.html.haml
