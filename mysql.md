@@ -43,14 +43,18 @@ Show system variables
     SHOW VARIABLES LIKE '%character%';
     SELECT @@global.time_zone, @@session.time_zone;
 
+### Engine type (MyISAM or InnoDB)
+
+    SHOW GLOBAL VARIABLES LIKE 'storage_engine';
+
 Create user
 -----------
 
-    GRANT CREATE, INSERT, DELETE, UPDATE, SELECT, DROP, INDEX, ALTER
+    GRANT CREATE, INSERT, DELETE, UPDATE, SELECT, DROP, INDEX, ALTER, LOCK TABLES
      ON danil.* TO 'danil'@'localhost' IDENTIFIED BY 'password';
 
 Privileges: ALL, CREATE, DELETE, GRANT OPTION, INSERT, SELECT, SHOW
-DATABASES, UPDATE, USAGE and so on
+DATABASES, UPDATE, USAGE, LOCK TABLES and so on
 (<http://dev.mysql.com/doc/refman/5.1/en/grant.html>).
 
 Set password
@@ -183,6 +187,8 @@ Describe table
 
 Show table status
 -----------------
+
+Get engine type (MyISAM or InnoDB)
 
     SHOW TABLE STATUS FROM danil LIKE 'test%';
 
