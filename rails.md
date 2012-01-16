@@ -40,8 +40,18 @@ PROhq mail view test:
     p = Project.suitable_for(u)
     SubscriptionMailer.deliver_suitable_projects(u, p)
 
+Schema
+------
+
+    rake RAILS_ENV=production db:schema:load
+
+### Create
+
+    rake db:schema:dump
+
 Other
 -----
+
     rails -d postgresql hello_world
     mongrel_rails cluster::configure -e production -p 8000 -a 127.0.0.1 \
                   -N 2 -c /home/danil/var/www/hello_rails/current
@@ -55,7 +65,6 @@ Other
     cap production deploy
     rake db:migrate VERSION=0
     RAILS_ENV=production rake db:migrate
-    rake RAILS_ENV=production db:schema:load
     rake db:sessions:clear
     rake paperclip:refresh CLASS=YourModelName
     rake rails:freeze:gems

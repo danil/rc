@@ -184,6 +184,13 @@ diff
     diff --recursive --brief ~/dir1 ~/dir2| grep Only
     colordiff --recursive prealpha.kutkevich-org/ alpha.kutkevich-org/
 
+### Prepare patch
+
+<http://devmanual.gentoo.org/tools-reference/diff-and-patch>
+
+    diff -u foo.c.~master~ foo.c
+
+
 Archiving and compression
 -------------------------
 
@@ -273,6 +280,12 @@ Character encodings
 
     ack -g . . |xargs file * |grep UTF
 
+locate
+------
+
+    locate cvs |grep bin
+    updatedb
+
 Other
 -----
 
@@ -280,8 +293,6 @@ Other
     hostname -f
     id
     ls -altc
-    locate cvs |grep bin
-    updatedb
     whereis vsftpd
     alias
     echo -e "1\n2"
@@ -436,6 +447,10 @@ Other
     vlc -I ncurses
     vobcopy
     evolution --force-shutdown
+    sloccount .
+    xmodmap ~/.Xmodmap
+    xmodmap -pke > .xmodmap.orig
+    tput cols && tput lines
 
 DCTC
 ----
@@ -648,10 +663,9 @@ mpd
 GTK
 ---
 
-    gconftool-2 --set /desktop/gnome/url-handlers/http/command \
-                -t string 'firefox %s'
-    gconftool-2 --set /desktop/gnome/url-handlers/https/command \
-                -t string 'firefox %s'
+    gconftool-2 --set /apps/nautilus/desktop/computer_icon_visible --type boolean false
+    gconftool-2 --set /desktop/gnome/url-handlers/http/command -t string 'firefox %s'
+    gconftool-2 --set /desktop/gnome/url-handlers/https/command -t string 'firefox %s'
 
 upsc
 ----

@@ -19,22 +19,27 @@ Emerge
     emerge --verbose --search emacs
     USE="-mmx" emerge --pretend -1 --verbose --deep --update --newuse world
     emerge --verbose --ask --deep --emptytree --newuse world
-    emerge --verbose --ask --unmerge mail-mta/ssmtp
     emerge --prune gentoo-sources
     emerge --verbose --ask --deep --noreplace =gentoo-sources-2.6.30-r4
-    emerge --pretend -1 --verbose --deep --depclean
-    emerge --verbose --ask --depclean dev-lang/python
     emerge --info
 
-### Recompiling all packages on the system
+### Recompiling
+
+Recompiling all packages on the system.
 
     emerge --emptytree system
     emerge --emptytree world
+
+### Unmerge
+
+    emerge --pretend -1 --verbose --deep --depclean dev-lang/python
+    emerge --pretend -1 --verbose --unmerge mail-mta/ssmtp
 
 Equery
 -----
 
     equery list nginx
+    equery list "*" |wc -l
     equery files alsa-lib
     equery depends app-editors/emacs
     equery uses =emacs-22.3-r2 --all
@@ -63,9 +68,9 @@ USE flags
 Layman
 ------
 
-<http://gentoo.org/proj/en/overlays/userguide.xml?style=printable#doc_chap2_sect2>,
-<http://en.gentoo-wiki.com/wiki/Overlay#Layman> and
-<http://overlays.gentoo.org/proj/sunrise>
+* <http://gentoo.org/proj/en/overlays/userguide.xml?style=printable#doc_chap2_sect2>
+* <http://en.gentoo-wiki.com/wiki/Overlay#Layman>
+* <http://overlays.gentoo.org/proj/sunrise>
 
     layman --list
     layman --list-local
@@ -110,8 +115,16 @@ twice) might be installed from overlay
 repoman
 -------
 
-    repoman full --without-mask --include-dev
     repoman manifest
+    repoman full --without-mask --include-dev
+
+GCC
+---
+
+Symptom: `checking whether the C compiler works... no`
+
+    gcc-config -l
+    gcc-config 2
 
 Freeing Up Disk Space
 ---------------------
@@ -126,6 +139,7 @@ TAB-Completion
 
 <http://en.gentoo-wiki.com/wiki/TAB-Completion#Other_commands>:
 
+    sudo eselect bashcomp list |grep -v "*"
     for i in $(ls --color=no /usr/share/bash-completion/); \
       do eselect bashcomp enable $i; done
 
@@ -135,13 +149,21 @@ Updates
 ### Kernel
 
     module-rebuild list
-    module-rebuild populate && module-rebuild rebuild
+    sudo sh -c "module-rebuild populate && module-rebuild rebuild"
 
 ### Other
 
     python-updater
     emacs-updater
     haskell-updater
+
+udept
+-----
+
+Clean out your world file
+<http://forums.gentoo.org/viewtopic-t-142475.html>.
+
+    dep --pretend --pruneworld
 
 Other
 -----
@@ -160,11 +182,5 @@ Other
     eselect kernel list
     eselect kernel set 1
     eselect news list
-
-Clean out your world file with app-portage/udept
-<http://forums.gentoo.org/viewtopic-t-142475.html>:
-
-    dep --pretend --pruneworld
-
 
 <!-- Created: 10 Jul 2009. -->

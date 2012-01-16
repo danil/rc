@@ -43,6 +43,10 @@ Show system variables
     SHOW VARIABLES LIKE '%character%';
     SELECT @@global.time_zone, @@session.time_zone;
 
+### Engine type (MyISAM or InnoDB)
+
+    SHOW GLOBAL VARIABLES LIKE 'storage_engine';
+
 Create user
 -----------
 
@@ -183,6 +187,8 @@ Describe table
 
 Show table status
 -----------------
+
+Get engine type (MyISAM or InnoDB)
 
     SHOW TABLE STATUS FROM danil LIKE 'test%';
 

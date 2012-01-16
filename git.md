@@ -300,6 +300,7 @@ Search filenames
 ----------------
 
     git ls-tree -r HEAD | grep fetcher_log
+    git ls-tree -r --name-only master |grep -i public/stylesheets/.*doc.*css
 
 Other
 -----
