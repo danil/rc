@@ -269,7 +269,7 @@ grep
 
     git grep -e 'first' --and -e 'another'
 
-### Through all commits
+### Search through all commits
 
 <http://stackoverflow.com/questions/2928584/how-to-grep-in-the-git-history#answer-2929502>
 
