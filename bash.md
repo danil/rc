@@ -691,3 +691,11 @@ VirtualBox
 
     mount -t vboxsf -o uid=1000,gid=1000 share ~/mnt/share
     VBoxManage clonevdi xp_ie7.vdi xp_ie8.vd
+
+
+Converting flac to mp3
+----------------------
+
+<http://linuxtutorialblog.com/post/solution-converting-flac-to-mp3>
+
+    for file in *.flac; do flac -cd "$file" | lame -h - "${file%.flac}.mp3"; done
