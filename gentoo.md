@@ -168,7 +168,7 @@ Clean out your world file
 Other
 -----
 
-    sudo sh -c "layman --sync-all ; sudo emerge --sync ; sudo eix-update"
+    sudo sh -c "layman --sync-all && sudo emerge --sync && sudo eix-update"
     revdep-rebuild --pretend
     revdep-rebuild --ignore
     revdep-rebuild --verbose --pretend --library libreadline.so.5
