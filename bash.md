@@ -24,13 +24,23 @@ Manuals
 Search and replace
 ------------------
 
+### grep
+
+    grep -R eth0 /etc
+
+### pcregrep
+
+* Multiple lines matching
+* Perl-compatible regex
+
+    pcregrep -M  'abc.*(\n|.)*efg' test.txt
+
 ### find
 
     find ~/ -mount -type f -size -100k -iname "*.rb" \
             -exec grep -q -e danil\\.kutkevich \{\} \;
     find "/etc/" -mount -maxdepth 3 -type f -size -100k -name "*.conf" \
      |xargs grep -ilE "192\.168\.1\.[0-9]+"
-    grep -R eth0 /etc
     find ./ -type d -exec chmod 755 '{}' \;
     find ./ -type f |while read I; do \
         NEWNAME1=$( md5sum "$I" |cut -d " " -f 1 ); \
