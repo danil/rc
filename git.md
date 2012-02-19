@@ -32,6 +32,7 @@ Branching and Merging
     git branch breadcrumbs-1423
 
 <http://stackoverflow.com/questions/658885/how-do-you-get-git-to-always-pull-from-a-specific-branch#answer-659804>
+
     git config branch.breadcrumbs-1423.remote origin
     git config branch.breadcrumbs-1423.merge refs/heads/production
 
@@ -243,7 +244,7 @@ Rebase
 Find not commited changes
 -------------------------
 
-    for P in $(find /home/danil/ -mount -name ".git" -exec echo '{}' \; \
+    for P in $(find /home/danil/ -mount -type d -name ".git" -exec echo '{}' \; \
                |sed -e 's/\.git//' ) ; do \
         echo "$P" ; \
         git --git-dir="$P.git" --work-tree="$P" status --short ; \
