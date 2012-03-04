@@ -595,6 +595,14 @@ In a tty terminal, not a terminal window (get there with [Ctrl] +
 
     xautolock -disable
 
+
+### Default applications
+
+* <https://wiki.archlinux.org/index.php/Default_Applications>
+* <https://wiki.archlinux.org/index.php/Xdg-open>
+
+    xdg-open ~/Downloads/tasks.csv
+
 ### Other
 
     echo "lalala" |xclip -selection clip
