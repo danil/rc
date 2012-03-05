@@ -58,6 +58,21 @@ Create master-old on remote
 
     git push origin :accounting
 
+Copy file from branch to another
+--------------------------------
+
+<http://stackoverflow.com/questions/307579/how-do-i-copy-a-version-of-a-single-file-from-one-git-branch-to-another#answer-307872>.
+A la restore deleted file
+<http://stackoverflow.com/questions/953481/restore-a-deleted-file-in-a-git-repo#answer-1113140>.
+
+    git checkout r2 app/views/shared/_info_blocks.haml
+
+Tag
+---
+
+    git tag -l
+    git checkout <tag_name>
+
 Stash
 -----
 
@@ -313,5 +328,4 @@ Other
     git remote add origin ssh://danil@kutkevich.org/var/git/kutkevich-org.git
     git fsck
     git cherry-pick 92117a11fdfdb75a72dd8d3f1c5f25800e827589
-    git tag -l
     git blame production ~/src/vendor/avers/prohq/app/views/layouts/project.html.haml
