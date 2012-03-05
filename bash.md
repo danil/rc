@@ -24,13 +24,25 @@ Manuals
 Search and replace
 ------------------
 
+### grep
+
+    grep -R eth0 /etc
+
+### pcregrep
+
+* Multiple lines matching
+  <http://stackoverflow.com/questions/2686147/how-to-find-patterns-across-multiple-lines-using-grep#answer-2686705>
+  <http://stackoverflow.com/questions/3863792/an-ack-or-grep-regex-to-match-two-lines-that-are-nearly-the-same#answer-3864440>
+* Perl-compatible regex
+
+    pcregrep -M  'abc.*(\n|.)*efg' test.txt
+
 ### find
 
     find ~/ -mount -type f -size -100k -iname "*.rb" \
             -exec grep -q -e danil\\.kutkevich \{\} \;
     find "/etc/" -mount -maxdepth 3 -type f -size -100k -name "*.conf" \
      |xargs grep -ilE "192\.168\.1\.[0-9]+"
-    grep -R eth0 /etc
     find ./ -type d -exec chmod 755 '{}' \;
     find ./ -type f |while read I; do \
         NEWNAME1=$( md5sum "$I" |cut -d " " -f 1 ); \
@@ -582,6 +594,14 @@ In a tty terminal, not a terminal window (get there with [Ctrl] +
 ### xautolock
 
     xautolock -disable
+
+
+### Default applications
+
+* <https://wiki.archlinux.org/index.php/Default_Applications>
+* <https://wiki.archlinux.org/index.php/Xdg-open>
+
+    xdg-open ~/Downloads/tasks.csv
 
 ### Other
 
