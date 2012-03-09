@@ -301,6 +301,7 @@ locate
 Other
 -----
 
+    mkdir ~/root/{var/{db/pkg,paludis/distfiles,cache/paludis/{names_cache,write_cache},tmp/paludis}
     uname -a
     hostname -f
     id

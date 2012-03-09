@@ -214,6 +214,10 @@ Undoing in Git - Reset, Checkout and Revert
 
     git reset --hard HEAD~1
 
+#### Revert
+
+    git revert -n HEAD^^^..HEAD^^
+
 ### Bare repository
 
 [Git reset allow soft in a bare repo](http://kerneltrap.org/mailarchive/git/2007/7/14/251527)
