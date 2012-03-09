@@ -207,6 +207,11 @@ Describe columns
     +------------+----------+------+-----+---------+----------------+
     5 rows in set (0.00 sec)
 
+Alter table
+-----------
+
+    ALTER TABLE cashouts DROP COLUMN hold_operation_id;
+
 Truncate
 --------
 
