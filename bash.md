@@ -27,6 +27,7 @@ Search and replace
 ### grep
 
     grep -R eth0 /etc
+    grep -irl danil . 2> /dev/null | xargs tar cvvf ~/tmp/123.tar
 
 ### pcregrep
 
@@ -101,6 +102,11 @@ Stream Editor
 #### Replacing returns with space
 
     cat ./file |tr '\n' ' '
+
+xargs
+-----
+
+    ack -a -g . |xargs -I % sh -c 'echo -e "\n\n########### %\n" && cat %' > 123
 
 Date and time
 -------------
@@ -629,6 +635,7 @@ In a tty terminal, not a terminal window (get there with [Ctrl] +
     screen -r <PID> # Reconnect to screen.
     screen -RD
     screen -x debian_torrent # Reconnect to screen.
+    gimptool-2.0 --install-script ~/Downloads/multiscale_0.scm
 
 ALSA
 ----
