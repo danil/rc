@@ -612,6 +612,11 @@ In a tty terminal, not a terminal window (get there with [Ctrl] +
     screen -RD
     screen -x debian_torrent # Reconnect to screen.
 
+### Change monitor resolution
+
+    xrandr
+    xrandr -s 1440x900
+
 ### Other
 
     echo "lalala" |xclip -selection clip
