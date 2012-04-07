@@ -373,13 +373,7 @@ Other
          [-O output_file ] "ftp://192.168.1.1/file"
     wget --recursive --level=0 \
          --restrict-file-names=nocontrol "http://tinyerp.org/edoc/"
-    wget --load-cookies=cookies.txt \
-         --recursive \
-         --domains=www.prohq.ru,prohq.ru \
-         --level=999 \
-         --restrict-file-names=nocontrol \
-         --ignore-tags=img \
-         http://www.prohq.ru
+    wget --load-cookies=cookies.txt --recursive --domains=www.prohq.ru,prohq.ru --level=999 --restrict-file-names=nocontrol --ignore-tags=img http://www.prohq.ru
     wget --page-requisites \
          --convert-links \
          --reject "robots.txt" \
@@ -610,6 +604,14 @@ In a tty terminal, not a terminal window (get there with [Ctrl] +
 
     xdg-open ~/Downloads/tasks.csv
 
+### GNU Screen
+
+    screen btdownloadcurses some.torrent
+    screen -S debian_torrent
+    screen -r <PID> # Reconnect to screen.
+    screen -RD
+    screen -x debian_torrent # Reconnect to screen.
+
 ### Other
 
     echo "lalala" |xclip -selection clip
@@ -630,12 +632,8 @@ In a tty terminal, not a terminal window (get there with [Ctrl] +
     make && make install
     make menuconfig # make oldconfig
     echo $?
-    screen btdownloadcurses some.torrent
-    screen -S debian_torrent
-    screen -r <PID> # Reconnect to screen.
-    screen -RD
-    screen -x debian_torrent # Reconnect to screen.
     gimptool-2.0 --install-script ~/Downloads/multiscale_0.scm
+    notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '2' 'Desktop'"
 
 ALSA
 ----
