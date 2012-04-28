@@ -210,6 +210,8 @@ Describe columns
 Alter table
 -----------
 
+Aka delete column.
+
     ALTER TABLE cashouts DROP COLUMN hold_operation_id;
 
 Truncate
@@ -227,7 +229,6 @@ Insert
         SELECT tbl_temp1.fld_order_id
         FROM tbl_temp1 WHERE tbl_temp1.fld_order_id > 100;
     LOAD DATA LOCAL INFILE '~/path/to/filename' INTO TABLE table;
-
 
 Delete row
 ----------
