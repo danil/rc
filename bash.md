@@ -339,12 +339,16 @@ Disk
 
 #### mke2fs
 
-    mkfs.ext2 /dev/sde1
+    mkfs.ext2 -L fs_boot /dev/sde1
     mkfs.vfat -F 32 /dev/sdg1
 
 ##### Set number of inodes
 
-    mkfs.ext4 -L fs_usr -N 1000000 /dev/sda5
+    mkfs.ext4 -N 1000432 /dev/sda5
+
+<http://stackoverflow.com/questions/3618820/how-many-bytes-per-inodes>.
+
+    tune2fs -l /dev/sda5 | grep Inode
 
 Other
 -----
