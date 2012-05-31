@@ -314,6 +314,52 @@ rsync
     rsync -rv --stats --delete --compress --skip-compress=jpg,gif,png,mp4 \
       danil@kutkevich.org:~/foo/bar foo
 
+Disk
+----
+
+    dd if=/dev/cdrom of=myimage.iso
+    dd if=/dev/sdb of=mybackup.img bs=130M count=1
+    dd if=bootldr.rom of=/dev/sdb
+    dd if=debian-eeepc.img of=/dev/sdf
+    bchunk Dungeon_Keeper.BIN Dungeon_Keeper.cue Dungeon_Keeper.iso
+    modprobe loop && mount -t iso9660 -o loop tmp/fdfullcd.iso mnt/iso
+    mount -t vfat /dev/sdc1 mnt/usbdisk/ \
+          -o uid=danil,gid=danil,nosuid,shortname=mixed,umask=077
+    mount -t ext2 ~/restore.img /mnt/img -o ro,loop,offset=32256
+    mount -t cifs "//192.168.91.3/store (e)" mnt/black_server/ \
+          -o "workgroup=darout,username=danil,iocharset=utf8,codepage=cp1251"
+    mount --rbind olddir newdir
+    df -hi
+    du -hx ./ |grep -E ^[0-9.,]+[MG]
+    find  -ctime +30 -daystart -type d \
+      | xargs du -b 2>/dev/null \
+      | awk '{total += $1; print $0} END{print total}'
+    fsck /dev/sdg1
+    touch /forcefsck
+
+### Disk formatting
+
+    fdisk -l /dev/sdb
+    sfdisk -l -uM
+    cfdisk
+    tune2fs
+    mkswap /dev/sda7 && swapon /dev/sda7
+    swapon -s
+    swapoff -a
+
+#### mke2fs
+
+    mkfs.ext2 -L fs_boot /dev/sde1
+    mkfs.vfat -F 32 /dev/sdg1
+
+##### Set number of inodes
+
+    mkfs.ext4 -N 1000432 /dev/sda5
+
+<http://stackoverflow.com/questions/3618820/how-many-bytes-per-inodes>.
+
+    tune2fs -l /dev/sda5 | grep Inode
+
 Other
 -----
 
@@ -416,35 +462,6 @@ Other
     exim -bV
     mailq
     exim -Mvl <message_id>
-    dd if=/dev/cdrom of=myimage.iso
-    dd if=/dev/sdb of=mybackup.img bs=130M count=1
-    dd if=bootldr.rom of=/dev/sdb
-    dd if=debian-eeepc.img of=/dev/sdf
-    bchunk Dungeon_Keeper.BIN Dungeon_Keeper.cue Dungeon_Keeper.iso
-    modprobe loop && mount -t iso9660 -o loop tmp/fdfullcd.iso mnt/iso
-    mount -t vfat /dev/sdc1 mnt/usbdisk/ \
-          -o uid=danil,gid=danil,nosuid,shortname=mixed,umask=077
-    mount -t ext2 ~/restore.img /mnt/img -o ro,loop,offset=32256
-    mount -t cifs "//192.168.91.3/store (e)" mnt/black_server/ \
-          -o "workgroup=darout,username=danil,iocharset=utf8,codepage=cp1251"
-    mount --rbind olddir newdir
-    df -hi
-    du -hx /usr |grep -E "^([1-9][0-9][0-9.,]*M|[0-9.,]+G)"
-    find  -ctime +30 -daystart -type d \
-      | xargs du -b 2>/dev/null \
-      | awk '{total += $1; print $0} END{print total}'
-    fsck /dev/sdg1
-    touch /forcefsck
-    fdisk -l /dev/sdb
-    sfdisk -l -uM
-    cfdisk
-    mkfs.ext3 -L fs_usr /dev/hdb1
-    mkfs.ext2 /dev/sde1
-    mkfs.vfat -F 32 /dev/sdg1
-    tune2fs
-    mkswap /dev/sda7 && swapon /dev/sda7
-    swapon -s
-    swapoff -a
     curlftpfs -o "user=danil" kutkevich.org mnt/kutkevich_org/
     smbtree [-N] -d 2
     smbclient [-N] -L server
