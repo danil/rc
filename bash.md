@@ -58,6 +58,10 @@ Search and replace
     ls -il /var/ftp/incoming
     find /var/ftp/incoming -inum [inode-number] -exec rm {} \;
 
+#### Recreate symlinks
+
+    find / -type l -exec sh -c 'lname="{}"; ltarget=$(readlink "${lname}"); rm "${lname}"; ln -s "${ltarget}" "${lname}"' \;
+
 ### ack
 
     ack Webpage ~/src/jobtest-aviasales-ru/
@@ -304,6 +308,12 @@ locate
     locate cvs |grep bin
     updatedb
 
+rsync
+-----
+
+    rsync -rv --stats --delete --compress --skip-compress=jpg,gif,png,mp4 \
+      danil@kutkevich.org:~/foo/bar foo
+
 Other
 -----
 
@@ -419,7 +429,7 @@ Other
           -o "workgroup=darout,username=danil,iocharset=utf8,codepage=cp1251"
     mount --rbind olddir newdir
     df -hi
-    du -hx ./ |grep -E ^[0-9.,]+[MG]
+    du -hx /usr |grep -E "^([1-9][0-9][0-9.,]*M|[0-9.,]+G)"
     find  -ctime +30 -daystart -type d \
       | xargs du -b 2>/dev/null \
       | awk '{total += $1; print $0} END{print total}'

@@ -84,11 +84,24 @@ Stash
 
 ### Stash specific file
 
+Several ways to achieve this:
+
+#### First
+
 <http://stackoverflow.com/questions/5506339/how-can-i-git-stash-a-specific-file/5506483#answer-5506483>.
 
     git stash --patch
 
 `d` to skip, `a` to stash, and then `q` to quit.
+
+#### Second
+
+<http://stackoverflow.com/questions/3040833/git-how-to-stash-only-one-file-out-of-multiple-files-that-have-changed#8333163>.
+
+This will stash everything that you haven't previously added. Just git
+add the things you want to keep, then run it.
+
+    git stash --keep-index
 
 Mirror Git repository
 ---------------------
