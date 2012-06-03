@@ -641,6 +641,8 @@ In a tty terminal, not a terminal window (get there with [Ctrl] +
 
 #### Scrollback or copy mode
 
+<http://superuser.com/questions/138748/how-to-scroll-up-and-look-at-data-in-gnu-screen>.
+
 * To enter hit the prefix key and, then `[`
 * Escape to exit.
 
