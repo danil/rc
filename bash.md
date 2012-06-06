@@ -639,6 +639,13 @@ In a tty terminal, not a terminal window (get there with [Ctrl] +
     screen -RD
     screen -x debian_torrent # Reconnect to screen.
 
+#### Scrollback or copy mode
+
+<http://superuser.com/questions/138748/how-to-scroll-up-and-look-at-data-in-gnu-screen>.
+
+* To enter hit the prefix key and, then `[`
+* Escape to exit.
+
 ### Change monitor resolution
 
     xrandr
