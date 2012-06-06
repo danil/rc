@@ -15,13 +15,15 @@ Gentoo
 Emerge
 ------
 
-    MAKEOPTS="-j1" emerge --verbose --ask --oneshot sys-libs/glibc
+    MAKEOPTS="-j1" USE="-mmx" emerge --verbose --ask --oneshot sys-libs/glibc
     emerge --verbose --search emacs
-    USE="-mmx" emerge --pretend -1 --verbose --deep --update --newuse world
+    emerge -v1p --deep --update --newuse --exclude x11-base/xorg-server -- world
     emerge --verbose --ask --deep --emptytree --newuse world
     emerge --prune gentoo-sources
     emerge --verbose --ask --deep --noreplace =gentoo-sources-2.6.30-r4
     emerge --info
+
+sudo emerge -v1p --deep --update --newuse   -- world
 
 ### Recompiling
 
