@@ -218,6 +218,9 @@ Alter table
 
     ALTER TABLE cashouts DROP COLUMN hold_operation_id;
 
+### Rename column
+
+    ALTER TABLE users CHANGE COLUMN old_name new_name varchar(255);
 
 Truncate
 --------
