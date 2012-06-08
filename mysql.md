@@ -210,9 +210,14 @@ Describe columns
 Alter table
 -----------
 
-Aka delete column.
+### Add column
+
+    ALTER TABLE users ADD COLUMN login varchar(255);
+
+### Delete column
 
     ALTER TABLE cashouts DROP COLUMN hold_operation_id;
+
 
 Truncate
 --------
