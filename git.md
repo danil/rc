@@ -335,11 +335,19 @@ Search filenames
     git ls-tree -r HEAD | grep fetcher_log
     git ls-tree -r --name-only master |grep -i public/stylesheets/.*doc.*css
 
+Rremove
+-------
+
+    git rm file1 \*.md
+
+### Remove from git, working tree files will be left alone
+
+    git rm --cached .config/gajim/config
+
 Other
 -----
 
     git mv oldname newname
-    git rm file1 \*.md
     git ls-files
     git commit -a -m 'Some commit.'
     git cat-file blob HEAD^:htdocs/bookmarks/index.md
