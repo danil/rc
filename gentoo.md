@@ -167,6 +167,14 @@ Clean out your world file
 
     dep --pretend --pruneworld
 
+Run levels
+----------
+
+    rc-update -v show
+    rc-update add xdm default
+    rc-update del xdm default
+    rc-status
+
 Other
 -----
 
@@ -175,9 +183,6 @@ Other
     revdep-rebuild --ignore
     revdep-rebuild --verbose --pretend --library libreadline.so.5
     lafilefixer --justfixit
-    rc-update -v show
-    rc-update add xdm default
-    rc-update del xdm default
     env-update && source /etc/profile
     find /etc -iname "._cfg????_*" 2> /dev/null
     CCACHE_DIR="/var/tmp/ccache" ccache -s
