@@ -18,6 +18,11 @@ Synaptics touchpad
 Real-Time Tweaking
 ------------------
 
+* <http://en.gentoo-wiki.com/wiki/Synaptics_Touchpad#Real-Time_Tweaking>
+* <https://wiki.archlinux.org/index.php/Touchpad_Synaptics#Synclient>
+
+    synclient EmulateTwoFingerMinZ=40
+
 xorg.conf
 ---------
 
@@ -116,6 +121,11 @@ Max time in ms for detecting tap.
       Option "VertTwoFingerScroll"  "0"
       Option "HorizTwoFingerScroll" "1"
 
+<https://wiki.archlinux.org/index.php/Touchpad_Synaptics#Frequently_used_options>.
+
+      Option "EmulateTwoFingerMinZ" "40"
+      Option "EmulateTwoFingerMinW" "8"
+
 [Two-Finger scrolling]: http://wiki.archlinux.org/index.php/Touchpad_Synaptics#Two-Finger_scrolling
 
 ### Circular scrolling
@@ -133,7 +143,7 @@ Max time in ms for detecting tap.
 * `7` — Left Edge
 * `8` — Top Left Corner
 
-#### Включить круговую прокрутку
+#### Enable circular scrolling
 
       Option "CircularScrolling" "1"
       Option "CircScrollTrigger" "3"
