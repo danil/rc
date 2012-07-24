@@ -257,7 +257,7 @@ Patch
 
 <http://ariejan.net/2009/10/26/how-to-create-and-apply-a-patch-with-git>
 
-    git format-patch master --stdout > guarantee-with-admin.patch
+    git format-patch HEAD^..HEAD --stdout > guarantee-with-admin.patch
     git apply --stat guarantee-with-admin.patch
     git apply --check guarantee-with-admin.patch
     git am --reject guarantee-with-admin.patch
