@@ -103,6 +103,12 @@ Stream Editor
 
 ### tr
 
+#### Convert uppercase to lowercase
+
+<http://cyberciti.biz/faq/linux-unix-shell-programming-converting-lowercase-uppercase>
+
+    tr '[:upper:]' '[:lower:]' < input.txt > output.txt
+
 #### Replacing returns with space
 
     cat ./file |tr '\n' ' '
