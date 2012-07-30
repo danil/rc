@@ -113,6 +113,10 @@ Stream Editor
 
     cat ./file |tr '\n' ' '
 
+#### Config dryup
+
+    cat /etc/ntp.conf | grep -v '^#'| grep -v '^$'
+
 xargs
 -----
 
