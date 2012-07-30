@@ -106,6 +106,7 @@ List packages install from overlay <http://bugs.gentoo.org/204324>,
 <http://bugs.gentoo.org/138622>.
 
     eix --installed-overlay
+    eix --in-overlay unity-gentoo
 
 #### Deprecated
 
