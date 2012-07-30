@@ -661,6 +661,12 @@ In a tty terminal, not a terminal window (get there with [Ctrl] +
     xrandr
     xrandr -s 1440x900
 
+### stdout to clipboard
+
+<http://cyberciti.biz/faq/xclip-linux-insert-files-command-output-intoclipboard>.
+
+    cat /var/tmp/portage/unity-base/bamf-0.2.118/temp/build.log | xsel
+
 ### Other
 
     echo "lalala" |xclip -selection clip
