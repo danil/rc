@@ -274,7 +274,7 @@ Random
 
 ### Password within a range from 5 to 9 length
 
-    pwgen --symbols $(( 5+(`od -An -N2 -i /dev/random` )%(9-5+1) )) 1
+    pwgen $(( 5+(`od -An -N2 -i /dev/random` )%(9-5+1) )) 1
 
 ### Other
 
