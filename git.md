@@ -289,6 +289,12 @@ Log
     git log --patch --since="1 day 2 hours" README
     git log --author="Danil" HEAD^^^ HEAD
 
+### Git tree in terminal
+
+<http://stackoverflow.com/questions/1064361/unable-to-show-a-git-tree-in-terminal#5354644>.
+
+    git log --graph --decorate --pretty=oneline --abbrev-commit
+
 History of a file
 -----------------
 
