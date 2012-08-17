@@ -46,10 +46,17 @@ Equery
     equery depends app-editors/emacs
     equery uses =emacs-22.3-r2 --all
 
+### Files belong to package
+
+    equery belongs /usr/share/fonts/misc/9x18.pcf.gz
+
+same as:
+
+    qfile /usr/share/fonts/misc/9x18.pcf.gz
+
 Portage-utils
 -------------
 
-    qfile /usr/share/fonts/misc/9x18.pcf.gz
     qsize emacs
     qsize -a -k | sort -n -k 6
     qdepends --all media-fonts/font-misc-misc
