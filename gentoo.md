@@ -115,6 +115,10 @@ List packages install from overlay <http://bugs.gentoo.org/204324>,
     eix --installed-overlay
     eix --in-overlay unity-gentoo
 
+#### Recompile all ebuilds from overlay
+
+    emerge -v1 $(eix --installed --only-names --in-overlay unity-gentoo)
+
 #### Deprecated
 
 Installed packages and listed in overlay (this command counts then

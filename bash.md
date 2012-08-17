@@ -117,6 +117,14 @@ Stream Editor
 
     cat /etc/ntp.conf | grep -v '^#'| grep -v '^$'
 
+
+Truncate text file
+------------------
+
+<http://cyberciti.biz/faq/truncate-large-text-file-in-unix-linux>.
+
+    > {filename}
+
 xargs
 -----
 
