@@ -165,6 +165,15 @@ Drop table
 
     DROP TABLE IF EXISTS danil.test_table [, danil.test_table_2];
 
+### Drop all tables
+
+Generated set of drop statements
+<http://stackoverflow.com/questions/3476765/mysql-drop-all-tables-ignoring-foreign-keys#8248281>
+
+    SELECT concat('DROP TABLE IF EXISTS ', table_name, ';')
+      FROM information_schema.tables
+      WHERE table_schema = 'MyDatabaseName';
+
 Show tables
 -----------
 

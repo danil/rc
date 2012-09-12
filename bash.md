@@ -121,6 +121,8 @@ Stream Editor
 Truncate text file
 ------------------
 
+Blank file content.
+
 <http://cyberciti.biz/faq/truncate-large-text-file-in-unix-linux>.
 
     > {filename}
