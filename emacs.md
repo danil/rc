@@ -493,8 +493,8 @@ Buffer List
     b
         Bury the buffer listed on this line.
 
-Shell
------
+31.15. Shell
+------------
 
     M-x shell
         Start a shell in window *shell*.
@@ -519,6 +519,14 @@ Shell
     M-s regexp <RET>
         Search backwards or forwards for old shell commands that match
         regexp.
+
+
+### (shell-command-on-region)
+
+Run the shell command line cmd with region contents as input;
+optionally replace the region with the output.
+
+    M-| cmd RET
 
 41.9 Term Mode
 --------------
