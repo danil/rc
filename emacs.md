@@ -156,6 +156,10 @@ Rectangles
           region-rectangle. This pushes the previous contents of the
           region-rectangle rightward.
 
+### (string-rectangle)
+
+`C-x r t` Replace rectangle contents with string on each line.
+
 Important
 ---------
 
