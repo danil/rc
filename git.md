@@ -112,6 +112,11 @@ Mirror Git repository
     git remote add origin git://github.com/sebnow/lake.git
     git fetch
 
+
+### Adding second remote
+
+    git remote add github git@github.com:danil/ruby-mode.git
+
 Submodules
 ----------
 
