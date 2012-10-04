@@ -334,6 +334,13 @@ rsync
     rsync -rv --stats --delete --compress --skip-compress=jpg,gif,png,mp4 \
       danil@kutkevich.org:~/foo/bar foo
 
+### bwlimit
+
+Limit disk I/O
+http://www.cyberciti.biz/faq/throttle-disk-io-rate-limit-disk-io
+
+    rsync --delete --numeric-ids --relative --delete-excluded --bwlimit=10000 /path/to/source /path/to/dest/
+
 Disk
 ----
 
