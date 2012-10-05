@@ -275,6 +275,13 @@ Mail
          -s "Employer" \
          danil@kutkevich.org < ./htdocs/index.html
 
+    echo 'Hello, work' |mail -s 'Hello, World!' anonymous@kutkevich.org
+    /usr/sbin/sendmail -bV
+    exim -brw danil
+    exim -bV
+    mailq
+    exim -Mvl <message_id>
+
 Random
 ------
 
@@ -483,12 +490,6 @@ Other
     killall wpa_supplicant && sleep 5 \
      && wpa_supplicant -i ath0 -c /etc/wpa_supplicant/wpa_supplicant.conf
     wvdial megafon
-    echo 'Hello, work' |mail -s 'Hello, World!' anonymous@kutkevich.org
-    /usr/sbin/sendmail -bV
-    exim -brw danil
-    exim -bV
-    mailq
-    exim -Mvl <message_id>
     curlftpfs -o "user=danil" kutkevich.org mnt/kutkevich_org/
     smbtree [-N] -d 2
     smbclient [-N] -L server
