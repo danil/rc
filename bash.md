@@ -299,9 +299,23 @@ Random
 
     dd if=/dev/random bs=1 count=16 |base64
 
-### Password within a range from 5 to 9 length
+### Password
+
+#### Range from 5 to 9 length
 
     pwgen $(( 5+(`od -An -N2 -i /dev/random` )%(9-5+1) )) 1
+
+#### To file
+
+    pwgen --numerals --secure --no-capitalize 10 80000 \
+      | tr '[:lower:]' '[:upper:]' > 80k_upper_201210091031
+
+#### Test for duplicates
+
+<http://stackoverflow.com/questions/6447473/linux-command-or-script-counting-duplicated-lines-in-a-text-file#6447515>
+
+    cat 80k_upper_20120723 20k_upper_201210091031  \
+      | sort | uniq -c | grep ' 1 ' --invert-match
 
 ### Other
 
