@@ -21,6 +21,16 @@ Manuals
     apropos
     whatis
 
+
+Count lines
+-----------
+
+    ls -x1 /usr/lib |wc -l
+
+http://stackoverflow.com/questions/1427032/fast-linux-file-count-for-a-large-number-of-files
+
+    ls -f | wc -l
+
 Search and replace
 ------------------
 
@@ -275,6 +285,13 @@ Mail
          -s "Employer" \
          danil@kutkevich.org < ./htdocs/index.html
 
+    echo 'Hello, work' |mail -s 'Hello, World!' anonymous@kutkevich.org
+    /usr/sbin/sendmail -bV
+    exim -brw danil
+    exim -bV
+    mailq
+    exim -Mvl <message_id>
+
 Random
 ------
 
@@ -282,9 +299,23 @@ Random
 
     dd if=/dev/random bs=1 count=16 |base64
 
-### Password within a range from 5 to 9 length
+### Password
+
+#### Range from 5 to 9 length
 
     pwgen $(( 5+(`od -An -N2 -i /dev/random` )%(9-5+1) )) 1
+
+#### To file
+
+    pwgen --numerals --secure --no-capitalize 10 80000 \
+      | tr '[:lower:]' '[:upper:]' > 80k_upper_201210091031
+
+#### Test for duplicates
+
+<http://stackoverflow.com/questions/6447473/linux-command-or-script-counting-duplicated-lines-in-a-text-file#6447515>
+
+    cat 80k_upper_20120723 20k_upper_201210091031  \
+      | sort | uniq -c | grep ' 1 ' --invert-match
 
 ### Other
 
@@ -333,6 +364,13 @@ rsync
 
     rsync -rv --stats --delete --compress --skip-compress=jpg,gif,png,mp4 \
       danil@kutkevich.org:~/foo/bar foo
+
+### bwlimit
+
+Limit disk I/O
+http://www.cyberciti.biz/faq/throttle-disk-io-rate-limit-disk-io
+
+    rsync --delete --numeric-ids --relative --delete-excluded --bwlimit=10000 /path/to/source /path/to/dest/
 
 Disk
 ----
@@ -476,12 +514,6 @@ Other
     killall wpa_supplicant && sleep 5 \
      && wpa_supplicant -i ath0 -c /etc/wpa_supplicant/wpa_supplicant.conf
     wvdial megafon
-    echo 'Hello, work' |mail -s 'Hello, World!' anonymous@kutkevich.org
-    /usr/sbin/sendmail -bV
-    exim -brw danil
-    exim -bV
-    mailq
-    exim -Mvl <message_id>
     curlftpfs -o "user=danil" kutkevich.org mnt/kutkevich_org/
     smbtree [-N] -d 2
     smbclient [-N] -L server
@@ -498,7 +530,6 @@ Other
     # 786468646b6b6577696f646464 (128bit WEP key)
     echo -n 'xdhdkkewioddd' |hexdump -e '13/1 "%02x" "\n"' \
          |cut -d ':' -f 1-13
-    ls -x1 /usr/lib |wc -l # Count lines.
     update-rc.d nginx defaults
     update-rc.d -f nginx remove
     nohup ./scripts/bootstrap.sh &

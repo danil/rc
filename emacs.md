@@ -320,6 +320,17 @@ Bookmark window commands
     q
         Quit bookmark list.
 
+19 Buffers
+----------
+
+### 19.3 Miscellaneous Buffer Operations
+
+<http://www.gnu.org/software/emacs/manual/html_node/emacs/Misc-Buffer.html>
+
+#### (rename-buffer)
+
+Change the name of the current buffer.
+
 27.11 Specifying a Coding System for File Text
 ----------------------------------------------
 
