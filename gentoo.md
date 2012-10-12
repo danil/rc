@@ -137,7 +137,7 @@ GCC
 
 Symptom: `checking whether the C compiler works... no`
 
-    gcc-config -l
+    gcc-config --list-profiles
     gcc-config 2
 
 Freeing Up Disk Space
@@ -201,5 +201,6 @@ Other
     eselect kernel list
     eselect kernel set 1
     eselect news list
+    portageq owners / /usr/share/aclocal/vala.m4
 
 <!-- Created: 10 Jul 2009. -->
