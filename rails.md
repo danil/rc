@@ -49,6 +49,13 @@ Schema
 
     rake db:schema:dump
 
+Id partitioning (hdd directory structure)
+-----------------------------------------
+
+Draft:
+
+    a=9999 && b=$(printf %09d $a) && c="xxx/${b:0:3}/${b:3:3}/${b:6:3}" && mkdir -p "$c" && cp "$a/"* "$c/"
+
 Other
 -----
 
