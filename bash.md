@@ -485,8 +485,8 @@ Other
     wget ftp://anonymous@kutkevich.org/pub/ruby-1.8.7-p72.tar.gz
     wget -c -t inf --waitretry=30 -b --retry-connrefused \
          [-O output_file ] "ftp://192.168.1.1/file"
-    wget --recursive --level=0 \
-         --restrict-file-names=nocontrol "http://tinyerp.org/edoc/"
+    wget --recursive --level=0 --restrict-file-names=nocontrol \
+         --convert-links "http://tinyerp.org/edoc/"
     wget --load-cookies=cookies.txt --recursive --domains=www.prohq.ru,prohq.ru --level=999 --restrict-file-names=nocontrol --ignore-tags=img http://www.prohq.ru
     wget --page-requisites \
          --convert-links \
