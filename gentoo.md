@@ -194,7 +194,7 @@ La files
 
 <https://bugs.gentoo.org/show_bug.cgi?id=437084#c4>
 
-    env-update && source /etc/profile
+    sudo sh -c 'env-update && source /etc/profile'
 
 Other
 -----
