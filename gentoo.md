@@ -187,6 +187,15 @@ Run levels
     rc-update del xdm default
     rc-status
 
+La files
+--------
+
+    lafilefixer --justfixit
+
+<https://bugs.gentoo.org/show_bug.cgi?id=437084#c4>
+
+    env-update && source /etc/profile
+
 Other
 -----
 
@@ -194,8 +203,6 @@ Other
     revdep-rebuild --pretend
     revdep-rebuild --ignore
     revdep-rebuild --verbose --pretend --library libreadline.so.5
-    lafilefixer --justfixit
-    env-update && source /etc/profile
     find /etc -iname "._cfg????_*" 2> /dev/null
     CCACHE_DIR="/var/tmp/ccache" ccache -s
     eselect kernel list
