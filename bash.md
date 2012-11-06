@@ -481,6 +481,7 @@ Other
     nohup iceweasel
     setterm -blength 0
     tput colors
+    curl -o ruby.png http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/100px-Ruby_logo.svg.png
     curl -v -H "Accept: application/xrds+xml" -X HEAD http://www.yahoo.com/
     wget ftp://anonymous@kutkevich.org/pub/ruby-1.8.7-p72.tar.gz
     wget -c -t inf --waitretry=30 -b --retry-connrefused \
