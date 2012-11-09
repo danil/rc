@@ -418,6 +418,11 @@ Disk
 
     tune2fs -l /dev/sda5 | grep Inode
 
+Free ram
+--------
+
+    free -m
+
 Other
 -----
 
@@ -435,7 +440,6 @@ Other
     echo "26733b170052a01eb48ed2d5495a5cb51c00bdd0 /dev/hdc" |sha1sum -c
     gpg --keyserver subkeys.pgp.net --recv-keys 17072058
     gpg --verify <signature file> <downloaded iso>
-    free
     cal -3
     time tar -cvvzf foobar.tar.gz ./lib/ ./mobotix/ /usr/share/doc/
     cp -a ~/var/www/ ~/tmp/
