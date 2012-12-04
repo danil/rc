@@ -269,3 +269,10 @@ Disable foreign key constraint check
     SET FOREIGN_KEY_CHECKS = 0;
     SOURCE dump_file_name;
     SET FOREIGN_KEY_CHECKS = 1;
+
+Quering
+-------
+
+### Finding duplicate values
+
+    SELECT email, COUNT(*) c FROM users GROUP BY email HAVING c > 1;
