@@ -15,6 +15,10 @@ Compiz
 Temporary files
 ---------------
 
+### Window decorations
+
+    emerald --replace
+
 ### Cleanup
 
 <http://forums.gentoo.org/viewtopic-p-7111782.html#7111782>.
