@@ -901,6 +901,19 @@ Haskell
 
     C-c C-l
 
+Ibuffer
+-------
+
+### Search all marked buffers
+
+<http://emacswiki.org/IbufferMode#toc1>.
+
+* `M-s a C-s`   do incremental search in the marked buffers
+* `M-s a C-M-s` isearch for regexp in the marked buffers
+* `U`           replace by regexp in each of the marked buffers
+* `Q`           query replace in each of the marked buffers
+* `I`           as above, with a regular expression
+
 Other
 -----
 
