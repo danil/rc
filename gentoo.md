@@ -23,8 +23,6 @@ Emerge
     emerge --verbose --ask --deep --noreplace =gentoo-sources-2.6.30-r4
     emerge --info
 
-sudo emerge -v1p --deep --update --newuse   -- world
-
 ### Recompiling
 
 Recompiling all packages on the system.
