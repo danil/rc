@@ -335,10 +335,12 @@ Change the name of the current buffer.
 ----------------------------------------------
 
 <http://gnu.org/software/emacs/manual/html_node/emacs/Text-Coding.html#Text-Coding>
+<http://stackoverflow.com/questions/2750352/how-to-change-buffer-coding-system-in-emacs#2750366>.
 
     C-x <RET> r coding <RET>
-        Revisit the current file using the coding system coding
+        Revisit the current file using the coding system (eg windows-1251)
         (revert-buffer-with-coding-system).
+
     C-x <RET> k coding <RET>
         Use coding system coding for keyboard input
         (set-keyboard-coding-system).
@@ -458,6 +460,13 @@ Test the contents of files
 <http://gnu.org/software/emacs/manual/html_node/emacs/Grep-Searching.html>,
 <http://gnu.org/software/emacs/manual/html_node/emacs/Dired-and-Find.html>,
 <http://www.gnu.org/software/emacs/windows/Text-and-Utility-modes.html>.
+
+### (kill-find)
+
+Stop find-grep-dired
+<http://lists.gnu.org/archive/html/emacs-devel/2006-08/msg00602.html>
+
+    C-c C-k
 
 Operating on Files
 ------------------

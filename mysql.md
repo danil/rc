@@ -275,4 +275,7 @@ Quering
 
 ### Finding duplicate values
 
+<http://stackoverflow.com/questions/688549/finding-duplicate-values-in-mysql#688551>
+
     SELECT email, COUNT(*) c FROM users GROUP BY email HAVING c > 1;
+    SELECT user_id, offer_id, COUNT(*) c FROM offers_users GROUP BY user_id, offer_id HAVING c > 1;

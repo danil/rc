@@ -189,6 +189,10 @@ Network
 
     telnet mail.omskportal.ru 25
 
+### Telnet
+
+    busybox telnet molinos.megaplan.ru 80
+
 ### SSH
 
     ssh -t root@santaslittlehelper "ssh danil@homer"
