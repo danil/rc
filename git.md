@@ -150,6 +150,12 @@ Diff
 
     git diff --name-status production..master
 
+### Prevent git diff from using a pager
+
+<http://stackoverflow.com/questions/136178/git-diff-handling-long-lines#152546>
+
+    GIT_PAGER='' git diff
+
 Mirror Subversion repository to Git
 -----------------------------------
 
