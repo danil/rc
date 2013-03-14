@@ -104,6 +104,12 @@ Stream Editor
 
     sed -i '7d' ~/.ssh/known_hosts
 
+#### Cut from starting to ending line-numbers
+
+<http://stackoverflow.com/questions/5683367/how-to-cropcut-text-files-based-on-starting-and-ending-line-numbers-in-cygwin#5683408>
+
+    sed -n '134650000,134900000p' production.log > production-2013-02-18.log
+
 ### AWK
 
     awk '{ FS = "\t" ; OFS = "\t" ; print $1,"ru",$2,$3 }' \
