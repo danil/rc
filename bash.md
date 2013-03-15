@@ -778,6 +778,17 @@ card, etc.
 
     alsamixer -c 0
 
+SoX
+---
+
+<http://en.wikipedia.org/wiki/SoX>.
+
+### Play audio in background via command line
+
+<http://askubuntu.com/questions/176038/how-can-i-play-a-song-in-the-background-via-my-command-line#176046>.
+
+    play -q --no-show-progress ~/local/share/sounds/complete.oga &
+
 CentOS
 ------
 
