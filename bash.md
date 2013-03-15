@@ -84,7 +84,21 @@ Search and replace
 
     ack --files-with-matches "{{" config/
 
-#### Remove empty dirs
+### The silver searcher
+
+<https://github.com/ggreer/the_silver_searcher>
+
+    ag Webpage ~/src/jobtest-aviasales-ru/
+
+#### Search for file name
+
+    ag --all-types -g [a-z]+array
+
+#### Only print filenames containing matches
+
+    ag --files-with-matches "{{" config/
+
+### Remove empty dirs
 
     find -depth -type d -empty -exec rmdir {} \;
 
@@ -428,6 +442,14 @@ Free ram
 <http://linuxatemyram.com>
 
     free -m
+
+Job control
+-----------
+
+<http://stackoverflow.com/questions/11821378/what-does-bashno-job-control-in-this-shell-mean#11824420>
+
+* `jobs` list running jobs
+*    `%` foreground recently job
 
 Other
 -----
