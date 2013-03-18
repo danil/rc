@@ -334,7 +334,7 @@ Change the name of the current buffer.
 27.11 Specifying a Coding System for File Text
 ----------------------------------------------
 
-Encoding.
+Charset encoding.
 
 <http://gnu.org/software/emacs/manual/html_node/emacs/Text-Coding.html#Text-Coding>
 <http://stackoverflow.com/questions/2750352/how-to-change-buffer-coding-system-in-emacs#2750366>.
