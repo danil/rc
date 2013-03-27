@@ -129,10 +129,12 @@ Submodules
 Remove submodule
 ----------------
 
-<http://stackoverflow.com/questions/1260748/how-do-i-remove-a-git-submodule>
+<http://stackoverflow.com/questions/1260748/how-do-i-remove-a-git-submodule#1260982>
 
 * Delete the relevant line from the `.gitmodules`
 * Delete the relevant section from `.git/config`
+
+    git rm --cached path_to_submodule
 
 Diff
 ----
