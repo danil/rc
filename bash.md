@@ -741,6 +741,12 @@ In a tty terminal, not a terminal window (get there with [Ctrl] +
     xrandr
     xrandr -s 1440x900
 
+#### X screen go back to its normal resolution
+
+<http://wiki.winehq.org/FAQ#head-acb200594b5bcd19722faf6fd34b60cc9c2f237b>
+
+    xrandr -s 0
+
 ### stdout to clipboard
 
 <http://cyberciti.biz/faq/xclip-linux-insert-files-command-output-intoclipboard>.
