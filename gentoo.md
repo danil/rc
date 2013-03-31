@@ -141,6 +141,11 @@ Symptom: `checking whether the C compiler works... no`
 Freeing Up Disk Space
 ---------------------
 
+* <http://wiki.gentoo.org/wiki/Knowledge_Base:Remove_obsoleted_distfiles>
+* <http://wiki.gentoo.org/wiki/Eclean>
+* <http://wiki.gentoo.org/wiki/Kernel/Removal>
+* <http://en.gentoo-wiki.com/wiki/Freeing_Up_Disk_Space>
+
     eclean-dist
     eclean distfiles
 
