@@ -266,6 +266,14 @@ diff
 
     diff -u foo.c.~master~ foo.c
 
+Patch
+-----
+
+### Apply patch
+
+<http://cyberciti.biz/faq/appy-patch-file-using-patch-command/>
+
+    patch -p1 < {/path/to/patch/file}
 
 Archiving and compression
 -------------------------
