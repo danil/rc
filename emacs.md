@@ -588,6 +588,8 @@ Text
 Macro-command
 -------------
 
+<http://emacs-fu.blogspot.ru/2010/07/keyboard-macros.html>
+
     C-x (
         Start macro definition.
     C-x )
