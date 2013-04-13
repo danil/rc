@@ -925,6 +925,14 @@ Ibuffer
 * `Q`           query replace in each of the marked buffers
 * `I`           as above, with a regular expression
 
+Undo tree
+---------
+
+<http://www.dr-qubit.org/undo-tree/undo-tree.el>
+
+* `C-_` `C-/` (`undo-tree-undo`) Undo changes
+* `M-_` `C-?` (`undo-tree-redo`) Redo changes
+
 Other
 -----
 
