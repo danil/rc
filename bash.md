@@ -708,6 +708,32 @@ Yellowdog Updater Modified
     yum remove emacs
     yum groupremove "MySQL Database"
 
+
+Terminal multiplexers
+---------------------
+
+### GNU Screen
+
+    screen btdownloadcurses some.torrent
+    screen -S debian_torrent
+    screen -r <PID> # Reconnect to screen.
+    screen -RD
+    screen -x debian_torrent # Reconnect to screen.
+
+#### Scrollback or copy mode
+
+<http://superuser.com/questions/138748/how-to-scroll-up-and-look-at-data-in-gnu-screen>.
+
+* To enter hit the prefix key and, then `[`
+* Escape to exit.
+
+### tmux
+
+    tmux new -s danil
+    ^b d
+    tmux ls
+    tmux attach -t danil
+
 X
 ---
 
@@ -738,21 +764,6 @@ In a tty terminal, not a terminal window (get there with [Ctrl] +
 * <https://wiki.archlinux.org/index.php/Xdg-open>
 
     xdg-open ~/Downloads/tasks.csv
-
-### GNU Screen
-
-    screen btdownloadcurses some.torrent
-    screen -S debian_torrent
-    screen -r <PID> # Reconnect to screen.
-    screen -RD
-    screen -x debian_torrent # Reconnect to screen.
-
-#### Scrollback or copy mode
-
-<http://superuser.com/questions/138748/how-to-scroll-up-and-look-at-data-in-gnu-screen>.
-
-* To enter hit the prefix key and, then `[`
-* Escape to exit.
 
 ### Change monitor resolution
 
