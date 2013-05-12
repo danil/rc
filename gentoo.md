@@ -204,12 +204,11 @@ iptables
 
 <http://wiki.gentoo.org/wiki/Iptables#Firewall>
 
-Rules file are usally saved to `/var/lib/$ipt/rules-save` so that
-whenever your machine is powered on, the rules set will be loaded
-automatically with `/etc/init.d/$ipt`.
+Rules saved to `/var/lib/$ipt/rules-save` and will be loaded
+with `/etc/init.d/$ipt` when machine is powered on.
 
     iptables -L
-    sudo iptables-restore < /etc/iptables.firewall.rules
+    iptables-restore < /etc/iptables.firewall.rules
     /etc/init.d/iptables save
     /etc/init.d/iptables start
 
