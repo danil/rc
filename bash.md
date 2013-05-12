@@ -865,7 +865,7 @@ Fail2ban
     fail2ban-client status
     fail2ban-client status ssh-iptables
 
-### Unban an IP
+### Unban
 
 <http://serverfault.com/questions/285256/how-to-unban-an-ip-properly-with-fail2ban#475117>.
 
