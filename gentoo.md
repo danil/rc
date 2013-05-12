@@ -199,18 +199,27 @@ La files
 
     sudo sh -c 'env-update && source /etc/profile'
 
-iptables
---------
+Netfilter
+---------
 
 <http://wiki.gentoo.org/wiki/Iptables#Firewall>
 
 Rules saved to `/var/lib/$ipt/rules-save` and will be loaded
 with `/etc/init.d/$ipt` when machine is powered on.
 
+### iptables
+
     iptables -L
     iptables-restore < /etc/iptables.firewall.rules
     /etc/init.d/iptables save
     /etc/init.d/iptables start
+
+### ip6tables
+
+    ip6tables -L
+    ip6tables-restore < /etc/ip6tables.firewall.rules
+    /etc/init.d/ip6tables save
+    /etc/init.d/ip6tables start
 
 Other
 -----
