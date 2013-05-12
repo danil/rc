@@ -199,6 +199,14 @@ La files
 
     sudo sh -c 'env-update && source /etc/profile'
 
+iptables
+--------
+
+    iptables -L
+    sudo iptables-restore < /etc/iptables.firewall.rules
+    /etc/init.d/iptables save
+    /etc/init.d/iptables start
+
 Other
 -----
 
