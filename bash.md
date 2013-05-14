@@ -475,6 +475,20 @@ Job control
 * `jobs` list running jobs
 *    `%` foreground recently job
 
+Sudo
+----
+
+    sudo -u nobody ls
+
+Su
+---
+
+### Execute command as another user
+
+<http://stackoverflow.com/questions/6905697/how-to-run-script-as-another-user-without-password#6905797>
+
+    sudo su -c "ls" -s /bin/sh ftp
+
 Other
 -----
 
@@ -578,7 +592,6 @@ Other
     smbmount "//172.16.84.14/d$" mnt/cdp0002 \
      -o workgroup=darout,username=dkutkevich,iocharset=UTF-8,codepage=windows-1251
     rdesktop -g 99% -k en 192.168.91.5
-    sudo -u nobody ls
     chroot /mnt/gentoo /bin/bash
     env-update && source /etc/profile
     # 6177657266 (64bit WEP key)
