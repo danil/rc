@@ -21,7 +21,7 @@ Basics
 ------
 
     C-x C-w
-        (write-file) Write the text to an alternate name.
+        (write-file) Save the current buffer with a specified file name.
     C-x C-v
         Find alternate file.
     C-x i
