@@ -935,6 +935,29 @@ Undo tree
 * `C-_` `C-/` (`undo-tree-undo`) Undo changes
 * `M-_` `C-?` (`undo-tree-redo`) Redo changes
 
+Compilation
+-----------
+
+### Recompile directory
+
+#### (byte-recompile-directory)
+
+<http://stackoverflow.com/questions/1217180/how-do-i-byte-compile-everything-in-my-emacs-d-directory#1217249>.
+
+Will compile all the .el files in the directory and in all
+subdirectories below.
+
+The `C-u 0` part is to make it not ask about every `.el` file that
+does not have a `.elc` counterpart.
+
+    C-u 0 M-x byte-recompile-directory
+
+#### Batch
+
+<http://stackoverflow.com/questions/1217180/how-do-i-byte-compile-everything-in-my-emacs-d-directory#12394284>
+
+    emacs --batch --eval '(byte-recompile-directory "~/.emacs.d")'
+
 Other
 -----
 
