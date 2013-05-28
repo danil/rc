@@ -278,19 +278,27 @@ Patch
 Archiving and compression
 -------------------------
 
-### Tar
+### tar
 
     tar -xvvzf foobar.tar.gz
 
-### Gzip
+### gzip
 
     gzip -v access.log
     gzip -vd access.log.gz
+    tar -xvvzf foobar.tar.gz
 
-### Bzip2
+### bzip2
 
     bzip2 -v access.log
     bzip2 -vd access.log.gz
+    tar -xvvjf foobar.tar.bz2
+
+### xz
+
+    xz -v access.log
+    xz -vd access.log.gz
+    tar -xvvJf foobar.tar.xz
 
 ### Zip
 
