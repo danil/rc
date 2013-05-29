@@ -106,11 +106,17 @@ add the things you want to keep, then run it.
 Remote
 ------
 
-    git remote add github git@github.com:danil/ruby-mode.git
+### Removing
 
-### Adding second remote
+    git remote remove github
+
+### Adding
 
     git remote add origin ssh://danil@kutkevich.org/var/git/kutkevich-org.git
+
+#### Adding second
+
+    git remote add github git@github.com:danil/ruby-mode.git
 
 Mirror Git repository
 ---------------------
