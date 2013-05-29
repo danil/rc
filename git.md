@@ -103,10 +103,14 @@ add the things you want to keep, then run it.
 
     git stash --keep-index
 
-Adding second remote
---------------------
+Remote
+------
 
     git remote add github git@github.com:danil/ruby-mode.git
+
+### Adding second remote
+
+    git remote add origin ssh://danil@kutkevich.org/var/git/kutkevich-org.git
 
 Mirror Git repository
 ---------------------
@@ -379,7 +383,6 @@ Other
     git ls-files
     git commit -a -m 'Some commit.'
     git cat-file blob HEAD^:htdocs/bookmarks/index.md
-    git remote add origin ssh://danil@kutkevich.org/var/git/kutkevich-org.git
     git fsck
     git cherry-pick 92117a11fdfdb75a72dd8d3f1c5f25800e827589
     git blame production ~/src/vendor/avers/prohq/app/views/layouts/project.html.haml
