@@ -103,8 +103,15 @@ add the things you want to keep, then run it.
 
     git stash --keep-index
 
+Adding second remote
+--------------------
+
+    git remote add github git@github.com:danil/ruby-mode.git
+
 Mirror Git repository
 ---------------------
+
+### First
 
 <http://toolmantim.com/thoughts/setting_up_a_new_remote_git_repository>
 
@@ -112,10 +119,12 @@ Mirror Git repository
     git remote add origin git://github.com/sebnow/lake.git
     git fetch
 
+### Second
 
-### Adding second remote
+<http://exyr.org/2011/git-mirrors>
 
-    git remote add github git@github.com:danil/ruby-mode.git
+    git remote add kutkevich ssh://danil@kutkevich.org/var/git/foo.git
+    git push --mirror kutkevich
 
 Submodules
 ----------
