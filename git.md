@@ -133,6 +133,7 @@ Mirror Git repository
 
 <http://exyr.org/2011/git-mirrors>
 
+    git clone --mirror git://github.com/danil/foo.git
     git remote add kutkevich ssh://danil@kutkevich.org/var/git/foo.git
     git push --mirror kutkevich
 
