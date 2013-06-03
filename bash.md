@@ -674,7 +674,7 @@ Advanced Packaging Tool
     apt-get clean
     apt-cdrom [-d /home/danil/mnt/cdrom] add
 
-### Add repository
+### Add
 
 #### Add repository
 
@@ -707,6 +707,16 @@ Advanced Packaging Tool
                       |awk '{ FS = " " ; OFS = " " ; print $2 }' \
                       |less -SI
     aptitude show catdoc
+
+### Aptitude
+
+#### Install
+
+    aptitude install indicator-brightness
+
+#### Uninstall
+
+    aptitude remove indicator-brightness
 
 Debian package
 --------------
