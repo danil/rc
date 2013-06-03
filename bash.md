@@ -674,6 +674,18 @@ Advanced Packaging Tool
     apt-get clean
     apt-cdrom [-d /home/danil/mnt/cdrom] add
 
+### Add repository
+
+#### Add repository
+
+    add-apt-repository ppa:indicator-brightness/ppa
+    apt-get update
+
+#### Remove repository
+
+    add-apt-repository ppa:indicator-brightness/ppa
+    apt-get update
+
 ### Finding which package contains a file
 
 <http://debian-administration.org/articles/334>
