@@ -728,6 +728,10 @@ Debian package
     dpkg-reconfigure xserver-xorg locales
     dpkg -x xlibs_4.3.0.dfsg.1-14sarge7_all.deb ./
 
+### Install
+
+    dpkg -i google-talkplugin_current_amd64.deb
+
 RPM
 ---
 
