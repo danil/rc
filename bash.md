@@ -730,6 +730,8 @@ Debian package
 
 ### Install
 
+<http://cyberciti.biz/faq/ubuntu-linux-how-do-i-install-deb-packages>
+
     dpkg -i google-talkplugin_current_amd64.deb
 
 RPM
