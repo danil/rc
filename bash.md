@@ -967,6 +967,11 @@ VirtualBox
     VBoxManage clonevdi xp_ie7.vdi xp_ie8.vd
 
 
+Puppet
+------
+
+    puppet puppet.pp
+
 Converting flac to mp3
 ----------------------
 
