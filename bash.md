@@ -783,6 +783,10 @@ Terminal multiplexers
     tmux ls
     tmux attach -t danil
 
+##### Socket
+
+    tmux -S /tmp/socket_file
+
 X
 ---
 
