@@ -728,6 +728,10 @@ Debian package
     dpkg-reconfigure xserver-xorg locales
     dpkg -x xlibs_4.3.0.dfsg.1-14sarge7_all.deb ./
 
+### See installed version
+
+    dpkg -s emacs21-nox
+
 ### Install
 
 <http://cyberciti.biz/faq/ubuntu-linux-how-do-i-install-deb-packages>
