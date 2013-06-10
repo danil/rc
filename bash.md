@@ -228,6 +228,12 @@ Network
     ssh -f root@stampy -L 2000:homer:22 -N
     ssh -p 2000 danil@localhost
 
+#### Transparent multi-hop SSH agent forwarding
+
+<http://sshmenu.sourceforge.net/articles/transparent-mulithop.html>
+
+    ssh -A -t -p 9922 medapp2.waveaccess.ru ssh -A danil@192.168.0.38
+
 ### Nmap
 
 Discover (scanner) hosts and services on a computer network.
