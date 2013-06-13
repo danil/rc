@@ -326,7 +326,7 @@ Log
 
     git log --reverse
     git log --patch --since="1 day 2 hours" README
-    git log --author="Danil" HEAD^^^ HEAD
+    git log --author='\(mikhail\|danil\)' HEAD^^^ HEAD
 
 ### Git tree in terminal
 
