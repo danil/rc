@@ -331,7 +331,7 @@ Log
 
 <http://stackoverflow.com/questions/4259996/how-can-i-view-a-git-log-of-just-one-users-commits#4262780>.
 
-    git log --author='\(mikhail\|danil\)' HEAD^^^ HEAD
+    git log --author='\(mikhail\|danil\)' --after=2013-06-07 HEAD^^^ HEAD
 
 ### Git tree in terminal
 
