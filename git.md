@@ -38,6 +38,12 @@ Branching and Merging
 
     git branch -d breadcrumbs-1423
 
+### Merge without commit
+
+<http://stackoverflow.com/questions/8640887/git-merge-without-auto-commit#8641053>
+
+    git merge --no-commit --no-ff barney-gentoo-danil
+
 ### Rename
 
     git branch -m old_branch new_branch
