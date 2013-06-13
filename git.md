@@ -326,6 +326,11 @@ Log
 
     git log --reverse
     git log --patch --since="1 day 2 hours" README
+
+### By authors
+
+<http://stackoverflow.com/questions/4259996/how-can-i-view-a-git-log-of-just-one-users-commits#4262780>.
+
     git log --author='\(mikhail\|danil\)' HEAD^^^ HEAD
 
 ### Git tree in terminal
