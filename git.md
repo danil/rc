@@ -184,6 +184,10 @@ Diff
 
     GIT_PAGER='' git diff
 
+### Other
+
+    git log --author='\(mikhail\|danil\)' --after="Mon Jun 10 19:48:47 2013 +0400" --pretty=format:'%h' --no-merges --reverse  | sed ':a;N;$!ba;s/\n/ /g'
+
 Mirror Subversion repository to Git
 -----------------------------------
 
