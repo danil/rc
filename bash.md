@@ -232,6 +232,8 @@ Network
 
 <http://sshmenu.sourceforge.net/articles/transparent-mulithop.html>
 
+    ssh-agent
+    ssh-add *pem
     ssh -A -t -p 9922 medapp2.waveaccess.ru ssh -A danil@192.168.0.38
 
 ### Nmap
@@ -514,6 +516,11 @@ GNU Privacy Guard
     cat file | bzip2 --stdout | gpg --recipient danil --encrypt > file.bz2
     gpg --keyserver subkeys.pgp.net --recv-keys 17072058
     gpg --verify <signature file> <downloaded iso>
+
+Signals
+-------
+
+    pkill regex
 
 Other
 -----
@@ -998,3 +1005,30 @@ Converting flac to mp3
 <http://linuxtutorialblog.com/post/solution-converting-flac-to-mp3>
 
     for file in *.flac; do flac -cd "$file" | lame -h - "${file%.flac}.mp3"; done
+
+GLX
+---
+
+OpenGL Extension to the X Window System
+
+### Measure 3D performance
+
+<http://www.free3d.org/faq>
+
+    glxgears
+
+
+Window Manager
+--------------
+
+### Change viewport
+
+<http://superuser.com/questions/264281/wmctrl-says-i-have-one-workspace-when-i-actually-have-four#answer-264502>
+
+Go to first viewport of current desktop
+
+    wmctrl -o 0,0
+
+### List the windows
+
+    wmctrl -l
