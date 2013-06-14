@@ -184,10 +184,6 @@ Diff
 
     GIT_PAGER='' git diff
 
-### Other
-
-    git log --author='\(mikhail\|danil\)' --after="Mon Jun 10 19:48:47 2013 +0400" --pretty=format:'%h' --no-merges --reverse  | sed ':a;N;$!ba;s/\n/ /g'
-
 Mirror Subversion repository to Git
 -----------------------------------
 
@@ -343,6 +339,14 @@ Log
 
     git log --graph --decorate --pretty=oneline --abbrev-commit
 
+### Other
+
+<http://stackoverflow.com/questions/949314/how-to-retrieve-the-hash-for-the-current-commit-in-git>
+<http://stackoverflow.com/questions/2798822/can-i-get-git-log-to-print-the-history-in-reverse-order>
+<http://stackoverflow.com/questions/1251999/sed-how-can-i-replace-a-newline-n>
+
+    git log --after="Mon Jun 10 19:48:47 2013 +0400" --pretty=format:'%h' --no-merges --reverse  | sed ':a;N;$!ba;s/\n/ /g'
+
 History of a file
 -----------------
 
@@ -369,6 +373,13 @@ Get a file from a specific revision
 <http://stackoverflow.com/questions/610208/how-to-retrieve-a-single-file-from-specific-revision-in-git#answer-610315>.
 
     git show HEAD^^^:lib/paginable_by_date.rb > lib/paginable_by_date.rb
+
+Clean
+-----
+
+Remove untracked files from the working tree
+
+    git clean --force
 
 Bisect
 ------
