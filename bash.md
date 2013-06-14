@@ -312,6 +312,10 @@ Archiving and compression
     zip -r foo.zip foo/
     unzip foo.zip
 
+### funzip
+
+    cat archive.zip | funzip
+
 ### RAR
 
     unrar x file.rar
@@ -503,6 +507,14 @@ Su
 
     sudo su -c "ls" -s /bin/sh ftp
 
+GNU Privacy Guard
+-----------------
+
+    cat file.bz2 | gpg --recipient danil --decrypt | bzip2 --decompress --stdout > file
+    cat file | bzip2 --stdout | gpg --recipient danil --encrypt > file.bz2
+    gpg --keyserver subkeys.pgp.net --recv-keys 17072058
+    gpg --verify <signature file> <downloaded iso>
+
 Other
 -----
 
@@ -518,8 +530,6 @@ Other
     md5sum -c ./file
     echo "1539bad48e984ae1441052dc074c0995  /dev/hdc" |md5sum -c
     echo "26733b170052a01eb48ed2d5495a5cb51c00bdd0 /dev/hdc" |sha1sum -c
-    gpg --keyserver subkeys.pgp.net --recv-keys 17072058
-    gpg --verify <signature file> <downloaded iso>
     cal -3
     time tar -cvvzf foobar.tar.gz ./lib/ ./mobotix/ /usr/share/doc/
     cp -a ~/var/www/ ~/tmp/
