@@ -77,8 +77,14 @@ A la restore deleted file
 Tag
 ---
 
-    git tag -l
-    git checkout <tag_name>
+### Create
+
+    git tag 0.0.1
+
+### List and select
+
+    git tag
+    git checkout 0.0.1
 
 Stash
 -----
