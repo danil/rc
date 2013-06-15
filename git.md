@@ -145,6 +145,7 @@ Submodules
     git submodule add git://kutkevich.org/rc.git markdown/rc
     git submodule init
     git submodule update
+    git submodule status
 
 Remove submodule
 ----------------
