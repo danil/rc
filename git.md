@@ -79,9 +79,13 @@ Tag
 
 ### Create
 
+<http://git-scm.com/book/en/Git-Basics-Tagging#Lightweight-Tags>
+
     git tag 0.0.1
 
 ### List and select
+
+<http://git-scm.com/book/en/Git-Basics-Tagging#Listing-Your-Tags>
 
     git tag
     git checkout 0.0.1
