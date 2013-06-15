@@ -38,6 +38,12 @@ Branching and Merging
 
     git branch -d breadcrumbs-1423
 
+### Merge without commit
+
+<http://stackoverflow.com/questions/8640887/git-merge-without-auto-commit#8641053>
+
+    git merge --no-commit --no-ff barney-gentoo-danil
+
 ### Rename
 
     git branch -m old_branch new_branch
@@ -321,13 +327,26 @@ Log
 
     git log --reverse
     git log --patch --since="1 day 2 hours" README
-    git log --author="Danil" HEAD^^^ HEAD
+
+### By authors
+
+<http://stackoverflow.com/questions/4259996/how-can-i-view-a-git-log-of-just-one-users-commits#4262780>.
+
+    git log --author='\(mikhail\|danil\)' --after=2013-06-07 HEAD^^^ HEAD
 
 ### Git tree in terminal
 
 <http://stackoverflow.com/questions/1064361/unable-to-show-a-git-tree-in-terminal#5354644>.
 
     git log --graph --decorate --pretty=oneline --abbrev-commit
+
+### Other
+
+<http://stackoverflow.com/questions/949314/how-to-retrieve-the-hash-for-the-current-commit-in-git>
+<http://stackoverflow.com/questions/2798822/can-i-get-git-log-to-print-the-history-in-reverse-order>
+<http://stackoverflow.com/questions/1251999/sed-how-can-i-replace-a-newline-n>
+
+    git log --after="Mon Jun 10 19:48:47 2013 +0400" --pretty=format:'%h' --no-merges --reverse  | sed ':a;N;$!ba;s/\n/ /g'
 
 History of a file
 -----------------
@@ -355,6 +374,13 @@ Get a file from a specific revision
 <http://stackoverflow.com/questions/610208/how-to-retrieve-a-single-file-from-specific-revision-in-git#answer-610315>.
 
     git show HEAD^^^:lib/paginable_by_date.rb > lib/paginable_by_date.rb
+
+Clean
+-----
+
+Remove untracked files from the working tree
+
+    git clean --force
 
 Bisect
 ------

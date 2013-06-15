@@ -228,6 +228,14 @@ Network
     ssh -f root@stampy -L 2000:homer:22 -N
     ssh -p 2000 danil@localhost
 
+#### Transparent multi-hop SSH agent forwarding
+
+<http://sshmenu.sourceforge.net/articles/transparent-mulithop.html>
+
+    ssh-agent
+    ssh-add *pem
+    ssh -A -t -p 9922 medapp2.waveaccess.ru ssh -A danil@192.168.0.38
+
 ### Nmap
 
 Discover (scanner) hosts and services on a computer network.
@@ -305,6 +313,10 @@ Archiving and compression
     zip file-to-archive.zip file-to-archive
     zip -r foo.zip foo/
     unzip foo.zip
+
+### funzip
+
+    cat archive.zip | funzip
 
 ### RAR
 
@@ -497,6 +509,19 @@ Su
 
     sudo su -c "ls" -s /bin/sh ftp
 
+GNU Privacy Guard
+-----------------
+
+    cat file.bz2 | gpg --recipient danil --decrypt | bzip2 --decompress --stdout > file
+    cat file | bzip2 --stdout | gpg --recipient danil --encrypt > file.bz2
+    gpg --keyserver subkeys.pgp.net --recv-keys 17072058
+    gpg --verify <signature file> <downloaded iso>
+
+Signals
+-------
+
+    pkill regex
+
 Other
 -----
 
@@ -512,8 +537,6 @@ Other
     md5sum -c ./file
     echo "1539bad48e984ae1441052dc074c0995  /dev/hdc" |md5sum -c
     echo "26733b170052a01eb48ed2d5495a5cb51c00bdd0 /dev/hdc" |sha1sum -c
-    gpg --keyserver subkeys.pgp.net --recv-keys 17072058
-    gpg --verify <signature file> <downloaded iso>
     cal -3
     time tar -cvvzf foobar.tar.gz ./lib/ ./mobotix/ /usr/share/doc/
     cp -a ~/var/www/ ~/tmp/
@@ -674,6 +697,18 @@ Advanced Packaging Tool
     apt-get clean
     apt-cdrom [-d /home/danil/mnt/cdrom] add
 
+### Add
+
+#### Add repository
+
+    add-apt-repository ppa:indicator-brightness/ppa
+    apt-get update
+
+#### Remove repository
+
+    add-apt-repository ppa:indicator-brightness/ppa
+    apt-get update
+
 ### Finding which package contains a file
 
 <http://debian-administration.org/articles/334>
@@ -696,6 +731,16 @@ Advanced Packaging Tool
                       |less -SI
     aptitude show catdoc
 
+### Aptitude
+
+#### Install
+
+    aptitude install indicator-brightness
+
+#### Uninstall
+
+    aptitude remove indicator-brightness
+
 Debian package
 --------------
 
@@ -705,6 +750,16 @@ Debian package
     dpkg-architecture
     dpkg-reconfigure xserver-xorg locales
     dpkg -x xlibs_4.3.0.dfsg.1-14sarge7_all.deb ./
+
+### See installed version
+
+    dpkg -s emacs21-nox
+
+### Install
+
+<http://cyberciti.biz/faq/ubuntu-linux-how-do-i-install-deb-packages>
+
+    dpkg -i google-talkplugin_current_amd64.deb
 
 RPM
 ---
@@ -754,6 +809,10 @@ Terminal multiplexers
     ^b d
     tmux ls
     tmux attach -t danil
+
+##### Socket
+
+    tmux -S /tmp/socket_file
 
 X
 ---
@@ -935,9 +994,41 @@ VirtualBox
     VBoxManage clonevdi xp_ie7.vdi xp_ie8.vd
 
 
+Puppet
+------
+
+    puppet puppet.pp
+
 Converting flac to mp3
 ----------------------
 
 <http://linuxtutorialblog.com/post/solution-converting-flac-to-mp3>
 
     for file in *.flac; do flac -cd "$file" | lame -h - "${file%.flac}.mp3"; done
+
+GLX
+---
+
+OpenGL Extension to the X Window System
+
+### Measure 3D performance
+
+<http://www.free3d.org/faq>
+
+    glxgears
+
+
+Window Manager
+--------------
+
+### Change viewport
+
+<http://superuser.com/questions/264281/wmctrl-says-i-have-one-workspace-when-i-actually-have-four#answer-264502>
+
+Go to first viewport of current desktop
+
+    wmctrl -o 0,0
+
+### List the windows
+
+    wmctrl -l
