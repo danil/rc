@@ -810,9 +810,17 @@ Terminal multiplexers
     tmux ls
     tmux attach -t danil
 
-##### Socket
+#### Socket session
 
-    tmux -S /tmp/socket_file
+##### Create
+
+    tmux -S /tmp/pair
+    chmod 777 /tmp/pair
+
+##### Attach
+
+
+    tmux -S /tmp/pair attach
 
 X
 ---
