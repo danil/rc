@@ -819,7 +819,6 @@ Terminal multiplexers
 
 ##### Attach
 
-
     tmux -S /tmp/pair attach
 
 X
