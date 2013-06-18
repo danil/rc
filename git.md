@@ -19,7 +19,7 @@ Git
     git clone git://kutkevich.org/rc.git foobar
     git --git-dir=/home/danil/src/rc/.git --work-tree=/home/danil/src/rc status
     git push origin master
-    git pull origin master
+    git pull --rebase origin master
 
 Branching and Merging
 ---------------------
@@ -77,8 +77,18 @@ A la restore deleted file
 Tag
 ---
 
-    git tag -l
-    git checkout <tag_name>
+### Create
+
+<http://git-scm.com/book/en/Git-Basics-Tagging#Lightweight-Tags>
+
+    git tag 0.0.1
+
+### List and select
+
+<http://git-scm.com/book/en/Git-Basics-Tagging#Listing-Your-Tags>
+
+    git tag
+    git checkout 0.0.1
 
 Stash
 -----
@@ -151,6 +161,7 @@ Submodules
     git submodule add git://kutkevich.org/rc.git markdown/rc
     git submodule init
     git submodule update
+    git submodule status
 
 Remove submodule
 ----------------
