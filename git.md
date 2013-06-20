@@ -394,6 +394,8 @@ Get a file from a specific revision
 Restore deleted file without commit
 -----------------------------------
 
+<http://stackoverflow.com/questions/1843577/how-to-restore-deleted-file#1843584>
+
     git checkout HEAD .config/compiz-1/compizconfig/Default.ini
 
 Clean
