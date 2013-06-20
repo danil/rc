@@ -763,6 +763,10 @@ Subversion
 Tags
 ----
 
+### (visit-tags-table)
+
+Specify path to tag index file and load tag index file
+
 ### (find-tag)
 
 <http://gnu.org/software/emacs/manual/html_node/emacs/Find-Tag.html>
