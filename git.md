@@ -350,6 +350,12 @@ Log
 
     git log --graph --decorate --pretty=oneline --abbrev-commit
 
+### File name
+
+<http://stackoverflow.com/questions/14207414/how-to-show-changed-file-name-only-with-git-log#14227496>
+
+    git log --name-only
+
 ### Other
 
 <http://stackoverflow.com/questions/949314/how-to-retrieve-the-hash-for-the-current-commit-in-git>

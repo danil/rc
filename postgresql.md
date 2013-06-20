@@ -126,6 +126,13 @@ Insert data
     INSERT INTO test_table (name, age) VALUES('John', 3);
     COPY test_table FROM STDIN WITH DELIMITER AS ',';
 
+Truncate data
+-------------
+
+<http://www.postgresql.org/docs/9.1/static/sql-truncate.html>
+
+    TRUNCATE timeline_items;
+
 Query data
 ----------
 
