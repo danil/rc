@@ -385,6 +385,11 @@ Get a file from a specific revision
 
     git show HEAD^^^:lib/paginable_by_date.rb > lib/paginable_by_date.rb
 
+Restore deleted file without commit
+-----------------------------------
+
+    git checkout HEAD .config/compiz-1/compizconfig/Default.ini
+
 Clean
 -----
 
