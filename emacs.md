@@ -962,6 +962,13 @@ does not have a `.elc` counterpart.
 
     emacs --batch --eval '(byte-recompile-directory "~/.emacs.d")'
 
+.dir-locals.el
+--------------
+
+Per-Directory Local Variables
+
+<http://www.gnu.org/software/emacs/manual/html_node/emacs/Directory-Variables.html>
+
 Other
 -----
 
