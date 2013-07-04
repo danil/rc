@@ -660,6 +660,7 @@ Other
     xmodmap ~/.Xmodmap
     xmodmap -pke > .xmodmap.orig
     tput cols && tput lines
+    chsh -s /bin/zsh
 
 DCTC
 ----
