@@ -9,8 +9,8 @@
      Creative Commons, 171 Second Street, Suite 300, San Francisco,
      California, 94105, USA. -->
 
-Bash
-====
+Shell
+=====
 
 Manuals
 -------
@@ -539,129 +539,6 @@ john     31085  0.0  0.0  29064  5028 pts/6    Ss+  15:33   0:00 -bash
     echo "HAHAHAHAHAHAHAHA" | write john pts/6
     kill 31085
 
-Other
------
-
-    mkdir ~/root/{var/{db/pkg,paludis/distfiles,cache/paludis/{names_cache,write_cache},tmp/paludis}
-    uname -a
-    hostname -f
-    id
-    ls -altc
-    whereis vsftpd
-    alias
-    echo -e "1\n2"
-    echo -n "Some text line"; echo -en "all the same text line.\n"
-    md5sum -c ./file
-    echo "1539bad48e984ae1441052dc074c0995  /dev/hdc" |md5sum -c
-    echo "26733b170052a01eb48ed2d5495a5cb51c00bdd0 /dev/hdc" |sha1sum -c
-    cal -3
-    time tar -cvvzf foobar.tar.gz ./lib/ ./mobotix/ /usr/share/doc/
-    cp -a ~/var/www/ ~/tmp/
-    top -b -n1 |grep wpa
-    uptime # load average: <last minute>, <last 5 minutes>, <15 minutes>
-    hdparm -tT /dev/sda
-    vmstat
-    iostat
-    cat /etc/passwd
-    cat /etc/group
-    grep MemTotal /proc/meminfo
-    emacs /boot/grub/menu.lst
-    less -IS ./access.log
-    tail -f ./access.log
-    head ./access.log
-    strings binary.pdf
-    cat /proc/modules
-    sort ./file
-    cat list-1 list-2 list-3 |sort |uniq > final.list
-    msort --quiet --line \
-          --position 2 ---field-separators "\t" --comparison-type l \
-          --tag "][(][a-z]+://" bookmark.md
-    msort --quiet --line \
-          --tag "${id_attribute}=" --comparison-type n \
-          --tag 'HTTP_X_REAL_IP="' --comparison-type h \
-          --tag HTTP_USER_AGENT= \
-          --tag Time= \
-          unsortedfile > file
-    expand # Converts tabs to spaces.
-    unexpand # Converts spaces to tabs.
-    ps auxf
-    rm -r foo.tar.gz bar.tar.gz la/
-    file ./index.html
-    who
-    cat > /sbin/traff_graph # C-d to save the file.
-    fmt FILE # Reformat each paragraph in the FILE.
-    ln -s TARGET [LINK_NAME]
-    touch access.log error.log
-    dmesg |tail -n 25 # Diagnostic message.
-    lspci
-    lsusb
-    ethtool -i eth0
-    nohup iceweasel
-    setterm -blength 0
-    tput colors
-    curl -o ruby.png http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/100px-Ruby_logo.svg.png
-    curl -v -H "Accept: application/xrds+xml" -X HEAD http://www.yahoo.com/
-    wget ftp://anonymous@kutkevich.org/pub/ruby-1.8.7-p72.tar.gz
-    wget -c -t inf --waitretry=30 -b --retry-connrefused \
-         [-O output_file ] "ftp://192.168.1.1/file"
-    wget --recursive --level=0 --restrict-file-names=nocontrol \
-         --convert-links "http://tinyerp.org/edoc/"
-    wget --load-cookies=cookies.txt --recursive --domains=www.prohq.ru,prohq.ru --level=999 --restrict-file-names=nocontrol --ignore-tags=img http://www.prohq.ru
-    wget --page-requisites \
-         --convert-links \
-         --reject "robots.txt" \
-         http://localhost:3000/maillists-invitations-contractor.html
-    rtorrent -s ./.rtorrent
-    host 192.168.132.44 192.168.8.1
-    nslookup 172.16.81.4
-    whois kutkevich.org
-    dig kutkevich.org
-    ifconfig -a
-    ifconfig eth0 192.168.0.2
-    ifconfig eth0.1 hw ether 00:1D:7E:55:19:D9
-    dhclient
-    ip r
-    route del default gw 192.168.28.1 ath0
-    route {add|del} [default] [gw 192.168.0.1] -net 172.16.0.0 \
-          netmask 255.255.0.0 dev ppp0
-    echo "1" > /proc/sys/net/ipv4/ip_forward
-    pon darout
-    poff darout
-    iwlist ath0 scanning
-    iwconfig ath0 essid John
-    iwconfig ath0 key s:dfvgbh1234567
-    killall wpa_supplicant && sleep 5 \
-     && wpa_supplicant -i ath0 -c /etc/wpa_supplicant/wpa_supplicant.conf
-    wvdial megafon
-    curlftpfs -o "user=danil" kutkevich.org mnt/kutkevich_org/
-    smbtree [-N] -d 2
-    smbclient [-N] -L server
-    smbclient -N "\\\\server\\store (e)"
-    smbmount "//172.16.84.14/d$" mnt/cdp0002 \
-     -o workgroup=darout,username=dkutkevich,iocharset=UTF-8,codepage=windows-1251
-    rdesktop -g 99% -k en 192.168.91.5
-    chroot /mnt/gentoo /bin/bash
-    env-update && source /etc/profile
-    # 6177657266 (64bit WEP key)
-    echo -n 'awerf' |hexdump -e '5/1 "%02x" "\n"' \
-         |cut -d ':' -f 1-5
-    # 786468646b6b6577696f646464 (128bit WEP key)
-    echo -n 'xdhdkkewioddd' |hexdump -e '13/1 "%02x" "\n"' \
-         |cut -d ':' -f 1-13
-    update-rc.d nginx defaults
-    update-rc.d -f nginx remove
-    nohup ./scripts/bootstrap.sh &
-    cdrecord dev=/dev/hdc <downloaded iso file>
-    PAGER=cat man man
-    vlc -I ncurses
-    vobcopy
-    evolution --force-shutdown
-    sloccount .
-    xmodmap ~/.Xmodmap
-    xmodmap -pke > .xmodmap.orig
-    tput cols && tput lines
-    chsh -s /bin/zsh
-
 DCTC
 ----
 
@@ -699,110 +576,6 @@ Users and groups
     passwd danil
     grpck
 
-APT
----
-
-Advanced Packaging Tool
-
-    apt-get update
-    apt-get -u upgrade
-    apt-get -u dist-upgrade
-    apt-cash [--full] search emacs
-    apt-cash show emacs
-    apt-cache depends penguin-command
-    apt-get -t testing install emacs22-nox
-    apt-get --purge remove xyz
-    apt-get clean
-    apt-cdrom [-d /home/danil/mnt/cdrom] add
-
-### Add
-
-#### Add repository
-
-    add-apt-repository ppa:indicator-brightness/ppa
-    apt-get update
-
-#### Remove repository
-
-    add-apt-repository ppa:indicator-brightness/ppa
-    apt-get update
-
-### Finding which package contains a file
-
-<http://debian-administration.org/articles/334>
-
-    apt-file update
-    apt-file search stdio.h
-
-    apt-key add archive-key-eeepc.asc
-    apt-mark unmarkauto
-    reprepro
-    dpkg-scanpackages
-    wget -O - http://backports.org/debian/archive.key |apt-key add -
-    aptitude -P clean
-    aptitude -P update
-    aptitude -P safe-upgrade
-    aptitude -P full-upgrade
-    aptitude -P purge ~c
-    aptitude search . |grep "^i   " \
-                      |awk '{ FS = " " ; OFS = " " ; print $2 }' \
-                      |less -SI
-    aptitude show catdoc
-
-### Aptitude
-
-#### Install
-
-    aptitude install indicator-brightness
-
-#### Uninstall
-
-    aptitude remove indicator-brightness
-
-Debian package
---------------
-
-    dpkg -l emacs*
-    dpkg -L emacs21-nox
-    dpkg -S stdio.h
-    dpkg-architecture
-    dpkg-reconfigure xserver-xorg locales
-    dpkg -x xlibs_4.3.0.dfsg.1-14sarge7_all.deb ./
-
-### See installed version
-
-    dpkg -s emacs21-nox
-
-### Install
-
-<http://cyberciti.biz/faq/ubuntu-linux-how-do-i-install-deb-packages>
-
-    dpkg -i google-talkplugin_current_amd64.deb
-
-RPM
----
-
-Red Hat Package Manager
-
-    rpm -qa |grep -i emacs
-    rpm -qfa |grep -i xyz\.so
-    rpm -ihv emacs
-    rpm -Uhv emacs
-    rpm -e package
-
-Yellowdog Updater Modified
---------------------------
-
-    yum list emacs\*
-    yum search PalmPilot
-    yum install emacs
-    yum groupinstall "MySQL Database"
-    yum update emacs
-    yum groupupdate "MySQL Database"
-    yum remove emacs
-    yum groupremove "MySQL Database"
-
-
 Terminal multiplexers
 ---------------------
 
@@ -820,6 +593,7 @@ Terminal multiplexers
 
 * To enter hit the prefix key and, then `[`
 * Escape to exit.
+]
 
 ### tmux
 
@@ -838,77 +612,6 @@ Terminal multiplexers
 ##### Attach
 
     tmux -S /tmp/pair attach
-
-X
----
-
-### Restart X
-
-In a tty terminal, not a terminal window (get there with [Ctrl] +
-[Alt] + [F1]).
-
-    /etc/init.d/xdm stop
-
-### Hardware information for VESA PnP monitors
-
-    get-edid |parse-edid
-
-### DPI and display size
-
-    xdpyinfo | grep "dots per inch"
-    xdpyinfo | grep dimensions
-
-### xautolock
-
-    xautolock -disable
-
-
-### Default applications
-
-* <https://wiki.archlinux.org/index.php/Default_Applications>
-* <https://wiki.archlinux.org/index.php/Xdg-open>
-
-    xdg-open ~/Downloads/tasks.csv
-
-### Change monitor resolution
-
-    xrandr
-    xrandr -s 1440x900
-
-#### X screen go back to its normal resolution
-
-<http://wiki.winehq.org/FAQ#head-acb200594b5bcd19722faf6fd34b60cc9c2f237b>
-
-    xrandr -s 0
-
-### stdout to clipboard
-
-<http://cyberciti.biz/faq/xclip-linux-insert-files-command-output-intoclipboard>.
-
-    cat /var/tmp/portage/unity-base/bamf-0.2.118/temp/build.log | xsel
-
-### Other
-
-    echo "lalala" |xclip -selection clip
-    echo -en "trulala" | xsel -i -b -p
-    xev
-    xset b off
-    xrdb -merge ~/.Xresources
-    xrdb -merge ~/.Xdefaults
-    xinit `which nice` -n 1 `which wine` "./falloutw.exe" -- :1 -depth 16
-    xclock &
-    xdg-open micronika.xls
-    xvidtune
-    xdpyinfo |grep "depth of root"
-    xrandr # .xinitc, .xsesson, .gnomerc
-    ./configure --prefix=$HOME --with-baseruby="/home/danil/bin/ruby" \
-                --enable-shared --enable-pthread --enable-install-doc
-    su -c make -f Makefile.cvs install
-    make && make install
-    make menuconfig # make oldconfig
-    echo $?
-    gimptool-2.0 --install-script ~/Downloads/multiscale_0.scm
-    notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '2' 'Desktop'"
 
 ALSA
 ----
@@ -1039,29 +742,125 @@ Converting flac to mp3
 
     for file in *.flac; do flac -cd "$file" | lame -h - "${file%.flac}.mp3"; done
 
-GLX
----
+Other
+-----
 
-OpenGL Extension to the X Window System
-
-### Measure 3D performance
-
-<http://www.free3d.org/faq>
-
-    glxgears
-
-
-Window Manager
---------------
-
-### Change viewport
-
-<http://superuser.com/questions/264281/wmctrl-says-i-have-one-workspace-when-i-actually-have-four#answer-264502>
-
-Go to first viewport of current desktop
-
-    wmctrl -o 0,0
-
-### List the windows
-
-    wmctrl -l
+    mkdir ~/root/{var/{db/pkg,paludis/distfiles,cache/paludis/{names_cache,write_cache},tmp/paludis}
+    uname -a
+    hostname -f
+    id
+    ls -altc
+    whereis vsftpd
+    alias
+    echo -e "1\n2"
+    echo -n "Some text line"; echo -en "all the same text line.\n"
+    md5sum -c ./file
+    echo "1539bad48e984ae1441052dc074c0995  /dev/hdc" |md5sum -c
+    echo "26733b170052a01eb48ed2d5495a5cb51c00bdd0 /dev/hdc" |sha1sum -c
+    cal -3
+    time tar -cvvzf foobar.tar.gz ./lib/ ./mobotix/ /usr/share/doc/
+    cp -a ~/var/www/ ~/tmp/
+    top -b -n1 |grep wpa
+    uptime # load average: <last minute>, <last 5 minutes>, <15 minutes>
+    hdparm -tT /dev/sda
+    vmstat
+    iostat
+    cat /etc/passwd
+    cat /etc/group
+    grep MemTotal /proc/meminfo
+    emacs /boot/grub/menu.lst
+    less -IS ./access.log
+    tail -f ./access.log
+    head ./access.log
+    strings binary.pdf
+    cat /proc/modules
+    sort ./file
+    cat list-1 list-2 list-3 |sort |uniq > final.list
+    msort --quiet --line \
+          --position 2 ---field-separators "\t" --comparison-type l \
+          --tag "][(][a-z]+://" bookmark.md
+    msort --quiet --line \
+          --tag "${id_attribute}=" --comparison-type n \
+          --tag 'HTTP_X_REAL_IP="' --comparison-type h \
+          --tag HTTP_USER_AGENT= \
+          --tag Time= \
+          unsortedfile > file
+    expand # Converts tabs to spaces.
+    unexpand # Converts spaces to tabs.
+    ps auxf
+    rm -r foo.tar.gz bar.tar.gz la/
+    file ./index.html
+    who
+    cat > /sbin/traff_graph # C-d to save the file.
+    fmt FILE # Reformat each paragraph in the FILE.
+    ln -s TARGET [LINK_NAME]
+    touch access.log error.log
+    dmesg |tail -n 25 # Diagnostic message.
+    lspci
+    lsusb
+    ethtool -i eth0
+    nohup iceweasel
+    setterm -blength 0
+    tput colors
+    curl -o ruby.png http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/100px-Ruby_logo.svg.png
+    curl -v -H "Accept: application/xrds+xml" -X HEAD http://www.yahoo.com/
+    wget ftp://anonymous@kutkevich.org/pub/ruby-1.8.7-p72.tar.gz
+    wget -c -t inf --waitretry=30 -b --retry-connrefused \
+         [-O output_file ] "ftp://192.168.1.1/file"
+    wget --recursive --level=0 --restrict-file-names=nocontrol \
+         --convert-links "http://tinyerp.org/edoc/"
+    wget --load-cookies=cookies.txt --recursive --domains=www.prohq.ru,prohq.ru --level=999 --restrict-file-names=nocontrol --ignore-tags=img http://www.prohq.ru
+    wget --page-requisites \
+         --convert-links \
+         --reject "robots.txt" \
+         http://localhost:3000/maillists-invitations-contractor.html
+    rtorrent -s ./.rtorrent
+    host 192.168.132.44 192.168.8.1
+    nslookup 172.16.81.4
+    whois kutkevich.org
+    dig kutkevich.org
+    ifconfig -a
+    ifconfig eth0 192.168.0.2
+    ifconfig eth0.1 hw ether 00:1D:7E:55:19:D9
+    dhclient
+    ip r
+    route del default gw 192.168.28.1 ath0
+    route {add|del} [default] [gw 192.168.0.1] -net 172.16.0.0 \
+          netmask 255.255.0.0 dev ppp0
+    echo "1" > /proc/sys/net/ipv4/ip_forward
+    pon darout
+    poff darout
+    iwlist ath0 scanning
+    iwconfig ath0 essid John
+    iwconfig ath0 key s:dfvgbh1234567
+    killall wpa_supplicant && sleep 5 \
+     && wpa_supplicant -i ath0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+    wvdial megafon
+    curlftpfs -o "user=danil" kutkevich.org mnt/kutkevich_org/
+    smbtree [-N] -d 2
+    smbclient [-N] -L server
+    smbclient -N "\\\\server\\store (e)"
+    smbmount "//172.16.84.14/d$" mnt/cdp0002 \
+     -o workgroup=darout,username=dkutkevich,iocharset=UTF-8,codepage=windows-1251
+    rdesktop -g 99% -k en 192.168.91.5
+    chroot /mnt/gentoo /bin/bash
+    env-update && source /etc/profile
+    # 6177657266 (64bit WEP key)
+    echo -n 'awerf' |hexdump -e '5/1 "%02x" "\n"' \
+         |cut -d ':' -f 1-5
+    # 786468646b6b6577696f646464 (128bit WEP key)
+    echo -n 'xdhdkkewioddd' |hexdump -e '13/1 "%02x" "\n"' \
+         |cut -d ':' -f 1-13
+    update-rc.d nginx defaults
+    update-rc.d -f nginx remove
+    nohup ./scripts/bootstrap.sh &
+    cdrecord dev=/dev/hdc <downloaded iso file>
+    PAGER=cat man man
+    vlc -I ncurses
+    vobcopy
+    evolution --force-shutdown
+    sloccount .
+    xmodmap ~/.Xmodmap
+    xmodmap -pke > .xmodmap.orig
+    tput cols && tput lines
+    chsh -s /bin/zsh

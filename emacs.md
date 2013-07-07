@@ -969,6 +969,21 @@ Per-Directory Local Variables
 
 <http://www.gnu.org/software/emacs/manual/html_node/emacs/Directory-Variables.html>
 
+Color themes
+------------
+
+### (list-faces-display)
+
+List of all faces.
+
+### (color-theme-print)
+
+Faces currently used.
+
+### (color-theme-compare)
+
+Differences between theme A and theme B.
+
 Other
 -----
 
@@ -992,7 +1007,6 @@ Other
     M-x set-language-environment
     M-x save-some-buffers
         Display each unsaved file and ask if you want it saved.
-    M-x list-colors-display
     M-x kill-emacs
         To kill the Emacs process, when Emacs is started as a daemon.
     C-x h
