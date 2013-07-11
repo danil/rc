@@ -106,11 +106,5 @@ Other
     xvidtune
     xdpyinfo |grep "depth of root"
     xrandr # .xinitc, .xsesson, .gnomerc
-    ./configure --prefix=$HOME --with-baseruby="/home/danil/bin/ruby" \
-                --enable-shared --enable-pthread --enable-install-doc
-    su -c make -f Makefile.cvs install
-    make && make install
-    make menuconfig # make oldconfig
-    echo $?
     gimptool-2.0 --install-script ~/Downloads/multiscale_0.scm
     notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '2' 'Desktop'"
