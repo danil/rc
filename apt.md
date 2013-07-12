@@ -24,7 +24,7 @@ Repository
 
 ### Remove
 
-    add-apt-repository ppa:indicator-brightness/ppa
+    add-apt-repository --remove ppa:indicator-brightness/ppa
     apt-get update
 
 Finding which package contains a file
