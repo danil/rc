@@ -524,6 +524,8 @@ Signals
 
 ### Logout user
 
+Kick them out
+
 <http://unix.stackexchange.com/questions/615/how-do-you-kick-a-benign-user-off-your-system#622>
 
     who
