@@ -86,7 +86,12 @@ Show users
     -- \du [PATTERN]
     SELECT * FROM pg_user ORDER BY id DESC LIMIT 1;
 
+Database list
+-------------
+
     -- \l list all databases (add "+" for more detail)
+
+    SELECT datname FROM pg_database WHERE datistemplate = false;
 
 Create database
 ---------------
