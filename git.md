@@ -42,7 +42,7 @@ Branching and Merging
 
 <http://stackoverflow.com/questions/8640887/git-merge-without-auto-commit#8641053>
 
-    git merge --no-commit --no-ff barney-gentoo-danil
+    git merge --no-commit --no-ff barney-ubuntu-danil
 
 ### Rename
 
