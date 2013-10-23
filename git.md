@@ -65,6 +65,26 @@ Create master-old on remote
 
     git push origin :accounting
 
+Remote branch
+-------------
+
+### Removing
+
+    git remote remove github
+
+### Adding
+
+    git remote add origin ssh://danil@kutkevich.org/var/git/kutkevich-org.git
+
+#### Adding second
+
+    git remote add github git@github.com:danil/ruby-mode.git
+
+Branch upstream
+---------------
+
+    git branch --set-upstream-to=origin/barney-ubuntu-danil
+
 Copy file from branch to another
 --------------------------------
 
@@ -118,21 +138,6 @@ This will stash everything that you haven't previously added. Just git
 add the things you want to keep, then run it.
 
     git stash --keep-index
-
-Remote
-------
-
-### Removing
-
-    git remote remove github
-
-### Adding
-
-    git remote add origin ssh://danil@kutkevich.org/var/git/kutkevich-org.git
-
-#### Adding second
-
-    git remote add github git@github.com:danil/ruby-mode.git
 
 Mirror Git repository
 ---------------------

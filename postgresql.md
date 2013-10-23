@@ -19,6 +19,8 @@ PostgreSQL
 Dump
 ----
 
+Backuping.
+
     pg_dump --host=localhost --username=danil --table="news" \
             --attribute-inserts ska_production > outfile
 
