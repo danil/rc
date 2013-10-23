@@ -228,6 +228,11 @@ Network
     ssh -f root@stampy -L 2000:homer:22 -N
     ssh -p 2000 danil@localhost
 
+#### HTTP tunneling
+
+    ssh -f medapp -L 3001:192.168.0.38:3000 -N
+    curl localhost:3001
+
 #### Transparent multi-hop SSH agent forwarding
 
 <http://sshmenu.sourceforge.net/articles/transparent-mulithop.html>
