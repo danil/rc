@@ -389,6 +389,15 @@ Sorting
           --tag Time= \
           unsortedfile > file
 
+Bash history
+------------
+
+### Print without line numbers
+
+<http://stackoverflow.com/questions/7110119/bash-history-without-line-numbers#7110197>.
+
+    history | cut -c 8-
+
 ### Remove duplicates in .bash_history
 
 <http://unix.stackexchange.com/questions/48713/how-can-i-remove-duplicates-in-my-bash-history-preserving-order#48716>
