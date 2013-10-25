@@ -374,6 +374,27 @@ Random
     cat 80k_upper_20120723 20k_upper_201210091031  \
       | sort | uniq -c | grep ' 1 ' --invert-match
 
+Sorting
+-------
+
+    sort ./file
+    cat list-1 list-2 list-3 |sort |uniq > final.list
+    msort --quiet --line \
+          --position 2 ---field-separators "\t" --comparison-type l \
+          --tag "][(][a-z]+://" bookmark.md
+    msort --quiet --line \
+          --tag "${id_attribute}=" --comparison-type n \
+          --tag 'HTTP_X_REAL_IP="' --comparison-type h \
+          --tag HTTP_USER_AGENT= \
+          --tag Time= \
+          unsortedfile > file
+
+### Remove duplicates in .bash_history
+
+<http://unix.stackexchange.com/questions/48713/how-can-i-remove-duplicates-in-my-bash-history-preserving-order#48716>
+
+    cat ~/.bash_history | nl | sort -k2 -k 1,1nr | uniq -f1| sort -n | cut -f2
+
 ### Other
 
     dd if=/dev/urandom count=1 2> /dev/null \
@@ -781,17 +802,6 @@ Other
     head ./access.log
     strings binary.pdf
     cat /proc/modules
-    sort ./file
-    cat list-1 list-2 list-3 |sort |uniq > final.list
-    msort --quiet --line \
-          --position 2 ---field-separators "\t" --comparison-type l \
-          --tag "][(][a-z]+://" bookmark.md
-    msort --quiet --line \
-          --tag "${id_attribute}=" --comparison-type n \
-          --tag 'HTTP_X_REAL_IP="' --comparison-type h \
-          --tag HTTP_USER_AGENT= \
-          --tag Time= \
-          unsortedfile > file
     expand # Converts tabs to spaces.
     unexpand # Converts spaces to tabs.
     ps auxf
