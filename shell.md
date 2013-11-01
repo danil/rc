@@ -46,7 +46,7 @@ Search and replace
   <http://stackoverflow.com/questions/3863792/an-ack-or-grep-regex-to-match-two-lines-that-are-nearly-the-same#answer-3864440>
 * Perl-compatible regex
 
-    pcregrep -M  'abc.*(\n|.)*efg' test.txt
+    pcregrep -rM 'class.*(\n|.)*class' lib/cda/
 
 ### find
 
