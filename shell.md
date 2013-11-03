@@ -496,11 +496,22 @@ Disk
 
     fdisk -l /dev/sdb
     sfdisk -l -uM
-    cfdisk
     tune2fs
     mkswap /dev/sda7 && swapon /dev/sda7
     swapon -s
     swapoff -a
+
+#### cfdisk
+
+##### Warning
+
+<https://wiki.archlinux.org/index.php/Partitioning#Partitioning_tools>.
+
+The first partition created by `cfdisk` starts at sector 63,
+instead of the usual 2048. This can lead to reduced performance on _SSD_
+and advanced format (4k sector) drives.
+It will cause problems with _GRUB2_.
+GRUB legacy and Syslinux should work fine.
 
 #### mke2fs
 
