@@ -492,14 +492,16 @@ Disk
       | xargs du -b 2>/dev/null \
       | awk '{total += $1; print $0} END{print total}'
 
-### Disk formatting
+### Partitions
+
+#### GPT
+
+    gdisk /dev/sda
+
+#### Legacy MBR
 
     fdisk -l /dev/sdb
     sfdisk -l -uM
-    tune2fs
-    mkswap /dev/sda7 && swapon /dev/sda7
-    swapon -s
-    swapoff -a
 
 #### cfdisk
 
@@ -512,6 +514,14 @@ instead of the usual 2048. This can lead to reduced performance on _SSD_
 and advanced format (4k sector) drives.
 It will cause problems with _GRUB2_.
 GRUB legacy and Syslinux should work fine.
+
+#### Swap
+
+    mkswap /dev/sda7 && swapon /dev/sda7
+    swapon -s
+    swapoff -a
+
+### Formatting
 
 #### mke2fs
 
