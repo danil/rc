@@ -17,4 +17,4 @@ Pacman
 
 ### Download package list
 
-    pacman --sync --refresh
+    pacman --sync --verbose --refresh --sysupgrade
