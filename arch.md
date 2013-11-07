@@ -15,6 +15,43 @@ Arch
 Pacman
 ------
 
-### Download package list
+### Update and upgrade
+
+Download package list
 
     pacman --sync --verbose --refresh --sysupgrade
+
+### Install
+
+    yaourt --verbose --sync lightdm-gtk3-greeter
+
+### Remove
+
+    pacman --remove --recursive cairo-dock-plugins
+
+AUR
+---
+
+Arch User Repository <https://wiki.archlinux.org/index.php/Arch_User_Repository>.
+
+### PKGBUILD
+
+<https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages>
+
+#### Compile and pack
+
+    makepkg -s
+
+#### Install
+
+    pacman --upgrade yaourt-1.3-1-any.pkg.tar.xz
+
+Yaourt
+------
+
+Yet AnOther User Repository
+
+Search and install
+------------------
+
+    yaourt compiz-dev
