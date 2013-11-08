@@ -15,9 +15,9 @@ Arch
 Pacman
 ------
 
-### Update and upgrade
+### Update
 
-Download package list
+Download package list and upgrade
 
     pacman --sync --verbose --refresh --sysupgrade
 
@@ -55,3 +55,9 @@ Search and install
 ------------------
 
     yaourt compiz-dev
+
+### Update AUR
+
+<https://bbs.archlinux.org/viewtopic.php?pid=604848#p604848>
+
+    yaourt --sync --refresh --sysupgrade --aur
