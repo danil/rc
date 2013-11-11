@@ -29,6 +29,25 @@ Download package list and upgrade
 
     pacman --remove --recursive cairo-dock-plugins
 
+### Query
+
+<https://wiki.archlinux.org/index.php/Pacman#Querying_package_databases>
+
+#### Explicitly installed
+
+Except `base` and `base-devel` packages
+<https://bbs.archlinux.org/viewtopic.php?pid=690050#p690050>.
+
+    pacman --query --explicit --info \
+      | awk '/^Name/ { name=$3 } /^Groups/ { if ( $3 != "base" && $3 != "base-devel" ) { print name } }'
+
+#### orphans
+
+Useless packages, that are not associated with explicitly installed packages
+<https://bbs.archlinux.org/viewtopic.php?pid=690008#p690008>.
+
+    pacman --query --deps --unrequired --quiet
+
 AUR
 ---
 
