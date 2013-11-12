@@ -19,7 +19,7 @@ Git
     git clone git://kutkevich.org/rc.git foobar
     git --git-dir=/home/danil/src/rc/.git --work-tree=/home/danil/src/rc status
     git push origin master
-    git pull --rebase origin master
+    git pull origin master
 
 Branching and Merging
 ---------------------
@@ -320,6 +320,13 @@ Patch
 
 Rebase
 ------
+
+After commit:
+
+    git fetch
+    git rebase
+
+### Other
 
     git checkout guarantee-with-admin
     git branch guarantee-with-admin-for-rebase
