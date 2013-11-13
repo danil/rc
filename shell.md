@@ -39,6 +39,10 @@ Search and replace
     grep -R eth0 /etc
     grep -irl danil . 2> /dev/null | xargs tar cvvf ~/tmp/123.tar
 
+#### Only names
+
+    grep --files-with-matches --no-messages
+
 ### pcregrep
 
 * Multiple lines matching
