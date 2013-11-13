@@ -500,6 +500,8 @@ Disk
 
 #### GPT
 
+<https://wiki.archlinux.org/index.php/Partitioning#Partitioning_tools>.
+
     gdisk /dev/sda
 
 #### Legacy MBR
