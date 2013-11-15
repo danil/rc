@@ -33,6 +33,10 @@ Download package list and upgrade
 
 <https://wiki.archlinux.org/index.php/Pacman#Querying_package_databases>
 
+#### Search
+
+    pacman --query --search silver
+
 #### Explicitly installed
 
 Except `base` and `base-devel` packages
