@@ -15,11 +15,17 @@ Git
     git config --global user.name "Danil Kutkevich"
     git config --global user.email danil@kutkevich.org
     git init
-    git add .
     git clone git://kutkevich.org/rc.git foobar
     git --git-dir=/home/danil/src/rc/.git --work-tree=/home/danil/src/rc status
     git push origin master
     git pull origin master
+
+Add
+---
+
+### With staging deleted files
+
+    git add --update .
 
 Branching and Merging
 ---------------------
