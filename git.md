@@ -71,6 +71,26 @@ Create master-old on remote
 
     git push origin :accounting
 
+Checkout
+--------
+
+### Directory
+
+Get a directories from a specific revision
+<http://stackoverflow.com/questions/9670745/how-to-restore-a-whole-directory-from-history-of-git-repository#9671161>
+
+    git checkout master -- config/navigation/
+
+Show
+----
+
+### File
+
+Get a file from a specific revision
+<http://stackoverflow.com/questions/610208/how-to-retrieve-a-single-file-from-specific-revision-in-git#answer-610315>.
+
+    git show HEAD^^^:lib/paginable_by_date.rb > lib/paginable_by_date.rb
+
 Remote branch
 -------------
 
@@ -400,14 +420,6 @@ grep
 <http://stackoverflow.com/questions/2928584/how-to-grep-in-the-git-history#answer-2929502>
 
     git grep 'TODO' $(git rev-list --all)
-
-Show
-----
-
-Get a file from a specific revision
-<http://stackoverflow.com/questions/610208/how-to-retrieve-a-single-file-from-specific-revision-in-git#answer-610315>.
-
-    git show HEAD^^^:lib/paginable_by_date.rb > lib/paginable_by_date.rb
 
 Restore deleted file without commit
 -----------------------------------
