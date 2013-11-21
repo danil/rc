@@ -347,10 +347,20 @@ Patch
 Rebase
 ------
 
-After commit:
-
     git fetch
     git rebase
+    git rebase
+
+### Conflict
+
+#### Continue
+
+    git add .
+    git rebase --continue
+
+#### Abort
+
+    git rebase --abort
 
 ### Other
 
