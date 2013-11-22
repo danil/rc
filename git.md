@@ -349,7 +349,6 @@ Rebase
 
     git fetch
     git rebase
-    git rebase
 
 ### Conflict
 
