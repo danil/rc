@@ -71,7 +71,8 @@ OpenGL Extension to the X Window System
 
 ### Measure 3D performance
 
-<http://www.free3d.org/faq>
+* <https://wiki.archlinux.org/index.php/Benchmarking#glxgears>
+* <http://www.free3d.org/faq>
 
     glxgears
 
