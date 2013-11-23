@@ -23,9 +23,13 @@ Git
 Add
 ---
 
-### With staging deleted files
+Stage all files
 
-    git add --update .
+    git add .
+
+### Deleted
+
+    git add --update
 
 Branching and Merging
 ---------------------
