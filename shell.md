@@ -640,43 +640,6 @@ Users and groups
     passwd danil
     grpck
 
-Terminal multiplexers
----------------------
-
-### GNU Screen
-
-    screen btdownloadcurses some.torrent
-    screen -S debian_torrent
-    screen -r <PID> # Reconnect to screen.
-    screen -RD
-    screen -x debian_torrent # Reconnect to screen.
-
-#### Scrollback or copy mode
-
-<http://superuser.com/questions/138748/how-to-scroll-up-and-look-at-data-in-gnu-screen>.
-
-* To enter hit the prefix key and, then `[`
-* Escape to exit.
-]
-
-### tmux
-
-    tmux new -s danil
-    ^b d
-    tmux ls
-    tmux attach -t danil
-
-#### Socket session
-
-##### Create
-
-    tmux -S /tmp/pair
-    chmod 777 /tmp/pair
-
-##### Attach
-
-    tmux -S /tmp/pair attach
-
 ALSA
 ----
 
