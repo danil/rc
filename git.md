@@ -205,6 +205,7 @@ Remove submodule
 
 * Delete the relevant line from the `.gitmodules`
 * Delete the relevant section from `.git/config`
+* Delete the relevant directory from `.git/modules/path_to_submodule`
 
     git rm --cached path_to_submodule
 

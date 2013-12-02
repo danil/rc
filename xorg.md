@@ -40,6 +40,8 @@ xautolock
 Default applications
 --------------------
 
+Open from console default application for file.
+
 * <https://wiki.archlinux.org/index.php/Default_Applications>
 * <https://wiki.archlinux.org/index.php/Xdg-open>
 
