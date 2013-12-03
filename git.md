@@ -208,6 +208,8 @@ Remove submodule
 * Delete the relevant directory from `.git/modules/path_to_submodule`
 
     git rm --cached path_to_submodule
+    git submodule sync path_to_submodule
+    git submodule deinit path_to_submodule
 
 Diff
 ----
