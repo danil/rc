@@ -52,6 +52,11 @@ Useless packages, that are not associated with explicitly installed packages
 
     pacman --query --deps --unrequired --quiet
 
+File belong to package
+----------------------
+
+    pkgfile emacs
+
 AUR
 ---
 
