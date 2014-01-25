@@ -199,6 +199,11 @@ La files
 
     sudo sh -c 'env-update && source /etc/profile'
 
+Merge configuration
+-------------------
+
+    dispatch-conf
+
 Netfilter
 ---------
 
