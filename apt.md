@@ -33,7 +33,7 @@ Finding which package contains a file
 <http://debian-administration.org/articles/334>
 
     apt-file update
-    apt-file search stdio.h
+    apt-file search /usr/bin/ag
 
     apt-key add archive-key-eeepc.asc
     apt-mark unmarkauto

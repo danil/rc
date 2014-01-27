@@ -107,6 +107,14 @@ Drop database
     DROP DATABASE danil;
     dropdb --username=danil --password test
 
+Copy database
+-------------
+
+<http://stackoverflow.com/questions/876522/creating-a-copy-of-a-database-in-postgres#876565>
+
+    CREATE DATABASE newdb WITH TEMPLATE originaldb OWNER ownername;
+    createdb -O ownername -T originaldb newdb
+
 Tables list
 -----------
 
