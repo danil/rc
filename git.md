@@ -31,6 +31,13 @@ Stage all files
 
     git add --update
 
+Branch
+------
+
+### Create and checkout
+
+    git checkout -b newbranch
+
 Branching and Merging
 ---------------------
 
