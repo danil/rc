@@ -147,6 +147,12 @@ Tag
     git tag
     git checkout 0.0.1
 
+### Push to remote
+
+<http://stackoverflow.com/questions/4061481/git-push-tag-master#4061529>
+
+    git push --tags production
+
 Stash
 -----
 

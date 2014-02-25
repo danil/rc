@@ -113,7 +113,15 @@ Copy database
 <http://stackoverflow.com/questions/876522/creating-a-copy-of-a-database-in-postgres#876565>
 
     CREATE DATABASE newdb WITH TEMPLATE originaldb OWNER ownername;
+
+<http://stackoverflow.com/questions/876522/creating-a-copy-of-a-database-in-postgres#6739995>
+
     createdb -O ownername -T originaldb newdb
+
+Rename database
+---------------
+
+    ALTER DATABASE medapp_dev RENAME TO medapp_dev_master;
 
 Tables list
 -----------
