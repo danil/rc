@@ -168,6 +168,10 @@ Updates
     module-rebuild list
     sudo sh -c "module-rebuild populate && module-rebuild rebuild"
 
+### Perl cleans all packages
+
+    perl-cleaner --all
+
 ### Other
 
     python-updater
