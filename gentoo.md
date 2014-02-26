@@ -17,13 +17,22 @@ Emerge
 
     MAKEOPTS="-j1" USE="-mmx" emerge --verbose --ask --oneshot sys-libs/glibc
     emerge --verbose --search emacs
-    emerge -v1p --deep --update --newuse --exclude x11-base/xorg-server -- world
-    emerge --verbose --ask --deep --emptytree --newuse world
     emerge --prune gentoo-sources
     emerge --verbose --ask --deep --noreplace =gentoo-sources-2.6.30-r4
     emerge --info
 
-### Recompiling
+### Update
+
+    emerge -v1p --deep --update --newuse --exclude x11-base/xorg-server -- world
+    emerge --verbose --ask --deep --emptytree --newuse world
+
+#### With build time dependencies
+
+<https://www.gentoo.org/proj/en/portage/doc/faq.xml?style=printable#doc_chap1_sect2>
+
+    emerge -v1 --deep --update --newuse --with-bdeps=y @world
+
+### Recompile
 
 Recompiling all packages on the system.
 
