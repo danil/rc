@@ -189,6 +189,11 @@ add the things you want to keep, then run it.
 
     git stash --keep-index
 
+Fetch
+-----
+
+    git fetch --all
+
 Mirror Git repository
 ---------------------
 
