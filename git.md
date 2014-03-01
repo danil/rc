@@ -82,6 +82,13 @@ Create master-old on remote
 
     git push origin :accounting
 
+
+### Checkout in bare repository
+
+<http://stackoverflow.com/questions/3301956/git-correct-way-to-change-active-branch-in-a-bare-repository#3302018>
+
+    git symbolic-ref HEAD refs/heads/foo-bar-branch
+
 Checkout
 --------
 
