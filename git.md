@@ -192,6 +192,8 @@ add the things you want to keep, then run it.
 Fetch
 -----
 
+<http://stackoverflow.com/questions/10312521/how-to-fetch-all-git-branches#10312587>
+
     git fetch --all
 
 Mirror Git repository
