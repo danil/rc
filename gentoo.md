@@ -32,6 +32,10 @@ Emerge
 
     emerge -v1 --deep --update --newuse --with-bdeps=y @world
 
+#### Kernel modules
+
+    emerge -v1 @module-rebuild
+
 ### Recompile
 
 Recompiling all packages on the system.
@@ -175,11 +179,6 @@ TAB-Completion
 
 Updates
 -------
-
-### Kernel
-
-    module-rebuild list
-    sudo sh -c "module-rebuild populate && module-rebuild rebuild"
 
 ### Perl cleans all packages
 
