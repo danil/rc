@@ -114,6 +114,10 @@ eix
     eix --world --categor
     eix-test-obsolete detail
 
+### Downgrade or upgrade list
+
+    eix --upgrade
+
 ### Overlays
 
 List packages install from overlay <http://bugs.gentoo.org/204324>,
