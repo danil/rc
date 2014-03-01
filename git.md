@@ -198,6 +198,9 @@ Mirror Git repository
 
     git clone --mirror git://github.com/danil/foo.git
     git remote add kutkevich ssh://danil@kutkevich.org/var/git/foo.git
+
+#### Push all branches
+
     git push --mirror kutkevich
 
 ### Second
