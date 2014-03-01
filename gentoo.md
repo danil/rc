@@ -34,6 +34,8 @@ Emerge
 
 #### Kernel modules
 
+<http://wiki.gentoo.org/wiki/Kernel/Upgrade#Reinstall_external_kernel_modules>
+
     emerge -v1 @module-rebuild
 
 ### Recompile
