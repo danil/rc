@@ -189,9 +189,14 @@ Updates
 
     perl-cleaner --all
 
+### Python
+
+    eselect python set --python2 python2.7
+    eselect python set --python3 python3.3
+    python-updater
+
 ### Other
 
-    python-updater
     emacs-updater
     haskell-updater
 
@@ -223,7 +228,13 @@ La files
 Merge configuration
 -------------------
 
+### First
+
     dispatch-conf
+
+### Second
+
+    etc-update
 
 Netfilter
 ---------
