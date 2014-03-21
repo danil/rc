@@ -43,6 +43,10 @@ Search and replace
 
     grep --files-with-matches --no-messages
 
+#### Select non-matching lines
+
+    grep --invert-match foo.*bar
+
 ### pcregrep
 
 * Multiple lines matching
