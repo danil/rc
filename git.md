@@ -509,6 +509,13 @@ Rremove
 
     git rm --cached .config/gajim/config
 
+Deploy to GitHub Pages
+----------------------
+
+    git add --update foobar/ && git commit -m 'deploy'
+    git push origin :gh-pages && git subtree push --prefix foobar origin gh-pages
+
+
 Other
 -----
 
