@@ -509,8 +509,11 @@ Rremove
 
     git rm --cached .config/gajim/config
 
+Subtree
+-------
+
 Deploy to GitHub Pages
-----------------------
+<https://github.com/yeoman/yeoman/wiki/Deployment#git-subtree-command>
 
     git add --update foobar/ && git commit -m 'deploy'
     git push origin :gh-pages && git subtree push --prefix foobar origin gh-pages
