@@ -31,6 +31,10 @@ Stage all files
 
     git add --update
 
+### Untracked
+
+    git add --all
+
 Branch
 ------
 
