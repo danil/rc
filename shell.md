@@ -156,6 +156,21 @@ Stream Editor
     cat /etc/ntp.conf | grep -v '^#'| grep -v '^$'
 
 
+Rename files
+------------
+
+### Names with whitespaces
+
+<http://stackoverflow.com/questions/2709458/bash-script-to-replace-spaces-in-file-names#2709619>
+
+#### Directories
+
+    find -name "* *" -type d | rename 's/\s/_/g'
+
+#### Files
+
+    find -name "* *" -type f | rename 's/\s/_/g'
+
 Truncate text file
 ------------------
 
