@@ -425,7 +425,7 @@ Bash history
 
 <http://unix.stackexchange.com/questions/48713/how-can-i-remove-duplicates-in-my-bash-history-preserving-order#48716>
 
-    cat ~/.bash_history | nl | sort -k2 -k 1,1nr | uniq -f1| sort -n | cut -f2
+    cat ~/.bash_history | nl | sort -k2 -k 1,1nr | uniq -f1 | sort -n | cut -f2
 
 ### Other
 
