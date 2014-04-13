@@ -149,27 +149,27 @@ Stream Editor
 
 #### Replacing returns with space
 
-    cat ./file |tr '\n' ' '
+    cat ./file | tr '\n' ' '
 
 #### Config dryup
 
-    cat /etc/ntp.conf | grep -v '^#'| grep -v '^$'
+    cat /etc/ntp.conf | grep -v '^#' | grep -v '^$'
 
 
-Perl-rename
+Rename
 -----------
 
 Rename files <http://stackoverflow.com/questions/2709458/bash-script-to-replace-spaces-in-file-names#2709619>.
 
-### Names with whitespaces
+### Whitespaces by underscores
 
 #### Directories
 
-    find -name "* *" -type d | rename 's/\s/_/g'
+    find -name "* *" -type d | perl-rename 's/\s/_/g'
 
 #### Files
 
-    find -name "* *" -type f | rename 's/\s/_/g'
+    find -name "* *" -type f | perl-rename 's/\s/_/g'
 
 Truncate text file
 ------------------
@@ -183,7 +183,7 @@ Blank file content.
 xargs
 -----
 
-    ack -a -g . |xargs -I % sh -c 'echo -e "\n\n########### %\n" && cat %' > 123
+    ack -a -g . | xargs -I % sh -c 'echo -e "\n\n########### %\n" && cat %' > 123
 
 Date and time
 -------------
