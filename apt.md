@@ -94,6 +94,12 @@ Install
 
     dpkg -i google-talkplugin_current_amd64.deb
 
+### Files list belongs to package
+
+<http://askubuntu.com/questions/32507/how-do-i-get-a-list-of-installed-files-from-a-package#32509>
+
+    dpkg-query -L <package_name>
+
 Other
 -----
 

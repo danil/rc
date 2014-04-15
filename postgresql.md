@@ -24,6 +24,10 @@ Backuping.
     pg_dump --host=localhost --username=danil --table="news" \
             --attribute-inserts ska_production > outfile
 
+### Restor binary dump
+
+    pg_restore --dbname=scheduler_development scheduler.backup
+
 Change output format
 --------------------
 
