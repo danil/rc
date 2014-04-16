@@ -132,6 +132,14 @@ Stream Editor
 
     sed -n '134650000,134900000p' production.log > production-2013-02-18.log
 
+#### Add \n at end of file
+
+Adds `\n` at the end of the file only if it doesn’t already end with a newline
+<http://unix.stackexchange.com/questions/31947/how-to-add-a-newline-to-the-end-of-a-file#31955>,
+<http://unix.stackexchange.com/questions/31947/how-to-add-a-newline-to-the-end-of-a-file#comment-43399>.
+
+sed --in-place --expression='$a\' ~/.dmenu_history
+
 ### AWK
 
     awk '{ FS = "\t" ; OFS = "\t" ; print $1,"ru",$2,$3 }' \
