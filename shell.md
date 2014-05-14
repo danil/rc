@@ -230,7 +230,13 @@ To clear the environment:
 Network
 -------
 
-    ngrep -d lo |less
+    ngrep -d lo | less
+
+### Find out gateway
+
+<http://cyberciti.biz/faq/how-to-find-gateway-ip-address>
+
+    route | grep UG
 
 ### Used ports
 
@@ -278,6 +284,50 @@ Discover (scanner) hosts and services on a computer network.
 
     nmap --open 217.197.232.218
     nmap -sP 192.168.0.0/16
+
+### Other
+
+    curl -o ruby.png http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/100px-Ruby_logo.svg.png
+    curl -v -H "Accept: application/xrds+xml" -X HEAD http://www.yahoo.com/
+    wget ftp://anonymous@kutkevich.org/pub/ruby-1.8.7-p72.tar.gz
+    wget -c -t inf --waitretry=30 -b --retry-connrefused \
+         [-O output_file ] "ftp://192.168.1.1/file"
+    wget --recursive --level=0 --restrict-file-names=nocontrol \
+         --convert-links "http://tinyerp.org/edoc/"
+    wget --load-cookies=cookies.txt --recursive --domains=www.prohq.ru,prohq.ru --level=999 --restrict-file-names=nocontrol --ignore-tags=img http://www.prohq.ru
+    wget --page-requisites \
+         --convert-links \
+         --reject "robots.txt" \
+         http://localhost:3000/maillists-invitations-contractor.html
+    rtorrent -s ./.rtorrent
+    host 192.168.132.44 192.168.8.1
+    nslookup 172.16.81.4
+    whois kutkevich.org
+    dig kutkevich.org
+    ifconfig -a
+    ifconfig eth0 192.168.0.2
+    ifconfig eth0.1 hw ether 00:1D:7E:55:19:D9
+    dhclient
+    ip r
+    route del default gw 192.168.28.1 ath0
+    route {add|del} [default] [gw 192.168.0.1] -net 172.16.0.0 \
+          netmask 255.255.0.0 dev ppp0
+    echo "1" > /proc/sys/net/ipv4/ip_forward
+    pon darout
+    poff darout
+    iwlist ath0 scanning
+    iwconfig ath0 essid John
+    iwconfig ath0 key s:dfvgbh1234567
+    killall wpa_supplicant && sleep 5 \
+     && wpa_supplicant -i ath0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+    wvdial megafon
+    curlftpfs -o "user=danil" kutkevich.org mnt/kutkevich_org/
+    smbtree [-N] -d 2
+    smbclient [-N] -L server
+    smbclient -N "\\\\server\\store (e)"
+    smbmount "//172.16.84.14/d$" mnt/cdp0002 \
+     -o workgroup=darout,username=dkutkevich,iocharset=UTF-8,codepage=windows-1251
+    rdesktop -g 99% -k en 192.168.91.5
 
 ACPI
 ----
@@ -845,47 +895,6 @@ Other
     nohup iceweasel
     setterm -blength 0
     tput colors
-    curl -o ruby.png http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/100px-Ruby_logo.svg.png
-    curl -v -H "Accept: application/xrds+xml" -X HEAD http://www.yahoo.com/
-    wget ftp://anonymous@kutkevich.org/pub/ruby-1.8.7-p72.tar.gz
-    wget -c -t inf --waitretry=30 -b --retry-connrefused \
-         [-O output_file ] "ftp://192.168.1.1/file"
-    wget --recursive --level=0 --restrict-file-names=nocontrol \
-         --convert-links "http://tinyerp.org/edoc/"
-    wget --load-cookies=cookies.txt --recursive --domains=www.prohq.ru,prohq.ru --level=999 --restrict-file-names=nocontrol --ignore-tags=img http://www.prohq.ru
-    wget --page-requisites \
-         --convert-links \
-         --reject "robots.txt" \
-         http://localhost:3000/maillists-invitations-contractor.html
-    rtorrent -s ./.rtorrent
-    host 192.168.132.44 192.168.8.1
-    nslookup 172.16.81.4
-    whois kutkevich.org
-    dig kutkevich.org
-    ifconfig -a
-    ifconfig eth0 192.168.0.2
-    ifconfig eth0.1 hw ether 00:1D:7E:55:19:D9
-    dhclient
-    ip r
-    route del default gw 192.168.28.1 ath0
-    route {add|del} [default] [gw 192.168.0.1] -net 172.16.0.0 \
-          netmask 255.255.0.0 dev ppp0
-    echo "1" > /proc/sys/net/ipv4/ip_forward
-    pon darout
-    poff darout
-    iwlist ath0 scanning
-    iwconfig ath0 essid John
-    iwconfig ath0 key s:dfvgbh1234567
-    killall wpa_supplicant && sleep 5 \
-     && wpa_supplicant -i ath0 -c /etc/wpa_supplicant/wpa_supplicant.conf
-    wvdial megafon
-    curlftpfs -o "user=danil" kutkevich.org mnt/kutkevich_org/
-    smbtree [-N] -d 2
-    smbclient [-N] -L server
-    smbclient -N "\\\\server\\store (e)"
-    smbmount "//172.16.84.14/d$" mnt/cdp0002 \
-     -o workgroup=darout,username=dkutkevich,iocharset=UTF-8,codepage=windows-1251
-    rdesktop -g 99% -k en 192.168.91.5
     chroot /mnt/gentoo /bin/bash
     env-update && source /etc/profile
     # 6177657266 (64bit WEP key)
