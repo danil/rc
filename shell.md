@@ -262,13 +262,20 @@ Network
 
 <http://revsys.com/writings/quicktips/ssh-tunnel.html>
 
-    ssh -f root@stampy -L 2000:homer:22 -N
+    ssh -f -N -L localhost:2000:homer:22 root@stampy
     ssh -p 2000 danil@localhost
 
 #### HTTP tunneling
 
-    ssh -f medapp -L 3001:192.168.0.38:3000 -N
+##### Release terminal
+
+    ssh -f -N -L localhost:3001:192.168.0.38:3000 medapp
     curl localhost:3001
+
+##### Not release terminal
+
+    ssh -L localhost:3001:192.168.0.38:3000 \
+        -p 9922 danil@medapp2.waveaccess.ru
 
 #### Transparent multi-hop SSH agent forwarding
 
