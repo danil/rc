@@ -52,18 +52,21 @@ CREATE USER is an alias for CREATE ROLE. The only difference is that
 when the command is spelled CREATE USER, LOGIN is assumed by default.
 
 
-    CREATE ROLE danil WITH LOGIN PASSWORD 'Hsdglk1d'
-    VALID UNTIL '2009-01-01';
-
-### Superuser
-
-    createuser --createrole --createdb --superuser --pwprompt \
-               --encrypted --username=postgres --password danil
-
 ### Standard user
+
+    CREATE ROLE danil WITH LOGIN PASSWORD 'password'
+    VALID UNTIL '2009-01-01';
 
     createuser --no-createrole --no-createdb --no-superuser --pwprompt \
                --encrypted --username=danil --password testuser
+
+### Superuser
+
+    CREATE ROLE danil WITH SUPERUSER LOGIN PASSWORD 'password'
+    VALID UNTIL '2009-01-01';
+
+    createuser --createrole --createdb --superuser --pwprompt \
+               --encrypted --username=postgres --password danil
 
 Alter role
 ----------
