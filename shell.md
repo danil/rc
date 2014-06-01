@@ -294,13 +294,19 @@ Discover (scanner) hosts and services on a computer network.
 
 ### Bluetooth
 
-#### rfkill
+#### Enabled adapter
 
-Enabled adapter <http://wiki.gentoo.org/wiki/Bluetooth#Software>,
-<http://wireless.kernel.org/en/users/Documentation/rfkill>.
+##### rfkill
+
+* <http://wiki.gentoo.org/wiki/Bluetooth#Software>
+* <http://wireless.kernel.org/en/users/Documentation/rfkill>
 
     rfkill list
     rfkill unblock <index>|<type>
+
+#### Power on
+
+    bluetoothctl
 
 ### Other
 
