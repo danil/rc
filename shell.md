@@ -415,7 +415,7 @@ Archiving and compression
 
     xz -v access.log
     xz -vd access.log.gz
-    tar -xvvJf foobar.tar.xz
+    tar --extract --verbose --xz --file foobar.tar.xz
 
 ### Zip
 
