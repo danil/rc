@@ -569,6 +569,20 @@ locate
 rsync
 -----
 
+### Copy from remote server to local machine
+
+    rsync --checksum \
+          --human-readable \
+          --archive \
+          --verbose \
+          --compress \
+          --partial \
+          --progress \
+          --stats \
+          danil@h2.kutkevich.org:~/Books/ ./Books/
+
+### Other
+
     rsync -rv --stats --delete --compress --skip-compress=jpg,gif,png,mp4 \
       danil@kutkevich.org:~/foo/bar foo
 
