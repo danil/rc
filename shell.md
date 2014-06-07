@@ -571,6 +571,8 @@ rsync
 
 ### Copy from remote server to local machine
 
+<http://stackoverflow.com/questions/9090817/copying-files-using-rsync-from-remote-server-to-local-machine#9090859>
+
     rsync --checksum \
           --human-readable \
           --archive \
