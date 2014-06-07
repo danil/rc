@@ -258,24 +258,40 @@ Network
     ssh-copy-id -i ~/.ssh/id_rsa.pub "anonymous@kutkevich.org -p 2000"
     sshfs -p 61022 kutkevich.org:/home/danil/ mnt/kutkevich_org/
 
-#### SSH tunneling
+#### Tunneling
+
+##### SSH
 
 <http://revsys.com/writings/quicktips/ssh-tunnel.html>
 
     ssh -f -N -L localhost:2000:homer:22 root@stampy
     ssh -p 2000 danil@localhost
 
-#### HTTP tunneling
+##### HTTP
 
-##### Release terminal
+###### Release terminal
 
     ssh -f -N -L localhost:3001:192.168.0.38:3000 medapp
     curl localhost:3001
 
-##### Not release terminal
+###### Not release terminal
 
     ssh -L localhost:3001:192.168.0.38:3000 \
         -p 9922 danil@medapp2.waveaccess.ru
+
+###### Reverse tunneling
+
+####### SSH
+
+<http://tunnelsup.com/raspberry-pi-phoning-home-using-a-reverse-remote-ssh-tunnel>
+
+On `h4` SailfishOS:
+
+    ssh -N -R localhost:55555:localhost:22 danil@h5.kutkevich.org
+
+On `h5` server:
+
+    ssh -l nemo -p 55555 localhost
 
 #### Transparent multi-hop SSH agent forwarding
 
