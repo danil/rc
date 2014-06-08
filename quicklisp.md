@@ -26,7 +26,7 @@ List
 Remove
 ------
 
-    (use-package :ql-dist) (uninstall (release "weblocks"))
+    (use-package :ql-dist) (uninstall (release "package-name"))
 
 Install
 -------
