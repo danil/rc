@@ -12,12 +12,23 @@
 Quicklisp
 =========
 
-Installed packages
-------------------
+List
+----
+
+### Installed
 
     (ql-dist:installed-releases (ql-dist:dist "quicklisp"))
 
-Available packages
-------------------
+### Available
 
     (ql:system-apropos "")
+
+Remove
+------
+
+    (use-package :ql-dist) (uninstall (release "weblocks"))
+
+Install
+-------
+
+    (ql:quickload "package-name")
