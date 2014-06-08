@@ -12,7 +12,12 @@
 Quicklisp
 =========
 
-List all packages
------------------
+Installed packages
+------------------
+
+    (ql-dist:installed-releases (ql-dist:dist "quicklisp"))
+
+Available packages
+------------------
 
     (ql:system-apropos "")
