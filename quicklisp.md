@@ -12,14 +12,16 @@
 Quicklisp
 =========
 
-List
-----
+Search
+------
+
+    (ql:system-apropos "package-name")
 
 ### Installed
 
     (ql-dist:installed-releases (ql-dist:dist "quicklisp"))
 
-### Available
+### All available
 
     (ql:system-apropos "")
 
