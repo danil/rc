@@ -190,3 +190,11 @@ Arithmetics
     ----------
             4
     (1 row)
+
+Distinct
+--------
+
+Remove duplicate rows from the result set (one row is kept from each
+group of duplicates).
+
+    SELECT DISTINCT ON (my_column_name) my_column_name FROM my_table_name;
