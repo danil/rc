@@ -130,6 +130,17 @@ Rename database
 
     ALTER DATABASE medapp_dev RENAME TO medapp_dev_master;
 
+Schema
+------
+
+### List
+
+    \dn
+
+### List talbles in schema
+
+    \dt schema_name.*
+
 Tables list
 -----------
 
