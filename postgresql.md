@@ -150,6 +150,11 @@ Drop table
 
     DROP TABLE schema_migrations, products;
 
+Add column to table
+-------------------
+
+    ALTER TABLE my_table_name ADD COLUMN deleted_at timestamp with time zone;
+
 Insert data
 -----------
 
