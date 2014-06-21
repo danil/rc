@@ -120,7 +120,7 @@ eix
     eix --world --categor
     eix-test-obsolete detail
 
-### Downgrade or upgrade list
+### Downgrade (delete) or upgrade list
 
     eix --upgrade
 
