@@ -166,6 +166,11 @@ Add column to table
 
     ALTER TABLE my_table_name ADD COLUMN deleted_at timestamp with time zone;
 
+Update data
+-----------
+
+    UPDATE services SET special_conditions = 'special condition number ' || id;
+
 Insert data
 -----------
 
