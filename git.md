@@ -153,13 +153,13 @@ Tag
 
 <http://git-scm.com/book/en/Git-Basics-Tagging#Listing-Your-Tags>
 
-    git checkout 0.0.1
+    git checkout v0.0.1
 
 ### Create
 
 <http://git-scm.com/book/en/Git-Basics-Tagging#Lightweight-Tags>
 
-    git tag 0.0.1
+    git tag v0.0.1
 
 ### Push to remote
 
