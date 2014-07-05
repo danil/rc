@@ -145,24 +145,35 @@ A la restore deleted file
 Tag
 ---
 
+### List
+
+    git tag
+
+### Select
+
+<http://git-scm.com/book/en/Git-Basics-Tagging#Listing-Your-Tags>
+
+    git checkout 0.0.1
+
 ### Create
 
 <http://git-scm.com/book/en/Git-Basics-Tagging#Lightweight-Tags>
 
     git tag 0.0.1
 
-### List and select
-
-<http://git-scm.com/book/en/Git-Basics-Tagging#Listing-Your-Tags>
-
-    git tag
-    git checkout 0.0.1
-
 ### Push to remote
 
 <http://stackoverflow.com/questions/4061481/git-push-tag-master#4061529>
 
     git push --tags production
+
+### Delete
+
+    git tag --delete v0.0.1
+
+#### Remote
+
+    git push origin :v0.0.1
 
 Stash
 -----
