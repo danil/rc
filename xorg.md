@@ -41,6 +41,8 @@ Default applications
 --------------------
 
 Open from console default application for file.
+xdg-open desktop-independent and passes arguments to
+gvfs-open, kde-open or exo-open respectively.
 
 * <https://wiki.archlinux.org/index.php/Default_Applications>
 * <https://wiki.archlinux.org/index.php/Xdg-open>
