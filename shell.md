@@ -633,6 +633,10 @@ Disk
 
 #### GPT
 
+<http://gentoo.org/doc/en/handbook/handbook-amd64.xml?part=1&chap=4>
+
+    parted /dev/sda
+
 <https://wiki.archlinux.org/index.php/Partitioning#Partitioning_tools>.
 
     gdisk /dev/sda
@@ -656,7 +660,7 @@ GRUB legacy and Syslinux should work fine.
 
 #### Swap
 
-    mkswap /dev/sda7 && swapon /dev/sda7
+    mkswap /dev/sda3 && swapon /dev/sda3
     swapon -s
     swapoff -a
 
