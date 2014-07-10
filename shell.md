@@ -906,6 +906,26 @@ Converting flac to mp3
 
     for file in *.flac; do flac -cd "$file" | lame -h - "${file%.flac}.mp3"; done
 
+Hashing
+-------
+
+### MD5
+
+#### Create
+
+    md5sum FantasqueSansMono-Regular.ttf
+
+#### Check
+
+    md5sum -c ./file
+    echo "1539bad48e984ae1441052dc074c0995  /dev/hdc" |md5sum -c
+
+### SHA-1
+
+#### Check
+
+    echo "26733b170052a01eb48ed2d5495a5cb51c00bdd0 /dev/hdc" |sha1sum -c
+
 Other
 -----
 
@@ -918,9 +938,6 @@ Other
     alias
     echo -e "1\n2"
     echo -n "Some text line"; echo -en "all the same text line.\n"
-    md5sum -c ./file
-    echo "1539bad48e984ae1441052dc074c0995  /dev/hdc" |md5sum -c
-    echo "26733b170052a01eb48ed2d5495a5cb51c00bdd0 /dev/hdc" |sha1sum -c
     cal -3
     time tar -cvvzf foobar.tar.gz ./lib/ ./mobotix/ /usr/share/doc/
     cp -a ~/var/www/ ~/tmp/
