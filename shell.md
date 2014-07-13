@@ -255,7 +255,7 @@ Network
 
     ssh -t root@santaslittlehelper "ssh danil@homer"
     scp -P 61022 [-r] foo.tar.gz bar.tar.gz anonymous@kutkevich.org:/home/danil/
-    ssh-keygen -t rsa
+    ssh-keygen
     ssh-copy-id -i ~/.ssh/id_rsa.pub "anonymous@kutkevich.org -p 2000"
     sshfs -p 61022 kutkevich.org:/home/danil/ mnt/kutkevich_org/
 

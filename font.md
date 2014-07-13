@@ -26,4 +26,4 @@ Rebuilding cache
 * <https://wiki.archlinux.org/index.php/fonts#Manual_installation>
 * <https://wiki.ubuntu.com/Fonts#Manually>
 
-    fc-cache --force --verbose
+    sudo fc-cache --force --verbose
