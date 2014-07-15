@@ -173,11 +173,9 @@ Freeing Up Disk Space
 TAB-Completion
 --------------
 
-<http://en.gentoo-wiki.com/wiki/TAB-Completion#Other_commands>:
+<http://wiki.gentoo.org/wiki/Bash#Tab_completion>
 
-    sudo eselect bashcomp list |grep -v "*"
-    for i in $(ls --color=no /usr/share/bash-completion/); \
-      do eselect bashcomp enable $i; done
+    sudo sh -c 'for x in /usr/share/bash-completion/*; do [[ -e $x ]] || continue; eselect bashcomp enable --global "${x##*/}"; done '
 
 Updates
 -------
