@@ -653,6 +653,18 @@ given a CC Mode binding for convenience.
     M-x uncomment-region
 
 
+ediff
+-----
+
+### (ediff-regions-wordwise)
+
+#### (ediff-regions-wordwise)
+
+##### (exit-recursive-edit)
+
+<https://www.gnu.org/software/emacs/manual/html_node/emacs/Recursive-Edit.html>
+    C-M-c
+
 More general
 ------------
 
