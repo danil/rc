@@ -36,6 +36,12 @@ tmux
     ^b d
     tmux attach -t danil
 
+### Pane
+
+#### Join pane 1 from pane 0
+
+    join-pane -s 1
+
 ### Session
 
 #### List
