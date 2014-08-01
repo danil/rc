@@ -40,6 +40,8 @@ tmux
 
 #### Join pane 1 from pane 0
 
+<https://forums.pragprog.com/forums/242/topics/10533>
+
     join-pane -s 1
 
 ### Session
