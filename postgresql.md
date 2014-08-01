@@ -161,6 +161,15 @@ Drop table
 
     DROP TABLE schema_migrations, products;
 
+Drop all talbles
+----------------
+
+List all tables then drop them.
+
+    SELECT tablename
+    FROM pg_tables
+    WHERE tableowner = 'msls' AND schemaname = 'public'
+
 Add column to table
 -------------------
 
