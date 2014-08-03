@@ -9,7 +9,7 @@
      Creative Commons, 171 Second Street, Suite 300, San Francisco,
      California, 94105, USA. -->
 
-GRUB
-====
+GRUB2
+=====
 
     grub2-mkconfig -o /boot/grub/grub.cfg
