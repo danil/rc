@@ -18,7 +18,6 @@ Git
     git clone git://kutkevich.org/rc.git foobar
     git --git-dir=/home/danil/src/rc/.git --work-tree=/home/danil/src/rc status
     git push origin master
-    git pull origin master
 
 Add
 ---
@@ -206,6 +205,16 @@ add the things you want to keep, then run it.
 
 Fetch
 -----
+
+    git fetch origin master
+    git merge origin/master
+
+equal to
+
+    git pull origin master
+
+
+### All
 
 <http://stackoverflow.com/questions/10312521/how-to-fetch-all-git-branches#10312587>
 
