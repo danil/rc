@@ -32,9 +32,12 @@ GNU Screen
 tmux
 ----
 
-    tmux new -s danil
-    ^b d
-    tmux attach -t danil
+### Copy past
+
+* enter copy mode using `prefix+[`
+* start selecting `C-space`
+* copy region `M-w`
+* past selection `prefix+]`
 
 ### Pane
 
@@ -69,3 +72,8 @@ tmux
 #### Attach
 
     tmux -S /tmp/pair attach
+### Other
+
+    tmux new -s danil
+    ^b d
+    tmux attach -t danil
