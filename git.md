@@ -542,6 +542,12 @@ Deploy to GitHub Pages
     git add --update foobar/ && git commit -m 'deploy'
     git push origin :gh-pages && git subtree push --prefix foobar origin gh-pages
 
+Reflog
+------
+
+Find reseted commit message:
+
+    git reflog --color -p --author=danil@kutkevich.org --since="1 hours"
 
 Other
 -----
