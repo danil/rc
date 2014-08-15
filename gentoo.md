@@ -103,6 +103,8 @@ Layman
 Ebuild
 ------
 
+    ebuild ~/path/to/ebuild/skippy-xd-0.5.0-r1.ebuild compile
+
 ### [Ebuild policy][]
 
 [Ebuild policy]: <http://gentoo.org/proj/en/devrel/handbook/handbook.xml?style=printable&part=3&chap=1>
