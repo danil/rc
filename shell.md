@@ -198,9 +198,13 @@ Date and time
 -------------
 
     date +%z
+    date --iso-8601=seconds #2014-08-15T16:40:09+0400
+    tzselect #show what value to use for TZ environment variable
+
+### Set
+
     date -s "2008-04-30 08:48:0" # YYYY-mm-dd HH:MM:S (ISO 8601).
     date -s "041501482008" # mmddHHMMYYYY (OpenWRT).
-    tzselect # Show what value to use for TZ environment variable.
 
 ### Hardware clock (RTC)
 
