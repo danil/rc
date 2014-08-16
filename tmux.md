@@ -46,9 +46,15 @@ tmux
     prefix + q
     0
 
-#### Join pane 1 from pane 0
+#### Break
 
-<https://forums.pragprog.com/forums/242/topics/10533>
+`break-pane`
+
+    prefix + !
+
+#### Join
+
+Join pane 1 from pane 0 <https://forums.pragprog.com/forums/242/topics/10533>
 
     join-pane -s 1
 
@@ -72,6 +78,7 @@ tmux
 #### Attach
 
     tmux -S /tmp/pair attach
+
 ### Other
 
     tmux new -s danil
