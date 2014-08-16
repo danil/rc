@@ -58,6 +58,13 @@ Join pane 1 from pane 0 <https://forums.pragprog.com/forums/242/topics/10533>
 
     join-pane -s 1
 
+#### Layout
+
+`next-layout` cycles through available layouts
+<http://superuser.com/questions/493048/how-to-convert-2-horizontal-panes-to-vertical-panes-in-tmux#493057>.
+
+    prefix + space
+
 ### Session
 
 #### List
