@@ -182,6 +182,12 @@ Update data
 
     UPDATE services SET special_conditions = 'special condition number ' || id;
 
+### Subquery
+
+    UPDATE xyz SET foo=subquery.foo, bar=subquery.bar
+    FROM (SELECT foo, bar FROM xyz WHERE id = 123) AS subquery
+    WHERE id = 321;
+
 Insert data
 -----------
 
