@@ -69,7 +69,7 @@ Join pane 1 from pane 0 <https://forums.pragprog.com/forums/242/topics/10533>
 
 #### List
 
-    tmux ls
+    tmux -S /tmp/pair ls
 
 #### Kill
 
