@@ -15,6 +15,14 @@ Partitions
 GPT
 ---
 
+<http://gentoo.org/doc/en/handbook/handbook-amd64.xml?part=1&chap=4>
+
+    parted /dev/sda
+
+<https://wiki.archlinux.org/index.php/Partitioning#Partitioning_tools>.
+
+    gdisk /dev/sda
+
       Name     Flags    Part Type   FS Type            [Label]       Size (MB)
     ---------------------------------------------------------------------------
       sda1     Boot      Primary    Linux ext4         [fs_bios]        100,00
@@ -25,8 +33,33 @@ GPT
 MBR
 ---
 
+Legacy!
+
+    fdisk -l /dev/sdb
+    sfdisk -l -uM
+
       Name     Flags    Part Type   FS Type            [Label]       Size (MB)
     ---------------------------------------------------------------------------
       sda1     Boot      Primary    Linux ext4         [fs_boot]       1000,00
       sda2               Primary    Linux swap / Solaris               9000,00
       sda3               Primary    Linux ext4         [fs_root]     110000,00
+
+cfdisk
+------
+
+### Warning
+
+<https://wiki.archlinux.org/index.php/Partitioning#Partitioning_tools>.
+
+The first partition created by `cfdisk` starts at sector 63,
+instead of the usual 2048. This can lead to reduced performance on _SSD_
+and advanced format (4k sector) drives.
+It will cause problems with _GRUB2_.
+GRUB legacy and Syslinux should work fine.
+
+Swap
+----
+
+    mkswap /dev/sda3 && swapon /dev/sda3
+    swapon -s
+    swapoff -a
