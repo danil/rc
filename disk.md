@@ -79,6 +79,17 @@ File
     mkswap /swapfile
     swapon /swapfile
 
+fstab
+=====
+
+Validate
+--------
+
+Validate fstab syntax
+<http://serverfault.com/questions/174181/how-do-you-validate-fstab-without-rebooting#509014>.
+
+    mount --verbose --all --fake
+
 Disk
 ====
 
