@@ -590,54 +590,6 @@ http://www.cyberciti.biz/faq/throttle-disk-io-rate-limit-disk-io
 
     rsync --delete --numeric-ids --relative --delete-excluded --bwlimit=10000 /path/to/source /path/to/dest/
 
-Disk
-----
-
-    dd if=/dev/cdrom of=myimage.iso
-    dd if=/dev/sdb of=mybackup.img bs=130M count=1
-    dd if=bootldr.rom of=/dev/sdb
-    dd if=debian-eeepc.img of=/dev/sdf
-    bchunk Dungeon_Keeper.BIN Dungeon_Keeper.cue Dungeon_Keeper.iso
-    modprobe loop && mount -t iso9660 -o loop tmp/fdfullcd.iso mnt/iso
-    mount -t vfat /dev/sdc1 mnt/usbdisk/ \
-          -o uid=danil,gid=danil,nosuid,shortname=mixed,umask=077
-    mount -t ext2 ~/restore.img /mnt/img -o ro,loop,offset=32256
-    mount -t cifs "//192.168.91.3/store (e)" mnt/black_server/ \
-          -o "workgroup=darout,username=danil,iocharset=utf8,codepage=cp1251"
-    mount --rbind olddir newdir
-    fsck /dev/sdg1
-    touch /forcefsck
-
-### Free/used space
-
-    df -hi
-
-#### Finding largest files/directories
-
-* <http://superuser.com/questions/9847/linux-utility-for-finding-the-largest-files-directories>
-* <http://cyberciti.biz/faq/how-do-i-find-the-largest-filesdirectories-on-a-linuxunixbsd-filesystem/>
-* <http://cyberciti.biz/faq/find-large-files-linux/>
-
-    du -hx ./ |grep -E ^[0-9.,]+[MG]
-    find  -ctime +30 -daystart -type d \
-      | xargs du -b 2>/dev/null \
-      | awk '{total += $1; print $0} END{print total}'
-
-### Formatting
-
-#### mke2fs
-
-    mkfs.ext2 -L fs_boot /dev/sde1
-    mkfs.vfat -F 32 /dev/sdg1
-
-##### Set number of inodes
-
-    mkfs.ext4 -N 1000432 /dev/sda5
-
-<http://stackoverflow.com/questions/3618820/how-many-bytes-per-inodes>.
-
-    tune2fs -l /dev/sda5 | grep Inode
-
 Free ram
 --------
 
