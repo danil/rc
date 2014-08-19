@@ -60,6 +60,19 @@ GRUB legacy and Syslinux should work fine.
 Swap
 ----
 
+### Partition
+
+<https://wiki.archlinux.org/index.php/swap#Swap_partition>
+
     mkswap /dev/sda3 && swapon /dev/sda3
     swapon -s
     swapoff -a
+
+### File
+
+<https://wiki.archlinux.org/index.php/swap#Swap_file>
+
+    dd if=/dev/zero of=/swapfile bs=1M count=2000
+    chmod 600 /swapfile
+    mkswap /swapfile
+    swapon /swapfile
