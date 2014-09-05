@@ -188,11 +188,16 @@ Update data
     FROM (SELECT foo, bar FROM xyz WHERE id = 123) AS subquery
     WHERE id = 321;
 
-Insert data
------------
+Insert row
+----------
 
     INSERT INTO test_table (name, age) VALUES('John', 3);
     COPY test_table FROM STDIN WITH DELIMITER AS ',';
+
+Delete row
+----------
+
+    delete from users where id = 3;
 
 Truncate data
 -------------
