@@ -549,6 +549,17 @@ Find reseted commit message:
 
     git reflog --color -p --author=danil@kutkevich.org --since="1 hours"
 
+Merge repositories
+------------------
+
+Merge two repositories with history
+<http://stackoverflow.com/questions/1425892/how-do-you-merge-two-git-repositories#1426163>.
+
+    git clone /var/git/foo.git
+    git remote add --fetch bar /var/git/bar.git
+    git merge --strategy=ours --no-commit bar/master
+    git commit --message='Merge branch v0.0.1 into v0.0.2'
+
 Other
 -----
 
