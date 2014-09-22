@@ -996,6 +996,29 @@ Faces currently used.
 
 Differences between theme A and theme B.
 
+SQL
+---
+
+<http://emacsredux.com/blog/2013/06/13/using-emacs-as-a-database-client>
+
+### Execute query from buffer
+
+#### Set database type
+
+Set `postgres` or `mysql` in buffer with sql query:
+
+    sql-set-product
+
+#### Set connected buffer
+
+Set `SQL` in buffer with sql query:
+
+    sql-set-sqli-buffer
+
+#### Execute query
+
+    sql-send-region
+
 Other
 -----
 
