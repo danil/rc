@@ -670,8 +670,6 @@ Wine
 Users and groups
 ----------------
 
-    chmod -R ug+w ./smarty/templates_c/ ./smarty/cach/
-    chown -R www-data:www-data ./smarty/templates_c/ ./smarty/cache/
     groups danil
     groupadd danil
     groupmod -n new_group_name danil
@@ -687,6 +685,23 @@ Users and groups
     deluser --remove-all-files --backup --backup-to /home/danil/ danil
     passwd danil
     grpck
+
+
+chmod
+-----
+
+    chmod -R ug+w ./smarty/templates_c/ ./smarty/cach/
+
+### Fix files and directories permissions
+
+<http://superuser.com/questions/126073/chmod-to-allow-read-and-write-permissions-for-directory#126075>
+
+    find somedir \( -type d -exec chmod u+rwx,g+rwx {} \; -o -type f -exec chmod u+rw,g+rw {} \; \)
+
+chown
+-----
+
+    chown -R www-data:www-data ./smarty/templates_c/ ./smarty/cache/
 
 ALSA
 ----
