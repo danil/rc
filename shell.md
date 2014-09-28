@@ -675,7 +675,7 @@ Users and groups
     groups danil
     groupadd danil
     groupmod -n new_group_name danil
-    gpasswd -a danil audio
+    gpasswd --add danil audio
     groupdel danil
     delgroup --only-if-empty danil
     useradd -D
