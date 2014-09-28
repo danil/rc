@@ -258,13 +258,21 @@ with `/etc/init.d/$ipt` when machine is powered on.
     /etc/init.d/ip6tables save
     /etc/init.d/ip6tables start
 
+Rebuilding
+----------
+
+    emerge @preserved-rebuild && revdep-rebuild
+
+### revdep-rebuild
+
+    revdep-rebuild --pretend
+    revdep-rebuild --ignore
+    revdep-rebuild --verbose --pretend --library libreadline.so.5
+
 Other
 -----
 
     sudo sh -c "layman --sync-all && emerge --sync && eix-update"
-    revdep-rebuild --pretend
-    revdep-rebuild --ignore
-    revdep-rebuild --verbose --pretend --library libreadline.so.5
     find /etc -iname "._cfg????_*" 2> /dev/null
     CCACHE_DIR="/var/tmp/ccache" ccache -s
     eselect kernel list
