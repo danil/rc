@@ -331,8 +331,6 @@ Discover (scanner) hosts and services on a computer network.
 
 ### Other
 
-    curl -o ruby.png http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/100px-Ruby_logo.svg.png
-    curl -v -H "Accept: application/xrds+xml" -X HEAD http://www.yahoo.com/
     rtorrent -s ./.rtorrent
     host 192.168.132.44 192.168.8.1
     nslookup 172.16.81.4
