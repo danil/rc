@@ -204,7 +204,7 @@ Truncate data
 
 <http://www.postgresql.org/docs/9.1/static/sql-truncate.html>
 
-    TRUNCATE timeline_items;
+    TRUNCATE timeline_items CASCADE;
 
 Query data
 ----------
