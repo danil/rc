@@ -24,13 +24,17 @@ Wget
 Recursive
 ---------
 
-    wget --recursive --level=0 --restrict-file-names=nocontrol \
-         --convert-links --exclude-directories=/auth \
-         "http://tinyerp.org/edoc/"
-    wget --load-cookies=cookies.txt --recursive \
-         --domains=www.prohq.ru,prohq.ru \
-         --level=999 --restrict-file-names=nocontrol \
-         --ignore-tags=img http://www.prohq.ru
+    wget --recursive \
+         --level=999 \
+         --domains=sazhi.net,www.sazhi.net \
+         --restrict-file-names=nocontrol \
+         --execute'robots=off' \
+         --convert-links \
+         --exclude-directories=/forum \
+         --ignore-tags=img \
+         --load-cookies=cookies.txt \
+         'http://sazhi.net'
+
 
 cURL
 ====
