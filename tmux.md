@@ -39,6 +39,16 @@ tmux
 * copy region `M-w`
 * past selection `prefix+]`
 
+### Window
+
+`split-window`
+
+    prefix + "
+
+`split-window -h`
+
+    prefix + %
+
 ### Pane
 
 #### Select by number
