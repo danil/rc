@@ -162,6 +162,9 @@ Symptom: `checking whether the C compiler works... no`
 Freeing Up Disk Space
 ---------------------
 
+WARNING: Avoid using eclean!
+<http://makuro.wordpress.com/2010/12/12/intro-to-portage-sets>.
+
 * <http://wiki.gentoo.org/wiki/Knowledge_Base:Remove_obsoleted_distfiles>
 * <http://wiki.gentoo.org/wiki/Eclean>
 * <http://wiki.gentoo.org/wiki/Kernel/Removal>
