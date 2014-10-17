@@ -96,6 +96,10 @@ Join pane 1 from pane 0 <https://forums.pragprog.com/forums/242/topics/10533>
 
     tmux -S /tmp/pair attach
 
+#### Detach
+
+    tmux detach
+
 ### Other
 
     tmux new -s danil
