@@ -245,3 +245,13 @@ Types
 Today in past year
 
     select (CURRENT_DATE - INTERVAL '1 year')::timestamptz;
+
+### enum
+
+Enumerated
+
+#### Describe
+
+<http://stackoverflow.com/questions/9535937/is-there-a-way-to-show-a-user-defined-postgresql-enumerated-type-definition#25326877>
+
+    select enum_range(null::my_type)
