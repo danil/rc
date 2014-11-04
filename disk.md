@@ -53,6 +53,29 @@ Legacy!
       sda2               Primary    Linux swap / Solaris               9000,00
       sda3               Primary    Linux ext4         [fs_root]     110000,00
 
+dd
+--
+
+### Copy partition
+
+    dd if=/dev/sda98 of=/dev/sda99
+
+#### Free free space
+
+    resize2fs /dev/sda99
+
+### Create ISO
+
+Copy from cd-rom disc to ISO image
+
+    dd if=/dev/cdrom of=myimage.iso
+
+### Other
+
+    dd if=/dev/sdb of=mybackup.img bs=130M count=1
+    dd if=bootldr.rom of=/dev/sdb
+    dd if=debian-eeepc.img of=/dev/sdf
+
 cfdisk
 ------
 
@@ -137,10 +160,6 @@ Free/used space
 Other
 -----
 
-    dd if=/dev/cdrom of=myimage.iso
-    dd if=/dev/sdb of=mybackup.img bs=130M count=1
-    dd if=bootldr.rom of=/dev/sdb
-    dd if=debian-eeepc.img of=/dev/sdf
     bchunk Dungeon_Keeper.BIN Dungeon_Keeper.cue Dungeon_Keeper.iso
     modprobe loop && mount -t iso9660 -o loop tmp/fdfullcd.iso mnt/iso
     mount -t vfat /dev/sdc1 mnt/usbdisk/ \
