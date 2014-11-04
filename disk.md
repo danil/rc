@@ -58,6 +58,10 @@ dd
 
 ### Copy partition
 
+* <https://wiki.archlinux.org/index.php/disk_cloning>
+* <http://askubuntu.com/questions/173907/when-cloning-ext4-partition-with-the-dd-command-to-a-bigger-partition-free-spa#173968>
+* <https://linode.com/docs/migrate-to-linode/disk-images/copying-a-disk-image-to-a-different-account#copying-the-disk-image>
+
     dd if=/dev/sda98 of=/dev/sda99
 
 #### Free free space
