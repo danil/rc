@@ -15,7 +15,7 @@ Search and replace
 grep
 ----
 
-    grep -R eth0 /etc
+    grep --recursive --line-number eth0 /etc
     grep -irl danil . 2> /dev/null | xargs tar cvvf ~/tmp/123.tar
 
 ### Only names
