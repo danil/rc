@@ -484,6 +484,18 @@ Log
 
     git log --after="Mon Jun 10 19:48:47 2013 +0400" --pretty=format:'%h' --no-merges --reverse  | sed ':a;N;$!ba;s/\n/ /g'
 
+Shortlog
+--------
+
+### Contributors
+
+List all contributors:
+
+* <http://stackoverflow.com/questions/9597410/list-all-developers-on-project-in-git#9597462>
+* <http://www.commandlinefu.com/commands/view/4519/list-all-authors-of-a-particular-git-project>
+
+    git shortlog --summary --email --numbered | cut -c8-
+
 History of a file
 -----------------
 
