@@ -232,8 +232,11 @@ equal to
 
     git fetch --all
 
-Mirror Git repository
----------------------
+Mirror
+------
+
+Mirror git repository
+
 
 ### First
 
