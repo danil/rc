@@ -110,7 +110,16 @@ File
 
 <https://wiki.archlinux.org/index.php/swap#Swap_file>
 
+### Create file
+
+    fallocate -l 2GB /swapfile
+
+or
+
     dd if=/dev/zero of=/swapfile bs=1M count=2000
+
+### Other
+
     chmod 600 /swapfile
     mkswap /swapfile
     swapon /swapfile
