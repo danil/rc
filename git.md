@@ -257,6 +257,16 @@ Mirror git repository
     git remote add origin git://github.com/sebnow/lake.git
     git fetch
 
+Convert to bare
+---------------
+
+* <https://git.wiki.kernel.org/index.php/GitFaq#How_do_I_make_existing_non-bare_repository_bare.3F>
+* <http://stackoverflow.com/questions/2199897/how-to-convert-a-normal-git-repository-to-a-bare-one#2200662>
+
+    mv repo/.git repo.git
+    git --git-dir=repo.git config core.bare true
+    rm -rf repo
+
 Submodules
 ----------
 
