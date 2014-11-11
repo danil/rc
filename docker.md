@@ -13,6 +13,36 @@
 Docker
 ======
 
+Images
+======
+
+Build
+-----
+
+    docker.io build --tag mlapshin/docker-teamcity .
+
+Run
+---
+
+Run image as container
+
+    docker.io run  --detach --tty
+                   --volume /var/teamcity-data:/opt/teamcity-data \
+                   --volume /etc/localtime:/etc/localtime:ro \
+                   --name teamcity_server \
+                   --publish=8111:8111 \
+                   mlapshin/docker-teamcity
+
+Containers
+==========
+
+List
+----
+
+List all containers
+
+    docker.io ps --all
+
 Start
 -----
 
@@ -26,23 +56,8 @@ Stop
 Remove
 ------
 
-    docker.io rm -f teamcity_agent1
+    docker.io rm --force teamcity_agent1
 
 ### Remove all stoped
 
-    docker.io rm $(docker.io ps -aq)
-
-Build
------
-
-    docker.io build -t mlapshin/docker-teamcity .
-
-Run
----
-
-    docker.io run  -dt
-                   -v /var/teamcity-data:/opt/teamcity-data \
-                   -v /etc/localtime:/etc/localtime:ro \
-                   --name teamcity_server \
-                   -p 8111:8111 \
-                   mlapshin/docker-teamcity
+    docker.io rm $(docker.io ps --all --quiet)
