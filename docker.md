@@ -28,9 +28,14 @@ Tag
 
     docker.io tag 7f7a5e4d89e4 fhirbase/fhirbase
 
-### Remove
+Remove
+------
 
     docker.io rmi foobar
+
+### Remove all
+
+    docker.io rmi $(docker.io images --quiet)
 
 Run
 ---
