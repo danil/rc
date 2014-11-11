@@ -21,6 +21,17 @@ Build
 
     docker.io build --tag mlapshin/docker-teamcity .
 
+Tag
+---
+
+### Add
+
+    docker.io tag 7f7a5e4d89e4 fhirbase/fhirbase
+
+### Remove
+
+    docker.io rmi foobar
+
 Run
 ---
 
@@ -30,7 +41,7 @@ Run image as container
                    --volume /var/teamcity-data:/opt/teamcity-data \
                    --volume /etc/localtime:/etc/localtime:ro \
                    --name teamcity_server \
-                   --publish=8111:8111 \
+                   --publish=5433:5432 \
                    mlapshin/docker-teamcity
 
 Containers
