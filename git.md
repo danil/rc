@@ -469,19 +469,28 @@ Log
 ---
 
     git log --reverse
-    git log --patch --since="1 day 2 hours" README
+    git log --patch --no-merges  HEAD^^^ HEAD
+
+### By date
+
+    git log --since="1 day 2 hours"
+    git log --after=2013-06-07
 
 ### By authors
 
 <http://stackoverflow.com/questions/4259996/how-can-i-view-a-git-log-of-just-one-users-commits#4262780>.
 
-    git log --author='\(mikhail\|danil\)' --after=2013-06-07 HEAD^^^ HEAD
+    git log --author='\(mikhail\|danil\)'
+
+### By file type
+
+    git log -- '*.coffee'
 
 ### Git tree in terminal
 
 <http://stackoverflow.com/questions/1064361/unable-to-show-a-git-tree-in-terminal#5354644>.
 
-    git log --graph --decorate --pretty=oneline --abbrev-commit
+    git log --color --graph --decorate --pretty=oneline --abbrev-commit
 
 ### File name
 
