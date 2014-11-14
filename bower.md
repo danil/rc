@@ -16,3 +16,10 @@ Search
 ------
 
     bower search ng-repeat
+
+Cache
+-----
+
+<http://bower.io/docs/api/#cache>
+
+    bower cache clean
