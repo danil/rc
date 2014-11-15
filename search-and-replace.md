@@ -75,8 +75,8 @@ sed
 Stream Editor
 
     find ./ -type f -iregex ".*e?rb" -exec sed -i -r \
-         -e 's|http://tinyerp\.(org\|com)(/edoc)?/?|./|g' '{}' \;
-    echo 'Hello, World!' |sed -e s/World/work/
+         --expression='s|http://tinyerp\.(org\|com)(/edoc)?/?|./|g' '{}' \;
+    echo 'Hello, World!' | sed --expression=s/World/work/
     svn status |grep '^[I?]' |sed 's/^[I?]//' |xargs rm -rf
 
 ### Remove the 7rd line
