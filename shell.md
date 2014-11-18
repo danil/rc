@@ -679,11 +679,13 @@ Users and groups
             --create-home --base-dir /home/.rails/ --shell /bin/bash danil
     usermod -c "Danil Kutkevich" -d /home/danil -m \
             -g danil -G fuse,cvs -a -l danil -s /bin/bash danil
-    userdel -r danil
-    deluser --remove-all-files --backup --backup-to /home/danil/ danil
+    userdel --remove danil
     passwd danil
     grpck
 
+### Other
+
+    deluser --remove-all-files --backup --backup-to /home/danil/ danil
 
 chmod
 -----
