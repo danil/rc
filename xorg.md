@@ -36,6 +36,27 @@ xautolock
 
     xautolock -disable
 
+xrandr
+------
+
+### Change monitor resolution
+
+    xrandr
+    xrandr -s 1440x900
+
+#### X screen go back to its normal resolution
+
+<http://wiki.winehq.org/FAQ#head-acb200594b5bcd19722faf6fd34b60cc9c2f237b>
+
+    xrandr -s 0
+
+### Scale
+
+Scale to virtual resolution
+
+<http://unix.stackexchange.com/questions/69104/can-x11-scale-to-virtual-resoltions-on-hidpi-retina-screens-the-way-os-x-does#69109>
+
+    xrandr --output LVDS-1 --scale 0.5x0.5
 
 Default applications
 --------------------
@@ -48,18 +69,6 @@ gvfs-open, kde-open or exo-open respectively.
 * <https://wiki.archlinux.org/index.php/Xdg-open>
 
     xdg-open ~/Downloads/tasks.csv
-
-Change monitor resolution
--------------------------
-
-    xrandr
-    xrandr -s 1440x900
-
-### X screen go back to its normal resolution
-
-<http://wiki.winehq.org/FAQ#head-acb200594b5bcd19722faf6fd34b60cc9c2f237b>
-
-    xrandr -s 0
 
 stdout to clipboard
 -------------------
