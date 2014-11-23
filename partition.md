@@ -24,9 +24,28 @@ List partitions:
 GPT
 ===
 
+Copy
+----
+
+<http://unix.stackexchange.com/questions/93385/how-to-restore-the-partition-layout-for-gpt-disk#93391>
+
+Copy partitions table from /dev/sda to /dev/sdb
+
+    sgdisk --replicate=/dev/sdb /dev/sda
+
+### Make unique its GUID as it was cloned and is identical with /dev/sda
+
+    sgdisk --randomize-guids /dev/sdb
+
+parted
+------
+
 <http://gentoo.org/doc/en/handbook/handbook-amd64.xml?part=1&chap=4>
 
     parted /dev/sda
+
+gdisk
+-----
 
 <https://wiki.archlinux.org/index.php/Partitioning#Partitioning_tools>.
 
