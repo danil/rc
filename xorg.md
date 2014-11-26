@@ -118,7 +118,7 @@ notify-send
 Show notificatioa (test x11-misc/dunst for example)
 <https://wiki.archlinux.org/index.php/Desktop_notifications#Usage_in_programming>
 
-    notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '2' 'Desktop'"
+    notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '2' 'Desktop'
 
 Other
 =====
