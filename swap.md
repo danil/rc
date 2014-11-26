@@ -12,15 +12,6 @@
 Swap
 ====
 
-Partition
-=========
-
-<https://wiki.archlinux.org/index.php/swap#Swap_partition>
-
-    mkswap /dev/sda3 && swapon /dev/sda3
-    swapon -s
-    swapoff -a
-
 File
 ====
 
@@ -29,15 +20,22 @@ File
 Create file
 -----------
 
-    fallocate -l 2GB /swapfile
+    fallocate --length=4GB /swapfile
 
 or
 
-    dd if=/dev/zero of=/swapfile bs=1M count=2000
+    dd if=/dev/zero of=/swapfile bs=1M count=4000
 
 Other
 -----
 
-    chmod 600 /swapfile
-    mkswap /swapfile
-    swapon /swapfile
+    chmod 600 /swapfile && mkswap /swapfile && swapon /swapfile
+
+Partition
+=========
+
+<https://wiki.archlinux.org/index.php/swap#Swap_partition>
+
+    mkswap /dev/sda3 && swapon /dev/sda3
+    swapon -s
+    swapoff -a
