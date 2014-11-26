@@ -112,6 +112,14 @@ List the windows
 
     wmctrl -l
 
+notify-send
+===========
+
+Show notificatioa
+<https://wiki.archlinux.org/index.php/Desktop_notifications#Usage_in_programming>
+
+    notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '2' 'Desktop'"
+
 Other
 =====
 
@@ -128,4 +136,3 @@ Other
     xdpyinfo |grep "depth of root"
     xrandr # .xinitc, .xsesson, .gnomerc
     gimptool-2.0 --install-script ~/Downloads/multiscale_0.scm
-    notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '2' 'Desktop'"
