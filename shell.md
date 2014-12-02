@@ -26,7 +26,7 @@ Manuals
 Count lines
 -----------
 
-    ls -x1 /usr/lib |wc -l
+    ls -x1 /usr/lib | wc -l
 
 http://stackoverflow.com/questions/1427032/fast-linux-file-count-for-a-large-number-of-files
 
