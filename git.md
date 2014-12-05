@@ -374,7 +374,9 @@ Undoing in Git - Reset, Checkout and Revert
 
 ### Fixing un-committed mistakes
 
-    git checkout -- app/views/homepages/index.en.html
+<http://stackoverflow.com/questions/7723037/git-checkout-delete-directory#7723128>
+
+    git checkout HEAD -- app/views/homepages/index.en.html
 
 ### Correct commit message
 
