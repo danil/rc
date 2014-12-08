@@ -408,6 +408,12 @@ Archiving and compression
 
     tar -xvvzf foobar.tar.gz
 
+#### achieve by list in file
+
+<http://stackoverflow.com/questions/8033857/tar-archiving-that-takes-input-from-a-list-of-files#8033891>
+
+    tar -cvf foo.tar --files-from=mylist.txt
+
 ### gzip
 
     gzip -v access.log
@@ -429,7 +435,7 @@ Archiving and compression
 ### Zip
 
     zip file-to-archive.zip file-to-archive
-    zip -r foo.zip foo/
+    zip --recurse-paths foo.zip foo/
     unzip foo.zip
 
 ### funzip
@@ -866,6 +872,20 @@ Hashing
 
     echo "26733b170052a01eb48ed2d5495a5cb51c00bdd0 /dev/hdc" |sha1sum -c
 
+cp
+--
+
+### Preserving directory path
+
+Copy file preserving directory path
+<http://serverfault.com/questions/180853/how-to-copy-file-preserving-directory-path-in-linux#180870>.
+
+    cp --parents foo/123/bar/abc.xml foo/321/baz/xyz.html .
+
+### Other
+
+    cp -a ~/var/www/ ~/tmp/
+
 Other
 -----
 
@@ -880,7 +900,6 @@ Other
     echo -n "Some text line"; echo -en "all the same text line.\n"
     cal -3
     time tar -cvvzf foobar.tar.gz ./lib/ ./mobotix/ /usr/share/doc/
-    cp -a ~/var/www/ ~/tmp/
     top -b -n1 |grep wpa
     uptime # load average: <last minute>, <last 5 minutes>, <15 minutes>
     hdparm -tT /dev/sda
