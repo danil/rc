@@ -390,7 +390,7 @@ diff
 
 <http://devmanual.gentoo.org/tools-reference/diff-and-patch>
 
-    diff -u foo.c.~master~ foo.c
+    diff --unified foo.c.~master~ foo.c
 
 Patch
 -----
