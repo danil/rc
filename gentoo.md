@@ -107,7 +107,15 @@ Layman
 Ebuild
 ======
 
+Compile
+-------
+
     ebuild ~/path/to/ebuild/skippy-xd-0.5.0-r1.ebuild compile
+
+Install
+-------
+
+    ebuild ~/path/to/ebuild/skippy-xd-0.5.0-r1.ebuild install
 
 [Ebuild policy][]
 --------------
@@ -188,7 +196,8 @@ TAB-Completion
 
 <http://wiki.gentoo.org/wiki/Bash#Tab_completion>
 
-    sudo sh -c 'for x in /usr/share/bash-completion/*; do [[ -e $x ]] || continue; eselect bashcomp enable --global "${x##*/}"; done '
+    for x in /usr/share/bash-completion/*; do [[ -e $x ]] \
+      || continue; eselect bashcomp enable --global "${x##*/}"; done
 
 Updates
 =======
