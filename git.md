@@ -215,6 +215,12 @@ add the things you want to keep, then run it.
 
     git stash --keep-index
 
+### Show file
+
+<http://stackoverflow.com/questions/1105253/how-would-i-extract-a-single-file-or-changes-to-a-file-from-a-git-stash#1105666>
+
+    git show stash@{0}:README.md
+
 Fetch
 -----
 
