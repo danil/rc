@@ -89,12 +89,12 @@ Join pane 1 from pane 0 <https://forums.pragprog.com/forums/242/topics/10533>
 
 #### Create
 
-    tmux -S /tmp/pair
+    tmux -S /tmp/pair -s foobar
     chmod 777 /tmp/pair
 
 #### Attach
 
-    tmux -S /tmp/pair attach
+    tmux -S /tmp/pair attach -t foobar
 
 #### Detach
 
