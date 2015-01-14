@@ -25,6 +25,13 @@ Webcam
 
     mplayer tv:// -tv driver=v4l2:width=160:height=120:device=/dev/video0
 
+Audio CD
+--------
+
+Play tracks 5, 6 and 7
+
+    mpv -cdrom-device /dev/cdrom cdda://5-7 -cache 5000
+
 Smooth playback
 ---------------
 
