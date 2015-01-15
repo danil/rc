@@ -51,7 +51,7 @@ hba_file
 
 Find pg_hba.conf location
 <http://askubuntu.com/questions/256534/how-do-i-find-the-path-to-pg-hba-conf-from-the-shell>,
-<http://www.postgresql.org/docs/8.3/static/runtime-config-file-locations.html>,
+<http://www.postgresql.org/docs/current/static/runtime-config-file-locations.html>
 
     psql --tuples-only --pset='format=unaligned' --command='show data_directory'
 
