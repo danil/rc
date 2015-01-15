@@ -45,6 +45,15 @@ Version
     compiled by GCC cc (GCC) 4.1.2 20061115 (prerelease) (Debian 4.1.1-21)
     (1 row)
 
+
+hba_file
+--------
+
+Find pg_hba.conf location
+<http://askubuntu.com/questions/256534/how-do-i-find-the-path-to-pg-hba-conf-from-the-shell>
+
+    psql -t -P format=unaligned -c 'show hba_file';
+
 Create role
 -----------
 
