@@ -50,9 +50,10 @@ hba_file
 --------
 
 Find pg_hba.conf location
-<http://askubuntu.com/questions/256534/how-do-i-find-the-path-to-pg-hba-conf-from-the-shell>
+<http://askubuntu.com/questions/256534/how-do-i-find-the-path-to-pg-hba-conf-from-the-shell>,
+<http://www.postgresql.org/docs/8.3/static/runtime-config-file-locations.html>,
 
-    psql -t -P format=unaligned -c 'show hba_file';
+    psql --tuples-only --pset='format=unaligned' --command='show data_directory'
 
 Create role
 -----------
