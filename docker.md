@@ -19,7 +19,7 @@ Images
 Build
 -----
 
-    docker.io build --tag mlapshin/docker-teamcity .
+    docker.io build --tag mlapshin/docker-teamcity ./
 
 Tag
 ---
