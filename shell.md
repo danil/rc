@@ -958,3 +958,4 @@ Other
     make && make install
     make menuconfig # make oldconfig
     echo $?
+    lsb_release --all #debian/ubuntu version
