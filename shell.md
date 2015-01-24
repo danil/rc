@@ -815,14 +815,16 @@ Release version compliant to Linux Standard Base (LSB)
 apropos
 =======
 
+<http://en.wikipedia.org/wiki/Apropos_(Unix)>
+
 Search whatis database for command names
 
-    apropos word
-
-
+    apropos mount
 
 ls
 ==
+
+<http://en.wikipedia.org/wiki/Ls>
 
 Newest first
 ------------
@@ -837,12 +839,16 @@ Recurse into subdirectories
 nohup
 =====
 
+<http://en.wikipedia.org/wiki/Nohup>
+
 Start a process in the background and have it keep running after you log off
 
     nohup ./scripts/bootstrap.sh &
 
 watch
 =====
+
+<http://en.wikipedia.org/wiki/Watch_(Unix)>
 
     watch --differences 'ps -aux | grep chrom'
 
