@@ -16,12 +16,26 @@ Shell
 Manuals
 =======
 
+man
+---
+
     man 1 -L en -P "less -I" ls
     man -k sex
     man share/man/man1/ruby.1
-    apropos
-    whatis
 
+whatis
+------
+
+    whatis man
+
+apropos
+-------
+
+<http://en.wikipedia.org/wiki/Apropos_(Unix)>
+
+Search whatis database for command names
+
+    apropos man
 
 Count lines
 ===========
@@ -109,9 +123,12 @@ env
     env LANG=ru_RU.UTF-8 xedit
     export LANG=ru_RU.KOI8-R
 
-To clear the environment:
+Clear environment
+-----------------
 
-    env -i /bin/sh
+To clear the environment and start bash
+
+    env --ignore-environment /bin/bash
 
 Network
 =======
@@ -825,15 +842,6 @@ Get release version
 Release version compliant to Linux Standard Base (LSB)
 
     lsb_release --all
-
-apropos
-=======
-
-<http://en.wikipedia.org/wiki/Apropos_(Unix)>
-
-Search whatis database for command names
-
-    apropos mount
 
 ls
 ==
