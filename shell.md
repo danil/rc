@@ -801,6 +801,13 @@ Release version compliant to Linux Standard Base (LSB)
 
     lsb_release --all
 
+apropos
+=======
+
+Search whatis database for command names
+
+    apropos word
+
 Other
 =====
 
