@@ -55,7 +55,7 @@ Blank file content.
 
 <http://cyberciti.biz/faq/truncate-large-text-file-in-unix-linux>.
 
-    > {filename}
+    echo > {filename}
 
 Date and time
 =============
