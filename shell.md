@@ -14,7 +14,7 @@ Shell
 =====
 
 Manuals
--------
+=======
 
     man 1 -L en -P "less -I" ls
     man -k sex
@@ -24,7 +24,7 @@ Manuals
 
 
 Count lines
------------
+===========
 
     ls -x1 /usr/lib | wc -l
 
@@ -32,156 +32,24 @@ http://stackoverflow.com/questions/1427032/fast-linux-file-count-for-a-large-num
 
     ls -f | wc -l
 
-Search and replace
-------------------
-
-### grep
-
-    grep -R eth0 /etc
-    grep -irl danil . 2> /dev/null | xargs tar cvvf ~/tmp/123.tar
-
-#### Only names
-
-    grep --files-with-matches --no-messages
-
-#### Select non-matching lines
-
-    grep --invert-match foo.*bar
-
-### pcregrep
-
-* Multiple lines matching
-  <http://stackoverflow.com/questions/2686147/how-to-find-patterns-across-multiple-lines-using-grep#answer-2686705>
-  <http://stackoverflow.com/questions/3863792/an-ack-or-grep-regex-to-match-two-lines-that-are-nearly-the-same#answer-3864440>
-* Perl-compatible regex
-
-    pcregrep -rM 'class.*(\n|.)*class' lib/cda/
-
-### find
-
-    find ~/ -mount -type f -size -100k -iname "*.rb" \
-            -exec grep -q -e danil\\.kutkevich \{\} \;
-    find "/etc/" -mount -maxdepth 3 -type f -size -100k -name "*.conf" \
-     |xargs grep -ilE "192\.168\.1\.[0-9]+"
-    find ./ -type d -exec chmod 755 '{}' \;
-    find ./ -type f |while read I; do \
-        NEWNAME1=$( md5sum "$I" |cut -d " " -f 1 ); \
-        NEWNAME2=$(dirname "$I")/$NEWNAME1_$( basename "$I"); \
-        mv "$I" "$NEWNAME2"; done;
-
-#### Search and remove file with inode number
-
-<http://unix.com/solaris/23278-file-no-name.html>
-<http://www.cyberciti.biz/tips/delete-remove-files-with-inode-number.html>
-
-    ls -il /var/ftp/incoming
-    find /var/ftp/incoming -inum [inode-number] -exec rm {} \;
-
-#### Recreate symlinks
-
-    find / -type l -exec sh -c 'lname="{}"; ltarget=$(readlink "${lname}"); rm "${lname}"; ln -s "${ltarget}" "${lname}"' \;
-
-### ack
-
-    ack Webpage ~/src/jobtest-aviasales-ru/
-
-#### Search for file name
-
-    ack --all-types -g [a-z]+array
-
-#### Only print filenames containing matches
-
-    ack --files-with-matches "{{" config/
-
-### The silver searcher
-
-<https://github.com/ggreer/the_silver_searcher>
-
-    ag Webpage ~/src/jobtest-aviasales-ru/
-
-#### Search for file name
-
-    ag --all-types -g [a-z]+array
-
-#### Only print filenames containing matches
-
-    ag --files-with-matches "{{" config/
-
-### Remove empty dirs
-
-    find -depth -type d -empty -exec rmdir {} \;
-
-    find ./ -mount -type f -iname "*~" -exec rm {} \;
-    find /lib/modules/2.6.30/ -type f -iname '*.o' -or -iname '*.ko'
-
-### sed
-
-Stream Editor
-
-    find ./ -type f -iregex ".*e?rb" -exec sed -i -r \
-         -e 's|http://tinyerp\.(org\|com)(/edoc)?/?|./|g' '{}' \;
-    echo 'Hello, World!' |sed -e s/World/work/
-    svn status |grep '^[I?]' |sed 's/^[I?]//' |xargs rm -rf
-
-#### Remove the 7rd line
-
-    sed -i '7d' ~/.ssh/known_hosts
-
-#### Cut from starting to ending line-numbers
-
-<http://stackoverflow.com/questions/5683367/how-to-cropcut-text-files-based-on-starting-and-ending-line-numbers-in-cygwin#5683408>
-
-    sed -n '134650000,134900000p' production.log > production-2013-02-18.log
-
-#### Add \n at end of file
-
-Adds `\n` at the end of the file only if it doesn’t already end with a newline
-<http://unix.stackexchange.com/questions/31947/how-to-add-a-newline-to-the-end-of-a-file#31955>,
-<http://unix.stackexchange.com/questions/31947/how-to-add-a-newline-to-the-end-of-a-file#comment-43399>.
-
-sed --in-place --expression='$a\' ~/.dmenu_history
-
-### AWK
-
-    awk '{ FS = "\t" ; OFS = "\t" ; print $1,"ru",$2,$3 }' \
-        infile > outfile
-    awk '{ FS = "\t" ; OFS = "\t" ; if ( NR > 1 ) print $1,$3 }' \
-        infile > outfile
-
-### tr
-
-#### Convert uppercase to lowercase
-
-<http://cyberciti.biz/faq/linux-unix-shell-programming-converting-lowercase-uppercase>
-
-    tr '[:upper:]' '[:lower:]' < input.txt > output.txt
-
-#### Replacing returns with space
-
-    cat ./file | tr '\n' ' '
-
-#### Config dryup
-
-    cat /etc/ntp.conf | grep -v '^#' | grep -v '^$'
-
-
 Rename
-------
+======
 
 Rename files <http://stackoverflow.com/questions/2709458/bash-script-to-replace-spaces-in-file-names#2709619>.
 
-### Whitespaces by underscores
+Whitespaces by underscores
+--------------------------
 
-#### Directories
+### Directories
 
     find -name "* *" -type d | perl-rename 's/\s/_/g'
 
-#### Files
+### Files
 
     find -name "* *" -type f | perl-rename 's/\s/_/g'
 
 Truncate text file
-------------------
+==================
 
 Blank file content.
 
@@ -189,41 +57,40 @@ Blank file content.
 
     > {filename}
 
-xargs
------
-
-    ack -a -g . | xargs -I % sh -c 'echo -e "\n\n########### %\n" && cat %' > 123
-
 Date and time
--------------
+=============
 
     date +%z
     date --iso-8601=seconds #2014-08-15T16:40:09+0400
     tzselect #show what value to use for TZ environment variable
 
-### Set
+Set
+---
 
     date -s "2008-04-30 08:48:0" # YYYY-mm-dd HH:MM:S (ISO 8601).
     date -s "041501482008" # mmddHHMMYYYY (OpenWRT).
 
-### Hardware clock (RTC)
+Hardware clock (RTC)
+--------------------
 
 <http://en.qi-hardware.com/wiki/Ben_NanoNote_TimeZone_Date_and_Calendar_HOWTO>
 
     hwclock --systohc --localtime
 
-### ntpdate
+ntpdate
+-------
 
     ntpdate -u -d 192.168.91.2
 
-### ntpd
+ntpd
+----
 
     ntpdc -c sysinfo -n # Stratum 3 is good enough.
     ntpq -c readvar
     ntpq -c peers
 
 env
----
+===
 
     env LANG=ru_RU.UTF-8 xedit
     export LANG=ru_RU.KOI8-R
@@ -233,29 +100,34 @@ To clear the environment:
     env -i /bin/sh
 
 Network
--------
+=======
 
     ngrep -d lo | less
 
-### Find out gateway
+Find out gateway
+----------------
 
 <http://cyberciti.biz/faq/how-to-find-gateway-ip-address>
 
     route | grep UG
 
-### Used ports
+Used ports
+----------
 
     netstat -tnlp
 
-### Remote shell
+Remote shell
+------------
 
     telnet mail.omskportal.ru 25
 
-### Telnet
+Telnet
+------
 
     busybox telnet molinos.megaplan.ru 80
 
-### SSH
+SSH
+---
 
     ssh -t root@santaslittlehelper "ssh danil@homer"
     scp -P 61022 [-r] foo.tar.gz bar.tar.gz anonymous@kutkevich.org:/home/danil/
@@ -263,30 +135,30 @@ Network
     ssh-copy-id -i ~/.ssh/id_rsa.pub "anonymous@kutkevich.org -p 2000"
     sshfs -p 61022 kutkevich.org:/home/danil/ mnt/kutkevich_org/
 
-#### Tunneling
+### Tunneling
 
-##### SSH
+#### SSH
 
 <http://revsys.com/writings/quicktips/ssh-tunnel.html>
 
     ssh -f -N -L localhost:2000:homer:22 root@stampy
     ssh -p 2000 danil@localhost
 
-##### HTTP
+#### HTTP
 
-###### Release terminal
+##### Release terminal
 
     ssh -f -N -L localhost:3001:192.168.0.38:3000 medapp
     curl localhost:3001
 
-###### Not release terminal
+##### Not release terminal
 
     ssh -L localhost:3001:192.168.0.38:3000 \
         -p 9922 danil@medapp2.waveaccess.ru
 
-###### Reverse tunneling
+##### Reverse tunneling
 
-####### SSH
+###### SSH
 
 <http://tunnelsup.com/raspberry-pi-phoning-home-using-a-reverse-remote-ssh-tunnel>
 
@@ -298,7 +170,7 @@ On `h5` server:
 
     ssh -l nemo -p 55555 localhost
 
-#### Transparent multi-hop SSH agent forwarding
+### Transparent multi-hop SSH agent forwarding
 
 <http://sshmenu.sourceforge.net/articles/transparent-mulithop.html>
 
@@ -306,18 +178,20 @@ On `h5` server:
     ssh-add *pem
     ssh -A -t -p 9922 medapp2.waveaccess.ru ssh -A danil@192.168.0.38
 
-### Nmap
+Nmap
+----
 
 Discover (scanner) hosts and services on a computer network.
 
     nmap --open 217.197.232.218
     nmap -sP 192.168.0.0/16
 
-### Bluetooth
+Bluetooth
+---------
 
-#### Enabled adapter
+### Enabled adapter
 
-##### rfkill
+#### rfkill
 
 * <http://wiki.gentoo.org/wiki/Bluetooth#Software>
 * <http://wireless.kernel.org/en/users/Documentation/rfkill>
@@ -325,11 +199,12 @@ Discover (scanner) hosts and services on a computer network.
     rfkill list
     rfkill unblock <index>|<type>
 
-#### Power on
+### Power on
 
     bluetoothctl
 
-### Other
+Other
+-----
 
     rtorrent -s ./.rtorrent
     host 192.168.132.44 192.168.8.1
@@ -362,7 +237,7 @@ Discover (scanner) hosts and services on a computer network.
     rdesktop -g 99% -k en 192.168.91.5
 
 ACPI
-----
+====
 
     grep bogo /proc/cpuinfo
     grep -E "charging|remaining" /proc/acpi/battery/BAT0/state
@@ -375,85 +250,95 @@ ACPI
     zcat /proc/config.gz |grep CONFIG_SYSVIPC
 
 diff
-----
+====
 
     colordiff --ignore-space-change postgresql-8.4 ._cfg0000_postgresql-8.4
 
-### Compare directories
+Compare directories
+-------------------
 
 <http://linuxcommando.blogspot.com/2008/05/compare-directories-using-diff-in-linux.html>
 
     diff --recursive --brief ~/dir1 ~/dir2| grep Only
     colordiff --recursive prealpha.kutkevich-org/ alpha.kutkevich-org/
 
-### Prepare patch
+Prepare patch
+-------------
 
 <http://devmanual.gentoo.org/tools-reference/diff-and-patch>
 
     diff --unified foo.c.~master~ foo.c
 
 Patch
------
+=====
 
-### Apply patch
+Apply patch
+-----------
 
 <http://cyberciti.biz/faq/appy-patch-file-using-patch-command/>
 
     patch -p1 < {/path/to/patch/file}
 
 Archiving and compression
--------------------------
+=========================
 
-### tar
+tar
+---
 
     tar -xvvzf foobar.tar.gz
 
-#### achieve by list in file
+### achieve by list in file
 
 <http://stackoverflow.com/questions/8033857/tar-archiving-that-takes-input-from-a-list-of-files#8033891>
 
     tar -cvf foo.tar --files-from=mylist.txt
 
-### gzip
+gzip
+----
 
     gzip -v access.log
     gzip -vd access.log.gz
     tar -xvvzf foobar.tar.gz
 
-### bzip2
+bzip2
+-----
 
     bzip2 -v access.log
     bzip2 -vd access.log.gz
     tar -xvvjf foobar.tar.bz2
 
-### xz
+xz
+--
 
     xz -v access.log
     xz -vd access.log.gz
     tar --extract --verbose --xz --file foobar.tar.xz
 
-### Zip
+Zip
+---
 
     zip file-to-archive.zip file-to-archive
     zip --recurse-paths foo.zip foo/
     unzip foo.zip
 
-### funzip
+funzip
+------
 
     cat archive.zip | funzip
 
-### RAR
+RAR
+---
 
     unrar x file.rar
 
 Power Management
-----------------
+================
 
     hibernate-ram
     hibernate
 
 Mail
-----
+====
 
 <http://debian-administration.org/article/171/Send_an_HTML_file_as_email_from_the_command_line>
 
@@ -469,24 +354,26 @@ Mail
     exim -Mvl <message_id>
 
 Random
-------
+=======
 
-### String generator
+String generator
+----------------
 
     dd if=/dev/random bs=1 count=16 |base64
 
-### Password
+Password
+--------
 
-#### Range from 5 to 9 length
+### Range from 5 to 9 length
 
     pwgen $(( 5+(`od -An -N2 -i /dev/random` )%(9-5+1) )) 1
 
-#### To file
+### To file
 
     pwgen --numerals --secure --no-capitalize 10 80000 \
       | tr '[:lower:]' '[:upper:]' > 80k_upper_201210091031
 
-#### Test for duplicates
+### Test for duplicates
 
 <http://stackoverflow.com/questions/6447473/linux-command-or-script-counting-duplicated-lines-in-a-text-file#6447515>
 
@@ -494,7 +381,7 @@ Random
       | sort | uniq -c | grep ' 1 ' --invert-match
 
 Sorting
--------
+=======
 
     sort ./file
     cat list-1 list-2 list-3 |sort |uniq > final.list
@@ -509,21 +396,24 @@ Sorting
           unsortedfile > file
 
 Bash history
-------------
+============
 
-### Print without line numbers
+Print without line numbers
+--------------------------
 
 <http://stackoverflow.com/questions/7110119/bash-history-without-line-numbers#7110197>.
 
     history | cut -c 8-
 
-### Remove duplicates in .bash_history
+Remove duplicates in .bash_history
+----------------------------------
 
 <http://unix.stackexchange.com/questions/48713/how-can-i-remove-duplicates-in-my-bash-history-preserving-order#48716>
 
     cat ~/.bash_history | nl | sort -k2 -k 1,1nr | uniq -f1 | sort -n | cut -f2
 
-### Other
+Other
+-----
 
     dd if=/dev/urandom count=1 2> /dev/null \
      | uuencode -m - \
@@ -531,44 +421,48 @@ Bash history
      | cut -c-8
 
 Kernel modules
---------------
+==============
 
     lsmod |grep vb
     rmmod vboxdrv
     modprobe vboxdrv
 
 Images
-------
+======
 
-### View
+View
+----
 
     feh --draw-filename --sort name --recursive --thumbnails --fullscreen ~/tmp
 
-### ImageMagick
+ImageMagick
+-----------
 
     convert ~/tmp/screenshot.png -quality 30 ~/tmp/screenshot.jpg
 
 Character encodings
--------------------
+===================
 
     convmv -f windows-1251 -t utf-8 *.* --notest -r
     iconv -fWINDOWS-1251 -tUTF-8 -ooutfile infile
     dos2unix filename
 
-### Find ASCII/UTF-8 text files
+Find ASCII/UTF-8 text files
+---------------------------
 
     ack -g . . |xargs file * |grep UTF
 
 locate
-------
+======
 
     locate cvs |grep bin
     updatedb
 
 rsync
------
+=====
 
-### Copy from remote server to local machine
+Copy from remote server to local machine
+----------------------------------------
 
 <http://stackoverflow.com/questions/9090817/copying-files-using-rsync-from-remote-server-to-local-machine#9090859>
 
@@ -582,12 +476,14 @@ rsync
           --stats \
           danil@h2.kutkevich.org:~/Books/ ./Books/
 
-### Other
+Other
+-----
 
     rsync -rv --stats --delete --compress --skip-compress=jpg,gif,png,mp4 \
       danil@kutkevich.org:~/foo/bar foo
 
-### bwlimit
+bwlimit
+-------
 
 Limit disk I/O
 http://www.cyberciti.biz/faq/throttle-disk-io-rate-limit-disk-io
@@ -595,14 +491,14 @@ http://www.cyberciti.biz/faq/throttle-disk-io-rate-limit-disk-io
     rsync --delete --numeric-ids --relative --delete-excluded --bwlimit=10000 /path/to/source /path/to/dest/
 
 Free ram
---------
+=========
 
 <http://linuxatemyram.com>
 
     free -m
 
 Job control
------------
+===========
 
 <http://stackoverflow.com/questions/11821378/what-does-bashno-job-control-in-this-shell-mean#11824420>
 
@@ -610,21 +506,22 @@ Job control
 *    `%` foreground recently job
 
 Sudo
-----
+====
 
     sudo -u nobody ls
 
 Su
----
+==
 
-### Execute command as another user
+Execute command as another user
+-------------------------------
 
 <http://stackoverflow.com/questions/6905697/how-to-run-script-as-another-user-without-password#6905797>
 
     sudo su -c "ls" -s /bin/sh ftp
 
 GNU Privacy Guard
------------------
+=================
 
     cat file.bz2 | gpg --recipient danil --decrypt | bzip2 --decompress --stdout > file
     cat file | bzip2 --stdout | gpg --recipient danil --encrypt > file.bz2
@@ -632,11 +529,12 @@ GNU Privacy Guard
     gpg --verify <signature file> <downloaded iso>
 
 Signals
--------
+=======
 
     pkill regex
 
-### Logout user
+Logout user
+-----------
 
 Kick them out
 
@@ -656,7 +554,7 @@ john     31085  0.0  0.0  29064  5028 pts/6    Ss+  15:33   0:00 -bash
     kill 31085
 
 DCTC
-----
+====
 
     dctc -n danil -s /home/danil/tmp/_video/ -f -g worm.interzet.ru:411
     rccp -H dctc-00006D13-worm.interzet.ru:411 -s lalala
@@ -665,14 +563,14 @@ DCTC
     dd if=/dev/zero of=bigfile bs=1024 count=1048576
 
 Wine
-----
+====
 
     cabextract file.cab
     msiexec /i file.msi
     wine start FluffyBunnySetup.msi
 
 Users and groups
-----------------
+================
 
     groups danil
     groupadd danil
@@ -689,28 +587,30 @@ Users and groups
     passwd danil
     grpck
 
-### Other
+Other
+-----
 
     deluser --remove-all-files --backup --backup-to /home/danil/ danil
 
 chmod
------
+=====
 
     chmod -R ug+w ./smarty/templates_c/ ./smarty/cach/
 
-### Fix files and directories permissions
+Fix files and directories permissions
+-------------------------------------
 
 <http://superuser.com/questions/126073/chmod-to-allow-read-and-write-permissions-for-directory#126075>
 
     find ./somedir \( -type d -exec chmod u=rwx,g=rx,o=xr {} \; -o -type f -exec chmod u=rw,g=r,o=r {} \; \)
 
 chown
------
+=====
 
     chown -R www-data:www-data ./smarty/templates_c/ ./smarty/cache/
 
 ALSA
-----
+====
 
 ALSA sound cards start with 0, so 0 is the first card, 1 is the second
 card, etc.
@@ -718,28 +618,29 @@ card, etc.
     alsamixer -c 0
 
 SoX
----
+===
 
 <http://en.wikipedia.org/wiki/SoX>.
 
-### Play audio in background via command line
+Play audio in background via command line
+-----------------------------------------
 
 <http://askubuntu.com/questions/176038/how-can-i-play-a-song-in-the-background-via-my-command-line#176046>.
 
     play -q --no-show-progress ~/local/share/sounds/complete.oga &
 
 CentOS
-------
+======
 
     setup
 
 nginx
------
+=====
 
     nginx -t -c nginx.conf
 
 Apache
-------
+======
 
     htpasswd -c /home/danil/.htpasswd danil
     apache2ctl -t -D DUMP_MODULES # Show the loaded modules.
@@ -749,12 +650,12 @@ Apache
     a2dissite example.org
 
 ab
---
+==
 
     ab -kc 10 -t 30 http://kutkevich.org
 
 httperf
--------
+=======
 
     httperf --num-conns 10 --rate 120 \
             --server kutkevich.org --port 80 --uri /index.html
@@ -762,35 +663,36 @@ httperf
             --server kutkevich.org --port 80 --wsesslog=10,1,wsesslog_ska
 
 siege
------
+=====
 
     siege --concurrent=1 --reps=1 --verbose \
           --log=$HOME/siege.log --file=$HOME/siege-urls \
           --header="Cookie: ring-session=00000000-0000-0000-0000-000000000000"
 
 iptables
---------
+========
 
     iptables -L traffic -vx
     iptables -t nat -A POSTROUTING -o eth0 \
              -s 192.168.0.202/32 -j MASQUERADE
 
 Fail2ban
---------
+========
 
 <http://wiki.gentoo.org/wiki/Fail2ban#Interacting>.
 
     fail2ban-client status
     fail2ban-client status ssh-iptables
 
-### Unban
+Unban
+-----
 
 <http://serverfault.com/questions/285256/how-to-unban-an-ip-properly-with-fail2ban#475117>.
 
     fail2ban-client set ssh-iptables unbanip 188.134.8.88
 
 mpd
----
+====
 
     mpc clear
     mpd --create-db
@@ -800,13 +702,15 @@ mpd
     mpc save p
 
 GTK
----
+===
 
-### dconf
+dconf
+-----
 
     dconf write /org/gnome/shell/overrides/button-layout "'close,minimize,maximize:'"
 
-### gconf
+gconf
+-----
 
     gconftool-2 --set /apps/nautilus/desktop/computer_icon_visible --type boolean false
     gconftool-2 --set /desktop/gnome/url-handlers/http/command --type string 'firefox %s'
@@ -815,79 +719,83 @@ GTK
     gconftool-2 --set /desktop/gnome/shell/windows/button_layout --type string "close,minimize,maximize:"
 
 upsc
-----
+====
 
 Network UPS Tools (NUT) <http://en.gentoo-wiki.com/wiki/NUT>.
 
     upsc ippon@localhost
 
 Keyboard shortcut
------------------
+=================
 
 * `C-r` reverse search history
 * `C-s` pausing all output on the terminal
 * `C-q` resume output on the terminal
 
 Files
------
+=====
 
     /etc/acpi/actions/suspend.sh
 
 VirtualBox
-----------
+==========
 
     mount -t vboxsf -o uid=1000,gid=1000 share ~/mnt/share
     VBoxManage clonevdi xp_ie7.vdi xp_ie8.vd
 
 
 Puppet
-------
+======
 
     puppet puppet.pp
 
 Converting flac to mp3
-----------------------
+======================
 
 <http://linuxtutorialblog.com/post/solution-converting-flac-to-mp3>
 
     for file in *.flac; do flac -cd "$file" | lame -h - "${file%.flac}.mp3"; done
 
 Hashing
--------
+=======
 
-### MD5
+MD5
+---
 
-#### Create
+### Create
 
     md5sum FantasqueSansMono-Regular.ttf
 
-#### Check
+### Check
 
     md5sum -c ./file
     echo "1539bad48e984ae1441052dc074c0995  /dev/hdc" |md5sum -c
 
-### SHA-1
+SHA-1
+-----
 
-#### Check
+### Check
 
     echo "26733b170052a01eb48ed2d5495a5cb51c00bdd0 /dev/hdc" |sha1sum -c
 
 cp
---
+==
 
-### Preserving directory path
+Preserving directory path
+-------------------------
 
 Copy file preserving directory path
 <http://serverfault.com/questions/180853/how-to-copy-file-preserving-directory-path-in-linux#180870>.
 
     cp --parents foo/123/bar/abc.xml foo/321/baz/xyz.html .
 
-### Other
+Other
+-----
 
     cp -a ~/var/www/ ~/tmp/
 
 Other
------
+=====
 
     mkdir ~/root/{var/{db/pkg,paludis/distfiles,cache/paludis/{names_cache,write_cache},tmp/paludis}
     uname -a
