@@ -808,6 +808,21 @@ Search whatis database for command names
 
     apropos word
 
+
+
+ls
+==
+
+Newest first
+------------
+
+    ls -ltc --all
+
+Recurse into subdirectories
+---------------------------
+
+    ls --recursive
+
 Other
 =====
 
@@ -815,7 +830,6 @@ Other
     uname -a
     hostname -f
     id
-    ls -altc
     whereis vsftpd
     alias
     echo -e "1\n2"
