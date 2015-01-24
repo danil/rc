@@ -794,6 +794,13 @@ Other
 
     cp -a ~/var/www/ ~/tmp/
 
+Get release version
+===================
+
+Release version compliant to Linux Standard Base (LSB)
+
+    lsb_release --all
+
 Other
 =====
 

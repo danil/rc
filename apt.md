@@ -29,11 +29,6 @@ Advanced Packaging Tool
     reprepro
     wget --output-document=- http://backports.org/debian/archive.key | apt-key add -
 
-Get release version
-===================
-
-    lsb_release --all
-
 Repository
 ==========
 
