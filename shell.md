@@ -841,6 +841,11 @@ Start a process in the background and have it keep running after you log off
 
     nohup ./scripts/bootstrap.sh &
 
+watch
+=====
+
+    watch --differences 'ps -aux | grep chrom'
+
 Other
 =====
 
