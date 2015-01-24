@@ -35,10 +35,24 @@ http://stackoverflow.com/questions/1427032/fast-linux-file-count-for-a-large-num
 Rename
 ======
 
-Rename files <http://stackoverflow.com/questions/2709458/bash-script-to-replace-spaces-in-file-names#2709619>.
+Remove spaces
+-------------
+
+Remove spaces from filenames in current directory
+
+    rename -n 's/[\s]/''/g' *
+
+To lowercase
+------------
+
+Change capitals to lowercase in filenames in current directory
+
+    rename 'y/A-Z/a-z/' *
 
 Whitespaces by underscores
 --------------------------
+
+Rename files <http://stackoverflow.com/questions/2709458/bash-script-to-replace-spaces-in-file-names#2709619>.
 
 ### Directories
 
