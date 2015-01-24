@@ -823,6 +823,13 @@ Recurse into subdirectories
 
     ls --recursive
 
+nohup
+=====
+
+Start a process in the background and have it keep running after you log off
+
+    nohup ./scripts/bootstrap.sh &
+
 Other
 =====
 
@@ -864,7 +871,6 @@ Other
     lspci
     lsusb
     ethtool -i eth0
-    nohup iceweasel
     setterm -blength 0
     tput colors
     chroot /mnt/gentoo /bin/bash
@@ -877,7 +883,6 @@ Other
          |cut -d ':' -f 1-13
     update-rc.d nginx defaults
     update-rc.d -f nginx remove
-    nohup ./scripts/bootstrap.sh &
     cdrecord dev=/dev/hdc <downloaded iso file>
     PAGER=cat man man
     vlc -I ncurses
