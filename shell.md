@@ -353,7 +353,7 @@ Mail
          -s "Employer" \
          danil@kutkevich.org < ./htdocs/index.html
 
-    echo 'Hello, work' |mail -s 'Hello, World!' anonymous@kutkevich.org
+    echo 'Hello, work' | mail -s 'Hello, World!' danil@kutkevich.org
     /usr/sbin/sendmail -bV
     exim -brw danil
     exim -bV
