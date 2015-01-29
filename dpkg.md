@@ -34,6 +34,11 @@ Install
 
     dpkg --install google-talkplugin_current_amd64.deb
 
+Remove
+======
+
+    dpkg --remove google-talkplugin_current_amd64.deb
+
 Files belongs to package
 ========================
 
