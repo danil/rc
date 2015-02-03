@@ -296,6 +296,8 @@ tar
 
 ### Exclude
 
+<http://stackoverflow.com/questions/984204/shell-command-to-tar-directory-excluding-certain-files-folders#984259>
+
     tar --exclude=foo.tar.xz -cJf foo.tar.xz ./foo
 
 ### List of files
