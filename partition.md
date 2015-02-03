@@ -41,6 +41,8 @@ Copy partitions table from /dev/sda to /dev/sdb
 
 ### Make GPT
 
+<https://wiki.archlinux.org/index.php/GUID_Partition_Table#parted_basic_.28via_command_line_options.29>
+
     parted --script /dev/sda mklabel gpt
 
 ## gdisk
