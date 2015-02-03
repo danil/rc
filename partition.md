@@ -9,11 +9,9 @@
      Creative Commons, 171 Second Street, Suite 300, San Francisco,
      California, 94105, USA. -->
 
-Partitions
-==========
+# Partitions
 
-lsblk
-=====
+# lsblk
 
 List partitions:
 * <https://wiki.archlinux.org/index.php/persistent_block_device_naming#Persistent_naming_methods>
@@ -21,11 +19,9 @@ List partitions:
 
     lsblk
 
-GPT
-===
+# GPT
 
-Copy
-----
+## Copy
 
 <http://unix.stackexchange.com/questions/93385/how-to-restore-the-partition-layout-for-gpt-disk#93391>
 
@@ -37,15 +33,17 @@ Copy partitions table from /dev/sda to /dev/sdb
 
     sgdisk --randomize-guids /dev/sdb
 
-parted
-------
+## parted
 
 <http://gentoo.org/doc/en/handbook/handbook-amd64.xml?part=1&chap=4>
 
     parted /dev/sda
 
-gdisk
------
+### Make GPT
+
+    parted --script /dev/sda mklabel gpt
+
+## gdisk
 
 <https://wiki.archlinux.org/index.php/Partitioning#Partitioning_tools>.
 
@@ -58,8 +56,7 @@ gdisk
       sda3               Primary    Linux swap / Solaris               9000,00
       sda4               Primary    Linux ext4         [fs_root]     109000,00
 
-MBR
-===
+# MBR
 
 Legacy!
 
@@ -72,11 +69,9 @@ Legacy!
       sda2               Primary    Linux swap / Solaris               9000,00
       sda3               Primary    Linux ext4         [fs_root]     110000,00
 
-cfdisk
-======
+# cfdisk
 
-Warning
--------
+## Warning
 
 <https://wiki.archlinux.org/index.php/Partitioning#Partitioning_tools>.
 
