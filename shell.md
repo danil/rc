@@ -294,7 +294,11 @@ tar
 
     tar -xvvzf foobar.tar.gz
 
-### achieve by list in file
+### Exclude
+
+    tar --exclude=foo.tar.xz -cJf foo.tar.xz ./foo
+
+### List of files
 
 <http://stackoverflow.com/questions/8033857/tar-archiving-that-takes-input-from-a-list-of-files#8033891>
 
