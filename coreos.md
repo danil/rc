@@ -18,9 +18,18 @@ fleetctl
     fleetctl list-units
     fleetctl list-unit-files
 
-Get discovery URL form running system
--------------------------------------
+IPs
+===
 
+Get public and private IPs form running system
+<https://www.digitalocean.com/community/tutorials/how-to-use-fleet-and-fleetctl-to-manage-your-coreos-cluster#basic-machine-management-commands>
+
+    cat /etc/environment
+
+Discovery URL
+=============
+
+Get discovery URL form running system
 <https://www.digitalocean.com/community/tutorials/how-to-set-up-a-coreos-cluster-on-digitalocean#adding-new-machines>
 
     grep DISCOVERY /run/systemd/system/etcd.service.d/20-cloudinit.conf
