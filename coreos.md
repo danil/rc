@@ -4,13 +4,19 @@ CoreOS
 ======
 
     coreos-cloudinit --from-file=./cloud-config.yaml
-    fleetctl --endpoint=http://111.222.0.1:4001 list-machines
-    fleetctl list-units
-    fleetctl list-unit-files
     curl http://111.222.0.1:4001/v1/keys/_coreos.com/fleet/states
     etcdctl ls /_coreos.com/fleet/machines
     etcdctl get /coreos.com/network/config
     journalctl --unit=etcd
+
+fleetctl
+========
+
+<https://www.digitalocean.com/community/tutorials/how-to-use-fleet-and-fleetctl-to-manage-your-coreos-cluster#basic-machine-management-commands>
+
+    fleetctl --endpoint=http://111.222.0.1:4001 list-machines
+    fleetctl list-units
+    fleetctl list-unit-files
 
 Get discovery URL form running system
 -------------------------------------
