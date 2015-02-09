@@ -17,7 +17,15 @@ fleetctl
     fleetctl --endpoint=http://111.222.0.1:4001 list-machines
     fleetctl submit foo.service
     fleetctl list-unit-files
+    fleetctl load foo.service
+    fleetctl start foo.service
     fleetctl list-units
+    fleetctl stop foo.service
+    fleetctl unload foo.service
+    fleetctl status foo.service
+    fleetctl cat foo.service
+    fleetctl journal --lines 20 foo.service
+    fleetctl destroy foo.service
 
 IPs
 ===
