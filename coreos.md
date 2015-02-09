@@ -15,8 +15,9 @@ fleetctl
 <https://www.digitalocean.com/community/tutorials/how-to-use-fleet-and-fleetctl-to-manage-your-coreos-cluster#basic-machine-management-commands>
 
     fleetctl --endpoint=http://111.222.0.1:4001 list-machines
-    fleetctl list-units
+    fleetctl submit foo.service
     fleetctl list-unit-files
+    fleetctl list-units
 
 IPs
 ===
