@@ -131,7 +131,7 @@ Remote shell
 Telnet
 ------
 
-    busybox telnet molinos.megaplan.ru 80
+    busybox telnet danil.kutkevich.org 22
 
 SSH
 ---
@@ -922,7 +922,7 @@ Other
     ./configure --prefix=$HOME --with-baseruby="/home/danil/bin/ruby" \
                 --enable-shared --enable-pthread --enable-install-doc
     su -c make -f Makefile.cvs install
-    make && make install
+    make --jobs=5 && make install
     make menuconfig # make oldconfig
     echo $?
     lsb_release --all #debian/ubuntu version
