@@ -49,6 +49,10 @@ Run image as container
                    --publish=5433:5432 \
                    mlapshin/docker-teamcity
 
+Get response from published port
+
+    busybox telnet localhost 5433
+
 Containers
 ==========
 
