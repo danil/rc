@@ -18,7 +18,7 @@ Compile
 * <https://www.gentoo.org/doc/en/handbook/handbook-amd64.xml?style=printable&part=1&chap=7#doc_chap2_sect3>
 * <http://unix.stackexchange.com/questions/51815/why-people-recommend-the-j3-option-for-make-when-having-a-dual-core-cpu#51861>
 
-    make -j9
+    make --jobs=9
 
 Install
 -------
