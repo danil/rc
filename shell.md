@@ -909,10 +909,5 @@ Other
     xmodmap -pke > .xmodmap.orig
     tput cols && tput lines
     chsh -s /bin/zsh
-    ./configure --prefix=$HOME --with-baseruby="/home/danil/bin/ruby" \
-                --enable-shared --enable-pthread --enable-install-doc
-    su -c make -f Makefile.cvs install
-    make --jobs=5 && make install
-    make menuconfig # make oldconfig
     echo $?
     lsb_release --all #debian/ubuntu version
