@@ -128,9 +128,14 @@ SSH
 
     ssh -t root@santaslittlehelper "ssh danil@homer"
     scp -P 61022 [-r] foo.tar.gz bar.tar.gz anonymous@kutkevich.org:/home/danil/
-    ssh-keygen
-    ssh-copy-id -i ~/.ssh/id_rsa.pub "anonymous@kutkevich.org -p 2000"
     sshfs -p 61022 kutkevich.org:/home/danil/ mnt/kutkevich_org/
+
+### Key authentication
+
+<http://superuser.com/questions/585429/can-i-change-the-filename-of-my-ssh-public-private-key-pair>
+
+    ssh-keygen -f key-file-name
+    ssh-copy-id -i ~/.ssh/key-file-name.pub "anonymous@kutkevich.org -p 2000"
 
 ### Tunneling
 
