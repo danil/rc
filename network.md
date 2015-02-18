@@ -115,25 +115,6 @@ Discover (scanner) hosts and services on a computer network.
     nmap --open 217.197.232.218
     nmap -sP 192.168.0.0/16
 
-Bluetooth
-=========
-
-Enabled adapter
----------------
-
-### rfkill
-
-* <http://wiki.gentoo.org/wiki/Bluetooth#Software>
-* <http://wireless.kernel.org/en/users/Documentation/rfkill>
-
-    rfkill list
-    rfkill unblock <index>|<type>
-
-Power on
---------
-
-    bluetoothctl
-
 Other
 =====
 
