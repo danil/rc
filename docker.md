@@ -30,14 +30,14 @@ Remove
 Run
 ---
 
-Run image as container
+Run image as container (get internal port 5432 as 5433 port from outside)
 
     docker.io run  --detach --tty
-                   --volume /var/teamcity-data:/opt/teamcity-data \
+                   --volume /var/foobar-data:/opt/foobar-data \
                    --volume /etc/localtime:/etc/localtime:ro \
-                   --name teamcity_server \
+                   --name foobar_server \
                    --publish=5433:5432 \
-                   mlapshin/docker-teamcity
+                   user-name/docker-foobar
 
 Get response from published port
 
