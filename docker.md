@@ -71,3 +71,16 @@ Remove
 ### Remove all stoped
 
     docker.io rm $(docker.io ps --all --quiet)
+
+Backup
+------
+
+### Save
+
+<http://stackoverflow.com/questions/21486004/how-do-i-move-a-docker-containers-image-to-a-persistent-disk#21632989>
+
+    docker save image_name > image_name.tar
+
+### Restore
+
+    docker load < image_name.tar
