@@ -45,6 +45,13 @@ Finding largest files/directories
       | xargs du -b 2>/dev/null \
       | awk '{total += $1; print $0} END{print total}'
 
+Get UUID
+========
+
+<http://unix.stackexchange.com/questions/658/linux-how-can-i-view-all-uuids-for-all-available-disks-on-my-system#660>
+
+    ls -l /dev/disk/by-uuid | grep sda1
+
 dd
 ==
 
