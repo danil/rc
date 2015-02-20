@@ -32,12 +32,19 @@ Run
 
 Run image as container (get internal port 5432 as 5433 port from outside)
 
-    docker.io run  --detach --tty
-                   --volume /var/foobar-data:/opt/foobar-data \
-                   --volume /etc/localtime:/etc/localtime:ro \
-                   --name foobar_server \
-                   --publish=5433:5432 \
-                   user-name/docker-foobar
+    docker.io run -e HOME=/home/my_user \
+                  --user="my_user"
+                  --interactive \
+                  --tty \
+                  --detach \
+                  --volume /var/foobar-data:/opt/foobar-data \
+                  --volume /etc/localtime:/etc/localtime:ro \
+                  --name foobar_server \
+                  --publish=5433:5432 \
+                  user-name/docker-foobar
+
+docker.io run  --name medapp -p 3000:3000 2a066bcac7c5 /bin/bash --login
+
 
 Get response from published port
 
