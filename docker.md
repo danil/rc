@@ -42,6 +42,12 @@ Get response from published port
 
     busybox telnet localhost 5433
 
+## Commit
+
+Save container as image after interactive changes
+
+    docker.io commit user-name/docker-foobar docker-foobar:1970_01_01
+
 # Containers
 
 ## List
