@@ -48,6 +48,14 @@ Save container as image after interactive changes
 
     docker.io commit user-name/docker-foobar docker-foobar:1970_01_01
 
+# Registry
+
+Push image to local registry repository  
+<http://blog.docker.com/2013/07/how-to-use-your-own-registry/>
+
+    docker.io tag my-image-id localhost:63711/medapp-demo
+    docker.io push localhost:63711/medapp-demo
+
 # Containers
 
 ## List
