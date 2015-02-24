@@ -1,25 +1,20 @@
 <!-- -*- coding: utf-8; -*- -->
 
-Docker
-======
+# Docker
 
-Images
-======
+# Images
 
-Build
------
+## Build
 
     docker.io build --tag mlapshin/docker-teamcity ./
 
-Tag
----
+## Tag
 
 ### Add
 
     docker.io tag 7f7a5e4d89e4 fhirbase/fhirbase
 
-Remove
-------
+## Remove
 
     docker.io rmi foobar
 
@@ -27,8 +22,7 @@ Remove
 
     docker.io rmi $(docker.io images --quiet)
 
-Run
----
+## Run
 
 Run image as container (get internal port 5432 as 5433 port from outside)
 
@@ -50,28 +44,23 @@ Get response from published port
 
     busybox telnet localhost 5433
 
-Containers
-==========
+# Containers
 
-List
-----
+## List
 
 List all containers
 
     docker.io ps --all
 
-Start
------
+## Start
 
     docker.io start teamcity_agent1
 
-Stop
-----
+## Stop
 
     docker.io stop teamcity_serve
 
-Remove
-------
+## Remove
 
     docker.io rm --force teamcity_agent1
 
@@ -79,8 +68,7 @@ Remove
 
     docker.io rm $(docker.io ps --all --quiet)
 
-Backup
-------
+## Backup
 
 ### Save
 
