@@ -35,10 +35,8 @@ Run image as container (get internal port 5432 as 5433 port from outside)
                   --volume /etc/localtime:/etc/localtime:ro \
                   --name foobar_server \
                   --publish=5433:5432 \
-                  user-name/docker-foobar
-
-docker.io run  --name medapp -p 3000:3000 2a066bcac7c5 /bin/bash --login
-
+                  user-name/docker-foobar \
+                  '/bin/bash' -l -c 'sudo service postgresql start'
 
 Get response from published port
 
