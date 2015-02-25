@@ -40,7 +40,8 @@ Run image as container (get internal port 5432 as 5433 port from outside)
                   --name foobar_server \
                   --publish=5433:5432 \
                   user-name/docker-foobar \
-                  '/bin/bash' -l -c 'sudo service postgresql start'
+                  '/bin/bash' -l -c 'export LANG="C.UTF-8" \
+                                     && sudo service postgresql start'
 
 Get response from published port
 
