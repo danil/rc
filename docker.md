@@ -4,6 +4,10 @@
 
 # Images
 
+## List
+
+    docker.io images
+
 ## Build
 
     docker.io build --tag mlapshin/docker-teamcity ./
