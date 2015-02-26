@@ -81,7 +81,7 @@ List all containers
 
     docker.io rm --force teamcity_agent1
 
-### Remove all stoped
+### Remove all stopped/running
 
     docker.io rm $(docker.io ps --all --quiet)
 
