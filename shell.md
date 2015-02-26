@@ -145,15 +145,23 @@ Archiving and compression
 tar
 ---
 
-    tar -xvvzf foobar.tar.gz
+### Read
 
-### Exclude
+    tar --list --file foobar.tar
+
+### Extract
+
+    tar --extract --gzip --file foobar.tar.gz
+
+### Create
+
+#### With exclude
 
 <http://stackoverflow.com/questions/984204/shell-command-to-tar-directory-excluding-certain-files-folders#984259>
 
     tar --exclude=foo.tar.xz -cJf foo.tar.xz ./foo
 
-### List of files
+#### By list of files
 
 <http://stackoverflow.com/questions/8033857/tar-archiving-that-takes-input-from-a-list-of-files#8033891>
 
