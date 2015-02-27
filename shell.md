@@ -159,13 +159,13 @@ tar
 
 <http://stackoverflow.com/questions/984204/shell-command-to-tar-directory-excluding-certain-files-folders#984259>
 
-    tar --exclude=foo.tar.xz -cJf foo.tar.xz ./foo
+    tar --exclude=foo.tar.xz --create --xz --file foo.tar.xz ./foo
 
 #### By list of files
 
 <http://stackoverflow.com/questions/8033857/tar-archiving-that-takes-input-from-a-list-of-files#8033891>
 
-    tar -cvf foo.tar --files-from=mylist.txt
+    tar --create --file foo.tar --files-from=mylist.txt
 
 gzip
 ----
