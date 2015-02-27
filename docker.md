@@ -67,7 +67,7 @@ Push image to local registry repository
 
 List all containers
 
-    docker.io ps --all
+    docker.io ps --all --no-trunc
 
 ## Start
 
