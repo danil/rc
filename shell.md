@@ -184,9 +184,9 @@ bzip2
 xz
 --
 
-    xz -v access.log
-    xz -vd access.log.gz
-    tar --extract --verbose --xz --file foobar.tar.xz
+    xz access.log
+    xz --decompress access.log.gz
+    tar --extract --xz --file foobar.tar.xz
 
 Zip
 ---
