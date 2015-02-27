@@ -139,93 +139,11 @@ Apply patch
 
     patch -p1 < {/path/to/patch/file}
 
-Archiving and compression
-=========================
-
-tar
----
-
-### Read
-
-    tar --list --file foobar.tar
-
-### Extract
-
-    tar --extract --gzip --file foobar.tar.gz
-
-### Create
-
-#### With exclude
-
-<http://stackoverflow.com/questions/984204/shell-command-to-tar-directory-excluding-certain-files-folders#984259>
-
-    tar --exclude=foo.tar.xz --create --xz --file foo.tar.xz ./foo
-
-#### By list of files
-
-<http://stackoverflow.com/questions/8033857/tar-archiving-that-takes-input-from-a-list-of-files#8033891>
-
-    tar --create --file foo.tar --files-from=mylist.txt
-
-gzip
-----
-
-    gzip -v access.log
-    gzip -vd access.log.gz
-    tar -xvvzf foobar.tar.gz
-
-bzip2
------
-
-    bzip2 -v access.log
-    bzip2 -vd access.log.gz
-    tar -xvvjf foobar.tar.bz2
-
-xz
---
-
-    xz access.log
-    xz --decompress access.log.gz
-    tar --extract --xz --file foobar.tar.xz
-
-Zip
----
-
-    zip file-to-archive.zip file-to-archive
-    zip --recurse-paths foo.zip foo/
-    unzip foo.zip
-
-funzip
-------
-
-    cat archive.zip | funzip
-
-RAR
----
-
-    unrar x file.rar
-
 Power Management
 ================
 
     hibernate-ram
     hibernate
-
-Mail
-====
-
-<http://debian-administration.org/article/171/Send_an_HTML_file_as_email_from_the_command_line>
-
-    mail -a "Content-type: text/html;" \
-         -s "Employer" \
-         danil@kutkevich.org < ./htdocs/index.html
-
-    echo 'Hello, work' | mail -s 'Hello, World!' danil@kutkevich.org
-    /usr/sbin/sendmail -bV
-    exim -brw danil
-    exim -bV
-    mailq
-    exim -Mvl <message_id>
 
 Random
 =======
