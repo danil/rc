@@ -40,7 +40,7 @@ Finding largest files/directories
 * <http://cyberciti.biz/faq/how-do-i-find-the-largest-filesdirectories-on-a-linuxunixbsd-filesystem/>
 * <http://cyberciti.biz/faq/find-large-files-linux/>
 
-    du -hx ./ |grep -E ^[0-9.,]+[MG]
+    du -hx ./ | grep -E ^[0-9.,]+[MG]
     find  -ctime +30 -daystart -type d \
       | xargs du -b 2>/dev/null \
       | awk '{total += $1; print $0} END{print total}'
