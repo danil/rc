@@ -73,7 +73,9 @@ List all containers
 
 ## Start
 
-    docker.io start teamcity_agent1
+Start container and attach STDOUT and STDERR
+
+    docker.io start --attach teamcity_agent1
 
 ## Stop
 
