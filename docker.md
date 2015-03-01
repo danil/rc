@@ -26,24 +26,26 @@
 
     docker.io rmi $(docker.io images --quiet)
 
-## Run
+## Create
 
-Run image as container (get internal port 5432 as 5433 port from outside)
+Create and start (or run) image as container
 
-    docker.io run -e HOME=/home/my_user \
-                  --user="my_user"
-                  --interactive \
-                  --tty \
-                  --detach \
-                  --volume /var/foobar-data:/opt/foobar-data \
-                  --volume /etc/localtime:/etc/localtime:ro \
-                  --name foobar_server \
-                  --publish=5433:5432 \
-                  user-name/docker-foobar \
-                  '/bin/bash' -l -c 'export LANG="C.UTF-8" \
-                                     && sudo service postgresql start'
+    docker.io create -e HOME=/home/my_user \
+                     --user="my_user"
+                     --interactive \
+                     --tty \
+                     --detach \
+                     --volume /var/foobar-data:/opt/foobar-data \
+                     --volume /etc/localtime:/etc/localtime:ro \
+                     --name foobar_server \
+                     --publish=5433:5432 \
+                     user-name/docker-foobar \
+                     '/bin/bash' -l -c 'export LANG="C.UTF-8" \
+                                        && sudo service postgresql start'
+    docker.io start foobar_server
 
-Get response from published port
+Get response from published port (get internal port 5432 as 5433 port
+from outside)
 
     busybox telnet localhost 5433
 
