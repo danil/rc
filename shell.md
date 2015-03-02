@@ -296,7 +296,7 @@ Free ram
 
 <http://linuxatemyram.com>
 
-    free -m
+    free --human
 
 Job control
 ===========
