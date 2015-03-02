@@ -181,7 +181,7 @@ Update data
 
 <http://www.postgresql.org/docs/9.3/static/sql-update.html>
 
-    UPDATE services SET special_conditions = 'special condition number ' || id;
+    UPDATE test_table SET foo = 'bar' || id;
 
 ### Subquery
 
@@ -256,3 +256,16 @@ Enumerated
 <http://stackoverflow.com/questions/9535937/is-there-a-way-to-show-a-user-defined-postgresql-enumerated-type-definition#25326877>
 
     select enum_range(null::my_type)
+
+Explain
+-------
+
+<http://www.postgresql.org/docs/current/static/sql-explain.html>
+
+    EXPLAIN SELECT * FROM test_table;
+
+### Analyze
+
+    BEGIN;
+    EXPLAIN ANALYZE UPDATE test_table SET foo = 'bar' || id;
+    ROLLBACK;
