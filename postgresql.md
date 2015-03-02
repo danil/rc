@@ -260,7 +260,8 @@ Enumerated
 Explain
 -------
 
-<http://www.postgresql.org/docs/current/static/sql-explain.html>
+<http://www.postgresql.org/docs/current/static/sql-explain.html>  
+<https://wiki.postgresql.org/wiki/Using_EXPLAIN>
 
     EXPLAIN SELECT * FROM test_table;
 
