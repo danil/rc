@@ -30,7 +30,7 @@
 
 Create and start (or run) image as container
 
-    docker.io create -e HOME=/home/my_user \
+    docker.io create --env=HOME=/home/my_user \
                      --user="my_user"
                      --interactive \
                      --tty \
