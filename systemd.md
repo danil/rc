@@ -3,6 +3,14 @@
 systemd
 =======
 
+List
+----
+
+<https://wiki.archlinux.org/index.php/systemd#Analyzing_the_system_state>
+
+    systemctl list-unit-files
+    systemctl list-units
+
 Start/stop
 ----------
 
