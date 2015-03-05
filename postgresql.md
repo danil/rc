@@ -257,6 +257,11 @@ Enumerated
 
     select enum_range(null::my_type)
 
+Profiling
+---------
+
+    \timing
+
 Explain
 -------
 
