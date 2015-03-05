@@ -257,6 +257,13 @@ Enumerated
 
     select enum_range(null::my_type)
 
+List functions
+--------------
+
+List functions in schema `foo`
+
+    \df foo.*
+
 Profiling
 ---------
 
