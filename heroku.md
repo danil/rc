@@ -1,25 +1,19 @@
 <!-- -*- coding: utf-8; -*- -->
 
-Heroku
-======
+# Heroku
 
-Applications
-============
+# Applications
 
-List
-----
+## List
 
     heroku apps --all
 
-Create
-------
+## Create
 
-    heroku apps:create --region eu foo-bar
+    heroku apps:create --region eu your-app-name
 
-Addons
-======
+# Addons
 
-Creat
------
+## Creat
 
-    heroku addons:add heroku-postgresql --app foo-bar --version=9.4
+    heroku addons:add heroku-postgresql --app your-app-name --version=9.4
