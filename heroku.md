@@ -6,6 +6,7 @@
 
 ## List
 
+    heroku login
     heroku apps --all
 
 ## Create
@@ -23,6 +24,10 @@
 ## Connect
 
     heroku pg:psql --app your-app-name YOUR_DB_NAME
+
+## Execute query
+
+    pg:psql --app your-app-name YOUR_DB_NAME --command 'SELECT 1 + 1'
 
 ## Sql dump
 
