@@ -49,6 +49,10 @@ from outside)
 
     busybox telnet localhost 5433
 
+## Inspect
+
+    docker.io inspect foobar_server
+
 ## Commit
 
 Save container as image after interactive changes
@@ -88,6 +92,10 @@ Start container and attach STDOUT and STDERR
 ### Remove all stopped/running
 
     docker.io rm $(docker.io ps --all --quiet)
+
+## Stats
+
+    docker stats foobar_server
 
 ## Backup
 
