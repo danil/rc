@@ -303,3 +303,14 @@ Disk usage
 
     \l+
     \d+
+
+Print notice
+------------
+
+<http://stackoverflow.com/questions/18828127/how-to-raise-a-notice-in-postgresql#18828523>
+
+    DO language plpgsql $$
+    BEGIN
+      RAISE NOTICE 'Hello, world!';
+    END
+    $$;
