@@ -25,6 +25,18 @@ Change output format
     psql ska_production --no-align --command="SELECT id,name FROM foobars;" \
      |sed G |tr '|' '\n' |sed '/./,/^$/!d'
 
+Environment variables
+---------------------
+
+<http://www.postgresql.org/docs/current/static/libpq-envars.html>
+
+    PGHOST=localhost \
+      PGDATABASE=your-db-name \
+      PGPORT=5433 \
+      PGUSER=your-user \
+      PGPASSWORD=your-password \
+      psql
+
 Version
 -------
 
@@ -237,6 +249,7 @@ Remove duplicate rows from the result set (one row is kept from each
 group of duplicates).
 
     SELECT DISTINCT ON (my_column_name) my_column_name FROM my_table_name;
+    SELECT DISTINCT my_column_name FROM my_table_name;
 
 Types
 -----
@@ -282,3 +295,11 @@ Explain
     BEGIN;
     EXPLAIN ANALYZE UPDATE test_table SET foo = 'bar' || id;
     ROLLBACK;
+
+Disk usage
+----------
+
+<http://stackoverflow.com/questions/2596624/how-do-you-find-the-disk-size-of-a-postgres-postgresql-table-and-its-indexes>
+
+    \l+
+    \d+
