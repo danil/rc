@@ -314,3 +314,8 @@ Print notice
       RAISE NOTICE 'Hello, world!';
     END
     $$;
+
+Vacuum
+------
+
+<https://wiki.postgresql.org/wiki/Tuning_Your_PostgreSQL_Server#autovacuum>
