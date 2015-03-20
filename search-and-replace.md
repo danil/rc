@@ -72,7 +72,7 @@ Stream Editor
 
 ### Remove the 7rd line
 
-    sed -i '7d' ~/.ssh/known_hosts
+    sed --in-place '7d' ~/.ssh/known_hosts
 
 ### Cut from starting to ending line-numbers
 
