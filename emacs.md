@@ -3,11 +3,6 @@
 Emacs
 =====
 
-<http://gnu.org/software/emacs/manual/html_mono/emacs.html>
-
-    C = Control
-    M = Meta = Alt = Esc
-
 Basics
 ------
 
@@ -18,60 +13,6 @@ Basics
     C-x i
         Insert file at cursor position.
 
-Motion
-------
-
-    C-f
-        Forward char.
-    C-b
-        Backward char.
-    C-p
-        Previous line.
-    C-n
-        Next line.
-    M-f
-        Forward one word.
-    M-b
-        Backward one word.
-    C-a
-        Beginning of line.
-    C-e
-        End of line.
-    C-v
-        One page up.
-    M-v
-        Scroll down one page.
-    M-<
-        Scroll to beginning of text.
-    M->
-        Scroll to end of text.
-    C-u C-l
-        Scroll current line to center of screen.
-    M-g g
-        Go to line number (goto-line).
-
-11 Mark
--------
-
-<http://gnu.org/software/emacs/manual/html_node/emacs/Marking-Objects.html>.
-
-    C-x h
-        (mark-whole-buffer) sets up the entire buffer as the region, by
-        putting point at the beginning and the mark at the end. In some
-        programs this is called "select all".
-
-### 11.1 Setting the Mark
-
-Here are some commands for setting the mark:
-
-#### (exchange-point-and-mark)
-
-Set the mark at point, and move point where the mark was:
-
-    C-x C-x
-
-Useful with `(isearch-forward)` to go back to where you were.
-
 12.1 Deletion
 -------------
 
@@ -79,37 +20,13 @@ Useful with `(isearch-forward)` to go back to where you were.
 <http://emacswiki.org/DeletingWhitespace>,
 <http://emacswiki.org/EmacsNiftyTricks#toc11>.
 
-### (delete-horizontal-space)
-
-`M-\` Delete spaces and tabs around point.
-
-### (just-one-space)
-
-`M-<SPC>` Delete spaces and tabs around point, leaving one space.
-
 ### (delete-blank-lines)
 
 `C-x C-o` Delete blank lines around the current line.
 
 
-### (delete-indentation)
-
-`M-^` Join two lines by deleting the intervening newline, along with
-      any indentation following it.
-
-Commands
---------
-
-    C-x z
-        (repeat) Repeats the previous Emacs command.
-    C-u
-        (universal-argument)
-    C-u n
-        Repeat n 4 times.
-    C-u 5 n
-        Repeat n 5 times.
-    ESC -
-        (negative-argument)
+Transpose
+---------
 
     C-t
         Transpose two chars.
@@ -128,42 +45,6 @@ Commands
         Insert a newline in the minibuffer. (The newline character is
         really the ASCII character control-J.)
 
-Indentation
------------
-
-    C-M-\
-        (indent-region) Indent lines in the region to the same column.
-    C-x <TAB>
-        (indent-rigidly) Shift lines in the region rigidly right or left.
-
-Rectangles
-----------
-
-<http://gnu.org/s/libtool/manual/emacs/Rectangles.html>
-
-### (open-rectangle)
-
-`C-x r o` Insert blank space to fill the space of the
-          region-rectangle. This pushes the previous contents of the
-          region-rectangle rightward.
-
-### (string-rectangle)
-
-`C-x r t` Replace rectangle contents with string on each line.
-
-Important
----------
-
-    C-x u
-    C-_
-    C-/
-        Undo one entry of the undo records—usually, one command worth
-        (undo).
-    M-x recover-file RETURN
-        Recover text from an autosave-file.
-    M-x recover-session RETURN
-        If you edited several files.
-
 Online-Help
 -----------
 
@@ -173,23 +54,6 @@ Online-Help
         Which command does this keystroke invoke and what does it do?
     C-h w
         What key-combo does this command have?
-    C-h f
-        What does this function do.
-    C-h v
-        What's this variable and what is it's value.
-    C-h b
-        Show all keycommands for this buffer.
-    C-h t
-        Start the emacs tutorial.
-    C-h i
-        Start the info reader.
-
-Replace
--------
-
-    M-% string <RET> newstring <RET>
-    M-x query-replace <RET> string <RET> newstring <RET>
-        Replace some occurrences of string with newstring.
 
 Search/Replace with regular expressions
 ---------------------------------------
@@ -232,35 +96,12 @@ In Ibuffer mode <http://emacswiki.org/emacs/IbufferMode>,
 
 <http://gnu.org/software/emacs/manual/html_node/emacs/Change-Window.html>
 
-    C-x 2
-        (split-window-vertically)
-    C-x 3
-        (split-window-horizontally)
-    C-x ^
-        (enlarge-window)
-    C-u - C-x ^
-        (shrink-window)
-    C-x }
-        (enlarge-window-horizontally)
-    C-x {
-        (shrink-window-horizontally)
-    C-x +
-        Make all windows the same height and width (balance-windows)
     M C-v
         Scroll other window
     C-x 4 f
         Find file in other window
-    C-x 4 0
-        Kill buffer and window
 
 [Window commands]: http://gnu.org/software/emacs/manual/html_node/emacs/Windows.html
-
-Variables
----------
-
-    M-x set-variable <RET> var <RET> value <RET>
-        Set variable.
-    M-x indent-tabs-mode
 
 Frame commands
 --------------
@@ -269,58 +110,6 @@ Frame commands
         Delete all frames except the selected one.
     C-x 5 f
         Find file in other frame.
-
-Bookmark commands
------------------
-
-    C-x r m
-        Set a bookmark at current cursor pos.
-    C-x r b
-        Jump to bookmark.
-    M-x bookmark-rename
-    M-x bookmark-delete
-    M-x bookmark-save
-    C-x r l
-        List bookmarks.
-    M-x bookmark-write
-        Write all bookmarks in given file.
-    M-x bookmark-load
-        Load bookmark from given file.
-
-Bookmark window commands
-------------------------
-
-    d
-        Mark bookmark for deletion.
-    r
-        Rename bookmark.
-    s
-        Save all listed bookmarks.
-    f
-        Show bookmark the cursor is over.
-    m
-        Mark bookmarks to be shown in multiple window.
-    v
-        Show marked bookmarks (or the one the cursor is over).
-    t
-        Toggle listing of the corresponding paths.
-    w
-        Path to this file.
-    x
-        Delete marked bookmarks.
-    q
-        Quit bookmark list.
-
-19 Buffers
-----------
-
-### 19.3 Miscellaneous Buffer Operations
-
-<http://www.gnu.org/software/emacs/manual/html_node/emacs/Misc-Buffer.html>
-
-#### (rename-buffer)
-
-Change the name of the current buffer.
 
 27.11 Specifying a Coding System for File Text
 ----------------------------------------------
@@ -484,8 +273,6 @@ Operating on Files
 ----------------------------
 
 ### dired-do-shell-command
-
-    !
 
 Runs tar on the entire list of file names, putting them into one tar
 file foo.tar:
