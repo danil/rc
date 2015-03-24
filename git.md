@@ -379,6 +379,12 @@ You have three steps there:
 
     git reset --soft HEAD^
 
+### Reset initial commit
+
+<http://stackoverflow.com/questions/6632191/how-to-revert-initial-git-commit#6637891>
+
+    git update-ref -d HEAD
+
 #### Hard
 
 "Жёсткий" реcет (следует использовать с осторожностью) вернет дерево
