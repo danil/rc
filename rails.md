@@ -1,40 +1,34 @@
 <!-- -*- coding: utf-8; -*- -->
 
-Rails
-=====
+# Rails
 
-Server
-======
+# Server
 
-Connect from remote host
-------------------------
+## Connect from remote host
 
 <http://stackoverflow.com/questions/7325663/access-webrick-rails-from-another-computer-on-local-network#28948293>
 
     rails server --binding=0.0.0.0
 
-Concole
-=======
+# Concole
 
-Redirecting output to a file
-----------------------------
+## Redirecting output to a file
 
 <http://stackoverflow.com/questions/2461503/rails-redirecting-console-output-to-a-file>
 
     $stdout = File.new('console.out', 'w')
 
-Schema
-======
+# Database
+
+## Schema
 
     rake RAILS_ENV=production db:schema:load
 
-Create
-------
+### Create
 
     rake db:schema:dump
 
-Other
-=====
+# Other
 
     mongrel_rails cluster::configure -e production -p 8000 -a 127.0.0.1 \
                   -N 2 -c /home/danil/var/www/hello_rails/current
