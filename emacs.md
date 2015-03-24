@@ -827,6 +827,7 @@ Other
     M-x load-file RET ~/.emacs RET
         Execute a file of Emacs Lisp code (reload .emacs without
         restarting for example) ([load-file][])
+    emacs --daemon --socket-name /tmp/emacs-foo --load ~/.emacs.d/init.el
 
 [load-file]: http://gnu.org/software/emacs/manual/html_node/emacs/Lisp-Libraries.html#index-load_002dfile-2360
 
