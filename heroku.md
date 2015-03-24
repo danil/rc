@@ -13,6 +13,28 @@
 
     heroku apps:create --region eu your-app-name
 
+# Web server
+
+<https://devcenter.heroku.com/articles/getting-started-with-rails4#visit-your-application>
+
+## Create
+
+Create one web server
+
+    heroku ps:scale web=1
+
+## List
+
+    heroku ps
+
+# Rails
+
+## Migrate
+
+<https://devcenter.heroku.com/articles/getting-started-with-rails4#migrate-your-database>
+
+    heroku run rake db:migrate
+
 # Addons
 
 ## Creat
