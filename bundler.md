@@ -3,4 +3,4 @@
 Bundler
 =======
 
-    bundle install --without=production
+    bundle install --without=production:test
