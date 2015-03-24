@@ -1,7 +1,6 @@
 <!-- -*- coding: utf-8; -*- -->
 
-Git
-===
+# Git
 
     git config --global user.name "Danil Kutkevich"
     git config --global user.email danil@kutkevich.org
@@ -10,30 +9,27 @@ Git
     git --git-dir=/home/danil/src/rc/.git --work-tree=/home/danil/src/rc status
     git push origin master
 
-Add
----
+# Add
 
 Stage all files
 
     git add .
 
-### Deleted
+## Deleted
 
     git add --update
 
-### Untracked
+## Untracked
 
     git add --all
 
-Branch
-------
+# Branch
 
-### Create and checkout
+## Create and checkout
 
     git checkout -b newbranch
 
-Branching and Merging
----------------------
+# Branching and Merging
 
 <http://book.git-scm.com/3_basic_branching_and_merging.html>
 
@@ -49,17 +45,17 @@ Branching and Merging
 
     git branch -d breadcrumbs-1423
 
-### Merge without commit
+## Merge without commit
 
 <http://stackoverflow.com/questions/8640887/git-merge-without-auto-commit#8641053>
 
     git merge --no-commit --no-ff barney-ubuntu-danil
 
-### Rename
+## Rename
 
     git branch -m old_branch new_branch
 
-#### Remote branch
+### Remote branch
 
 origin/master to origin/master-old
 <http://stackoverflow.com/questions/1526794/git-rename-remote-branch#answer-1527004>
@@ -72,59 +68,54 @@ Delete master
 Create master-old on remote
     git push origin master-old
 
-### Delete remoute branch
+## Delete remoute branch
 
     git push origin :accounting
 
 
-### Checkout in bare repository
+## Checkout in bare repository
 
 <http://stackoverflow.com/questions/3301956/git-correct-way-to-change-active-branch-in-a-bare-repository#3302018>
 
     git symbolic-ref HEAD refs/heads/foo-bar-branch
 
-Checkout
---------
+# Checkout
 
-### Directory
+## Directory
 
 Get a directories from a specific revision
 <http://stackoverflow.com/questions/9670745/how-to-restore-a-whole-directory-from-history-of-git-repository#9671161>
 
     git checkout master -- config/navigation/
 
-Show
-----
+# Show
 
-### File
+## File
 
 Get a file from a specific revision
 <http://stackoverflow.com/questions/610208/how-to-retrieve-a-single-file-from-specific-revision-in-git#answer-610315>.
 
     git show HEAD^^^:lib/paginable_by_date.rb > lib/paginable_by_date.rb
 
-Remote branch
--------------
+# Remote branch
 
-### Removing
+## Removing
 
     git remote remove github
 
-### Adding
+## Adding
 
     git remote add origin ssh://danil@kutkevich.org/var/git/kutkevich-org.git
 
-#### Adding second
+### Adding second
 
     git remote add github git@github.com:danil/ruby-mode.git
 
-Branch upstream
----------------
+# Branch upstream
 
     git branch --set-upstream-to=origin/barney-ubuntu-danil
 
-Copy file from branch to another
---------------------------------
+# Copy file from branch to another
 
 <http://stackoverflow.com/questions/307579/how-do-i-copy-a-version-of-a-single-file-from-one-git-branch-to-another#answer-307872>.
 A la restore deleted file
@@ -132,64 +123,62 @@ A la restore deleted file
 
     git checkout r2 app/views/shared/_info_blocks.haml
 
-Tag
----
+# Tag
 
-### List
+## List
 
     git tag
 
-### Checkout
+## Checkout
 
 Select tag <http://git-scm.com/book/en/Git-Basics-Tagging#Listing-Your-Tags>
 
     git checkout v0.0.1
 
-#### Latest tag
+### Latest tag
 
 <http://stackoverflow.com/questions/1404796/how-to-get-the-latest-tag-name-in-current-branch-in-git#7261049>
 
     git describe --abbrev=0 --tags
 
-#### Latest tagged commit
+### Latest tagged commit
 
 <http://stackoverflow.com/questions/1404796/how-to-get-the-latest-tag-name-in-current-branch-in-git#7979255>
 
     git rev-list --tags --max-count=1
 
-### Create
+## Create
 
 <http://git-scm.com/book/en/Git-Basics-Tagging#Lightweight-Tags>
 
     git tag v0.0.1
 
-### Push to remote
+## Push to remote
 
 <http://stackoverflow.com/questions/4061481/git-push-tag-master#4061529>
 
     git push --tags production
 
-### Delete
+## Delete
 
     git tag --delete v0.0.1
 
-#### Remote
+### Remote
 
     git push origin :v0.0.1
 
-Stash
------
+# Stash
 
     git stash
     git pop
     git apply
     git stash show --patch
 
-### Stash specific file
+## Stash specific file
 
 Several ways to achieve this:
 
-#### First
+### First
 
 <http://stackoverflow.com/questions/5506339/how-can-i-git-stash-a-specific-file/5506483#answer-5506483>.
 
@@ -197,7 +186,7 @@ Several ways to achieve this:
 
 `d` to skip, `a` to stash, and then `q` to quit.
 
-#### Second
+### Second
 
 <http://stackoverflow.com/questions/3040833/git-how-to-stash-only-one-file-out-of-multiple-files-that-have-changed#8333163>.
 
@@ -206,14 +195,13 @@ add the things you want to keep, then run it.
 
     git stash --keep-index
 
-### Show file
+## Show file
 
 <http://stackoverflow.com/questions/1105253/how-would-i-extract-a-single-file-or-changes-to-a-file-from-a-git-stash#1105666>
 
     git show stash@{0}:README.md
 
-Fetch
------
+# Fetch
 
     git fetch origin master
     git merge origin/master
@@ -223,30 +211,29 @@ equal to
     git pull origin master
 
 
-### All
+## All
 
 <http://stackoverflow.com/questions/10312521/how-to-fetch-all-git-branches#10312587>
 
     git fetch --all
 
-Mirror
-------
+# Mirror
 
 Mirror git repository
 
 
-### First
+## First
 
 <http://exyr.org/2011/git-mirrors>
 
     git clone --mirror git://github.com/danil/foo.git
     git remote add kutkevich ssh://danil@kutkevich.org/var/git/foo.git
 
-#### Push all branches
+### Push all branches
 
     git push --mirror kutkevich
 
-### Second
+## Second
 
 <http://toolmantim.com/thoughts/setting_up_a_new_remote_git_repository>
 
@@ -254,8 +241,7 @@ Mirror git repository
     git remote add origin git://github.com/sebnow/lake.git
     git fetch
 
-Convert to bare
----------------
+# Convert to bare
 
 * <https://git.wiki.kernel.org/index.php/GitFaq#How_do_I_make_existing_non-bare_repository_bare.3F>
 * <http://stackoverflow.com/questions/2199897/how-to-convert-a-normal-git-repository-to-a-bare-one#2200662>
@@ -264,8 +250,7 @@ Convert to bare
     git --git-dir=repo.git config core.bare true
     rm -rf repo
 
-Submodules
-----------
+# Submodules
 
 <http://progit.org/book/ru/ch5-8.html>
 
@@ -274,8 +259,7 @@ Submodules
     git submodule update
     git submodule status
 
-Remove submodule
-----------------
+## Remove submodule
 
 <http://stackoverflow.com/questions/1260748/how-do-i-remove-a-git-submodule#1260982>
 
@@ -287,75 +271,71 @@ Remove submodule
     git submodule sync path_to_submodule
     git submodule deinit path_to_submodule
 
-Diff
-----
+# Diff
 
     git diff --cached --color-words
     git diff HEAD^^^ HEAD
 
-### diffstat of binary files
+## diffstat of binary files
 
     git diff --stat public/images/article_pics/1.jpg
 
-### Between two branches
+## Between two branches
 
 <http://stackoverflow.com/questions/822811/differences-in-git-branches#answer-822859>
 
     git diff --name-status production..master
 
-### Prevent git diff from using a pager
+## Prevent git diff from using a pager
 
 <http://stackoverflow.com/questions/136178/git-diff-handling-long-lines#152546>
 
     GIT_PAGER='' git diff
 
-Mirror Subversion repository to Git
------------------------------------
+# Mirror Subversion repository to Git
 
-### With bare
+## With bare
 
 <https://git.wiki.kernel.org/index.php/GitFaq#How_do_I_mirror_a_SVN_repository_to_git.3F>
 
-### Without bare
+## Without bare
 
     git svn init -s http://google-code-prettify.googlecode.com/svn \
         google-code-prettify
     cd google-code-prettify; git config svn.authorsfile .git/authors_file
     git svn fetch
 
-Migrate Subversion repository to Git
-------------------------------------
+# Migrate Subversion repository to Git
 
 <http://jonmaddox.com/2008/03/05/cleanly-migrate-your-subversion-repository-to-a-git-repository/>
 
 You have three steps there:
 
-### Temporary repository
+## Temporary repository
 
     git svn init --no-metadata \
-     svn+ssh://li42-44.members.linode.com/var/svn/ska/skaonrails/trunk \
-     skaonrails_tmp
+      svn+ssh://li42-44.members.linode.com/var/svn/ska/skaonrails/trunk \
+      skaonrails_tmp
     cd skaonrails_tmp; git config svn.authorsfile ~/tmp/authors_file_ska
     git svn fetch
 
-#### Get all Subversion commit usernames
+### Get all Subversion commit usernames
 
 <http://stackoverflow.com/questions/2494984>
 
     svn log --quiet |awk '/^r/ {print $3}' |sort -u > ~/tmp/authors_file_ska
 
-### Clone from temporary repository
+## Clone from temporary repository
 
     git --bare clone skaonrails_tmp skaonrails.git
 
-### Push to Gitorious
+## Push to Gitorious
 
 <http://gitorious.org/about/faq>
 
     git push git@gitorious.org:ska/skaonrails.git master
 
-Migrate CVS to Git
-------------------
+# Migrate CVS to Git
 
     git cvsimport -k -d :ext:barm@ssh.barm.nichost.ru:/home/barm/cvsroot \
                   -A ~/tmp/authors_file -C to_dir johnstudio/barmadmin
@@ -364,43 +344,42 @@ Migrate CVS to Git
 * `man git-cvsimport`
 * <http://www.chem.helsinki.fi/~jonas/git_guides/HTML/CVS2git>
 
-Undoing in Git - Reset, Checkout and Revert
--------------------------------------------
+# Undoing in Git - Reset, Checkout and Revert
 
 <http://book.git-scm.com/4_undoing_in_git_-_reset,_checkout_and_revert.html>
 
-### Fixing un-committed mistakes
+## Fixing un-committed mistakes
 
 <http://stackoverflow.com/questions/7723037/git-checkout-delete-directory#7723128>
 
     git checkout HEAD -- app/views/homepages/index.en.html
 
-### Correct commit message
+## Correct commit message
 
 <http://stackoverflow.com/questions/179123/how-do-i-edit-an-incorrect-commit-message-in-git>
 
     git commit --amend -m "Your new message"
 
-### Correct commit date
+## Correct commit date
 
 <http://stackoverflow.com/questions/454734/how-can-one-change-the-timestamp-of-an-old-commit-in-git#answer-5017265>
 
     git commit --amend --date="Wed Feb 16 14:00 2011 +0400"
 
-### Work tree
+## Work tree
 
-#### Reset index
+### Reset index
 
     git reset file1 file2
     git reset # Reset whole index.
 
-#### Reset commit
+### Reset commit
 
 <http://stackoverflow.com/questions/927358/git-undo-last-commit#answer-927386>
 
     git reset --soft HEAD^
 
-##### Hard
+#### Hard
 
 "Жёсткий" реcет (следует использовать с осторожностью) вернет дерево
 проекта и индекс в состояние, соответствующее указанному коммиту,
@@ -408,18 +387,17 @@ Undoing in Git - Reset, Checkout and Revert
 
     git reset --hard HEAD~1
 
-#### Revert
+### Revert
 
     git revert -n HEAD^^^..HEAD^^
 
-### Bare repository
+## Bare repository
 
 [Git reset allow soft in a bare repo](http://kerneltrap.org/mailarchive/git/2007/7/14/251527)
 
     git reset --soft HEAD~1
 
-Patch
------
+# Patch
 
 <http://ariejan.net/2009/10/26/how-to-create-and-apply-a-patch-with-git>
 
@@ -429,24 +407,23 @@ Patch
     git am --reject guarantee-with-admin.patch
     git am --abort
 
-Rebase
-------
+# Rebase
 
     git fetch
     git rebase
 
-### Conflict
+## Conflict
 
-#### Continue
+### Continue
 
     git add .
     git rebase --continue
 
-#### Abort
+### Abort
 
     git rebase --abort
 
-### Other
+## Other
 
     git checkout guarantee-with-admin
     git branch guarantee-with-admin-for-rebase
@@ -455,8 +432,7 @@ Rebase
     git merge guarantee-with-admin-for-rebase
     git branch -D guarantee-with-admin-for-rebase
 
-Find not commited changes
--------------------------
+# Find not commited changes
 
     for P in $(find /home/danil/ -mount -type d -name ".git" -exec echo '{}' \; \
                |sed -e 's/\.git//' ) ; do \
@@ -464,40 +440,39 @@ Find not commited changes
         git --git-dir="$P.git" --work-tree="$P" status --short ; \
     done
 
-Log
----
+# Log
 
     git log --reverse
     git log --patch --no-merges  HEAD^^^ HEAD
 
-### By date
+## By date
 
     git log --since="1 day 2 hours"
     git log --after=2013-06-07
 
-### By authors
+## By authors
 
 <http://stackoverflow.com/questions/4259996/how-can-i-view-a-git-log-of-just-one-users-commits#4262780>.
 
     git log --author='\(mikhail\|danil\)'
 
-### By file type
+## By file type
 
     git log -- '*.coffee'
 
-### Git tree in terminal
+## Git tree in terminal
 
 <http://stackoverflow.com/questions/1064361/unable-to-show-a-git-tree-in-terminal#5354644>.
 
     git log --color --graph --decorate --pretty=oneline --abbrev-commit
 
-### File name
+## File name
 
 <http://stackoverflow.com/questions/14207414/how-to-show-changed-file-name-only-with-git-log#14227496>
 
     git log --name-only
 
-### Other
+## Other
 
 <http://stackoverflow.com/questions/949314/how-to-retrieve-the-hash-for-the-current-commit-in-git>
 <http://stackoverflow.com/questions/2798822/can-i-get-git-log-to-print-the-history-in-reverse-order>
@@ -505,10 +480,9 @@ Log
 
     git log --after="Mon Jun 10 19:48:47 2013 +0400" --pretty=format:'%h' --no-merges --reverse  | sed ':a;N;$!ba;s/\n/ /g'
 
-Shortlog
---------
+# Shortlog
 
-### Contributors
+## Contributors
 
 List all contributors:
 
@@ -517,41 +491,36 @@ List all contributors:
 
     git shortlog --summary --email --numbered | cut -c8-
 
-History of a file
------------------
+# History of a file
 
 <http://stackoverflow.com/questions/278192/git-how-do-i-view-the-change-history-of-a-file>
 
     gitk app/controllers/accounting/addresses_controller.rb
     git log --patch app/controllers/accounting/addresses_controller.rb
 
-grep
-----
+# grep
 
     git grep -e 'first' --and -e 'another'
 
-### Search through all commits
+## Search through all commits
 
 <http://stackoverflow.com/questions/2928584/how-to-grep-in-the-git-history#answer-2929502>
 
     git grep 'TODO' $(git rev-list --all)
 
-Restore deleted file without commit
------------------------------------
+# Restore deleted file without commit
 
 <http://stackoverflow.com/questions/1843577/how-to-restore-deleted-file#1843584>
 
     git checkout HEAD .config/compiz-1/compizconfig/Default.ini
 
-Clean
------
+# Clean
 
 Remove untracked files from the working tree
 
     git clean --force
 
-Bisect
-------
+# Bisect
 
 Binary Search <http://progit.org/book/ru/ch6-5.html>.
 
@@ -563,23 +532,20 @@ Binary Search <http://progit.org/book/ru/ch6-5.html>.
     git bisect reset
     git stash pop
 
-Search filenames
-----------------
+# Search filenames
 
     git ls-tree -r HEAD | grep fetcher_log
     git ls-tree -r --name-only master |grep -i public/stylesheets/.*doc.*css
 
-Rremove
--------
+# Remove
 
     git rm file1 \*.md
 
-### Remove from git, working tree files will be left alone
+## Remove from git, working tree files will be left alone
 
     git rm --cached .config/gajim/config
 
-Subtree
--------
+# Subtree
 
 Deploy to GitHub Pages
 <https://github.com/yeoman/yeoman/wiki/Deployment#git-subtree-command>
@@ -587,15 +553,13 @@ Deploy to GitHub Pages
     git add --update foobar/ && git commit -m 'deploy'
     git push origin :gh-pages && git subtree push --prefix foobar origin gh-pages
 
-Reflog
-------
+# Reflog
 
 Find reseted commit message:
 
     git reflog --color -p --author=danil@kutkevich.org --since="1 hours"
 
-Merge repositories
-------------------
+# Merge repositories
 
 Merge two repositories with history
 <http://stackoverflow.com/questions/1425892/how-do-you-merge-two-git-repositories#1426163>.
@@ -605,8 +569,7 @@ Merge two repositories with history
     git merge --strategy=ours --no-commit bar/master
     git commit --message='Merge branch v0.0.1 into v0.0.2'
 
-Other
------
+# Other
 
     git mv oldname newname
     git ls-files
