@@ -35,6 +35,10 @@ Create one web server
 
     heroku run rake db:migrate
 
+## Seed
+
+    heroku run rake db:seed
+
 # Addons
 
 ## Creat
