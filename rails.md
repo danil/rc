@@ -3,6 +3,16 @@
 Rails
 =====
 
+Server
+======
+
+Connect from remote host
+------------------------
+
+<http://stackoverflow.com/questions/7325663/access-webrick-rails-from-another-computer-on-local-network#28948293>
+
+    rails server --binding=0.0.0.0
+
 Concole
 =======
 
