@@ -57,9 +57,15 @@ SSH
 Key authentication
 ------------------
 
-<http://superuser.com/questions/585429/can-i-change-the-filename-of-my-ssh-public-private-key-pair>
+<https://help.github.com/articles/generating-ssh-keys/#step-2-generate-a-new-ssh-key>
 
     ssh-keygen -t rsa -C "your.email@example.org"
+
+### File name
+
+<http://superuser.com/questions/585429/can-i-change-the-filename-of-my-ssh-public-private-key-pair>
+
+    ssh-keygen -f key-file-name
     ssh-copy-id -i ~/.ssh/key-file-name.pub "anonymous@kutkevich.org -p 2000"
 
 Tunneling
