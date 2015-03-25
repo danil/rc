@@ -1,61 +1,50 @@
 <!-- -*- coding: utf-8; -*- -->
 
-Network
-=======
+# Network
 
     ngrep -d lo | less
 
-Set up
-======
+# Set up
 
-Interface
----------
+## Interface
 
 <http://simms-teach.com/howtos/basic-network-config.html>
 
     ifconfig eth0 192.168.0.3 netmask 255.255.255.0
 
-Gateway
--------
+## Gateway
 
     route add default gw 192.168.0.1
 
-DNS
----
+## DNS
 
     echo 'nameserver 192.168.0.2' > /etc/resolv.conf
 
-Find out gateway
-================
+# Find out gateway
 
 <http://cyberciti.biz/faq/how-to-find-gateway-ip-address>
 
     route | grep UG
 
-Used ports
-==========
+# Used ports
 
     netstat -tnlp
 
-Remote shell
-============
+# Remote shell
 
     telnet mail.omskportal.ru 25
 
-Telnet
-======
+# Telnet
 
     busybox telnet danil.kutkevich.org 22
 
-SSH
-===
+# SSH
 
     ssh -t root@santaslittlehelper "ssh danil@homer"
     scp -P 61022 [-r] foo.tar.gz bar.tar.gz anonymous@kutkevich.org:/home/danil/
     sshfs -p 61022 kutkevich.org:/home/danil/ mnt/kutkevich_org/
 
-Key authentication
-------------------
+# Key authentication
 
 <https://help.github.com/articles/generating-ssh-keys/#step-2-generate-a-new-ssh-key>
 
@@ -68,8 +57,7 @@ Key authentication
     ssh-keygen -f key-file-name
     ssh-copy-id -i ~/.ssh/key-file-name.pub "anonymous@kutkevich.org -p 2000"
 
-Tunneling
----------
+## Tunneling
 
 ### SSH
 
@@ -104,8 +92,7 @@ On `h5` server:
 
     ssh -l nemo -p 55555 localhost
 
-Transparent multi-hop SSH agent forwarding
-------------------------------------------
+## Transparent multi-hop SSH agent forwarding
 
 <http://sshmenu.sourceforge.net/articles/transparent-mulithop.html>
 
@@ -113,16 +100,14 @@ Transparent multi-hop SSH agent forwarding
     ssh-add *pem
     ssh -A -t -p 9922 medapp2.waveaccess.ru ssh -A danil@192.168.0.38
 
-Nmap
-====
+# Nmap
 
 Discover (scanner) hosts and services on a computer network.
 
     nmap --open 217.197.232.218
     nmap -sP 192.168.0.0/16
 
-Other
-=====
+# Other
 
     rtorrent -s ./.rtorrent
     host 192.168.132.44 192.168.8.1
