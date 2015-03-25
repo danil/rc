@@ -27,16 +27,12 @@ Create one web server
 
     heroku ps
 
-# Rails
+# Rake
 
-## Migrate
-
+<https://devcenter.heroku.com/articles/rake>
 <https://devcenter.heroku.com/articles/getting-started-with-rails4#migrate-your-database>
 
     heroku run rake db:migrate
-
-## Seed
-
     heroku run rake db:seed
 
 # Addons
