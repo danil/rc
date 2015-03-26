@@ -6,43 +6,43 @@
 
 ## List
 
-    docker.io images
+    docker images
 
 ## Build
 
-    docker.io build --tag mlapshin/docker-teamcity ./
+    docker build --tag mlapshin/docker-teamcity ./
 
 ## Tag
 
 ### Add
 
-    docker.io tag 7f7a5e4d89e4 fhirbase/fhirbase
+    docker tag 7f7a5e4d89e4 fhirbase/fhirbase
 
 ## Remove
 
-    docker.io rmi foobar
+    docker rmi foobar
 
 ### Remove all
 
-    docker.io rmi $(docker.io images --quiet)
+    docker rmi $(docker images --quiet)
 
 ## Create
 
 Create and start (or run) image as container
 
-    docker.io create --env=HOME=/home/my_user \
-                     --user="my_user"
-                     --interactive \
-                     --tty \
-                     --detach \
-                     --volume /var/foobar-data:/opt/foobar-data \
-                     --volume /etc/localtime:/etc/localtime:ro \
-                     --name foobar_server \
-                     --publish=5433:5432 \
-                     user-name/docker-foobar \
-                     '/bin/bash' -l -c 'export LANG="C.UTF-8" \
-                                        && sudo service postgresql start'
-    docker.io start foobar_server
+    docker create --env=HOME=/home/my_user \
+                  --user="my_user"
+                  --interactive \
+                  --tty \
+                  --detach \
+                  --volume /var/foobar-data:/opt/foobar-data \
+                  --volume /etc/localtime:/etc/localtime:ro \
+                  --name foobar_server \
+                  --publish=5433:5432 \
+                  user-name/docker-foobar \
+                  '/bin/bash' -l -c 'export LANG="C.UTF-8" \
+                                     && sudo service postgresql start'
+    docker start foobar_server
 
 Get response from published port (get internal port 5432 as 5433 port
 from outside)
@@ -51,21 +51,21 @@ from outside)
 
 ## Inspect
 
-    docker.io inspect foobar_server
+    docker inspect foobar_server
 
 ## Commit
 
 Save container as image after interactive changes
 
-    docker.io commit user-name/docker-foobar docker-foobar:1970_01_01
+    docker commit user-name/docker-foobar docker-foobar:1970_01_01
 
 # Registry
 
 Push image to local registry repository  
 <http://blog.docker.com/2013/07/how-to-use-your-own-registry/>
 
-    docker.io tag my-image-id localhost:63711/medapp-demo
-    docker.io push localhost:63711/medapp-demo
+    docker tag my-image-id localhost:63711/medapp-demo
+    docker push localhost:63711/medapp-demo
 
 # Containers
 
@@ -73,25 +73,25 @@ Push image to local registry repository
 
 List all containers
 
-    docker.io ps --all --no-trunc
+    docker ps --all --no-trunc
 
 ## Start
 
 Start container and attach STDOUT and STDERR
 
-    docker.io start --attach teamcity_agent1
+    docker start --attach teamcity_agent1
 
 ## Stop
 
-    docker.io stop teamcity_serve
+    docker stop teamcity_serve
 
 ## Remove
 
-    docker.io rm --force teamcity_agent1
+    docker rm --force teamcity_agent1
 
 ### Remove all stopped/running
 
-    docker.io rm $(docker.io ps --all --quiet)
+    docker rm $(docker ps --all --quiet)
 
 ## Stats
 
