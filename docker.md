@@ -108,3 +108,16 @@ Start container and attach STDOUT and STDERR
 ### Restore
 
     docker load < image_name.tar
+
+# Linking
+
+<https://docs.docker.com/userguide/dockerlinks/#communication-across-links>
+
+Create container with `--link` option like this
+
+    docker create --name your_container_name \
+                  --link your_linked_container_name:your_alias_name \
+                  your_image_name
+
+Then environment variable `$YOUR_ALIAS_NAME_PORT_666_TCP_ADDR`
+will contain linked container `IP` addres.
