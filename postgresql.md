@@ -3,8 +3,8 @@
 PostgreSQL
 ==========
 
-    psql --host=kutkevich.org.ru --username=danil --dbname=mydb
-    psql --host=kutkevich.org.ru --username=danil dbname < infile
+    psql --host=kutkevich.org.ru --username=your_role_name --dbname=mydb
+    psql --host=kutkevich.org.ru --username=your_role_name dbname < infile
     psql --echo-hidden
 
 Dump
@@ -12,7 +12,7 @@ Dump
 
 Backuping.
 
-    pg_dump --host=localhost --username=danil --table="news" \
+    pg_dump --host=localhost --username=your_role_name --table="news" \
             --attribute-inserts ska_production > outfile
 
 ### Restor binary dump
@@ -67,30 +67,30 @@ when the command is spelled CREATE USER, LOGIN is assumed by default.
 
 ### Standard user
 
-    CREATE ROLE danil WITH LOGIN PASSWORD 'password'
+    CREATE ROLE your_role_name WITH LOGIN PASSWORD 'password'
     VALID UNTIL '2009-01-01';
 
     createuser --no-createrole --no-createdb --no-superuser --pwprompt \
-               --encrypted --username=danil --password testuser
+               --encrypted --username=your_role_name --password testuser
 
 ### Superuser
 
-    CREATE ROLE danil WITH SUPERUSER LOGIN PASSWORD 'password'
+    CREATE ROLE your_role_name WITH SUPERUSER LOGIN PASSWORD 'password'
     VALID UNTIL '2009-01-01';
 
     createuser --createrole --createdb --superuser --pwprompt \
-               --encrypted --username=postgres --password danil
+               --encrypted --username=postgres --password your_role_name
 
 Alter role
 ----------
 
-    ALTER ROLE danil WITH PASSWORD 'znVOIuah';
-    ALTER ROLE danil CREATEDB | NOCREATEDB;
+    ALTER ROLE your_role_name WITH PASSWORD 'znVOIuah';
+    ALTER ROLE your_role_name CREATEDB | NOCREATEDB;
 
 Drop role
 ---------
 
-    DROP ROLE jonathan;
+    DROP ROLE your_role_name;
 
 Grant privileges
 ----------------
@@ -118,14 +118,14 @@ Database list
 Create database
 ---------------
 
-    CREATE DATABASE "danil" WITH OWNER danil ENCODING = 'UTF8';
-    createdb --owner=danil --username=postgres --password danil
+    CREATE DATABASE "your_db_name" WITH OWNER your_role_name ENCODING = 'UTF8';
+    createdb --owner=your_role_name --username=postgres --password your_db_name
 
 Drop database
 -------------
 
-    DROP DATABASE danil;
-    dropdb --username=danil --password test
+    DROP DATABASE your_db_name;
+    dropdb --username=your_role_name --password test
 
 Copy database
 -------------
