@@ -323,5 +323,18 @@ Vacuum
 pgbench
 -------
 
-    pgbench -h localhost -p 50010 -C -d -S -t 1000 -U fhirbase \
-            -f pgbouncer/pgbench.sql foobar
+<http://www.postgresql.org/docs/current/static/pgbench.html>
+
+pgbench -h localhost -p 51000 -c 1000 -C -S -t 1 -U fhirbase -f ./pgbouncer/pgbench.sql foobar
+
+    PGPASSWORD=fhirbase \
+      pgbench -h localhost -p 5433 -U your_role_name \
+              -c 100 -C -d -S -t 1000 \
+              -f path/to/file.sql your_db_name
+
+List active connections
+-----------------------
+
+<http://serverfault.com/questions/128284/how-to-see-active-connections-and-current-activity-in-postgresql-8-4#128292>
+
+    SELECT * FROM pg_stat_activity WHERE datname = 'your-db-name';
