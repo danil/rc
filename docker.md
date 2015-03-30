@@ -34,10 +34,10 @@ Create and start (or run) image as container
                   --user="my_user"
                   --interactive \
                   --tty \
-                  --detach \
                   --volume /var/foobar-data:/opt/foobar-data \
                   --volume /etc/localtime:/etc/localtime:ro \
                   --name foobar_server \
+                  --publish=8080:80 \
                   --publish=5433:5432 \
                   user-name/docker-foobar \
                   '/bin/bash' -l -c 'export LANG="C.UTF-8" \
@@ -48,6 +48,13 @@ Get response from published port (get internal port 5432 as 5433 port
 from outside)
 
     busybox telnet localhost 5433
+
+## Run
+
+    docker run --detach
+               --name foobar_server \
+               --publish=80:80 \
+               user-name/docker-foobar
 
 ## Inspect
 
