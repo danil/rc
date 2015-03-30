@@ -319,3 +319,9 @@ Vacuum
 ------
 
 <https://wiki.postgresql.org/wiki/Tuning_Your_PostgreSQL_Server#autovacuum>
+
+pgbench
+-------
+
+    pgbench -h localhost -p 50010 -C -d -S -t 1000 -U fhirbase \
+            -f pgbouncer/pgbench.sql foobar
