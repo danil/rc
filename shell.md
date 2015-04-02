@@ -116,7 +116,7 @@ ACPI
     cat /sys/class/power_supply
     cat /sys/devices/system/cpu/cpu1/online
     cat /proc/cmdline
-    zcat /proc/config.gz |grep CONFIG_SYSVIPC
+    zcat /proc/config.gz | grep CONFIG_SYSVIPC
 
 diff
 ====
