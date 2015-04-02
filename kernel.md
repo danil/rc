@@ -18,3 +18,11 @@ Install
 
     make install && grub2-mkconfig --output=/boot/grub/grub.cfg
     make modules_install && emerge --verbose --oneshot --color=y @module-rebuild
+
+Get config
+----------
+
+* <https://wiki.gentoo.org/wiki/Kernel/Upgrade#Copy_previous_kernel_configuration>
+* <http://docs.slackware.com/slackbook:linux_kernel#compiling_a_kernel_and_why_to_do_so>
+
+    zcat /proc/config.gz > /usr/src/linux/.config
