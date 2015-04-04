@@ -1,36 +1,15 @@
 <!-- -*- coding: utf-8; -*- -->
 
-Terminal multiplexers
-=====================
+# tmux
 
-GNU Screen
-----------
-
-    screen btdownloadcurses some.torrent
-    screen new -s debian-torrent
-    screen -r <PID> #reconnect to screen
-    screen -RD
-    screen -x debian_torrent #reconnect to screen
-
-### Scrollback or copy mode
-
-<http://superuser.com/questions/138748/how-to-scroll-up-and-look-at-data-in-gnu-screen>.
-
-* To enter hit the prefix key and, then `[`
-* Escape to exit.
-]
-
-tmux
-----
-
-### Copy past
+# Copy past
 
 * enter copy mode using `prefix+[`
 * start selecting `C-space`
 * copy region `M-w`
 * past selection `prefix+]`
 
-### Window
+# Window
 
 `split-window`
 
@@ -40,58 +19,58 @@ tmux
 
     prefix + %
 
-### Pane
+# Pane
 
-#### Select by number
+## Select by number
 
     prefix + q
     0
 
-#### Break
+## Break
 
 `break-pane`
 
     prefix + !
 
-#### Join
+## Join
 
 Join pane 1 from pane 0 <https://forums.pragprog.com/forums/242/topics/10533>
 
     join-pane -s 1
 
-#### Layout
+# Layout
 
 `next-layout` cycles through available layouts
 <http://superuser.com/questions/493048/how-to-convert-2-horizontal-panes-to-vertical-panes-in-tmux#493057>.
 
     prefix + space
 
-### Session
+# Session
 
-#### List
+## List
 
     tmux -S /tmp/pair ls
 
-#### Kill
+## Kill
 
     tmux kill-session -t danil
 
-### Socket session
+# Socket session
 
-#### Create
+## Create
 
     tmux -S /tmp/pair -s foobar
     chmod 777 /tmp/pair
 
-#### Attach
+## Attach
 
     tmux -S /tmp/pair attach -t foobar
 
-#### Detach
+## Detach
 
     tmux detach
 
-### Other
+# Other
 
     tmux new -s danil
     ^b d
