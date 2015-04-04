@@ -8,9 +8,9 @@ GNU Screen
 
     screen btdownloadcurses some.torrent
     screen new -s debian-torrent
-    screen -r <PID> # Reconnect to screen.
+    screen -r <PID> #reconnect to screen
     screen -RD
-    screen -x debian_torrent # Reconnect to screen.
+    screen -x debian_torrent #reconnect to screen
 
 ### Scrollback or copy mode
 
