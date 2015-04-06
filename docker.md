@@ -82,6 +82,13 @@ List all containers
 
     docker ps --all --no-trunc
 
+### Json via socket
+
+<https://docs.docker.com/reference/api/docker_remote_api_v1.13/#list-containers>
+
+    echo -e "GET /containers/json HTTP/1.1\r\n" \
+      | socat unix-connect:/var/run/docker.sock STDIO
+
 ## Start
 
 Start container and attach STDOUT and STDERR
