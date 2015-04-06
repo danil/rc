@@ -84,7 +84,7 @@ List all containers
 
 ### Json via socket
 
-* <https://docs.docker.com/reference/api/docker_remote_api_v1.13/#list-containers>
+* <https://docs.docker.com/reference/api/docker_remote_api_v1.17/#list-containers>
 * <http://superuser.com/questions/834307/can-curl-send-requests-to-sockets#834320>
 
     echo -e "GET /containers/json HTTP/1.1\r\n" \
