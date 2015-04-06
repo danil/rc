@@ -87,7 +87,7 @@ List all containers
 * <https://docs.docker.com/reference/api/docker_remote_api_v1.17/#list-containers>
 * <http://superuser.com/questions/834307/can-curl-send-requests-to-sockets#834320>
 
-    echo -e "GET /containers/json HTTP/1.1\r\n" \
+    echo -e "GET /containers/json?all=1 HTTP/1.1\r\n" \
       | socat unix-connect:/var/run/docker.sock STDIO
 
 ## Start
