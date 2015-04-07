@@ -11,4 +11,4 @@ Start repl
 Install dependencies
 --------------------
 
-    lein deps
+    lein deps && lein javac
