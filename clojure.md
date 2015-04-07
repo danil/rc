@@ -3,6 +3,11 @@
 Clojure
 =======
 
+Start repl
+----------
+
+    lein repl
+
 Install dependencies
 --------------------
 
