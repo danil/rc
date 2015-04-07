@@ -400,7 +400,7 @@ Fix files and directories permissions
 chown
 =====
 
-    chown -R www-data:www-data ./smarty/templates_c/ ./smarty/cache/
+    chown --recursive www-data:www-data ./smarty/templates_c/ ./smarty/cache/
 
 ALSA
 ====
