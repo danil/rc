@@ -12,3 +12,8 @@ Install dependencies
 --------------------
 
     lein deps && lein javac
+
+Run jar
+-------
+
+    java $JVM_OPTS -jar path/to/foobar.jar -m foobar.namespace
