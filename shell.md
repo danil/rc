@@ -368,7 +368,7 @@ Users and groups
     groups danil
     groupadd danil
     groupmod -n new_group_name danil
-    gpasswd --add danil audio
+    gpasswd --add danil audio #and then `newgrp`
     groupdel danil
     delgroup --only-if-empty danil
     useradd -D
