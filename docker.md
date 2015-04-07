@@ -52,7 +52,7 @@ from outside)
 ## Run
 
     docker run --detach
-               --name foobar_server \
+               --name=foobar_server \
                --publish=80:80 \
                user-name/docker-foobar
 
