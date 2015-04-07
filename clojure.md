@@ -16,4 +16,4 @@ Install dependencies
 Run jar
 -------
 
-    java $JVM_OPTS -jar path/to/foobar.jar -m foobar.namespace
+    lein uberjar && java $JVM_OPTS -jar path/to/foobar.jar -m foobar.namespace
