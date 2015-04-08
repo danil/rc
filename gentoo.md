@@ -15,7 +15,8 @@ Emerge
 Update
 ------
 
-    emerge -v1p --deep --update --newuse --exclude x11-base/xorg-server -- world
+    emerge --verbose --oneshot --pretend --deep --update --newuse \
+           --backtrack=1000000 --exclude x11-base/xorg-server -- world
     emerge --verbose --ask --deep --emptytree --newuse world
 
 ### With build time dependencies
