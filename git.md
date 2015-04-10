@@ -510,6 +510,7 @@ List all contributors:
 
 ## Search through all commits
 
+Search through all commits (and all branches)
 <http://stackoverflow.com/questions/2928584/how-to-grep-in-the-git-history#answer-2929502>
 
     git grep 'TODO' $(git rev-list --all)
