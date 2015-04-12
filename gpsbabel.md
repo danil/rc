@@ -8,8 +8,9 @@ Reduce track points
 
 <http://gpsbabel.org/htmldoc-development/filter_simplify.html>
 
-    gpsbabel -r -i saroute \
-             -f RoadTrip.anr \
-             -x simplify,count=50 \
-             -o magellan \
-             -F grocery.rte
+    gpsbabel -r \
+             -i gpx \
+             -f infile.gpx \
+             -x simplify,count=250 \
+             -o garmin \
+             -F outfile.gpx
