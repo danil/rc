@@ -2,11 +2,11 @@
 
 # Git
 
-    git config --global user.name "Danil Kutkevich"
-    git config --global user.email danil@kutkevich.org
+    git config --global user.name "John Doe"
+    git config --global user.email john@doe.org
     git init
-    git clone git://kutkevich.org/rc.git foobar
-    git --git-dir=/home/danil/src/rc/.git --work-tree=/home/danil/src/rc status
+    git clone git://example.org/repository-name.git destination-dir
+    git --git-dir=path/to/repository/.git  --work-tree=path/to/repository status
     git push origin master
 
 # Add
@@ -49,7 +49,7 @@ Stage all files
 
 <http://stackoverflow.com/questions/8640887/git-merge-without-auto-commit#8641053>
 
-    git merge --no-commit --no-ff barney-ubuntu-danil
+    git merge --no-commit --no-ff your-branch-name
 
 ## Rename
 
@@ -105,15 +105,15 @@ Get a file from a specific revision
 
 ## Adding
 
-    git remote add origin ssh://danil@kutkevich.org/var/git/kutkevich-org.git
+    git remote add origin ssh://john@doe.org/var/git/repository-name.git
 
 ### Adding second
 
-    git remote add github git@github.com:danil/ruby-mode.git
+    git remote add github git@github.com:path/to/repository-name.git
 
 # Branch upstream
 
-    git branch --set-upstream-to=origin/barney-ubuntu-danil
+    git branch --set-upstream-to=origin/your-branch-name
 
 # Copy file from branch to another
 
