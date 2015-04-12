@@ -4,7 +4,7 @@
 
 # Emerge
 
-    MAKEOPTS="-j1" USE="-mmx" emerge --verbose --ask --oneshot sys-libs/glibc
+    MAKEOPTS="-j1" USE="-mmx" emerge --verbose --ask --oneshot your-package/name
     emerge --verbose --search emacs
     emerge --prune gentoo-sources
     emerge --verbose --ask --deep --noreplace =gentoo-sources-2.6.30-r4
@@ -49,7 +49,7 @@ Recompiling all packages on the system.
     equery list nginx
     equery list "*" |wc -l
     equery files alsa-lib
-    equery depends app-editors/emacs
+    equery depends your-package/name
     equery uses =emacs-22.3-r2 --all
 
 ## Files belong to package
