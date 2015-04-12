@@ -1,10 +1,8 @@
 <!-- -*- coding: utf-8; -*- -->
 
-Gentoo
-======
+# Gentoo
 
-Emerge
-======
+# Emerge
 
     MAKEOPTS="-j1" USE="-mmx" emerge --verbose --ask --oneshot sys-libs/glibc
     emerge --verbose --search emacs
@@ -12,8 +10,7 @@ Emerge
     emerge --verbose --ask --deep --noreplace =gentoo-sources-2.6.30-r4
     emerge --info
 
-Update
-------
+## Update
 
     emerge --verbose --oneshot --pretend --deep --update --newuse \
            --backtrack=1000000 --exclude x11-base/xorg-server -- world
@@ -31,22 +28,19 @@ Update
 
     emerge -v1 @module-rebuild
 
-Recompile
----------
+## Recompile
 
 Recompiling all packages on the system.
 
     emerge --emptytree system
     emerge --emptytree world
 
-Unmerge
--------
+## Unmerge
 
     emerge --verbose -1 --pretend --deep --depclean dev-lang/python
     emerge --verbose -1 --pretend --unmerge mail-mta/ssmtp
 
-Equery
-======
+# Equery
 
     equery list nginx
     equery list "*" |wc -l
@@ -54,8 +48,7 @@ Equery
     equery depends app-editors/emacs
     equery uses =emacs-22.3-r2 --all
 
-Files belong to package
------------------------
+## Files belong to package
 
     equery belongs /usr/share/fonts/misc/9x18.pcf.gz
 
@@ -63,8 +56,7 @@ same as:
 
     qfile /usr/share/fonts/misc/9x18.pcf.gz
 
-Portage-utils
-=============
+# Portage-utils
 
     qsize emacs
     qsize -a -k | sort -n -k 6
@@ -74,8 +66,7 @@ Portage-utils
     qsearch emacs
     emaint --check world
 
-USE flags
-=========
+# USE flags
 
     equery hasuse ogg
     grep -i "ogg - " /usr/portage/profiles/use.desc
@@ -83,8 +74,7 @@ USE flags
     euse --info ogg
     equery uses =sys-devel/gcc-4.6.0
 
-Layman
-======
+# Layman
 
 * <http://gentoo.org/proj/en/overlays/userguide.xml?style=printable#doc_chap2_sect2>
 * <http://en.gentoo-wiki.com/wiki/Overlay#Layman>
@@ -96,45 +86,37 @@ Layman
     layman --delete=sunrise
     layman --sync=sunrise
 
-Ebuild
-======
+# Ebuild
 
-Compile
--------
+## Compile
 
     ebuild ~/path/to/ebuild/skippy-xd-0.5.0-r1.ebuild compile
 
-Install
--------
+## Install
 
     ebuild ~/path/to/ebuild/skippy-xd-0.5.0-r1.ebuild install
 
-[Ebuild policy][]
---------------
+## [Ebuild policy][]
 
 [Ebuild policy]: <http://gentoo.org/proj/en/devrel/handbook/handbook.xml?style=printable&part=3&chap=1>
 
-[Manifest][]
----------
+## [Manifest][]
 
 [Manifest]: <http://devmanual.gentoo.org/general-concepts/manifest/index.html>
 
     ebuild msort-8.53.ebuild manifest
 
-eix
-===
+# eix
 
     eix -vAS dev-ruby
     eix --world --categor
     eix-test-obsolete detail
 
-Downgrade (delete) or upgrade list
-----------------------------------
+## Downgrade (delete) or upgrade list
 
     eix --upgrade
 
-Overlays
---------
+## Overlays
 
 List packages install from overlay <http://bugs.gentoo.org/204324>,
 <http://bugs.gentoo.org/138622>.
@@ -153,22 +135,19 @@ twice) might be installed from overlay
 
     equery list -o |sort |uniq -c |sort -n
 
-repoman
-=======
+# repoman
 
     repoman manifest
     repoman full --without-mask --include-dev
 
-GCC
-===
+# GCC
 
 Symptom: `checking whether the C compiler works... no`
 
     gcc-config --list-profiles
     gcc-config 2
 
-Freeing Up Disk Space
-=====================
+# Freeing Up Disk Space
 
 WARNING: Avoid using eclean!
 <http://makuro.wordpress.com/2010/12/12/intro-to-portage-sets>.
@@ -183,56 +162,48 @@ WARNING: Avoid using eclean!
 
 <http://en.gentoo-wiki.com/wiki/Freeing_Up_Disk_Space#Removing_Ancient_Distfiles_and_Binaries>
 
-TAB-Completion
-==============
+# TAB-Completion
 
 <http://wiki.gentoo.org/wiki/Bash#Tab_completion>
 
     for x in /usr/share/bash-completion/*; do [[ -e $x ]] \
       || continue; eselect bashcomp enable --global "${x##*/}"; done
 
-Updates
-=======
+# Updates
 
-Perl cleans all packages
-------------------------
+## Perl cleans all packages
 
 * <http://www.gentoo.org/proj/en/perl/perl-cleaner.xml?style=printable>
 * <http://wiki.gentoo.org/wiki/Project:Perl/perl-cleaner>
 
     perl-cleaner --all
 
-Python
-------
+## Python
 
     eselect python set --python2 python2.7
     eselect python set --python3 python3.3
     python-updater
 
-Other
------
+## Other
 
     emacs-updater
     haskell-updater
 
-udept
-=====
+## udept
 
 Clean out your world file
 <http://forums.gentoo.org/viewtopic-t-142475.html>.
 
     dep --pretend --pruneworld
 
-Run levels
-==========
+# Run levels
 
     rc-update -v show
     rc-update add xdm default
     rc-update del xdm default
     rc-status
 
-La files
-========
+# La files
 
     lafilefixer --justfixit
 
@@ -240,57 +211,48 @@ La files
 
     sudo sh -c 'env-update && source /etc/profile'
 
-Merge configuration
-===================
+# Merge configuration
 
-First
------
+## First
 
     dispatch-conf
 
-Second
-------
+## Second
 
     etc-update
 
-Netfilter
-=========
+# Netfilter
 
 <http://wiki.gentoo.org/wiki/Iptables#Firewall>
 
 Rules saved to `/var/lib/$ipt/rules-save` and will be loaded
 with `/etc/init.d/$ipt` when machine is powered on.
 
-iptables
---------
+## iptables
 
     iptables -L
     iptables-restore < /etc/iptables.firewall.rules
     /etc/init.d/iptables save
     /etc/init.d/iptables start
 
-ip6tables
----------
+## ip6tables
 
     ip6tables -L
     ip6tables-restore < /etc/ip6tables.firewall.rules
     /etc/init.d/ip6tables save
     /etc/init.d/ip6tables start
 
-Rebuilding
-==========
+# Rebuilding
 
     emerge @preserved-rebuild && revdep-rebuild
 
-revdep-rebuild
---------------
+## revdep-rebuild
 
     revdep-rebuild --pretend
     revdep-rebuild --ignore
     revdep-rebuild --verbose --pretend --library libreadline.so.5
 
-Other
-=====
+# Other
 
     sudo sh -c "layman --sync-all && emerge --sync && eix-update"
     find /etc -iname "._cfg????_*" 2> /dev/null
