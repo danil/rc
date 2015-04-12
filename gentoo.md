@@ -37,8 +37,12 @@ Recompiling all packages on the system.
 
 ## Unmerge
 
-    emerge --verbose -1 --pretend --deep --depclean dev-lang/python
-    emerge --verbose -1 --pretend --unmerge mail-mta/ssmtp
+    emerge --verbose --oneshot --deep --depclean your-package/name
+    emerge --verbose --oneshot --unmerge your-package/name
+
+## Ceanup all
+
+    emerge --quiet --deep --depclean
 
 # Equery
 
