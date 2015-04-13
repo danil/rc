@@ -4,7 +4,7 @@
 
 # Emerge
 
-    MAKEOPTS="-j1" USE="-mmx" emerge --verbose --ask --oneshot your-package/name
+    MAKEOPTS="-j1" USE="-mmx" emerge --ask --oneshot your-package/name
     emerge --verbose --search emacs
     emerge --prune gentoo-sources
     emerge --verbose --ask --deep --noreplace =gentoo-sources-2.6.30-r4
@@ -12,21 +12,20 @@
 
 ## Update
 
-    emerge --verbose --oneshot --pretend --deep --update --newuse \
-           --backtrack=1000000 --exclude x11-base/xorg-server -- world
-    emerge --verbose --ask --deep --emptytree --newuse world
+    emerge --oneshot --pretend --deep --update --newuse --backtrack=1000000 \
+           --exclude you-whant/to-exclude-package -- world
 
 ### With build time dependencies
 
 <https://www.gentoo.org/proj/en/portage/doc/faq.xml?style=printable#doc_chap1_sect2>
 
-    emerge -v1 --deep --update --newuse --with-bdeps=y @world
+    emerge --oneshot --deep --newuse --update --with-bdeps=y @world
 
 ### Kernel modules
 
 <http://wiki.gentoo.org/wiki/Kernel/Upgrade#Reinstall_external_kernel_modules>
 
-    emerge -v1 @module-rebuild
+    emerge --oneshot @module-rebuild
 
 ## Recompile
 
@@ -37,8 +36,8 @@ Recompiling all packages on the system.
 
 ## Unmerge
 
-    emerge --verbose --oneshot --deep --depclean your-package/name
-    emerge --verbose --oneshot --unmerge your-package/name
+    emerge --oneshot --deep --depclean your-package/name
+    emerge --oneshot --unmerge your-package/name
 
 ## Ceanup all
 
