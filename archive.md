@@ -31,16 +31,16 @@ tar
 gzip
 ----
 
-    gzip -v access.log
-    gzip -vd access.log.gz
-    tar -xvvzf foobar.tar.gz
+    gzip --verbose access.log
+    gzip --decompress access.log.gz
+    tar --verbose --extract --gzip --file foobar.tar.gz
 
 bzip2
 -----
 
     bzip2 -v access.log
     bzip2 -vd access.log.gz
-    tar -xvvjf foobar.tar.bz2
+    tar --verbose --extract --bzip2 --file foobar.tar.bz2
 
 xz
 --
