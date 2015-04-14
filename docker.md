@@ -74,7 +74,8 @@ Run docker inside docker
 
 Save container as image after interactive changes
 
-    docker commit user-name/docker-foobar docker-foobar:1970_01_01
+    docker commit your_user_name/your_container_name \
+                  your_image_name:1970_01_01
 
 # Registry
 
