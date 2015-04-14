@@ -349,8 +349,9 @@ Users and groups
     useradd -D
     useradd --comment "Danil Kutkevich" --user-group --groups fuse,cvs \
             --create-home --base-dir /home/.rails/ --shell /bin/bash danil
-    usermod -c "Danil Kutkevich" -d /home/danil -m \
-            -g danil -G fuse,cvs -a -l danil -s /bin/bash danil
+    usermod --comment "Danil Kutkevich" --home /home/danil --move-home \
+            --groups fuse,cvs --append \
+            --gid danil --login danil --shell /bin/bash danil
     userdel --remove danil
     passwd danil
     grpck
