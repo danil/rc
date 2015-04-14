@@ -125,6 +125,7 @@ Start container and attach STDOUT and STDERR
 ### Restore
 
     docker load < image_name.tar
+    cat file.tar.gz | docker import - your-image-name
 
 # Linking
 
