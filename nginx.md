@@ -1,7 +1,13 @@
 <!-- -*- coding: utf-8; -*- -->
 
-nginx
-=====
+# nginx
+
+## Config
+
+### reload
 
     kill -HUP `cat /usr/local/nginx/logs/nginx.pid`
-    nginx -V
+
+### Test
+
+    nginx -t
