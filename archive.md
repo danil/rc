@@ -39,14 +39,14 @@ bzip2
 -----
 
     bzip2 -v access.log
-    bzip2 -vd access.log.gz
+    bzip2 -vd access.log.bz2
     tar --verbose --extract --bzip2 --file foobar.tar.bz2
 
 xz
 --
 
     xz access.log
-    xz --decompress access.log.gz
+    xz --decompress access.log.xz
     tar --extract --xz --file foobar.tar.xz
 
 Zip
