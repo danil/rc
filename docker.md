@@ -51,6 +51,14 @@ from outside)
 
     busybox telnet localhost 5433
 
+### Privileged
+
+Run docker inside docker
+<https://docs.docker.com/reference/commandline/cli/#create>
+
+    docker create --privileged=false --name your_container_name \
+                  user-name/your_image_name
+
 ## Run
 
     docker run --detach
