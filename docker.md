@@ -56,7 +56,7 @@ from outside)
 Run docker inside docker
 <https://docs.docker.com/reference/commandline/cli/#create>
 
-    docker create --privileged=false --name your_container_name \
+    docker create --privileged --name your_container_name \
                   user-name/your_image_name
 
 ## Run
