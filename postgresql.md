@@ -102,7 +102,7 @@ Remove privileges
 
     REVOKE ALL PRIVILEGES ON DATABASE ska_phpbb3 FROM skaforum;
 
-Show users
+Users list
 ----------
 
     -- \du [PATTERN]
