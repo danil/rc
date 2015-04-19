@@ -26,3 +26,10 @@ Get config
 * <http://docs.slackware.com/slackbook:linux_kernel#compiling_a_kernel_and_why_to_do_so>
 
     zcat /proc/config.gz > /usr/src/linux/.config
+
+Source tree version
+-------------------
+
+<http://stackoverflow.com/questions/12151694/how-to-find-the-version-of-a-linux-kernel-source-tree#12151750>
+
+    make kernelversion
