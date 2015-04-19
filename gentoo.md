@@ -12,14 +12,16 @@
 
 ## Update
 
-    emerge --oneshot --pretend --deep --update --newuse --backtrack=1000000 \
-           --exclude you-whant/to-exclude-package -- world
-
 ### With build time dependencies
 
 <https://www.gentoo.org/proj/en/portage/doc/faq.xml?style=printable#doc_chap1_sect2>
 
-    emerge --oneshot --deep --newuse --update --with-bdeps=y @world
+    emerge --color=y --oneshot --deep --newuse --update \
+           --backtrack=1000000 --with-bdeps=y @world
+
+### Exclude
+
+    emerge --update --exclude you-whant/to-exclude-package -- world
 
 ### Kernel modules
 
