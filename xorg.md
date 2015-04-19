@@ -1,10 +1,8 @@
 <!-- -*- coding: utf-8; -*- -->
 
-X
-===
+# X
 
-Restart
-=======
+# Restart
 
 Restart X.
 
@@ -13,27 +11,22 @@ In a tty terminal, not a terminal window (get there with [Ctrl] +
 
     /etc/init.d/xdm stop
 
-Hardware information for VESA PnP monitors
-==========================================
+# Hardware information for VESA PnP monitors
 
     get-edid |parse-edid
 
-DPI and display size
-====================
+# DPI and display size
 
     xdpyinfo | grep "dots per inch"
     xdpyinfo | grep dimensions
 
-xautolock
-=========
+# xautolock
 
     xautolock -disable
 
-xrandr
-======
+# xrandr
 
-Change monitor resolution
--------------------------
+## Change monitor resolution
 
     xrandr
     xrandr -s 1440x900
@@ -44,8 +37,7 @@ Change monitor resolution
 
     xrandr -s 0
 
-Scale
------
+## Scale
 
 Scale to virtual resolution
 
@@ -53,8 +45,7 @@ Scale to virtual resolution
 
     xrandr --output LVDS-1 --scale 0.5x0.5
 
-Default applications
-====================
+# Default applications
 
 Open from console default application for file.
 xdg-open desktop-independent and passes arguments to
@@ -65,20 +56,17 @@ gvfs-open, kde-open or exo-open respectively.
 
     xdg-open ~/Downloads/tasks.csv
 
-stdout to clipboard
-===================
+# stdout to clipboard
 
 <http://cyberciti.biz/faq/xclip-linux-insert-files-command-output-intoclipboard>.
 
     cat /var/tmp/portage/unity-base/bamf-0.2.118/temp/build.log | xsel
 
-GLX
-===
+# GLX
 
 OpenGL Extension to the X Window System
 
-Measure 3D performance
-----------------------
+# Measure 3D performance
 
 * <https://wiki.archlinux.org/index.php/Benchmarking#glxgears>
 * <http://www.free3d.org/faq>
@@ -86,11 +74,9 @@ Measure 3D performance
     glxgears
 
 
-Window Manager
-==============
+# Window Manager
 
-Change viewport
----------------
+## Change viewport
 
 <http://superuser.com/questions/264281/wmctrl-says-i-have-one-workspace-when-i-actually-have-four#answer-264502>
 
@@ -98,21 +84,18 @@ Go to first viewport of current desktop
 
     wmctrl -o 0,0
 
-List the windows
-----------------
+## List the windows
 
     wmctrl -l
 
-notify-send
-===========
+# notify-send
 
 Show notificatioa (test x11-misc/dunst for example)
 <https://wiki.archlinux.org/index.php/Desktop_notifications#Usage_in_programming>
 
     notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '2' 'Desktop'
 
-Other
-=====
+# Other
 
     echo "lalala" |xclip -selection clip
     echo -en "trulala" | xsel -i -b -p
