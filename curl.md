@@ -22,5 +22,5 @@ Gzipped
 Other
 -----
 
-    curl -o ruby.png http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/100px-Ruby_logo.svg.png
-    curl -v -H "Accept: application/xrds+xml" -X HEAD http://www.yahoo.com/
+    curl --output ruby.png http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/100px-Ruby_logo.svg.png
+    curl --verbose --header "Accept-Encoding: gzip" -X HEAD http://example.org
