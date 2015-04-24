@@ -4,27 +4,27 @@
 
     ngrep -d lo | less
 
-# Set up
-
-## Interface
+# Set up interface
 
 <http://simms-teach.com/howtos/basic-network-config.html>
 
     ifconfig eth0 192.168.0.3 netmask 255.255.255.0
 
-## Gateway
+# Gateway
+
+## Get
+
+Find out gateway <http://cyberciti.biz/faq/how-to-find-gateway-ip-address>
+
+    route | grep UG
+
+## Set
 
     route add default gw 192.168.0.1
 
-## DNS
+# Set DNS
 
     echo 'nameserver 192.168.0.2' > /etc/resolv.conf
-
-# Find out gateway
-
-<http://cyberciti.biz/faq/how-to-find-gateway-ip-address>
-
-    route | grep UG
 
 # Used ports
 
