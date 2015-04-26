@@ -58,6 +58,12 @@ Find pg_hba.conf location
 
     psql --tuples-only --pset='format=unaligned' --command='show data_directory'
 
+Users list
+----------
+
+    -- \du [PATTERN]
+    SELECT * FROM pg_user ORDER BY id DESC LIMIT 1;
+
 Create role
 -----------
 
@@ -101,12 +107,6 @@ Remove privileges
 -----------------
 
     REVOKE ALL PRIVILEGES ON DATABASE ska_phpbb3 FROM skaforum;
-
-Users list
-----------
-
-    -- \du [PATTERN]
-    SELECT * FROM pg_user ORDER BY id DESC LIMIT 1;
 
 Database list
 -------------
