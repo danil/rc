@@ -2,6 +2,10 @@
 
 # Heroku
 
+* <https://devcenter.heroku.com/articles/how-heroku-works>
+* <https://devcenter.heroku.com/articles/getting-started-with-ruby-o>
+* <https://devcenter.heroku.com/articles/getting-started-with-rails4>
+
 # Applications
 
 ## List
@@ -21,9 +25,14 @@
 
 Create one web server
 
+<https://devcenter.heroku.com/articles/getting-started-with-ruby#deploy-the-app>
+<https://devcenter.heroku.com/articles/getting-started-with-ruby#scale-the-app>
+
     heroku ps:scale web=1
 
 ## List
+
+<https://devcenter.heroku.com/articles/getting-started-with-ruby#scale-the-app>
 
     heroku ps
 
@@ -35,13 +44,43 @@ Create one web server
     heroku run rake db:migrate
     heroku run rake db:seed
 
+# Rails console
+
+<https://devcenter.heroku.com/articles/getting-started-with-ruby#start-a-console>
+
+    heroku run rails console
+
+# Config vars
+
+<https://devcenter.heroku.com/articles/getting-started-with-ruby#define-config-vars>
+
+## List
+
+    heroku config
+
+## Set
+
+    heroku config:set FOO=bar
+
 # Addons
+
+## List
+
+<https://devcenter.heroku.com/articles/getting-started-with-ruby#provision-add-ons>
+
+    heroku addons
 
 ## Creat
 
     heroku addons:add heroku-postgresql --app your-app-name --version=9.4
 
 # PostgreSQL
+
+## Debug
+
+<https://devcenter.heroku.com/articles/getting-started-with-ruby#use-a-database>
+
+    heroku pg
 
 ## Connect
 
@@ -60,3 +99,12 @@ Restore from from sql dump file
 <http://stackoverflow.com/questions/20508898/how-can-i-import-a-sql-file-into-my-heroku-postgres-database#20511058>
 
     heroku pg:psql --app your-app-name YOUR_DB_NAME < path/to/dump.sql
+
+# Logs
+
+## View
+
+<https://devcenter.heroku.com/articles/getting-started-with-ruby#view-logs>
+<https://devcenter.heroku.com/articles/logging>
+
+    heroku logs --tail
