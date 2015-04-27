@@ -28,6 +28,15 @@
 
     rake db:schema:dump
 
+# Procfile
+
+`Procfile` is a mechanism for declaring what commands
+are run for your application
+
+<https://devcenter.heroku.com/articles/getting-started-with-ruby#run-the-app-locally>
+<https://devcenter.heroku.com/articles/procfile>
+<https://github.com/ddollar/foreman>
+
 # Other
 
     mongrel_rails cluster::configure -e production -p 8000 -a 127.0.0.1 \
