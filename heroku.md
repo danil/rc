@@ -13,6 +13,12 @@
     heroku login
     heroku apps --all
 
+## Init
+
+<https://devcenter.heroku.com/articles/git>
+
+    heroku git:remote -a your-app-name
+
 ## Create
 
     heroku apps:create --region eu your-app-name
@@ -52,15 +58,26 @@ Create one web server
 
 # Config vars
 
+<https://devcenter.heroku.com/articles/config-vars>
 <https://devcenter.heroku.com/articles/getting-started-with-ruby#define-config-vars>
 
 ## List
 
     heroku config
 
-## Set
+## Set/get
 
     heroku config:set FOO=bar
+    heroku config:get FOO
+
+# Logs
+
+## View
+
+<https://devcenter.heroku.com/articles/getting-started-with-ruby#view-logs>
+<https://devcenter.heroku.com/articles/logging>
+
+    heroku logs --tail
 
 # Addons
 
@@ -100,11 +117,8 @@ Restore from from sql dump file
 
     heroku pg:psql --app your-app-name YOUR_DB_NAME < path/to/dump.sql
 
-# Logs
+# Mandrill
 
-## View
+<https://devcenter.heroku.com/articles/mandrill>
 
-<https://devcenter.heroku.com/articles/getting-started-with-ruby#view-logs>
-<https://devcenter.heroku.com/articles/logging>
-
-    heroku logs --tail
+    heroku addons:add mandrill:starter
