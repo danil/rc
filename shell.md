@@ -162,8 +162,10 @@ String generator
 
     dd if=/dev/random bs=1 count=16 |base64
 
-Password
---------
+pwgen
+-----
+
+Passwords
 
 ### Range from 5 to 9 length
 
@@ -180,6 +182,19 @@ Password
 
     cat 80k_upper_20120723 20k_upper_201210091031  \
       | sort | uniq -c | grep ' 1 ' --invert-match
+
+makepasswd
+----------
+
+Passwords
+
+### Range from 5 to 9 length
+
+    makepasswd --maxchars 5 --minchars 9
+
+### Numerical-only exactly 4 digitis
+
+    makepasswd --chars 4 --string 1234567890
 
 Sorting
 =======
