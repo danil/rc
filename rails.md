@@ -20,6 +20,16 @@
 
 # Database
 
+## Migrations
+
+### Up
+
+    rake db:migrate
+
+### Down
+
+    rake db:rollback
+
 ## Schema
 
     rake RAILS_ENV=production db:schema:load
