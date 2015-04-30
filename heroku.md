@@ -36,6 +36,13 @@ Create one web server
 
     heroku ps:scale web=1
 
+## Prevent sleeping
+
+Create second web server to prevent web dynos from sleeping
+<https://devcenter.heroku.com/articles/dynos#dyno-sleeping>
+
+    heroku ps:scale web=2
+
 ## List
 
 <https://devcenter.heroku.com/articles/getting-started-with-ruby#scale-the-app>
