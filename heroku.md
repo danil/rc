@@ -42,6 +42,12 @@ Create one web server
 
     heroku ps
 
+## Restart
+
+<https://devcenter.heroku.com/articles/dynos#restarting>
+
+    heroku restart -a your-app-name
+
 # Rake
 
 <https://devcenter.heroku.com/articles/rake>
