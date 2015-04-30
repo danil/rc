@@ -104,6 +104,10 @@ Create second web server to prevent web dynos from sleeping
 
     bundle exec heroku domains:add example.org
 
+## Remove
+
+    heroku domains:remove example.com
+
 ## DNS
 
 ### Root domain
