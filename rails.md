@@ -28,6 +28,8 @@
 
 ### Down
 
+<http://guides.rubyonrails.org/active_record_migrations.html#rolling-back>
+
     rake db:rollback
 
 ## Schema
