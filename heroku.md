@@ -106,6 +106,8 @@ Create second web server to prevent web dynos from sleeping
 
 ## Remove
 
+<https://devcenter.heroku.com/articles/custom-domains#remove-a-domain>
+
     heroku domains:remove example.com
 
 ## DNS
