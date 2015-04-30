@@ -79,6 +79,30 @@ Create one web server
 
     heroku logs --tail
 
+# Custom Domains
+
+<https://devcenter.heroku.com/articles/custom-domains>
+
+## List
+
+    bundle exec heroku domains
+
+## Add
+
+    bundle exec heroku domains:add example.org
+
+## DNS
+
+### Root domain
+
+Naked, bare or root domain have two options:
+* Simple redirect to subdomain
+* Wired "aliases" <https://devcenter.heroku.com/articles/custom-domains#cname-functionality-at-the-apex>
+
+### Subdomain
+
+    CNAME www example.herokuapp.com.
+
 # Addons
 
 ## List
