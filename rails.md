@@ -30,7 +30,13 @@
 
 <http://guides.rubyonrails.org/active_record_migrations.html#rolling-back>
 
-    rake db:rollback
+#### Two steps
+
+    rake db:rollback STEP=2
+
+#### Specific migration
+
+    rake db:rollback VERSION=197001010000
 
 ## Schema
 
