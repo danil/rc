@@ -148,7 +148,7 @@ Naked, bare or root domain have two options:
 
 ## Execute query
 
-    pg:psql --app your-app-name YOUR_DB_NAME --command 'SELECT 1 + 1'
+    heroku pg:psql --app your-app-name YOUR_DB_NAME --command 'SELECT 1 + 1'
 
 ## Sql dump
 
