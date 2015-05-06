@@ -90,6 +90,12 @@ Create second web server to prevent web dynos from sleeping
 <https://devcenter.heroku.com/articles/getting-started-with-ruby#view-logs>
 <https://devcenter.heroku.com/articles/logging>
 
+### Last 10
+
+    heroku logs --num 10
+
+### Interactive
+
     heroku logs --tail
 
 # Custom Domains
