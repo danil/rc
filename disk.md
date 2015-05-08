@@ -75,6 +75,13 @@ Copy from cd-rom disc to ISO image
 
     dd if=/dev/cdrom of=myimage.iso
 
+Create usb
+----------
+
+Copy ISO image to bootable usb
+
+    dd if=path/to/your.iso of=/dev/your-usb
+
 Other
 -----
 
