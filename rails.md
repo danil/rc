@@ -40,11 +40,15 @@
 
 ## Schema
 
-### Load into database
+### Load
+
+Load into database
 
     rake RAILS_ENV=production db:schema:load
 
 ### Create
+
+Create by database
 
     rake db:schema:dump
 
