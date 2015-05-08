@@ -40,6 +40,8 @@
 
 ## Schema
 
+### Load into database
+
     rake RAILS_ENV=production db:schema:load
 
 ### Create
