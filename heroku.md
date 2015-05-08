@@ -171,3 +171,25 @@ Restore from from sql dump file
 <https://devcenter.heroku.com/articles/mandrill>
 
     heroku addons:add mandrill:starter
+
+# Rollbar
+
+## Install
+
+<https://devcenter.heroku.com/articles/rollbar#provisioning-the-add-on>
+<https://devcenter.heroku.com/articles/rollbar#using-with-ruby-rails>
+
+    heroku addons:create rollbar
+    rails generate rollbar
+
+## Access token
+
+Get access token
+
+    heroku config:get ROLLBAR_ACCESS_TOKEN
+
+## Open dashboard
+
+<https://devcenter.heroku.com/articles/rollbar#dashboard>
+
+    heroku addons:open rollbar
