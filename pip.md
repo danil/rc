@@ -2,6 +2,8 @@
 
 # pip
 
+Python packages management system
+
 ## List
 
     pip list
