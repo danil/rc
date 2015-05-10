@@ -11,6 +11,11 @@ Python packages management system
 ## Install
 
     pip install --user your-package-name
+    pip install --user --requirement ~/requirements.txt
+
+## Upgrade
+
+    pip install --user --upgrade --requirement ~/requirements.txt
 
 ## Uninstall
 
