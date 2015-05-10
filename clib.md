@@ -12,6 +12,8 @@ C package manager-ish <https://github.com/clibs/clib>
 
 ## Install
 
+Packages list <https://github.com/clibs/clib/wiki/Packages>
+
     PREFIX=$HOME clib install you/your-package-name
 
 ## Uninstall
