@@ -8,7 +8,7 @@ Lightweight bash package manager
 
 ## Obtain
 
-    curl -Lo- http://get.bpkg.io | bash PREFIX=$HOME
+    curl -Lo- http://get.bpkg.io | PREFIX=$HOME bash
     export PATH=$PATH:$HOME/deps/bin
 
 ## Install
