@@ -133,6 +133,12 @@ List packages install from overlay <http://bugs.gentoo.org/204324>,
 
     emerge --verbose --oneshot $(eix --installed --only-names --in-overlay unity-gentoo)
 
+### Count
+
+Count all packages
+
+    eix --installed --compact | grep Found.*matches
+
 ### Deprecated
 
 Installed packages and listed in overlay (this command counts then
