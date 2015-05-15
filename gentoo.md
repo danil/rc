@@ -131,14 +131,14 @@ List packages install from overlay <http://bugs.gentoo.org/204324>,
 
 ### Recompile all ebuilds from overlay
 
-    emerge -v1 $(eix --installed --only-names --in-overlay unity-gentoo)
+    emerge --verbose --oneshot $(eix --installed --only-names --in-overlay unity-gentoo)
 
 ### Deprecated
 
 Installed packages and listed in overlay (this command counts then
 twice) might be installed from overlay
 
-    equery list -o |sort |uniq -c |sort -n
+    equery list -o | sort | uniq --count | sort --numeric-sort
 
 # repoman
 
