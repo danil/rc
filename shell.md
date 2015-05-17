@@ -368,8 +368,20 @@ Users and groups
             --groups fuse,cvs --append \
             --gid danil --login danil --shell /bin/bash danil
     userdel --remove danil
-    passwd danil
     grpck
+
+Password
+========
+
+Set
+---
+
+    passwd your-user-name
+
+Delete
+------
+
+    passwd --delete your-user-name
 
 Other
 -----
