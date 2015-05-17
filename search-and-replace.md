@@ -128,6 +128,14 @@ The silver searcher <https://github.com/ggreer/the_silver_searcher>.
 
     ag --files-with-matches "{{" config/
 
+### Color
+
+Color line number
+
+<https://github.com/ggreer/the_silver_searcher/issues/90>
+
+    ag --color-line-number "2;31"
+
 ack
 ---
 
