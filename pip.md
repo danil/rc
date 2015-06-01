@@ -27,3 +27,7 @@ Python packages management system
 ### Upgrade
 
     pip install --user --upgrade --requirement ~/requirements.txt
+
+### Uninstall
+
+    pip uninstall --yes --requirement ~/requirements.txt
