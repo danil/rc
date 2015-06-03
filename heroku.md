@@ -27,6 +27,12 @@
 
 <https://devcenter.heroku.com/articles/getting-started-with-rails4#visit-your-application>
 
+## List
+
+<https://devcenter.heroku.com/articles/getting-started-with-ruby#scale-the-app>
+
+    heroku ps
+
 ## Create
 
 Create one web server
@@ -36,24 +42,24 @@ Create one web server
 
     heroku ps:scale web=1
 
+## Restart
+
+<https://devcenter.heroku.com/articles/dynos#restarting>
+
+    heroku restart -a your-app-name
+
+## Stop
+
+<http://stackoverflow.com/questions/2811453/how-to-stop-an-app-on-heroku#10231477>
+
+    heroku ps:scale web=0
+
 ## Prevent sleeping
 
 Create second web server to prevent web dynos from sleeping
 <https://devcenter.heroku.com/articles/dynos#dyno-sleeping>
 
     heroku ps:scale web=2
-
-## List
-
-<https://devcenter.heroku.com/articles/getting-started-with-ruby#scale-the-app>
-
-    heroku ps
-
-## Restart
-
-<https://devcenter.heroku.com/articles/dynos#restarting>
-
-    heroku restart -a your-app-name
 
 # Rake
 
