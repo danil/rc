@@ -478,6 +478,13 @@ You have three steps there:
 
     git log --name-only
 
+# Search file in all commits
+
+Search file name in all commits history
+<http://stackoverflow.com/questions/7203515/how-to-locate-a-deleted-file-in-the-commit-history#7203551>
+
+    git log --all -- path/to/your/file.name
+
 ## Other
 
 <http://stackoverflow.com/questions/949314/how-to-retrieve-the-hash-for-the-current-commit-in-git>
