@@ -178,8 +178,6 @@ WARNING: Avoid using eclean!
 
 <https://wiki.gentoo.org/wiki/Bash#Tab_completion>
 
-    find /usr/share/bash-completion -maxdepth 1 -type f '!' -name 'bash_completion' -exec emerge -1v {} +
-
 ## List
 
     eselect bashcomp list --global
@@ -187,6 +185,14 @@ WARNING: Avoid using eclean!
 ## Enable
 
     eselect bashcomp enable --global {0..703}
+
+# Fix
+
+Fix broken completions
+<https://www.gentoo.org/support/news-items/2014-11-25-bash-completion-2_1-r90.html>
+
+    find /usr/share/bash-completion -maxdepth 1 -type f \
+      '!' -name 'bash_completion' -exec emerge -1v {} +
 
 # Updates
 
