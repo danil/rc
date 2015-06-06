@@ -176,10 +176,17 @@ WARNING: Avoid using eclean!
 
 # TAB-Completion
 
-<http://wiki.gentoo.org/wiki/Bash#Tab_completion>
+<https://wiki.gentoo.org/wiki/Bash#Tab_completion>
 
-    for x in /usr/share/bash-completion/*; do [[ -e $x ]] \
-      || continue; eselect bashcomp enable --global "${x##*/}"; done
+    find /usr/share/bash-completion -maxdepth 1 -type f '!' -name 'bash_completion' -exec emerge -1v {} +
+
+## List
+
+    eselect bashcomp list --global
+
+## Enable
+
+    eselect bashcomp enable --global {0..703}
 
 # Updates
 
