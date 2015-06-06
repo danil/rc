@@ -10,8 +10,16 @@ Mail
          danil@kutkevich.org < ./htdocs/index.html
 
     echo 'Hello, work' | mail -s 'Hello, World!' danil@kutkevich.org
-    /usr/sbin/sendmail -bV
-    exim -brw danil
-    exim -bV
     mailq
+
+Mailserver version
+------------------
+
+    /usr/sbin/sendmail -bV
+    exim -bV
+
+Exim
+----
+
+    exim -brw danil
     exim -Mvl <message_id>
