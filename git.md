@@ -4,10 +4,13 @@
 
     git config --global user.name "John Doe"
     git config --global user.email john@doe.org
-    git init
     git clone git://example.org/repository-name.git destination-dir
     git --git-dir=path/to/repository/.git  --work-tree=path/to/repository status
     git push origin master
+
+# Init
+
+    git --bare init
 
 # Add
 
