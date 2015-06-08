@@ -226,7 +226,7 @@ Character encodings
 ===================
 
     convmv -f windows-1251 -t utf-8 *.* --notest -r
-    iconv -fWINDOWS-1251 -tUTF-8 -ooutfile infile
+    iconv --from-code=WINDOWS-1251 --to-code=UTF-8 --output=outfile infile
     dos2unix filename
 
 Find ASCII/UTF-8 text files
