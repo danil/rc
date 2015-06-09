@@ -142,6 +142,8 @@ Describe database
 Show tables
 -----------
 
+List tables.
+
     SHOW TABLES;
     SHOW FULL TABLES FROM danil LIKE 'test%';
     +-------------------------+------------+
