@@ -241,3 +241,8 @@ Empties a table completely.
 
     SELECT email, COUNT(*) c FROM users GROUP BY email HAVING c > 1;
     SELECT user_id, offer_id, COUNT(*) c FROM offers_users GROUP BY user_id, offer_id HAVING c > 1;
+
+### CSV
+
+    SELECT * FROM users INTO OUTFILE '/path/to/file.csv'
+    FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n';
