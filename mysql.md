@@ -139,10 +139,8 @@ Describe database
     +--------------+-------------+----------------------------+
     1 row in set (0.00 sec)
 
-Show tables
+List tables
 -----------
-
-List tables.
 
     SHOW TABLES;
     SHOW FULL TABLES FROM danil LIKE 'test%';
@@ -152,6 +150,14 @@ List tables.
     | test_table              | BASE TABLE |
     +-------------------------+------------+
     1 row in set (0.00 sec)
+
+Describe table
+--------------
+
+    DESCRIBE test_table;
+    SELECT * FROM INFORMATION_SCHEMA.TABLES
+    WHERE table_schema = 'danil'
+          AND table_name LIKE 'test_table';
 
 Create table
 ------------
@@ -178,14 +184,6 @@ Generated set of drop statements
     SELECT concat('DROP TABLE IF EXISTS ', table_name, ';')
       FROM information_schema.tables
       WHERE table_schema = 'MyDatabaseName';
-
-Describe table
---------------
-
-    DESCRIBE test_table;
-    SELECT * FROM INFORMATION_SCHEMA.TABLES
-    WHERE table_schema = 'danil'
-          AND table_name LIKE 'test_table';
 
 Show table status
 -----------------
