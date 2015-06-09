@@ -139,6 +139,18 @@ Describe database
     +--------------+-------------+----------------------------+
     1 row in set (0.00 sec)
 
+Show tables
+-----------
+
+    SHOW TABLES;
+    SHOW FULL TABLES FROM danil LIKE 'test%';
+    +-------------------------+------------+
+    | Tables_in_danil (test%) | Table_type |
+    +-------------------------+------------+
+    | test_table              | BASE TABLE |
+    +-------------------------+------------+
+    1 row in set (0.00 sec)
+
 Create table
 ------------
 
@@ -164,18 +176,6 @@ Generated set of drop statements
     SELECT concat('DROP TABLE IF EXISTS ', table_name, ';')
       FROM information_schema.tables
       WHERE table_schema = 'MyDatabaseName';
-
-Show tables
------------
-
-    SHOW TABLES;
-    SHOW FULL TABLES FROM danil LIKE 'test%';
-    +-------------------------+------------+
-    | Tables_in_danil (test%) | Table_type |
-    +-------------------------+------------+
-    | test_table              | BASE TABLE |
-    +-------------------------+------------+
-    1 row in set (0.00 sec)
 
 Describe table
 --------------
