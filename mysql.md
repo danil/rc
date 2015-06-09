@@ -1,7 +1,6 @@
 <!-- -*- coding: utf-8; -*- -->
 
-MySQL
-=====
+# MySQL
 
     mysql -h 192.168.1.2 -u danil [-p] -t danil_test \
      < ~/src/common.sql > ~/data
@@ -17,8 +16,7 @@ MySQL
 
     CHECK TABLE ... EXTENDED;
 
-Dump
-----
+## Dump
 
 `--default-character-set=latin1` option mean what MySQL server runing
 with latin1 character set.  But data stored in database may be utf8.
@@ -28,8 +26,7 @@ with latin1 character set.  But data stored in database may be utf8.
      --no-create-info --complete-insert  \
      --result-file=~/backup.sql db_name my_table, my_table_2
 
-Show system variables
----------------------
+## Show system variables
 
     SHOW VARIABLES LIKE '%character%';
     SELECT @@global.time_zone, @@session.time_zone;
@@ -38,8 +35,7 @@ Show system variables
 
     SHOW GLOBAL VARIABLES LIKE 'storage_engine';
 
-Create user
------------
+## Create user
 
     GRANT CREATE, INSERT, DELETE, UPDATE, SELECT, DROP, INDEX, ALTER, LOCK TABLES
      ON danil.* TO 'danil'@'localhost' IDENTIFIED BY 'password';
@@ -48,31 +44,26 @@ Privileges: ALL, CREATE, DELETE, GRANT OPTION, INSERT, SELECT, SHOW
 DATABASES, UPDATE, USAGE, LOCK TABLES and so on
 (<http://dev.mysql.com/doc/refman/5.1/en/grant.html>).
 
-Set password
-------------
+## Set password
 
     SET PASSWORD FOR 'danil'@'localhost' = PASSWORD('password');
     mysqladmin -u root -h localhost password 'new-password'
 
-Show grants
------------
+## Show grants
 
     SHOW GRANTS;
     SHOW GRANTS FOR 'danil'@'localhost';
     SELECT Host, User FROM mysql.user WHERE User = 'danil';
 
-Revoke grants
--------------
+## Revoke grants
 
     REVOKE ALL ON danil.* FROM 'danil'@'localhost';
 
-Remove user
------------
+## Remove user
 
     DELETE FROM mysql.user WHERE User = 'danil';
 
-Show databases
---------------
+## Show databases
 
     SHOW DATABASES LIKE '%danil%';
     +--------------------+
@@ -84,8 +75,7 @@ Show databases
     +--------------------+
     3 rows in set (0.00 sec)
 
-Show character sets
--------------------
+## Show character sets
 
     SHOW CHARACTER SET LIKE 'utf%';
     +---------+---------------+-------------------+--------+
@@ -95,8 +85,7 @@ Show character sets
     +---------+---------------+-------------------+--------+
     1 row in set (0.00 sec)
 
-Query
------
+## Query
 
 Retrieve rows 6-15.
 
@@ -106,29 +95,24 @@ Retrieve rows 6-15.
 
     source sqlfile;
 
-Create database
----------------
+## Create database
 
     CREATE DATABASE IF NOT EXISTS mobotix CHARACTER SET utf8;
 
-Switching to database
----------------------
+## Switching to database
 
     USE some_db;
 
-Alter database
---------------
+## Alter database
 
     ALTER DATABASE 'mobotix_db_beta' DEFAULT CHARACTER SET utf8
      COLLATE utf8_general_ci;
 
-Drop database
--------------
+## Drop database
 
     DROP DATABASE IF EXISTS danil;
 
-Describe database
------------------
+## Describe database
 
     SELECT * FROM INFORMATION_SCHEMA.SCHEMATA
      WHERE SCHEMA_NAME LIKE 'danil';
@@ -139,8 +123,7 @@ Describe database
     +--------------+-------------+----------------------------+
     1 row in set (0.00 sec)
 
-List tables
------------
+## List tables
 
     SHOW TABLES;
     SHOW FULL TABLES FROM danil LIKE 'test%';
@@ -151,16 +134,14 @@ List tables
     +-------------------------+------------+
     1 row in set (0.00 sec)
 
-Describe table
---------------
+## Describe table
 
     DESCRIBE test_table;
     SELECT * FROM INFORMATION_SCHEMA.TABLES
     WHERE table_schema = 'danil'
           AND table_name LIKE 'test_table';
 
-Create table
-------------
+## Create table
 
     CREATE TABLE IF NOT EXISTS danil.test_table
       (
@@ -171,8 +152,7 @@ Create table
     CREATE TABLE IF NOT EXISTS danil.test_table_2
      LIKE danil.test_table;
 
-Drop table
-----------
+## Drop table
 
     DROP TABLE IF EXISTS danil.test_table [, danil.test_table_2];
 
@@ -185,15 +165,13 @@ Generated set of drop statements
       FROM information_schema.tables
       WHERE table_schema = 'MyDatabaseName';
 
-Show table status
------------------
+## Show table status
 
 Get engine type (MyISAM or InnoDB)
 
     SHOW TABLE STATUS FROM danil LIKE 'test%';
 
-Describe columns
-----------------
+## Describe columns
 
     DESCRIBE danil.test_table '%';
     +------------+----------+------+-----+---------+----------------+
@@ -207,8 +185,7 @@ Describe columns
     +------------+----------+------+-----+---------+----------------+
     5 rows in set (0.00 sec)
 
-Alter table
------------
+## Alter table
 
 ### Add column
 
@@ -222,15 +199,13 @@ Alter table
 
     ALTER TABLE users CHANGE COLUMN old_name new_name varchar(255);
 
-Truncate
---------
+## Truncate
 
 Empties a table completely.
 
     TRUNCATE TABLE accounting_spro_spro1s;
 
-Insert
-------
+## Insert
 
     INSERT INTO danil.test_table (id, text) VALUES (1, 'test text');
     INSERT INTO tbl_temp2 (fld_id)
@@ -238,13 +213,11 @@ Insert
         FROM tbl_temp1 WHERE tbl_temp1.fld_order_id > 100;
     LOAD DATA LOCAL INFILE '~/path/to/filename' INTO TABLE table;
 
-Delete row
-----------
+## Delete row
 
     DELETE FROM mysql.user WHERE User = 'danil';
 
-Update columns
---------------
+## Update columns
 
     UPDATE mobotix.menus SET article_text='' WHERE id='63';
     Query OK, 1 row affected (0.01 sec)
@@ -254,15 +227,13 @@ Update columns
             SELECT COUNT(id) FROM portfolio_projects WHERE user_id=users.id
             );
 
-Disable foreign key constraint check
-------------------------------------
+## Disable foreign key constraint check
 
     SET FOREIGN_KEY_CHECKS = 0;
     SOURCE dump_file_name;
     SET FOREIGN_KEY_CHECKS = 1;
 
-Quering
--------
+## Quering
 
 ### Finding duplicate values
 
