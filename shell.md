@@ -63,6 +63,7 @@ Blank file content.
 Date and time
 =============
 
+    date +%Y%m%d%H%M%S #19700101000000
     date +%z
     date --iso-8601=seconds #2014-08-15T16:40:09+0400
     tzselect #show what value to use for TZ environment variable
