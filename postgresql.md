@@ -12,8 +12,9 @@ Dump
 
 Backuping.
 
-    pg_dump --host=localhost --username=your_role_name --table="news" \
-            --attribute-inserts ska_production > outfile
+    pg_dump --host=localhost --username=your_role_name \
+            --table="your_table_name" --attribute-inserts your_db_name \
+            | xz --compress > path/to/dump_$(date +%Y%m%d%H%M%S).sql.xz
 
 ### Restor binary dump
 

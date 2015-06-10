@@ -48,6 +48,7 @@ xz
     xz access.log
     xz --decompress access.log.xz
     tar --extract --xz --file foobar.tar.xz
+    pg_dump db_name | xz --compress > path/to/dump_$(date +%Y%m%d%H%M%S).sql.xz
 
 Zip
 ---
