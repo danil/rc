@@ -220,6 +220,15 @@ equal to
 
     git fetch --all
 
+# rev-list
+
+## Number of commits per file
+
+Count number of commits per file
+<http://stackoverflow.com/questions/25850117/how-to-count-number-of-commits-per-file-pathname-by-author-in-a-git-repository#27386471>
+
+    git rev-list HEAD --count path/to/file
+
 # Mirror
 
 Mirror git repository
