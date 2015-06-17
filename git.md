@@ -509,12 +509,23 @@ Search file name in all commits history
 
 ## Contributors
 
-List all contributors:
+### List
+
+List of contributors to file:
 
 * <http://stackoverflow.com/questions/9597410/list-all-developers-on-project-in-git#9597462>
 * <http://www.commandlinefu.com/commands/view/4519/list-all-authors-of-a-particular-git-project>
 
-    git shortlog --summary --email --numbered | cut -c8-
+    git shortlog --summary --email --numbered path/to/file | cut -c8-
+
+### Count
+
+Count contributors to file:
+
+* <http://stackoverflow.com/questions/9597410/list-all-developers-on-project-in-git#9597462>
+* <http://www.commandlinefu.com/commands/view/4519/list-all-authors-of-a-particular-git-project>
+
+    git shortlog --summary --email path/to/file | wc --lines
 
 # History of a file
 
