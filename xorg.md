@@ -15,9 +15,14 @@ In a tty terminal, not a terminal window (get there with [Ctrl] +
 
     get-edid |parse-edid
 
-# DPI and display size
+# DPI
 
     xdpyinfo | grep "dots per inch"
+
+# Display size
+
+Display size (resolution)
+
     xdpyinfo | grep dimensions
 
 # xautolock
