@@ -176,7 +176,7 @@ Restore from from sql dump file
 
 <https://devcenter.heroku.com/articles/mandrill>
 
-    heroku addons:add mandrill:starter
+    heroku addons:create mandrill:starter
 
 # Rollbar
 
