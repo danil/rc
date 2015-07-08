@@ -148,6 +148,13 @@ Naked, bare or root domain have two options:
 
 # PostgreSQL
 
+## Getting started
+
+* <https://devcenter.heroku.com/articles/heroku-postgresql#connecting-in-ruby>
+* <https://devcenter.heroku.com/articles/ruby-support#build-behavior>
+
+Should use `DATABASE_URL` environment variable.
+
 ## Debug
 
 <https://devcenter.heroku.com/articles/getting-started-with-ruby#use-a-database>
