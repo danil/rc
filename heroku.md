@@ -142,7 +142,7 @@ Naked, bare or root domain have two options:
 
     heroku addons
 
-## Creat
+## Create
 
     heroku addons:add heroku-postgresql --app your-app-name --version=9.4
 
