@@ -38,13 +38,13 @@ Find out gateway <http://cyberciti.biz/faq/how-to-find-gateway-ip-address>
 
 # Telnet
 
-    busybox telnet danil.kutkevich.org 22
+    busybox telnet example.org 22
 
 # SSH
 
     ssh -t root@santaslittlehelper "ssh danil@homer"
-    scp -P 61022 [-r] foo.tar.gz bar.tar.gz anonymous@kutkevich.org:/home/danil/
-    sshfs -p 61022 kutkevich.org:/home/danil/ mnt/kutkevich_org/
+    scp -P 61022 [-r] foo.tar.gz bar.tar.gz anonymous@example.org:/home/danil/
+    sshfs -p 61022 example.org:/home/danil/ mnt/example_org/
 
 # Key authentication
 
@@ -57,7 +57,7 @@ Find out gateway <http://cyberciti.biz/faq/how-to-find-gateway-ip-address>
 <http://superuser.com/questions/585429/can-i-change-the-filename-of-my-ssh-public-private-key-pair>
 
     ssh-keygen -f key-file-name
-    ssh-copy-id -i ~/.ssh/key-file-name.pub "anonymous@kutkevich.org -p 2000"
+    ssh-copy-id -i ~/.ssh/key-file-name.pub "anonymous@example.org -p 2000"
 
 ## Tunneling
 
@@ -88,7 +88,7 @@ Find out gateway <http://cyberciti.biz/faq/how-to-find-gateway-ip-address>
 
 On `h4` SailfishOS:
 
-    ssh -N -R localhost:55555:localhost:22 danil@h5.kutkevich.org
+    ssh -N -R localhost:55555:localhost:22 danil@h5.example.org
 
 On `h5` server:
 
@@ -109,13 +109,20 @@ Discover (scanner) hosts and services on a computer network.
     nmap --open 217.197.232.218
     nmap -sP 192.168.0.0/16
 
+# dig
+
+## DNS
+
+List DNS servers for domain:
+
+    dig example.org ANY
+
 # Other
 
     rtorrent -s ./.rtorrent
     host 192.168.132.44 192.168.8.1
     nslookup 172.16.81.4
-    whois kutkevich.org
-    dig kutkevich.org
+    whois example.org
     ifconfig -a
     ifconfig eth0.1 hw ether 00:1D:7E:55:19:D9
     dhclient
@@ -132,10 +139,10 @@ Discover (scanner) hosts and services on a computer network.
     killall wpa_supplicant && sleep 5 \
      && wpa_supplicant -i ath0 -c /etc/wpa_supplicant/wpa_supplicant.conf
     wvdial megafon
-    curlftpfs -o "user=danil" kutkevich.org mnt/kutkevich_org/
+    curlftpfs -o "user=danil" example.org mnt/example_org/
     smbtree [-N] -d 2
     smbclient [-N] -L server
     smbclient -N "\\\\server\\store (e)"
     smbmount "//172.16.84.14/d$" mnt/cdp0002 \
-     -o workgroup=darout,username=dkutkevich,iocharset=UTF-8,codepage=windows-1251
+     -o workgroup=darout,username=your_user_name,iocharset=UTF-8,codepage=windows-1251
     rdesktop -g 99% -k en 192.168.91.5
