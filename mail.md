@@ -1,7 +1,6 @@
 <!-- -*- coding: utf-8; -*- -->
 
-Mail
-====
+# Mail
 
 <http://debian-administration.org/article/171/Send_an_HTML_file_as_email_from_the_command_line>
 
@@ -12,14 +11,21 @@ Mail
     echo 'Hello, work' | mail -s 'Hello, World!' danil@kutkevich.org
     mailq
 
-Mailserver version
-------------------
+## Mailserver version
 
     /usr/sbin/sendmail -bV
     exim -bV
 
-Exim
-----
+# Exim
 
-    exim -brw danil
     exim -Mvl <message_id>
+
+## Test address
+
+### Route
+
+    exim -bt your.mail@example.org
+
+### Rewrite rules
+
+    exim -brw your.mail@example.org
