@@ -4,7 +4,7 @@
 
 <https://wiki.archlinux.org/index.php/Taking_a_screenshot#Screenshot_of_multiple_X_screens>
 
-    import -window root /tmp/screenshot.jpg
+    sleep 5 && import -window root /tmp/screenshot.jpg
 
 ## Convert png to jpg
 
