@@ -218,11 +218,6 @@ View
 
     feh --draw-filename --sort name --recursive --thumbnails --fullscreen ~/tmp
 
-ImageMagick
------------
-
-    convert ~/tmp/screenshot.png -quality 30 ~/tmp/screenshot.jpg
-
 Character encodings
 ===================
 
