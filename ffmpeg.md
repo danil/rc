@@ -1,17 +1,14 @@
 <!-- -*- coding: utf-8; -*- -->
 
-FFmpeg
-======
+# FFmpeg
 
-Codecs
-------
+## Codecs
 
 ### List
 
     ffmpeg -codecs
 
-Re-encode
----------
+## Re-encode
 
 Re-encode video to VP8 compression format <http://en.wikipedia.org/wiki/VP8>,
 and audio to vorbis compression format <http://en.wikipedia.org/wiki/Vorbis>.
@@ -38,3 +35,9 @@ and audio to vorbis compression format <http://en.wikipedia.org/wiki/Vorbis>.
            -codec:v:0 libtheora \
            -codec:a:0 libvorbis \
            output.webm
+
+## Screencast
+
+<https://trac.ffmpeg.org/wiki/Capture/Desktop>
+
+    ffmpeg -video_size 1920x1080 -framerate 25 -f x11grab -i :0.0 ~/output.mp4
