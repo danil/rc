@@ -1,15 +1,12 @@
 <!-- -*- coding: utf-8; -*- -->
 
-Bower
-=====
+# Bower
 
-Search
-------
+## Search
 
-    bower search ng-repeat
+    bower search package-name
 
-Cache
------
+## Cache
 
 <http://bower.io/docs/api/#cache>
 
