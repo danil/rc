@@ -26,6 +26,15 @@ Stage all files
 
     git add --all
 
+# Push
+
+## Specific commit
+
+Push specific commit by commit sha
+<http://stackoverflow.com/questions/3230074/git-pushing-specific-commit#4512933>
+
+    git push origin your-commit-sha:master
+
 # Branch
 
 ## Create and checkout
