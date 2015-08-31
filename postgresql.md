@@ -1,14 +1,12 @@
 <!-- -*- coding: utf-8; -*- -->
 
-PostgreSQL
-==========
+# PostgreSQL
 
     psql --host=kutkevich.org.ru --username=your_role_name --dbname=mydb
     psql --host=kutkevich.org.ru --username=your_role_name dbname < infile
     psql --echo-hidden
 
-Dump
-----
+## Dump
 
 Backuping.
 
@@ -20,14 +18,12 @@ Backuping.
 
     pg_restore --dbname=scheduler_development scheduler.backup
 
-Change output format
---------------------
+## Change output format
 
     psql ska_production --no-align --command="SELECT id,name FROM foobars;" \
      | sed G | tr '|' '\n' | sed '/./,/^$/!d'
 
-Environment variables
----------------------
+## Environment variables
 
 <http://www.postgresql.org/docs/current/static/libpq-envars.html>
 
@@ -38,8 +34,7 @@ Environment variables
       PGPASSWORD=your-password \
       psql
 
-Version
--------
+## Version
 
     mydb=> SELECT version();
 
@@ -50,8 +45,7 @@ Version
     (1 row)
 
 
-hba_file
---------
+## hba_file
 
 Find pg_hba.conf location
 <http://askubuntu.com/questions/256534/how-do-i-find-the-path-to-pg-hba-conf-from-the-shell>,
@@ -59,14 +53,12 @@ Find pg_hba.conf location
 
     psql --tuples-only --pset='format=unaligned' --command='show data_directory'
 
-Users list
-----------
+## Users list
 
     -- \du [PATTERN]
     SELECT * FROM pg_user ORDER BY id DESC LIMIT 1;
 
-Create role
------------
+## Create role
 
 CREATE USER is an alias for CREATE ROLE. The only difference is that
 when the command is spelled CREATE USER, LOGIN is assumed by default.
@@ -88,48 +80,40 @@ when the command is spelled CREATE USER, LOGIN is assumed by default.
     createuser --createrole --createdb --superuser --pwprompt \
                --encrypted --username=postgres --password your_role_name
 
-Alter role
-----------
+## Alter role
 
     ALTER ROLE your_role_name WITH PASSWORD 'znVOIuah';
     ALTER ROLE your_role_name CREATEDB | NOCREATEDB;
 
-Drop role
----------
+## Drop role
 
     DROP ROLE your_role_name;
 
-Grant privileges
-----------------
+## Grant privileges
 
     GRANT ska_phpbb3 to skaforum;
 
-Remove privileges
------------------
+## Remove privileges
 
     REVOKE ALL PRIVILEGES ON DATABASE ska_phpbb3 FROM skaforum;
 
-Database list
--------------
+## Database list
 
     -- \l list all databases (add "+" for more detail)
 
     SELECT datname FROM pg_database WHERE datistemplate = false;
 
-Create database
----------------
+## Create database
 
     CREATE DATABASE "your_db_name" WITH OWNER your_role_name ENCODING = 'UTF8';
     createdb --owner=your_role_name --username=postgres --password your_db_name
 
-Drop database
--------------
+## Drop database
 
     DROP DATABASE your_db_name;
     dropdb --username=your_role_name --password test
 
-Copy database
--------------
+## Copy database
 
 <http://stackoverflow.com/questions/876522/creating-a-copy-of-a-database-in-postgres#876565>
 
@@ -139,13 +123,11 @@ Copy database
 
     createdb -O ownername -T originaldb newdb
 
-Rename database
----------------
+## Rename database
 
     ALTER DATABASE medapp_dev RENAME TO medapp_dev_master;
 
-Schema
-------
+## Schema
 
 ### List
 
@@ -155,28 +137,23 @@ Schema
 
     \dt schema_name.*
 
-Tables list
------------
+## Tables list
 
     \dt [PATTERN] (add "+" for more detail)
 
-Create table
-------------
+## Create table
 
     CREATE TABLE test_table (some_id SERIAL, name TEXT, age INTEGER);
 
-Describe table
---------------
+## Describe table
 
     \d some_table
 
-Drop table
-----------
+## Drop table
 
     DROP TABLE schema_migrations, products;
 
-Drop all talbles
-----------------
+## Drop all talbles
 
 List all tables then drop them.
 
@@ -184,13 +161,11 @@ List all tables then drop them.
     FROM pg_tables
     WHERE tableowner = 'msls' AND schemaname = 'public'
 
-Add column to table
--------------------
+## Add column to table
 
     ALTER TABLE my_table_name ADD COLUMN deleted_at timestamp with time zone;
 
-Update data
------------
+## Update data
 
 <http://www.postgresql.org/docs/9.3/static/sql-update.html>
 
@@ -202,31 +177,26 @@ Update data
     FROM (SELECT foo, bar FROM xyz WHERE id = 123) AS subquery
     WHERE id = 321;
 
-Insert row
-----------
+## Insert row
 
     INSERT INTO test_table (name, age) VALUES('John', 3);
     COPY test_table FROM STDIN WITH DELIMITER AS ',';
 
-Delete row
-----------
+## Delete row
 
     delete from users where id = 3;
 
-Truncate data
--------------
+## Truncate data
 
 <http://www.postgresql.org/docs/9.1/static/sql-truncate.html>
 
     TRUNCATE timeline_items CASCADE;
 
-Query data
-----------
+## Query data
 
     SELECT * FROM test_table;
 
-Current date
-------------
+## Current date
 
     mydb=> SELECT current_date;
         date
@@ -234,8 +204,7 @@ Current date
      2002-08-31
     (1 row)
 
-Arithmetics
------------
+## Arithmetics
 
     mydb=> SELECT 2 + 2;
      ?column?
@@ -243,8 +212,7 @@ Arithmetics
             4
     (1 row)
 
-Distinct
---------
+## Distinct
 
 Remove duplicate rows from the result set (one row is kept from each
 group of duplicates).
@@ -252,8 +220,7 @@ group of duplicates).
     SELECT DISTINCT ON (my_column_name) my_column_name FROM my_table_name;
     SELECT DISTINCT my_column_name FROM my_table_name;
 
-Types
------
+## Types
 
 ### Timestamp with timezone
 
@@ -271,20 +238,17 @@ Enumerated
 
     select enum_range(null::my_type)
 
-List functions
---------------
+## List functions
 
 List functions in schema `foo`
 
     \df foo.*
 
-Profiling
----------
+## Profiling
 
     \timing
 
-Explain
--------
+## Explain
 
 <http://www.postgresql.org/docs/current/static/sql-explain.html>  
 <https://wiki.postgresql.org/wiki/Using_EXPLAIN>
@@ -297,16 +261,14 @@ Explain
     EXPLAIN ANALYZE UPDATE test_table SET foo = 'bar' || id;
     ROLLBACK;
 
-Disk usage
-----------
+## Disk usage
 
 <http://stackoverflow.com/questions/2596624/how-do-you-find-the-disk-size-of-a-postgres-postgresql-table-and-its-indexes>
 
     \l+
     \d+
 
-Print notice
-------------
+## Print notice
 
 <http://stackoverflow.com/questions/18828127/how-to-raise-a-notice-in-postgresql#18828523>
 
@@ -316,13 +278,11 @@ Print notice
     END
     $$;
 
-Vacuum
-------
+## Vacuum
 
 <https://wiki.postgresql.org/wiki/Tuning_Your_PostgreSQL_Server#autovacuum>
 
-pgbench
--------
+## pgbench
 
 <http://www.postgresql.org/docs/current/static/pgbench.html>
 
@@ -333,8 +293,7 @@ pgbench -h localhost -p 51000 -c 1000 -C -S -t 1 -U fhirbase -f ./pgbouncer/pgbe
               -c 100 -C -d -S -t 1000 \
               -f path/to/file.sql your_db_name
 
-List active connections
------------------------
+## List active connections
 
 <http://serverfault.com/questions/128284/how-to-see-active-connections-and-current-activity-in-postgresql-8-4#128292>
 
