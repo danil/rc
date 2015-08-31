@@ -6,7 +6,7 @@
     psql --host=kutkevich.org.ru --username=your_role_name dbname < infile
     psql --echo-hidden
 
-## Dump
+# Dump
 
 Backuping.
 
@@ -14,16 +14,16 @@ Backuping.
             --table="your_table_name" --attribute-inserts your_db_name \
             | xz --compress > path/to/dump_$(date +%Y%m%d%H%M%S).sql.xz
 
-### Restor binary dump
+## Restor binary dump
 
     pg_restore --dbname=scheduler_development scheduler.backup
 
-## Change output format
+# Change output format
 
     psql ska_production --no-align --command="SELECT id,name FROM foobars;" \
      | sed G | tr '|' '\n' | sed '/./,/^$/!d'
 
-## Environment variables
+# Environment variables
 
 <http://www.postgresql.org/docs/current/static/libpq-envars.html>
 
@@ -34,7 +34,7 @@ Backuping.
       PGPASSWORD=your-password \
       psql
 
-## Version
+# Version
 
     mydb=> SELECT version();
 
@@ -45,13 +45,15 @@ Backuping.
     (1 row)
 
 
-## hba_file
+# hba_file
 
 Find pg_hba.conf location
 <http://askubuntu.com/questions/256534/how-do-i-find-the-path-to-pg-hba-conf-from-the-shell>,
 <http://www.postgresql.org/docs/current/static/runtime-config-file-locations.html>
 
     psql --tuples-only --pset='format=unaligned' --command='show data_directory'
+
+# Roles
 
 ## Users list
 
@@ -97,6 +99,8 @@ when the command is spelled CREATE USER, LOGIN is assumed by default.
 
     REVOKE ALL PRIVILEGES ON DATABASE ska_phpbb3 FROM skaforum;
 
+# Databases
+
 ## Database list
 
     -- \l list all databases (add "+" for more detail)
@@ -127,15 +131,17 @@ when the command is spelled CREATE USER, LOGIN is assumed by default.
 
     ALTER DATABASE medapp_dev RENAME TO medapp_dev_master;
 
-## Schema
+# Schemas
 
-### List
+## List
 
     \dn
 
-### List talbles in schema
+## List talbles in schema
 
     \dt schema_name.*
+
+# Tables
 
 ## Tables list
 
@@ -165,6 +171,8 @@ List all tables then drop them.
 
     ALTER TABLE my_table_name ADD COLUMN deleted_at timestamp with time zone;
 
+# Updates
+
 ## Update data
 
 <http://www.postgresql.org/docs/9.3/static/sql-update.html>
@@ -177,40 +185,24 @@ List all tables then drop them.
     FROM (SELECT foo, bar FROM xyz WHERE id = 123) AS subquery
     WHERE id = 321;
 
-## Insert row
+# Insert row
 
     INSERT INTO test_table (name, age) VALUES('John', 3);
     COPY test_table FROM STDIN WITH DELIMITER AS ',';
 
-## Delete row
+# Delete row
 
     delete from users where id = 3;
 
-## Truncate data
+# Truncate data
 
 <http://www.postgresql.org/docs/9.1/static/sql-truncate.html>
 
     TRUNCATE timeline_items CASCADE;
 
-## Query data
+# Queries
 
     SELECT * FROM test_table;
-
-## Current date
-
-    mydb=> SELECT current_date;
-        date
-    ------------
-     2002-08-31
-    (1 row)
-
-## Arithmetics
-
-    mydb=> SELECT 2 + 2;
-     ?column?
-    ----------
-            4
-    (1 row)
 
 ## Distinct
 
@@ -220,55 +212,71 @@ group of duplicates).
     SELECT DISTINCT ON (my_column_name) my_column_name FROM my_table_name;
     SELECT DISTINCT my_column_name FROM my_table_name;
 
-## Types
+# Current date
 
-### Timestamp with timezone
+    mydb=> SELECT current_date;
+        date
+    ------------
+     2002-08-31
+    (1 row)
+
+# Arithmetics
+
+    mydb=> SELECT 2 + 2;
+     ?column?
+    ----------
+            4
+    (1 row)
+
+# Types
+
+## Timestamp with timezone
 
 Today in past year
 
     select (CURRENT_DATE - INTERVAL '1 year')::timestamptz;
 
-### enum
+## enum
 
 Enumerated
 
-#### Describe
+### Describe
 
 <http://stackoverflow.com/questions/9535937/is-there-a-way-to-show-a-user-defined-postgresql-enumerated-type-definition#25326877>
 
     select enum_range(null::my_type)
 
-## List functions
+# List functions
 
 List functions in schema `foo`
 
     \df foo.*
 
-## Profiling
+# Profiling
 
     \timing
 
-## Explain
+# Explain
 
 <http://www.postgresql.org/docs/current/static/sql-explain.html>  
 <https://wiki.postgresql.org/wiki/Using_EXPLAIN>
 
     EXPLAIN SELECT * FROM test_table;
 
-### Analyze
+## Analyze
 
     BEGIN;
     EXPLAIN ANALYZE UPDATE test_table SET foo = 'bar' || id;
     ROLLBACK;
 
-## Disk usage
+# Disk usage
 
 <http://stackoverflow.com/questions/2596624/how-do-you-find-the-disk-size-of-a-postgres-postgresql-table-and-its-indexes>
 
     \l+
     \d+
 
-## Print notice
+# Print notice
 
 <http://stackoverflow.com/questions/18828127/how-to-raise-a-notice-in-postgresql#18828523>
 
@@ -278,11 +286,11 @@ List functions in schema `foo`
     END
     $$;
 
-## Vacuum
+# Vacuum
 
 <https://wiki.postgresql.org/wiki/Tuning_Your_PostgreSQL_Server#autovacuum>
 
-## pgbench
+# pgbench
 
 <http://www.postgresql.org/docs/current/static/pgbench.html>
 
@@ -293,7 +301,7 @@ pgbench -h localhost -p 51000 -c 1000 -C -S -t 1 -U fhirbase -f ./pgbouncer/pgbe
               -c 100 -C -d -S -t 1000 \
               -f path/to/file.sql your_db_name
 
-## List active connections
+# List active connections
 
 <http://serverfault.com/questions/128284/how-to-see-active-connections-and-current-activity-in-postgresql-8-4#128292>
 
