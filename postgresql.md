@@ -192,7 +192,7 @@ List all tables then drop them.
 
 # Delete row
 
-    delete from users where id = 3;
+    DELETE FROM users WHERE id = 3;
 
 # Truncate data
 
