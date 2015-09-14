@@ -141,6 +141,12 @@ when the command is spelled CREATE USER, LOGIN is assumed by default.
 
     \dt schema_name.*
 
+# Sequences
+
+## List
+
+    \ds
+
 # Tables
 
 ## Tables list
