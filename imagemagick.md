@@ -2,9 +2,9 @@
 
 ## Taking screenshot
 
-<https://wiki.archlinux.org/index.php/Taking_a_screenshot#Screenshot_of_multiple_X_screens>
+<https://wiki.archlinux.org/index.php/Taking_a_screenshot#ImageMagick.2FGraphicsMagick>
 
-    sleep 5 && import -window root /tmp/screenshot.jpg
+    sleep 5 && import -window root /tmp/screenshot.png
 
 ## Convert png to jpg
 
