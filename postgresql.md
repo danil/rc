@@ -6,6 +6,10 @@
     psql --host=kutkevich.org.ru --username=your_role_name dbname < infile
     psql --echo-hidden
 
+## URL
+
+    psql postgres://your_user_name:your_password@your.host:5432/your_db_name
+
 # Dump
 
 Backuping.
