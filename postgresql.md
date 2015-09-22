@@ -8,7 +8,7 @@
 
 ## URL
 
-    psql postgres://your_user_name:your_password@your.host:5432/your_db_name
+    psql postgres://your_user_name:your-password@your.host:5432/your_db_name
 
 # Dump
 
