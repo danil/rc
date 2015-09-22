@@ -12,11 +12,19 @@
 
 # Dump
 
-Backuping.
+## Create
+
+Backuping:
 
     pg_dump --host=localhost --username=your_role_name \
             --table="your_table_name" --attribute-inserts your_db_name \
             | xz --compress > path/to/dump_$(date +%Y%m%d%H%M%S).sql.xz
+
+### URL
+
+    pg_dump postgres://your_user_name:your-password@your.host:5432/your_db_name \
+            > path/to/dump.sql
+
 
 ## Restor binary dump
 
