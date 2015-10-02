@@ -244,13 +244,6 @@ http://www.cyberciti.biz/faq/throttle-disk-io-rate-limit-disk-io
 
     rsync --delete --numeric-ids --relative --delete-excluded --bwlimit=10000 /path/to/source /path/to/dest/
 
-Free ram
-=========
-
-<http://linuxatemyram.com>
-
-    free --human
-
 Job control
 ===========
 
