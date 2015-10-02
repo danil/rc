@@ -153,6 +153,12 @@ twice) might be installed from overlay
 
 # GCC
 
+## Upgrade
+
+<https://www.gentoo.org/doc/en/gcc-upgrading.xml>
+
+## Other
+
 Symptom: `checking whether the C compiler works... no`
 
     gcc-config --list-profiles
