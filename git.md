@@ -620,26 +620,13 @@ Merge two repositories with history
 <http://karma-runner.github.io/0.8/dev/git-commit-msg.html>
 <http://seesparkbox.com/foundry/semantic_commit_messages>
 
-* `chore`
-  updating grunt tasks etc; no production code change
-
-* `docs`
-  changes to documentation
-
-* `feat`
-  new feature
-
-* `fix`
-  bug fix
-
-* `refactor`
-  refactoring production code
-
-* `style`
-  formatting, missing semi colons, etc; no code change
-
-* `test`
-  adding missing tests, refactoring tests; no production code change
+* `chore` updating grunt tasks etc; no production code change
+* `docs` changes to documentation
+* `feat` new feature
+* `fix` bug fix
+* `refactor` refactoring production code
+* `style` formatting, missing semi colons, etc; no code change
+* `test` adding missing tests, refactoring tests; no production code change
 
 # Other
 
