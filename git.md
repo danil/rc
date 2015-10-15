@@ -416,7 +416,7 @@ You have three steps there:
 
 ### Revert
 
-    git revert -n HEAD^^^..HEAD^^
+    git revert --no-commit HEAD^^^..HEAD^^
 
 ## Bare repository
 
