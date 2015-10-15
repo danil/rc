@@ -197,6 +197,14 @@ Restore from from sql dump file
 
     heroku pg:psql --app your-app-name YOUR_DB_NAME < path/to/dump.sql
 
+# Sendgrid
+
+<https://devcenter.heroku.com/articles/sendgrid#provisioning-the-add-on>
+
+## Install
+
+    heroku addons:create sendgrid:starter
+
 # Mandrill
 
 <https://devcenter.heroku.com/articles/mandrill>
