@@ -146,11 +146,11 @@ Naked, bare or root domain have two options:
 
     heroku addons --all
 
-## Create
+## Install
 
     heroku addons:create your-addon-name
 
-## Remove
+## Uninstall
 
     heroku addons:destroy your-addon-name
 
