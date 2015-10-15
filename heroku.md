@@ -82,12 +82,12 @@ Create second web server to prevent web dynos from sleeping
 
 ## List
 
-    heroku config
+    heroku config --app your-app-name
 
 ## Set/get
 
-    heroku config:set FOO=bar
-    heroku config:get FOO
+    heroku config:set --app your-app-name FOO=bar
+    heroku config:get --app your-app-name FOO
 
 # Logs
 
@@ -211,7 +211,7 @@ Restore from from sql dump file
 
 Get access token
 
-    heroku config:get ROLLBAR_ACCESS_TOKEN
+    heroku config:get --app your-app-name ROLLBAR_ACCESS_TOKEN
 
 ## Open dashboard
 
