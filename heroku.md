@@ -31,7 +31,7 @@
 
 <https://devcenter.heroku.com/articles/getting-started-with-ruby#scale-the-app>
 
-    heroku ps
+    heroku ps --app your-app-name
 
 ## Create
 
