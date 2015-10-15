@@ -150,7 +150,7 @@ Naked, bare or root domain have two options:
 
 ### PostgreSQL
 
-    heroku addons:add heroku-postgresql:hobby-dev --app your-app-name --version=9.4
+    heroku addons:create heroku-postgresql:hobby-dev --app your-app-name --version=9.4
 
 ### Deploy hook
 
