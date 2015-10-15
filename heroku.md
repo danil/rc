@@ -46,7 +46,7 @@ Create one web server
 
 <https://devcenter.heroku.com/articles/dynos#restarting>
 
-    heroku restart -a your-app-name
+    heroku restart --app your-app-name
 
 ## Stop
 
