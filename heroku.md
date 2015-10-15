@@ -61,6 +61,34 @@ Create second web server to prevent web dynos from sleeping
 
     heroku ps:scale web=2
 
+# Worker
+
+Background tasks (delayed_job and so on)
+
+## List
+
+<https://devcenter.heroku.com/articles/getting-started-with-ruby#scale-the-app>
+
+    heroku ps --app your-app-name
+
+## Create
+
+Create one web server
+
+    heroku ps:scale worker=1
+
+## Restart
+
+<https://devcenter.heroku.com/articles/dynos#restarting>
+
+    heroku restart --app your-app-name
+
+## Stop
+
+<http://stackoverflow.com/questions/2811453/how-to-stop-an-app-on-heroku#10231477>
+
+    heroku ps:scale worker=0
+
 # Rake
 
 <https://devcenter.heroku.com/articles/rake>
