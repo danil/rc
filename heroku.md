@@ -40,7 +40,7 @@ Create one web server
 <https://devcenter.heroku.com/articles/getting-started-with-ruby#deploy-the-app>
 <https://devcenter.heroku.com/articles/getting-started-with-ruby#scale-the-app>
 
-    heroku ps:scale web=1
+    heroku ps:scale --app your-app-name web=1
 
 ## Restart
 
@@ -52,14 +52,14 @@ Create one web server
 
 <http://stackoverflow.com/questions/2811453/how-to-stop-an-app-on-heroku#10231477>
 
-    heroku ps:scale web=0
+    heroku ps:scale --app your-app-name web=0
 
 ## Prevent sleeping
 
 Create second web server to prevent web dynos from sleeping
 <https://devcenter.heroku.com/articles/dynos#dyno-sleeping>
 
-    heroku ps:scale web=2
+    heroku ps:scale --app your-app-name web=2
 
 # Worker
 
@@ -75,7 +75,7 @@ Background tasks (delayed_job and so on)
 
 Create one web server
 
-    heroku ps:scale worker=1
+    heroku ps:scale --app your-app-name worker=1
 
 ## Restart
 
@@ -87,7 +87,7 @@ Create one web server
 
 <http://stackoverflow.com/questions/2811453/how-to-stop-an-app-on-heroku#10231477>
 
-    heroku ps:scale worker=0
+    heroku ps:scale --app your-app-name worker=0
 
 # Rake
 
