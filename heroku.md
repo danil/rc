@@ -148,11 +148,13 @@ Naked, bare or root domain have two options:
 
 ## Create
 
-### PostgreSQL
+    heroku addons:create your-addon-name
 
-    heroku addons:create heroku-postgresql:hobby-dev --app your-app-name --version=9.4
+## Remove
 
-### Deploy hook
+    heroku addons:destroy your-addon-name
+
+# Deploy hook
 
     heroku addons:create deployhooks:http --url https://example.org/path-to-your-hook
 
@@ -164,6 +166,10 @@ Naked, bare or root domain have two options:
 * <https://devcenter.heroku.com/articles/ruby-support#build-behavior>
 
 Should use `DATABASE_URL` environment variable.
+
+## Install
+
+    heroku addons:create heroku-postgresql:hobby-dev --app your-app-name --version=9.4
 
 ## Debug
 
