@@ -73,7 +73,7 @@ Create second web server to prevent web dynos from sleeping
 
 <https://devcenter.heroku.com/articles/getting-started-with-ruby#start-a-console>
 
-    heroku run rails console
+    heroku run rails console --app your-app-name
 
 # Config vars
 
