@@ -10,6 +10,11 @@
 
     aws s3 sync --region your-region s3://your-bucket destination/path
 
+## Upload
+
+    aws s3 cp --region your-region --recursive --acl public-read \
+        path/to/directory s3://your-bucket
+
 ## Get region
 
     aws s3api get-bucket-location --bucket your-bucket-name
