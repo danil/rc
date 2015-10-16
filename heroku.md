@@ -225,6 +225,17 @@ Restore from from sql dump file
 
     heroku pg:psql --app your-app-name YOUR_DB_NAME < path/to/dump.sql
 
+## Binary dump
+
+### Create
+
+    heroku pg:backups capture --app your-app-name
+
+### Restore
+
+    heroku pg:backups restore --app your-app-name \
+        "http://example.org/path/to/dump" DATABASE_URL
+
 # Sendgrid
 
 <https://devcenter.heroku.com/articles/sendgrid#provisioning-the-add-on>
