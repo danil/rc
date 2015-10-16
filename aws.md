@@ -10,7 +10,7 @@
 
     aws s3 sync --region your-region s3://your-bucket destination/path
 
-## Upload
+## Upload public files
 
     aws s3 cp --region your-region --recursive --acl public-read \
         path/to/directory s3://your-bucket
