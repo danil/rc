@@ -22,6 +22,12 @@
 
 ## Migrations
 
+### Status
+
+Display status of pending migrations
+
+    rake db:migrate:status
+
 ### Up
 
     rake db:migrate
