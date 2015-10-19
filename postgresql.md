@@ -20,6 +20,10 @@ Backuping:
             --table="your_table_name" --attribute-inserts your_db_name \
             | xz --compress > path/to/dump_$(date +%Y%m%d%H%M%S).sql.xz
 
+## Restore
+
+    cat path/to/dump.sql.xz | xz --decompress | psql dbname
+
 ### URL
 
     pg_dump postgres://your_user_name:your-password@your.host:5432/your_db_name \
