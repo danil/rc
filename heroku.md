@@ -227,6 +227,10 @@ Restore from from sql dump file
 
 ## Binary dump
 
+### List
+
+    heroku pg:backups --app your-app-name
+
 ### Create
 
     heroku pg:backups capture --app your-app-name
