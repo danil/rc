@@ -6,6 +6,8 @@
 * <https://devcenter.heroku.com/articles/getting-started-with-ruby-o>
 * <https://devcenter.heroku.com/articles/getting-started-with-rails4>
 
+All commands can recive `--app your-app-name`
+
 # Applications
 
 ## List
@@ -31,7 +33,7 @@
 
 <https://devcenter.heroku.com/articles/getting-started-with-ruby#scale-the-app>
 
-    heroku ps --app your-app-name
+    heroku ps
 
 ## Create
 
@@ -40,26 +42,26 @@ Create one web server
 <https://devcenter.heroku.com/articles/getting-started-with-ruby#deploy-the-app>
 <https://devcenter.heroku.com/articles/getting-started-with-ruby#scale-the-app>
 
-    heroku ps:scale --app your-app-name web=1
+    heroku ps:scale web=1
 
 ## Restart
 
 <https://devcenter.heroku.com/articles/dynos#restarting>
 
-    heroku restart --app your-app-name
+    heroku restart
 
 ## Stop
 
 <http://stackoverflow.com/questions/2811453/how-to-stop-an-app-on-heroku#10231477>
 
-    heroku ps:scale --app your-app-name web=0
+    heroku ps:scale web=0
 
 ## Prevent sleeping
 
 Create second web server to prevent web dynos from sleeping
 <https://devcenter.heroku.com/articles/dynos#dyno-sleeping>
 
-    heroku ps:scale --app your-app-name web=2
+    heroku ps:scale web=2
 
 # Worker
 
@@ -69,25 +71,25 @@ Background tasks (delayed_job and so on)
 
 <https://devcenter.heroku.com/articles/getting-started-with-ruby#scale-the-app>
 
-    heroku ps --app your-app-name
+    heroku ps
 
 ## Create
 
 Create one web server
 
-    heroku ps:scale --app your-app-name worker=1
+    heroku ps:scale worker=1
 
 ## Restart
 
 <https://devcenter.heroku.com/articles/dynos#restarting>
 
-    heroku restart --app your-app-name
+    heroku restart
 
 ## Stop
 
 <http://stackoverflow.com/questions/2811453/how-to-stop-an-app-on-heroku#10231477>
 
-    heroku ps:scale --app your-app-name worker=0
+    heroku ps:scale worker=0
 
 # Rake
 
@@ -101,7 +103,7 @@ Create one web server
 
 <https://devcenter.heroku.com/articles/getting-started-with-ruby#start-a-console>
 
-    heroku run rails console --app your-app-name
+    heroku run rails console
 
 # Config vars
 
@@ -110,12 +112,12 @@ Create one web server
 
 ## List
 
-    heroku config --app your-app-name
+    heroku config
 
 ## Set/get
 
-    heroku config:set --app your-app-name FOO=bar
-    heroku config:get --app your-app-name FOO
+    heroku config:set FOO=bar
+    heroku config:get FOO
 
 # Logs
 
@@ -197,7 +199,7 @@ Should use `DATABASE_URL` environment variable.
 
 ## Install
 
-    heroku addons:create heroku-postgresql:hobby-dev --app your-app-name --version=9.4
+    heroku addons:create heroku-postgresql:hobby-dev --version=9.4
 
 ## Debug
 
@@ -207,11 +209,11 @@ Should use `DATABASE_URL` environment variable.
 
 ## Connect
 
-    heroku pg:psql --app your-app-name YOUR_DB_NAME
+    heroku pg:psql YOUR_DB_NAME
 
 ## Execute query
 
-    heroku pg:psql --app your-app-name YOUR_DB_NAME --command 'SELECT 1 + 1'
+    heroku pg:psql YOUR_DB_NAME --command 'SELECT 1 + 1'
 
 ## Sql dump
 
@@ -223,22 +225,21 @@ Restore from from sql dump file
 
 <http://stackoverflow.com/questions/20508898/how-can-i-import-a-sql-file-into-my-heroku-postgres-database#20511058>
 
-    heroku pg:psql --app your-app-name YOUR_DB_NAME < path/to/dump.sql
+    heroku pg:psql YOUR_DB_NAME < path/to/dump.sql
 
 ## Binary dump
 
 ### List
 
-    heroku pg:backups --app your-app-name
+    heroku pg:backups
 
 ### Create
 
-    heroku pg:backups capture --app your-app-name
+    heroku pg:backups capture
 
 ### Restore
 
-    heroku pg:backups restore --app your-app-name \
-        "http://example.org/path/to/dump" DATABASE_URL
+    heroku pg:backups restore "http://example.org/path/to/dump" DATABASE_URL
 
 # Sendgrid
 
@@ -268,7 +269,7 @@ Restore from from sql dump file
 
 Get access token
 
-    heroku config:get --app your-app-name ROLLBAR_ACCESS_TOKEN
+    heroku config:get ROLLBAR_ACCESS_TOKEN
 
 ## Open dashboard
 
