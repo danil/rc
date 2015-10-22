@@ -274,6 +274,14 @@ List functions in schema `foo`
 
     \df foo.*
 
+# Current number of connections
+
+Getting the current number of connections in a PostgreSQL
+
+<http://stackoverflow.com/questions/5267715/getting-the-current-number-of-connections-in-a-postgresql-db#5270806>
+
+    SELECT sum(numbackends) FROM pg_stat_database;
+
 # Profiling
 
     \timing
