@@ -67,6 +67,21 @@ are run for your application
 <https://devcenter.heroku.com/articles/procfile>
 <https://github.com/ddollar/foreman>
 
+# SSH reverse tunneling
+
+Public access to laptop
+
+<http://tunnelsup.com/raspberry-pi-phoning-home-using-a-reverse-remote-ssh-tunnel>
+
+On laptop:
+
+    ssh -N -R localhost:port_on_server:localhost:port_on_laptop \
+        your_user_name@your.host.name
+
+On server:
+
+    curl localhost:port_on_server
+
 # Other
 
     mongrel_rails cluster::configure -e production -p 8000 -a 127.0.0.1 \
