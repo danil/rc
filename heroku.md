@@ -241,6 +241,20 @@ Restore from from sql dump file
 
     heroku pg:backups capture
 
+#### Regular backups
+
+##### List
+
+    heroku pg:backups schedules
+
+##### Create
+
+Scheduling backups
+
+<https://devcenter.heroku.com/articles/heroku-postgres-backups#scheduling-backups>
+
+    heroku pg:backups schedule DATABASE_URL --at '02:00 UTC'
+
 ### Restore
 
     heroku pg:backups restore "http://example.org/path/to/dump" DATABASE_URL
