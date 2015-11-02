@@ -29,6 +29,9 @@ Backuping:
     pg_dump postgres://your_user_name:your-password@your.host:5432/your_db_name \
             > path/to/dump.sql
 
+### psql
+
+    \i path/to/dump.sql
 
 ## Restor binary dump
 
