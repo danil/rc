@@ -18,7 +18,7 @@ Backuping:
 
     pg_dump --host=localhost --username=your_role_name \
             --table="your_table_name" --attribute-inserts your_db_name \
-            | xz --compress > path/to/dump_$(date +%Y%m%d%H%M%S).sql.xz
+            | xz --compress > path/to/dump_$(date +%Y%m%d%H%M%S%Z).sql.xz
 
 ## Restore
 
