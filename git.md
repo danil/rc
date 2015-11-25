@@ -280,6 +280,10 @@ Mirror git repository
     git submodule update
     git submodule status
 
+## Recursive init & update
+
+    git submodule update --init --recursive
+
 ## Remove submodule
 
 <http://stackoverflow.com/questions/1260748/how-do-i-remove-a-git-submodule#1260982>
