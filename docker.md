@@ -39,8 +39,8 @@ Create and start (or run) image as container
                   --volume /var/foobar-data:/opt/foobar-data \
                   --volume /etc/localtime:/etc/localtime:ro \
                   --name foobar_server \
-                  --publish=8080:80 \
-                  --publish=5433:5432 \
+                  --publish=your-external-port:your-internal-port \
+                  --publish=your-external-port-2:your-internal-port-2 \
                   user-name/docker-foobar \
                   '/bin/bash' -l -c 'export LANG="C.UTF-8" \
                                      && sudo service postgresql start'
