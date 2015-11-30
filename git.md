@@ -619,6 +619,10 @@ Merge two repositories with history
     git merge --strategy=ours --no-commit bar/master
     git commit --message='Merge branch v0.0.1 into v0.0.2'
 
+# Setting the default git branch in a bare repository
+
+    git symbolic-ref HEAD refs/heads/your-branch
+
 # Commit messages
 
 <http://karma-runner.github.io/0.8/dev/git-commit-msg.html>
