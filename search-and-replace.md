@@ -36,6 +36,12 @@
         NEWNAME2=$(dirname "$I")/$NEWNAME1_$( basename "$I"); \
         mv "$I" "$NEWNAME2"; done;
 
+## Recently changed
+
+Find recently changed files within 1 minutes
+
+    find your/path -mmin 1
+
 ## Search and remove file with inode number
 
 <http://unix.com/solaris/23278-file-no-name.html>
