@@ -39,6 +39,7 @@
 ## Recently changed
 
 Find recently changed files within 1 minutes
+<http://stackoverflow.com/questions/16085958/scripts-find-the-files-have-been-changed-in-last-24-hours#16086041>
 
     find your/path -mmin 1
 
