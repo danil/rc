@@ -1,10 +1,8 @@
 <!-- -*- coding: utf-8; -*- -->
 
-Search and replace
-==================
+# Search and replace
 
-grep
-----
+## grep
 
     grep --recursive --line-number eth0 /etc
     grep -irl danil . 2> /dev/null | xargs tar cvvf ~/tmp/123.tar
@@ -17,8 +15,7 @@ grep
 
     grep --invert-match foo.*bar
 
-pcregrep
---------
+## pcregrep
 
 * Multiple lines matching
   <http://stackoverflow.com/questions/2686147/how-to-find-patterns-across-multiple-lines-using-grep#answer-2686705>
@@ -27,8 +24,7 @@ pcregrep
 
     pcregrep -rM 'class.*(\n|.)*class' lib/cda/
 
-find
-----
+## find
 
     find ~/ -mount -type f -size -100k -iname "*.rb" \
             -exec grep -q -e danil\\.kutkevich \{\} \;
@@ -52,16 +48,14 @@ find
 
     find / -type l -exec sh -c 'lname="{}"; ltarget=$(readlink "${lname}"); rm "${lname}"; ln -s "${ltarget}" "${lname}"' \;
 
-Remove empty dirs
------------------
+## Remove empty dirs
 
     find -depth -type d -empty -exec rmdir {} \;
 
     find ./ -mount -type f -iname "*~" -exec rm {} \;
     find /lib/modules/2.6.30/ -type f -iname '*.o' -or -iname '*.ko'
 
-sed
----
+## sed
 
 Stream Editor
 
@@ -88,16 +82,14 @@ Adds `\n` at the end of the file only if it doesn’t already end with a newline
 
 sed --in-place --expression='$a\' ~/.dmenu_history
 
-AWK
----
+## AWK
 
     awk '{ FS = "\t" ; OFS = "\t" ; print $1,"ru",$2,$3 }' \
         infile > outfile
     awk '{ FS = "\t" ; OFS = "\t" ; if ( NR > 1 ) print $1,$3 }' \
         infile > outfile
 
-tr
---
+## tr
 
 ### Convert uppercase to lowercase
 
@@ -113,8 +105,7 @@ tr
 
     cat /etc/ntp.conf | grep -v '^#' | grep -v '^$'
 
-ag
---
+## ag
 
 The silver searcher <https://github.com/ggreer/the_silver_searcher>.
 
@@ -136,8 +127,7 @@ Color line number
 
     ag --color-line-number "2;31"
 
-ack
----
+## ack
 
     ack Webpage ~/src/jobtest-aviasales-ru/
 
