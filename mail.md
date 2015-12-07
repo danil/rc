@@ -8,7 +8,7 @@
          -s "Employer" \
          danil@kutkevich.org < ./htdocs/index.html
 
-    echo 'Hello, work' | mail -s 'Hello, World!' danil@kutkevich.org
+    echo 'Hello, work' | mail --subject='Hello, World!' danil@kutkevich.org
     mailq
 
 ## Mailserver version
