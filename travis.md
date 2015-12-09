@@ -2,7 +2,7 @@
 
 # Travis CI
 
-Command line interface (CLI) for Travis CI (install via Ruby gem)
+Command line interface (CLI) for Travis CI (install via RubyGems)
 <https://rubygems.org/gems/travis>
 <https://github.com/travis-ci/travis.rb>
 
