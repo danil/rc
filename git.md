@@ -35,6 +35,14 @@ Push specific commit by commit sha
 
     git push origin your-commit-sha:master
 
+## Push across repositories
+
+Push from local repository to independent remote repository
+<https://gist.github.com/domenic/ec8b0fc8ab45f39403dd>
+
+    git push --force your_user@your.domain:path/to/repository-name.git \
+        local_branch:remote_branch
+
 # Branch
 
 ## Create and checkout
