@@ -40,10 +40,15 @@ Find out gateway <http://cyberciti.biz/faq/how-to-find-gateway-ip-address>
 
     busybox telnet example.org 22
 
+# SCP
+
+    scp path/to/file1 path/to/file2 your_user@your.domain:/path/to/directory
+    scp file.tar.gz your_user@your.domain:/path/to/directory
+    scp -r path/to/directory your_user@your.domain:/path/to/directory
+
 # SSH
 
     ssh -t root@santaslittlehelper "ssh danil@homer"
-    scp -P 61022 [-r] foo.tar.gz bar.tar.gz anonymous@example.org:/home/danil/
     sshfs -p 61022 example.org:/home/danil/ mnt/example_org/
 
 # Key authentication
