@@ -597,8 +597,7 @@ Binary Search <http://progit.org/book/ru/ch6-5.html>.
 
 # Subtree
 
-Deploy to GitHub Pages
-<https://github.com/yeoman/yeoman/wiki/Deployment#git-subtree-command>
+Deploy to GitHub Pages <http://yeoman.io/learning/deployment.html>
 
     git add --update foobar/ && git commit -m 'deploy'
     git push origin :gh-pages && git subtree push --prefix foobar origin gh-pages
