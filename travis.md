@@ -2,6 +2,10 @@
 
 # Travis CI
 
+Command line interface (CLI) for Travis CI (install via Ruby gem)
+<https://rubygems.org/gems/travis>
+<https://github.com/travis-ci/travis.rb>
+
 ## Encrypt variable
 
 <https://docs.travis-ci.com/user/encryption-keys>
