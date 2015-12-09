@@ -1,19 +1,15 @@
 <!-- -*- coding: utf-8; -*- -->
 
-Clojure
-=======
+# Clojure
 
-Start repl
-----------
+## Start repl
 
     lein repl
 
-Install dependencies
---------------------
+## Install dependencies
 
     lein deps && lein javac
 
-Run jar
--------
+## Run jar
 
     lein uberjar && java $JVM_OPTS -jar path/to/foobar.jar -m foobar.namespace
