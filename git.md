@@ -133,7 +133,7 @@ Get a file from a specific revision
 
 # Branch upstream
 
-    git branch --set-upstream-to=origin/your-branch-name
+    git branch --set-upstream-to=origin/your-remoute-branch-name
 
 # Copy file from branch to another
 
