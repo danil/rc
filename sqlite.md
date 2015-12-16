@@ -8,6 +8,11 @@ List tables
 
     .tables
 
+Described table
+---------------
+
+    .schema your_table_name
+
 Execute query
 -------------
 
