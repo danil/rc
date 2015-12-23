@@ -185,6 +185,8 @@ Select tag <http://git-scm.com/book/en/Git-Basics-Tagging#Listing-Your-Tags>
 
 ### Remote
 
+<http://www.abeautifulsite.net/how-to-delete-a-tag-on-github/>
+
     git push origin :v0.0.1
 
 # Stash
