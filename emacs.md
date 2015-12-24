@@ -4,6 +4,8 @@
 
 ## Compile from from source
 
+<http://www.emacswiki.org/emacs/BuildingEmacs>
+
     ./configure --prefix=$HOME && make --jobs=2 && make install
 
 ## Basics
