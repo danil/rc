@@ -1,10 +1,8 @@
 <!-- -*- coding: utf-8; -*- -->
 
-Emacs
-=====
+# Emacs
 
-Basics
-------
+## Basics
 
     C-x C-w
         (write-file) Save the current buffer with a specified file name.
@@ -13,8 +11,7 @@ Basics
     C-x i
         Insert file at cursor position.
 
-12.1 Deletion
--------------
+## 12.1 Deletion
 
 <http://gnu.org/software/emacs/manual/html_node/emacs/Deletion.html>,
 <http://emacswiki.org/DeletingWhitespace>,
@@ -25,8 +22,7 @@ Basics
 `C-x C-o` Delete blank lines around the current line.
 
 
-Transpose
----------
+## Transpose
 
     C-t
         Transpose two chars.
@@ -35,8 +31,7 @@ Transpose
     C-x C-t
         Transpose lines.
 
-9.2 Editing in the Minibuffer
------------------------------
+## 9.2 Editing in the Minibuffer
 
 <http://gnu.org/software/emacs/manual/html_node/emacs/Minibuffer-Edit.html>.
 
@@ -45,8 +40,7 @@ Transpose
         Insert a newline in the minibuffer. (The newline character is
         really the ASCII character control-J.)
 
-Online-Help
------------
+## Online-Help
 
     C-h c
         Which command does this keystroke invoke.
@@ -55,8 +49,7 @@ Online-Help
     C-h w
         What key-combo does this command have?
 
-Search/Replace with regular expressions
----------------------------------------
+## Search/Replace with regular expressions
 
 `$` anchor in regexp is not allowed. Use `C-j` instead.
 
@@ -91,8 +84,7 @@ In Ibuffer mode <http://emacswiki.org/emacs/IbufferMode>,
 <http://gnu.org/software/emacs/manual/html_node/emacs/Dired-and-Find.html>,
 <http://gnu.org/software/emacs/manual/html_node/emacs/Grep-Searching.html>.
 
-[Window commands][]
------------------
+## [Window commands][]
 
 <http://gnu.org/software/emacs/manual/html_node/emacs/Change-Window.html>
 
@@ -103,16 +95,14 @@ In Ibuffer mode <http://emacswiki.org/emacs/IbufferMode>,
 
 [Window commands]: http://gnu.org/software/emacs/manual/html_node/emacs/Windows.html
 
-Frame commands
---------------
+## Frame commands
 
     C-x 5 1
         Delete all frames except the selected one.
     C-x 5 f
         Find file in other frame.
 
-27.11 Specifying a Coding System for File Text
-----------------------------------------------
+## 27.11 Specifying a Coding System for File Text
 
 Charset encoding.
 
@@ -127,15 +117,13 @@ Charset encoding.
         Use coding system coding for keyboard input
         (set-keyboard-coding-system).
 
-23.13 Accessing Compressed Files
---------------------------------
+## 23.13 Accessing Compressed Files
 
 <http://gnu.org/software/emacs/manual/html_node/emacs/Compressed-Files.html>
 
     M-x auto-compression-mode
 
-Dired (DIRectory EDitor)
-------------------------
+## Dired (DIRectory EDitor)
 
 <http://gnu.org/software/emacs/manual/html_node/emacs/Dired.html>.
 
@@ -250,8 +238,7 @@ Stop find-grep-dired
 
     C-c C-k
 
-Operating on Files
-------------------
+## Operating on Files
 
 <http://gnu.org/software/emacs/manual/html_node/emacs/Operating-on-Files.html>.
 
@@ -269,8 +256,7 @@ Operating on Files
         query replace loop, you can use M-, to resume the scan and replace
         more matches. See Tags Search.
 
-37.8 Shell Commands in Dired
-----------------------------
+## 37.8 Shell Commands in Dired
 
 ### dired-do-shell-command
 
@@ -279,8 +265,7 @@ file foo.tar:
 
     ! tar cf foo.tar * <RET>
 
-Buffer List
------------
+## Buffer List
 
     C-d
         Request to delete and move up afterwards instead of down.
@@ -297,8 +282,7 @@ Buffer List
     b
         Bury the buffer listed on this line.
 
-31.15. Shell
-------------
+## 31.15. Shell
 
     M-x shell
         Start a shell in window *shell*.
@@ -332,8 +316,7 @@ optionally replace the region with the output.
 
     M-| cmd RET
 
-41.9 Term Mode
---------------
+## 41.9 Term Mode
 
 <http://gnu.org/software/emacs/manual/html_node/emacs/Term-Mode.html>
 
@@ -351,8 +334,7 @@ The following commands are only available in char mode:
         Send a literal <C-c> to the sub-shell.
 
 
-Text
-----
+## Text
 
     M-x text-mode
         Mode for editing text files.
@@ -363,8 +345,7 @@ Text
     M-x
         Center-region name says.
 
-Macro-command
--------------
+## Macro-command
 
 <http://emacs-fu.blogspot.ru/2010/07/keyboard-macros.html>
 
@@ -385,8 +366,7 @@ Macro-command
     M-x macroname
         Execute macroname.
 
-C, C++, PHP and Java Modes
---------------------------
+## C, C++, PHP and Java Modes
 
     M-a
         Beginning of statement.
@@ -407,8 +387,7 @@ C, C++, PHP and Java Modes
     C-c C-u
         Go to beginning of this preprocessor statement.
 
-30.5.1 Comment Commands
------------------------
+## 30.5.1 Comment Commands
 
 <http://gnu.org/software/libtool/manual/emacs/Comment-Commands.html>
 
@@ -431,8 +410,7 @@ given a CC Mode binding for convenience.
     M-x uncomment-region
 
 
-ediff
------
+## ediff
 
 ### (ediff-regions-wordwise)
 
@@ -443,22 +421,19 @@ ediff
 <https://www.gnu.org/software/emacs/manual/html_node/emacs/Recursive-Edit.html>
     C-M-c
 
-More general
-------------
+## More general
 
     M-x outline-minor-mode
         Collapses function definitions in a file to a mere {...}.
     M-x show-subtree
         If you are in one of the collapsed functions, this un-collapses it.
 
-GDB (debugger)
---------------
+## GDB (debugger)
 
     M-x gdb
         Starts up gdm in an extra window.
 
-Filling Text
-------------
+## Filling Text
 
 <http://gnu.org/software/emacs/manual/html_node/emacs/Filling.html>.
 
@@ -474,8 +449,7 @@ Filling Text
     M-x fill-region
         Fill each paragraph in the region (fill-region).
 
-Version Control (vc.el)
------------------------
+## Version Control (vc.el)
 
 <http://gnu.org/software/emacs/manual/html_node/emacs/Version-Control.html>
 
@@ -517,8 +491,7 @@ Version Control (vc.el)
     C-x v a
         Create changelog file in gnu-style.
 
-PCL-CVS
--------
+## PCL-CVS
 
 <http://gnu.org/software/emacs/manual/html_mono/pcl-cvs.html>.
 
@@ -544,14 +517,12 @@ PCL-CVS
         repository is far away. But of course, it will not be able to
         detect when a file needs to be updated or merged.
 
-Subversion
-----------
+## Subversion
 
 <http://emacswiki.org/SvnStatusMode>,
 <http://svn.apache.org/repos/asf/subversion/trunk/contrib/client-side/emacs/psvn.el>
 
-Tags
-----
+## Tags
 
 ### (visit-tags-table)
 
@@ -605,8 +576,7 @@ List all tags in a tags file that match a regexp
 
 List all tags defined in a source file
 
-[Spelling][]
-----------
+## [Spelling][]
 
 ### (ispell-word)
 
@@ -644,8 +614,7 @@ Kill the Aspell/Ispell/Hunspell subprocess.
 
 [Spelling]: http://gnu.org/software/emacs/manual/html_node/emacs/Spelling.html
 
-Local Variables in Files
-------------------------
+## Local Variables in Files
 
 [Local Variables in Files]: http://gnu.org/software/emacs/manual/html_node/emacs/File-Variables.html
 
@@ -665,8 +634,7 @@ Local Variables in Files
     # truncate-lines: t
     # End:
 
-Interactively Do Things
------------------------
+## Interactively Do Things
 
 ### History
 
@@ -685,8 +653,7 @@ Search for a file matching your input:
 
     C-e
 
-Customization Interface
------------------------
+## Customization Interface
 
 [See](http://gnu.org/software/emacs/manual/html_node/emacs/Easy-Customization.html)
 
@@ -699,8 +666,7 @@ Browse settings and change them.
 Creates a customization buffer that shows the top-level Emacs group
 and the second-level groups immediately under it.
 
-Haskell
--------
+## Haskell
 
 ### Load the code into the GHC intepreter
 
@@ -708,8 +674,7 @@ Haskell
 
     C-c C-l
 
-Ibuffer
--------
+## Ibuffer
 
 ### Search all marked buffers
 
@@ -721,16 +686,14 @@ Ibuffer
 * `Q`           query replace in each of the marked buffers
 * `I`           as above, with a regular expression
 
-Undo tree
----------
+## Undo tree
 
 <http://www.dr-qubit.org/undo-tree/undo-tree.el>
 
 * `C-_` `C-/` (`undo-tree-undo`) Undo changes
 * `M-_` `C-?` (`undo-tree-redo`) Redo changes
 
-Compilation
------------
+## Compilation
 
 ### Recompile directory
 
@@ -752,15 +715,13 @@ does not have a `.elc` counterpart.
 
     emacs --batch --eval '(byte-recompile-directory "~/.emacs.d")'
 
-.dir-locals.el
---------------
+## .dir-locals.el
 
 Per-Directory Local Variables
 
 <http://www.gnu.org/software/emacs/manual/html_node/emacs/Directory-Variables.html>
 
-Color themes
-------------
+## Color themes
 
 ### (list-faces-display)
 
@@ -774,8 +735,7 @@ Faces currently used.
 
 Differences between theme A and theme B.
 
-SQL
----
+## SQL
 
 <http://emacsredux.com/blog/2013/06/13/using-emacs-as-a-database-client>
 
@@ -797,8 +757,7 @@ Set `SQL` in buffer with sql query:
 
     sql-send-region
 
-Other
------
+## Other
 
     C-x ;
     C-x l
