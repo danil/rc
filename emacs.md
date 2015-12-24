@@ -2,6 +2,10 @@
 
 # Emacs
 
+## Compile from from source
+
+    ./configure --prefix=$HOME && make --jobs=2 && make install
+
 ## Basics
 
     C-x C-w
