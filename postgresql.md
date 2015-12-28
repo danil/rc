@@ -339,3 +339,24 @@ pgbench -h localhost -p 51000 -c 1000 -C -S -t 1 -U fhirbase -f ./pgbouncer/pgbe
 <http://serverfault.com/questions/128284/how-to-see-active-connections-and-current-activity-in-postgresql-8-4#128292>
 
     SELECT * FROM pg_stat_activity WHERE datname = 'your-db-name';
+
+# Fix PostgreSQL locale
+
+* <http://stackoverflow.com/questions/16736891/pgerror-error-new-encoding-utf8-is-incompatible#16737776>
+* <https://wiki.gentoo.org/wiki/PostgreSQL#Changing_the_Default_Encoding_of_New_Databases>
+* <https://wiki.archlinux.org/index.php/PostgreSQL#Change_default_encoding_of_new_databases_to_UTF-8>
+* <http://www.postgresql.org/message-id/43FE1E65.3030000@genome.chop.edu>
+* <http://www.postgresql.org/docs/current/static/multibyte.html#AEN35730>
+
+```sql
+UPDATE pg_database SET datistemplate = FALSE WHERE datname = 'template1';
+DROP DATABASE template1;
+CREATE DATABASE template1
+       WITH TEMPLATE = template0
+            ENCODING = 'UNICODE'
+            LC_COLLATE='en_US.UTF-8'
+            LC_CTYPE='en_US.UTF-8';
+UPDATE pg_database SET datistemplate = TRUE WHERE datname = 'template1';
+CREATE ROLE fhirbase WITH SUPERUSER LOGIN PASSWORD 'fhirbase';
+CREATE DATABASE fhirbase WITH OWNER fhirbase ENCODING = 'UTF8';
+```
