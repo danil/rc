@@ -277,6 +277,14 @@ List functions in schema `foo`
 
     \df foo.*
 
+# Password file
+
+Save password in `~/.pgpass` file and connect without password prompt:
+
+* <http://www.postgresql.org/docs/current/static/libpq-pgpass.html>
+* <https://wiki.postgresql.org/wiki/Pgpass>
+* <http://dba.stackexchange.com/questions/14740/how-to-use-psql-with-no-password-prompt#14741>
+
 # Current number of connections
 
 Getting the current number of connections in a PostgreSQL
