@@ -174,7 +174,8 @@ when the command is spelled CREATE USER, LOGIN is assumed by default.
 
 ## Create table
 
-    CREATE TABLE test_table (some_id SERIAL, name TEXT, age INTEGER);
+    CREATE TABLE test_table
+      (some_id SERIAL, name varchar(10), bio TEXT, age INTEGER);
 
 ## Describe table
 
