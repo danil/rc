@@ -99,6 +99,23 @@ Create master-old on remote
 
     git symbolic-ref HEAD refs/heads/foo-bar-branch
 
+## Merge pull request
+
+### Step 1
+
+From your project repository, check out a new branch and test the changes.
+
+    git checkout -b contributor-somebranch master
+    git pull https://github.com/contributor/your-repository-name.git somebranch
+
+### Step 2
+
+Merge the changes and update on upstream.
+
+    git checkout master
+    git merge --no-ff contributor-somebranch
+    git push origin master
+
 # Checkout
 
 ## Directory
