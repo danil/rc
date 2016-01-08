@@ -283,6 +283,14 @@ with `/etc/init.d/$ipt` when machine is powered on.
     revdep-rebuild --ignore
     revdep-rebuild --verbose --pretend --library libreadline.so.5
 
+# Set UTC time zone
+
+<https://wiki.gentoo.org/wiki/System_time#Time_zone>
+
+    find /usr/share/zoneinfo -maxdepth 1 -type f -name UTC \
+         -exec sh -c 'echo $(basename {}) > /etc/timezone' \;
+    emerge --config timezone-data
+
 # Other
 
     sudo sh -c "layman --sync-all && emerge --sync && eix-update"
