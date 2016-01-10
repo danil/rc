@@ -288,7 +288,7 @@ with `/etc/init.d/$ipt` when machine is powered on.
 <https://wiki.gentoo.org/wiki/System_time#OpenRC>
 
     find /usr/share/zoneinfo -maxdepth 1 -type f -name UTC \
-         -exec sh -c 'echo $(basename {}) > /etc/timezone' \;
+         -exec sh -c 'echo {} | sed "s|^/usr/share/zoneinfo/||" > /etc/timezone' \;
     emerge --config timezone-data
 
 # Other
