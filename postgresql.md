@@ -174,6 +174,13 @@ List all functions in schema
 
     DROP SCHEMA IF EXISTS your_first_schema, your_second_schema CASCADE
 
+## Default schema
+
+Set a default schema for a session
+<http://www.postgresql.org/message-id/200307222318.58234.barwick@gmx.net>
+
+    SET search_path TO your_schema_name;
+
 # Sequences
 
 ## List
