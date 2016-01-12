@@ -172,7 +172,7 @@ List all functions in schema
 
 <http://www.postgresql.org/docs/current/static/sql-dropschema.html>
 
-    DROP SCHEMA IF EXISTS your_first_schema, your_second_schema CASCADE
+    DROP SCHEMA IF EXISTS your_first_schema, your_second_schema CASCADE;
 
 ## Default schema
 
@@ -212,7 +212,7 @@ List all tables then drop them.
 
     SELECT tablename
     FROM pg_tables
-    WHERE tableowner = 'msls' AND schemaname = 'public'
+    WHERE tableowner = 'msls' AND schemaname = 'public';
 
 ## Add column to table
 
@@ -291,7 +291,7 @@ Enumerated
 
 <http://stackoverflow.com/questions/9535937/is-there-a-way-to-show-a-user-defined-postgresql-enumerated-type-definition#25326877>
 
-    select enum_range(null::my_type)
+    SELECT enum_range(null::my_type);
 
 # List functions
 
