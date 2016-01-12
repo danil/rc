@@ -156,9 +156,23 @@ when the command is spelled CREATE USER, LOGIN is assumed by default.
 
     \dn
 
-## List talbles in schema
+### Tables
+
+List all tables in schema
 
     \dt schema_name.*
+
+### Functions
+
+List all functions in schema
+
+    \df schema_name.*
+
+## Drop
+
+<http://www.postgresql.org/docs/current/static/sql-dropschema.html>
+
+    DROP SCHEMA IF EXISTS your_first_schema, your_second_schema CASCADE
 
 # Sequences
 
