@@ -177,9 +177,10 @@ List all functions in schema
 ## Default schema
 
 Set a default schema for a session
-<http://www.postgresql.org/message-id/200307222318.58234.barwick@gmx.net>
+<http://www.postgresql.org/message-id/200307222318.58234.barwick@gmx.net>,
+<http://www.postgresql.org/docs/current/static/ddl-schemas.html#DDL-SCHEMAS-PATH>.
 
-    SET search_path TO your_schema_name;
+    SET search_path TO "$user",your_schema_name;
 
 # Sequences
 
