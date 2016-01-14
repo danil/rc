@@ -1,10 +1,8 @@
 <!-- -*- coding: utf-8; -*- -->
 
-SSD
-===
+# SSD
 
-TRIM
-----
+## TRIM
 
 Verify support and trim
 
@@ -12,4 +10,4 @@ Verify support and trim
 <http://wiki.gentoo.org/wiki/SSD>
 
     hdparm -I /dev/sda | grep TRIM
-    fstrim -v /
+    fstrim --verbose /
