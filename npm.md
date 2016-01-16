@@ -12,4 +12,6 @@
 
 # n
 
+Node.js version manager
+
     PREFIX=$HOME/n N_PREFIX=$HOME/n make install
