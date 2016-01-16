@@ -9,3 +9,7 @@
 # Search
 
     npm search package-name
+
+# n
+
+    PREFIX=$HOME/n N_PREFIX=$HOME/n make install
