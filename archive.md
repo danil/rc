@@ -49,7 +49,10 @@
 
     zip file-to-archive.zip file-to-archive
     zip --recurse-paths foo.zip foo/
-    unzip foo.zip
+
+### Unzip to directory
+
+    unzip foo.zip -d path/to/directory
 
 ## funzip
 
