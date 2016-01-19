@@ -1,10 +1,8 @@
 <!-- -*- coding: utf-8; -*- -->
 
-Archiving and compression
-=========================
+# Archiving and compression
 
-tar
----
+## tar
 
 ### Read
 
@@ -28,41 +26,35 @@ tar
 
     tar --create --file foo.tar --files-from=mylist.txt
 
-gzip
-----
+## gzip
 
     gzip --verbose access.log
     gzip --decompress access.log.gz
     tar --verbose --extract --gzip --file foobar.tar.gz
 
-bzip2
------
+## bzip2
 
     bzip2 -v access.log
     bzip2 -vd access.log.bz2
     tar --verbose --extract --bzip2 --file foobar.tar.bz2
 
-xz
---
+## xz
 
     xz access.log
     xz --decompress access.log.xz
     tar --extract --xz --file foobar.tar.xz
     pg_dump db_name | xz --compress > path/to/dump_$(date +%Y%m%d%H%M%S).sql.xz
 
-Zip
----
+## Zip
 
     zip file-to-archive.zip file-to-archive
     zip --recurse-paths foo.zip foo/
     unzip foo.zip
 
-funzip
-------
+## funzip
 
     cat archive.zip | funzip
 
-RAR
----
+## RAR
 
     unrar x file.rar
