@@ -1,17 +1,15 @@
 <!-- -*- coding: utf-8; -*- -->
 
-cURL
-====
+# cURL
 
-Only headers
-------------
+## Only headers
 
 <http://stackoverflow.com/questions/3252851/how-to-display-request-headers-with-command-line-curl>
 
     curl --head http://wikipedia.org
 
-Gzipped
--------
+## Gzipped
+
 
     curl "http://example.org" | gunzip
 
@@ -19,8 +17,7 @@ Gzipped
 
     curl --compressed "http://example.org"
 
-Other
------
+## Other
 
     curl --output ruby.png http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/100px-Ruby_logo.svg.png
     curl --verbose --header "Accept-Encoding: gzip" -X HEAD http://example.org
