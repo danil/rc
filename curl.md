@@ -17,6 +17,10 @@
 
     curl --compressed "http://example.org"
 
+## Follow redirect
+
+    curl --location http://example.org
+
 ## Other
 
     curl --output ruby.png http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/100px-Ruby_logo.svg.png
