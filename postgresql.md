@@ -300,6 +300,23 @@ List functions in schema `foo`
 
     \df foo.*
 
+# Quotes
+
+Single and double quotes
+
+## Single quotes
+
+<http://www.postgresql.org/docs/current/static/sql-syntax-lexical.html#SQL-SYNTAX-STRINGS>
+
+Single quotes used for `string constants`. For example: `'This is a string'`.
+
+## Double quotes
+
+<http://www.postgresql.org/docs/current/static/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS>
+
+Single quotes used for `identifiers` (like table names). For example:
+`UPDATE "my_table" SET "a" = 5;`
+
 # Password file
 
 Save password in `~/.pgpass` file and connect without password prompt:
