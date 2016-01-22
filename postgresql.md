@@ -302,6 +302,8 @@ List functions in schema `foo`
 
 # Extensions
 
+<http://www.postgresql.org/docs/current/static/sql-createextension.html>
+
     CREATE EXTENSION IF NOT EXISTS plv8 WITH SCHEMA pg_catalog;
 
 # Quotes
