@@ -300,6 +300,10 @@ List functions in schema `foo`
 
     \df foo.*
 
+# Extensions
+
+    CREATE EXTENSION IF NOT EXISTS plv8 WITH SCHEMA pg_catalog;
+
 # Quotes
 
 Single and double quotes
