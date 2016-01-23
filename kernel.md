@@ -2,6 +2,10 @@
 
 # Linux
 
+## menuconfig
+
+    make menuconfig
+
 ## Compile
 
 * <https://www.gentoo.org/doc/en/handbook/handbook-amd64.xml?style=printable&part=1&chap=7#doc_chap2_sect3>
