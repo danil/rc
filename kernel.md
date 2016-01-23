@@ -4,6 +4,8 @@
 
 ## menuconfig
 
+<https://en.wikipedia.org/wiki/Menuconfig>
+
     make menuconfig
 
 ## Compile
