@@ -1,10 +1,8 @@
 <!-- -*- coding: utf-8; -*- -->
 
-Shell
-=====
+# Shell
 
-Escape single quotes
-====================
+# Escape single quotes
 
 Escape single quotes within single quotes
 <http://stackoverflow.com/questions/1250079/how-to-escape-single-quotes-within-single-quoted-strings>
@@ -12,8 +10,7 @@ Escape single quotes within single quotes
     echo 'Here'"'"'s my test...'
     echo 'Here'\''s my test...'
 
-Count lines
-===========
+# Count lines
 
     ls -x1 /usr/lib | wc -l
 
@@ -21,25 +18,21 @@ Count lines
 
     ls -f | wc -l
 
-Rename
-======
+# Rename
 
-Remove spaces
--------------
+## Remove spaces
 
 Remove spaces from filenames in current directory
 
     rename -n 's/[\s]/''/g' *
 
-To lowercase
-------------
+## To lowercase
 
 Change capitals to lowercase in filenames in current directory
 
     rename 'y/A-Z/a-z/' *
 
-Whitespaces by underscores
---------------------------
+## Whitespaces by underscores
 
 Rename files <http://stackoverflow.com/questions/2709458/bash-script-to-replace-spaces-in-file-names#2709619>.
 
@@ -51,8 +44,7 @@ Rename files <http://stackoverflow.com/questions/2709458/bash-script-to-replace-
 
     find -name "* *" -type f | perl-rename 's/\s/_/g'
 
-Truncate text file
-==================
+# Truncate text file
 
 Blank file content.
 
@@ -60,54 +52,46 @@ Blank file content.
 
     echo > {filename}
 
-Date and time
-=============
+# Date and time
 
     date +%Y%m%d%H%M%S #19700101000000
     date +%z
     date --iso-8601=seconds #2014-08-15T16:40:09+0400
     tzselect #show what value to use for TZ environment variable
 
-Set
----
+## Set
 
     date -s "2008-04-30 08:48:0" # YYYY-mm-dd HH:MM:S (ISO 8601).
     date -s "041501482008" # mmddHHMMYYYY (OpenWRT).
 
-Hardware clock (RTC)
---------------------
+## Hardware clock (RTC)
 
 <http://en.qi-hardware.com/wiki/Ben_NanoNote_TimeZone_Date_and_Calendar_HOWTO>
 
     hwclock --systohc --localtime
 
-ntpdate
--------
+## ntpdate
 
     ntpdate -u -d 192.168.91.2
 
-ntpd
-----
+## ntpd
 
     ntpdc -c sysinfo -n # Stratum 3 is good enough.
     ntpq -c readvar
     ntpq -c peers
 
-env
-===
+# env
 
     env LANG=ru_RU.UTF-8 xedit
     export LANG=ru_RU.KOI8-R
 
-Clear environment
------------------
+## Clear environment
 
 To clear the environment and start bash
 
     env --ignore-environment /bin/bash
 
-ACPI
-====
+# ACPI
 
     grep bogo /proc/cpuinfo
     grep -E "charging|remaining" /proc/acpi/battery/BAT0/state
@@ -119,52 +103,43 @@ ACPI
     cat /proc/cmdline
     zcat /proc/config.gz | grep CONFIG_SYSVIPC
 
-diff
-====
+# diff
 
     colordiff --ignore-space-change postgresql-8.4 ._cfg0000_postgresql-8.4
 
-Compare directories
--------------------
+## Compare directories
 
 <http://linuxcommando.blogspot.com/2008/05/compare-directories-using-diff-in-linux.html>
 
     diff --recursive --brief ~/dir1 ~/dir2| grep Only
     colordiff --recursive prealpha.kutkevich-org/ alpha.kutkevich-org/
 
-Prepare patch
--------------
+## Prepare patch
 
 <http://devmanual.gentoo.org/tools-reference/diff-and-patch>
 
     diff --unified foo.c.~master~ foo.c
 
-Patch
-=====
+# Patch
 
-Apply patch
------------
+## Apply patch
 
 <http://cyberciti.biz/faq/appy-patch-file-using-patch-command/>
 
     patch -p1 < {/path/to/patch/file}
 
-Power Management
-================
+# Power Management
 
     hibernate-ram
     hibernate
 
-Random
-=======
+# Random
 
-String generator
-----------------
+## String generator
 
     dd if=/dev/random bs=1 count=16 |base64
 
-Sorting
-=======
+# Sorting
 
     sort ./file
     cat list-1 list-2 list-3 |sort |uniq > final.list
@@ -178,97 +153,81 @@ Sorting
           --tag Time= \
           unsortedfile > file
 
-Bash history
-============
+# Bash history
 
-Print without line numbers
---------------------------
+## Print without line numbers
 
 <http://stackoverflow.com/questions/7110119/bash-history-without-line-numbers#7110197>.
 
     history | cut -c 8-
 
-Remove duplicates in .bash_history
-----------------------------------
+## Remove duplicates in .bash_history
 
 <http://unix.stackexchange.com/questions/48713/how-can-i-remove-duplicates-in-my-bash-history-preserving-order#48716>
 
     cat ~/.bash_history | nl | sort -k2 -k 1,1nr | uniq -f1 | sort -n | cut -f2
 
-Other
------
+## Other
 
     dd if=/dev/urandom count=1 2> /dev/null \
      | uuencode -m - \
      | sed -ne 2p \
      | cut -c-8
 
-Kernel modules
-==============
+# Kernel modules
 
     lsmod |grep vb
     rmmod vboxdrv
     modprobe vboxdrv
 
-Images
-======
+# Images
 
-View
-----
+## View
 
     feh --draw-filename --sort name --recursive --thumbnails --fullscreen ~/tmp
 
-Character encodings
-===================
+# Character encodings
 
     convmv -f windows-1251 -t utf-8 *.* --notest -r
     iconv --from-code=WINDOWS-1251 --to-code=UTF-8 --output=outfile infile
     dos2unix filename
 
-Find ASCII/UTF-8 text files
----------------------------
+## Find ASCII/UTF-8 text files
 
     ack -g . . |xargs file * |grep UTF
 
-locate
-======
+# locate
 
     locate cvs |grep bin
     updatedb
 
-bwlimit
--------
+## bwlimit
 
 Limit disk I/O
 http://www.cyberciti.biz/faq/throttle-disk-io-rate-limit-disk-io
 
     rsync --delete --numeric-ids --relative --delete-excluded --bwlimit=10000 /path/to/source /path/to/dest/
 
-Job control
-===========
+# Job control
 
 <http://stackoverflow.com/questions/11821378/what-does-bashno-job-control-in-this-shell-mean#11824420>
 
 * `jobs` list running jobs
 *    `%` foreground recently job
 
-Sudo
-====
+# Sudo
 
     sudo -u nobody ls
 
-Su
-==
+# Su
 
-Execute command as another user
--------------------------------
+## Execute command as another user
 
 <http://stackoverflow.com/questions/6905697/how-to-run-script-as-another-user-without-password#6905797>
 
     sudo su -c "ls" -s /bin/sh ftp
 
-DCTC
-====
+# DCTC
 
     dctc -n danil -s /home/danil/tmp/_video/ -f -g worm.interzet.ru:411
     rccp -H dctc-00006D13-worm.interzet.ru:411 -s lalala
@@ -276,15 +235,13 @@ DCTC
     # Create a file of any given size.
     dd if=/dev/zero of=bigfile bs=1024 count=1048576
 
-Wine
-====
+# Wine
 
     cabextract file.cab
     msiexec /i file.msi
     wine start FluffyBunnySetup.msi
 
-Users and groups
-================
+# Users and groups
 
     groups danil
     groupadd danil
@@ -301,73 +258,60 @@ Users and groups
     userdel --remove danil
     grpck
 
-Password
-========
+# Password
 
-Set
----
+## Set
 
     passwd your-user-name
 
-Delete
-------
+## Delete
 
     passwd --delete your-user-name
 
-Other
------
+## Other
 
     deluser --remove-all-files --backup --backup-to /home/danil/ danil
 
-chmod
-=====
+# chmod
 
     chmod -R ug+w ./smarty/templates_c/ ./smarty/cach/
 
-Fix files and directories permissions
--------------------------------------
+## Fix files and directories permissions
 
 <http://superuser.com/questions/126073/chmod-to-allow-read-and-write-permissions-for-directory#126075>
 
     find ./somedir \( -type d -exec chmod u=rwx,g=rx,o=xr {} \; -o -type f -exec chmod u=rw,g=r,o=r {} \; \)
 
-chown
-=====
+# chown
 
     chown --recursive www-data:www-data ./smarty/templates_c/ ./smarty/cache/
 
-ALSA
-====
+# ALSA
 
 ALSA sound cards start with 0, so 0 is the first card, 1 is the second
 card, etc.
 
     alsamixer -c 0
 
-SoX
-===
+# SoX
 
 <http://en.wikipedia.org/wiki/SoX>.
 
-Play audio in background via command line
------------------------------------------
+## Play audio in background via command line
 
 <http://askubuntu.com/questions/176038/how-can-i-play-a-song-in-the-background-via-my-command-line#176046>.
 
     play -q --no-show-progress ~/local/share/sounds/complete.oga &
 
-CentOS
-======
+# CentOS
 
     setup
 
-nginx
-=====
+# nginx
 
     nginx -t -c nginx.conf
 
-Apache
-======
+# Apache
 
     htpasswd -c /home/danil/.htpasswd danil
     apache2ctl -t -D DUMP_MODULES # Show the loaded modules.
@@ -376,50 +320,43 @@ Apache
     a2ensite kutkevich.org
     a2dissite example.org
 
-ab
-==
+# ab
 
     ab -kc 10 -t 30 http://kutkevich.org
 
-httperf
-=======
+# httperf
 
     httperf --num-conns 10 --rate 120 \
             --server kutkevich.org --port 80 --uri /index.html
     httperf --num-conns 10 --rate 120 \
             --server kutkevich.org --port 80 --wsesslog=10,1,wsesslog_ska
 
-siege
-=====
+# siege
 
     siege --concurrent=1 --reps=1 --verbose \
           --log=$HOME/siege.log --file=$HOME/siege-urls \
           --header="Cookie: ring-session=00000000-0000-0000-0000-000000000000"
 
-iptables
-========
+# iptables
 
     iptables -L traffic -vx
     iptables -t nat -A POSTROUTING -o eth0 \
              -s 192.168.0.202/32 -j MASQUERADE
 
-Fail2ban
-========
+# Fail2ban
 
 <http://wiki.gentoo.org/wiki/Fail2ban#Interacting>.
 
     fail2ban-client status
     fail2ban-client status ssh-iptables
 
-Unban
------
+## Unban
 
 <http://serverfault.com/questions/285256/how-to-unban-an-ip-properly-with-fail2ban#475117>.
 
     fail2ban-client set ssh-iptables unbanip 188.134.8.88
 
-mpd
-====
+# mpd
 
     mpc clear
     mpd --create-db
@@ -428,16 +365,13 @@ mpd
     mpc play
     mpc save p
 
-GTK
-===
+# GTK
 
-dconf
------
+## dconf
 
     dconf write /org/gnome/shell/overrides/button-layout "'close,minimize,maximize:'"
 
-gconf
------
+## gconf
 
     gconftool-2 --set /apps/nautilus/desktop/computer_icon_visible --type boolean false
     gconftool-2 --set /desktop/gnome/url-handlers/http/command --type string 'firefox %s'
@@ -445,49 +379,41 @@ gconf
     gconftool-2 --set /apps/metacity/general/button_layout --type string 'close,minimize,maximize:'
     gconftool-2 --set /desktop/gnome/shell/windows/button_layout --type string "close,minimize,maximize:"
 
-upsc
-====
+# upsc
 
 Network UPS Tools (NUT) <http://en.gentoo-wiki.com/wiki/NUT>.
 
     upsc ippon@localhost
 
-Keyboard shortcut
-=================
+# Keyboard shortcut
 
 * `C-r` reverse search history
 * `C-s` pausing all output on the terminal
 * `C-q` resume output on the terminal
 
-Files
-=====
+# Files
 
     /etc/acpi/actions/suspend.sh
 
-VirtualBox
-==========
+# VirtualBox
 
     mount -t vboxsf -o uid=1000,gid=1000 share ~/mnt/share
     VBoxManage clonevdi xp_ie7.vdi xp_ie8.vd
 
 
-Puppet
-======
+# Puppet
 
     puppet puppet.pp
 
-Converting flac to mp3
-======================
+# Converting flac to mp3
 
 <http://linuxtutorialblog.com/post/solution-converting-flac-to-mp3>
 
     for file in *.flac; do flac -cd "$file" | lame -h - "${file%.flac}.mp3"; done
 
-Hashing
-=======
+# Hashing
 
-MD5
----
+## MD5
 
 ### Create
 
@@ -498,53 +424,44 @@ MD5
     md5sum --check ./file
     echo '1539bad48e984ae1441052dc074c0995  /dev/hdc' | md5sum --check
 
-SHA-1
------
+## SHA-1
 
 ### Check
 
     echo '26733b170052a01eb48ed2d5495a5cb51c00bdd0 /dev/hdc' | sha1sum --check
 
-cp
-==
+# cp
 
-Preserving directory path
--------------------------
+## Preserving directory path
 
 Copy file preserving directory path
 <http://serverfault.com/questions/180853/how-to-copy-file-preserving-directory-path-in-linux#180870>.
 
     cp --parents foo/123/bar/abc.xml foo/321/baz/xyz.html .
 
-Other
------
+## Other
 
     cp -a ~/var/www/ ~/tmp/
 
-Get release version
-===================
+# Get release version
 
 Release version compliant to Linux Standard Base (LSB)
 
     lsb_release --all
 
-ls
-==
+# ls
 
 <http://en.wikipedia.org/wiki/Ls>
 
-Newest first
-------------
+## Newest first
 
     ls -ltc --all
 
-Recurse into subdirectories
----------------------------
+## Recurse into subdirectories
 
     ls --recursive
 
-nohup
-=====
+# nohup
 
 <http://en.wikipedia.org/wiki/Nohup>
 
@@ -552,15 +469,13 @@ Start a process in the background and have it keep running after you log off
 
     nohup ./scripts/bootstrap.sh &
 
-watch
-=====
+# watch
 
 <http://en.wikipedia.org/wiki/Watch_(Unix)>
 
     watch --differences 'ps -aux | grep chrom'
 
-Other
-=====
+# Other
 
     mkdir ~/root/{var/{db/pkg,paludis/distfiles,cache/paludis/{names_cache,write_cache},tmp/paludis}
     uname -a
