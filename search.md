@@ -1,8 +1,6 @@
-Search
-======
+# Search
 
-Google
-------
+## Google
 
 ### URL
 
@@ -12,8 +10,7 @@ Google
 
 `http://suggestqueries.google.com/complete/search?output=firefox&client=firefox&hl=en-US&q={s}`
 
-Wikipedia
----------
+## Wikipedia
 
 ### URL
 
@@ -23,8 +20,7 @@ Wikipedia
 
 `http://en.wikipedia.org/w/api.php?action=opensearch&search={s}`
 
-Википедия
----------
+## Википедия
 
 ### URL
 
@@ -34,8 +30,7 @@ Wikipedia
 
 `http://ru.wikipedia.org/w/api.php?action=opensearch&search={s}`
 
-Яндекс
-------
+## Яндекс
 
 ### URL
 
@@ -45,23 +40,20 @@ Wikipedia
 
 `http://suggest.yandex.ru/suggest-ff.cgi?part={s}`
 
-Gentoo Wiki
------------
+## Gentoo Wiki
 
 ### URL
 
 `http://en.gentoo-wiki.com/wiki/Special:Search?search={s}`
 
 
-Gentoo Packages
----------------
+## Gentoo Packages
 
 ### URL
 
 `http://www.google.com/search?q=site%3Apackages.gentoo.org%20{s}`
 
-Gentoo Bugs
------------
+## Gentoo Bugs
 
 ### URL
 

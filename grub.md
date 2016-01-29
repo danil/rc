@@ -1,15 +1,12 @@
-GRUB2
-=====
+# GRUB2
 
-Configuration
--------------
+## Configuration
 
 <http://wiki.gentoo.org/wiki/GRUB2#Configuration>
 
     grub2-mkconfig -o /boot/grub/grub.cfg
 
-Font
-----
+## Font
 
 <http://wiki.gentoo.org/wiki/GRUB2#Configuration>
 

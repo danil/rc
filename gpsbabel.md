@@ -1,8 +1,6 @@
-GPSBabel
-========
+# GPSBabel
 
-Reduce track points
--------------------
+## Reduce track points
 
 <http://gpsbabel.org/htmldoc-development/filter_simplify.html>
 

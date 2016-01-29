@@ -1,9 +1,7 @@
-Zsh
-===
+# Zsh
 
 Z shell
 
-Other
------
+## Other
 
 `bindkey` list all key bindings

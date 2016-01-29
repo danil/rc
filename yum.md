@@ -1,5 +1,4 @@
-YUM
-===
+# YUM
 
 Yellowdog Updater Modified
 

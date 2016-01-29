@@ -1,5 +1,4 @@
-Subversion
-==========
+# Subversion
 
     svnadmin create --fs-type fsfs /var/lib/svn/gamecard
     svn list svn+ssh://var/lib/svn/hello_rails/trunk/

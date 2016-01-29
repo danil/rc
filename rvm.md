@@ -1,20 +1,16 @@
-Ruby Version Manager
-====================
+# Ruby Version Manager
 
 <http://rvm.beginrescueend.com>
 
-Install
--------
+## Install
 
     bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)
 
-Upgrading RVM
--------------
+## Upgrading RVM
 
     rvm get latest
 
-Other
------
+## Other
 
     rvm list known
     rvm --force install 1.9.2
@@ -22,8 +18,7 @@ Other
     rvm info
     rvm use 1.9.2@danil --default
 
-Gemset
-------
+## Gemset
 
     rvm gemset create gemset_foo
     rvm use 1.8.7@gemset_foo

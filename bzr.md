@@ -1,4 +1,3 @@
-Bazaar
-======
+# Bazaar
 
     bzr branch lp:wicd

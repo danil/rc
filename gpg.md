@@ -1,20 +1,16 @@
-GNU Privacy Guard
-=================
+# GNU Privacy Guard
 
-Encrypt
--------
+## Encrypt
 
     cat file | bzip2 --stdout | gpg --recipient danil --encrypt > file.bz2.gpg
 
-Decrypt
--------
+## Decrypt
 
     cat file.bz2.gpg \
       | gpg --recipient danil --decrypt \
       | bzip2 --decompress --stdout > file
 
-Other
------
+## Other
 
     gpg --keyserver subkeys.pgp.net --recv-keys 17072058
     gpg --verify <signature file> <downloaded iso>

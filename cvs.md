@@ -1,5 +1,4 @@
-CVS
-===
+# CVS
 
     cvs -d /home/cvs/cvsroot/ init
     cvs -d :ext:danil@192.168.91.2:/home/cvs/cvsroot/ import \
@@ -17,7 +16,6 @@ CVS
     cvs log -S -d"2008-07-22 23:00<2008-07-24 20:00" \
             -wdanil hello.c > cvs_log
 
-Recursively delete CVS directories
-----------------------------------
+## Recursively delete CVS directories
 
     find ./ -depth -name 'CVS' -exec rm -rf '{}' \;

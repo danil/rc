@@ -1,5 +1,4 @@
-Aptitude
-========
+# Aptitude
 
     aptitude --prompt clean
     aptitude --prompt full-upgrade
@@ -9,29 +8,24 @@ Aptitude
                       | less --chop-long-lines --ignore-case
     aptitude show catdoc
 
-Upgrade
-=======
+# Upgrade
 
 Upgrades installed packages to their most recent version
 
     aptitude update
     aptitude --prompt safe-upgrade
 
-Install
-=======
+# Install
 
     aptitude install indicator-brightness
 
-Uninstall
-=========
+# Uninstall
 
     aptitude remove indicator-brightness
 
-Search
-======
+# Search
 
-Installed
----------
+## Installed
 
 <http://unix.stackexchange.com/questions/104374/how-to-show-only-installed-packages-by-executing-aptitude-search#104388>
 
@@ -41,8 +35,7 @@ Installed
 
     aptitude search '~i ~d ^emacs'
 
-Not installed
--------------
+## Not installed
 
 <http://unix.stackexchange.com/questions/104374/how-to-show-only-installed-packages-by-executing-aptitude-search#104388>
 

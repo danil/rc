@@ -1,8 +1,6 @@
-Quicklisp
-=========
+# Quicklisp
 
-Search
-------
+## Search
 
     (ql:system-apropos "package-name")
 
@@ -14,12 +12,10 @@ Search
 
     (ql:system-apropos "")
 
-Remove
-------
+## Remove
 
     (use-package :ql-dist) (uninstall (release "package-name"))
 
-Install
--------
+## Install
 
     (ql:quickload "package-name")

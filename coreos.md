@@ -1,5 +1,4 @@
-CoreOS
-======
+# CoreOS
 
     coreos-cloudinit --from-file=./cloud-config.yaml
     curl http://111.222.0.1:4001/v1/keys/_coreos.com/fleet/states
@@ -7,8 +6,7 @@ CoreOS
     etcdctl get /coreos.com/network/config
     journalctl --unit=etcd
 
-fleetctl
-========
+# fleetctl
 
 <https://www.digitalocean.com/community/tutorials/how-to-use-fleet-and-fleetctl-to-manage-your-coreos-cluster#basic-machine-management-commands>
 
@@ -25,16 +23,14 @@ fleetctl
     fleetctl journal --lines 20 foo.service
     fleetctl destroy foo.service
 
-IPs
-===
+# IPs
 
 Get public and private IPs form running system
 <https://www.digitalocean.com/community/tutorials/how-to-use-fleet-and-fleetctl-to-manage-your-coreos-cluster#basic-machine-management-commands>
 
     cat /etc/environment
 
-Discovery URL
-=============
+# Discovery URL
 
 Get discovery URL form running system
 <https://www.digitalocean.com/community/tutorials/how-to-set-up-a-coreos-cluster-on-digitalocean#adding-new-machines>

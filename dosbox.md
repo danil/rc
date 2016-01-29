@@ -1,10 +1,8 @@
-DOSBox
-======
+# DOSBox
 
 Full screen `Alt + Enter`
 
-Failed to open alsa seq
------------------------
+## Failed to open alsa seq
 
 Log:
 

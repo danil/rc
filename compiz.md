@@ -1,8 +1,6 @@
-Compiz
-======
+# Compiz
 
-Temporary files
----------------
+## Temporary files
 
 ### Window decorations
 

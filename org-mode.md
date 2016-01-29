@@ -1,7 +1,5 @@
-org-mode
-========
+# org-mode
 
-(org-sort)
-----------
+## (org-sort)
 
     C-c ^

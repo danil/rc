@@ -1,8 +1,6 @@
-Mutt
-====
+# Mutt
 
-change-folder
--------------
+## change-folder
 
     c
 

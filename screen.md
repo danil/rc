@@ -1,5 +1,4 @@
-GNU Screen
-==========
+# GNU Screen
 
     screen btdownloadcurses some.torrent
     screen new -s debian-torrent
@@ -7,8 +6,7 @@ GNU Screen
     screen -RD
     screen -x debian_torrent #reconnect to screen
 
-Scrollback or copy mode
------------------------
+## Scrollback or copy mode
 
 <http://superuser.com/questions/138748/how-to-scroll-up-and-look-at-data-in-gnu-screen>.
 

@@ -1,11 +1,9 @@
-Lua
-===
+# Lua
 
     lua -lluarocks.require
     require "luarocks.require"
 
-[Date with time zone][]
----------------------
+## [Date with time zone][]
 
 * [Discussion](http://lua-users.org/lists/lua-l/2008-03/msg00050.html)
 * [Wiki page][Date with time zone]
@@ -13,20 +11,16 @@ Lua
 
 [Date with time zone]: http://lua-users.org/wiki/TimeZone
 
-LuaRocks
-========
+# LuaRocks
 
-Install
--------
+## Install
 
     luarocks install kepler-xavante KEPLER_WEB=/var/www/kepler
 
-Search
-------
+## Search
 
     luarocks search wsapi
 
-Lists installed
----------------
+## Lists installed
 
     luarocks list wsapi

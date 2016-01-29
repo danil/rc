@@ -1,8 +1,6 @@
-Bluetooth
-=========
+# Bluetooth
 
-Enabled adapter
----------------
+## Enabled adapter
 
 ### rfkill
 
@@ -12,7 +10,6 @@ Enabled adapter
     rfkill list
     rfkill unblock <index>|<type>
 
-Power on
---------
+## Power on
 
     bluetoothctl

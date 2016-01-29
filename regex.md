@@ -1,32 +1,25 @@
-Regular expressions
-===================
+# Regular expressions
 
-Lookahead
-=========
+# Lookahead
 
 <http://www.regular-expressions.info/lookaround.html#lookahead>
 
-Positive
----------
+## Positive
 
     foo(?=bar)
 
-Negative
---------
+## Negative
 
     foo(?!bar)
 
-Lookbehind
-==========
+# Lookbehind
 
 <http://www.regular-expressions.info/lookaround.html#lookbehind>
 
-Positive
----------
+## Positive
 
     (?<=bar)foo
 
-Negative
---------
+## Negative
 
     (?<!bar)foo

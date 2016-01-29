@@ -1,5 +1,4 @@
-dpkg
-====
+# dpkg
 
 Debian package
 
@@ -11,25 +10,21 @@ Debian package
     dpkg --extract xlibs_4.3.0.dfsg.1-14sarge7_all.deb ./
     dpkg-scanpackages
 
-Package version
-===============
+## Package version
 
     dpkg --status emacs21-nox
 
-Install
-=======
+## Install
 
 <http://cyberciti.biz/faq/ubuntu-linux-how-do-i-install-deb-packages>
 
     dpkg --install google-talkplugin_current_amd64.deb
 
-Remove
-======
+## Remove
 
     dpkg --remove google-talkplugin_current_amd64.deb
 
-Files belongs to package
-========================
+## Files belongs to package
 
 <http://askubuntu.com/questions/32507/how-do-i-get-a-list-of-installed-files-from-a-package#32509>
 

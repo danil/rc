@@ -1,8 +1,6 @@
-Gnus
-====
+# Gnus
 
-2.19.4 File Commands
---------------------
+## 2.19.4 File Commands
 
 ### gnus-group-save-newsrc
 
@@ -11,8 +9,7 @@ Gnus
 Save the .newsrc.eld file (and .newsrc if wanted). If given a prefix,
 force saving the file(s) whether Gnus thinks it is necessary or not.
 
-3.7.4 Setting Marks
--------------------
+## 3.7.4 Setting Marks
 
 <http://gnus.org/manual/gnus_80.html>
 

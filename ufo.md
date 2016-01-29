@@ -1,10 +1,8 @@
-UFO: Enemy unknown
-==================
+# UFO: Enemy unknown
 
-Research tree
-=============
+# Research tree
 
-### Laser Weapons
+## Laser Weapons
 
     Laser Weapons  (tech breakthrough)
       |
@@ -19,7 +17,7 @@ Research tree
       |
     Laser Defense
 
-### Plasma Weapons
+## Plasma Weapons
 
     Heavy Plasma               Plasma Rifle
          |    Heavy Plasma Clip   |  Plasma Rifle Clip
@@ -35,7 +33,7 @@ Research tree
 
 * New Fighter Craft must also be researched before you can build hovertanks
 
-### Fusion Weapons
+## Fusion Weapons
 
     Blaster Launcher    Blaster Bomb
                 |___________|
@@ -60,7 +58,7 @@ Research tree
                        |
                   Flying Suit
 
-### Craft
+## Craft
 
     Alien    Elerium        UFO            UFO
     Alloys      115     Power Source   Navigation
@@ -80,7 +78,7 @@ Research tree
 
 * New Fighter Craft must be researched before you can build hovertanks
 
-### Psionics
+## Psionics
 
     Any Live Psionic Alien
       |
@@ -89,13 +87,13 @@ Research tree
       |       |
     Psi-Amp Mind Shield
 
-### Hyper-Wave Decoder
+## Hyper-Wave Decoder
 
     Any Live Alien Navigator
       |
     Hyper-wave Decoder
 
-### Endgame
+## Endgame
 
 These research topics must be completed in order to travel to Cydonia
 and finish the game.

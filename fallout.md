@@ -1,14 +1,11 @@
-Fallout
-=======
+# Fallout
 
-Traits
-------
+## Traits
 
 * Fast Shot
 * Gifted
 
-Statistics
-----------
+## Statistics
 
     Strength     6 + 1 (o)                  + 3 (power armour) = 10
     Perception   5 + 1 (o)                                     = 6
@@ -18,13 +15,11 @@ Statistics
     Agility      9 + 1 (o)                                     = 10
     Luck         9 + 1 (talking with fortune teller in Adytum) = 10
 
-Skills
-------
+## Skills
 
 * Unarmed
 
-Perks
------
+## Perks
 
                                   Level ST PE EN CH IN AG LU
     Bonus HtH Damage (+2 MD)   x3   3    6              6    3,9,12

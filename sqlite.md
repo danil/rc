@@ -1,23 +1,18 @@
-SQLite
-======
+# SQLite
 
-List tables
------------
+## List tables
 
     .tables
 
-Described table
----------------
+## Described table
 
     .schema your_table_name
 
-Execute query
--------------
+## Execute query
 
     sqlite3 db/development.sqlite3 "SELECT version FROM schema_migrations;"
 
-Dump
-----
+## Dump
 
     sqlite3 db/development.sqlite3 < dump.sql
     sqlite3 db/development.sqlite3 .dump > dump.sql

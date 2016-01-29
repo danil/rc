@@ -1,8 +1,6 @@
-Xfce
-====
+# Xfce
 
-Troubleshooting
----------------
+## Troubleshooting
 
 # Disable window roll-up
 

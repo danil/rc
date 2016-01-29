@@ -1,5 +1,4 @@
-RTorrent
-========
+# RTorrent
 
 `backspace` Add torrent using an URL or file path. Use tab to view
   directory content and do auto-complete. Also, wildcards can be

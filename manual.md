@@ -1,20 +1,16 @@
-Manuals
-=======
+# Manuals
 
-man
----
+## man
 
     man 1 -L en -P "less -I" ls
     man -k sex
     man share/man/man1/ruby.1
 
-whatis
-------
+## whatis
 
     whatis man
 
-apropos
--------
+## apropos
 
 <http://en.wikipedia.org/wiki/Apropos_(Unix)>
 

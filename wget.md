@@ -1,5 +1,4 @@
-Wget
-====
+# Wget
 
     wget ftp://anonymous@kutkevich.org/pub/ruby-1.8.7-p72.tar.gz
     wget -c -t inf --waitretry=30 -b --retry-connrefused \
@@ -9,8 +8,7 @@ Wget
          --reject "robots.txt" \
          http://localhost:3000/maillists-invitations-contractor.html
 
-Recursive
----------
+## Recursive
 
     wget --recursive \
          --level=999 \

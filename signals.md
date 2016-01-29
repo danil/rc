@@ -1,20 +1,16 @@
-Signals
-=======
+# Signals
 
-List processes
---------------
+## List processes
 
     ps auxf
 
-pkill
------
+## pkill
 
 Kill process by matched command regex
 
     pkill --full command-match-regex
 
-Logout user
------------
+## Logout user
 
 Kick them out
 

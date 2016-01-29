@@ -1,7 +1,6 @@
-Reference cards
-===============
+# Reference cards
 
-Copyright (C) 2014 Danil Kutkevich <danil@kutkevich.org>
+Copyright (C) 2016 Danil Kutkevich <danil@kutkevich.org>
 
 This reference cards is licensed under the Creative Commons
 Attribution-Share Alike 3.0 Unported License. To view a copy of this
