@@ -1,5 +1,3 @@
-<!-- -*- coding: utf-8; -*- -->
-
 # Passwords
 
 <https://wiki.gentoo.org/wiki/Password_management_tools>

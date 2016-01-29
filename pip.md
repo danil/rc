@@ -1,5 +1,3 @@
-<!-- -*- coding: utf-8; -*- -->
-
 # pip
 
 Python packages management system

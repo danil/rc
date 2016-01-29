@@ -1,5 +1,3 @@
-<!-- -*- coding: utf-8; -*- -->
-
 # bpkg
 
 Lightweight bash package manager

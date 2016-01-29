@@ -1,5 +1,3 @@
-<!-- -*- coding: utf-8; -*- -->
-
 # Compilation
 
     su -c make -f Makefile.cvs install

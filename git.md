@@ -1,5 +1,3 @@
-<!-- -*- coding: utf-8; -*- -->
-
 # Git
 
     git config --global user.name "John Doe"

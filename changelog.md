@@ -1,5 +1,3 @@
-<!-- -*- coding: utf-8; -*- -->
-
 # changelog
 
 * <https://en.wikipedia.org/wiki/Changelog>

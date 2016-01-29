@@ -1,5 +1,3 @@
-<!-- -*- coding: utf-8; -*- -->
-
 # Travis CI
 
 Command line interface (CLI) for Travis CI (install via RubyGems)

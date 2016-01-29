@@ -1,5 +1,3 @@
-<!-- -*- coding: utf-8; -*- -->
-
 # Fail2ban
 
 <http://wiki.gentoo.org/wiki/Fail2ban#Interacting>.

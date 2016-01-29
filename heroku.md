@@ -1,5 +1,3 @@
-<!-- -*- coding: utf-8; -*- -->
-
 # Heroku
 
 * <https://devcenter.heroku.com/articles/how-heroku-works>

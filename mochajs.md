@@ -1,5 +1,3 @@
-<!-- -*- coding: utf-8; -*- -->
-
 # Mocha
 
 Mocha JavaScript test framework

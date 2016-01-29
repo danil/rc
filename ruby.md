@@ -1,5 +1,3 @@
-<!-- -*- coding: utf-8; -*- -->
-
 # Activesupport
 
 <http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html>.

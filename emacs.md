@@ -1,5 +1,3 @@
-<!-- -*- coding: utf-8; -*- -->
-
 # Emacs
 
 ## Compile from from source

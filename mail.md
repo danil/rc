@@ -1,5 +1,3 @@
-<!-- -*- coding: utf-8; -*- -->
-
 # Mail
 
 <http://debian-administration.org/article/171/Send_an_HTML_file_as_email_from_the_command_line>

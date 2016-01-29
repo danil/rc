@@ -1,5 +1,3 @@
-<!-- -*- coding: utf-8; -*- -->
-
 # Search and replace
 
 # grep

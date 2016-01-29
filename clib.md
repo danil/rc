@@ -1,5 +1,3 @@
-<!-- -*- coding: utf-8; -*- -->
-
 # clib
 
 C package manager-ish <https://github.com/clibs/clib>

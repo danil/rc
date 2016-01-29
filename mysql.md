@@ -1,5 +1,3 @@
-<!-- -*- coding: utf-8; -*- -->
-
 # MySQL
 
     mysql -h 192.168.1.2 -u danil [-p] -t danil_test \

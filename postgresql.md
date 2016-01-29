@@ -1,5 +1,3 @@
-<!-- -*- coding: utf-8; -*- -->
-
 # PostgreSQL
 
     psql --host=kutkevich.org.ru --username=your_role_name --dbname=mydb
