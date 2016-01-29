@@ -1,27 +1,22 @@
 <!-- -*- coding: utf-8; -*- -->
 
-VirtualBox
-==========
+# VirtualBox
 
 Host IP 10.0.2.2
 
-vms
-===
+# vms
 
 Virtual machines
 
-List
-----
+## List
 
     vboxmanage list vms
 
-Delete
-------
+## Delete
 
     vboxmanage unregistervm my-virtual-machine-name --delete
 
-Clone
------
+## Clone
 
 Clone a virtual machine
 
