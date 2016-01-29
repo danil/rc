@@ -10,14 +10,17 @@ Virtual machines
 
 ## List
 
-    vboxmanage list vms
+    VBoxManage list vms
 
 ## Delete
 
-    vboxmanage unregistervm my-virtual-machine-name --delete
+<http://unix.stackexchange.com/questions/28611/how-to-automatically-start-and-shut-down-virtualbox-machines#answer-29384>
+
+    VBoxManage controlvm your-virtual-machine-name poweroff
+    VBoxManage unregistervm your-virtual-machine-name --delete
 
 ## Clone
 
 Clone a virtual machine
 
-    vboxmanage clonehd image.vdi --format VDI ~/source-image.vdi
+    VBoxManage clonehd image.vdi --format VDI ~/source-image.vdi
