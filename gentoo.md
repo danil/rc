@@ -173,9 +173,7 @@ WARNING: Avoid using eclean!
 * <https://wiki.gentoo.org/wiki/Knowledge_Base:Remove_obsoleted_distfiles>
 * <https://wiki.gentoo.org/wiki/Eclean>
 * <https://wiki.gentoo.org/wiki/Kernel/Removal>
-* <http://en.gentoo-wiki.com/wiki/Freeing_Up_Disk_Space>
 
-    eclean-dist
     eclean distfiles
 
 <http://en.gentoo-wiki.com/wiki/Freeing_Up_Disk_Space#Removing_Ancient_Distfiles_and_Binaries>
