@@ -379,9 +379,10 @@ Getting the current number of connections in a PostgreSQL
 
 <http://www.postgresql.org/docs/current/static/pgbench.html>
 
-pgbench -h localhost -p 51000 -c 1000 -C -S -t 1 -U fhirbase -f ./pgbouncer/pgbench.sql foobar
+    pgbench -h localhost -p 51000 -c 1000 -C -S -t 1 \
+            -U your_role_name -f ./pgbouncer/pgbench.sql your_db_name
 
-    PGPASSWORD=fhirbase \
+    PGPASSWORD=your-password \
       pgbench -h localhost -p 5433 -U your_role_name \
               -c 100 -C -d -S -t 1000 \
               -f path/to/file.sql your_db_name
@@ -409,6 +410,6 @@ CREATE DATABASE template1
             LC_COLLATE='en_US.UTF-8'
             LC_CTYPE='en_US.UTF-8';
 UPDATE pg_database SET datistemplate = TRUE WHERE datname = 'template1';
-CREATE ROLE fhirbase WITH SUPERUSER LOGIN PASSWORD 'fhirbase';
-CREATE DATABASE fhirbase WITH OWNER fhirbase ENCODING = 'UTF8';
+CREATE ROLE your_role_name WITH SUPERUSER LOGIN PASSWORD 'your-password';
+CREATE DATABASE your_db_name WITH OWNER your_role_name ENCODING = 'UTF8';
 ```
