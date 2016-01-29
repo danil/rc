@@ -23,3 +23,8 @@
 ## Negative
 
     (?<!bar)foo
+
+## Catastrophic backtracking
+
+<http://stackoverflow.com/questions/8010005/python-re-infinite-execution>
+<https://habrahabr.ru/post/131915/>
