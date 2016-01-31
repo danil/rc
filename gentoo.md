@@ -62,6 +62,7 @@ same as:
 ## Packages depends on package
 
 List packages depends on package `your-package/name`
+<https://wiki.gentoo.org/wiki/Equery#Listing_all_packages_depending_on_a_package_with_depends_.28d.29>
 
     equery depends your-package/name
 
