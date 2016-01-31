@@ -59,6 +59,12 @@ same as:
 
     qfile /usr/share/fonts/misc/9x18.pcf.gz
 
+## Packages depends on package
+
+List packages depends on package `your-package/name`
+
+    equery depends your-package/name
+
 # Portage-utils
 
     qsize emacs
