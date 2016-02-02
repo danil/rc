@@ -258,6 +258,16 @@ group of duplicates).
     SELECT DISTINCT ON (my_column_name) my_column_name FROM my_table_name;
     SELECT DISTINCT my_column_name FROM my_table_name;
 
+## Conditional
+
+### Exclude list
+
+<http://www.postgresql.org/docs/current/static/functions-comparisons.html#AEN20298>
+<http://www.postgresql.org/docs/current/static/functions.html>
+
+    SELECT * FROM your_table_name
+    WHERE id NOT IN (1, 2, 3);
+
 # Current date
 
     mydb=> SELECT current_date;
