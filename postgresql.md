@@ -331,6 +331,11 @@ Single quotes used for `string constants`. For example: `'This is a string'`.
 Single quotes used for `identifiers` (like table names). For example:
 `UPDATE "my_table" SET "a" = 5;`
 
+### Key words
+
+Key words should be escaped (for example if used as table name or column name)
+<http://www.postgresql.org/docs/current/static/sql-keywords-appendix.html#KEYWORDS-TABLE>
+
 # Password file
 
 Save password in `~/.pgpass` file and connect without password prompt:
