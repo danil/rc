@@ -528,6 +528,12 @@ You have three steps there:
 
     git log --name-only
 
+## Search commit message
+
+<http://stackoverflow.com/questions/7124914/how-to-search-a-git-repository-by-commit-message#7124949>
+
+    git log --grep='your-desired-feature'
+
 # Search file in all commits
 
 Search file name in all commits history
