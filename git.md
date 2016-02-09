@@ -514,7 +514,7 @@ You have three steps there:
 
 ## By file type
 
-    git log -- '*.coffee'
+    git log -- '*.txt'
 
 ## Git tree in terminal
 
