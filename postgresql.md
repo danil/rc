@@ -192,6 +192,14 @@ Set a default schema for a session
 
     \dt [PATTERN] (add "+" for more detail)
 
+### SQL
+
+List tables by SQL
+
+    SELECT * from information_schema.tables
+    WHERE table_name LIKE '%your_table_name%'
+          AND table_schema = current_schema();
+
 ## Create table
 
     CREATE TABLE test_table
