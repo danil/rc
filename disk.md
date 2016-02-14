@@ -75,6 +75,14 @@ Copy ISO image to bootable usb
     dd if=bootldr.rom of=/dev/sdb
     dd if=debian-eeepc.img of=/dev/sdf
 
+# Free space
+
+Find and close process/program wich open removed files.
+Space will not be freed until they are closed.
+<http://unix.stackexchange.com/questions/34140/tell-fs-to-free-space-from-deleted-files-now#34143>
+
+    lsof | grep deleted
+
 # Other
 
     bchunk Dungeon_Keeper.BIN Dungeon_Keeper.cue Dungeon_Keeper.iso
