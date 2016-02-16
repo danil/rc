@@ -463,10 +463,18 @@ You have three steps there:
     git am --reject guarantee-with-admin.patch
     git am --abort
 
+# Cherry-pick
+
+    git cherry-pick 92117a11fdfdb75a72dd8d3f1c5f25800e827589
+
+### Abort
+
+    git cherry-pick --abort
+
 # Rebase
 
     git fetch
-    git rebase
+    git rebase --keep-empty
 
 ## Conflict
 
@@ -673,5 +681,4 @@ Merge two repositories with history
     git commit -a -m 'Some commit.'
     git cat-file blob HEAD^:htdocs/bookmarks/index.md
     git fsck
-    git cherry-pick 92117a11fdfdb75a72dd8d3f1c5f25800e827589
     git blame production ~/src/vendor/avers/prohq/app/views/layouts/project.html.haml
