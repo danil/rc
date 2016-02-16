@@ -467,7 +467,7 @@ You have three steps there:
 
     git cherry-pick 92117a11fdfdb75a72dd8d3f1c5f25800e827589
 
-### Abort
+## Abort
 
     git cherry-pick --abort
 
