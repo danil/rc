@@ -209,6 +209,12 @@ List tables by SQL
 
     \d some_table
 
+### SQL
+
+    SELECT column_name, data_type, character_maximum_length
+    FROM INFORMATION_SCHEMA.COLUMNS
+    WHERE table_name = 'your-table-name';
+
 ## Drop table
 
     DROP TABLE schema_migrations, products;
