@@ -212,7 +212,7 @@ List tables by SQL
 ### SQL
 
     SELECT column_name, data_type, character_maximum_length
-    FROM INFORMATION_SCHEMA.COLUMNS
+    FROM information_schema.columns
     WHERE table_name = 'your-table-name';
 
 ## Drop table
