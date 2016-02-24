@@ -52,7 +52,7 @@ Push from local repository to independent remote repository
 <http://book.git-scm.com/3_basic_branching_and_merging.html>
 
     git checkout production
-    git branch -a
+    git branch --all
     git merge production
     git branch breadcrumbs-1423
 
