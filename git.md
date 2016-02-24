@@ -660,7 +660,7 @@ Merge two repositories with history
 
     git clone /var/git/foo.git
     git remote add --fetch bar /var/git/bar.git
-    git merge --strategy=ours --no-commit bar/master
+    git merge --strategy=recursive --strategy-option=ours --no-commit bar/master
     git commit --message='Merge branch v0.0.1 into v0.0.2'
 
 # Setting the default git branch in a bare repository
