@@ -326,6 +326,12 @@ Mirror git repository
     git diff --cached --color-words
     git diff HEAD^^^ HEAD
 
+## File names
+
+List changed file names
+
+    git diff HEAD^ HEAD --name-only
+
 ## diffstat of binary files
 
     git diff --stat public/images/article_pics/1.jpg
