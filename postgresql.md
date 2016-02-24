@@ -324,6 +324,13 @@ List functions in schema `foo`
 
 # Extensions
 
+## List
+
+    \dx
+    SELECT * FROM pg_extension;
+
+## Create
+
 <http://www.postgresql.org/docs/current/static/sql-createextension.html>
 
     CREATE EXTENSION IF NOT EXISTS plv8 WITH SCHEMA pg_catalog;
