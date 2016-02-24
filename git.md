@@ -563,7 +563,7 @@ Search file name in all commits history
 
 ### List
 
-List of contributors to file:
+List of contributors/authors
 
 * <http://stackoverflow.com/questions/9597410/list-all-developers-on-project-in-git#9597462>
 * <http://www.commandlinefu.com/commands/view/4519/list-all-authors-of-a-particular-git-project>
