@@ -61,7 +61,7 @@ Push from local repository to independent remote repository
     git config branch.breadcrumbs-1423.remote origin
     git config branch.breadcrumbs-1423.merge refs/heads/production
 
-    git branch -d breadcrumbs-1423
+    git branch --delete breadcrumbs-1423
 
 ## Merge without commit
 
