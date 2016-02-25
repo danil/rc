@@ -357,6 +357,23 @@ Single quotes used for `identifiers` (like table names). For example:
 Key words should be escaped (for example if used as table name or column name)
 <http://www.postgresql.org/docs/current/static/sql-keywords-appendix.html#KEYWORDS-TABLE>
 
+# CSV
+
+Load data from csv file
+
+## SQL
+
+<http://www.postgresql.org/docs/current/static/sql-copy.html>
+
+    COPY your_table_name (first_column, second_column)
+    FROM 'path/to/file.csv';
+
+## psql command
+
+<http://www.postgresql.org/docs/current/static/app-psql.html#APP-PSQL-META-COMMANDS-COPY>
+
+    \copy your_table_name (first_column, second_column) from 'path/to/file.csv';
+
 # Password file
 
 Save password in `~/.pgpass` file and connect without password prompt:
