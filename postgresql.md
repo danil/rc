@@ -235,7 +235,7 @@ List all tables then drop them.
 
 ## Update data
 
-<http://www.postgresql.org/docs/9.3/static/sql-update.html>
+<http://www.postgresql.org/docs/current/static/sql-update.html>
 
     UPDATE test_table SET foo = 'bar' || id;
 
@@ -256,7 +256,7 @@ List all tables then drop them.
 
 # Truncate data
 
-<http://www.postgresql.org/docs/9.1/static/sql-truncate.html>
+<http://www.postgresql.org/docs/current/static/sql-truncate.html>
 
     TRUNCATE timeline_items CASCADE;
 
