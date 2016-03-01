@@ -2,18 +2,20 @@
 
 C package manager-ish <https://github.com/clibs/clib>
 
-## Compile
+## Install
 
     git clone https://github.com/clibs/clib.git /tmp/clib
     cd /tmp/clib
     PREFIX=$HOME make install
 
-## Install
+## Usage
+
+### Install
 
 Packages list <https://github.com/clibs/clib/wiki/Packages>
 
     PREFIX=$HOME clib install your/package-name
 
-## Uninstall
+### Uninstall
 
     PREFIX=$HOME clib-uninstall your/package-name
