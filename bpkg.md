@@ -9,6 +9,10 @@ Lightweight bash package manager
     curl -Lo- http://get.bpkg.io | PREFIX=$HOME bash
     export PATH=$PATH:$HOME/deps/bin
 
+## Uninstall
+
+    rm `which bpkg`*
+
 ## Usage
 
 ### Install

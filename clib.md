@@ -8,6 +8,12 @@ C package manager-ish <https://github.com/clibs/clib>
     cd /tmp/clib
     PREFIX=$HOME make install
 
+## Uninstall
+
+    git clone https://github.com/clibs/clib.git /tmp/clib
+    cd /tmp/clib
+    PREFIX=$HOME make uninstall
+
 ## Usage
 
 ### Install
