@@ -101,7 +101,7 @@ On `h5` server:
 
 <http://sshmenu.sourceforge.net/articles/transparent-mulithop.html>
 
-    ssh-agent
+    eval `ssh-agent`
     ssh-add *pem
     ssh -A -t -p 9922 medapp2.waveaccess.ru ssh -A danil@192.168.0.38
 
