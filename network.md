@@ -99,6 +99,7 @@ On `h5` server:
 
 ## Transparent multi-hop SSH agent forwarding
 
+<http://stackoverflow.com/questions/17846529/could-not-open-a-connection-to-your-authentication-agent#17695338>
 <http://sshmenu.sourceforge.net/articles/transparent-mulithop.html>
 
     eval `ssh-agent`
