@@ -30,6 +30,15 @@ Via pipeline
 
     tar --create --file foo.tar --files-from=mylist.txt
 
+#### From stdin to stdout
+
+<http://stackoverflow.com/questions/2597875/how-can-i-build-a-tar-from-stdin#14073550>
+
+    find path/to/dir \
+      | tar --create --to-stdout --files-from - \
+      | gzip --compress \
+      > path/to/file.tar.gz
+
 ## gzip
 
     gzip --verbose access.log
