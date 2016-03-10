@@ -14,7 +14,7 @@
 
 Via pipeline
 
-    cat file.tar.gz | tar --extract --gzip--to-stdout --file - | less
+    cat file.tar.gz | tar --extract --gzip --to-stdout --file - | less
 
 ### Create
 
