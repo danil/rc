@@ -10,6 +10,10 @@
 
     tar --extract --gzip --file foobar.tar.gz
 
+#### From stdin/pipeline
+
+    cat file.tar.gz | tar xzf -
+
 ### Create
 
 #### With exclude
