@@ -1,5 +1,9 @@
 # tmux
 
+# Install
+
+    ./autogen.sh && ./configure --prefix=$HOME && make --jobs=5 && make install
+
 # Copy past
 
 * enter copy mode using `prefix+[`
