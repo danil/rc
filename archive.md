@@ -38,8 +38,8 @@ Via pipeline
 
 ## bzip2
 
-    bzip2 -v access.log
-    bzip2 -vd access.log.bz2
+    bzip2 --verbose access.log
+    bzip2 --verbose --decompress access.log.bz2
     tar --verbose --extract --bzip2 --file foobar.tar.bz2
 
 ## xz
