@@ -10,11 +10,11 @@
 
     tar --extract --gzip --file foobar.tar.gz
 
-#### From stdin
+#### From stdin to stdout
 
 Via pipeline
 
-    cat file.tar.gz | tar xzf -
+    cat file.tar.gz | tar --extract --gzip--to-stdout --file - | less
 
 ### Create
 
