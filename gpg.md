@@ -3,7 +3,11 @@
 ## Encrypt
 
     cat file | bzip2 --stdout | gpg --recipient danil --encrypt > file.bz2.gpg
-    cat file | tar --extract --gzip --to-stdout --file - | less
+
+    find path/to/dir \
+      | tar --create --gzip --to-stdout --files-from - \
+      | gpg --recipient danil --encrypt \
+      > file.tar.gz.gpg
 
 ## Decrypt
 
