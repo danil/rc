@@ -19,7 +19,7 @@
 
 <http://superuser.com/questions/585429/can-i-change-the-filename-of-my-ssh-public-private-key-pair>
 
-    ssh-keygen -f key-file-name
+    ssh-keygen -f path/to/private_key
 
 ### Generate public key from private key
 
