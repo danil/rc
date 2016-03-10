@@ -10,7 +10,9 @@
 
     tar --extract --gzip --file foobar.tar.gz
 
-#### From stdin/pipeline
+#### From stdin
+
+Via pipeline
 
     cat file.tar.gz | tar xzf -
 
