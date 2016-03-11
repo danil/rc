@@ -8,12 +8,11 @@
 
 ### Symmetric by password
 
-Symmetric by passphrase from stdin
+Symmetric by passphrase from stdin not working(
 
     find path/to/dir \
-      | tar --create --gzip --to-stdout --files-from - \
-      | gpg --symmetric \
-      > file.tar.gz.gpg
+      | tar --create --gzip --to-stdout --files-from - > file.tar.gz
+    gpg --symmetric --armor file.tar.gz
 
 ## Decrypt
 
@@ -22,8 +21,6 @@ Symmetric by passphrase from stdin
     cat file.bz2.gpg \
       | gpg --recipient danil --decrypt \
       | bzip2 --decompress --stdout > file
-
-
 
 ### Symmetric by password
 
