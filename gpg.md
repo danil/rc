@@ -2,22 +2,32 @@
 
 ## Encrypt
 
+### Asymmetric by key
+
     cat file | bzip2 --stdout | gpg --recipient danil --encrypt > file.bz2.gpg
+
+### Symmetric by password
+
+Symmetric by passphrase from stdin
 
     find path/to/dir \
       | tar --create --gzip --to-stdout --files-from - \
-      | gpg --recipient danil --encrypt \
+      | gpg --symmetric \
       > file.tar.gz.gpg
 
 ## Decrypt
+
+### Asymmetric by key
 
     cat file.bz2.gpg \
       | gpg --recipient danil --decrypt \
       | bzip2 --decompress --stdout > file
 
-    cat file.tar.gz \
-      | gpg --recipient danil --decrypt \
-      | tar --extract --gzip --file -
+
+
+### Symmetric by password
+
+    gpg --output - path/to/file.tar.gz.asc | tar --extract --gzip --file -
 
 ## Other
 
