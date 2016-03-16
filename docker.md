@@ -128,6 +128,7 @@ Start container and attach STDOUT and STDERR
 <http://stackoverflow.com/questions/21486004/how-do-i-move-a-docker-containers-image-to-a-persistent-disk#21632989>
 
     docker save image_name > image_name.tar
+    docker export container_name > image_name.tar
 
 ### Restore
 
