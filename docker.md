@@ -121,20 +121,6 @@ Start container and attach STDOUT and STDERR
 
     docker stats foobar_server
 
-## Backup
-
-### Save
-
-<http://stackoverflow.com/questions/21486004/how-do-i-move-a-docker-containers-image-to-a-persistent-disk#21632989>
-
-    docker save image_name > image_name.tar
-    docker export container_name > image_name.tar
-
-### Restore
-
-    docker load < image_name.tar
-    cat file.tar.gz | docker import - your-image-name
-
 # Linking
 
 <https://docs.docker.com/userguide/dockerlinks/#communication-across-links>
@@ -147,3 +133,17 @@ Create container with `--link` option like this
 
 Then environment variable `$YOUR_ALIAS_NAME_PORT_666_TCP_ADDR`
 will contain linked container `IP` addres.
+
+# Backup
+
+## Save
+
+<http://stackoverflow.com/questions/21486004/how-do-i-move-a-docker-containers-image-to-a-persistent-disk#21632989>
+
+    docker save image_name > image_name.tar
+    docker export container_name > image_name.tar
+
+## Restore
+
+    docker load < image_name.tar
+    cat file.tar.gz | docker import - your-image-name
