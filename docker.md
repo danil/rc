@@ -146,4 +146,10 @@ will contain linked container `IP` addres.
 ## Restore
 
     docker load < image_name.tar
+
+### Import
+
+Import will flatten and reduce image size
+<https://www.ctl.io/developers/blog/post/optimizing-docker-images>
+
     cat file.tar.gz | docker import - your-image-name
