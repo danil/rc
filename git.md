@@ -684,7 +684,7 @@ Merge two repositories with history
 
     git mv oldname newname
     git ls-files
-    git commit -a -m 'Some commit.'
+    git commit --message="Some commit."
     git cat-file blob HEAD^:htdocs/bookmarks/index.md
     git fsck
     git blame production ~/src/vendor/avers/prohq/app/views/layouts/project.html.haml
