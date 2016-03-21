@@ -1,6 +1,19 @@
 # Ansible
 
-    ansible-playbook --private-key=path/to/pem your_playbook.yml
+## SSH
+
+    ansible-playbook --private-key=path/to/file.pem your_playbook.yml
+
+## Inventory
+
+    ansible-playbook --inventory=inventories/local your_playbook.yml
+
+## Variables
+
+For example provide value for variable `timestamp`
+which may be used for temporary files names.
+
+    ansible-playbook --extra-vars="timestamp=$(date +%Y%m%d%H%M%S%Z)" perf.yml
 
 ## Tags
 
