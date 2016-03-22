@@ -10,7 +10,7 @@
 
     find ./ -type f | \
         while read I; do \
-            NEWNAME1=$( md5sum "$I" |cut -d " " -f 1 ); \
+            NEWNAME1=$( md5sum "$I" | cut -d " " -f 1 ); \
             NEWNAME2=$(dirname "$I")/$NEWNAME1_$( basename "$I"); \
             mv "$I" "$NEWNAME2"; done;
 
