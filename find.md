@@ -2,13 +2,17 @@
 
     find ~/ -mount -type f -size -100k -iname "*.rb" \
             -exec grep -q -e danil\\.kutkevich \{\} \;
+
     find "/etc/" -mount -maxdepth 3 -type f -size -100k -name "*.conf" \
-     |xargs grep -ilE "192\.168\.1\.[0-9]+"
+     | xargs grep -ilE "192\.168\.1\.[0-9]+"
+
     find ./ -type d -exec chmod 755 '{}' \;
-    find ./ -type f |while read I; do \
-        NEWNAME1=$( md5sum "$I" |cut -d " " -f 1 ); \
-        NEWNAME2=$(dirname "$I")/$NEWNAME1_$( basename "$I"); \
-        mv "$I" "$NEWNAME2"; done;
+
+    find ./ -type f | \
+        while read I; do \
+            NEWNAME1=$( md5sum "$I" |cut -d " " -f 1 ); \
+            NEWNAME2=$(dirname "$I")/$NEWNAME1_$( basename "$I"); \
+            mv "$I" "$NEWNAME2"; done;
 
 ## Recently changed
 
