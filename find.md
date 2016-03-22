@@ -46,3 +46,10 @@ Find but not in some directories
 
     find where/to/find -name *your_pattern* \
          -not -path '*/first_dir*' -not -path '*/second_dir*'
+
+## Sort by date
+
+Find and sort results by mtime
+<http://unix.stackexchange.com/questions/29899/how-can-i-use-find-and-sort-the-results-by-mtime#29901>
+
+    find where/to/find -name *your_pattern* -printf "%T+\t%p\n" | sort
