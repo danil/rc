@@ -33,9 +33,16 @@ Find recently changed files within 1 minutes
 
     find / -type l -exec sh -c 'lname="{}"; ltarget=$(readlink "${lname}"); rm "${lname}"; ln -s "${ltarget}" "${lname}"' \;
 
-# Remove empty dirs
+## Remove empty dirs
 
     find -depth -type d -empty -exec rmdir {} \;
 
     find ./ -mount -type f -iname "*~" -exec rm {} \;
     find /lib/modules/2.6.30/ -type f -iname '*.o' -or -iname '*.ko'
+
+## Exclude dirs
+
+Find but not in some directories
+
+    find where/to/find -name *your_pattern* \
+         -not -path '*/first_dir*' -not -path '*/second_dir*'
