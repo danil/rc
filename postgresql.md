@@ -3,6 +3,7 @@
     psql --host=kutkevich.org.ru --username=your_role_name --dbname=mydb
     psql --host=kutkevich.org.ru --username=your_role_name dbname < infile
     psql --echo-hidden
+    psql --single-transaction
 
 ## URL
 
@@ -230,6 +231,13 @@ List all tables then drop them.
 ## Add column to table
 
     ALTER TABLE my_table_name ADD COLUMN deleted_at timestamp with time zone;
+
+## Temporary tables
+
+### Create
+
+    CREATE TEMP TABLE your_table_name
+      (some_id SERIAL, name varchar(10), bio TEXT, age INTEGER);
 
 # Updates
 
