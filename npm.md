@@ -8,6 +8,14 @@
 
     npm search package-name
 
+# Install
+
+    npm install package-name
+
+# Update
+
+    npm update package-name
+
 # n
 
 Node.js version manager
