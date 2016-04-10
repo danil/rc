@@ -312,7 +312,7 @@ group of duplicates).
 
 Today in past year
 
-    select (CURRENT_DATE - INTERVAL '1 year')::timestamptz;
+    SELECT (CURRENT_DATE - INTERVAL '1 year')::timestamptz;
 
 ## enum
 
