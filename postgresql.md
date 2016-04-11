@@ -324,6 +324,23 @@ Enumerated
 
     SELECT enum_range(null::my_type);
 
+# Ranges
+
+## Create
+
+Create dates range from now to 1 year ago
+
+    SELECT tstzrange(
+      (CURRENT_DATE - INTERVAL '1 year')::timestamptz,
+      CURRENT_DATE,
+      '[]'
+    );
+
+## Intersection (overlapping)
+
+    SELECT tstzrange('1999-01-01', '1999-12-31', '[]')
+        && tstzrange('1970-01-01', '2000-12-31', '[]');
+
 # List functions
 
 List functions in schema `foo`
