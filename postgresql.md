@@ -382,6 +382,16 @@ Single quotes used for `identifiers` (like table names). For example:
 Key words should be escaped (for example if used as table name or column name)
 <http://www.postgresql.org/docs/current/static/sql-keywords-appendix.html#KEYWORDS-TABLE>
 
+# Concatenation
+
+<http://www.postgresql.org/docs/9.1/static/functions-string.html#FUNCTIONS-STRING-SQL>
+
+    SELECT 'foo' || 'bar'
+
+<http://www.postgresql.org/docs/9.1/static/functions-string.html#FUNCTIONS-STRING-OTHER>
+
+    SELECT concat('foo', 'bar', 'xyz')
+
 # CSV
 
 Load data from csv file
