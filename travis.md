@@ -23,3 +23,13 @@ Encryption of file `path/inside/repository/file` generates file
 to `.travis.yml`.
 
     travis encrypt-file path/inside/repository/file --add
+
+## Compile
+
+Compile dependencies from source
+
+<https://docs.travis-ci.com/user/installing-dependencies/#Installing-Projects-from-Source>
+
+## Build matrix
+
+<https://docs.travis-ci.com/user/customizing-the-build/#Build-Matrix>
