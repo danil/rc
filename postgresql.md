@@ -1,9 +1,18 @@
 # PostgreSQL
 
-    psql --host=kutkevich.org.ru --username=your_role_name --dbname=mydb
-    psql --host=kutkevich.org.ru --username=your_role_name dbname < infile
+## psql
+
+    psql --host=kutkevich.org.ru --username=your_role_name
+    psql --dbname=your_db_name
+    psql dbname
     psql --echo-hidden
     psql --single-transaction
+
+### Input
+
+    psql --file=path/to/file.sql
+    cat path/to/file.sql | psql
+    psql < path/to/file.sql
 
 ## URL
 
