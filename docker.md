@@ -10,7 +10,8 @@ Size and so on.
 
 ## Build
 
-    docker build --tag mlapshin/docker-teamcity ./
+    docker build --tag=your-repository/your-image:your-tag \
+                 --file= path/to/Dockerfile ./
 
 ## Tag
 
