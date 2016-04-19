@@ -37,12 +37,13 @@ Create and start (or run) image as container
                   --tty \
                   --volume /var/foobar-data:/opt/foobar-data \
                   --volume /etc/localtime:/etc/localtime:ro \
-                  --name your_container_name \
+                  --entrypoint="/bin/bash"
+                  --name=your_container_name \
                   --publish=your-external-port:your-internal-port \
                   --publish=your-external-port-2:your-internal-port-2 \
                   user-name/your-image-name \
-                  '/bin/bash' -l -c 'export LANG="C.UTF-8" \
-                                     && sudo service postgresql start'
+                  -l -c 'export LANG="C.UTF-8" \
+                         && sudo service postgresql start'
     docker start your_container_name
 
 Get response from published port (get internal port 5432 as 5433 port
