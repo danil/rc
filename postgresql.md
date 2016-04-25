@@ -453,10 +453,22 @@ Getting the current number of connections in a PostgreSQL
 
 # Disk usage
 
+## psql command
+
 <http://stackoverflow.com/questions/2596624/how-do-you-find-the-disk-size-of-a-postgres-postgresql-table-and-its-indexes>
 
     \l+
     \d+
+
+## SQL
+
+    SELECT nspname || '.' || relname AS "relation",
+           pg_size_pretty(pg_relation_size(C.oid)) AS "size"
+      FROM pg_class C
+    LEFT JOIN pg_namespace N ON (N.oid = C.relnamespace)
+      WHERE nspname NOT IN ('pg_catalog', 'information_schema')
+    ORDER BY pg_relation_size(C.oid) DESC
+      LIMIT 10;
 
 # Print notice
 
