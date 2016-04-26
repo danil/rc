@@ -119,6 +119,10 @@ Start container and attach STDOUT and STDERR
 
     docker rm $(docker ps --all --quiet)
 
+## Rename
+
+    docker rename your-old-name your-new-name
+
 ## Stats
 
     docker stats foobar_server
