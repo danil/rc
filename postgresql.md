@@ -462,12 +462,15 @@ Getting the current number of connections in a PostgreSQL
 
 ## SQL
 
+`pg_toast` | is an temporary schema (for temporary tables)
+-----------|----------------------------------------------
+
     SELECT nspname || '.' || relname AS "relation",
-           pg_size_pretty(pg_relation_size(C.oid)) AS "size"
-    FROM pg_class C
-    LEFT JOIN pg_namespace N ON (N.oid = C.relnamespace)
-    WHERE nspname NOT IN ('pg_catalog', 'information_schema')
-    ORDER BY pg_relation_size(C.oid) DESC
+           pg_size_pretty(pg_relation_size(pg_class.oid)) AS "size"
+    FROM pg_class
+    LEFT JOIN pg_namespace N ON (N.oid = pg_class.relnamespace)
+    WHERE nspname NOT IN ('pg_catalog', 'information_schema', 'pg_toast')
+    ORDER BY pg_relation_size(pg_class.oid) DESC
     LIMIT 10;
 
 # Print notice
