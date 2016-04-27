@@ -489,6 +489,8 @@ Getting the current number of connections in a PostgreSQL
 
 # Log all queries
 
+`postgresql.conf`
+
 Log all statements
 
     line="log_statement = 'all'
