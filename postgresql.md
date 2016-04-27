@@ -487,6 +487,16 @@ Getting the current number of connections in a PostgreSQL
 
 <https://wiki.postgresql.org/wiki/Tuning_Your_PostgreSQL_Server#autovacuum>
 
+# Log all queries
+
+Log all statements
+
+    line="log_statement = 'all'
+
+Log statements with any durations
+
+    log_min_duration_statement = 0
+
 # pgbench
 
 <http://www.postgresql.org/docs/current/static/pgbench.html>
