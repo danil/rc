@@ -493,6 +493,8 @@ Getting the current number of connections in a PostgreSQL
 
 ## Create
 
+<http://www.postgresql.org/docs/current/static/sql-prepare.html>
+
     PREPARE your_statement_name (int, text) AS
       SELECT * FROM "your_table_name" WHERE id = $1 ORDER BY $2;
 
@@ -501,6 +503,8 @@ Getting the current number of connections in a PostgreSQL
     EXECUTE your_statement_name (123, 'created_at DESC');
 
 ## Delete
+
+<http://www.postgresql.org/docs/current/static/sql-deallocate.html>
 
     DEALLOCATE your_statement_name;
 
