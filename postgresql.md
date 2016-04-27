@@ -487,6 +487,23 @@ Getting the current number of connections in a PostgreSQL
 
 <https://wiki.postgresql.org/wiki/Tuning_Your_PostgreSQL_Server#autovacuum>
 
+# Prepared statements
+
+<http://www.postgresql.org/docs/current/static/sql-prepare.html>
+
+## Create
+
+    PREPARE your_statement_name (integer, text) AS
+      SELECT * FROM "your_table_name" WHERE id = $1 ORDER BY $2;
+
+## Execute
+
+    EXECUTE your_statement_name (123, 'created_at DESC');
+
+## Delete
+
+    DEALLOCATE your_statement_name;
+
 # Log all queries
 
 `postgresql.conf`
