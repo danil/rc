@@ -493,7 +493,7 @@ Getting the current number of connections in a PostgreSQL
 
 ## Create
 
-    PREPARE your_statement_name (integer, text) AS
+    PREPARE your_statement_name (int, text) AS
       SELECT * FROM "your_table_name" WHERE id = $1 ORDER BY $2;
 
 ## Execute
