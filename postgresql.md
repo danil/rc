@@ -495,12 +495,13 @@ Getting the current number of connections in a PostgreSQL
 
 <http://www.postgresql.org/docs/current/static/sql-prepare.html>
 
-    PREPARE your_statement_name (int, text) AS
-      SELECT * FROM "your_table_name" WHERE id = $1 ORDER BY $2;
+    PREPARE your_statement_name (text, int) AS
+      SELECT * FROM "your_table_name"
+      WHERE "name" = $1 AND "age" = $2;
 
 ## Execute
 
-    EXECUTE your_statement_name (123, 'created_at DESC');
+    EXECUTE your_statement_name ('foo', 123);
 
 ## Delete
 
