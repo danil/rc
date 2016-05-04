@@ -50,6 +50,7 @@ Via pipeline
     bzip2 --verbose access.log
     bzip2 --verbose --decompress access.log.bz2
     tar --verbose --extract --bzip2 --file foobar.tar.bz2
+    cat file.bz2 | bzip2 --decompress > path/to/file
 
 ## xz
 
