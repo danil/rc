@@ -56,7 +56,7 @@
 
 <http://askubuntu.com/questions/444729/redirect-port-80-to-8080-and-make-it-work-on-local-machine#444737>
 
-    sudo ssh -gL 80:127.0.0.1:8080 your_user@localhost
+    sudo ssh -gNL 80:127.0.0.1:8080 your_user@localhost
 
 #### Reverse tunneling
 
