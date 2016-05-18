@@ -278,7 +278,8 @@ http://www.cyberciti.biz/faq/throttle-disk-io-rate-limit-disk-io
 
 <http://superuser.com/questions/126073/chmod-to-allow-read-and-write-permissions-for-directory#126075>
 
-    find ./somedir \( -type d -exec chmod u=rwx,g=rx,o=xr {} \; -o -type f -exec chmod u=rw,g=r,o=r {} \; \)
+    find ./somedir \( -type d -exec chmod u=rwx,g=rx,o=xr {} \; \
+                   -o -type f -exec chmod u=rw,g=r,o=r {} \; \)
 
 # chown
 
@@ -522,4 +523,3 @@ Start a process in the background and have it keep running after you log off
     tput cols && tput lines
     chsh -s /bin/zsh
     echo $?
-    lsb_release --all #debian/ubuntu version
