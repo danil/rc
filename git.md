@@ -81,9 +81,11 @@ origin/master to origin/master-old
     git branch -m master master-old
 
 Delete master
+
     git push origin :master
 
 Create master-old on remote
+
     git push origin master-old
 
 ## Delete remoute branch
