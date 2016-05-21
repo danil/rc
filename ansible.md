@@ -4,6 +4,10 @@
 
     ansible-playbook --private-key=path/to/file.pem your_playbook.yml
 
+### Disable SSH fingerprint check
+
+    ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook your_playbook.yml
+
 ## Inventory
 
     ansible-playbook --inventory=inventories/local your_playbook.yml
