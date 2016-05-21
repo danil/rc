@@ -1,5 +1,13 @@
 # Rust
 
-## Install and update dependencies
+# Packages
+
+## Install
+
+Install `Cargo.toml`
+
+    cargo build
+
+## Update
 
     cargo update
