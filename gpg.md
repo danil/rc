@@ -1,4 +1,6 @@
-# GNU Privacy Guard
+# GPG
+
+GNU Privacy Guard
 
 ## Encrypt
 
