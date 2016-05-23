@@ -10,15 +10,34 @@ GNU Privacy Guard
 
 ### Symmetric by password
 
-Symmetric by passphrase from stdin not working(
+Symmetric key algorithm by password
+
+#### Interactive
+
+Prompt password interactively
+
+    gpg --symmetric --armor file.tar.gz
+
+#### Password from stdin
+
+Get password from standard input
+
+    echo $your_password | gpg --passphrase-fd 0 --symmetric --armor file.tar.gz
+
+#### File from stdin
+
+**NOT WORKING**
+
+Redirect file from stdin
 
     find path/to/dir \
       | tar --create --gzip --to-stdout --files-from - > file.tar.gz
-    gpg --symmetric --armor file.tar.gz
 
 ## Decrypt
 
 ### Asymmetric by key
+
+Asymmetric algorithm by pairs of keys
 
     cat file.bz2.gpg \
       | gpg --recipient danil --decrypt \
@@ -26,7 +45,20 @@ Symmetric by passphrase from stdin not working(
 
 ### Symmetric by password
 
-    gpg --output - path/to/file.tar.gz.asc | tar --extract --gzip --file -
+#### Interactive
+
+Prompt password interactively
+
+    gpg --output - path/to/file.tar.gz.asc \
+      | tar --extract --gzip --file -
+
+#### Password from stdin
+
+Redirect password from stdin
+
+    echo $your_password \
+      | gpg --passphrase-fd 0 --decrypt --batch -- path/to/file.tar.gz.asc \
+      | tar --extract --gzip --file -
 
 ## Other
 
