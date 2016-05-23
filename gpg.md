@@ -55,6 +55,7 @@ Prompt password interactively
 #### Password from stdin
 
 Redirect password from stdin
+<http://stackoverflow.com/questions/19895122/how-to-use-gnupgs-passphrase-fd-argument#21007390>
 
     echo $your_password \
       | gpg --passphrase-fd 0 --decrypt --batch -- path/to/file.tar.gz.asc \
