@@ -15,21 +15,22 @@ Advanced Packaging Tool
     apt-key add archive-key-eeepc.asc
     apt-mark unmarkauto
     reprepro
-    wget --output-document=- http://backports.org/debian/archive.key | apt-key add -
+    wget --output-document=- http://backports.org/debian/archive.key \
+      | apt-key add -
 
-# Repository
+## Repository
 
-## Add
+### Add
 
     add-apt-repository ppa:indicator-brightness/ppa
     apt-get update
 
-## Remove
+### Remove
 
     add-apt-repository --remove ppa:indicator-brightness/ppa
     apt-get update
 
-# Finding which package contains a file
+## Finding which package contains a file
 
 <http://debian-administration.org/articles/334>
 

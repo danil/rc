@@ -8,7 +8,6 @@
 
 ## Gzipped
 
-
     curl "http://example.org" | gunzip
 
 <http://stackoverflow.com/questions/8364640/how-to-properly-handle-a-gzipped-page-when-using-curl#8365089>

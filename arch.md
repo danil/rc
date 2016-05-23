@@ -1,30 +1,30 @@
 # Arch
 
-# Pacman
+## Pacman
 
-## Update
+### Update
 
 Download package list and upgrade
 
     pacman --sync --verbose --refresh --sysupgrade
 
-## Install
+### Install
 
     yaourt --verbose --sync lightdm-gtk3-greeter
 
-## Remove
+### Remove
 
     pacman --remove --recursive cairo-dock-plugins
 
-## Query
+### Query
 
 <https://wiki.archlinux.org/index.php/Pacman#Querying_package_databases>
 
-### Search
+#### Search
 
     pacman --query --search silver
 
-### Explicitly installed
+#### Explicitly installed
 
 Except `base` and `base-devel` packages
 <https://bbs.archlinux.org/viewtopic.php?pid=690050#p690050>.
@@ -32,42 +32,42 @@ Except `base` and `base-devel` packages
     pacman --query --explicit --info \
       | awk '/^Name/ { name=$3 } /^Groups/ { if ( $3 != "base" && $3 != "base-devel" ) { print name } }'
 
-### orphans
+#### orphans
 
 Useless packages, that are not associated with explicitly installed packages
 <https://bbs.archlinux.org/viewtopic.php?pid=690008#p690008>.
 
     pacman --query --deps --unrequired --quiet
 
-# File belong to package
+## File belong to package
 
     pkgfile emacs
 
-# AUR
+## AUR
 
 Arch User Repository <https://wiki.archlinux.org/index.php/Arch_User_Repository>.
 
-## PKGBUILD
+### PKGBUILD
 
 <https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages>
 
-### Compile and pack
+#### Compile and pack
 
     makepkg -s
 
-### Install
+#### Install
 
     pacman --upgrade yaourt-1.3-1-any.pkg.tar.xz
 
-# Yaourt
+## Yaourt
 
 Yet AnOther User Repository
 
-# Search and install
+## Search and install
 
     yaourt compiz-dev
 
-## Update AUR
+### Update AUR
 
 <https://bbs.archlinux.org/viewtopic.php?pid=604848#p604848>
 

@@ -6,7 +6,6 @@
 
     sudo run-parts /etc/cron.hourly
 
-
 ## Simulate environment
 
 Simulate the environment cron executes a script with
