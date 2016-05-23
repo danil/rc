@@ -1,20 +1,28 @@
 # npm
 
+Node package manager
+
 ## Path to executeable
 
     `npm bin`/bower install package-name
 
-# Search
+## Search
 
     npm search package-name
 
-# Install
+## Install
 
     npm install package-name
 
-# Update
+## Update
 
     npm update package-name
+
+## ls
+
+List all dependencies tree
+
+    npm ls
 
 # n
 
