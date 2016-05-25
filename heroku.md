@@ -217,9 +217,10 @@ Should use `DATABASE_URL` environment variable.
 
 Sql Backup
 
-    pg_dump postgres://your_user_name:your_password@example.com:5432/your_db_name \
-            | xz --compress \
-            > path/to/dump_$(date +%Y%m%d%H%M%S%Z).sql.xz
+    pg_dump \
+        postgres://your_user_name:your_password@example.com:5432/your_db_name \
+        | xz --compress \
+        > path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
 
 ### Restore
 

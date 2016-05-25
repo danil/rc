@@ -57,7 +57,7 @@ Via pipeline
     xz access.log
     xz --decompress access.log.xz
     tar --extract --xz --file foobar.tar.xz
-    pg_dump db_name | xz --compress > path/to/dump_$(date +%Y%m%d%H%M%S).sql.xz
+    pg_dump db_name | xz --compress > path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
 
 ## Zip
 

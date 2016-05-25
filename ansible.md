@@ -17,7 +17,7 @@
 For example provide value for variable `timestamp`
 which may be used for temporary files names.
 
-    ansible-playbook --extra-vars="timestamp=$(date +%Y%m%d%H%M%S%Z)" perf.yml
+    ansible-playbook --extra-vars="timestamp=$(date --utc +%Y%m%dT%H%M%SZ)" perf.yml
 
 ## Tags
 
