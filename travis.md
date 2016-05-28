@@ -4,6 +4,14 @@ Command line interface (CLI) for Travis CI (install via RubyGems)
 <https://rubygems.org/gems/travis>
 <https://github.com/travis-ci/travis.rb>
 
+## Environment variables
+
+<https://docs.travis-ci.com/user/environment-variables/#Default-Environment-Variables>
+
+### Language version
+
+`TRAVIS_RUBY_VERSION` or `TRAVIS_GO_VERSION`
+
 ## Encrypt variable
 
 <https://docs.travis-ci.com/user/encryption-keys>
