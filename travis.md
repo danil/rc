@@ -33,3 +33,7 @@ Compile dependencies from source
 ## Build matrix
 
 <https://docs.travis-ci.com/user/customizing-the-build/#Build-Matrix>
+
+## Validate .travis.yml
+
+    travis lint .travis.yml
