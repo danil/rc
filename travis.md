@@ -47,3 +47,15 @@ Compile dependencies from source
 <https://docs.travis-ci.com/user/travis-lint/#Command-line-Validation>
 
     travis lint .travis.yml
+
+## Conditional deploy
+
+<https://docs.travis-ci.com/user/deployment#Conditional-Releases-with-on%3A>
+
+Deploy only specific Go version
+
+```yaml
+deploy:
+  on:
+    condition: "$TRAVIS_GO_VERSION = 1.6.2"
+```
