@@ -36,4 +36,6 @@ Compile dependencies from source
 
 ## Validate .travis.yml
 
+<https://docs.travis-ci.com/user/travis-lint/#Command-line-Validation>
+
     travis lint .travis.yml
