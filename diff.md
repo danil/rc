@@ -8,17 +8,3 @@
 
     diff --recursive --brief ~/dir1 ~/dir2| grep Only
     colordiff --recursive prealpha.kutkevich-org/ alpha.kutkevich-org/
-
-## Prepare patch
-
-<http://devmanual.gentoo.org/tools-reference/diff-and-patch>
-
-    diff --unified foo.c.~master~ foo.c
-
-# Patch
-
-## Apply patch
-
-<http://cyberciti.biz/faq/appy-patch-file-using-patch-command/>
-
-    patch -p1 < {/path/to/patch/file}
