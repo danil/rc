@@ -550,7 +550,7 @@ You have three steps there:
 
     git log --grep='your-desired-feature'
 
-# Search file in all commits
+## Search file in all commits
 
 Search file name in all commits history
 <http://stackoverflow.com/questions/7203515/how-to-locate-a-deleted-file-in-the-commit-history#7203551>
