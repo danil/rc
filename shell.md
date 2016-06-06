@@ -294,23 +294,6 @@ card, etc.
     a2ensite kutkevich.org
     a2dissite example.org
 
-# ab
-
-    ab -kc 10 -t 30 http://kutkevich.org
-
-# httperf
-
-    httperf --num-conns 10 --rate 120 \
-            --server kutkevich.org --port 80 --uri /index.html
-    httperf --num-conns 10 --rate 120 \
-            --server kutkevich.org --port 80 --wsesslog=10,1,wsesslog_ska
-
-# siege
-
-    siege --concurrent=1 --reps=1 --verbose \
-          --log=$HOME/siege.log --file=$HOME/siege-urls \
-          --header="Cookie: ring-session=00000000-0000-0000-0000-000000000000"
-
 # iptables
 
     iptables -L traffic -vx
