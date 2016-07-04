@@ -249,7 +249,6 @@ equal to
 
     git pull origin master
 
-
 ## All
 
 <http://stackoverflow.com/questions/10312521/how-to-fetch-all-git-branches#10312587>
@@ -268,7 +267,6 @@ Count number of commits per file
 # Mirror
 
 Mirror git repository
-
 
 ## First
 
