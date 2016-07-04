@@ -41,7 +41,7 @@ Via pipeline
 
 ## gzip
 
-    gzip --verbose access.log
+    gzip --keep access.log
     gzip --decompress access.log.gz
     tar --verbose --extract --gzip --file foobar.tar.gz
 
