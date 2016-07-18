@@ -49,7 +49,7 @@ Discover (scanner) hosts and services on a computer network.
 
 ## DNS
 
-List DNS servers for domain:
+List all DNS records, ns (name servers) and so on
 
     dig example.org ANY
 
