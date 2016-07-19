@@ -21,7 +21,11 @@ Install command line interface
 
 ### Files list
 
-    aws s3 ls --recursive --human-readable --summarize path/to/directory
+    aws s3 ls --recursive --human-readable --summarize bucket/path/to/directory
+
+### Cat file
+
+    aws s3 cp s3://bucket/path/to/file -
 
 ### Download
 
