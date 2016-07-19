@@ -14,6 +14,15 @@ Install command line interface
 
 ## s3
 
+### Buckets list
+
+    aws s3 ls
+    aws s3api list-buckets --query 'Buckets[].Name'
+
+### Files list
+
+    aws s3 ls --recursive --human-readable --summarize path/to/directory
+
 ### Download
 
     aws s3 sync --region your-region s3://your-bucket destination/path
