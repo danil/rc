@@ -1,5 +1,13 @@
 # aws
 
+## Install
+
+Install command line interface
+
+    pip install awscli
+
+## Authentication/authorization
+
     AWS_ACCESS_KEY_ID= your-key \
         AWS_SECRET_ACCESS_KEY=your-secret \
         aws some-command
