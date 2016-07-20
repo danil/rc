@@ -31,19 +31,19 @@ Size and so on.
 
 Create and start (or run) image as container
 
-    docker create --env=HOME=/home/my_user \
-                  --user="my_user"
+    docker create --env=HOME=/home/your_user \
+                  --user="your_user"
                   --interactive \
                   --tty \
-                  --volume /path/on/host/dir:/path/to/container/dir:ro \
+                  --volume=/path/to/host/dir:/path/to/container/dir:ro \
                   --entrypoint="/bin/bash"
-                  --name=your_container_name \
-                  --publish=your-external-port:your-internal-port \
-                  --publish=your-external-port-2:your-internal-port-2 \
-                  user-name/your-image-name \
+                  --name=your-container-name \
+                  --publish=your_external_port:your_internal_port \
+                  --publish=your_external_port_2:your_internal_port_2 \
+                  your/image-name \
                   -l -c 'export LANG="C.UTF-8" \
                          && sudo service postgresql start'
-    docker start your_container_name
+    docker start your-container-name
 
 Get response from published port (get internal port 5432 as 5433 port
 from outside)
@@ -55,15 +55,14 @@ from outside)
 Run docker inside docker
 <https://docs.docker.com/reference/commandline/cli/#create>
 
-    docker create --privileged --name your_container_name \
-                  user-name/your_image_name
+    docker create --privileged --name=your-container-name your/image-name
 
 ## Run
 
     docker run --detach
-               --name=foobar_server \
+               --name=your-container-name \
                --publish=80:80 \
-               user-name/docker-foobar
+               your/image-name
 
 ## Inspect
 
@@ -75,6 +74,12 @@ Save container as image after interactive changes
 
     docker commit your_user_name/your_container_name \
                   your_image_name:1970_01_01
+
+## Copy
+
+Copy from container to host
+
+    docker cp <containerId>:/file/path/within/container /path/to/host/dir
 
 # Registry
 
