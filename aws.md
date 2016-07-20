@@ -33,8 +33,12 @@ Install command line interface
 
 ### Upload public files
 
-    aws s3 cp --region your-region --recursive --acl public-read \
-        path/to/directory s3://your-bucket
+    aws s3 cp --recursive --region your-region --acl public-read
+              path/to/directory s3://your-bucket
+
+### Upload with symlinks
+
+    aws s3 cp --recursive --follow-symlinks path/to/directory s3://your-bucket
 
 ### Remove
 
