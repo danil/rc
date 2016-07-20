@@ -10,14 +10,18 @@ Command line interface (CLI) for Travis CI (install via RubyGems)
 
 ### Language version
 
-`TRAVIS_RUBY_VERSION` or `TRAVIS_GO_VERSION`
+`$TRAVIS_RUBY_VERSION` or `$TRAVIS_GO_VERSION`
+
+### Current commit
+
+The commit that the current build is testing `$TRAVIS_COMMIT`
 
 ## Encrypt variable
 
 <https://docs.travis-ci.com/user/encryption-keys>
 
-Addition encrypted variable `YOUR_VARIABLE_NAME` to `.travis.yml`
-creates possibility to use variable in scripts a-la `echo YOUR_VARIABLE_NAME`.
+Addition encrypted variable `$YOUR_VARIABLE_NAME` to `.travis.yml`
+creates possibility to use variable in scripts a-la `echo $YOUR_VARIABLE_NAME`.
 
     travis encrypt YOUR_VARIABLE_NAME=YOUR_VARIABLE_VALUE --add
 
