@@ -38,9 +38,13 @@ Install command line interface
 
 ### Remove
 
-Remove file
+#### File
 
     aws s3 rm s3://path/to/file
+
+#### Directory
+
+    aws s3 rm --recursive s3://path/to/directory
 
 ### Get region
 
