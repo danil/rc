@@ -36,6 +36,12 @@ Install command line interface
     aws s3 cp --region your-region --recursive --acl public-read \
         path/to/directory s3://your-bucket
 
+### Remove
+
+Remove file
+
+    aws s3 rm s3://path/to/file
+
 ### Get region
 
     aws s3api get-bucket-location --bucket your-bucket-name
