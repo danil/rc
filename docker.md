@@ -35,7 +35,7 @@ Create and start (or run) image as container
                   --user="my_user"
                   --interactive \
                   --tty \
-                  --volume /path/on/host:/path/inside/container:ro \
+                  --volume /path/on/host/dir:/path/to/container/dir:ro \
                   --entrypoint="/bin/bash"
                   --name=your_container_name \
                   --publish=your-external-port:your-internal-port \
