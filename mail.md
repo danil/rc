@@ -27,3 +27,11 @@
 ### Rewrite rules
 
     exim -brw your.mail@example.org
+
+## Find all address
+
+    exigrep [^@]+@[^.]+\.[^.]+ /var/log/exim/exim_main.log
+
+## Statistics report
+
+    eximstats /var/log/exim/exim_main.log
