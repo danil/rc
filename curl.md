@@ -18,7 +18,11 @@
 
     curl --location http://example.org
 
+## Output to file
+
+    curl --output=top-1m.csv.zip
+         http://s3.amazonaws.com/alexa-static/top-1m.csv.zip
+
 ## Other
 
-    curl --output ruby.png http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/100px-Ruby_logo.svg.png
     curl --verbose --header "Accept-Encoding: gzip" -X HEAD http://example.org
