@@ -44,11 +44,11 @@ Install command line interface
 
 #### File
 
-    aws s3 rm s3://path/to/file
+    aws s3 rm s3://your-bucket/path/to/file
 
 #### Directory
 
-    aws s3 rm --recursive s3://path/to/directory
+    aws s3 rm --recursive s3://your-bucket/path/to/directory
 
 ### Get region
 
