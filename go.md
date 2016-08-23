@@ -1,11 +1,15 @@
 # Go
 
+## Environment
+
+    go env
+
 # Packages
 
-## Install
+## Install/update
 
-    go get -u github.com/monochromegane/the_platinum_searcher
-    go install github.com/monochromegane/the_platinum_searcher
+    go get -v -u example.org/path/to/package
+    go install example.org/path/to/package
 
 ## List installed
 
