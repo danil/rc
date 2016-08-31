@@ -1,5 +1,11 @@
 # Bash
 
+## Path related to script
+
+File path related to script
+
+    ls "${BASH_SOURCE%/*}"/path/to/file
+
 ## Temporary file
 
 * http://unix.stackexchange.com/questions/181937/how-create-a-temporary-file-in-shell-script#181938
