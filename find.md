@@ -16,10 +16,18 @@
 
 ## Recently changed
 
+### Last minute
+
 Find recently changed files within 1 minutes
 <http://stackoverflow.com/questions/16085958/scripts-find-the-files-have-been-changed-in-last-24-hours#16086041>
 
     find your/path -mmin 1
+
+### Last 24 hours
+
+<http://stackoverflow.com/questions/16085958/scripts-find-the-files-have-been-changed-in-last-24-hours#16086041>
+
+    find your/path -mtime -1 -ls
 
 ## Search and remove file with inode number
 
