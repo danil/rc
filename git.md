@@ -208,7 +208,7 @@ Select tag <http://git-scm.com/book/en/Git-Basics-Tagging#Listing-Your-Tags>
 
 # Stash
 
-    git stash
+    git stash save 'your stash description message'
     git pop
     git apply
     git stash show --patch
