@@ -11,3 +11,7 @@
 ## Run jar
 
     lein uberjar && java $JVM_OPTS -jar path/to/foobar.jar -m foobar.namespace
+
+## Run tests
+
+    lein test
