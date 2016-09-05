@@ -17,7 +17,7 @@
 
 <https://www.gentoo.org/doc/en/handbook/handbook-amd64.xml?style=printable&part=1&chap=7#doc_chap2_sect3>
 
-    make install && grub2-mkconfig --output=/boot/grub/grub.cfg
+    make install && grub-mkconfig --output=/boot/grub/grub.cfg
     make modules_install && emerge --verbose --oneshot --color=y @module-rebuild
 
 ## Get config
