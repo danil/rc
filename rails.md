@@ -20,6 +20,10 @@
 
 ## Migrations
 
+### Create
+
+    bundle exec bin/rails generate migration YourMigrationName
+
 ### Status
 
 Display status of pending migrations
