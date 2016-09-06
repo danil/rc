@@ -22,7 +22,7 @@
 
 ### Create
 
-    bundle exec bin/rails generate migration YourMigrationName
+    bundle exec bin/rails generate migration YourMigrationName RAILS_ENV=test
 
 ### Status
 
