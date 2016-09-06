@@ -22,7 +22,7 @@
 
 ### Create
 
-    bundle exec bin/rails generate migration YourMigrationName RAILS_ENV=test
+    bundle exec bin/rails generate migration YourMigrationName
 
 ### Status
 
@@ -32,7 +32,7 @@ Display status of pending migrations
 
 ### Up
 
-    rake db:migrate
+    rake db:migrate RAILS_ENV=test
 
 ### Down
 
