@@ -463,10 +463,10 @@ You have three steps there:
 
 <http://ariejan.net/2009/10/26/how-to-create-and-apply-a-patch-with-git>
 
-    git format-patch HEAD^..HEAD --stdout > guarantee-with-admin.patch
-    git apply --stat guarantee-with-admin.patch
-    git apply --check guarantee-with-admin.patch
-    git am --reject guarantee-with-admin.patch
+    git format-patch HEAD^..HEAD --stdout > your_patch_name.patch
+    git apply --stat your_patch_name.patch
+    git apply --check your_patch_name.patch
+    git am --reject your_patch_name.patch
     git am --abort
 
 # Cherry-pick
@@ -495,12 +495,12 @@ You have three steps there:
 
 ## Other
 
-    git checkout guarantee-with-admin
-    git branch guarantee-with-admin-for-rebase
-    git rebase --onto production master guarantee-with-admin-for-rebase
+    git checkout foobar
+    git branch foobar-for-rebase
+    git rebase --onto production master foobar-for-rebase
     git checkout production
-    git merge guarantee-with-admin-for-rebase
-    git branch -D guarantee-with-admin-for-rebase
+    git merge foobar-for-rebase
+    git branch -D foobar-for-rebase
 
 # Find not commited changes
 
