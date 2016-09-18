@@ -52,7 +52,11 @@ Compile dependencies from source
 
     travis lint .travis.yml
 
-## Conditional deploy
+## Deploy
+
+    travis setup releases
+
+### Conditional deploy
 
 <https://docs.travis-ci.com/user/deployment#Conditional-Releases-with-on%3A>
 
