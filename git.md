@@ -257,7 +257,7 @@ equal to
 
 # rev-list
 
-## Number of commits per file
+## Count commits
 
 Count number of commits per file
 <http://stackoverflow.com/questions/25850117/how-to-count-number-of-commits-per-file-pathname-by-author-in-a-git-repository#27386471>
@@ -492,6 +492,10 @@ You have three steps there:
 ### Abort
 
     git rebase --abort
+
+# Squash latest commits into one
+
+    git rebase --interactive --root HEAD
 
 ## Other
 
