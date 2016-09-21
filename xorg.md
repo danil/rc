@@ -87,9 +87,13 @@ Go to first viewport of current desktop
 
     wmctrl -o 0,0
 
-## List the windows
+## List of the windows
 
     wmctrl -l
+
+or
+
+    xwininfo -tree -root
 
 # notify-send
 
