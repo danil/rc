@@ -93,6 +93,8 @@ Go to first viewport of current desktop
 
 or
 
+<http://stackoverflow.com/questions/252906/how-to-get-the-list-of-open-windows-from-xserver#252911>
+
     xwininfo -tree -root
 
 # notify-send
