@@ -1,5 +1,28 @@
 # Gentoo
 
+# Installation
+
+Install via clone/copy all system from source device to destination device.
+
+## Copy MBR partitions
+
+Copy partitions table from `/dev/your_source` to `/dev/your_destination`
+<http://unix.stackexchange.com/questions/93385/how-to-restore-the-partition-layout-for-gpt-disk#93391>.
+
+    sgdisk --replicate=/dev/your_destination /dev/your_source
+
+### Make unique its GUID as it was cloned and is identical with source device
+
+    sgdisk --randomize-guids /dev/your_destination
+    dd if=/dev/your_source of=/dev/your_destination bs=512 conv=sync
+
+## GRUB
+
+<https://wiki.gentoo.org/wiki/GRUB2#BIOS_with_MBR>
+
+    mount /dev/your_destination /boot
+    grub-install /dev/your_destination
+
 # Emerge
 
     MAKEOPTS="-j1" USE="-mmx" emerge --ask --oneshot your-package/name
