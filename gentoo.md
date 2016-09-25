@@ -14,13 +14,28 @@ Copy partitions table from `/dev/your_source` to `/dev/your_destination`
 ### Make unique its GUID as it was cloned and is identical with source device
 
     sgdisk --randomize-guids /dev/your_destination
-    dd if=/dev/your_source of=/dev/your_destination bs=512 conv=sync
+
+## Copy raw partitions byte by byte
+
+Cloning the all partitions one by one and the all their content
+
+* <https://wiki.archlinux.org/index.php/Disk_cloning>
+* <http://askubuntu.com/questions/173907/when-cloning-ext4-partition-with-the-dd-command-to-a-bigger-partition-free-spa#173968>
+* <https://linode.com/docs/migrate-to-linode/disk-images/copying-a-disk-image-to-a-different-account#copying-the-disk-image>
+
+    dd if=/dev/your_source1 of=/dev/your_destination1 bs=512 conv=sync
+    dd if=/dev/your_source2 of=/dev/your_destination2 bs=512 conv=sync
 
 ## GRUB
 
 <https://wiki.gentoo.org/wiki/GRUB2#BIOS_with_MBR>
 
-    mount /dev/your_destination /boot
+### Mount `boot` partition
+
+    mount /dev/your_destination1 /boot
+
+### Install GRUB
+
     grub-install /dev/your_destination
 
 # Emerge
