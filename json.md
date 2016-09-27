@@ -2,7 +2,7 @@
 
 ## Pretty print
 
-    curl https://api.github.com/repos/tomnomnom/gron/commits?per_page=1 | jq .
+    curl -s https://api.github.com/repos/tomnomnom/gron/commits?per_page=1 | jq .
 
 ## Generate
 
