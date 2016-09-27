@@ -1,5 +1,9 @@
 # JSON
 
+## Pretty print
+
+    curl https://api.github.com/repos/tomnomnom/gron/commits?per_page=1 | jq .
+
 ## Generate
 
 <https://github.com/webroo/dummy-json>
