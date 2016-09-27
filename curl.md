@@ -1,5 +1,9 @@
 # cURL
 
+## Without progress bar
+
+    curl --silent https://api.github.com/repos/tomnomnom/gron/commits?per_page=1
+
 ## Only headers
 
 <http://stackoverflow.com/questions/3252851/how-to-display-request-headers-with-command-line-curl>
