@@ -1,13 +1,17 @@
 # Rust
 
-# Packages
-
 ## Install
+
+<http://rustup.rs>
+
+## Packages
+
+### Install
 
 Install `Cargo.toml`
 
     cargo build
 
-## Update
+### Update
 
     cargo update
