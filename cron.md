@@ -18,3 +18,9 @@ Redirect `env` output from cron to file
 Then run shell with environment variabes
 
     env - `cat path/to/cronenv` /bin/sh
+
+## fcron
+
+Gentoo configuration:
+
+    emerge --config sys-process/fcron
