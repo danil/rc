@@ -6,34 +6,19 @@
 
     ./configure --prefix=$HOME && make --jobs=2 && make install
 
-## Basics
+## Other
 
-    C-x C-w
-        (write-file) Save the current buffer with a specified file name.
-    C-x C-v
-        Find alternate file.
-    C-x i
-        Insert file at cursor position.
+`C-x C-w` Save the current buffer with a specified file name (write-file)  
+`C-x C-v` Find alternate file  
+`C-x i` Insert file at cursor position
 
-## 12.1 Deletion
+## Delete blank lines
 
 <http://gnu.org/software/emacs/manual/html_node/emacs/Deletion.html>,
 <http://emacswiki.org/DeletingWhitespace>,
 <http://emacswiki.org/EmacsNiftyTricks#toc11>.
 
-### (delete-blank-lines)
-
-`C-x C-o` Delete blank lines around the current line.
-
-
-## Transpose
-
-    C-t
-        Transpose two chars.
-    M-t
-        Transpose two words.
-    C-x C-t
-        Transpose lines.
+`C-x C-o` Delete blank lines around the current line (delete-blank-lines)
 
 ## 9.2 Editing in the Minibuffer
 
@@ -43,15 +28,6 @@
     C-q C-j
         Insert a newline in the minibuffer. (The newline character is
         really the ASCII character control-J.)
-
-## Online-Help
-
-    C-h c
-        Which command does this keystroke invoke.
-    C-h k
-        Which command does this keystroke invoke and what does it do?
-    C-h w
-        What key-combo does this command have?
 
 ## Search/Replace with regular expressions
 
