@@ -53,6 +53,12 @@ List all DNS records, ns (name servers) and so on
 
     dig example.org ANY
 
+# Netcat
+
+<https://en.wikipedia.org/wiki/Netcat>
+
+    echo "alpha bravo charlie delta" | busybox nc localhost 9000
+
 # Other
 
     rtorrent -s ./.rtorrent
