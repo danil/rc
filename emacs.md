@@ -288,7 +288,6 @@ file foo.tar:
         Search backwards or forwards for old shell commands that match
         regexp.
 
-
 ### (shell-command-on-region)
 
 Run the shell command line cmd with region contents as input;
