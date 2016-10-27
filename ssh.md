@@ -60,8 +60,6 @@
 
 #### Reverse tunneling
 
-##### SSH
-
 <http://tunnelsup.com/raspberry-pi-phoning-home-using-a-reverse-remote-ssh-tunnel>
 
 On `h4` SailfishOS:
@@ -80,3 +78,9 @@ On `h5` server:
     eval `ssh-agent`
     ssh-add *pem
     ssh -A -t -p 9922 medapp2.waveaccess.ru ssh -A danil@192.168.0.38
+
+## Audit
+
+`net-analyzer/ssh-audit` <https://github.com/arthepsy/ssh-audit>
+
+    ssh-audit example.org
