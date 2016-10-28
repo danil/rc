@@ -16,7 +16,7 @@
 
 ## Drop table
 
-    DROP TABLE your_table_name;
+    DROP TABLE IF EXISTS your_table_name;
 
 # Query
 
