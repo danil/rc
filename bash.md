@@ -23,3 +23,13 @@ Escape single quotes within single quotes
 
     echo 'Here'"'"'s my test...'
     echo 'Here'\''s my test...'
+
+## Iterate over range
+
+<http://stackoverflow.com/questions/18460123/how-to-add-leading-zeros-for-for-loop-in-shell#18460742>
+
+```bash
+$ for i in {009..010} ; do echo "Hello, World$i!" ; done
+Hello, World009!
+Hello, World010!
+```
