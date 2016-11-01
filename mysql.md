@@ -61,18 +61,6 @@ DATABASES, UPDATE, USAGE, LOCK TABLES and so on
 
     DELETE FROM mysql.user WHERE User = 'danil';
 
-## Show databases
-
-    SHOW DATABASES LIKE '%danil%';
-    +--------------------+
-    | Database           |
-    +--------------------+
-    | danil              |
-    | information_schema |
-    | mysql              |
-    +--------------------+
-    3 rows in set (0.00 sec)
-
 ## Show character sets
 
     SHOW CHARACTER SET LIKE 'utf%';
@@ -83,6 +71,48 @@ DATABASES, UPDATE, USAGE, LOCK TABLES and so on
     +---------+---------------+-------------------+--------+
     1 row in set (0.00 sec)
 
+## Databases
+
+### Switching to database
+
+    USE your_database;
+
+### Show databases
+
+    SHOW DATABASES LIKE '%your_database%';
+    +--------------------+
+    | Database           |
+    +--------------------+
+    | information_schema |
+    | mysql              |
+    | your_database      |
+    +--------------------+
+    3 rows in set (0.00 sec)
+
+### Describe database
+
+    SELECT * FROM INFORMATION_SCHEMA.SCHEMATA
+     WHERE SCHEMA_NAME LIKE 'your_database';
+    +--------------+---------------+----------------------------+
+    | CATALOG_NAME |  SCHEMA_NAME  | DEFAULT_CHARACTER_SET_NAME |
+    +--------------+---------------+----------------------------+
+    | NULL         | your_database | utf8                       |
+    +--------------+---------------+----------------------------+
+    1 row in set (0.00 sec)
+
+### Create database
+
+    CREATE DATABASE IF NOT EXISTS your_database CHARACTER SET utf8;
+
+### Alter database
+
+    ALTER DATABASE 'your_database' DEFAULT CHARACTER SET utf8
+     COLLATE utf8_general_ci;
+
+### Drop database
+
+    DROP DATABASE IF EXISTS your_database;
+
 ## Query
 
 Retrieve rows 6-15.
@@ -92,34 +122,6 @@ Retrieve rows 6-15.
 ### Query from file
 
     source sqlfile;
-
-## Create database
-
-    CREATE DATABASE IF NOT EXISTS mobotix CHARACTER SET utf8;
-
-## Switching to database
-
-    USE some_db;
-
-## Alter database
-
-    ALTER DATABASE 'mobotix_db_beta' DEFAULT CHARACTER SET utf8
-     COLLATE utf8_general_ci;
-
-## Drop database
-
-    DROP DATABASE IF EXISTS danil;
-
-## Describe database
-
-    SELECT * FROM INFORMATION_SCHEMA.SCHEMATA
-     WHERE SCHEMA_NAME LIKE 'danil';
-    +--------------+-------------+----------------------------+
-    | CATALOG_NAME | SCHEMA_NAME | DEFAULT_CHARACTER_SET_NAME |
-    +--------------+-------------+----------------------------+
-    | NULL         | danil       | utf8                       |
-    +--------------+-------------+----------------------------+
-    1 row in set (0.00 sec)
 
 ## List tables
 
