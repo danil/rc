@@ -77,6 +77,10 @@ Copy ISO image to bootable usb
 
 # Free space
 
+`sys-fs/ncdu` Diskspace a-la usage is an baobab and gt5 replacement
+
+# lsof
+
 Find and close process/program wich open removed files.
 Space will not be freed until they are closed.
 <http://unix.stackexchange.com/questions/34140/tell-fs-to-free-space-from-deleted-files-now#34143>
