@@ -10,6 +10,12 @@
 
     curl --head http://wikipedia.org
 
+## POST
+
+<http://superuser.com/questions/149329/what-is-the-curl-command-line-syntax-to-do-a-post-request>
+
+    curl --request POST "http://example.org"
+
 ## Gzipped
 
     curl "http://example.org" | gunzip
