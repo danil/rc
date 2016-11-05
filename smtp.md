@@ -1,6 +1,8 @@
-# swaks
+# SMTP
 
-Command line smtp testing, including tls and auth
+## swaks
+
+`net-mail/swaks` command line smtp testing, including tls and auth
 <http://jetmore.org/john/code/swaks/>
 
     swaks --auth \
