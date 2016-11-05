@@ -8,6 +8,28 @@
     tree /dev/disk
     lsblk -o +fstype,label,uuid,partuuid
 
+# MBR & GPT
+
+<https://wiki.archlinux.org/index.php/partitioning#Partitioning_tools>
+
+```
+                 |       MBR        |       GPT
+-----------------+------------------+------------------
+                 | fdisk            | fdisk
+     Dialog      | parted           | gdisk
+                 |                  | parted
+-----------------+------------------+------------------
+ Pseudo-graphics | cfdisk           | cfdisk
+                 |                  | cgdisk
+                 | sfdisk           | sfdisk
+-----------------+------------------+-------------------
+ Non-interactive | parted           | sgdisk
+                 |                  | parted
+-----------------+------------------+-------------------
+    Graphical    | GParted          | GParted
+                 | partitionmanager | partitionmanager
+```
+
 # lsblk
 
 List partitions:
