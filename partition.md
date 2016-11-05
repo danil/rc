@@ -21,8 +21,8 @@
 -----------------+------------------+------------------
  Pseudo-graphics | cfdisk           | cfdisk
                  |                  | cgdisk
-                 | sfdisk           | sfdisk
 -----------------+------------------+-------------------
+                 | sfdisk           | sfdisk
  Non-interactive | parted           | sgdisk
                  |                  | parted
 -----------------+------------------+-------------------
