@@ -1,5 +1,12 @@
 # Partitions
 
+# UUIDs and labels
+
+<https://wiki.gentoo.org/wiki/Fstab#UUIDs_and_labels>,
+<https://wiki.gentoo.org/wiki/Removable_media#UUIDs_and_labels>
+
+    tree /dev/disk
+
 # lsblk
 
 List partitions:
