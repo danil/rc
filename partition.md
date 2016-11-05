@@ -6,6 +6,7 @@
 <https://wiki.gentoo.org/wiki/Removable_media#UUIDs_and_labels>
 
     tree /dev/disk
+    lsblk -o +fstype,label,uuid,partuuid
 
 # lsblk
 
