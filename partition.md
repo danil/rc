@@ -59,14 +59,18 @@ Copy partitions table from /dev/sda to /dev/sdb
 
 Legacy!
 
+## fdisk & sfdisk
+
     fdisk -l /dev/sdb
     sfdisk -l -uM
 
-      Name     Flags    Part Type   FS Type            [Label]       Size (MB)
-    ---------------------------------------------------------------------------
-      sda1     Boot      Primary    Linux ext4         [fs_boot]       1000,00
-      sda2               Primary    Linux swap / Solaris               9000,00
-      sda3               Primary    Linux ext4         [fs_root]     110000,00
+```
+  Name     Flags    Part Type   FS Type            [Label]       Size (MB)
+---------------------------------------------------------------------------
+  sda1     Boot      Primary    Linux ext4         [fs_boot]       1000,00
+  sda2               Primary    Linux swap / Solaris               9000,00
+  sda3               Primary    Linux ext4         [fs_root]     110000,00
+```
 
 # cfdisk
 
