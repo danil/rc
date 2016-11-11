@@ -199,6 +199,24 @@ Get engine type (MyISAM or InnoDB)
 
     ALTER TABLE users CHANGE COLUMN old_name new_name varchar(255);
 
+## Index
+
+### Create
+
+    ALTER TABLE `your_table`
+    ADD UNIQUE `your_index`(`first_column`, `second_column`);
+
+### Show
+
+Describe index
+
+    SHOW INDEX FROM your_table;
+
+### Remove
+
+    ALTER TABLE your_table DROP INDEX your_index;
+    DROP index your_index_name ON your_tbl_name;
+
 ## Truncate
 
 Empties a table completely.
