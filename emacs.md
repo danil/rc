@@ -1,5 +1,10 @@
 # Emacs
 
+## Cask
+
+    curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
+    cd ~/.emacs.d && cask install
+
 ## Compile from from source
 
 <http://www.emacswiki.org/emacs/BuildingEmacs>
