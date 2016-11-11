@@ -81,13 +81,6 @@ Copy ISO image to bootable usb
     dd if=bootldr.rom of=/dev/sdb
     dd if=debian-eeepc.img of=/dev/sdf
 
-# Benchmark
-
-* app-benchmarks/bonnie++
-* app-benchmarks/dbench
-* app-benchmarks/tiobench
-* sys-block/fio
-
 # Free space
 
 `sys-fs/ncdu` Diskspace a-la usage is an baobab and gt5 replacement
