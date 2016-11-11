@@ -219,6 +219,10 @@ Describe index
     ALTER TABLE your_table DROP INDEX your_index;
     DROP index your_index_name ON your_tbl_name;
 
+## Explain
+
+    EXPLAIN SELECT * FROM your_table WHERE id = 1;
+
 ## Truncate
 
 Empties a table completely.
