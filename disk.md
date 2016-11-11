@@ -69,11 +69,24 @@ Copy ISO image to bootable usb
 
     dd if=path/to/your.iso of=/dev/your-usb
 
+## Benchmark
+
+<https://haydenjames.io/web-host-doesnt-want-read-benchmark-vps>
+
+    dd if=/dev/zero of=/tmp/foobar bs=1M count=1024 conv=fdatasync
+
 ## Other
 
     dd if=/dev/sdb of=mybackup.img bs=130M count=1
     dd if=bootldr.rom of=/dev/sdb
     dd if=debian-eeepc.img of=/dev/sdf
+
+# Benchmark
+
+* app-benchmarks/bonnie++
+* app-benchmarks/dbench
+* app-benchmarks/tiobench
+* sys-block/fio
 
 # Free space
 
