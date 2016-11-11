@@ -14,7 +14,7 @@
 
 <http://superuser.com/questions/149329/what-is-the-curl-command-line-syntax-to-do-a-post-request>
 
-    curl --request POST "http://example.org"
+    curl --request POST --data "foo=bar" "http://example.org"
 
 ## Gzipped
 
