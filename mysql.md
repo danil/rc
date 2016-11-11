@@ -201,6 +201,8 @@ Get engine type (MyISAM or InnoDB)
 
 ## Index
 
+Indeces
+
 ### Create
 
     ALTER TABLE `your_table`
