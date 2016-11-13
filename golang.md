@@ -8,7 +8,16 @@
 
 ## Install/update
 
-    go get -v -u example.org/path/to/package
+### All dependencies
+
+    go get -v ./...
+
+### Update
+
+    go get -u example.org/path/to/package
+
+### Other
+
     go install example.org/path/to/package
 
 ## List installed
