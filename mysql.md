@@ -253,7 +253,8 @@ Empties a table completely.
 
 ## Update columns
 
-    UPDATE mobotix.menus SET article_text='' WHERE id='63';
+    UPDATE `your_db_name`.`your_tbl_name`
+      SET your_column1='foo', your_column2='bar' WHERE id='1';
     Query OK, 1 row affected (0.01 sec)
 
     UPDATE users
