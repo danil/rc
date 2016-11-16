@@ -37,20 +37,19 @@
 
 <http://revsys.com/writings/quicktips/ssh-tunnel.html>
 
-    ssh -f -N -L localhost:2000:homer:22 root@stampy
-    ssh -p 2000 danil@localhost
+#### One hop
 
-### HTTP
+    ssh -N -L local_port:remote_ip:remote_port -p ssh_port ssh_user@ssh_host
+    nc 127.0.0.1 local_port
 
-#### Release terminal
+##### Release terminal
 
-    ssh -f -N -L localhost:3001:192.168.0.38:3000 medapp
-    curl localhost:3001
+    ssh -f -N -L local_port:remote_ip:remote_port user@host
 
-#### Not release terminal
+#### Two hops
 
-    ssh -L localhost:3001:192.168.0.38:3000 \
-        -p 9922 danil@medapp2.waveaccess.ru
+    ssh -N -L 127.0.0.1:local_port:ip_available_from_ssh_host:remote_port \
+        -p ssh_port ssh_user@ssh_host
 
 #### Forward port on localhost
 
