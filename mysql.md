@@ -241,7 +241,8 @@ Empties a table completely.
 
 ## Insert
 
-    INSERT INTO danil.test_table (id, text) VALUES (1, 'test text');
+    INSERT INTO `your_db_name`.`your_tbl_name1` (id, text)
+      VALUES (1, 'test text');
     INSERT INTO tbl_temp2 (fld_id)
         SELECT tbl_temp1.fld_order_id
         FROM tbl_temp1 WHERE tbl_temp1.fld_order_id > 100;
@@ -249,7 +250,7 @@ Empties a table completely.
 
 ## Delete row
 
-    DELETE FROM mysql.user WHERE User = 'danil';
+    DELETE FROM mysql.user WHERE User = 'foobar';
 
 ## Update columns
 
