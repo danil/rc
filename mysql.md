@@ -16,13 +16,25 @@
 
 ## Dump
 
+    mysqldump --result-file=~/backup.sql your_db_name
+
+### Create
+
 `--default-character-set=latin1` option mean what MySQL server runing
 with latin1 character set.  But data stored in database may be utf8.
 
-    mysqldump -h 172.168.1.2 -u danil -p \
-     --default-character-set=latin1 -r   \
-     --no-create-info --complete-insert  \
-     --result-file=~/backup.sql db_name my_table, my_table_2
+```sh
+export foo=your_db_name && \
+  mysqldump -h127.0.0.1 -Pyour_port -uyour_user \
+            --default-character-set=latin1 -r \
+            --no-create-info --complete-insert \
+            $foo your_tbl_name1, your_tbl_name2 | \
+  xz --compress > $foo\_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
+```
+
+### Restore
+
+    mysql < path/to/dump.sql.xz
 
 ## Show system variables
 
