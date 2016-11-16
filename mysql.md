@@ -282,3 +282,9 @@ Empties a table completely.
 
     SELECT * FROM users INTO OUTFILE '/path/to/file.csv'
     FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n';
+
+## Data types
+
+### Enum
+
+    ALTER TABLE your_tbl_name CHANGE your_column your_column ENUM('foo','bar');
