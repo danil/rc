@@ -18,8 +18,6 @@
 
     mysqldump --result-file=~/backup.sql your_db_name
 
-### Create
-
 `--default-character-set=latin1` option mean what MySQL server runing
 with latin1 character set.  But data stored in database may be utf8.
 
