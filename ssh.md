@@ -51,6 +51,13 @@
     ssh -N -L 127.0.0.1:local_port:ip_available_from_ssh_host:remote_port \
         -p ssh_port ssh_user@ssh_host
 
+#### Proxy all HTTP traffic
+
+* <http://security.stackexchange.com/questions/31226/how-can-i-tunnel-through-an-ssh-server-for-application-layer-protocols-such-as-h#31228>
+* <https://en.wikipedia.org/wiki/SOCKS#SOCKS5>
+
+    ssh -D your_local_port -N your_remote_ssh_host
+
 #### Forward port on localhost
 
 <http://askubuntu.com/questions/444729/redirect-port-80-to-8080-and-make-it-work-on-local-machine#444737>
