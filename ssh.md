@@ -56,7 +56,9 @@
 * <http://security.stackexchange.com/questions/31226/how-can-i-tunnel-through-an-ssh-server-for-application-layer-protocols-such-as-h#31228>
 * <https://en.wikipedia.org/wiki/SOCKS#SOCKS5>
 
-    ssh -D your_local_port -N your_remote_ssh_host
+```sh
+ssh -D your_local_port -N your_remote_ssh_host
+```
 
 #### Forward port on localhost
 
