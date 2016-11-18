@@ -134,6 +134,13 @@ Retrieve rows 6-15.
 
     source sqlfile;
 
+### Copy rows in same table
+
+```SQL
+INSERT INTO your_tbl_name (name, age)
+  SELECT 'John', age FROM your_tbl_name WHERE name = 'Alice';
+```
+
 ## List tables
 
     SHOW TABLES;
