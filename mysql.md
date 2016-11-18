@@ -243,7 +243,7 @@ Empties a table completely.
 ## Insert
 
     INSERT INTO `your_db_name`.`your_tbl_name1` (id, text)
-      VALUES (1, 'test text');
+      VALUES (1, 'foo'), (2, 'bar');
     INSERT INTO tbl_temp2 (fld_id)
         SELECT tbl_temp1.fld_order_id
         FROM tbl_temp1 WHERE tbl_temp1.fld_order_id > 100;
