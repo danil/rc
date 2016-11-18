@@ -32,7 +32,8 @@ export foo=your_db_name && \
 
 ### Restore
 
-    mysql < path/to/dump.sql.xz
+    mysql < path/to/dump.sql
+    cat path/to/dump.sql.xz | xz --decompress | mysql -uyour_user -p your_db_name
 
 ## Show system variables
 
