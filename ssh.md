@@ -92,3 +92,9 @@ On `h5` server:
 `net-analyzer/ssh-audit` <https://github.com/arthepsy/ssh-audit>
 
     ssh-audit example.org
+
+# SSL
+
+## Audit
+
+SSL/HTTPS checker: <https://www.ssllabs.com/ssltest/analyze.html>
