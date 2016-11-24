@@ -16,6 +16,10 @@
 
     go get -u example.org/path/to/package
 
+### Testing
+
+    go test -v ./...
+
 ### Other
 
     go install example.org/path/to/package
