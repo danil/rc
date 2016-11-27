@@ -1,19 +1,5 @@
 # find
 
-    find ~/ -mount -type f -size -100k -iname "*.rb" \
-            -exec grep -q -e danil\\.kutkevich \{\} \;
-
-    find "/etc/" -mount -maxdepth 3 -type f -size -100k -name "*.conf" \
-     | xargs grep -ilE "192\.168\.1\.[0-9]+"
-
-    find ./ -type d -exec chmod 755 '{}' \;
-
-    find ./ -type f | \
-        while read I; do \
-            NEWNAME1=$( md5sum "$I" | cut -d " " -f 1 ); \
-            NEWNAME2=$(dirname "$I")/$NEWNAME1_$( basename "$I"); \
-            mv "$I" "$NEWNAME2"; done;
-
 ## Recently changed
 
 ### Last minute
@@ -48,6 +34,12 @@ Find recently changed files within 1 minutes
     find ./ -mount -type f -iname "*~" -exec rm {} \;
     find /lib/modules/2.6.30/ -type f -iname '*.o' -or -iname '*.ko'
 
+## Remove empty files
+
+Remove files with zero sizes
+
+    find /mnt/trash/ropbackups -type f -size 0 -delete
+
 ## Exclude dirs
 
 Find but not in some directories
@@ -61,3 +53,19 @@ Find and sort results by mtime
 <http://unix.stackexchange.com/questions/29899/how-can-i-use-find-and-sort-the-results-by-mtime#29901>
 
     find where/to/find -name *your_pattern* -printf "%T+\t%p\n" | sort
+
+## Other
+
+    find ~/ -mount -type f -size -100k -iname "*.rb" \
+            -exec grep -q -e danil\\.kutkevich \{\} \;
+
+    find "/etc/" -mount -maxdepth 3 -type f -size -100k -name "*.conf" \
+     | xargs grep -ilE "192\.168\.1\.[0-9]+"
+
+    find ./ -type d -exec chmod 755 '{}' \;
+
+    find ./ -type f | \
+        while read I; do \
+            NEWNAME1=$( md5sum "$I" | cut -d " " -f 1 ); \
+            NEWNAME2=$(dirname "$I")/$NEWNAME1_$( basename "$I"); \
+            mv "$I" "$NEWNAME2"; done;
