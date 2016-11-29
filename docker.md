@@ -42,7 +42,7 @@ Create and start (or run) image as container
                   --publish=your_external_port_2:your_internal_port_2 \
                   your/image-name \
                   -l -c 'export LANG="C.UTF-8" \
-                         && sudo service postgresql start'
+                         && service postgresql start'
     docker start your-container-name
 
 Get response from published port (get internal port 5432 as 5433 port

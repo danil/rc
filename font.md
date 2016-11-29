@@ -12,7 +12,7 @@
 * <https://wiki.archlinux.org/index.php/fonts#Manual_installation>
 * <https://wiki.ubuntu.com/Fonts#Manually>
 
-    sudo fc-cache --force --verbose
+    fc-cache --force --verbose
 
 ## OTF better than TTF
 
