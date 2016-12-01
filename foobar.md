@@ -428,8 +428,6 @@ Start a process in the background and have it keep running after you log off
     ln -s TARGET [LINK_NAME]
     touch access.log error.log
     dmesg |tail -n 25 # Diagnostic message.
-    lspci
-    lsusb
     ethtool -i eth0
     setterm -blength 0
     tput colors
