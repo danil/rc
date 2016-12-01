@@ -441,8 +441,6 @@ Start a process in the background and have it keep running after you log off
     # 786468646b6b6577696f646464 (128bit WEP key)
     echo -n 'xdhdkkewioddd' |hexdump -e '13/1 "%02x" "\n"' \
          |cut -d ':' -f 1-13
-    update-rc.d nginx defaults
-    update-rc.d -f nginx remove
     cdrecord dev=/dev/hdc <downloaded iso file>
     PAGER=cat man man
     vlc -I ncurses
