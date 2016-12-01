@@ -654,7 +654,7 @@ Deploy to GitHub Pages <http://yeoman.io/learning/deployment.html>
 
 Find reseted commit message:
 
-    git reflog --color -p --author=danil@kutkevich.org --since="1 hours"
+    git reflog --pretty=fuller --color -p --author=your_user --since="1 hours"
 
 # Merge repositories
 
