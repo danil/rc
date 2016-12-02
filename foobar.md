@@ -206,37 +206,6 @@ http://www.cyberciti.biz/faq/throttle-disk-io-rate-limit-disk-io
     msiexec /i file.msi
     wine start FluffyBunnySetup.msi
 
-# Users and groups
-
-    groups danil
-    groupadd danil
-    groupmod -n new_group_name danil
-    gpasswd --add danil audio #and then `newgrp`
-    groupdel danil
-    delgroup --only-if-empty danil
-    useradd -D
-    useradd --comment "Danil Kutkevich" --user-group --groups fuse,cvs \
-            --create-home --base-dir /home/.rails/ --shell /bin/bash danil
-    usermod --comment "Danil Kutkevich" --home /home/danil --move-home \
-            --groups fuse,cvs --append \
-            --gid danil --login danil --shell /bin/bash danil
-    userdel --remove danil
-    grpck
-
-# Password
-
-## Set
-
-    passwd your-user-name
-
-## Delete
-
-    passwd --delete your-user-name
-
-## Other
-
-    deluser --remove-all-files --backup --backup-to /home/danil/ danil
-
 # chmod
 
     chmod -R ug+w ./smarty/templates_c/ ./smarty/cach/
