@@ -29,7 +29,7 @@
 
 ### Copy public key to remote host
 
-    ssh-copy-id -i ~/.ssh/key-file-name.pub "anonymous@example.org -p 2000"
+    ssh-copy-id -i ~/.ssh/key-file-name.pub -p54321 anonymous@example.org
 
 ## Tunneling
 
