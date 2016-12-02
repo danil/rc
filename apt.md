@@ -43,7 +43,7 @@ Distributions like Debian/Ubuntu
 
     groups your_user
 
-### Add
+### Create
 
     groupadd your_group
 
@@ -56,9 +56,12 @@ Distributions like Debian/Ubuntu
     groupdel your_group
     delgroup --only-if-empty your_group
 
+### Add to group
+
+    gpasswd --add your_user your_group #and then `newgrp`
+
 ### Other
 
-    gpasswd --add danil audio #and then `newgrp`
     grpck
 
 ## Passwords
@@ -70,14 +73,6 @@ Distributions like Debian/Ubuntu
 ### Delete
 
     passwd --delete your-user-name
-
-## Timezone
-
-Change timezone
-<https://www.digitalocean.com/community/tutorials/additional-recommended-steps-for-new-ubuntu-14-04-servers#configure-timezones-and-network-time-protocol-synchronization>,
-<https://www.digitalocean.com/community/questions/how-to-change-the-timezone-on-ubuntu-14>
-
-    dpkg-reconfigure tzdata
 
 ## APT (Advanced Packaging Tool)
 
@@ -117,3 +112,16 @@ Change timezone
     reprepro
     wget --output-document=- http://backports.org/debian/archive.key \
       | apt-key add -
+
+## Timezone
+
+Change timezone
+<https://www.digitalocean.com/community/tutorials/additional-recommended-steps-for-new-ubuntu-14-04-servers#configure-timezones-and-network-time-protocol-synchronization>,
+<https://www.digitalocean.com/community/questions/how-to-change-the-timezone-on-ubuntu-14>
+
+    dpkg-reconfigure tzdata
+
+## Sudo without password
+
+    gpasswd --add your_user sudo
+    echo "your_user ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
