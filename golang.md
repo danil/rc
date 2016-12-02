@@ -29,3 +29,9 @@
 <https://golang.org/doc/articles/go_command.html>
 
     go list ./...
+
+# Build
+
+## Reduce binary size
+
+    go build --ldflags "-s" path/to/package
