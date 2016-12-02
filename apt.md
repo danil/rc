@@ -123,5 +123,8 @@ Change timezone
 
 ## Sudo without password
 
-    gpasswd --add your_user sudo
-    echo "your_user ALL=(ALL:ALL) NOPASSWD:ALL" >> /etc/sudoers
+<http://askubuntu.com/questions/334318/sudoers-file-enable-nopasswd-for-user-all-commands#answer-574454>
+
+    groupadd superusers
+    echo "%superusers ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+    gpasswd --add your_user superusers
