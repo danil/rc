@@ -35,3 +35,9 @@
 ## Reduce binary size
 
     go build --ldflags "-s" path/to/package
+
+# Location by IP
+
+Find location (country, geographic coordinate, latitude/longitude) by IP
+
+<https://github.com/oschwald/geoip2-golang>
