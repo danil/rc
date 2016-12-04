@@ -44,7 +44,7 @@ Blank file content.
 
 # Date and time
 
-## Timestamp to date
+## Timestamp to time/date
 
     date --date=@1480865885 --rfc-3339=seconds
 
