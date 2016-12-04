@@ -44,10 +44,9 @@ Blank file content.
 
 # Date and time
 
-    date +%Y%m%d%H%M%S #19700101000000
-    date +%z
-    date --iso-8601=seconds #2014-08-15T16:40:09+0400
-    tzselect #show what value to use for TZ environment variable
+## Timestamp to date
+
+    date --date=@1480865885 --rfc-3339=seconds
 
 ## Set
 
@@ -69,6 +68,13 @@ Blank file content.
     ntpdc -c sysinfo -n # Stratum 3 is good enough.
     ntpq -c readvar
     ntpq -c peers
+
+### Other
+
+    date +%Y%m%d%H%M%S #19700101000000
+    date +%z
+    date --iso-8601=seconds #2014-08-15T16:40:09+0400
+    tzselect #show what value to use for TZ environment variable
 
 # env
 
