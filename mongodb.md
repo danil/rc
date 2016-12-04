@@ -6,7 +6,7 @@
 
     show dbs
 
-### Use
+### Create of use
 
     use your_db_name
 
@@ -15,3 +15,11 @@
 ### List
 
     show collections
+
+### Create
+
+    db.createCollection("your_collection")
+
+### Remove
+
+    db.your_collection.drop()
