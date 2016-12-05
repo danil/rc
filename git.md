@@ -187,7 +187,7 @@ Select tag <http://git-scm.com/book/en/Git-Basics-Tagging#Listing-Your-Tags>
 
 <http://git-scm.com/book/en/Git-Basics-Tagging#Lightweight-Tags>
 
-    git tag v0.0.1
+    git tag v0.0.1 HEAD^
 
 ## Push to remote
 
