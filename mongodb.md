@@ -10,6 +10,11 @@
 
     use your_db_name
 
+### Remove
+
+    use your_db_name
+    db.dropDatabase()
+
 ## Collections
 
 ### List
