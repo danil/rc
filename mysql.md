@@ -245,7 +245,7 @@ Describe index
 
 Empties a table completely.
 
-    TRUNCATE TABLE accounting_spro_spro1s;
+    TRUNCATE TABLE your_table;
 
 ## Insert
 
