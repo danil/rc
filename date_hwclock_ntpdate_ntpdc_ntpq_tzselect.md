@@ -36,6 +36,5 @@
     date +%Y%m%d%H%M%S #19700101000000
     date +%z
     date --iso-8601=seconds #2014-08-15T16:40:09+0400
+    date --utc +%Y%m%dT%H%M%SZ #19700101T000000Z
     tzselect #show what value to use for TZ environment variable
-
-    date +%s --date="2016-12-12T14:40:00+0300"
