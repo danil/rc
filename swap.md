@@ -6,7 +6,7 @@
 
 ## Create file
 
-    fallocate --length=4GB /swapfile
+    fallocate --length=4GB /path/to/swap
 
 or
 
@@ -14,7 +14,7 @@ or
 
 ## Other
 
-    chmod 600 /swapfile && mkswap /swapfile && swapon /swapfile
+    chmod 600 /path/to/swap && mkswap /path/to/swap && swapon /path/to/swap
 
 ## Partition
 
