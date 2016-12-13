@@ -277,7 +277,6 @@ Network UPS Tools (NUT) <http://en.gentoo-wiki.com/wiki/NUT>.
     mount -t vboxsf -o uid=1000,gid=1000 share ~/mnt/share
     VBoxManage clonevdi xp_ie7.vdi xp_ie8.vd
 
-
 # Puppet
 
     puppet puppet.pp
