@@ -332,6 +332,12 @@ Start a process in the background and have it keep running after you log off
 
     watch --differences 'ps -aux | grep chrom'
 
+# logrotate
+
+Test configs
+
+    logrotate --debug --force /etc/logrotate.conf
+
 # Other
 
     mkdir ~/root/{var/{db/pkg,paludis/distfiles,cache/paludis/{names_cache,write_cache},tmp/paludis}
