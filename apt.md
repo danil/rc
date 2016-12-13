@@ -6,6 +6,18 @@ Distributions like Debian/Ubuntu
 
 `/etc/init.d` (https://wiki.debian.org/RunLevel)
 
+### Status
+
+    service your_daemon status
+
+### Start
+
+    service your_daemon start
+
+### Stop
+
+    service your_daemon stop
+
 ### Add
 
     update-rc.d your_daemon defaults
