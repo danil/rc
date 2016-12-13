@@ -21,6 +21,10 @@
 
     show collections
 
+### Count
+
+    db.your_collection.stats()
+
 ### Create
 
     db.createCollection("your_collection")
