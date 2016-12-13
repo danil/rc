@@ -59,10 +59,15 @@ List all DNS records, ns (name servers) and so on
 
     echo "alpha bravo charlie delta" | busybox nc localhost 9000
 
+# host
+
+Get `A` and `MX` records
+
+    host example.org your.dns.server.org
+
 # Other
 
     rtorrent -s ./.rtorrent
-    host 192.168.132.44 192.168.8.1
     nslookup 172.16.81.4
     whois example.org
     ifconfig -a
