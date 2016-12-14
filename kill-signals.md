@@ -4,6 +4,11 @@
 
     ps auxf
 
+## kill
+
+    kill -HUP $( cat /var/run/your_process.pid )
+    kill -SIGUSR1 $( cat /var/run/your_process.pid )
+
 ## pkill
 
 Kill process by matched command regex
