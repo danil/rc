@@ -30,11 +30,22 @@
 
     go list ./...
 
-# Build
+# Linker
+
+* <https://golang.org/cmd/link>
+* <http://stackoverflow.com/questions/11354518/golang-application-auto-build-versioning#11355611>
 
 ## Reduce binary size
 
     go build --ldflags "-s" path/to/package
+    go run --ldflags "-s" path/to/package
+
+## Compile time variables
+
+Set some string variable on compile time (for example your some "version")
+
+    go build -ldflags "-X main.yourVariable=`echo 'Your value'`" main.go
+    go run -ldflags "-X main.foo='bar'" main.go
 
 # Location by IP
 
