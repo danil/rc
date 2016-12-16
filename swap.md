@@ -4,6 +4,8 @@
 
 <https://wiki.archlinux.org/index.php/swap#Swap_file>
 
+_Sleep/suspend/hibernate to disk do NOT work by default with file swap_
+
 ## Create file
 
     fallocate --length=4GB /path/to/swap
