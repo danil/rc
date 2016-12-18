@@ -39,6 +39,10 @@ Via pipeline
       | gzip --compress \
       > path/to/file.tar.gz
 
+#### Each directory
+
+    for i in *; do echo "$i" && tar cJf "$i.tar.xz" "$i"; done
+
 ## gzip
 
     gzip --keep access.log
