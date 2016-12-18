@@ -173,6 +173,7 @@ Select tag <http://git-scm.com/book/en/Git-Basics-Tagging#Listing-Your-Tags>
 
 ### Latest tag
 
+Newest tag
 <http://stackoverflow.com/questions/1404796/how-to-get-the-latest-tag-name-in-current-branch-in-git#7261049>
 
     git describe --abbrev=0 --tags
