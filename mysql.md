@@ -207,15 +207,21 @@ Get engine type (MyISAM or InnoDB)
 
 ### Add column
 
-    ALTER TABLE users ADD COLUMN login varchar(255);
+    ALTER TABLE your_tbl_name ADD COLUMN your_col2 INT(11) AFTER your_col1;
 
 ### Delete column
 
-    ALTER TABLE cashouts DROP COLUMN hold_operation_id;
+    ALTER TABLE your_tbl_name DROP COLUMN your_col;
 
 ### Rename column
 
-    ALTER TABLE users CHANGE COLUMN old_name new_name varchar(255);
+    ALTER TABLE your_tbl_name CHANGE COLUMN old_name new_name varchar(255);
+
+### Modify column
+
+Modify column without rename
+
+    ALTER TABLE your_tbl_name MODIFY COLUMN your_col VARCHAR(255) NOT NULL;
 
 ## Index
 
@@ -224,7 +230,7 @@ Indeces
 ### Create
 
     ALTER TABLE `your_table`
-    ADD UNIQUE `your_index`(`first_column`, `second_column`);
+    ADD UNIQUE `your_index`(`your_col1`, `your_col2`);
 
 ### Show
 
@@ -263,7 +269,7 @@ Empties a table completely.
 ## Update columns
 
     UPDATE `your_db_name`.`your_tbl_name`
-      SET your_column1='foo', your_column2='bar' WHERE id='1';
+      SET your_col1='foo', your_col2='bar' WHERE id='1';
     Query OK, 1 row affected (0.01 sec)
 
     UPDATE users
@@ -295,4 +301,4 @@ Empties a table completely.
 
 ### Enum
 
-    ALTER TABLE your_tbl_name CHANGE your_column your_column ENUM('foo','bar');
+    ALTER TABLE your_tbl_name CHANGE your_col your_col ENUM('foo','bar');
