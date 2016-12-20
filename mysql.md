@@ -6,8 +6,8 @@
      -e "SELECT * FROM test_db.test_table;"
     mysqlshow -h localhost -u root -p
     mysqladmin -h localhost -u root -p version
-    mysql -u root -B -N \
-     -e "SELECT DISTINCT
+    mysql --user=root --password --batch --skip-column-names \
+     --execute="SELECT DISTINCT
           CONCAT('SHOW GRANTS FOR ''',user,'''@''',host,''';')
           AS query FROM user" mysql | mysql -u root
     mysqlcheck -A
