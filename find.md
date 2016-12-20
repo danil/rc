@@ -38,7 +38,11 @@ Find recently changed files within 1 minutes
 
 Remove files with zero sizes
 
-    find /mnt/trash/ropbackups -type f -size 0 -delete
+    find path/to/dir -type f -size 0 -delete
+
+## Remove empy directories
+
+    find path/to/dir -type d -empty -delete
 
 ## Exclude dirs
 
