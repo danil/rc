@@ -14,4 +14,6 @@
 
 ## dwebp to png
 
+<http://unix.stackexchange.com/questions/70622/command-line-convert-webp-to-jpg#70673>
+
     dwebp file.webp -o abc.png
