@@ -26,6 +26,10 @@ Validate fstab syntax
 
     df -hi
 
+## Directories list sizes
+
+    du -sh ./*/
+
 ## Finding largest files/directories
 
 * <http://superuser.com/questions/9847/linux-utility-for-finding-the-largest-files-directories>
