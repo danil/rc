@@ -9,3 +9,9 @@
 ## Convert png to jpg
 
     convert /tmp/screenshot.png -quality 30 /tmp/screenshot.jpg
+
+# WebP
+
+## dwebp to png
+
+    dwebp file.webp -o abc.png
