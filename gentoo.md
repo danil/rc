@@ -189,6 +189,10 @@ twice) might be installed from overlay
 
     equery list -o | sort | uniq --count | sort --numeric-sort
 
+## List packages in loop
+
+    read -ra arr <<<"you/first-package your/second-package" && for i in "${arr[@]}"; do eix "$i"; done
+
 # repoman
 
     repoman manifest
