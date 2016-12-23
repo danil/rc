@@ -138,5 +138,6 @@ Change timezone
 <http://askubuntu.com/questions/334318/sudoers-file-enable-nopasswd-for-user-all-commands#answer-574454>
 
     groupadd superusers
-    echo "%superusers ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+    echo "%superusers ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/001_superusers
+    chmod 0440 /etc/sudoers.d/001_superusers
     gpasswd --add your_user superusers
