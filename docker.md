@@ -163,3 +163,9 @@ Import will flatten and reduce image size
 <https://www.ctl.io/developers/blog/post/optimizing-docker-images>
 
     cat file.tar.gz | docker import - your-image-name
+
+# init scripts
+
+Host system init scripts (upstart or systemd)
+
+<https://docs.docker.com/engine/admin/host_integration/#/examples>
