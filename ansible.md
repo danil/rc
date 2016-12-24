@@ -2,7 +2,7 @@
 
 ## Install
 
-    pip2 install --user git+git://github.com/ansible/ansible.git@stable-2.2
+    pip2 install --user "ansible>=2.2"
 
 ## SSH
 
