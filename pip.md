@@ -8,7 +8,8 @@ Python packages management system
 
 ## Install
 
-    pip install --user your-package-name
+    pip install --user git+git://example.xyz/your/repository.git@stable-1.2.3
+    pip install --user "your_package_name>=1.2.3,<3.2.1"
 
 ## Uninstall
 
