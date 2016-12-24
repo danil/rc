@@ -12,6 +12,28 @@ Install command line interface
         AWS_SECRET_ACCESS_KEY=your-secret \
         aws some-command
 
+## Username
+
+Default user names
+<https://alestic.com/2014/01/ec2-ssh-username>
+
+     OS/Distro       | Official AMI | Legacy / Community / Other AMI
+                     | ssh Username |         ssh Usernames
+---------------------+--------------+-------------------------------
+Amazon Linux         | ec2-user     |
+Ubuntu               | ubuntu       | root
+Debian               | admin        | root
+RHEL 6.4 and later   | ec2-user     |
+RHEL 6.3 and earlier | root         |
+Fedora               | ec2-user     | root
+Centos               | centos       | root
+SUSE                 | root         |
+BitNami              | bitnami      |
+TurnKey              | root         |
+NanoStack            | ubuntu       |
+FreeBSD              | ec2-user     |
+OmniOS               | root         |
+
 ## s3
 
 ### Buckets list
