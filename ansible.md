@@ -1,5 +1,9 @@
 # Ansible
 
+## Install
+
+    pip2 install --user git+git://github.com/ansible/ansible.git@stable-2.2
+
 ## SSH
 
     ansible-playbook --private-key=path/to/file.pem your_playbook.yml
