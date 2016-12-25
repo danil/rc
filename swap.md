@@ -24,11 +24,19 @@ or
 
 A low value causes the kernel to avoid swapping
 
+    sysctl --write vm.swappiness=0
+
+or
+
     echo 0 > /proc/sys/vm/swappiness
 
 ### Enable
 
 Higher value causes the kernel to try to use swap space
+
+    sysctl --write vm.swappiness=100
+
+or
 
     echo 100 > /proc/sys/vm/swappiness
 
