@@ -1,5 +1,9 @@
 # Swap
 
+# Get size
+
+    free --human | grep Swap
+
 # File
 
 <https://wiki.archlinux.org/index.php/swap#Swap_file>
