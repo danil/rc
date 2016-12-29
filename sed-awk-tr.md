@@ -7,6 +7,10 @@ Stream Editor
     echo 'Hello, World!' | sed --expression=s/World/work/
     svn status |grep '^[I?]' |sed 's/^[I?]//' |xargs rm -rf
 
+## Inplace replacement
+
+    sed --in-place 's/your_old_string/your_new_string/g' path/to/file
+
 ## Remove the 7rd line
 
     sed --in-place '7d' ~/.ssh/known_hosts
