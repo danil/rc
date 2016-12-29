@@ -1,5 +1,7 @@
 # MongoDB
 
+    mongo
+
 ## Databases
 
 ### List
