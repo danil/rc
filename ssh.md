@@ -31,6 +31,12 @@
 
     ssh-copy-id -i ~/.ssh/key-file-name.pub -p54321 anonymous@example.org
 
+### Get server key
+
+Set `~/.ssh/known_hosts` or `/etc/ssh/ssh_known_hosts`
+
+    ssh-keyscan -t rsa example.xyz > /etc/ssh/ssh_known_hosts
+
 ## Tunneling
 
 ### SSH
