@@ -35,7 +35,7 @@
 
 Set `~/.ssh/known_hosts` or `/etc/ssh/ssh_known_hosts`
 
-    ssh-keyscan -t rsa example.xyz > /etc/ssh/ssh_known_hosts
+    ssh-keyscan -t rsa example.org > /etc/ssh/ssh_known_hosts
 
 ## Tunneling
 
