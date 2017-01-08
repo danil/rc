@@ -1,5 +1,15 @@
 # MongoDB
 
+## Batch
+
+Execute via shell/bash script
+
+    mongo --eval "db.serverStatus()"
+
+## REPL
+
+Client interactive connection
+
     mongo
 
 ## Databases
