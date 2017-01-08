@@ -18,7 +18,7 @@ Client interactive connection
 
     show dbs
 
-### Create of use
+### Create or use
 
     use your_db_name
 
