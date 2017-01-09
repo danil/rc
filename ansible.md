@@ -21,10 +21,16 @@
 For example provide value for variable `timestamp`
 which may be used for temporary files names.
 
-    ansible-playbook --extra-vars="timestamp=$(date --utc +%Y%m%dT%H%M%SZ)" perf.yml
+    ansible-playbook --extra-vars="timestamp=$(date --utc +%Y%m%dT%H%M%SZ)" path/to/your_playbook.yml
 
 ## Tags
 
 Run one task from playbook
 
-    ansible-playbook --tags=tag_name your_playbook.yml
+    ansible-playbook --tags=tag_name path/to/your_playbook.yml
+
+## Hosts
+
+Limit playbook to a single host
+
+    ansible-playbook --limit=your_host_alias path/to/your_playbook.yml
