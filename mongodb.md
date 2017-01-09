@@ -32,14 +32,15 @@ Client interactive connection
 ### List
 
     show collections
-
-### Count
-
-    db.your_collection.stats()
+    echo "db.getCollectionNames();" | mongo your_db_name
 
 ### Create
 
     db.createCollection("your_collection")
+
+### Count documents
+
+    db.your_collection.stats()
 
 ### Remove
 
