@@ -122,7 +122,8 @@ Describe databases character set and collation
 
 ### Create database
 
-    CREATE DATABASE IF NOT EXISTS your_database CHARACTER SET utf8;
+    CREATE DATABASE IF NOT EXISTS your_database
+      CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 ### Alter database
 
@@ -181,7 +182,10 @@ Describe table  character set and collation
         id INT(11) NOT NULL AUTO_INCREMENT,
         text CHAR(255) NOT NULL,
         PRIMARY KEY (id)
-      );
+      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci;
+
+### Create table by table
+
     CREATE TABLE IF NOT EXISTS danil.test_table_2
      LIKE danil.test_table;
 
