@@ -111,6 +111,15 @@ DATABASES, UPDATE, USAGE, LOCK TABLES and so on
     +--------------+---------------+----------------------------+
     1 row in set (0.00 sec)
 
+### Database charset
+
+Describe databases character set and collation
+
+    SELECT SCHEMA_NAME 'database',
+           DEFAULT_CHARACTER_SET_NAME 'charset',
+           DEFAULT_COLLATION_NAME 'collation'
+      FROM information_schema.SCHEMATA;
+
 ### Create database
 
     CREATE DATABASE IF NOT EXISTS your_database CHARACTER SET utf8;
@@ -158,6 +167,12 @@ INSERT INTO your_tbl_name (name, age)
     SELECT * FROM INFORMATION_SCHEMA.TABLES
     WHERE table_schema = 'danil'
           AND table_name LIKE 'test_table';
+
+### Table charset
+
+Describe table  character set and collation
+
+    SHOW TABLE STATUS WHERE NAME LIKE 'your_tbl_name';
 
 ## Create table
 
