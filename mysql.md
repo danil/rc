@@ -44,7 +44,13 @@ export foo=your_db_name && \
 
     SHOW GLOBAL VARIABLES LIKE 'storage_engine';
 
-## Create user
+## Users
+
+## List
+
+    select * from mysql.user;
+
+## Create
 
     GRANT CREATE, INSERT, DELETE, UPDATE, SELECT, DROP, INDEX, ALTER, LOCK TABLES
      ON danil.* TO 'danil'@'localhost' IDENTIFIED BY 'password';
