@@ -8,4 +8,4 @@
 
 ### Test
 
-    nginx -t
+    nginx -t -c path/to/nginx.conf
