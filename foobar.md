@@ -214,19 +214,6 @@ card, etc.
 
     setup
 
-# nginx
-
-    nginx -t -c nginx.conf
-
-# Apache
-
-    htpasswd -c /home/danil/.htpasswd danil
-    apache2ctl -t -D DUMP_MODULES # Show the loaded modules.
-    a2enmod proxy_balancer
-    a2dismod php5
-    a2ensite kutkevich.org
-    a2dissite example.org
-
 # iptables
 
     iptables -L traffic -vx
