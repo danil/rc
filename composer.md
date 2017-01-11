@@ -4,6 +4,8 @@
 
 <https://getcomposer.org>
 
+    curl https://getcomposer.org/installer | php
+
 ## List
 
 List installed packages
