@@ -4,6 +4,12 @@
 
 <https://getcomposer.org>
 
+## List
+
+List installed packages
+
+    composer show
+
 ## Search
 
     composer search
