@@ -16,6 +16,8 @@
 
 ## Dump
 
+### Create
+
     mysqldump --result-file=~/backup.sql your_db_name
 
 `--default-character-set=latin1` option mean what MySQL server runing
@@ -29,6 +31,12 @@ export foo=your_db_name && \
             $foo your_tbl_name1, your_tbl_name2 | \
   xz --compress > $foo\_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
 ```
+
+#### Only schema
+
+Dump schema without data
+
+    mysqldump --no-data your_db_name > dump.sql
 
 ### Restore
 
