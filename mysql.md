@@ -28,7 +28,7 @@ export foo=your_db_name && \
   mysqldump -h127.0.0.1 -Pyour_port -uyour_user \
             --default-character-set=latin1 -r \
             --no-create-info --complete-insert \
-            $foo your_tbl_name1, your_tbl_name2 | \
+            $foo your_table_name1, your_table_name2 | \
   xz --compress > $foo\_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
 ```
 
@@ -161,8 +161,8 @@ Retrieve rows 6-15.
 ### Copy rows in same table
 
 ```SQL
-INSERT INTO your_tbl_name (name, age)
-  SELECT 'John', age FROM your_tbl_name WHERE name = 'Alice';
+INSERT INTO your_table_name (name, age)
+  SELECT 'John', age FROM your_table_name WHERE name = 'Alice';
 ```
 
 ## List tables
@@ -187,7 +187,7 @@ INSERT INTO your_tbl_name (name, age)
 
 Describe table  character set and collation
 
-    SHOW TABLE STATUS WHERE NAME LIKE 'your_tbl_name';
+    SHOW TABLE STATUS WHERE NAME LIKE 'your_table_name';
 
 ## Create table
 
@@ -240,21 +240,21 @@ Get engine type (MyISAM or InnoDB)
 
 ### Add column
 
-    ALTER TABLE your_tbl_name ADD COLUMN your_col2 INT(11) AFTER your_col1;
+    ALTER TABLE your_table_name ADD COLUMN your_col2 INT(11) AFTER your_col1;
 
 ### Delete column
 
-    ALTER TABLE your_tbl_name DROP COLUMN your_col;
+    ALTER TABLE your_table_name DROP COLUMN your_col;
 
 ### Rename column
 
-    ALTER TABLE your_tbl_name CHANGE COLUMN old_name new_name varchar(255);
+    ALTER TABLE your_table_name CHANGE COLUMN old_name new_name varchar(255);
 
 ### Modify column
 
 Modify column without rename
 
-    ALTER TABLE your_tbl_name MODIFY COLUMN your_col VARCHAR(255) NOT NULL;
+    ALTER TABLE your_table_name MODIFY COLUMN your_col VARCHAR(255) NOT NULL;
 
 ## Index
 
@@ -274,7 +274,7 @@ Describe index
 ### Remove
 
     ALTER TABLE your_table DROP INDEX your_index;
-    DROP index your_index_name ON your_tbl_name;
+    DROP index your_index_name ON your_table_name;
 
 ## Explain
 
@@ -288,11 +288,11 @@ Empties a table completely.
 
 ## Insert
 
-    INSERT INTO `your_db_name`.`your_tbl_name1` (id, text)
+    INSERT INTO `your_db_name`.`your_table_name1` (id, text)
       VALUES (1, 'foo'), (2, 'bar');
-    INSERT INTO tbl_temp2 (fld_id)
-        SELECT tbl_temp1.fld_order_id
-        FROM tbl_temp1 WHERE tbl_temp1.fld_order_id > 100;
+    INSERT INTO table_temp2 (fld_id)
+        SELECT table_temp1.fld_order_id
+        FROM table_temp1 WHERE table_temp1.fld_order_id > 100;
     LOAD DATA LOCAL INFILE '~/path/to/filename' INTO TABLE table;
 
 ## Delete row
@@ -301,7 +301,7 @@ Empties a table completely.
 
 ## Update columns
 
-    UPDATE `your_db_name`.`your_tbl_name`
+    UPDATE `your_db_name`.`your_table_name`
       SET your_col1='foo', your_col2='bar' WHERE id='1';
     Query OK, 1 row affected (0.01 sec)
 
@@ -334,4 +334,4 @@ Empties a table completely.
 
 ### Enum
 
-    ALTER TABLE your_tbl_name CHANGE your_col your_col ENUM('foo','bar');
+    ALTER TABLE your_table_name CHANGE your_col your_col ENUM('foo','bar');
