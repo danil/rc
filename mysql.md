@@ -158,6 +158,14 @@ Retrieve rows 6-15.
 
     source sqlfile;
 
+### Copy table
+
+To copy with indexes and triggers
+<http://stackoverflow.com/questions/3280006/duplicating-a-mysql-table-indexes-and-data#3280042>
+
+    CREATE TABLE new_table_name LIKE old_table_name; 
+    INSERT new_table_name SELECT * FROM old_table_name;
+
 ### Copy rows in same table
 
 ```SQL
