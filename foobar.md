@@ -111,12 +111,6 @@ To clear the environment and start bash
      | sed -ne 2p \
      | cut -c-8
 
-# Kernel modules
-
-    lsmod |grep vb
-    rmmod vboxdrv
-    modprobe vboxdrv
-
 # Images
 
 ## View

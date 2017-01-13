@@ -36,3 +36,22 @@
 ## Download
 
 <https://www.kernel.org/pub/linux/kernel/>
+
+## Kernel modules
+
+### List
+
+    lsmod | grep your_module_name
+
+### Load
+
+Add/activat
+
+    modprobe your_module_name
+
+### Unload
+
+Remove/deactivate
+
+    modprobe --remove module_name
+    rmmod your_module_name
