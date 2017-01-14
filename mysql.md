@@ -184,6 +184,11 @@ INSERT INTO your_table_name (name, age)
     +-------------------------+------------+
     1 row in set (0.00 sec)
 
+## Rename table
+
+    ALTER TABLE old_table_name RENAME new_table_name;
+    RENAME TABLE old_table_name TO new_table_name;
+
 ## Describe table
 
     DESCRIBE test_table;
