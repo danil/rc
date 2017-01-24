@@ -15,6 +15,10 @@ Stream Editor
 
     sed --in-place '7d' ~/.ssh/known_hosts
 
+## Remove 3-7 lines
+
+    sed '3,7d' path/to/in/file > path/to/out/file
+
 ## Cut from starting to ending line-numbers
 
 <http://stackoverflow.com/questions/5683367/how-to-cropcut-text-files-based-on-starting-and-ending-line-numbers-in-cygwin#5683408>
