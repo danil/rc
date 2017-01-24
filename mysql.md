@@ -257,7 +257,7 @@ Get engine type (MyISAM or InnoDB)
 
 ### Delete column
 
-    ALTER TABLE your_table_name DROP COLUMN your_col;
+    ALTER TABLE `your_table_name` DROP `your_col1`, DROP `your_col2`;
 
 ### Rename column
 
