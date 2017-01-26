@@ -1,7 +1,7 @@
 # MySQL
 
-    mysql -h 192.168.1.2 -u danil [-p] -t danil_test \
-     < ~/src/common.sql > ~/data
+    mysql --host=192.168.1.2 --user=danil [--passowrd] --table=your_table_name \
+     < path/to/dump.sql > path/to/output.sql
     mysql -h localhost -u root [-p] \
      -e "SELECT * FROM test_db.test_table;"
     mysqlshow -h localhost -u root -p
