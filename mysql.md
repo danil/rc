@@ -41,7 +41,7 @@ Dump schema without data
 ### Restore
 
     mysql < path/to/dump.sql
-    cat path/to/dump.sql.xz | xz --decompress | mysql -uyour_user -p your_db_name
+    cat path/to/dump.sql.xz | xz --decompress | mysql --user=your_user --password your_db_name
 
 ## Show system variables
 
