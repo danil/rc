@@ -18,7 +18,7 @@
 
 ## Gzipped
 
-    curl "http://example.org" | gunzip
+    curl --header "Accept-encoding: gzip" "http://example.org" | gunzip
 
 <http://stackoverflow.com/questions/8364640/how-to-properly-handle-a-gzipped-page-when-using-curl#8365089>
 
@@ -33,6 +33,12 @@
     curl --output=top-1m.csv.zip
          http://s3.amazonaws.com/alexa-static/top-1m.csv.zip
 
+## Accept header
+
+Accept JSON response
+
+    curl --verbose --header "Accept: application/json" http://example.org
+
 ## Other
 
-    curl --verbose --header "Accept-Encoding: gzip" -X HEAD http://example.org
+    curl --verbose --request HEAD http://example.org
