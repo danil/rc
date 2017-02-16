@@ -273,16 +273,16 @@ Modify column without rename
 
 Indeces
 
-### Create
-
-    ALTER TABLE `your_table` ADD INDEX `your_index`(`your_col`);
-    ALTER TABLE `your_table` ADD UNIQUE `your_index`(`your_col1`, `your_col2`);
-
 ### Show
 
 Describe index
 
     SHOW INDEX FROM your_table;
+
+### Create
+
+    ALTER TABLE `your_table` ADD INDEX `your_index`(`your_col`);
+    ALTER TABLE `your_table` ADD UNIQUE `your_index`(`your_col1`, `your_col2`);
 
 ### Remove
 
