@@ -43,6 +43,16 @@ Via pipeline
 
     for i in *; do echo "$i" && tar cJf "$i.tar.xz" "$i"; done
 
+#### By array of directories
+
+```sh
+read -ra arr <<<"your array of directories" && \
+    for i in "${arr[@]}"; do \
+        tar -cf "$i".tar "$i" && \
+            mv "$i".tar "$i"_md5_$(md5sum "$i".tar | cut -d" " -f1).tar ; \
+    done
+```
+
 ## gzip
 
     gzip --keep access.log
