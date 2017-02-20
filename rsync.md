@@ -1,6 +1,6 @@
 # rsync
 
-## Resume single file downloading
+## Resume single file download
 
     rsync --verbose \
           --rsh='ssh -p22022' \
