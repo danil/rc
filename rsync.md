@@ -1,5 +1,13 @@
 # rsync
 
+## Resume single file downloading
+
+    rsync --verbose \
+          --rsh='ssh -p22022' \
+          --progress \
+          --append-verify \
+          your_user@example.org:/path/to/file .
+
 ## Copy from remote server to local machine
 
 <http://stackoverflow.com/questions/9090817/copying-files-using-rsync-from-remote-server-to-local-machine#9090859>
