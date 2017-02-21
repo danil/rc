@@ -19,3 +19,10 @@
 * Perl-compatible regex
 
     pcregrep -rM 'class.*(\n|.)*class' lib/cda/
+
+# fgrep
+
+Searches by string as is
+
+    fgrep string_to_find path/to/file
+    grep --fixed-strings string_to_find path/to/file
