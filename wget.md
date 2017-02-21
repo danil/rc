@@ -12,11 +12,11 @@
 
     wget --recursive \
          --level=999 \
-         --domains=sazhi.net,www.sazhi.net \
+         --domains=example.org,www.example.org \
          --restrict-file-names=nocontrol \
-         --execute'robots=off' \
+         --execute='robots=off' \
          --convert-links \
          --exclude-directories=/forum \
          --ignore-tags=img \
          --load-cookies=cookies.txt \
-         'http://sazhi.net'
+         'http://example.org'
