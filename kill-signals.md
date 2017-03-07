@@ -7,7 +7,20 @@
 ## kill
 
     kill -HUP $( cat /var/run/your_process.pid )
+
+### 10 SIGUSR1
+
+Signal `10` or `SIGUSR1` is an user-defined condition
+
+    kill -10 $( cat /var/run/your_process.pid )
     kill -SIGUSR1 $( cat /var/run/your_process.pid )
+
+### 12 SIGUSR2
+
+Signal `12` or `SIGUSR2` user-defined condition
+
+    kill -12 $( cat /var/run/your_process.pid )
+    kill -SIGUSR2 $( cat /var/run/your_process.pid )
 
 ## pkill
 
