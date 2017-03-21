@@ -37,6 +37,7 @@ Client interactive connection
 ### Create
 
     db.createCollection("your_collection")
+    mongo your_db_name --eval "db.createCollection('your_collection')"
 
 ### Count documents
 
