@@ -1,5 +1,9 @@
-# cloc
+# Count lines of code
 
-Count lines of code metric <https://github.com/Aaronepower/tokei>
+cloc metric
 
-    tokei path/to/dir
+    cloc path/to/source/dir
+    sloccount path/to/source/dir
+    tokei path/to/source/dir
+
+[tokei]: https://github.com/Aaronepower/tokei
