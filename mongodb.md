@@ -1,5 +1,15 @@
 # MongoDB
 
+## Backup
+
+### Create
+
+    mongodump --out=path/to/backup/dir
+
+### Restore
+
+    mongorestore path/to/backup/dir
+
 ## Batch
 
 Execute via shell/bash script
