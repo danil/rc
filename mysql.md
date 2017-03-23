@@ -38,6 +38,10 @@ Dump schema without data
 
     mysqldump --no-data your_db_name > dump.sql
 
+#### Without drop tables
+
+    mysqldump --skip-add-drop-table your_db_name > dump.sql
+
 ### Restore
 
     mysql < path/to/dump.sql
@@ -218,7 +222,7 @@ Describe table  character set and collation
 
 ## Drop table
 
-    DROP TABLE IF EXISTS danil.test_table [, danil.test_table_2];
+    DROP TABLE IF EXISTS your_db_name.your_table_name1, your_db_name.your_table_name1;
 
 ### Drop all tables
 
@@ -317,6 +321,17 @@ Empties a table completely.
     UPDATE `your_db_name`.`your_table_name`
       SET your_col1='foo', your_col2='bar' WHERE id='1';
     Query OK, 1 row affected (0.01 sec)
+
+### Update with join
+
+Suitable with self referened/sourced update/set
+
+    UPDATE your_table_name t1 join your_table_name t2
+      ON t1.your_col1 = t2.your_col1
+      SET t1.your_col2 = t2.your_col2
+      WHERE t1.your_col3 = 'foo' AND t2.your_col3 = 'bar';
+
+### Update with subquery
 
     UPDATE users
         SET portfolio_projects_count=(
