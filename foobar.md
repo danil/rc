@@ -193,12 +193,6 @@ card, etc.
 
     setup
 
-# iptables
-
-    iptables -L traffic -vx
-    iptables -t nat -A POSTROUTING -o eth0 \
-             -s 192.168.0.202/32 -j MASQUERADE
-
 # mpd
 
     mpc clear

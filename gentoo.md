@@ -306,15 +306,11 @@ with `/etc/init.d/$ipt` when machine is powered on.
 
 ## iptables
 
-    iptables -L
-    iptables-restore < /etc/iptables/v4.rules
     /etc/init.d/iptables save
     /etc/init.d/iptables start
 
 ## ip6tables
 
-    ip6tables -L
-    ip6tables-restore < /etc/iptables/v6.rules
     /etc/init.d/ip6tables save
     /etc/init.d/ip6tables start
 
