@@ -63,6 +63,12 @@ Ensure that web server respond on 80 port
 
     nc -vz localhost 80
 
+# Traceroute
+
+<https://en.wikipedia.org/wiki/Traceroute>
+
+    traceroute example.org
+
 ## Other
 
 <https://en.wikipedia.org/wiki/Netcat>
