@@ -158,6 +158,11 @@ Retrieve rows 6-15.
 
     SELECT Host, User, Password FROM mysql.user LIMIT 5,10;
 
+### Group by count 
+
+    SELECT your_col1, count(*) FROM your_table_name
+    GROUP BY your_col2 HAVING count(*) > 1;
+
 ### Query from file
 
     source sqlfile;
