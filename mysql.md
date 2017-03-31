@@ -290,8 +290,14 @@ Describe index
 
 ### Create
 
-    ALTER TABLE `your_table` ADD INDEX `your_index`(`your_col`);
-    ALTER TABLE `your_table` ADD UNIQUE `your_index`(`your_col1`, `your_col2`);
+    ALTER TABLE `your_table` ADD INDEX `your_index_name`(`your_col`);
+    ALTER TABLE `your_table`
+      ADD UNIQUE `your_index_name`(`your_col1`, `your_col2`);
+
+### Create uniqe constraint
+
+    ALTER TABLE `your_table` ADD CONSTRAINT your_constraint_name
+      UNIQUE (your_col1, your_col2);
 
 ### Remove
 
