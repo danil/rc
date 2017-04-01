@@ -296,13 +296,13 @@ Describe index
 
 ### Create uniqe constraint
 
-    ALTER TABLE `your_table` ADD CONSTRAINT your_constraint_name
-      UNIQUE (your_col1, your_col2);
+    ALTER TABLE `your_table` ADD CONSTRAINT 'your_constraint_name'
+      UNIQUE (`your_col1`, `your_col2`);
 
 ### Remove
 
-    ALTER TABLE your_table DROP INDEX your_index;
-    DROP index your_index_name ON your_table_name;
+    ALTER TABLE `your_table` DROP INDEX 'your_index';
+    DROP INDEX 'your_index_name' ON `your_table_name`;
 
 ## Explain
 
