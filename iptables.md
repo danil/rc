@@ -5,7 +5,9 @@ iptables rules
 ## List
 
     iptables --list
+    iptables --list-rules
     ip6tables --list
+    ip6tables --list-rules
 
 ## Restore
 
