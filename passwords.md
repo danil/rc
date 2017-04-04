@@ -15,6 +15,10 @@
     pwgen --numerals --secure --no-capitalize 10 80000 \
       | tr '[:lower:]' '[:upper:]' > 80k_upper_201210091031
 
+## Special characters
+
+    pwgen --symbols
+
 ## Test for duplicates
 
 <http://stackoverflow.com/questions/6447473/linux-command-or-script-counting-duplicated-lines-in-a-text-file#6447515>
@@ -33,3 +37,7 @@
 ## Numerical-only exactly 4 digitis
 
     makepasswd --chars 4 --string 1234567890
+
+# Other
+
+    date +%s | sha256sum | base64 | head -c 32
