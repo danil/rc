@@ -2,6 +2,7 @@
 
 ## Install
 
+    apt-get install python
     pip2 install --user "ansible>=2.2"
 
 ## SSH
@@ -34,3 +35,17 @@ Run one task from playbook
 Limit playbook to a single host
 
     ansible-playbook --limit=your_host_alias path/to/your_playbook.yml
+
+## Modules
+
+Ansible modules <http://docs.ansible.com/ansible/modules_by_category.html>
+
+### User
+
+<http://docs.ansible.com/ansible/user_module.html>
+
+#### Password
+
+Make hashed user password
+
+    mkpasswd --method=sha-512
