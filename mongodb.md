@@ -26,7 +26,7 @@ Client interactive connection
 
 ### List
 
-    show dbs
+    echo "show dbs" | mongo your_db_name
 
 ### Create or use
 
