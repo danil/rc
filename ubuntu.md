@@ -1,6 +1,6 @@
 # APT based distributions
 
-Distributions like Debian/Ubuntu
+Distributions like Ubuntu/Debian
 
 ## Runlevels
 
