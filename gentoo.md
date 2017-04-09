@@ -75,6 +75,11 @@ Recompiling all packages on the system.
 ## Unmerge
 
     emerge --oneshot --deep --depclean your-package/name
+
+### Temporary
+
+Remove/delete
+
     emerge --oneshot --unmerge your-package/name
 
 ## Ceanup all
