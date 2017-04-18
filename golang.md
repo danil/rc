@@ -52,3 +52,15 @@ Set some string variable on compile time (for example your some "version")
 Find location (country, geographic coordinate, latitude/longitude) by IP
 
 <https://github.com/oschwald/geoip2-golang>
+
+# Web frameworks
+
+Web frameworks and routers
+
+## Comparsion
+
+<https://github.com/diyan/go-web-framework-comparsion>
+
+## Benchmarks
+
+<https://github.com/julienschmidt/go-http-routing-benchmark>
