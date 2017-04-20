@@ -6,7 +6,8 @@
 
 ### Create
 
-    md5sum FantasqueSansMono-Regular.ttf
+    cat path/to/file | md5sum
+    md5sum path/to/file
 
 ### Check
 
@@ -16,6 +17,11 @@
 ## SHA-1
 
 <https://en.wikipedia.org/wiki/SHA-1>
+
+### Create
+
+    cat path/to/file | sha1sum
+    sha1sum path/to/file
 
 ### Check
 
