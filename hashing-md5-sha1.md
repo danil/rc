@@ -2,6 +2,8 @@
 
 ## MD5
 
+<https://en.wikipedia.org/wiki/MD5>
+
 ### Create
 
     md5sum FantasqueSansMono-Regular.ttf
@@ -12,6 +14,8 @@
     echo '1539bad48e984ae1441052dc074c0995  /dev/hdc' | md5sum --check
 
 ## SHA-1
+
+<https://en.wikipedia.org/wiki/SHA-1>
 
 ### Check
 
