@@ -257,6 +257,7 @@ Fix broken completions
 * <http://www.gentoo.org/proj/en/perl/perl-cleaner.xml?style=printable>
 * <http://wiki.gentoo.org/wiki/Project:Perl/perl-cleaner>
 
+    emerge --nodeps dev-lang/perl
     perl-cleaner --all
 
 ## Python
