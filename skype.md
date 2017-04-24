@@ -1,0 +1,3 @@
+# skype
+
+/alertsoff
