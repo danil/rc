@@ -125,6 +125,15 @@ Distributions like Ubuntu/Debian
     wget --output-document=- http://backports.org/debian/archive.key \
       | apt-key add -
 
+## dpkg-query
+
+### List files from package
+
+List files from installed package
+<https://askubuntu.com/questions/32507/how-do-i-get-a-list-of-installed-files-from-a-package#32509>
+
+    dpkg-query --listfiles your_package_name
+
 ## Timezone
 
 Change timezone
