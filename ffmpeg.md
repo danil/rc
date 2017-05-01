@@ -44,7 +44,7 @@ and audio to vorbis compression format <http://en.wikipedia.org/wiki/Vorbis>.
 
 Iphone rington format is `m4r` which actualy [mpeg][]
 
-    ffmpeg -f mp4 -acodec aac -ac 1 -ab 128000 \
+    ffmpeg -f ipod -acodec aac -ac 1 -ab 128000 \
         -i path/to/input/file.mp3 -y path/to/output/file.m4r
 
 [mpeg]: https://en.wikipedia.org/wiki/MPEG-4_Part_14
