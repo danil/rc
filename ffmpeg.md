@@ -39,3 +39,12 @@ and audio to vorbis compression format <http://en.wikipedia.org/wiki/Vorbis>.
 <https://trac.ffmpeg.org/wiki/Capture/Desktop>
 
     ffmpeg -video_size 1920x1080 -framerate 25 -f x11grab -i :0.0 /tmp/output.mp4
+
+## Ringtone
+
+Iphone rington format is `m4r` which actualy [mpeg][]
+
+    ffmpeg -f mp4 -acodec aac -ac 1 -ab 128000 \
+        -i path/to/input/file.mp3 -y path/to/output/file.m4r
+
+[mpeg]: https://en.wikipedia.org/wiki/MPEG-4_Part_14
