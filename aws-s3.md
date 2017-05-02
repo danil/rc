@@ -8,8 +8,7 @@ Install command line interface
 
 ## Authentication/authorization
 
-    AWS_ACCESS_KEY_ID= your-key \
-        AWS_SECRET_ACCESS_KEY=your-secret \
+    AWS_ACCESS_KEY_ID=your-key AWS_SECRET_ACCESS_KEY=your-secret \
         aws some-command
 
 ## Username
