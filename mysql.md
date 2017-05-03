@@ -50,7 +50,10 @@ Dump schema without data
 ## Show system variables
 
     SHOW VARIABLES LIKE '%character%';
-    SELECT @@global.time_zone, @@session.time_zone;
+
+### Time zone
+
+    SELECT @@global.time_zone, @@global.time_zone, @@session.time_zone;
 
 ### Engine type (MyISAM or InnoDB)
 
