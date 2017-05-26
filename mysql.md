@@ -1,6 +1,6 @@
 # MySQL
 
-    mysql --host=192.168.1.2 --user=danil [--passowrd] --table=your_table_name \
+    mysql --host=192.168.1.2 --user=your_user [--passowrd] --table=your_table_name \
      < path/to/dump.sql > path/to/output.sql
     mysql -h localhost -u root [-p] \
      -e "SELECT * FROM test_db.test_table;"
@@ -61,37 +61,38 @@ Dump schema without data
 
 ## Users
 
-## List
+### List
 
     select * from mysql.user;
 
-## Create
+### Create
 
     GRANT CREATE, INSERT, DELETE, UPDATE, SELECT, DROP, INDEX, ALTER, LOCK TABLES
-     ON danil.* TO 'danil'@'localhost' IDENTIFIED BY 'password';
+     ON your_user.* TO 'your_user'@'localhost' IDENTIFIED BY 'password';
 
 Privileges: ALL, CREATE, DELETE, GRANT OPTION, INSERT, SELECT, SHOW
 DATABASES, UPDATE, USAGE, LOCK TABLES and so on
 (<http://dev.mysql.com/doc/refman/5.1/en/grant.html>).
 
-## Set password
+### Set password
 
-    SET PASSWORD FOR 'danil'@'localhost' = PASSWORD('password');
+    SET PASSWORD FOR 'your_user'@'localhost' = PASSWORD('password');
     mysqladmin -u root -h localhost password 'new-password'
 
-## Show grants
+### Show grants
 
     SHOW GRANTS;
-    SHOW GRANTS FOR 'danil'@'localhost';
-    SELECT Host, User FROM mysql.user WHERE User = 'danil';
+    SHOW GRANTS FOR 'your_user'@'localhost';
+    SHOW GRANTS FOR 'your_user'@'%';
+    SELECT Host, User FROM mysql.user WHERE User = 'your_user';
 
-## Revoke grants
+### Revoke grants
 
-    REVOKE ALL ON danil.* FROM 'danil'@'localhost';
+    REVOKE ALL ON your_user.* FROM 'your_user'@'localhost';
 
-## Remove user
+### Remove user
 
-    DELETE FROM mysql.user WHERE User = 'danil';
+    DELETE FROM mysql.user WHERE User = 'your_user';
 
 ## Show character sets
 
@@ -188,9 +189,9 @@ INSERT INTO your_table_name (name, age)
 ## List tables
 
     SHOW TABLES;
-    SHOW FULL TABLES FROM danil LIKE 'test%';
+    SHOW FULL TABLES FROM your_user LIKE 'test%';
     +-------------------------+------------+
-    | Tables_in_danil (test%) | Table_type |
+    | Tables_in_your_user (test%) | Table_type |
     +-------------------------+------------+
     | test_table              | BASE TABLE |
     +-------------------------+------------+
@@ -205,7 +206,7 @@ INSERT INTO your_table_name (name, age)
 
     DESCRIBE test_table;
     SELECT * FROM INFORMATION_SCHEMA.TABLES
-    WHERE table_schema = 'danil'
+    WHERE table_schema = 'your_user'
           AND table_name LIKE 'test_table';
 
 ### Table charset
@@ -216,7 +217,7 @@ Describe table  character set and collation
 
 ## Create table
 
-    CREATE TABLE IF NOT EXISTS danil.test_table
+    CREATE TABLE IF NOT EXISTS your_user.test_table
       (
         id INT(11) NOT NULL AUTO_INCREMENT,
         text CHAR(255) NOT NULL,
@@ -225,8 +226,8 @@ Describe table  character set and collation
 
 ### Create table by table
 
-    CREATE TABLE IF NOT EXISTS danil.test_table_2
-     LIKE danil.test_table;
+    CREATE TABLE IF NOT EXISTS your_user.test_table_2
+     LIKE your_user.test_table;
 
 ## Drop table
 
@@ -245,11 +246,11 @@ Generated set of drop statements
 
 Get engine type (MyISAM or InnoDB)
 
-    SHOW TABLE STATUS FROM danil LIKE 'test%';
+    SHOW TABLE STATUS FROM your_user LIKE 'test%';
 
 ## Describe columns
 
-    DESCRIBE danil.test_table '%';
+    DESCRIBE your_user.test_table '%';
     +------------+----------+------+-----+---------+----------------+
     | Field      | Type     | Null | Key | Default | Extra          |
     +------------+----------+------+-----+---------+----------------+
