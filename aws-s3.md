@@ -38,7 +38,18 @@ OmniOS               | root         |
 ### Buckets list
 
     aws s3 ls
-    aws s3api list-buckets --query 'Buckets[].Name'
+    aws s3api list-buckets --query='Buckets[].Name'
+
+### Get bucket region
+
+    aws s3api get-bucket-location --bucket=your-bucket-name
+
+### Get bucket info
+
+Get bucket disk size usage
+
+    aws s3 ls --region=eu-central-1 --recursive \
+        --summarize --human-readable s3://your-bucket/
 
 ### Files list
 
