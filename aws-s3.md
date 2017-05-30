@@ -48,7 +48,7 @@ OmniOS               | root         |
 
 Get bucket disk size usage
 
-    aws s3 ls --region=eu-central-1 --recursive \
+    aws s3 ls --region=your-region --recursive \
         --summarize --human-readable s3://your-bucket/
 
 ### Files list
