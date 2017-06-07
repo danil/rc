@@ -45,6 +45,18 @@ Backuping:
 
     pg_restore --dbname=scheduler_development scheduler.backup
 
+# Indeces
+
+## Drop
+
+    DROP INDEX your_index_neme;
+
+# Enum
+
+## Drop
+
+    DROP TYPE your_enum_name;
+
 # Change output format
 
     psql ska_production --no-align --command="SELECT id,name FROM foobars;" \
