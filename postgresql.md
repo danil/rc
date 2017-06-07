@@ -53,9 +53,13 @@ Backuping:
 
 # Enum
 
-## Drop
+## Create
 
-    DROP TYPE your_enum_name;
+    CREATE TYPE your_type_name AS ENUM ('foo','bar','xyz');
+
+## Delete
+
+    DROP TYPE your_type_name;
 
 # Change output format
 
