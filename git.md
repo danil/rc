@@ -479,6 +479,16 @@ You have three steps there:
 
 # Rebase
 
+## Squash latest commits into one
+
+Reduce repository size
+<https://stackoverflow.com/questions/598672/squash-the-first-two-commits-in-git#598788>
+
+    git rebase --interactive --root HEAD
+    git rebase --continue
+
+## Other1
+
     git fetch
     git rebase --keep-empty
 
@@ -493,11 +503,7 @@ You have three steps there:
 
     git rebase --abort
 
-# Squash latest commits into one
-
-    git rebase --interactive --root HEAD
-
-## Other
+## Other2
 
     git checkout foobar
     git branch foobar-for-rebase
@@ -613,7 +619,13 @@ Search through all commits (and all branches)
 
     git checkout HEAD .config/compiz-1/compizconfig/Default.ini
 
-# Clean
+# Clean working repository
+
+<https://stackoverflow.com/questions/2116778/reduce-git-repository-size#2116892>a
+
+    git gc --prune=now --aggressive
+
+# Clean working tree
 
 Remove untracked files from the working tree
 
