@@ -108,7 +108,6 @@ Find pg_hba.conf location
 CREATE USER is an alias for CREATE ROLE. The only difference is that
 when the command is spelled CREATE USER, LOGIN is assumed by default.
 
-
 ### Standard user
 
     CREATE ROLE your_role_name WITH LOGIN PASSWORD 'password'
@@ -122,8 +121,7 @@ when the command is spelled CREATE USER, LOGIN is assumed by default.
     CREATE ROLE your_role_name WITH SUPERUSER LOGIN PASSWORD 'password'
     VALID UNTIL '2009-01-01';
 
-    createuser --createrole --createdb --superuser --pwprompt \
-               --encrypted --username=postgres --password your_role_name
+    createuser --superuser --pwprompt --encrypted --username=postgres --password your_role_name
 
 ## Alter role
 
@@ -255,7 +253,12 @@ List all tables then drop them.
 
 ## Add column to table
 
-    ALTER TABLE my_table_name ADD COLUMN deleted_at timestamp with time zone;
+    ALTER TABLE your_table_name ADD COLUMN deleted_at timestamp with time zone;
+
+## Rename column
+
+    ALTER TABLE your_table_name RENAME old_name TO new_name;
+    ALTER TABLE your_table_name ALTER COLUMN old_name TYPE new_name;
 
 ## Temporary tables
 
@@ -302,8 +305,8 @@ List all tables then drop them.
 Remove duplicate rows from the result set (one row is kept from each
 group of duplicates).
 
-    SELECT DISTINCT ON (my_column_name) my_column_name FROM my_table_name;
-    SELECT DISTINCT my_column_name FROM my_table_name;
+    SELECT DISTINCT ON (my_column_name) my_column_name FROM your_table_name;
+    SELECT DISTINCT my_column_name FROM your_table_name;
 
 ## Conditional
 
