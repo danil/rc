@@ -86,6 +86,12 @@ Remove/delete
 
     emerge --quiet --deep --depclean
 
+## Format output
+
+Output by columns (only package name)
+
+    emerge --columns | awk '{print $4}'
+
 # Equery
 
     equery list nginx
@@ -267,6 +273,8 @@ Fix broken completions
     python-updater
 
 ## Other
+
+Update/upgrade
 
     emacs-updater
     haskell-updater
