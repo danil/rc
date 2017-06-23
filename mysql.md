@@ -68,7 +68,9 @@ Dump schema without data
 ### Create
 
     GRANT CREATE, INSERT, DELETE, UPDATE, SELECT, DROP, INDEX, ALTER, LOCK TABLES
-     ON your_user.* TO 'your_user'@'localhost' IDENTIFIED BY 'password';
+      ON `your_db_name`.* TO 'your_user'@'%' IDENTIFIED BY 'password';
+    GRANT ALL ON `your_db_name`.* TO 'your_user'@'localhost';
+    GRANT ALL ON *.* TO 'your_user'@'localhost';
 
 Privileges: ALL, CREATE, DELETE, GRANT OPTION, INSERT, SELECT, SHOW
 DATABASES, UPDATE, USAGE, LOCK TABLES and so on
@@ -367,6 +369,11 @@ Suitable with self referened/sourced update/set
 
     SELECT email, COUNT(*) c FROM users GROUP BY email HAVING c > 1;
     SELECT user_id, offer_id, COUNT(*) c FROM offers_users GROUP BY user_id, offer_id HAVING c > 1;
+
+### Timestamp to datetime
+
+    SELECT *, from_unixtime(`created_at`) FROM `your_table_name`
+        ORDER BY created_at DESC;
 
 ### CSV
 
