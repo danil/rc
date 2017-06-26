@@ -2,7 +2,9 @@
 
 ## ab
 
-    ab -kc 10 -t 30 http://kutkevich.org
+`ab` is an legacy benchmark utility
+
+    ab -kc 10 -t 30 https://localhost
 
 ## httperf
 
@@ -24,7 +26,7 @@
 Runs a benchmark for 30 seconds, using 12 threads, and keeping
 400 HTTP connections open.
 
-    wrk -t12 -c400 -d30s http://localhost
+    wrk -t12 -c400 -d30s https://localhost
 
 ## boom
 
@@ -42,4 +44,4 @@ Runs 1000 requests, using 100 threads
 
 <https://github.com/codesenberg/bombardier>
 
-    bombardier http://example.org
+    bombardier https://localhost
