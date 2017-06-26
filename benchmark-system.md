@@ -1,4 +1,4 @@
-# Benchmark
+# System benchmark
 
 <http://jeffgeerling.com/blogs/jeff-geerling/2013-vps-benchmarks-linode>
 
