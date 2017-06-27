@@ -6,6 +6,12 @@ Distributions like Ubuntu/Debian
 
 `/etc/init.d` (https://wiki.debian.org/RunLevel)
 
+### List
+
+List all services by run levels
+
+    ls /etc/rc*.d
+
 ### Status
 
     service your_daemon status
