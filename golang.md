@@ -47,6 +47,13 @@ Set some string variable on compile time (for example your some "version")
     go build -ldflags "-X main.yourVariable=`echo 'Your value'`" main.go
     go run -ldflags "-X main.foo='bar'" main.go
 
+# pprof
+
+Runtime profiling/benchmarking
+
+* https://golang.org/pkg/runtime/pprof
+* https://golang.org/pkg/net/http/pprof
+
 # Location by IP
 
 Find location (country, geographic coordinate, latitude/longitude) by IP
