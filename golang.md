@@ -54,6 +54,14 @@ Runtime profiling/benchmarking
 * https://golang.org/pkg/runtime/pprof
 * https://golang.org/pkg/net/http/pprof
 
+# Sortable IDs
+
+Sortable ID/UID or KSUID is for K-Sortable Unique IDentifier
+<https://blog.kowalczyk.info/article/JyRZ/generating-good-random-and-unique-ids-in-go.html>.
+
+* <https://github.com/rs/xid> `b50vl5e54p1000fo3gh0` 4 bytes of time (seconds) + 3 byte machine id + 2 byte process id + 3 bytes random
+* <https://github.com/segmentio/ksuid> `0pPKHjWprnVxGH7dEsAoXX2YQvU` 4 bytes of time (seconds) + 16 random bytes
+
 # Location by IP
 
 Find location (country, geographic coordinate, latitude/longitude) by IP
