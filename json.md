@@ -2,6 +2,12 @@
 
 ## Pretty print
 
+### Without colors
+
+    curl -s https://api.github.com/repos/tomnomnom/gron/commits?per_page=1 | python -m json.tool
+
+### Colored
+
     curl -s https://api.github.com/repos/tomnomnom/gron/commits?per_page=1 | jq .
 
 ## Generate
