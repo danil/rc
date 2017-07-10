@@ -81,6 +81,10 @@ Copy from container to host
 
     docker cp <containerId>:/file/path/within/container /path/to/host/dir
 
+Copy from host to container
+
+    docker cp /path/to/host/dir <containerId>:/file/path/within/container
+
 # Registry
 
 Push image to local registry repository  
