@@ -1,1 +1,1 @@
-./debian.md
+./ubuntu.md
