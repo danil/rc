@@ -21,11 +21,17 @@
 
     ssh-keygen -f path/to/private_key
 
-### Generate public key from private key
+### Generate public key by private key
 
 <http://serverfault.com/questions/52285/create-a-public-ssh-key-from-the-private-key#52287>
 
     ssh-keygen -f path/to/private_key -y > path/to/public_key
+
+### Generate fingerprint by public key
+
+<https://stackoverflow.com/questions/9607295/how-do-i-find-my-rsa-key-fingerprint#9607373>
+
+    ssh-keygen -E md5 -lf path/to/public_key
 
 ### Copy public key to remote host
 
