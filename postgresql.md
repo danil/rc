@@ -64,7 +64,7 @@ Backuping:
 # Change output format
 
     psql ska_production --no-align --command="SELECT id,name FROM foobars;" \
-     | sed G | tr '|' '\n' | sed '/./,/^$/!d'
+      | sed G | tr '|' '\n' | sed '/./,/^$/!d'
 
 # Environment variables
 
