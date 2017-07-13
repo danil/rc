@@ -329,6 +329,12 @@ Empties a table completely.
         FROM table_temp1 WHERE table_temp1.fld_order_id > 100;
     LOAD DATA LOCAL INFILE '~/path/to/filename' INTO TABLE table;
 
+## Update if duplicate
+
+    INSERT INTO your_table_name ("latitude", "longitude", "name")
+        VALUES (1,2,'foobar')
+        ON DUPLICATE KEY UPDATE "name" = 'foobar';
+
 ## Delete row
 
     DELETE FROM mysql.user WHERE User = 'foobar';

@@ -286,6 +286,13 @@ List all tables then drop them.
     INSERT INTO test_table (name, age) VALUES('John', 3);
     COPY test_table FROM STDIN WITH DELIMITER AS ',';
 
+## Update if duplicate
+
+    INSERT INTO your_type_name ("latitude", "longitude", "name") 
+        VALUES (1,2,'foobar')
+        ON CONFLICT ON CONSTRAINT your_type_name_pkey
+            DO UPDATE SET "name" = 'foobar';
+
 # Delete row
 
     DELETE FROM users WHERE id = 3;
