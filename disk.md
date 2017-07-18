@@ -1,5 +1,9 @@
 # Disk
 
+# List
+
+    blkid
+
 # Validate
 
 Validate fstab syntax
@@ -96,6 +100,11 @@ Space will not be freed until they are closed.
 <http://unix.stackexchange.com/questions/34140/tell-fs-to-free-space-from-deleted-files-now#34143>
 
     lsof | grep deleted
+
+# Mount cdrom
+
+    blkid
+    mount /dev/sr0 path/to/mnt
 
 # Other
 
