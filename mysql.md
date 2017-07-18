@@ -221,9 +221,14 @@ Describe table  character set and collation
 
     CREATE TABLE IF NOT EXISTS your_user.test_table
       (
-        id INT(11) NOT NULL AUTO_INCREMENT,
-        text CHAR(255) NOT NULL,
+        id INT(11) unsigned NOT NULL AUTO_INCREMENT,
+        tag_id INT(11) unsigned NOT NULL,
+        email CHAR(255) NOT NULL,
+        name CHAR(255) NOT NULL,
+        age INT(11) NOT NULL,
         PRIMARY KEY (id)
+        FOREIGN KEY (`tag_id`) REFERENCES tags(`id`),
+        UNIQUE KEY(email)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci;
 
 ### Create table by table
