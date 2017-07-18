@@ -293,6 +293,11 @@ List all tables then drop them.
         ON CONFLICT ON CONSTRAINT your_type_name_pkey
             DO UPDATE SET "name" = 'foobar';
 
+## Insert by query
+
+    INSERT INTO your_table_name (id, name, age)
+    SELECT 2, name, age FROM your_table_name WHERE id = 1;
+
 # Delete row
 
     DELETE FROM users WHERE id = 3;
