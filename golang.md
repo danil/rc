@@ -30,6 +30,13 @@
 
     go list ./...
 
+# godef
+
+Find function definition by package/function name
+<https://godoc.org/github.com/rogpeppe/godef>
+
+    godef -f path/to/file.go 'yourpackagename.YourFunctionName'
+
 # Linker
 
 * <https://golang.org/cmd/link>
