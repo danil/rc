@@ -76,6 +76,37 @@ Should use pointer to pointer to redirect all pointers to value into new value
 * <https://stackoverflow.com/questions/8768344/what-are-pointers-to-pointers-good-for#8768916>
 * <https://stackoverflow.com/questions/36531948/go-delete-an-object-by-its-pointer#36532226>
 
+```go
+package main
+
+import "fmt"
+
+func main() {
+    m := make(map[string]**struct{ Foo int })
+
+    fmt.Printf("%#v %t\n", m["x"], m["x"] == nil)
+    fmt.Printf("%#v %t\n", m["y"], m["y"] == nil)
+
+    s := &struct{ Foo int }{Foo: 123}
+
+    m["x"] = &s
+    m["y"] = &s
+
+    fmt.Printf("%#v %t\n", *m["x"], *m["x"] == nil)
+    fmt.Printf("%#v %t\n", *m["y"], *m["y"] == nil)
+
+    s = &struct{ Foo int }{Foo: 321}
+
+    fmt.Printf("%#v %t\n", *m["x"], *m["x"] == nil)
+    fmt.Printf("%#v %t\n", *m["y"], *m["y"] == nil)
+
+    s = nil
+
+    fmt.Printf("%#v %t\n", *m["x"], *m["x"] == nil)
+    fmt.Printf("%#v %t\n", *m["y"], *m["y"] == nil)
+}
+```
+
 # Location by IP
 
 Find location (country, geographic coordinate, latitude/longitude) by IP
