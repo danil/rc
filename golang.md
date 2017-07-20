@@ -69,6 +69,13 @@ Sortable ID/UID or KSUID is for K-Sortable Unique IDentifier
 * <https://github.com/rs/xid> `b50vl5e54p1000fo3gh0` 4 bytes of time (seconds) + 3 byte machine id + 2 byte process id + 3 bytes random
 * <https://github.com/segmentio/ksuid> `0pPKHjWprnVxGH7dEsAoXX2YQvU` 4 bytes of time (seconds) + 16 random bytes
 
+# Redirect pointer to value
+
+Should use pointer to pointer to redirect all pointers to value into new value
+
+* <https://stackoverflow.com/questions/8768344/what-are-pointers-to-pointers-good-for#8768916>
+* <https://stackoverflow.com/questions/36531948/go-delete-an-object-by-its-pointer#36532226>
+
 # Location by IP
 
 Find location (country, geographic coordinate, latitude/longitude) by IP
