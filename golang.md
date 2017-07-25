@@ -107,6 +107,52 @@ func main() {
 }
 ```
 
+# MongoDB
+
+MongoDB write/read (insert/find)
+
+```go
+package main
+
+import (
+    "fmt"
+
+    mgo "gopkg.in/mgo.v2"
+    "gopkg.in/mgo.v2/bson"
+)
+
+func main() {
+    s, err := mgo.Dial("localhost:27017")
+    if err != nil {
+        panic(err)
+    }
+
+    defer s.Close()
+
+    c := s.DB("your_db_name").C("your_collection_name")
+
+    var i interface{}
+    err = bson.UnmarshalJSON([]byte(`{"foo": "bar", "xyz": 123}`), &i)
+    if err != nil {
+        panic(err)
+    }
+
+    err = c.Insert(&i)
+    if err != nil {
+        panic(err)
+    }
+
+    var r []interface{}
+
+    err = c.Find(nil).All(&r)
+    if err != nil {
+        panic(err)
+    }
+
+    fmt.Printf("%#v", r)
+}
+```
+
 # Location by IP
 
 Find location (country, geographic coordinate, latitude/longitude) by IP
