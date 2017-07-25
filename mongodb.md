@@ -56,3 +56,18 @@ Client interactive connection
 ### Remove
 
     db.your_collection.drop()
+
+### Insert
+
+Insert into collection
+
+    db.your_collection.insert({"foo": "bar"})
+
+#### Raw string
+
+    db.your_collection.insert(JSON.parse("{\"foo\": \"bar\"}"))
+
+### Find
+
+    db.your_collection.find({"_id": ObjectId("123456789012345678901234")})
+    db.your_collection.find({"foo": {$eq: "bar"}})
