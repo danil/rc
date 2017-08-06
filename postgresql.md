@@ -134,7 +134,7 @@ when the command is spelled CREATE USER, LOGIN is assumed by default.
 
 ## Grant privileges
 
-    GRANT ska_phpbb3 to skaforum;
+    GRANT ALL ON DATABASE your_db_name TO your_role_name;
 
 ## Remove privileges
 
