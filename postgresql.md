@@ -255,6 +255,10 @@ List all tables then drop them.
 
     ALTER TABLE your_table_name ADD COLUMN deleted_at timestamp with time zone;
 
+## Remove column
+
+    ALTER TABLE your_table_name DROP COLUMN col1, DROP COLUMN col2;
+
 ## Rename table
 
     ALTER TABLE your_old_table_name RENAME TO your_new_table_name;
