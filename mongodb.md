@@ -71,3 +71,7 @@ Insert into collection
 
     db.your_collection.find({"_id": ObjectId("123456789012345678901234")})
     db.your_collection.find({"foo": {$eq: "bar"}})
+
+### List latest 10 records
+
+    db.your_collection.find().sort({$natural:-1}).limit(10);
