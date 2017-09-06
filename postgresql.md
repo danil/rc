@@ -268,6 +268,12 @@ List all tables then drop them.
     ALTER TABLE your_table_name RENAME old_name TO new_name;
     ALTER TABLE your_table_name ALTER COLUMN old_name TYPE new_name;
 
+## Add unique constant
+
+    ALTER TABLE "your_table_name"
+        ADD CONSTRAINT your_constraint_name
+            UNIQUE (your_column_name1, your_column_name2);
+
 ## Temporary tables
 
 ### Create
@@ -325,8 +331,8 @@ List all tables then drop them.
 Remove duplicate rows from the result set (one row is kept from each
 group of duplicates).
 
-    SELECT DISTINCT ON (my_column_name) my_column_name FROM your_table_name;
-    SELECT DISTINCT my_column_name FROM your_table_name;
+    SELECT DISTINCT ON (your_column_name) your_column_name FROM your_table_name;
+    SELECT DISTINCT your_column_name FROM your_table_name;
 
 ## Conditional
 
@@ -423,7 +429,7 @@ Single quotes used for `string constants`. For example: `'This is a string'`.
 <http://www.postgresql.org/docs/current/static/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS>
 
 Single quotes used for `identifiers` (like table names). For example:
-`UPDATE "my_table" SET "a" = 5;`
+`UPDATE "your_table_name" SET "a" = 5;`
 
 ### Key words
 
