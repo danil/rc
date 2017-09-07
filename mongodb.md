@@ -74,4 +74,6 @@ Insert into collection
 
 ### List latest 10 records
 
+List last (tail) records
+
     db.your_collection.find().sort({$natural:-1}).limit(10);
