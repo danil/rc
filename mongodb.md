@@ -72,8 +72,28 @@ Insert into collection
     db.your_collection.find({"_id": ObjectId("123456789012345678901234")})
     db.your_collection.find({"foo": {$eq: "bar"}})
 
-### List latest 10 records
+#### Find highest value
 
-List last (tail) records
+Find greatest value
 
-    db.your_collection.find().sort({$natural:-1}).limit(10);
+    db.your_collection.find().sort({yourPropertyName:-1}).limit(1)
+
+#### Find lowest value
+
+Find lowest value
+
+    db.your_collection.find().sort({yourPropertyName:1}).limit(1)
+
+### List
+
+#### Latest records
+
+List 3 last (tail) records
+
+    db.your_collection.find().sort({$natural:-1}).limit(3);
+
+#### Oldest records
+
+List 3 last (tail) records
+
+    db.your_collection.find().sort({$natural:1}).limit(3);
