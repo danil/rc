@@ -396,3 +396,10 @@ Suitable with self referened/sourced update/set
 ### Enum
 
     ALTER TABLE your_table_name CHANGE your_col your_col ENUM('foo','bar');
+
+## Binary log
+
+### Purge
+
+    mysql --user=root --password='your password' \
+      --execute="PURGE BINARY LOGS BEFORE '1970-01-01 00:00:00';"
