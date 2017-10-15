@@ -8,6 +8,27 @@
 
     ifconfig eth0 192.168.0.3 netmask 255.255.255.0
 
+# Name
+
+Domain name and host name
+
+## Get only host name
+
+    hostname
+
+## Get full domain name
+
+Full qualified domain name
+
+    hostname --fqdn
+    hostname --long
+
+## Get tld name
+
+Top level domain name
+
+    dnsdomainname
+
 # Gateway
 
 ## Get
