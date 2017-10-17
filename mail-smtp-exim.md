@@ -57,6 +57,20 @@ Messages list
     exim -bp
     exim -bp | exiqsumm
 
+### Delete
+
+### By id
+
+Remove one email message by id
+
+    exim -Mrm your_message_id_to_delete
+
+### By sender
+
+Remove all email message from specific sender address
+
+    exiqgrep -i -f sender_email | xargs exim -Mrm
+
 ## Test address
 
 ### Route
