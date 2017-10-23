@@ -78,6 +78,12 @@ read -ra arr <<<"your array of directories" && \
     zip file-to-archive.zip file-to-archive
     zip --recurse-paths foo.zip foo/
 
+### Create
+
+    export f=filename && cat ${f} | zip --quiet ${f}.zip $f
+    ls path/to/file | zip --quiet path/to/file.zip -@
+    ls path/to/dir | grep filename | zip --quiet path/to/archive.zip -@
+
 ### Unzip to directory
 
     unzip foo.zip -d path/to/directory
