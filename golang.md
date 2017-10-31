@@ -20,6 +20,10 @@
 
     go test -v ./...
 
+### List package dependencies
+
+    go list -f '{{ .Deps }}' example.org/path/to/package
+
 ### Other
 
     go install example.org/path/to/package
