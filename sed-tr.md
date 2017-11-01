@@ -33,13 +33,6 @@ Adds `\n` at the end of the file only if it doesn’t already end with a newline
 
 sed --in-place --expression='$a\' ~/.dmenu_history
 
-# AWK
-
-    awk '{ FS = "\t" ; OFS = "\t" ; print $1,"ru",$2,$3 }' \
-        infile > outfile
-    awk '{ FS = "\t" ; OFS = "\t" ; if ( NR > 1 ) print $1,$3 }' \
-        infile > outfile
-
 # tr
 
 ## Convert uppercase to lowercase
