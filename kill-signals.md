@@ -1,5 +1,10 @@
 # Signals
 
+<https://en.wikipedia.org/wiki/Signal_(IPC)#POSIX_signals>
+
+* `SIGKILL` 9   Terminate   kill (cannot be caught or ignored)
+* `SIGTERM` 15  Terminate   termination signal
+
 ## List processes
 
     ps auxf
