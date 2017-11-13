@@ -12,8 +12,8 @@
 
 ## Set
 
-    date -s "2008-04-30 08:48:0" # YYYY-mm-dd HH:MM:S (ISO 8601).
-    date -s "041501482008" # mmddHHMMYYYY (OpenWRT).
+    date --set="2008-04-30 08:48:0" # YYYY-mm-dd HH:MM:S (ISO 8601).
+    date --set="041501482008" # mmddHHMMYYYY (OpenWRT).
 
 ## Hardware clock (RTC)
 
