@@ -46,6 +46,12 @@ Find function definition by package/function name
 * <https://golang.org/cmd/link>
 * <http://stackoverflow.com/questions/11354518/golang-application-auto-build-versioning#11355611>
 
+## Cache
+
+Invalidate cache
+
+    go build -a path/to/package
+
 ## Reduce binary size
 
     go build --ldflags "-s" path/to/package
