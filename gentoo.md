@@ -92,6 +92,14 @@ Output by columns (only package name)
 
     emerge --columns | awk '{print $4}'
 
+# Profile
+
+<https://wiki.gentoo.org/wiki/Profile_(Portage)>
+
+List Gentoo profiles
+
+    eselect profile list
+
 # Equery
 
     equery list nginx
@@ -233,6 +241,7 @@ WARNING: Avoid using eclean!
 * <https://wiki.gentoo.org/wiki/Kernel/Removal>
 
     eclean distfiles
+    eclean-dist --deep
 
 <http://en.gentoo-wiki.com/wiki/Freeing_Up_Disk_Space#Removing_Ancient_Distfiles_and_Binaries>
 
@@ -270,7 +279,6 @@ Fix broken completions
 
     eselect python set --python2 python2.7
     eselect python set --python3 python3.3
-    python-updater
 
 ## Other
 
