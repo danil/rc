@@ -342,8 +342,17 @@ List changed file names
 
     git diff --name-status production..master
 
-## Prevent git diff from using a pager
+## Pager
 
+### Less
+
+Use custom pager `less`:
+
+    GIT_PAGER='less --chop-long-lines --IGNORE-CASE --LINE-NUMBERS' git diff
+
+### Without pager
+
+Prevent git diff from using a pager
 <http://stackoverflow.com/questions/136178/git-diff-handling-long-lines#152546>
 
     GIT_PAGER='' git diff
