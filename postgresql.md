@@ -226,7 +226,7 @@ List tables by SQL
 
 ## Create table
 
-    CREATE TABLE test_table
+    CREATE TABLE your_table_name
       (some_id SERIAL, name varchar(10), bio TEXT, age INTEGER);
 
 ## Describe table
@@ -268,11 +268,22 @@ List all tables then drop them.
     ALTER TABLE your_table_name RENAME old_name TO new_name;
     ALTER TABLE your_table_name ALTER COLUMN old_name TYPE new_name;
 
-## Add unique constant
+## Add unique constraint
 
     ALTER TABLE "your_table_name"
         ADD CONSTRAINT your_constraint_name
             UNIQUE (your_column_name1, your_column_name2);
+
+## Delete constraint
+
+Remove constraint by name
+
+    ALTER TABLE "your_table_name" DROP CONSTRAINT your_constraint_name;
+
+## Rename constraint
+
+    ALTER TABLE your_table_name
+        RENAME CONSTRAINT your_constraint_name TO new_constraint_name;
 
 ## Temporary tables
 
@@ -287,7 +298,11 @@ List all tables then drop them.
 
 <http://www.postgresql.org/docs/current/static/sql-update.html>
 
-    UPDATE test_table SET foo = 'bar' || id;
+    UPDATE your_table_name SET foo = 'bar' || id;
+
+### Swap two column's values
+
+    UPDATE your_table_name SET col1 = col2, col2 = col1 WHERE col3 IS NOT NULL;
 
 ### Subquery
 
@@ -297,8 +312,8 @@ List all tables then drop them.
 
 # Insert row
 
-    INSERT INTO test_table (name, age) VALUES('John', 3);
-    COPY test_table FROM STDIN WITH DELIMITER AS ',';
+    INSERT INTO your_table_name (name, age) VALUES('John', 3);
+    COPY your_table_name FROM STDIN WITH DELIMITER AS ',';
 
 ## Update if duplicate
 
@@ -324,7 +339,12 @@ List all tables then drop them.
 
 # Queries
 
-    SELECT * FROM test_table;
+    SELECT * FROM your_table_name;
+
+## Timestamp to datetime
+
+    SELECT *, to_timestamp("created_at") FROM "your_table_name"
+        ORDER BY "created_at" DESC;
 
 ## Distinct
 
@@ -488,12 +508,12 @@ Getting the current number of connections in a PostgreSQL
 <http://www.postgresql.org/docs/current/static/sql-explain.html>  
 <https://wiki.postgresql.org/wiki/Using_EXPLAIN>
 
-    EXPLAIN SELECT * FROM test_table;
+    EXPLAIN SELECT * FROM your_table_name;
 
 ## Analyze
 
     BEGIN;
-    EXPLAIN ANALYZE UPDATE test_table SET foo = 'bar' || id;
+    EXPLAIN ANALYZE UPDATE your_table_name SET foo = 'bar' || id;
     ROLLBACK;
 
 # Disk usage
