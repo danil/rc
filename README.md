@@ -1,6 +1,8 @@
 # Reference cards
 
-Copyright (C) 2016 Danil Kutkevich <danil@kutkevich.org>
+This is like [tldr](https://github.com/tldr-pages/tldr)
+
+Copyright (C) 2017 Danil Kutkevich <danil@kutkevich.org>
 
 This reference cards is licensed under the Creative Commons
 Attribution-Share Alike 3.0 Unported License. To view a copy of this
