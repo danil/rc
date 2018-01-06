@@ -7,7 +7,26 @@ Clock speed
 
     lscpu
 
-## Other
+## lshw
+
+Hardware detection
+<https://wiki.gentoo.org/wiki/Lshw>,
+<https://wiki.gentoo.org/wiki/Wifi#Hardware_detection>
+
+    lshw | grep -i driver
+
+## lsusb
+
+USB hardware detection
+<https://wiki.gentoo.org/wiki/Usbutils>,
+<https://wiki.gentoo.org/wiki/Hardware_detection>
+
+    lsusb
+
+## lspci
+
+PCI hardware detection
+<https://wiki.gentoo.org/wiki/Pciutils>,
+<https://wiki.gentoo.org/wiki/Hardware_detection>
 
     lspci
-    lsusb
