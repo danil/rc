@@ -43,6 +43,8 @@ Command-line JSON processor <http://stedolan.github.io/jq>
 #### Filter array
 
 Filter and count objects in array
+<https://stackoverflow.com/questions/26701538/how-to-filter-an-array-of-objects-based-on-values-in-an-inner-array-with-jq#26701851>
+<https://stackoverflow.com/questions/38121740/how-to-filter-array-of-objects-by-element-property-values-using-jq#38126806>:
 
     cat path/to/file.json | jq 'map(select(.yourProperty == "Foo")) | length'
     cat path/to/file.json | jq '[ .[] | select(.yourProperty == "Bar") ] | length'
