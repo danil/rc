@@ -39,3 +39,10 @@ Command-line JSON processor <http://stedolan.github.io/jq>
 #### Select first item
 
     cat path/to/file.json | jq .[0]
+
+#### Filter array
+
+Filter and count objects in array
+
+    cat path/to/file.json | jq 'map(select(.yourProperty == "Foo")) | length'
+    cat path/to/file.json | jq '[ .[] | select(.yourProperty == "Bar") ] | length'
