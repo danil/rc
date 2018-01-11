@@ -4,7 +4,11 @@
 
 Customize background color of the internal pages like `about:newtab`,
 `about:preferences`, `about:addons` and so on
-can be achieves via [ShadowFox][]. [1][][2][][3][][4][]
+can be achieves via [ShadowFox][]. [1][]
+
+You should place `userChrome.css` and
+`userContent.css` inside your `chrome` directory (e.g
+`~/.mozilla/firefox/123ab321.default-1234567890123/chrome/`). [2][][3][][4][]
 
 [ShadowFox]: https://github.com/overdodactyl/ShadowFox
 [1]: https://support.mozilla.org/en-US/questions/1198235
