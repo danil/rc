@@ -14,7 +14,7 @@
 
 Execute via shell/bash script
 
-    mongo --eval "db.serverStatus()"
+    mongo your_db_name --eval 'printjson(db.serverStatus());'
 
 ## REPL
 
@@ -28,21 +28,26 @@ Client interactive connection
 
     echo "show dbs" | mongo your_db_name
 
+### Name
+
+Get current db name
+
+    mongo your_db_name --eval 'printjson(db.getName());'
+
 ### Create or use
 
     use your_db_name
 
 ### Remove
 
-    use your_db_name
-    db.dropDatabase()
+    mongo your_db_name --eval 'printjson(db.dropDatabase());'
 
 ## Collections
 
 ### List
 
     show collections
-    echo "db.getCollectionNames();" | mongo your_db_name
+    echo "printjson(db.getCollectionNames());" | mongo your_db_name
 
 ### Create
 
@@ -51,38 +56,38 @@ Client interactive connection
 
 ### Count documents
 
-    db.your_collection.stats()
+    mongo your_db_name --eval 'printjson(db.your_collection.stats());'
 
 ### Remove
 
-    db.your_collection.drop()
+    mongo your_db_name --eval 'printjson(db.your_collection.drop());'
 
 ### Insert
 
 Insert into collection
 
-    db.your_collection.insert({"foo": "bar"})
+    mongo your_db_name --eval 'printjson(db.your_collection.insert({"foo": "bar"}));'
 
 #### Raw string
 
-    db.your_collection.insert(JSON.parse("{\"foo\": \"bar\"}"))
+    mongo your_db_name --eval 'printjson(db.your_collection.insert(JSON.parse("{\"foo\": \"bar\"}")));'
 
 ### Find
 
-    db.your_collection.find({"_id": ObjectId("123456789012345678901234")})
-    db.your_collection.find({"foo": {$eq: "bar"}})
+    mongo your_db_name --eval 'printjson(db.your_collection.find({"_id": ObjectId("123456789012345678901234")}));'
+    mongo your_db_name --eval 'printjson(db.your_collection.find({"foo": {$eq: "bar"}}));'
 
 #### Find highest value
 
 Find greatest value
 
-    db.your_collection.find().sort({yourPropertyName:-1}).limit(1)
+    mongo your_db_name --eval 'printjson(db.your_collection.find().sort({yourPropertyName:-1}).limit(1));'
 
 #### Find lowest value
 
 Find lowest value
 
-    db.your_collection.find().sort({yourPropertyName:1}).limit(1)
+    mongo your_db_name --eval 'printjson(db.your_collection.find().sort({yourPropertyName:1}).limit(1));'
 
 ### List
 
@@ -90,10 +95,17 @@ Find lowest value
 
 List 3 last (tail) records
 
-    db.your_collection.find().sort({$natural:-1}).limit(3);
+    mongo your_db_name --eval 'printjson(db.your_collection.find().sort({$natural:-1}).limit(3));'
 
 #### Oldest records
 
 List 3 last (tail) records
 
-    db.your_collection.find().sort({$natural:1}).limit(3);
+    mongo your_db_name --eval 'printjson(db.your_collection.find().sort({$natural:-1}).limit(3).toArray());'
+
+## Strict JSON
+
+Print JSON in strict mode compatible with [JSON RFC](http://www.json.org)
+
+    mongo your_db_name --eval 'JSON.stringify(db.your_collection.find().sort({$natural:-1}).limit(3).toArray(), null, 2);'
+    mongoexport --db your_db_name --collection your_collection --jsonArray
