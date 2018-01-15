@@ -22,6 +22,10 @@ Client interactive connection
 
     mongo
 
+## XFS or EXT4
+
+<https://docs.mongodb.com/manual/administration/production-notes/#kernel-and-file-systems>
+
 ## Databases
 
 ### List
