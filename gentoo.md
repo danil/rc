@@ -294,7 +294,9 @@ Clean out your world file
 
     dep --pretend --pruneworld
 
-# Run levels
+# Runlevels
+
+Run levels
 
     rc-update -v show
     rc-update add xdm default
