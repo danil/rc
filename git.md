@@ -324,7 +324,7 @@ Mirror git repository
 # Diff
 
     git diff --cached --color-words
-    git diff HEAD^^^ HEAD
+    git diff --color HEAD^..HEAD path/to/your/file.name
 
 ## File names
 
