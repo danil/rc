@@ -3,7 +3,7 @@
 ## Install
 
     apt-get install python
-    pip2 install --user "ansible>=2.2"
+    pip2 install --user "ansible>=2.4"
 
 ## SSH
 

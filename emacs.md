@@ -1,5 +1,7 @@
 # Emacs
 
+https://www.gnu.org/software/emacs/history.html
+
 ## Cask
 
     curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
