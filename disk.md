@@ -1,24 +1,24 @@
 # Disk
 
-# List
+## List
 
     blkid
 
-# Validate
+## Validate
 
 Validate fstab syntax
 <http://serverfault.com/questions/174181/how-do-you-validate-fstab-without-rebooting#509014>.
 
     mount --verbose --all --fake
 
-# Formatting
+## Formatting
 
-## mke2fs
+### mke2fs
 
     mkfs.ext2 -L fs_boot /dev/sde1
     mkfs.vfat -F 32 /dev/sdg1
 
-### Set number of inodes
+#### Set number of inodes
 
     mkfs.ext4 -N 1000432 /dev/sda5
 
@@ -26,15 +26,15 @@ Validate fstab syntax
 
     tune2fs -l /dev/sda5 | grep Inode
 
-# Free/used space
+## Free/used space
 
     df -hi
 
-## Directories list sizes
+### Directories list sizes
 
     du -sh ./*/
 
-## Finding largest files/directories
+### Finding largest files/directories
 
 * <http://superuser.com/questions/9847/linux-utility-for-finding-the-largest-files-directories>
 * <http://cyberciti.biz/faq/how-do-i-find-the-largest-filesdirectories-on-a-linuxunixbsd-filesystem/>
@@ -45,15 +45,15 @@ Validate fstab syntax
       | xargs du -b 2>/dev/null \
       | awk '{total += $1; print $0} END{print total}'
 
-# Get UUID
+## Get UUID
 
 <http://unix.stackexchange.com/questions/658/linux-how-can-i-view-all-uuids-for-all-available-disks-on-my-system#660>
 
     ls -l /dev/disk/by-uuid | grep sda1
 
-# dd
+## dd
 
-## Copy partition
+### Copy partition
 
 * <https://wiki.archlinux.org/index.php/Disk_cloning>
 * <http://askubuntu.com/questions/173907/when-cloning-ext4-partition-with-the-dd-command-to-a-bigger-partition-free-spa#173968>
@@ -61,39 +61,39 @@ Validate fstab syntax
 
     dd if=/dev/your-source1 of=/dev/your-destination1 bs=512 conv=sync
 
-### Free free space
+#### Free free space
 
     resize2fs /dev/sda99
 
-## Create ISO
+### Create ISO
 
 Copy from cd-rom disc to ISO image
 
     dd if=/dev/cdrom of=myimage.iso
 
-## Create usb
+### Create usb
 
 Copy ISO image to bootable usb
 
     dd if=path/to/your.iso of=/dev/your-usb
 
-## Benchmark
+### Benchmark
 
 <https://haydenjames.io/web-host-doesnt-want-read-benchmark-vps>
 
     dd if=/dev/zero of=/tmp/foobar bs=1M count=1024 conv=fdatasync
 
-## Other
+### Other
 
     dd if=/dev/sdb of=mybackup.img bs=130M count=1
     dd if=bootldr.rom of=/dev/sdb
     dd if=debian-eeepc.img of=/dev/sdf
 
-# Free space
+## Free space
 
 `sys-fs/ncdu` Diskspace a-la usage is an baobab and gt5 replacement
 
-# lsof
+## lsof
 
 Find and close process/program wich open removed files.
 Space will not be freed until they are closed.
@@ -101,29 +101,29 @@ Space will not be freed until they are closed.
 
     lsof | grep deleted
 
-# Mount cdrom
+## Mount cdrom
 
     blkid
     mount /dev/sr0 path/to/mnt
 
-# Duplicate files
+## Duplicate files
 
 Find duplicate files
 
-## fdupes
+### fdupes
 
 <https://github.com/adrianlopezroche/fdupes>,
 <https://unix.stackexchange.com/questions/71176/find-duplicate-files#71178>
 
     fdupes --recurse .
 
-## fslint
+### fslint
 
 <https://unix.stackexchange.com/questions/71176/find-duplicate-files#71201>
 
     /usr/share/fslint/fslint/findup ./
 
-# Other
+## Other
 
     bchunk Dungeon_Keeper.BIN Dungeon_Keeper.cue Dungeon_Keeper.iso
     modprobe loop && mount -t iso9660 -o loop tmp/fdfullcd.iso mnt/iso
