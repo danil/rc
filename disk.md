@@ -106,6 +106,23 @@ Space will not be freed until they are closed.
     blkid
     mount /dev/sr0 path/to/mnt
 
+# Duplicate files
+
+Find duplicate files
+
+## fdupes
+
+<https://github.com/adrianlopezroche/fdupes>,
+<https://unix.stackexchange.com/questions/71176/find-duplicate-files#71178>
+
+    fdupes --recurse .
+
+## fslint
+
+<https://unix.stackexchange.com/questions/71176/find-duplicate-files#71201>
+
+    /usr/share/fslint/fslint/findup ./
+
 # Other
 
     bchunk Dungeon_Keeper.BIN Dungeon_Keeper.cue Dungeon_Keeper.iso
