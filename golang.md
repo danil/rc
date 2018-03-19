@@ -1,14 +1,16 @@
 # Golang
 
+Golang rc
+
 ## Environment
 
     go env
 
-# Packages
+## Packages
 
-## Install/update
+### Install
 
-### All dependencies
+Get with all dependencies
 
     go get -v ./...
 
@@ -16,9 +18,15 @@
 
     go get -u example.org/path/to/package
 
-### Testing
+### Run tests
+
+Run test suite
 
     go test -v ./...
+
+### Run benchmarks
+
+    go test -v -bench=.
 
 ### List package dependencies
 
@@ -34,14 +42,14 @@
 
     go list ./...
 
-# godef
+## godef
 
 Find function definition by package/function name
 <https://godoc.org/github.com/rogpeppe/godef>
 
     godef -f path/to/file.go 'yourpackagename.YourFunctionName'
 
-# Linker
+## Linker
 
 * <https://golang.org/cmd/link>
 * <http://stackoverflow.com/questions/11354518/golang-application-auto-build-versioning#11355611>
@@ -54,24 +62,39 @@ Invalidate cache
 
 ## Reduce binary size
 
+Minimize binary size
+
+Maybe use `-s -w`?
+
     go build --ldflags "-s" path/to/package
     go run --ldflags "-s" path/to/package
+
+### upx
+
+Executable/binary file compressor/packer
+<https://github.com/upx/upx>
 
 ## Compile time variables
 
 Set some string variable on compile time (for example your some "version")
 
     go build -ldflags "-X main.yourVariable=`echo 'Your value'`" main.go
-    go run -ldflags "-X main.foo='bar'" main.go
+    go run -ldflags "-X main.foo=123 -X main.bar=xyz" main.go
 
-# pprof
+## Testing
+
+### HTTP
+
+stub/mock http <https://golang.org/pkg/net/http/httptest>
+
+## pprof
 
 Runtime profiling/benchmarking
 
 * https://golang.org/pkg/runtime/pprof
 * https://golang.org/pkg/net/http/pprof
 
-# Sortable IDs
+## Sortable IDs
 
 Sortable ID/UID or KSUID is for K-Sortable Unique IDentifier
 <https://blog.kowalczyk.info/article/JyRZ/generating-good-random-and-unique-ids-in-go.html>.
@@ -79,7 +102,7 @@ Sortable ID/UID or KSUID is for K-Sortable Unique IDentifier
 * <https://github.com/rs/xid> `b50vl5e54p1000fo3gh0` 4 bytes of time (seconds) + 3 byte machine id + 2 byte process id + 3 bytes random
 * <https://github.com/segmentio/ksuid> `0pPKHjWprnVxGH7dEsAoXX2YQvU` 4 bytes of time (seconds) + 16 random bytes
 
-# Redirect pointer to value
+## Redirect pointer to value
 
 Should use pointer to pointer to redirect all pointers to value into new value
 
@@ -117,7 +140,7 @@ func main() {
 }
 ```
 
-# MongoDB
+## MongoDB
 
 MongoDB write/read (insert/find)
 
@@ -163,7 +186,7 @@ func main() {
 }
 ```
 
-# Location by IP
+## Location by IP
 
 Find location (country, geographic coordinate, latitude/longitude) by IP
 
