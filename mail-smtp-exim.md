@@ -59,15 +59,17 @@ Messages list
 
 ### Delete
 
+Delete (remove) messages from queue
+
 ### By id
 
-Remove one email message by id
+Remove one email message by id from queue
 
     exim -Mrm your_message_id_to_delete
 
 ### By sender
 
-Remove all email message from specific sender address
+Remove all email messages by specific sender address from mail queue
 
     exiqgrep -i -f sender_email | xargs exim -Mrm
 
