@@ -15,9 +15,9 @@
     /usr/sbin/sendmail -bV
     exim -bV
 
-# SMTP
+## SMTP
 
-## swaks
+### swaks
 
 `net-mail/swaks` command line smtp testing, including tls and auth
 <http://jetmore.org/john/code/swaks/>
@@ -30,63 +30,63 @@
           --h-Subject: "Hello" \
           --body 'World'
 
-# Exim
+## Exim
 
-## Status
+### Status
 
 Statistics report
 
     exiwhat
     eximstats /var/log/exim/exim_main.log
 
-## Queue
+### Queue
 
 Messages queue 
 
-### Count
+#### Count
 
 Messages count
 
     mailq
     exim -bpc
 
-### List
+#### List
 
 Messages list
 
     exim -bp
     exim -bp | exiqsumm
 
-### Delete
+#### Delete
 
 Delete (remove) messages from queue
 
-### By id
+#### By id
 
 Remove one email message by id from queue
 
     exim -Mrm your_message_id_to_delete
 
-### By sender
+#### By sender
 
 Remove all email messages by specific sender address from mail queue
 
     exiqgrep -i -f sender_email | xargs exim -Mrm
 
-## Test address
+### Test address
 
-### Route
+#### Route
 
     exim -bt your.mail@example.org
 
-### Rewrite rules
+#### Rewrite rules
 
     exim -brw your.mail@example.org
 
-## Find all address
+### Find all address
 
     exigrep [^@]+@[^.]+\.[^.]+ /var/log/exim/exim_main.log
 
-## Other
+### Other
 
     exim -Mvl <message_id>
