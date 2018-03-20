@@ -87,9 +87,23 @@ Remove all email messages by specific sender address from mail queue
 
     exigrep [^@]+@[^.]+\.[^.]+ /var/log/exim/exim_main.log
 
-### Other
+### Show message by id
 
     exim -Mvl <message_id>
+
+### Retry
+
+#### Force
+
+Force queue resend
+
+    exim -qf
+
+#### Remove frozen
+
+Force queue resend and remove frozen
+
+    exim -qff
 
 ## Mailgun
 
