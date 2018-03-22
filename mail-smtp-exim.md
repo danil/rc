@@ -91,6 +91,10 @@ Remove all email messages by specific sender address from mail queue
 
     exim -Mvl <message_id>
 
+### Show body by id
+
+    exim -Mvb <message_id>
+
 ### Retry
 
 #### Force
