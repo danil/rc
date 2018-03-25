@@ -624,3 +624,7 @@ UPDATE pg_database SET datistemplate = TRUE WHERE datname = 'template1';
 CREATE ROLE your_role_name WITH SUPERUSER LOGIN PASSWORD 'your-password';
 CREATE DATABASE your_db_name WITH OWNER your_role_name ENCODING = 'UTF8';
 ```
+
+# Reserved key words
+
+<https://www.postgresql.org/docs/current/static/sql-keywords-appendix.html>
