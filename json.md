@@ -48,3 +48,10 @@ Filter and count objects in array
 
     cat path/to/file.json | jq 'map(select(.yourProperty == "Foo")) | length'
     cat path/to/file.json | jq '[ .[] | select(.yourProperty == "Bar") ] | length'
+
+##### filter property by type string then by substring then by regexp
+
+    cat path/to/file.json | \
+      jq 'map(select(.yourId == 89 and (.yourValue | type) == "string"))' | \
+      jq 'map(select(.value | match("foo";"i")))' | \
+      jq 'map(select(.value | test(".*bar")))'
