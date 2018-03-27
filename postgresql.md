@@ -304,6 +304,11 @@ Remove constraint by name
 
     UPDATE your_table_name SET col1 = col2, col2 = col1 WHERE col3 IS NOT NULL;
 
+### multiple rows
+
+Update multiple rows in one query
+<https://stackoverflow.com/questions/18797608/update-multiple-rows-in-same-query-using-postgresql#18799497>
+
 ### Subquery
 
     UPDATE xyz SET foo=subquery.foo, bar=subquery.bar
