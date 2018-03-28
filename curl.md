@@ -12,9 +12,22 @@
 
 ## POST
 
-<http://superuser.com/questions/149329/what-is-the-curl-command-line-syntax-to-do-a-post-request>
+* <http://superuser.com/questions/149329/what-is-the-curl-command-line-syntax-to-do-a-post-request>
+* <https://gist.github.com/subfuzion/08c5d85437d5d4f00e58#post>
 
-    curl --request POST --data "foo=123&bar=xyz" "http://example.org"
+### Key-values
+
+    curl --request POST \
+         --header "Content-Type: application/x-www-form-urlencoded" \
+         --data "foo=123&bar=xyz" \
+         "http://example.org"
+
+### JSON
+
+    curl --request POST \
+         --header "Content-Type: application/json" \
+         --data '{"foo":123,"bar":"xyz"}' \
+         "http://example.org"
 
 ## Gzipped
 
