@@ -47,6 +47,21 @@ Backuping:
 
 # Indeces
 
+## Create
+
+    CREATE INDEX idx_name ON table_name (column_name);
+
+This equivalent to (B-tree is default):
+
+    CREATE INDEX idx_name ON table_name USING btree (column_name);
+
+### Create with table
+
+    CREATE TABLE your_table_name
+           some_id SERIAL,
+           name varchar(10),
+           INDEX your_table_name_name_idx USING btree (name);
+
 ## Drop
 
     DROP INDEX your_index_neme;
