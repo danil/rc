@@ -50,6 +50,8 @@ Find but not in some directories
 
     find where/to/find -name *your_pattern* \
          -not -path '*/first_dir*' -not -path '*/second_dir*'
+    find where/to/find -name *your_pattern* \
+         ! -path '*/first_dir*' ! -path '*/second_dir*'
 
 ## Sort by date
 
