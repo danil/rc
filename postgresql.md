@@ -261,7 +261,9 @@ List all tables then drop them.
 
 ## Add column to table
 
-    ALTER TABLE your_table_name ADD COLUMN deleted_at timestamp with time zone;
+    ALTER TABLE your_table_name
+        ADD COLUMN col1 integer NOT NULL DEFAULT 123,
+        ADD COLUMN col2 timestamp with time zone;
 
 ## Remove column
 
