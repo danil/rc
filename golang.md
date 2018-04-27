@@ -81,6 +81,10 @@ Set some string variable on compile time (for example your some "version")
     go build -ldflags "-X main.yourVariable=`echo 'Your value'`" main.go
     go run -ldflags "-X main.foo=123 -X main.bar=xyz" main.go
 
+## Cross compilation
+
+    env GOARCH=arm64 go build
+
 ## Testing
 
 ### HTTP
