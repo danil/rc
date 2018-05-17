@@ -2,8 +2,8 @@
 
 ## psql
 
-    psql --host=kutkevich.org.ru --username=your_role_name
-    psql --dbname=your_db_name
+    psql --host=kutkevich.org.ru --username=your_role
+    psql --dbname=your_db
     psql dbname
     psql --echo-hidden
     psql --single-transaction
@@ -16,7 +16,7 @@
 
 ## URL
 
-    psql postgres://your_user_name:your-password@your.host:5432/your_db_name
+    psql postgres://your_user:your-password@your.host:5432/your_db
 
 # Dump
 
@@ -24,17 +24,17 @@
 
 Backuping:
 
-    pg_dump --host=localhost --username=your_role_name \
-            --table="your_table_name" --attribute-inserts your_db_name \
+    pg_dump --host=localhost --username=your_role \
+            --table="your_tbl" --attribute-inserts your_db \
             | xz --compress > path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
 
 ## Restore
 
-    cat path/to/dump.sql.xz | xz --decompress | psql dbname
+    cat path/to/dump.sql.xz | xz --decompress | psql your_db
 
 ### URL
 
-    pg_dump postgres://your_user_name:your-password@your.host:5432/your_db_name \
+    pg_dump postgres://your_user:your-password@your.host:5432/your_db \
             > path/to/dump.sql
 
 ### psql
@@ -49,11 +49,11 @@ Backuping:
 
 ## Create
 
-    CREATE INDEX idx_name ON table_name (column_name);
+    CREATE INDEX idx_name ON your_tbl (your_col);
 
 This equivalent to (B-tree is default):
 
-    CREATE INDEX idx_name ON table_name USING btree (column_name);
+    CREATE INDEX idx_name ON your_tbl USING btree (your_col);
 
 ## Drop
 
@@ -63,11 +63,11 @@ This equivalent to (B-tree is default):
 
 ## Create
 
-    CREATE TYPE your_type_name AS ENUM ('foo','bar','xyz');
+    CREATE TYPE your_tbl AS ENUM ('foo','bar','xyz');
 
 ## Delete
 
-    DROP TYPE your_type_name;
+    DROP TYPE your_tbl;
 
 # Change output format
 
@@ -118,31 +118,31 @@ when the command is spelled CREATE USER, LOGIN is assumed by default.
 
 ### Standard user
 
-    CREATE ROLE your_role_name WITH LOGIN PASSWORD 'password'
+    CREATE ROLE your_role WITH LOGIN PASSWORD 'password'
     VALID UNTIL '2009-01-01';
 
     createuser --no-createrole --no-createdb --no-superuser --pwprompt \
-               --encrypted --username=your_role_name --password testuser
+               --encrypted --username=your_role --password testuser
 
 ### Superuser
 
-    CREATE ROLE your_role_name WITH SUPERUSER LOGIN PASSWORD 'password'
+    CREATE ROLE your_role WITH SUPERUSER LOGIN PASSWORD 'password'
     VALID UNTIL '2009-01-01';
 
-    createuser --superuser --pwprompt --encrypted --username=postgres --password your_role_name
+    createuser --superuser --pwprompt --encrypted --username=postgres --password your_role
 
 ## Alter role
 
-    ALTER ROLE your_role_name WITH PASSWORD 'znVOIuah';
-    ALTER ROLE your_role_name CREATEDB | NOCREATEDB;
+    ALTER ROLE your_role WITH PASSWORD 'znVOIuah';
+    ALTER ROLE your_role CREATEDB | NOCREATEDB;
 
 ## Drop role
 
-    DROP ROLE your_role_name;
+    DROP ROLE your_role;
 
 ## Grant privileges
 
-    GRANT ALL ON DATABASE your_db_name TO your_role_name;
+    GRANT ALL ON DATABASE your_db TO your_role;
 
 ## Remove privileges
 
@@ -158,13 +158,13 @@ when the command is spelled CREATE USER, LOGIN is assumed by default.
 
 ## Create database
 
-    CREATE DATABASE "your_db_name" WITH OWNER your_role_name ENCODING = 'UTF8';
-    createdb --owner=your_role_name --username=postgres --password your_db_name
+    CREATE DATABASE "your_db" WITH OWNER your_role ENCODING = 'UTF8';
+    createdb --owner=your_role --username=postgres --password your_db
 
 ## Drop database
 
-    DROP DATABASE your_db_name;
-    dropdb --username=your_role_name --password test
+    DROP DATABASE your_db;
+    dropdb --username=your_role --password test
 
 ## Copy database
 
@@ -190,13 +190,13 @@ when the command is spelled CREATE USER, LOGIN is assumed by default.
 
 List all tables in schema
 
-    \dt schema_name.*
+    \dt your_schema.*
 
 ### Functions
 
 List all functions in schema
 
-    \df schema_name.*
+    \df your_schema.*
 
 ## Drop
 
@@ -210,7 +210,7 @@ Set a default schema for a session
 <http://www.postgresql.org/message-id/200307222318.58234.barwick@gmx.net>,
 <http://www.postgresql.org/docs/current/static/ddl-schemas.html#DDL-SCHEMAS-PATH>.
 
-    SET search_path TO "$user",your_schema_name;
+    SET search_path TO "$user",your_schema;
 
 # Sequences
 
@@ -229,12 +229,12 @@ Set a default schema for a session
 List tables by SQL
 
     SELECT * from information_schema.tables
-    WHERE table_name LIKE '%your_table_name%'
+    WHERE table_name LIKE '%your_tbl%'
           AND table_schema = current_schema();
 
 ## Create table
 
-    CREATE TABLE your_table_name
+    CREATE TABLE your_tbl
       (some_id SERIAL, name varchar(10), bio TEXT, age INTEGER);
 
 ## Describe table
@@ -243,7 +243,7 @@ List tables by SQL
 
 ### SQL
 
-    SELECT column_name, data_type, character_maximum_length
+    SELECT your_col, data_type, character_maximum_length
     FROM information_schema.columns
     WHERE table_name = 'your-table-name';
 
@@ -261,45 +261,45 @@ List all tables then drop them.
 
 ## Add column to table
 
-    ALTER TABLE your_table_name
+    ALTER TABLE your_tbl
         ADD COLUMN col1 integer NOT NULL DEFAULT 123,
         ADD COLUMN col2 timestamp with time zone;
 
 ## Remove column
 
-    ALTER TABLE your_table_name DROP COLUMN col1, DROP COLUMN col2;
+    ALTER TABLE your_tbl DROP COLUMN your_col1, DROP COLUMN your_col2;
 
 ## Rename table
 
-    ALTER TABLE your_old_table_name RENAME TO your_new_table_name;
+    ALTER TABLE your_old_tbl1 RENAME TO your_new_tbl2;
 
 ## Rename column
 
-    ALTER TABLE your_table_name RENAME old_name TO new_name;
-    ALTER TABLE your_table_name ALTER COLUMN old_name TYPE new_name;
+    ALTER TABLE your_tbl RENAME old_name TO new_name;
+    ALTER TABLE your_tbl ALTER COLUMN old_name TYPE new_name;
 
 ## Add unique constraint
 
-    ALTER TABLE "your_table_name"
-        ADD CONSTRAINT your_constraint_name
-            UNIQUE (your_column_name1, your_column_name2);
+    ALTER TABLE "your_tbl"
+        ADD CONSTRAINT your_cstr
+            UNIQUE (your_col1, your_col2);
 
 ## Delete constraint
 
 Remove constraint by name
 
-    ALTER TABLE "your_table_name" DROP CONSTRAINT your_constraint_name;
+    ALTER TABLE "your_tbl" DROP CONSTRAINT your_cstr;
 
 ## Rename constraint
 
-    ALTER TABLE your_table_name
-        RENAME CONSTRAINT your_constraint_name TO new_constraint_name;
+    ALTER TABLE your_tbl
+        RENAME CONSTRAINT your_cstr_old TO your_cstr_new;
 
 ## Temporary tables
 
 ### Create
 
-    CREATE TEMP TABLE your_table_name
+    CREATE TEMP TABLE your_tbl
       (some_id SERIAL, name varchar(10), bio TEXT, age INTEGER);
 
 # Updates
@@ -308,11 +308,11 @@ Remove constraint by name
 
 <http://www.postgresql.org/docs/current/static/sql-update.html>
 
-    UPDATE your_table_name SET foo = 'bar' || id;
+    UPDATE your_tbl SET foo = 'bar' || id;
 
 ### Swap two column's values
 
-    UPDATE your_table_name SET col1 = col2, col2 = col1 WHERE col3 IS NOT NULL;
+    UPDATE your_tbl SET col1 = col2, col2 = col1 WHERE col3 IS NOT NULL;
 
 ### multiple rows
 
@@ -327,20 +327,20 @@ Update multiple rows in one query
 
 # Insert row
 
-    INSERT INTO your_table_name (name, age) VALUES('John', 3);
-    COPY your_table_name FROM STDIN WITH DELIMITER AS ',';
+    INSERT INTO your_tbl (name, age) VALUES('John', 3);
+    COPY your_tbl FROM STDIN WITH DELIMITER AS ',';
 
 ## Update if duplicate
 
-    INSERT INTO your_type_name ("latitude", "longitude", "name") 
+    INSERT INTO your_tbl ("latitude", "longitude", "name") 
         VALUES (1,2,'foobar')
-        ON CONFLICT ON CONSTRAINT your_type_name_pkey
+        ON CONFLICT ON CONSTRAINT your_tbl_pkey
             DO UPDATE SET "name" = 'foobar';
 
 ## Insert by query
 
-    INSERT INTO your_table_name (id, name, age)
-    SELECT 2, name, age FROM your_table_name WHERE id = 1;
+    INSERT INTO your_tbl (id, name, age)
+    SELECT 2, name, age FROM your_tbl WHERE id = 1;
 
 # Delete row
 
@@ -354,11 +354,11 @@ Update multiple rows in one query
 
 # Queries
 
-    SELECT * FROM your_table_name;
+    SELECT * FROM your_tbl;
 
 ## Timestamp to datetime
 
-    SELECT *, to_timestamp("created_at") FROM "your_table_name"
+    SELECT *, to_timestamp("created_at") FROM "your_tbl"
         ORDER BY "created_at" DESC;
 
 ## Distinct
@@ -366,8 +366,8 @@ Update multiple rows in one query
 Remove duplicate rows from the result set (one row is kept from each
 group of duplicates).
 
-    SELECT DISTINCT ON (your_column_name) your_column_name FROM your_table_name;
-    SELECT DISTINCT your_column_name FROM your_table_name;
+    SELECT DISTINCT ON (your_col) your_col FROM your_tbl;
+    SELECT DISTINCT your_col FROM your_tbl;
 
 ## Conditional
 
@@ -376,7 +376,7 @@ group of duplicates).
 <http://www.postgresql.org/docs/current/static/functions-comparisons.html#AEN20298>
 <http://www.postgresql.org/docs/current/static/functions.html>
 
-    SELECT * FROM your_table_name
+    SELECT * FROM your_tbl
     WHERE id NOT IN (1, 2, 3);
 
 # Current date
@@ -464,7 +464,7 @@ Single quotes used for `string constants`. For example: `'This is a string'`.
 <http://www.postgresql.org/docs/current/static/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS>
 
 Single quotes used for `identifiers` (like table names). For example:
-`UPDATE "your_table_name" SET "a" = 5;`
+`UPDATE "your_tbl" SET "a" = 5;`
 
 ### Key words
 
@@ -489,14 +489,14 @@ Load data from csv file
 
 <http://www.postgresql.org/docs/current/static/sql-copy.html>
 
-    COPY your_table_name (first_column, second_column)
+    COPY your_tbl (first_column, second_column)
     FROM 'path/to/file.csv';
 
 ## psql command
 
 <http://www.postgresql.org/docs/current/static/app-psql.html#APP-PSQL-META-COMMANDS-COPY>
 
-    \copy your_table_name (first_column, second_column) from 'path/to/file.csv';
+    \copy your_tbl (first_column, second_column) from 'path/to/file.csv';
 
 # Password file
 
@@ -523,12 +523,12 @@ Getting the current number of connections in a PostgreSQL
 <http://www.postgresql.org/docs/current/static/sql-explain.html>  
 <https://wiki.postgresql.org/wiki/Using_EXPLAIN>
 
-    EXPLAIN SELECT * FROM your_table_name;
+    EXPLAIN SELECT * FROM your_tbl;
 
 ## Analyze
 
     BEGIN;
-    EXPLAIN ANALYZE UPDATE your_table_name SET foo = 'bar' || id;
+    EXPLAIN ANALYZE UPDATE your_tbl SET foo = 'bar' || id;
     ROLLBACK;
 
 # Disk usage
@@ -576,7 +576,7 @@ Getting the current number of connections in a PostgreSQL
 <http://www.postgresql.org/docs/current/static/sql-prepare.html>
 
     PREPARE your_statement_name (text, int) AS
-      SELECT * FROM "your_table_name"
+      SELECT * FROM "your_tbl"
       WHERE "name" = $1 AND "age" = $2;
 
 ## Execute
@@ -606,12 +606,12 @@ Log statements with any durations
 <http://www.postgresql.org/docs/current/static/pgbench.html>
 
     pgbench -h localhost -p 51000 -c 1000 -C -S -t 1 \
-            -U your_role_name -f ./pgbouncer/pgbench.sql your_db_name
+            -U your_role -f ./pgbouncer/pgbench.sql your_db
 
     PGPASSWORD=your-password \
-      pgbench -h localhost -p 5433 -U your_role_name \
+      pgbench -h localhost -p 5433 -U your_role \
               -c 100 -C -d -S -t 1000 \
-              -f path/to/file.sql your_db_name
+              -f path/to/file.sql your_db
 
 # List active connections
 
@@ -636,8 +636,8 @@ CREATE DATABASE template1
             LC_COLLATE='en_US.UTF-8'
             LC_CTYPE='en_US.UTF-8';
 UPDATE pg_database SET datistemplate = TRUE WHERE datname = 'template1';
-CREATE ROLE your_role_name WITH SUPERUSER LOGIN PASSWORD 'your-password';
-CREATE DATABASE your_db_name WITH OWNER your_role_name ENCODING = 'UTF8';
+CREATE ROLE your_role WITH SUPERUSER LOGIN PASSWORD 'your-password';
+CREATE DATABASE your_db WITH OWNER your_role ENCODING = 'UTF8';
 ```
 
 # Reserved key words
