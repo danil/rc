@@ -82,13 +82,17 @@ ssh -D your_local_port -N your_remote_ssh_host
 
 <http://tunnelsup.com/raspberry-pi-phoning-home-using-a-reverse-remote-ssh-tunnel>
 
-On `h4` SailfishOS:
+On localhost:
 
-    ssh -N -R localhost:55555:localhost:22 danil@h5.example.org
+    ssh -N -R localhost:remote_port:localhost:local_port your_user@example.org
 
-On `h5` server:
+On remote server:
 
-    ssh -l nemo -p 55555 localhost
+    ssh -l your_user -p remote_port localhost
+
+or
+
+    curl localhost:remote_port
 
 ## Transparent multi-hop SSH agent forwarding
 
