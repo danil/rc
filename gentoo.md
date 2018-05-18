@@ -149,7 +149,7 @@ List packages depends on package `your-package/name`
 
     layman --list
     layman --list-local
-    layman --add=allenjb
+    layman --add=sunrise
     layman --delete=sunrise
     layman --sync=sunrise
 
@@ -178,6 +178,10 @@ List packages depends on package `your-package/name`
     eix -vAS dev-ruby
     eix --world --categor
     eix-test-obsolete detail
+
+## Updating cache
+
+    eix-update
 
 ## Downgrade (delete) or upgrade list
 
