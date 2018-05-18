@@ -82,17 +82,18 @@ ssh -D your_local_port -N your_remote_ssh_host
 
 <http://tunnelsup.com/raspberry-pi-phoning-home-using-a-reverse-remote-ssh-tunnel>
 
-On localhost:
+##### On localhost
 
     ssh -N -R localhost:remote_port:localhost:local_port your_user@example.org
 
-On remote server:
+##### On remote server
 
-    ssh -l your_user -p remote_port localhost
-
-or
-
-    curl localhost:remote_port
+```sh
+# if you tunnel ssh
+ssh -l your_user -p remote_port localhost
+# or if you tunnel http
+curl localhost:remote_port
+```
 
 ## Transparent multi-hop SSH agent forwarding
 
