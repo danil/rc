@@ -231,6 +231,42 @@ Describe table  character set and collation
         UNIQUE KEY(email)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci;
 
+### Create with constraint
+
+* <https://stackoverflow.com/questions/9734920/can-a-mysql-trigger-simulate-a-check-constraint#25266414>
+* <https://dev.mysql.com/doc/en/trigger-syntax.html>
+
+Create table column with constraint impossible
+because MySQL do not support `check` constraint
+(the `check` clause is parsed but ignored by all storage engines
+<https://dev.mysql.com/doc/en/create-table.html>)
+
+```sql
+delimiter //
+CREATE TRIGGER chk_your_tbl_month1 BEFORE INSERT ON month
+  FOR EACH ROW
+   begin
+if new.month > 12 then
+    SIGNAL SQLSTATE '45000'
+    SET MESSAGE_TEXT = 'Cannot add or update row: only';
+end if;
+end;
+//
+```
+
+```sql
+delimiter //
+CREATE TRIGGER chk_month2 BEFORE UPDATE ON foo
+  for each row
+   BEGIN
+    if  new.month>12 then
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Cannot add or update row: only';
+      end if;
+      end;
+      //
+```
+
 ### Create table by table
 
     CREATE TABLE IF NOT EXISTS your_user.test_table_2
