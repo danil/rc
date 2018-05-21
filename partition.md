@@ -1,5 +1,12 @@
 # Partitions
 
+## List
+
+List all partitions
+
+    fdisk -l
+    parted -l
+
 ## UUIDs and labels
 
 <https://wiki.gentoo.org/wiki/Fstab#UUIDs_and_labels>,
