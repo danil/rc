@@ -1,5 +1,7 @@
 # tmux
 
+https://robots.thoughtbot.com/a-tmux-crash-course
+
 # Install
 
     ./autogen.sh && ./configure --prefix=$HOME && make --jobs=5 && make install
