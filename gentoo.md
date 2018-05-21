@@ -179,7 +179,7 @@ List packages depends on package `your-package/name`
     eix --world --categor
     eix-test-obsolete detail
 
-## Updating cache
+## Cache refresh
 
     eix-update
 
