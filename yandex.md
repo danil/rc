@@ -1,5 +1,7 @@
 # Yandex disk
 
+<https://yandex.ru/support/disk/cli-clients.html>
+
 ## Config
 
 `~/.config/yandex-disk/config.cfg`
