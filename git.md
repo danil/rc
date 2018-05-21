@@ -708,6 +708,12 @@ Merge two repositories with history
 * `style` formatting, missing semi colons, etc; no code change
 * `test` adding missing tests, refactoring tests; no production code change
 
+# Git Daemon
+
+<https://git-scm.com/book/gr/v2/Git-on-the-Server-Git-Daemon>
+
+`git-daemon-export-ok`
+
 # Other
 
     git mv oldname newname
