@@ -84,6 +84,11 @@ read -ra arr <<<"your array of directories" && \
     ls path/to/file | zip --quiet path/to/file.zip -@
     ls path/to/dir | grep filename | zip --quiet path/to/archive.zip -@
 
+#### ???
+
+    export f=path/to/file && ls ${f} | zip --quiet ${f}.zip -@
+    export p=path/to/dir && ls ${p}/nesteddir | grep re | zip --quiet ${p}/archive.zip -@
+
 ### Unzip to directory
 
     unzip foo.zip -d path/to/directory
