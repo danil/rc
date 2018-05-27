@@ -14,6 +14,32 @@
 
     CHECK TABLE ... EXTENDED;
 
+## Version
+
+Get/check/lookup mysql versoin
+
+### Shell
+
+    mysql --version
+
+### SQL
+
+```sql
+SELECT VERSION();
+SHOW VARIABLES LIKE "%version%";
+```
+
+### InnoDB version
+
+Get/check/lookup InnoDB versoin
+
+```sql
+SELECT PLUGIN_NAME, PLUGIN_VERSION, PLUGIN_TYPE_VERSION, PLUGIN_LIBRARY
+ , PLUGIN_LIBRARY_VERSION, PLUGIN_AUTHOR
+  FROM information_schema.PLUGINS
+WHERE PLUGIN_NAME = 'innodb';
+```
+
 ## Dump
 
 ### Create
