@@ -67,6 +67,7 @@ To clear the environment and start bash
 
 # Power Management
 
+    echo mem > /sys/power/state
     hibernate-ram
     hibernate
 
