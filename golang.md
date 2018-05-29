@@ -61,6 +61,14 @@ Yields the processor, allowing other goroutines to run.
 
     runtime.Gosched()
 
+### [GC](https://golang.org/pkg/runtime/#hdr-Environment_Variables)
+
+<https://blog.golang.org/go15gc>
+
+#### Disable
+
+    GOGC=off
+
 ### [Debug](https://golang.org/pkg/runtime/debug)
 
 #### [FreeOSMemory](https://golang.org/pkg/runtime/debug/#FreeOSMemory)
