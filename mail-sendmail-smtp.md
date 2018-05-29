@@ -5,9 +5,9 @@
 <http://debian-administration.org/article/171/Send_an_HTML_file_as_email_from_the_command_line>
 
 ```sh
-echo "Your mail body" | mail --subject="Your subject" your.name@example.org
 echo -e "Subject: Your subject\n\nYour mail body\n" \
     | /usr/sbin/sendmail your.name@domain.com
+echo "Your mail body" | mail --subject="Your subject" your.name@example.org
 ```
 
 ### HTML
