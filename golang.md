@@ -53,6 +53,23 @@ Invalidate cache
 
     go build -a path/to/package
 
+## [Runtime](https://golang.org/pkg/runtime)
+
+### [Gosched](https://golang.org/pkg/runtime/#Gosched)
+
+Yields the processor, allowing other goroutines to run
+
+    runtime.Gosched()
+
+### [Debug](https://golang.org/pkg/runtime/debug)
+
+#### [FreeOSMemory](https://golang.org/pkg/runtime/debug/#FreeOSMemory)
+
+Forces a garbage collection followed by an attempt to return as much
+memory to the operating system as possible.
+
+    debug.FreeOSMemory()
+
 ## Reduce binary size
 
 Minimize binary size
