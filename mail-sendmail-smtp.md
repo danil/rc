@@ -22,9 +22,9 @@ mail --append="Content-type: text/html;" \
 
 ### SMTP
 
-Send by smtp
+Send by SMTP
 
-#### telnet
+#### Telnet
 
 ```sh
 telnet localhost smtp
