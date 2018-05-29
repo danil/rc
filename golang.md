@@ -57,7 +57,7 @@ Invalidate cache
 
 ### [Gosched](https://golang.org/pkg/runtime/#Gosched)
 
-Yields the processor, allowing other goroutines to run
+Yields the processor, allowing other goroutines to run.
 
     runtime.Gosched()
 
