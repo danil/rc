@@ -6,7 +6,7 @@
 
 ```sh
 echo "Your mail body" | mail --subject="Your subject" your.name@example.org
-echo -e "Subject: Your subject\n\n Your mail body\n" \
+echo -e "Subject: Your subject\n\nYour mail body\n" \
     | sendmail your.name@domain.com
 ```
 
