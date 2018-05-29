@@ -62,11 +62,6 @@ Maybe use `-s -w`?
     go build --ldflags "-s" path/to/package
     go run --ldflags "-s" path/to/package
 
-### upx
-
-Executable/binary file compressor/packer
-<https://github.com/upx/upx>
-
 ## Compile time variables
 
 Set some string variable on compile time (for example your some "version")
