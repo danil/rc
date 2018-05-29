@@ -1,7 +1,5 @@
 # Go
 
-Golang rc
-
 ## Environment
 
     go env
