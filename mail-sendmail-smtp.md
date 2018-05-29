@@ -1,14 +1,19 @@
 # Mail
 
-## Send by smtp
+## Send
 
 <http://debian-administration.org/article/171/Send_an_HTML_file_as_email_from_the_command_line>
 
-    mail -a "Content-type: text/html;" \
-         -s "Employer" \
-         danil@kutkevich.org < ./htdocs/index.html
+    echo "Your mail body" | mail --subject="Your subject" your.name@example.org
+    echo -e "Subject: test \n\n Body content here\n" | sendmail user@domain.com
 
-    echo 'Hello, work' | mail --subject='Hello, World!' danil@kutkevich.org
+### HTML
+
+```sh
+mail --append="Content-type: text/html;" \
+     --subject="Your subject" \
+     your.name@example.org < path/to/index.html
+```
 
 ## Mailserver version
 
@@ -26,9 +31,9 @@
           --server your.smtp.domain \
           --auth-user your-login \
           --auth-password your-password \
-          --to your@mail.address \
-          --h-Subject: "Hello" \
-          --body 'World'
+          --to your.name@example.org \
+          --h-Subject: "Your subject" \
+          --body "Your mail body"
 
 ## Mailgun
 
