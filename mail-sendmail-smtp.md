@@ -12,10 +12,42 @@ echo "Your mail body" | mail --subject="Your subject" your.name@example.org
 
 ### HTML
 
+Mail with HTML body
+
 ```sh
 mail --append="Content-type: text/html;" \
      --subject="Your subject" \
      your.name@example.org < path/to/index.html
+```
+
+### SMTP
+
+Send by smtp
+
+#### telnet
+
+```sh
+telnet localhost smtp
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+220 example.org ESMTP Exim 4.90_1 Tue, 29 May 2018 07:27:36 +0000
+HELO localhost
+250 example.org Hello localhost [127.0.0.1]
+mail from: your.name@example.org
+250 OK
+rcpt to: your.name@example.com
+250 Accepted
+data
+354 Enter message, ending with "." on a line by itself
+Subject: Your subject
+
+Your mail body
+.
+250 OK id=1fNZ3C-0001X2-6P
+quit
+221 example.org closing connection
+Connection closed by foreign host.
 ```
 
 ## Mailserver version
