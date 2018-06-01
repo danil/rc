@@ -20,7 +20,7 @@ Get with all dependencies
 
 Run test suite
 
-    go test -v github.com/your/package
+    go test -v example.org/path/to/package
     go test -v ./...
 
 ### Run benchmarks
