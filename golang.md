@@ -18,14 +18,19 @@ Get with all dependencies
 
 ### Testsing
 
-#### Run tests
+* <https://blog.golang.org/examples>
+* <https://blog.golang.org/subtests>
+
+#### Run
 
 Run test suite
 
     go test -v example.org/path/to/package
     go test -v ./...
 
-#### Run benchmarks
+#### Benchmarks
+
+Run benchmarks
 
     go test -v -bench=.
 
@@ -38,6 +43,12 @@ Run test suite
 [Test coverage](https://blog.golang.org/cover)
 
     go test -cover ./...
+
+#### Races
+
+Race conditions and [Race Detector](https://blog.golang.org/race-detector)
+
+    go test -race ./...
 
 ### List package dependencies
 
