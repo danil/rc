@@ -16,16 +16,28 @@ Get with all dependencies
 
     go get -u example.org/path/to/package
 
-### Run tests
+### Testsing
+
+#### Run tests
 
 Run test suite
 
     go test -v example.org/path/to/package
     go test -v ./...
 
-### Run benchmarks
+#### Run benchmarks
 
     go test -v -bench=.
+
+#### Run benchmarks
+
+    go test -v -bench=.
+
+#### Coverage
+
+[Test coverage](https://blog.golang.org/cover)
+
+    go test -cover ./...
 
 ### List package dependencies
 
