@@ -24,7 +24,6 @@ Cloning the all partitions one by one and the all their content
 * <https://linode.com/docs/migrate-to-linode/disk-images/copying-a-disk-image-to-a-different-account#copying-the-disk-image>
 
     dd if=/dev/your_source1 of=/dev/your_destination1 bs=512 conv=sync
-    dd if=/dev/your_source2 of=/dev/your_destination2 bs=512 conv=sync
 
 ### GRUB
 
