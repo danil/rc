@@ -27,7 +27,7 @@ Messages list
 
 ### Delete
 
-Delete (remove) messages from queue
+Remove messages from queue
 
 ### By id
 
@@ -40,6 +40,10 @@ Remove one email message by id from queue
 Remove all email messages by specific sender address from mail queue
 
     exiqgrep -i -f sender_email | xargs exim -Mrm
+
+### Remove all
+
+    exim -bp | exiqgrep -i | xargs exim -Mrm
 
 ## Test address
 
@@ -70,9 +74,3 @@ Remove all email messages by specific sender address from mail queue
 Force queue resend
 
     exim -qf
-
-### Remove frozen
-
-Force queue resend and remove frozen
-
-    exim -qff
