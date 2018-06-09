@@ -33,3 +33,12 @@ $ for i in {009..010} ; do echo "Hello, World$i!" ; done
 Hello, World009!
 Hello, World010!
 ```
+
+## Get home directory by username
+
+<https://superuser.com/questions/484277/get-home-directory-by-username#484280>
+
+```bash
+export USER=$(whoami) && echo $(eval echo ~$USER)
+echo $(eval echo ~$(whoami))
+```
