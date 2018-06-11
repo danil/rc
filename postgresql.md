@@ -235,7 +235,7 @@ List tables by SQL
 ## Create table
 
     CREATE TABLE your_tbl
-      (some_id SERIAL, name varchar(10), bio TEXT, age INTEGER);
+      (some_id SERIAL primary key, name varchar(10), bio TEXT, age INTEGER);
 
 ## Describe table
 
