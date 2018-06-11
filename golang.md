@@ -106,10 +106,8 @@ memory to the operating system as possible.
 
 Minimize binary size
 
-Maybe use `-s -w`?
-
-    go build --ldflags "-s" path/to/package
-    go run --ldflags "-s" path/to/package
+    go build --ldflags "-s -w" path/to/package
+    go run --ldflags "-s -w" path/to/package
 
 ## Compile time variables
 
