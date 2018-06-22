@@ -224,7 +224,13 @@ twice) might be installed from overlay
 
 ### Upgrade
 
-<https://www.gentoo.org/doc/en/gcc-upgrading.xml>
+<https://wiki.gentoo.org/wiki/Upgrading_GCC#Short_version>
+
+#### Rebuild
+
+<https://wiki.gentoo.org/wiki/Upgrading_GCC#Which_packages_are_known_to_need_a_rebuild.3F>
+
+    emerge --ask --oneshot --verbose sys-devel/libtool sys-devel/llvm
 
 ### Other
 
