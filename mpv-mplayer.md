@@ -11,6 +11,7 @@
 <http://en.gentoo-wiki.com/wiki/Webcam#Mplayer>
 
     mplayer tv:// -tv driver=v4l2:width=160:height=120:device=/dev/video0
+    mpv av://v4l2:/dev/video0
 
 ## Audio CD
 
