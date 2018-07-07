@@ -113,10 +113,15 @@ List all services by run levels
     apt-file update
     apt-file search /usr/bin/ag
 
-### Other
+## Upgrade
+
+Upgrades installed packages to their most recent version
 
     apt-get update
     apt-get --show-upgraded upgrade
+
+### Other
+
     apt-get --show-upgraded dist-upgrade
     apt-cash [--full] search emacs
     apt-cash show emacs
