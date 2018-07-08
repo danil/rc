@@ -32,6 +32,10 @@ Backuping:
 
     cat path/to/dump.sql.xz | xz --decompress | psql your_db
 
+## Dump all databases
+
+    pg_dumpall path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
+
 ### URL
 
     pg_dump postgres://your_user:your-password@your.host:5432/your_db \
