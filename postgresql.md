@@ -24,7 +24,7 @@
 
 Backuping:
 
-    pg_dump --host=localhost --username=your_role \
+    pg_dump --host=localhost --port=5432 --username=your_role \
             --table="your_tbl" --attribute-inserts your_db \
             | xz --compress > path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
 
@@ -34,7 +34,8 @@ Backuping:
 
 ## Dump all databases
 
-    pg_dumpall > path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
+    pg_dumpall --host=localhost --port=5432 --username=your_role \
+               > path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
 
 ### URL
 
