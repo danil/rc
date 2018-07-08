@@ -34,7 +34,7 @@ Backuping:
 
 ## Dump all databases
 
-    pg_dumpall path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
+    pg_dumpall > path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
 
 ### URL
 
