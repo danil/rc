@@ -35,7 +35,7 @@ Backuping:
 ## Dump all databases
 
     pg_dumpall --host=localhost --port=5432 --username=your_role \
-               > path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
+               > path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql
 
 ### URL
 
