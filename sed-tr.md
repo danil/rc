@@ -33,6 +33,10 @@ Adds `\n` at the end of the file only if it doesn’t already end with a newline
 
 sed --in-place --expression='$a\' ~/.dmenu_history
 
+## Placeholders/variables
+
+    sed -e 's/\(unchangeable str\)str to replace/\1new str/g' path/to/file
+
 # tr
 
 ## Convert uppercase to lowercase
