@@ -6,6 +6,10 @@
             -sub Pioneer.One.srt big_buck_bunny_720_stereo.ogg
     mplayer dvd://1 -dvd-device "mnt/tmp/dir"
 
+## Fullscreen
+
+    mvp --fs
+
 ## Webcam
 
 <http://en.gentoo-wiki.com/wiki/Webcam#Mplayer>
