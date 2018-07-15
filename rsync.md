@@ -22,6 +22,15 @@
           --stats \
           danil@h2.kutkevich.org:~/Books/ ./Books/
 
+## Exclude directory
+
+Copy directory exclude directory
+<https://stackoverflow.com/questions/4585929/how-to-use-cp-command-to-exclude-a-specific-directory#14789400>
+
+    rsync -av --progress sourcefolder /destinationfolder \
+          --exclude thefoldertoexclude1
+          --exclude thefoldertoexclude2
+
 ## Other
 
     rsync -rv --stats --delete --compress --skip-compress=jpg,gif,png,mp4 \
