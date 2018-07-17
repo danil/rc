@@ -71,6 +71,11 @@ Find function definition by package/function name
 
     godef -f path/to/file.go 'yourpackagename.YourFunctionName'
 
+## Build
+
+    go build
+    go build -o your_resulting_executable_name
+
 ## Cache
 
 Invalidate cache
