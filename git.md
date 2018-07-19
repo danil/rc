@@ -63,6 +63,10 @@ Push from local repository to independent remote repository
 
     git branch --delete breadcrumbs-1423
 
+### Abort merge
+
+    git merge --abort
+
 ### Merge without commit
 
 <http://stackoverflow.com/questions/8640887/git-merge-without-auto-commit#8641053>
