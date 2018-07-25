@@ -149,6 +149,29 @@ when the command is spelled CREATE USER, LOGIN is assumed by default.
 
 Grant privileges to the roles/users
 
+## List
+
+List roles and privileges
+
+```sql
+SELECT r.rolname,
+       r.rolsuper,
+       r.rolinherit,
+       r.rolcreaterole,
+       r.rolcreatedb,
+       r.rolcanlogin,
+       r.rolconnlimit,
+       r.rolvaliduntil,
+       ARRAY(SELECT b.rolname
+             FROM pg_catalog.pg_auth_members m
+             JOIN pg_catalog.pg_roles b ON (m.roleid = b.oid)
+             WHERE m.member = r.oid) as memberof,
+       r.rolreplication,
+       r.rolbypassrls
+FROM pg_catalog.pg_roles r
+ORDER BY 1;
+```
+
 ### Grant privileges
 
     GRANT ALL ON DATABASE your_db TO your_role;
