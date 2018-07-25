@@ -145,6 +145,10 @@ when the command is spelled CREATE USER, LOGIN is assumed by default.
 
     DROP ROLE your_role;
 
+## Privileges
+
+Grant privileges to the roles/users
+
 ### Grant privileges
 
     GRANT ALL ON DATABASE your_db TO your_role;
