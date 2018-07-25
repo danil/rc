@@ -720,8 +720,10 @@ Merge two repositories with history
 
 ## Git flow
 
-    flow init
-    flow feature start feat-1234-your-feature-name
+    git flow init
+    git flow feature start feat-1234-your-feature-name
+    git commit --message="feat: some commit"
+    git flow feature finish feat-1234-your-feature-name
 
 ## Other
 
