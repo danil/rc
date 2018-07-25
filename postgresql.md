@@ -175,6 +175,7 @@ ORDER BY 1;
 ### Grant privileges
 
     GRANT ALL ON DATABASE your_db TO your_role;
+    GRANT SELECT, INSERT, UPDATE, DELETE ON your_db TO your_role;
 
 ### Remove privileges
 
