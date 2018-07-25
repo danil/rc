@@ -718,6 +718,11 @@ Merge two repositories with history
 
 `git-daemon-export-ok`
 
+## Git flow
+
+    flow init
+    flow feature start feat-1234-your-feature-name
+
 ## Other
 
     git mv oldname newname
