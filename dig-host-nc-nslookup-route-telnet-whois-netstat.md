@@ -61,11 +61,13 @@ Find out gateway <http://cyberciti.biz/faq/how-to-find-gateway-ip-address>
 
 # Nmap
 
-Discover (scanner) hosts and services on a computer network.
+Find/discover/scanning hosts and services on a computer network
+<https://security.stackexchange.com/questions/36198/how-to-find-live-hosts-on-my-network#36200>
 
     nmap --open 217.197.232.218
     nmap -sP 192.168.0.0/16
-
+    nmap -sP 192.168.2.1/24
+    
 # dig
 
 ## DNS
