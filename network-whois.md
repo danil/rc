@@ -1,0 +1,3 @@
+# whois
+
+    whois example.org
