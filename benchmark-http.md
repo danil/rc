@@ -8,14 +8,14 @@
 
 ## httperf
 
-    httperf --num-conns 10 --rate 120 \
-            --server kutkevich.org --port 80 --uri /index.html
-    httperf --num-conns 10 --rate 120 \
-            --server kutkevich.org --port 80 --wsesslog=10,1,wsesslog_ska
+    httperf --num-conns=10 --rate=120 \
+            --server=example.org --port=443 --ssl --uri /index.html
+    httperf --num-conns=10 --rate=120 \
+            --server=example.org --port 80 --wsesslog=10,1,wsesslog_your
 
 ## siege
 
-    siege --concurrent=1 --reps=1 --verbose \
+    siege --verbose --benchmark --concurrent=100 --reps=10 \
           --log=$HOME/siege.log --file=$HOME/siege-urls \
           --header="Cookie: ring-session=00000000-0000-0000-0000-000000000000"
 
@@ -26,7 +26,7 @@
 Runs a benchmark for 30 seconds, using 12 threads, and keeping
 400 HTTP connections open.
 
-    wrk -t12 -c400 -d30s https://localhost
+    wrk --threads=12 --connections=400 --duration=30s https://localhost
 
 ## boom
 
@@ -36,12 +36,13 @@ Runs 1000 requests, using 100 threads
 
     boom -n 1000 -c 100 https://localhost
 
-## Herd
-
-<https://github.com/imjacobclark/Herd>
-
 ## bombardier
 
+Only one url (no multiple urls)
 <https://github.com/codesenberg/bombardier>
 
     bombardier https://localhost
+
+## Herd
+
+<https://github.com/imjacobclark/Herd>
