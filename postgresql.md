@@ -412,6 +412,12 @@ group of duplicates).
     SELECT * FROM your_tbl
     WHERE id NOT IN (1, 2, 3);
 
+### Select array contains
+
+<https://stackoverflow.com/questions/16606357/how-to-make-a-select-with-array-contains-value-clause-in-psql#16606612>
+
+    select * from your_tbl where your_col @> ARRAY[1234567890]::bigint[];
+
 ## Current date
 
     mydb=> SELECT current_date;
