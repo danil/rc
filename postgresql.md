@@ -179,7 +179,8 @@ ORDER BY 1;
 
 ### Remove privileges
 
-    REVOKE ALL PRIVILEGES ON DATABASE ska_phpbb3 FROM skaforum;
+    REVOKE ALL PRIVILEGES ON DATABASE your_db FROM your_role;
+    revoke SELECT, INSERT, UPDATE, DELETE ON billing.rebates_agg FROM your_role;
 
 ## Databases
 
@@ -198,6 +199,11 @@ ORDER BY 1;
 
     DROP DATABASE your_db;
     dropdb --username=your_role --password test
+
+### Get databases owner
+
+    SELECT d.datname as "Name", pg_catalog.pg_get_userbyid(d.datdba) as "Owner"
+           FROM pg_catalog.pg_database d WHERE d.datname = 'your_db' ORDER BY 1;
 
 ### Copy database
 
@@ -364,6 +370,8 @@ Update multiple rows in one query
     COPY your_tbl FROM STDIN WITH DELIMITER AS ',';
 
 ### Update if duplicate
+
+Created or update/update or create
 
     INSERT INTO your_tbl ("latitude", "longitude", "name") 
         VALUES (1,2,'foobar')

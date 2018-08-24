@@ -43,6 +43,12 @@ Push from local repository to independent remote repository
 
 ## Branch
 
+### Current branch
+
+Get/print current branch
+
+    echo $(git rev-parse --abbrev-ref HEAD)
+
 ### Create and checkout
 
     git checkout -b newbranch
@@ -92,9 +98,13 @@ Create master-old on remote
 
     git push origin master-old
 
-### Delete remoute branch
+### Delete remote branch
 
     git push origin :accounting
+
+### Cleanup remote branch
+
+    git remote prune origin
 
 ### Checkout in bare repository
 
@@ -209,6 +219,12 @@ Newest tag
 <http://www.abeautifulsite.net/how-to-delete-a-tag-on-github/>
 
     git push origin :v0.0.1
+
+#### Cleanup
+
+Remove local tags thats deleted on remote
+
+    git tag -l | xargs git tag -d && git fetch -t
 
 ## Stash
 
