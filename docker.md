@@ -1,33 +1,33 @@
 # Docker
 
-# Images
+## Images
 
-## List
+### List
 
 Size and so on.
 
     docker images
 
-## Build
+### Build
 
     docker build --tag=your-repository/your-image:your-tag \
                  --file=path/to/Dockerfile ./
 
-## Tag
+### Tag
 
-### Add
+#### Add
 
     docker tag 7f7a5e4d89e4 fhirbase/fhirbase
 
-## Remove
+### Remove
 
     docker rmi foobar
 
-### Remove all
+#### Remove all
 
     docker rmi $(docker images --quiet)
 
-## Create
+### Create
 
 Create and start (or run) image as container
 
@@ -50,32 +50,32 @@ from outside)
 
     busybox telnet localhost 5433
 
-### Privileged
+#### Privileged
 
 Run docker inside docker
 <https://docs.docker.com/reference/commandline/cli/#create>
 
     docker create --privileged --name=your-container-name your/image-name
 
-## Run
+### Run
 
     docker run --detach
                --name=your-container-name \
                --publish=80:80 \
                your/image-name
 
-## Inspect
+### Inspect
 
     docker inspect foobar_server
 
-## Commit
+### Commit
 
 Save container as image after interactive changes
 
     docker commit your_user_name/your_container_name \
                   your_image_name:1970_01_01
 
-## Copy
+### Copy
 
 Copy from container to host
 
@@ -85,7 +85,7 @@ Copy from host to container
 
     docker cp /path/to/host/dir <containerId>:/file/path/within/container
 
-# Registry
+## Registry
 
 Push image to local registry repository  
 <http://blog.docker.com/2013/07/how-to-use-your-own-registry/>
@@ -93,15 +93,15 @@ Push image to local registry repository
     docker tag my-image-id localhost:63711/medapp-demo
     docker push localhost:63711/medapp-demo
 
-# Containers
+## Containers
 
-## List
+### List
 
 List all containers
 
     docker ps --all --no-trunc
 
-### Json via socket
+#### Json via socket
 
 * <https://docs.docker.com/reference/api/docker_remote_api_v1.17/#list-containers>
 * <http://superuser.com/questions/834307/can-curl-send-requests-to-sockets#834320>
@@ -109,33 +109,33 @@ List all containers
     echo -e "GET /containers/json?all=1 HTTP/1.1\r\n" \
       | socat unix-connect:/var/run/docker.sock STDIO
 
-## Start
+### Start
 
 Start container and attach STDOUT and STDERR
 
     docker start --attach teamcity_agent1
 
-## Stop
+### Stop
 
     docker stop teamcity_serve
 
-## Remove
+### Remove
 
     docker rm --force teamcity_agent1
 
-### Remove all stopped/running
+#### Remove all stopped/running
 
     docker rm $(docker ps --all --quiet)
 
-## Rename
+### Rename
 
     docker rename your-old-name your-new-name
 
-## Stats
+### Stats
 
     docker stats foobar_server
 
-# Linking
+## Linking
 
 <https://docs.docker.com/userguide/dockerlinks/#communication-across-links>
 
@@ -148,27 +148,27 @@ Create container with `--link` option like this
 Then environment variable `$YOUR_ALIAS_NAME_PORT_666_TCP_ADDR`
 will contain linked container `IP` addres.
 
-# Backup
+## Backup
 
-## Save
+### Save
 
 <http://stackoverflow.com/questions/21486004/how-do-i-move-a-docker-containers-image-to-a-persistent-disk#21632989>
 
     docker save image_name > image_name.tar
     docker export container_name > image_name.tar
 
-## Restore
+### Restore
 
     docker load < image_name.tar
 
-### Import
+#### Import
 
 Import will flatten and reduce image size
 <https://www.ctl.io/developers/blog/post/optimizing-docker-images>
 
     cat file.tar.gz | docker import - your-image-name
 
-# init scripts
+## init scripts
 
 Host system init scripts (upstart or systemd)
 
