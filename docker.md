@@ -173,3 +173,9 @@ Import will flatten and reduce image size
 Host system init scripts (upstart or systemd)
 
 <https://docs.docker.com/engine/admin/host_integration/#/examples>
+
+## Cleanup
+
+Cleanup/remove stopped containers/dangling images/build cache
+
+    docker system prune
