@@ -48,7 +48,7 @@ Backuping:
 
 ### Restor binary dump
 
-    pg_restore --dbname=scheduler_development scheduler.backup
+    pg_restore --username=your_role --dbname=your_db --no-owner file.backup
 
 ## Indeces
 
