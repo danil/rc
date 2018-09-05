@@ -251,6 +251,7 @@ WARNING: Avoid using eclean!
 
     eclean distfiles
     eclean-dist --deep
+    rm -rf /var/tmp/portage
 
 <http://en.gentoo-wiki.com/wiki/Freeing_Up_Disk_Space#Removing_Ancient_Distfiles_and_Binaries>
 
