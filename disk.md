@@ -115,6 +115,12 @@ Find duplicate files
 
     /usr/share/fslint/fslint/findup ./
 
+## Check disk
+
+Check/clean disk after reboot
+
+    touch /forcefsck
+
 ## Other
 
     bchunk Dungeon_Keeper.BIN Dungeon_Keeper.cue Dungeon_Keeper.iso
@@ -126,4 +132,3 @@ Find duplicate files
           -o "workgroup=darout,username=danil,iocharset=utf8,codepage=cp1251"
     mount --rbind olddir newdir
     fsck /dev/sdg1
-    touch /forcefsck
