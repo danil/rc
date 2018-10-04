@@ -577,6 +577,8 @@ Reduce repository size
 
 ### File name
 
+List of the changed file names
+
 <http://stackoverflow.com/questions/14207414/how-to-show-changed-file-name-only-with-git-log#14227496>
 
     git log --name-only
@@ -694,7 +696,7 @@ Deploy to GitHub Pages <http://yeoman.io/learning/deployment.html>
 
 ## Reflog
 
-Find reseted commit message:
+Find reseted commit (no longer are being pointed to by some other ref):
 
     git reflog --pretty=fuller --color -p --author=your_user --since="1 hours"
 

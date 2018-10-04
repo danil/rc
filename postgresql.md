@@ -315,7 +315,11 @@ List all tables then drop them.
 ### Rename column
 
     ALTER TABLE your_tbl RENAME old_name TO new_name;
-    ALTER TABLE your_tbl ALTER COLUMN old_name TYPE new_name;
+
+### Change type
+
+    ALTER TABLE your_tbl ALTER COLUMN col_name TYPE smallint;
+    ALTER TABLE your_tbl ALTER COLUMN col_name TYPE bigint;
 
 ### Add unique constraint
 
@@ -449,6 +453,7 @@ group of duplicates).
 Today in past year
 
     SELECT (CURRENT_DATE - INTERVAL '1 year')::timestamptz;
+    german_test=# show timezone;
 
 ### enum
 
@@ -466,11 +471,13 @@ Enumerated
 
 Create dates range from now to 1 year ago
 
-    SELECT tstzrange(
-      (CURRENT_DATE - INTERVAL '1 year')::timestamptz,
-      CURRENT_DATE,
-      '[]'
-    );
+```sql
+SELECT tstzrange(
+       (CURRENT_DATE - INTERVAL '1 year')::timestamptz,
+       CURRENT_DATE,
+       '[]'
+);
+```
 
 ### Intersection (overlapping)
 
