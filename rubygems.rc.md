@@ -14,4 +14,4 @@
 ## Uninstall all installed gems unless rake
 
     gem list | cut -d" " -f1 \
-      | egrep --invert-match "rake|bundler" | xargs gem uninstall -aIx
+        | egrep --invert-match "rake|bundler" | xargs gem uninstall -aIx
