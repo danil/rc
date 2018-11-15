@@ -320,7 +320,7 @@ Mirror git repository
 
 <http://progit.org/book/ru/ch5-8.html>
 
-    git submodule add git://kutkevich.org/rc.git markdown/rc
+    git submodule add git@github.com:your/repo.git local/path
     git submodule init
     git submodule update
     git submodule status
@@ -501,6 +501,10 @@ You have three steps there:
 ## Cherry-pick
 
     git cherry-pick 92117a11fdfdb75a72dd8d3f1c5f25800e827589
+
+## Continue
+
+    git cherry-pick --continue
 
 ### Abort
 
