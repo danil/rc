@@ -18,6 +18,14 @@
 
 ## Database
 
+### Drop/Create
+
+```sh
+rake db:drop RAILS_ENV=test
+rake db:create RAILS_ENV=test
+
+```
+
 ### Migrations
 
 #### Create
@@ -28,11 +36,11 @@
 
 Display status of pending migrations
 
-    rake db:migrate:status
+    bundle exec rake db:migrate:status
 
 #### Up
 
-    rake db:migrate RAILS_ENV=test
+    bundle exec rake db:migrate RAILS_ENV=test
 
 #### Down
 
@@ -40,11 +48,11 @@ Display status of pending migrations
 
 ##### Two steps
 
-    rake db:rollback STEP=2
+    bundle exec rake db:rollback STEP=2
 
 ##### Specific migration
 
-    rake db:rollback VERSION=197001010000
+    bundle exec rake db:rollback VERSION=197001010000
 
 ### Schema
 
@@ -52,13 +60,13 @@ Display status of pending migrations
 
 Load into database
 
-    rake RAILS_ENV=production db:schema:load
+    bundle exec rake db:schema:load RAILS_ENV=production
 
 #### Create
 
 Create by database
 
-    rake db:schema:dump
+    bundle exec rake db:schema:dump
 
 ## Procfile
 
@@ -86,13 +94,15 @@ On server:
 
 ## Other
 
-    mongrel_rails cluster::configure -e production -p 8000 -a 127.0.0.1 \
-                  -N 2 -c /home/danil/var/www/hello_rails/current
-    rake db:sessions:clear
-    rake paperclip:refresh CLASS=YourModelName
-    rake rails:freeze:gems
-    rake rails:freeze:edge REVISION=1234
-    rake rails:freeze:edge TAG=rel_1-2-0
-    rake rails:unfreeze
-    rake stats
-    rake rails:update
+```sh
+mongrel_rails cluster::configure -e production -p 8000 -a 127.0.0.1 \
+              -N 2 -c /home/danil/var/www/hello_rails/current
+bundle exec rake db:sessions:clear
+bundle exec rake paperclip:refresh CLASS=YourModelName
+bundle exec rake rails:freeze:gems
+bundle exec rake rails:freeze:edge REVISION=1234
+bundle exec rake rails:freeze:edge TAG=rel_1-2-0
+bundle exec rake rails:unfreeze
+bundle exec rake stats
+bundle exec rake rails:update
+```
