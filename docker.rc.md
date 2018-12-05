@@ -174,6 +174,12 @@ Host system init scripts (upstart or systemd)
 
 <https://docs.docker.com/engine/admin/host_integration/#/examples>
 
+## Log
+
+```sh
+docker logs -f your-container-name_1
+```
+
 ## Cleanup
 
 Cleanup/remove stopped containers/dangling images/build cache
