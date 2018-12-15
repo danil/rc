@@ -147,7 +147,7 @@ Get a file from a specific revision
 
     git show HEAD^^^:lib/paginable_by_date.rb > lib/paginable_by_date.rb
 
-## Remote branch
+## Remote
 
 ### Removing
 
