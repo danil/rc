@@ -198,7 +198,15 @@ List packages install from overlay <http://bugs.gentoo.org/204324>,
 
     emerge --verbose --oneshot $(eix --installed --only-names --in-overlay unity-gentoo)
 
-#### Count
+#### Installed
+
+Installed packages
+
+##### List
+
+    eix-installed -a
+
+##### Count
 
 Count all packages
 
@@ -304,6 +312,23 @@ Clean out your world file
 
     dep --pretend --pruneworld
 
+## Init
+
+### Status
+
+    /etc/init.d/your_service status
+    rc-service your_service status
+
+### Start
+
+    /etc/init.d/your_service start
+    rc-service your_service start
+
+### Stop
+
+    /etc/init.d/your_service stop
+    rc-service your_service stop
+
 ## Runlevels
 
 Run levels
@@ -365,6 +390,11 @@ with `/etc/init.d/$ipt` when machine is powered on.
     find /usr/share/zoneinfo -maxdepth 1 -type f -name UTC \
          -exec sh -c 'echo {} | sed "s|^/usr/share/zoneinfo/||" > /etc/timezone' \;
     emerge --config timezone-data
+
+## Gnome applet
+
+* https://packages.gentoo.org/packages/gnome-extra/nm-applet
+* https://faq.i3wm.org/question/2/how-can-i-use-networkmanager-with-i3.1.html
 
 ## Other
 
