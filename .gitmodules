@@ -1,0 +1,3 @@
+[submodule "rcc"]
+	path = rcc
+	url = git@git.kutkevich.org:md/rcc.git
