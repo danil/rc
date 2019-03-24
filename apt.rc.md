@@ -26,9 +26,15 @@ Upgrades installed packages to their most recent version
     apt-get update
     apt-get --show-upgraded upgrade
 
-## Get package source
+## Download, modify, build and install packag
 
-    apt-get source your-pkg-name
+Get package source
+
+```sh
+apt-get source your-pkg-name
+cd your-pkg-name
+sudo apt-get build-dep your-pkg-name
+```
 
 ## Other
 
