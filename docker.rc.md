@@ -239,3 +239,9 @@ Cleanup/remove stopped containers/dangling images/build cache
 ```sh
 docker system prune
 ```
+
+## Login
+
+```sh
+docker login --username=your-user http://example.org
+```

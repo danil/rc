@@ -320,10 +320,12 @@ Mirror git repository
 
 <http://progit.org/book/ru/ch5-8.html>
 
-    git submodule add git@github.com:your/repo.git local/path
-    git submodule init
-    git submodule update
-    git submodule status
+```sh
+git submodule add git@github.com:your/repo.git local/path
+git submodule init
+git submodule update
+git submodule status
+```
 
 ### Recursive init & update
 
@@ -489,6 +491,20 @@ You have three steps there:
     git reset --soft HEAD~1
 
 ## Patch
+
+### Easy way
+
+    sed --in-place 's/foo/bar/g' path/to/file.c
+    git diff > path/to/1.patch
+    git add .
+    sed --in-place 's/baz/xyz/g' path/to/file.c
+    git diff > path/to/2.patch
+    git add .
+    git reset --hard HEAD
+    git apply path/to/1.patch
+    git apply path/to/2.patch
+
+### Hard way
 
 <http://ariejan.net/2009/10/26/how-to-create-and-apply-a-patch-with-git>
 

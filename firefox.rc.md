@@ -19,6 +19,11 @@ You should place `userChrome.css` and
 `userContent.css` inside your `chrome` directory (e.g
 `~/.mozilla/firefox/123ab321.default-1234567890123/chrome/`). [2][] [3][] [4][]
 
+## SOCKS5
+
+<https://github.com/FelisCatus/SwitchyOmega>
+<https://addons.mozilla.org/en-US/firefox/addon/switchyomega>
+
 [ShadowFox]: https://github.com/overdodactyl/ShadowFox
 [1]: https://support.mozilla.org/en-US/questions/1198235
 [2]: http://kb.mozillazine.org/Chrome_folder

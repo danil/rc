@@ -24,9 +24,11 @@
 
 Backuping:
 
-    pg_dump --host=localhost --port=5432 --username=your_role \
-            --table="your_tbl" --attribute-inserts your_db \
-            | xz --compress > path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
+```sh
+pg_dump --host=localhost --port=5432 --username=your_role \
+        --table="your_tbl" --attribute-inserts your_db \
+        | xz --compress > path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
+```
 
 ### Restore
 
@@ -52,17 +54,54 @@ Backuping:
 
 ## Indeces
 
-### Create
+### List indeces
 
-    CREATE INDEX idx_name ON your_tbl (your_col);
+    \di
+    \di+
+    \d your_tb
+
+### Show index
+
+```sql
+SELECT * FROM "pg_indexes" WHERE "tablename" = 'entities';
+```
+
+### Create index
+
+```sql
+CREATE INDEX idx_name ON your_tbl (your_col);
+```
 
 This equivalent to (B-tree is default):
 
-    CREATE INDEX idx_name ON your_tbl USING btree (your_col);
+```sql
+CREATE INDEX idx_name ON your_tbl USING btree (your_col);
+```
+
+#### Create compound index
+
+```sql
+CREATE INDEX idx_name ON your_tbl (your_col1,your_col2);
+```
+
+### Create partial index
+
+```sql
+CREATE INDEX "idx_name" ON "your_tbl" ("your_col1") WHERE ("your_col2" IS NULL);
+```
 
 ### Drop
 
-    DROP INDEX your_index_neme;
+```sql
+DROP INDEX your_index_neme;
+```
+
+### Indeces usage stats
+
+```sql
+SELECT * FROM pg_stat_user_indexes;
+SELECT * FROM pg_statio_user_indexes;
+```
 
 ## Enum
 
@@ -100,7 +139,6 @@ This equivalent to (B-tree is default):
     compiled by GCC cc (GCC) 4.1.2 20061115 (prerelease) (Debian 4.1.1-21)
     (1 row)
 
-
 ## hba_file
 
 Find pg_hba.conf location
@@ -123,11 +161,15 @@ when the command is spelled CREATE USER, LOGIN is assumed by default.
 
 #### Standard user
 
-    CREATE ROLE your_role WITH LOGIN PASSWORD 'password'
-    VALID UNTIL '2009-01-01';
+```sql
+CREATE ROLE your_role WITH LOGIN PASSWORD 'password'
+VALID UNTIL '2009-01-01';
+```
 
-    createuser --no-createrole --no-createdb --no-superuser --pwprompt \
-               --encrypted --username=your_role --password testuser
+```sh
+createuser --no-createrole --no-createdb --no-superuser --pwprompt \
+           --encrypted --username=your_role --password testuser
+```
 
 #### Superuser
 
@@ -256,6 +298,18 @@ Set a default schema for a session
 ### List
 
     \ds
+
+### Get
+
+```sql
+SELECT nextval('your_sequence_name');
+```
+
+### Set
+
+```sql
+SELECT setval('your_sequence_name', 1234567890, true);
+```
 
 ## Tables
 
@@ -537,16 +591,28 @@ Key words should be escaped (for example if used as table name or column name)
 
 ## CSV
 
+### Export
+
+```sql
+COPY (SELECT * FROM your_tbl)
+TO STDOUT csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
+```
+
+### Import
+
 Load data from csv file
 
-### SQL
+#### SQL
 
 <http://www.postgresql.org/docs/current/static/sql-copy.html>
 
-    COPY your_tbl (first_column, second_column)
-    FROM 'path/to/file.csv';
+```sql
+COPY your_tbl (first_column, second_column)
+FROM 'path/to/file.csv'
+csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
+```
 
-### psql command
+#### psql command
 
 <http://www.postgresql.org/docs/current/static/app-psql.html#APP-PSQL-META-COMMANDS-COPY>
 
@@ -569,6 +635,8 @@ Getting the current number of connections in a PostgreSQL
     SELECT sum(numbackends) FROM pg_stat_database;
 
 ## Profiling
+
+Get time
 
     \timing
 

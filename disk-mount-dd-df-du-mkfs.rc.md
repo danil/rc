@@ -16,7 +16,14 @@ Validate fstab syntax
 ### mke2fs
 
     mkfs.ext2 -L fs_boot /dev/sde1
-    mkfs.vfat -F 32 /dev/sdg1
+
+#### fat32
+
+Format usb to fat32 (a-la `mkdosfs`)
+
+```sh
+mkfs.vfat -F 32 /dev/sdg1
+```
 
 #### Set number of inodes
 

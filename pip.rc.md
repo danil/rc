@@ -6,6 +6,10 @@ Python packages management system
 
     pip list
 
+## Show version
+
+    pip show your-package-name
+
 ## Install
 
     pip install --user git+git://example.xyz/your/repository.git@stable-1.2.3

@@ -1,5 +1,11 @@
 # Bundler
 
+## Update
+
+### One gem
+
+    bundle update gem-name
+
 ## Skip environments
 
     bundle install --without=production:test

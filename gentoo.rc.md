@@ -391,16 +391,29 @@ with `/etc/init.d/$ipt` when machine is powered on.
          -exec sh -c 'echo {} | sed "s|^/usr/share/zoneinfo/||" > /etc/timezone' \;
     emerge --config timezone-data
 
+## ccache
+
+    CCACHE_DIR="/var/tmp/ccache" ccache -s
+
+## PostgreSQL
+
+<https://wiki.gentoo.org/wiki/PostgreSQL/QuickStart#Preparing_to_Initialize_the_Database_Cluster>
+
+    emerge --config dev-db/postgresql:12.3
+
 ## Gnome applet
 
 * https://packages.gentoo.org/packages/gnome-extra/nm-applet
 * https://faq.i3wm.org/question/2/how-can-i-use-networkmanager-with-i3.1.html
 
+## To investigate
+
+* https://wiki.gentoo.org/wiki/Distcc copile on first host and distribute binary to the second host
+
 ## Other
 
     sudo sh -c "layman --sync-all && emerge --sync && eix-update"
     find /etc -iname "._cfg????_*" 2> /dev/null
-    CCACHE_DIR="/var/tmp/ccache" ccache -s
     eselect kernel list
     eselect kernel set 1
     eselect news list
