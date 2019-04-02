@@ -331,6 +331,12 @@ git submodule status
 
     git submodule update --init --recursive
 
+### Find submodules
+
+Find submodules even not listed in `.gitmodules` file
+
+    git ls-files --stage | grep 160000
+
 ### Remove submodule
 
 <http://stackoverflow.com/questions/1260748/how-do-i-remove-a-git-submodule#1260982>
@@ -601,7 +607,10 @@ List of the changed file names
 
 <http://stackoverflow.com/questions/14207414/how-to-show-changed-file-name-only-with-git-log#14227496>
 
-    git log --name-only
+```sh
+git log --name-only
+git log --stat
+```
 
 ### Search commit message
 
@@ -622,7 +631,12 @@ Search file name in all commits history
 <http://stackoverflow.com/questions/2798822/can-i-get-git-log-to-print-the-history-in-reverse-order>
 <http://stackoverflow.com/questions/1251999/sed-how-can-i-replace-a-newline-n>
 
-    git log --after="Mon Jun 10 19:48:47 2013 +0400" --pretty=format:'%h' --no-merges --reverse  | sed ':a;N;$!ba;s/\n/ /g'
+```sh
+git log \
+    --after="Mon Jun 10 19:48:47 2013 +0400" \
+    --pretty=format:'%h' --no-merges --reverse \
+    | sed ':a;N;$!ba;s/\n/ /g'
+```
 
 ## Shortlog
 
