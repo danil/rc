@@ -636,7 +636,7 @@ Getting the current number of connections in a PostgreSQL
 
 ## Profiling
 
-Get time
+Get query execution time/duration
 
     \timing
 
