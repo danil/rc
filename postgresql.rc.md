@@ -401,7 +401,7 @@ Remove constraint by name
     CREATE TEMP TABLE your_tbl
       (some_id SERIAL, name varchar(10), bio TEXT, age INTEGER);
 
-## Updates
+## Update
 
 ### Update data
 
@@ -424,7 +424,9 @@ Update multiple rows in one query
     FROM (SELECT foo, bar FROM xyz WHERE id = 123) AS subquery
     WHERE id = 321;
 
-## Insert row
+## Insert
+
+Insert row
 
     INSERT INTO your_tbl (name, age) VALUES('John', 3);
     COPY your_tbl FROM STDIN WITH DELIMITER AS ',';
@@ -442,6 +444,21 @@ Created or update/update or create
 
     INSERT INTO your_tbl (id, name, age)
     SELECT 2, name, age FROM your_tbl WHERE id = 1;
+
+## Upsert
+
+Update/insert
+
+### Counter
+
+Update/increment counter or insert initial value 1
+
+```sql
+INSERT INTO "your_tbl" ("id", "count")
+VALUES(nextval('your_tbl_id_seq'::regclass), 1)
+ON CONFLICT ("id")
+DO UPDATE SET "count" = COALESCE("your_tbl"."count", EXCLUDED."count") + 1;
+```
 
 ## Delete row
 
