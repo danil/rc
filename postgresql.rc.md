@@ -52,12 +52,11 @@ pg_dump --host=localhost --port=5432 --username=your_role \
 
     pg_restore --username=your_role --dbname=your_db --no-owner file.backup
 
-## Indeces
+## Indexes
 
-### List indeces
+### List indexes
 
     \di
-    \di+
     \d your_tb
 
 ### Show index
@@ -65,6 +64,9 @@ pg_dump --host=localhost --port=5432 --username=your_role \
 ```sql
 SELECT * FROM "pg_indexes" WHERE "tablename" = 'entities';
 ```
+#### Show index size
+
+    \di+ your_idx
 
 ### Create index
 
@@ -96,7 +98,7 @@ CREATE INDEX "idx_name" ON "your_tbl" ("your_col1") WHERE ("your_col2" IS NULL);
 DROP INDEX your_index_neme;
 ```
 
-### Indeces usage stats
+### Indexes usage stats
 
 ```sql
 SELECT * FROM pg_stat_user_indexes;
