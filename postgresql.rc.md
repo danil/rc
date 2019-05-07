@@ -494,8 +494,10 @@ group of duplicates).
 <http://www.postgresql.org/docs/current/static/functions-comparisons.html#AEN20298>
 <http://www.postgresql.org/docs/current/static/functions.html>
 
-    SELECT * FROM your_tbl
-    WHERE id NOT IN (1, 2, 3);
+```sql
+SELECT * FROM your_tbl1
+WHERE (col1, col2) NOT IN (SELECT col3, col4 FROM your_tbl2);
+```
 
 ### Select array contains
 
