@@ -104,6 +104,12 @@ Show notificatioa (test x11-misc/dunst for example)
 
     notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '2' 'Desktop'
 
+## Keyboard layout
+
+Keyboard/language layout (flag)
+
+* https://github.com/zen-tools/gxkb
+
 ## Other
 
     echo "lalala" |xclip -selection clip
