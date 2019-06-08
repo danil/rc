@@ -34,6 +34,10 @@ Get package source
 apt-get source your-pkg-name
 cd your-pkg-name
 sudo apt-get build-dep your-pkg-name
+sudo apt-get -f install
+dch -i
+debuild -us -uc -b
+sudo dpkg -i ../your-pkg-name_1.2.3-1+19700101_amd64.deb
 ```
 
 ## Other
