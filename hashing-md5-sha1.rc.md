@@ -1,5 +1,7 @@
 # Hashing
 
+md5 vs crc32 vs murmur3 vs xxhash
+
 ## MD5
 
 <https://en.wikipedia.org/wiki/MD5>

@@ -108,7 +108,12 @@ Show notificatioa (test x11-misc/dunst for example)
 
 Keyboard/language layout (flag)
 
+* https://github.com/scientistnik/xxkb
 * https://github.com/zen-tools/gxkb
+
+## To investigate
+
+* https://github.com/baskerville/xtitle outputs X window titles
 
 ## Other
 

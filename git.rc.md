@@ -110,7 +110,7 @@ Create master-old on remote
 
 <http://stackoverflow.com/questions/3301956/git-correct-way-to-change-active-branch-in-a-bare-repository#3302018>
 
-    git symbolic-ref HEAD refs/heads/foo-bar-branch
+    git symbolic-ref HEAD refs/heads/you-branch-name
 
 ### Merge pull request
 
@@ -649,7 +649,7 @@ List of contributors/authors
 * <http://stackoverflow.com/questions/9597410/list-all-developers-on-project-in-git#9597462>
 * <http://www.commandlinefu.com/commands/view/4519/list-all-authors-of-a-particular-git-project>
 
-    git shortlog --summary --email --numbered path/to/file | cut -c8-
+    git shortlog --summary --email --numbered --since="7 days ago" path/to/file | cut -c8-
 
 #### Count
 

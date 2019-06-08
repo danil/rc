@@ -1,5 +1,9 @@
 # PostgreSQL
 
+```
+emerge --config =dev-db/postgresql-11.3
+```
+
 ## psql
 
     psql --host=kutkevich.org.ru --username=your_role

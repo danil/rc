@@ -71,7 +71,10 @@ Race conditions and [Race Detector](https://blog.golang.org/race-detector)
 Find function definition by package/function name
 <https://godoc.org/github.com/rogpeppe/godef>
 
-    godef -f path/to/file.go 'yourpackagename.YourFunctionName'
+```sh
+go get github.com/rogpeppe/godef
+godef -f path/to/file.go 'yourpackagename.YourFunctionName'
+```
 
 ## Build
 

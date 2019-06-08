@@ -63,5 +63,8 @@ Redirect password from stdin
 
 ## Other
 
-    gpg --keyserver subkeys.pgp.net --recv-keys 17072058
-    gpg --verify <signature file> <downloaded iso>
+```sh
+gpg --gen-key
+gpg --keyserver subkeys.pgp.net --recv-keys 17072058
+gpg --verify <signature file> <downloaded iso>
+```
