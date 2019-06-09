@@ -31,6 +31,13 @@ Start/stop (enable/disable) on system boot/start
     systemctl disable your_unit_name
     systemctl is-enabled your_unit_name
 
+## Mask/unmask
+
+Completely mask/unmask (enable/disable)
+
+    systemctl mask your_unit_name
+    systemctl unmask your_unit_name
+
 ## Reload units
 
 <https://wiki.archlinux.org/index.php/systemd#Editing_provided_unit_files>
