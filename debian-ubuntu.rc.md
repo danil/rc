@@ -9,7 +9,9 @@ Distributions like Ubuntu/Debian
 ### List
 
 List all services by run levels
+<https://askubuntu.com/questions/698993/disable-services-on-startup-in-ubuntu/699015#699015>
 
+    service --status-all
     ls /etc/rc*.d
 
 ### Status
