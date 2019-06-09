@@ -7,23 +7,29 @@
     systemctl list-unit-files
     systemctl list-units
 
-## Show
+## Show/status
 
 Show info about service
 
     systemctl show your_unit_name
+    systemctl status your_unit_name
 
 ## Start/stop
 
+Start/stop/restart/reload
+
     systemctl start your_unit_name
     systemctl stop your_unit_name
+    systemctl restart your_unit_name
+    systemctl reload your_unit_name
 
-## Autorun start/stop
+## Autorun enable/disable
 
-Start/stop on system boot/start
+Start/stop (enable/disable) on system boot/start
 
-    systemctl your_unit_name
-    systemctl stop your_unit_name
+    systemctl enable your_unit_name
+    systemctl disable your_unit_name
+    systemctl is-enabled your_unit_name
 
 ## Reload units
 
