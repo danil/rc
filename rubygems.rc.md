@@ -2,13 +2,20 @@
 
 <http://rubygems.org/>
 
-## Installation
+## Install
 
-    ruby ./rubygems-1.3.0/setup.rb --no-rdoc --no-ri
+    gem uninstall your_gem_name -v '>= 1.2.3'
+
+## Uninstall
+
+    gem uninstall your_gem_name -v '<= 1.2.3'
+
+### Local source
+
+    ruby ./rubygems-1.3.0/setup.rb
 
 ## Commands
 
-    gem install --include-dependencies --no-rdoc --no-ri rails
     gem install rails -s http://gems.rubyonrails.org
 
 ## Uninstall all installed gems unless rake
