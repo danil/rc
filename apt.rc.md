@@ -40,12 +40,21 @@ debuild -us -uc -b
 sudo dpkg -i ../your-pkg-name_1.2.3-1+19700101_amd64.deb
 ```
 
+## Dependencies
+
+    apt-cache depends your-pkg-name
+
+## Depended
+
+List of depended packages
+
+    apt-cache rdepends --installed your_package_name
+
 ## Other
 
     apt-get --show-upgraded dist-upgrade
     apt-cash [--full] search your-pkg-name
     apt-cash show your-pkg-name
-    apt-cache depends your-pkg-name
     apt-get --target-release testing install your-pkg-name
     apt-get --purge remove your-pkg-name
     apt-get clean

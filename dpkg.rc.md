@@ -18,11 +18,11 @@ Debian package
 
 <http://cyberciti.biz/faq/ubuntu-linux-how-do-i-install-deb-packages>
 
-    dpkg --install google-talkplugin_current_amd64.deb
+    dpkg --install your_package_name.deb
 
 ## Remove
 
-    dpkg --remove google-talkplugin_current_amd64.deb
+    dpkg --remove your_package_name.deb
 
 ## Files belongs to package
 
