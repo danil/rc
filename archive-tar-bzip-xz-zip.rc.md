@@ -55,23 +55,44 @@ read -ra arr <<<"your array of directories" && \
 
 ## gzip
 
-    gzip --keep --verbose path/to/your.file
-    gzip --decompress --verbose --keep path/to/your.file.gz
     tar --extract --gzip --verbose --file path/to/your.file.tar.gz
+
+### Compress
+
+    gzip --keep --verbose path/to/your.file
+    bzip2 --keep --stdout --verbose path/to/your.file > path/to/your.file.gz
+
+### Decompress
+
+    gzip --decompress --verbose --keep path/to/your.file.gz
 
 ## bzip2
 
-    bzip2 --keep --verbose path/to/your.file
-    bzip2 --decompress --keep --verbose path/to/your.file.bz2
     tar --extract --bzip2 --verbose --file path/to/your/dir.tar.bz2
     cat path/to/your.file.bz2 | bzip2 --decompress > path/to/file
 
+### Compress
+
+    bzip2 --keep --verbose path/to/your.file
+    bzip2 --keep --stdout --verbose path/to/your.file > path/to/your.file.bz2
+
+### Decompress
+
+    bzip2 --decompress --keep --verbose path/to/your.file.bz2
+
 ## xz
 
-    xz --keep --verbose path/to/your.file
-    xz --decompress --keep --verbose path/to/your.file.xz
     tar --extract --xz --file path/to/your.tar.xz
     pg_dump db_name | xz --compress > path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
+
+### Compress
+
+    xz --keep --verbose path/to/your.file
+    xz --keep --stdout --verbose path/to/your.file > path/to/your.file.xz
+
+### Decompress
+
+    xz --decompress --keep --verbose path/to/your.file.xz
 
 ## Zip
 
