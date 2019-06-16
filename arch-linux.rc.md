@@ -1,4 +1,4 @@
-# Arch
+# Arch Linux
 
 ## Pacman
 

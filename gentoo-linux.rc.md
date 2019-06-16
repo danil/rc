@@ -1,4 +1,4 @@
-# Gentoo
+# Gentoo Linux
 
 ## Installation
 
