@@ -29,3 +29,11 @@ Debian package
 <http://askubuntu.com/questions/32507/how-do-i-get-a-list-of-installed-files-from-a-package#32509>
 
     dpkg-query --listfiles <package_name>
+
+## Find what package a file belongs to
+
+Find what package a file belongs to
+<https://superuser.com/questions/10997/find-what-package-a-file-belongs-to-in-ubuntu-debian>
+
+    dpkg --search path/to/file
+    apt-file search path/to/file

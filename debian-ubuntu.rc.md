@@ -2,6 +2,21 @@
 
 Distributions like Ubuntu/Debian
 
+## Packages
+
+### List all
+
+    apt list --installed
+
+### List explicitly installed
+
+List manually/explicitly installed packages
+
+```sh
+comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
+comm -23 <(aptitude search '~i !~M' -F '%p' | sed "s/ *$//" | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
+```
+
 ## Runlevels
 
 `/etc/init.d` (https://wiki.debian.org/RunLevel)
