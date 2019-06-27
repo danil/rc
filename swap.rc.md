@@ -4,6 +4,16 @@
 
     free --human | grep Swap
 
+## Disable
+
+    swapoff /path/to/swap
+    swapoff -a
+
+## Enable
+
+    swapon /path/to/swap
+    swapon -s
+
 ## File
 
 <https://wiki.archlinux.org/index.php/swap#Swap_file>
@@ -13,9 +23,6 @@ _Sleep/suspend/hibernate to disk do NOT work by default with file swap_
 ### Create file
 
     fallocate --length=4GB /path/to/swap
-
-or
-
     dd if=/dev/zero of=/swapfile bs=1M count=4000
 
 ## Swappiness
@@ -53,5 +60,3 @@ or
 <https://wiki.archlinux.org/index.php/swap#Swap_partition>
 
     mkswap /dev/sda3 && swapon /dev/sda3
-    swapon -s
-    swapoff -a
