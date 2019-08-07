@@ -75,31 +75,43 @@ SELECT * FROM "pg_indexes" WHERE "tablename" = 'entities';
 ### Create index
 
 ```sql
-CREATE INDEX idx_name ON your_tbl (your_col);
+CREATE INDEX "your_idx_name" ON "your_tbl" ("your_col");
 ```
 
 This equivalent to (B-tree is default):
 
 ```sql
-CREATE INDEX idx_name ON your_tbl USING btree (your_col);
+CREATE INDEX "your_idx_name" ON "your_tbl" USING btree ("your_col");
+```
+
+#### Create unique index
+
+```sql
+CREATE UNIQUE INDEX "your_idx_name" ON "your_tbl" ("your_col");
 ```
 
 #### Create compound index
 
 ```sql
-CREATE INDEX idx_name ON your_tbl (your_col1,your_col2);
+CREATE INDEX "your_idx_name" ON "your_tbl" ("your_col1", "your_col2");
 ```
 
 ### Create partial index
 
 ```sql
-CREATE INDEX "idx_name" ON "your_tbl" ("your_col1") WHERE ("your_col2" IS NULL);
+CREATE INDEX "your_idx_name" ON "your_tbl" ("your_col1") WHERE ("your_col2" IS NULL);
 ```
 
-### Drop
+### Drop index
 
 ```sql
-DROP INDEX your_index_neme;
+DROP INDEX your_index_name;
+```
+
+### Rename index
+
+```sql
+ALTER INDEX IF EXISTS "your_idx_name" RENAME TO "your_idx_new_name";
 ```
 
 ### Indexes usage stats
@@ -289,7 +301,7 @@ List all functions in schema
 
 <http://www.postgresql.org/docs/current/static/sql-dropschema.html>
 
-    DROP SCHEMA IF EXISTS your_first_schema, your_second_schema CASCADE;
+    DROP SCHEMA IF EXISTS your_schema1, your_schema2 CASCADE;
 
 ### Default schema
 
@@ -334,7 +346,7 @@ List tables by SQL
 ### Create table
 
     CREATE TABLE your_tbl
-      (some_id SERIAL primary key, name varchar(10), bio TEXT, age INTEGER);
+      (some_id BIGSERIAL primary key, name varchar(10), bio TEXT, age INTEGER);
 
 ### Describe table
 
@@ -361,8 +373,8 @@ List all tables then drop them.
 ### Add column to table
 
     ALTER TABLE your_tbl
-        ADD COLUMN col1 integer NOT NULL DEFAULT 123,
-        ADD COLUMN col2 timestamp with time zone;
+        ADD COLUMN your_col1 integer NOT NULL DEFAULT 123,
+        ADD COLUMN your_col2 timestamp with time zone;
 
 ### Remove column
 
@@ -403,7 +415,7 @@ Remove constraint by name
 #### Create
 
     CREATE TEMP TABLE your_tbl
-      (some_id SERIAL, name varchar(10), bio TEXT, age INTEGER);
+      (some_id BIGSERIAL, name varchar(10), bio TEXT, age INTEGER);
 
 ## Update
 
@@ -415,7 +427,8 @@ Remove constraint by name
 
 #### Swap two column's values
 
-    UPDATE your_tbl SET col1 = col2, col2 = col1 WHERE col3 IS NOT NULL;
+    UPDATE your_tbl SET your_col1 = your_col2, your_col2 = your_col1
+           WHERE your_col3 IS NOT NULL;
 
 #### multiple rows
 
@@ -500,7 +513,11 @@ group of duplicates).
 
 ```sql
 SELECT * FROM your_tbl1
-WHERE (col1, col2) NOT IN (SELECT col3, col4 FROM your_tbl2);
+WHERE (
+       your_col1, your_col2
+) NOT IN (
+       SELECT your_col3, your_col4 FROM your_tbl2
+);
 ```
 
 ### Select array contains
@@ -619,7 +636,7 @@ Key words should be escaped (for example if used as table name or column name)
 ### Export
 
 ```sql
-COPY (SELECT * FROM your_tbl)
+COPY (SELECT your_col1, your_col2 FROM your_tbl)
 TO STDOUT csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
 ```
 
@@ -632,7 +649,7 @@ Load data from csv file
 <http://www.postgresql.org/docs/current/static/sql-copy.html>
 
 ```sql
-COPY your_tbl (first_column, second_column)
+COPY your_tbl (your_col1, your_col2)
 FROM 'path/to/file.csv'
 csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
 ```
@@ -641,7 +658,7 @@ csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
 
 <http://www.postgresql.org/docs/current/static/app-psql.html#APP-PSQL-META-COMMANDS-COPY>
 
-    \copy your_tbl (first_column, second_column) from 'path/to/file.csv';
+    \copy your_tbl (your_col1, your_col2) from 'path/to/file.csv';
 
 ## Password file
 
