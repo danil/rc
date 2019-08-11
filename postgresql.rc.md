@@ -102,6 +102,16 @@ CREATE INDEX "your_idx_name" ON "your_tbl" ("your_col1", "your_col2");
 CREATE INDEX "your_idx_name" ON "your_tbl" ("your_col1") WHERE ("your_col2" IS NULL);
 ```
 
+### Create index on jsonb
+
+```sql
+CREATE INDEX "your_idx_name" ON "your_tbl" (
+       (your_col1->>'your_prop1'),
+       (your_col2->>'your_prop2')
+);
+
+```
+
 ### Drop index
 
 ```sql
