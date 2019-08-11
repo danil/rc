@@ -644,7 +644,7 @@ TO STDOUT csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
 
 Load data from csv file
 
-#### SQL
+#### SQL from file
 
 <http://www.postgresql.org/docs/current/static/sql-copy.html>
 
@@ -654,11 +654,26 @@ FROM 'path/to/file.csv'
 csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
 ```
 
+##### SQL from STDIN
+
+```sh
+cat path/to/file.csv \
+    | psql --command="COPY your_tbl (your_col1, your_col2)
+                      FROM STDIN
+                      csv DELIMITER ';' NULL AS '\N' QUOTE '"'"'"' ESCAPE '\';"
+```
+
 #### psql command
+
+##### From file
 
 <http://www.postgresql.org/docs/current/static/app-psql.html#APP-PSQL-META-COMMANDS-COPY>
 
-    \copy your_tbl (your_col1, your_col2) from 'path/to/file.csv';
+```sql
+\copy your_tbl (your_col1, your_col2)
+      FROM 'path/to/file.csv'
+      csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
+```
 
 ## Password file
 
