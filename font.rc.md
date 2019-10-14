@@ -7,6 +7,12 @@
     fc-match sans-serif
     fc-match monospace
 
+## List
+
+List all fonts
+
+    fc-cache --force --verbose
+
 ## Rebuilding cache
 
 * <https://wiki.archlinux.org/index.php/fonts#Manual_installation>

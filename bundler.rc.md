@@ -1,5 +1,9 @@
 # Bundler
 
+## Install
+
+    gem install bundler -v '< 2'
+
 ## Update
 
 ### One gem

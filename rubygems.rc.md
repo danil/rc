@@ -4,7 +4,7 @@
 
 ## Install
 
-    gem uninstall your_gem_name -v '>= 1.2.3'
+    gem install your_gem_name -v '>= 1.2.3'
 
 ## Uninstall
 

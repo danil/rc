@@ -2,11 +2,19 @@
 
 nc110 <http://nc110.sourceforge.net>
 
-## Test connection
+## Get
 
-Ensure that web server respond on 80 port
+### http 80
 
-    nc -vz localhost 80
+```
+printf "GET / HTTP/1.0\r\nHost: your.domain.tld\r\n\r\n" | nc your.domain.tld 443
+```
+
+### https 443
+
+```
+printf "GET / HTTP/1.0\r\nHost: your.domain.tld\r\n\r\n" | nc your.domain.tld 443
+```
 
 ## Other
 
