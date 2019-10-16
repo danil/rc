@@ -2,18 +2,18 @@
 
 https://robots.thoughtbot.com/a-tmux-crash-course
 
-# Install
+## Install
 
     ./autogen.sh && ./configure --prefix=$HOME && make --jobs=5 && make install
 
-# Copy past
+## Copy past
 
 * enter copy mode using `prefix+[`
 * start selecting `C-space`
 * copy region `M-w`
 * past selection `prefix+]`
 
-# Window
+## Window
 
 `split-window`
 
@@ -23,58 +23,64 @@ https://robots.thoughtbot.com/a-tmux-crash-course
 
     prefix + %
 
-# Pane
+## Pane
 
-## Select by number
+### Select by number
 
     prefix + q
     0
 
-## Break
+### Break
 
 `break-pane`
 
     prefix + !
 
-## Join
+### Join
 
 Join pane 1 from pane 0 <https://forums.pragprog.com/forums/242/topics/10533>
 
     join-pane -s 1
 
-# Layout
+## Layout
 
 `next-layout` cycles through available layouts
 <http://superuser.com/questions/493048/how-to-convert-2-horizontal-panes-to-vertical-panes-in-tmux#493057>.
 
     prefix + space
 
-# Session
+## Session
 
-## List
+### List
 
     tmux -S /tmp/pair ls
 
-## Kill
+### Create
 
-    tmux kill-session -t danil
-
-# Socket session
-
-## Create
+Socket session create
 
     tmux -S /tmp/pair -s foobar
     chmod 777 /tmp/pair
 
-## Attach
+### Attach
 
     tmux -S /tmp/pair attach -t foobar
 
-## Detach
+### Detach
 
-    tmux detach
+`tmux detach`: `prefix + d`
 
-# Other
+### Dettach by name
+
+<https://stackoverflow.com/questions/22138211/how-do-i-disconnect-all-other-users-in-tmux>
+
+    prefix + D
+
+### Kill
+
+    tmux kill-session -t danil
+
+## Other
 
     tmux new -s danil
     ^b d
