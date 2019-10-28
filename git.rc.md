@@ -28,7 +28,8 @@ Stage all files
 
 ### Specific commit
 
-Push specific commit by commit sha
+Push one commit by commit sha
+<https://stackoverflow.com/questions/3230074/how-can-i-push-a-specific-commit-to-a-remote-and-not-previous-commits#3230241>,
 <http://stackoverflow.com/questions/3230074/git-pushing-specific-commit#4512933>
 
     git push origin your-commit-sha:master
