@@ -1,6 +1,6 @@
 # PostgreSQL
 
-```
+```sh
 emerge --config =dev-db/postgresql-11.3
 ```
 
