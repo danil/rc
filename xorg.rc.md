@@ -76,7 +76,6 @@ OpenGL Extension to the X Window System
 
     glxgears
 
-
 ## Window Manager
 
 ### Change viewport
