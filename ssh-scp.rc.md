@@ -104,6 +104,13 @@ curl localhost:remote_port
     ssh-add *pem
     ssh -A -t -p 9922 medapp2.waveaccess.ru ssh -A danil@192.168.0.38
 
+## Tail -f
+
+`tail -f` command over ssh
+<https://serverfault.com/questions/1669/shell-command-to-monitor-changes-in-a-file-whats-it-called-again/1670#1670>
+
+    ssh your_user@your_user@example.org "tail -f path/to/your.log"
+
 ## Audit
 
 `net-analyzer/ssh-audit` <https://github.com/arthepsy/ssh-audit>
