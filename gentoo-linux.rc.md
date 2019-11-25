@@ -393,7 +393,13 @@ with `/etc/init.d/$ipt` when machine is powered on.
 
 ## ccache
 
-    CCACHE_DIR="/var/tmp/ccache" ccache -s
+### Show
+
+    CCACHE_DIR="/var/tmp/ccache" ccache --show-stats
+
+### Clear
+
+    CCACHE_DIR="/var/tmp/ccache" ccache --clear
 
 ## PostgreSQL
 
