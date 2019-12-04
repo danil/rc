@@ -13,5 +13,6 @@
 
 ## Alternatives
 
-1. https://github.com/jaredfolkins/badactor
-2. https://github.com/jvinet/knock
+1. https://bitbucket.org/sshguard/sshguard, written on c (<https://sshguard.net>, <https://wiki.archlinux.org/index.php/Sshguard>)
+2. https://github.com/jaredfolkins/badactor written on c
+3. https://github.com/jvinet/knock written on c
