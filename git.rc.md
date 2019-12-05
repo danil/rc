@@ -616,6 +616,7 @@ git log --stat
 ### Files changed by author
 
 List all file names changed by author
+<https://stackoverflow.com/questions/6349139/can-i-get-git-to-tell-me-all-the-files-one-user-has-modified#6349405>
 
 ```sh
 git log --pretty="%H" --author="your_author_name" | \
