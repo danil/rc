@@ -613,6 +613,19 @@ git log --name-only
 git log --stat
 ```
 
+### Files changed by author
+
+List all file names changed by author
+
+```sh
+git log --pretty="%H" --author="your_author_name" | \
+    while read commit_hash; do \
+          git show --oneline --name-only $commit_hash | \
+          tail -n+2; \
+    done | \
+    sort | uniq
+```
+
 ### Search commit message
 
 <http://stackoverflow.com/questions/7124914/how-to-search-a-git-repository-by-commit-message#7124949>
