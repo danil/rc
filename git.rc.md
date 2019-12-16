@@ -619,12 +619,14 @@ List all file names changed by author
 <https://stackoverflow.com/questions/6349139/can-i-get-git-to-tell-me-all-the-files-one-user-has-modified#6349405>
 
 ```sh
-git log --pretty="%H" --author="your_author_name" | \
+git log --pretty="%H" --author="kutkevich" app/models | while read commit_hash; do git show --oneline --name-only $commit_hash | tail -n+2; done | sort | uniq | grep 'app/models'
+
+git log --pretty="%H" --author="your_author_name" your/path | \
     while read commit_hash; do \
           git show --oneline --name-only $commit_hash | \
           tail -n+2; \
     done | \
-    sort | uniq
+    sort | uniq | grep "your/path"
 ```
 
 ### Search commit message

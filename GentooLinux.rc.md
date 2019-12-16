@@ -331,7 +331,7 @@ Clean out your world file
 
 ## Runlevels
 
-Run levels
+Run levels (start at boot)
 
     rc-update -v show
     rc-update add xdm default
