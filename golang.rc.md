@@ -10,9 +10,13 @@
 
 ### Install
 
-Get with all dependencies
+Get with all dependencies (exclude test dependencies)
 
     go get -v ./...
+
+Get test dependencies
+
+    go get -v -t ./...
 
 ### Update
 
