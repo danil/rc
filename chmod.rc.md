@@ -1,4 +1,4 @@
-# chmod
+# chmod rc
 
     chmod -R ug+w ./smarty/templates_c/ ./smarty/cach/
 
@@ -8,7 +8,3 @@
 
     find ./somedir \( -type d -exec chmod u=rwx,g=rx,o=xr {} \; \
                    -o -type f -exec chmod u=rw,g=r,o=r {} \; \)
-
-# chown
-
-    chown --recursive www-data:www-data ./smarty/templates_c/ ./smarty/cache/
