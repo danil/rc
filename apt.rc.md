@@ -50,6 +50,10 @@ List of depended packages
 
     apt-cache rdepends --installed your_package_name
 
+## List all versions of the package
+
+    apt-cache madison your-pkg-name
+
 ## Other
 
     apt-get --show-upgraded dist-upgrade
