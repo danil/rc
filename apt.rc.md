@@ -52,6 +52,8 @@ List of depended packages
 
 ## List all versions of the package
 
+<https://askubuntu.com/questions/447/how-can-i-see-all-versions-of-a-package-that-are-available-in-the-archive#2108>
+
     apt-cache madison your-pkg-name
 
 ## Other
