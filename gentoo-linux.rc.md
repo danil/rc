@@ -71,6 +71,13 @@ Recompiling all packages on the system.
     emerge --emptytree system
     emerge --emptytree world
 
+#### Recompile with notification
+
+    export subj="$(hostname): emerge emptytree system $(date --utc +%Y%m%dT%H%M%SZ)" && \
+           emerge --emptytree system; \
+           echo -e "Subject: $subj\n\n$subj\n" | \
+           /usr/sbin/sendmail your.name@example.org
+
 ### Unmerge
 
     emerge --oneshot --deep --depclean your-package/name
