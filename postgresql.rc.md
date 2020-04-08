@@ -22,9 +22,7 @@ emerge --config =dev-db/postgresql-11.3
 
     psql postgres://your_user:your-password@your.host:5432/your_db
 
-## Dump
-
-### Create
+## Create dump by pg_dump
 
 Backuping:
 
@@ -34,25 +32,25 @@ pg_dump --host=localhost --port=5432 --username=your_role \
         | xz --compress > path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
 ```
 
-### Restore
+## Restore dump by psql
 
     cat path/to/dump.sql.xz | xz --decompress | psql your_db
 
-### Dump all databases
+## Create dump of all databases by pg_dumpall
 
     pg_dumpall --host=localhost --port=5432 --username=your_role \
                > path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql
 
-#### URL
+## Create dump of all databases by pg_dump by URL
 
     pg_dump postgres://your_user:your-password@your.host:5432/your_db \
             > path/to/dump.sql
 
-#### psql
+## Create dump of all databases by psql
 
     \i path/to/dump.sql
 
-### Restor binary dump
+## Restor binary dump by pg_restore
 
     pg_restore --username=your_role --dbname=your_db --no-owner file.backup
 
@@ -68,6 +66,7 @@ pg_dump --host=localhost --port=5432 --username=your_role \
 ```sql
 SELECT * FROM "pg_indexes" WHERE "tablename" = 'entities';
 ```
+
 #### Show index size
 
     \di+ your_idx
@@ -653,6 +652,13 @@ TO STDOUT csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
 ```sql
 COPY (SELECT your_col1, your_col2 FROM your_tbl)
 TO 'path/to/file.csv' csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
+```
+
+## CSV Export by psql command by SQL to file
+
+```sh
+psql --command="COPY (SELECT your_col1, your_col2 FROM your_tbl)
+                TO STDOUT csv DELIMITER ';' NULL AS '\N' QUOTE '"'"'"' ESCAPE '\';"
 ```
 
 ## CSV import by psql command by SQL from file
