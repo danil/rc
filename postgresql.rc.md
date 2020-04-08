@@ -641,20 +641,16 @@ Key words should be escaped (for example if used as table name or column name)
 
     SELECT concat('foo', 'bar', 'xyz')
 
-## CSV
-
-### Export
+## CSV Export by SQL to STDOUT
 
 ```sql
 COPY (SELECT your_col1, your_col2 FROM your_tbl)
 TO STDOUT csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
 ```
 
-### Import
+## CSV import by psql command by SQL from file
 
 Load data from csv file
-
-#### SQL from file
 
 <http://www.postgresql.org/docs/current/static/sql-copy.html>
 
@@ -664,7 +660,7 @@ FROM 'path/to/file.csv'
 csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
 ```
 
-##### SQL from STDIN
+## CSV import by psql command by SQL from STDIN
 
 ```sh
 cat path/to/file.csv \
@@ -673,9 +669,7 @@ cat path/to/file.csv \
                       csv DELIMITER ';' NULL AS '\N' QUOTE '"'"'"' ESCAPE '\';"
 ```
 
-#### psql command
-
-##### From file
+## CSV import by psql command by from file
 
 <http://www.postgresql.org/docs/current/static/app-psql.html#APP-PSQL-META-COMMANDS-COPY>
 
