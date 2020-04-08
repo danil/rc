@@ -648,6 +648,13 @@ COPY (SELECT your_col1, your_col2 FROM your_tbl)
 TO STDOUT csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
 ```
 
+## CSV Export by SQL to file
+
+```sql
+COPY (SELECT your_col1, your_col2 FROM your_tbl)
+TO 'path/to/file.csv' csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
+```
+
 ## CSV import by psql command by SQL from file
 
 Load data from csv file
