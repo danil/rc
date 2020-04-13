@@ -11,7 +11,7 @@
 
     grep --invert-match foo.*bar
 
-# pcregrep
+## pcregrep
 
 * Multiple lines matching
   <http://stackoverflow.com/questions/2686147/how-to-find-patterns-across-multiple-lines-using-grep#answer-2686705>
@@ -20,7 +20,7 @@
 
     pcregrep -rM 'class.*(\n|.)*class' lib/cda/
 
-# fgrep
+## fgrep
 
 Searches by string as is
 
