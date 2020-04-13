@@ -97,7 +97,9 @@ read -ra arr <<<"your array of directories" && \
 ## Zip
 
     zip file-to-archive.zip file-to-archive
+    echo 'Hello, World!' | zip file-to-archive.zip -
     zip --recurse-paths foo.zip foo/
+    unzip -p path/to/file.zip | cat
 
 ### Create
 
