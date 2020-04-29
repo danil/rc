@@ -6,9 +6,7 @@
 
     go env
 
-## Packages
-
-### Install
+## Packages install
 
 Get with all dependencies (exclude test dependencies)
 
@@ -18,57 +16,62 @@ Get test dependencies
 
     go get -v -t ./...
 
-### Update
+## Package update
 
     go get -u example.org/path/to/package
 
-### Testsing
+## Package dependencies list
+
+List package dependencies
+
+    go list -f '{{ .Deps }}' example.org/path/to/package
+
+## Package install
+
+    go install example.org/path/to/package
+
+## Packages list
+
+List installed packages
+<https://golang.org/doc/articles/go_command.html>
+
+    go list ./...
+
+## Testsing
 
 * <https://blog.golang.org/examples>
 * <https://blog.golang.org/subtests>
-
-#### Run
 
 Run test suite
 
     go test -v example.org/path/to/package
     go test -v ./...
 
-#### Benchmarks
+## Test without cache
+
+Disable test cache
+
+<https://github.com/golang/go/issues/24573#issuecomment-393818160>
+
+    go test -count=1
+
+## Test benchmarks
 
 Run benchmarks
 
     go test -v -bench=.
 
-#### Run benchmarks
-
-    go test -v -bench=.
-
-#### Coverage
+## Test coverage
 
 [Test coverage](https://blog.golang.org/cover)
 
     go test -cover ./...
 
-#### Races
+## Test races
 
 Race conditions and [Race Detector](https://blog.golang.org/race-detector)
 
     go test -race ./...
-
-### List package dependencies
-
-    go list -f '{{ .Deps }}' example.org/path/to/package
-
-### Other
-
-    go install example.org/path/to/package
-
-## List installed
-
-<https://golang.org/doc/articles/go_command.html>
-
-    go list ./...
 
 ## godef
 
@@ -85,31 +88,33 @@ godef -f path/to/file.go 'yourpackagename.YourFunctionName'
     go build
     go build -o your_resulting_executable_name
 
-## Cache
+## Build cache invalidation
 
 Invalidate cache
 
     go build -a path/to/package
 
-## [Runtime](https://golang.org/pkg/runtime)
+## [Runtime][] [Gosched][]
 
-### [Gosched](https://golang.org/pkg/runtime/#Gosched)
+[Runtime]: https://golang.org/pkg/runtime
+[Gosched]: https://golang.org/pkg/runtime/#Gosched
 
 Yields the processor, allowing other goroutines to run.
 
     runtime.Gosched()
 
-### [GC](https://golang.org/pkg/runtime/#hdr-Environment_Variables)
+## [Runtime][] [GC][] Disable
+
+[GC]: https://golang.org/pkg/runtime/#hdr-Environment_Variables
 
 <https://blog.golang.org/go15gc>
 
-#### Disable
-
     GOGC=off
 
-### [Debug](https://golang.org/pkg/runtime/debug)
+## [Debug][] [FreeOSMemory][]
 
-#### [FreeOSMemory](https://golang.org/pkg/runtime/debug/#FreeOSMemory)
+[Debug]: https://golang.org/pkg/runtime/debug
+[FreeOSMemory]: https://golang.org/pkg/runtime/debug/#FreeOSMemory
 
 Forces a garbage collection followed by an attempt to return as much
 memory to the operating system as possible.
