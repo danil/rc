@@ -31,3 +31,7 @@ precaching a file or URL.
     mplayer -cache 50000 -mc 0.001 -autosync 30 big_buck_bunny_720_stereo.ogg
 
 [Smooth playback]: http://freshmeat.net/articles/fine-tuning-mplayer
+
+## Screenshot
+
+    s
