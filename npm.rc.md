@@ -18,6 +18,10 @@ Node package manager
 
     npm update package-name
 
+## Uninstall
+
+    npm uninstall package-name
+
 ## ls
 
 List all dependencies tree
