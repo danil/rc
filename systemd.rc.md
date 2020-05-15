@@ -1,5 +1,9 @@
 # systemd
 
+## Install requirements
+
+Linux kernel config options: <https://github.com/systemd/systemd/blob/master/README>
+
 ## List
 
 <https://wiki.archlinux.org/index.php/systemd#Analyzing_the_system_state>
