@@ -8,7 +8,7 @@ Download package list and upgrade
 
 ## Package install
 
-    yaourt --verbose --sync your-pkg-name
+    pacman --verbose --sync your-pkg-name
 
 ## Package remove
 
@@ -18,17 +18,18 @@ Download package list and upgrade
 
 <https://wiki.archlinux.org/index.php/Pacman#Querying_package_databases>
 
-    pacman --query --search your-pkg-name
+    pacman --sync --search your-pkg-name
 
 ## Package search installed
 
-    pacman --query --quiet --explicit | grep your-pkg-name
+    pacman --query --search your-pkg-name
 
 ## Package search explicitly installed
 
 Except `base` and `base-devel` packages
 <https://bbs.archlinux.org/viewtopic.php?pid=690050#p690050>.
 
+    pacman --query --quiet --explicit | grep your-pkg-name
     pacman --query --explicit --info \
       | awk '/^Name/ { name=$3 } /^Groups/ { if ( $3 != "base" && $3 != "base-devel" ) { print name } }'
 
@@ -55,17 +56,3 @@ Arch User Repository <https://wiki.archlinux.org/index.php/Arch_User_Repository>
 ## AUR PKGBUILD install
 
     pacman --upgrade your-pkg-name-1.2-3-any.pkg.tar.xz
-
-## Yaourt
-
-Yet AnOther User Repository
-
-## Search and install
-
-    yaourt your-pkg-name
-
-### Update AUR
-
-<https://bbs.archlinux.org/viewtopic.php?pid=604848#p604848>
-
-    yaourt --sync --refresh --sysupgrade --aur
