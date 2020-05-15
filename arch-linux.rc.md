@@ -1,30 +1,30 @@
 # Arch Linux
 
-## Pacman
-
-### Update
+## Packages update
 
 Download package list and upgrade
 
     pacman --sync --verbose --refresh --sysupgrade
 
-### Install
+## Package install
 
-    yaourt --verbose --sync lightdm-gtk3-greeter
+    yaourt --verbose --sync your-pkg-name
 
-### Remove
+## Package remove
 
-    pacman --remove --recursive cairo-dock-plugins
+    pacman --remove --recursive your-pkg-name
 
-### Query
+## Package search
 
 <https://wiki.archlinux.org/index.php/Pacman#Querying_package_databases>
 
-#### Search
+    pacman --query --search your-pkg-name
 
-    pacman --query --search silver
+## Package search installed
 
-#### Explicitly installed
+    pacman --query --quiet --explicit | grep your-pkg-name
+
+## Package search explicitly installed
 
 Except `base` and `base-devel` packages
 <https://bbs.archlinux.org/viewtopic.php?pid=690050#p690050>.
@@ -32,7 +32,7 @@ Except `base` and `base-devel` packages
     pacman --query --explicit --info \
       | awk '/^Name/ { name=$3 } /^Groups/ { if ( $3 != "base" && $3 != "base-devel" ) { print name } }'
 
-#### orphans
+## Package search orphans
 
 Useless packages, that are not associated with explicitly installed packages
 <https://bbs.archlinux.org/viewtopic.php?pid=690008#p690008>.
@@ -41,23 +41,20 @@ Useless packages, that are not associated with explicitly installed packages
 
 ## File belong to package
 
-    pkgfile emacs
+    pkgfile your-pkg-name
 
-## AUR
+## AUR PKGBUILD
 
-Arch User Repository <https://wiki.archlinux.org/index.php/Arch_User_Repository>.
-
-### PKGBUILD
-
+Arch User Repository <https://wiki.archlinux.org/index.php/Arch_User_Repository>.  
 <https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages>
 
-#### Compile and pack
+## AUR PKGBUILD compile and pack
 
     makepkg -s
 
-#### Install
+## AUR PKGBUILD install
 
-    pacman --upgrade yaourt-1.3-1-any.pkg.tar.xz
+    pacman --upgrade your-pkg-name-1.2-3-any.pkg.tar.xz
 
 ## Yaourt
 
@@ -65,7 +62,7 @@ Yet AnOther User Repository
 
 ## Search and install
 
-    yaourt compiz-dev
+    yaourt your-pkg-name
 
 ### Update AUR
 
