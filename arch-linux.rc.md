@@ -56,3 +56,7 @@ Arch User Repository <https://wiki.archlinux.org/index.php/Arch_User_Repository>
 ## AUR PKGBUILD install
 
     pacman --upgrade your-pkg-name-1.2-3-any.pkg.tar.xz
+
+## To investigate
+
+* https://github.com/falconindy/auracle
