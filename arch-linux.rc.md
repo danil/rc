@@ -56,3 +56,10 @@ Arch User Repository <https://wiki.archlinux.org/index.php/Arch_User_Repository>
 ## AUR PKGBUILD install
 
     pacman --upgrade your-pkg-name-1.2-3-any.pkg.tar.xz
+
+## Set hostname
+
+<https://wiki.archlinux.org/index.php/Network_configuration#Set_the_hostname>
+
+    echo your-host-name > /etc/hostname
+    hostnamectl set-hostname your-host-name
