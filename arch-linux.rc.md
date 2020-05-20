@@ -1,11 +1,5 @@
 # Arch Linux
 
-## Packages update
-
-Download package list and upgrade
-
-    pacman --sync --verbose --refresh --sysupgrade
-
 ## Package install
 
     pacman --verbose --sync your-pkg-name
@@ -13,6 +7,16 @@ Download package list and upgrade
 ## Package remove
 
     pacman --remove --recursive your-pkg-name
+
+## Packages sync/check outdated
+
+    pacman --sync --refresh --upgrades
+
+## Packages update
+
+Download package list and upgrade
+
+    pacman --sync --refresh --sysupgrade
 
 ## Package search
 
