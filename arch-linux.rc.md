@@ -10,7 +10,7 @@
 
 ## Packages sync/check outdated
 
-    pacman --sync --refresh --upgrades
+    pacman --sync --refresh --sysupgrade
 
 ## Packages update
 
