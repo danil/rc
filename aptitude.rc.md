@@ -8,7 +8,7 @@
                       | less --chop-long-lines --ignore-case
     aptitude show catdoc
 
-## Upgrade
+## Upgrade all packages
 
 Upgrades installed packages to their most recent version
 
@@ -17,11 +17,15 @@ Upgrades installed packages to their most recent version
 
 ## Install
 
-    aptitude install indicator-brightness
+    aptitude install your-pkg-name
+
+## Update one package
+
+    aptitude install your-pkg-name
 
 ## Uninstall
 
-    aptitude remove indicator-brightness
+    aptitude remove your-pkg-name
 
 ## Search
 
