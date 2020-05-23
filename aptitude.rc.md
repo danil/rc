@@ -15,6 +15,10 @@ Upgrades installed packages to their most recent version
     aptitude update
     aptitude --prompt safe-upgrade
 
+## Download newest version of outdated packages
+
+    aptitude --prompt --download-only safe-upgrade
+
 ## Install
 
     aptitude install your-pkg-name
