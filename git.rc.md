@@ -215,11 +215,7 @@ Remove local tags thats deleted on remote
     git apply
     git stash show --patch
 
-### Stash specific file
-
-Several ways to achieve this:
-
-#### First
+## Stash specific file in the first way
 
 <http://stackoverflow.com/questions/5506339/how-can-i-git-stash-a-specific-file/5506483#answer-5506483>.
 
@@ -227,7 +223,7 @@ Several ways to achieve this:
 
 `d` to skip, `a` to stash, and then `q` to quit.
 
-#### Second
+## Stash specific file in the second way
 
 <http://stackoverflow.com/questions/3040833/git-how-to-stash-only-one-file-out-of-multiple-files-that-have-changed#8333163>.
 
@@ -236,7 +232,7 @@ add the things you want to keep, then run it.
 
     git stash --keep-index
 
-### Show file
+## Show stashed file
 
 <http://stackoverflow.com/questions/1105253/how-would-i-extract-a-single-file-or-changes-to-a-file-from-a-git-stash#1105666>
 
@@ -251,7 +247,7 @@ equal to
 
     git pull origin master
 
-### All
+## Fetch all branches
 
 <http://stackoverflow.com/questions/10312521/how-to-fetch-all-git-branches#10312587>
 
