@@ -88,6 +88,10 @@ origin/your-new-branch to origin/your-old-branch
     git config branch.your-branch-name.remote origin
     git config branch.your-branch-name.merge refs/heads/production
 
+## Branch upstream
+
+    git branch --set-upstream-to=origin/your-remoute-branch-name
+
 ## Merge abort
 
     git merge --abort
@@ -113,47 +117,37 @@ Merge the changes and update on upstream.
     git merge --no-ff contributor-somebranch
     git push origin master
 
-## Checkout
-
-### Checkout in bare repository
+## Checkout in bare repository
 
 <http://stackoverflow.com/questions/3301956/git-correct-way-to-change-active-branch-in-a-bare-repository#3302018>
 
     git symbolic-ref HEAD refs/heads/you-branch-name
 
-### Directory
+## Checkout/copy directory
 
-Get a directories from a specific revision
+Get/copy a directories recursively from a specific revision
 <http://stackoverflow.com/questions/9670745/how-to-restore-a-whole-directory-from-history-of-git-repository#9671161>
 
-    git checkout master -- config/navigation/
+    git checkout your-branch-name -- path/to/direcotry
 
-## Show
-
-### File
+## Show/copy file
 
 Get a file from a specific revision
 <http://stackoverflow.com/questions/610208/how-to-retrieve-a-single-file-from-specific-revision-in-git#answer-610315>.
 
-    git show HEAD^^^:lib/paginable_by_date.rb > lib/paginable_by_date.rb
+    git show HEAD^^^:path/to/file.txt > local/path/to/file.txt
 
-## Remote
-
-### Removing
+## Remote remove
 
     git remote remove github
 
-### Adding
+## Remote add
 
     git remote add origin ssh://john@doe.org/var/git/repository-name.git
 
-#### Adding second
+## Adding second remote
 
     git remote add github git@github.com:path/to/repository-name.git
-
-## Branch upstream
-
-    git branch --set-upstream-to=origin/your-remoute-branch-name
 
 ## Copy file from branch to another
 
@@ -161,56 +155,54 @@ Get a file from a specific revision
 A la restore deleted file
 <http://stackoverflow.com/questions/953481/restore-a-deleted-file-in-a-git-repo#answer-1113140>.
 
-    git checkout r2 app/views/shared/_info_blocks.haml
+    git checkout your-otherbranch-name in/current/branch/path/to/file.txt
 
-## Tag
-
-### List
+## Tag list
 
     git tag
 
-### Checkout
+## Checkout to tag
 
 Select tag <http://git-scm.com/book/en/Git-Basics-Tagging#Listing-Your-Tags>
 
     git checkout v0.0.1
 
-#### Latest tag
+## Latest/newest tag
 
 Newest tag
 <http://stackoverflow.com/questions/1404796/how-to-get-the-latest-tag-name-in-current-branch-in-git#7261049>
 
     git describe --abbrev=0 --tags
 
-#### Latest tagged commit
+## Latest tagged commit
 
 <http://stackoverflow.com/questions/1404796/how-to-get-the-latest-tag-name-in-current-branch-in-git#7979255>
 
     git rev-list --tags --max-count=1
 
-### Create
+## Tag create
 
 <http://git-scm.com/book/en/Git-Basics-Tagging#Lightweight-Tags>
 
     git tag v0.0.1 HEAD^
 
-### Push to remote
+## Push all tags to remote
 
 <http://stackoverflow.com/questions/4061481/git-push-tag-master#4061529>
 
-    git push --tags production
+    git push --tags your-remote-name
 
-### Delete
+## Tag delete
 
     git tag --delete v0.0.1
 
-#### Remote
+## Delete remote tag
 
 <http://www.abeautifulsite.net/how-to-delete-a-tag-on-github/>
 
     git push origin :v0.0.1
 
-#### Cleanup
+## Tags cleanup
 
 Remove local tags thats deleted on remote
 
