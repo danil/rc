@@ -10,23 +10,21 @@
 
     git --bare init
 
-## Add
+## Add to stage/index
 
 Stage all files
 
     git add .
 
-### Deleted
+## Deleted from stage/index
 
     git add --update
 
-### Untracked
+## Untracked in stage/index
 
     git add --all
 
-## Push
-
-### Specific commit
+## Push specific commit
 
 Push one commit by commit sha
 <https://stackoverflow.com/questions/3230074/how-can-i-push-a-specific-commit-to-a-remote-and-not-previous-commits#3230241>,
@@ -34,7 +32,7 @@ Push one commit by commit sha
 
     git push origin your-commit-sha:master
 
-### Push across repositories
+## Push across repositories
 
 Push from local repository to independent remote repository
 <https://gist.github.com/domenic/ec8b0fc8ab45f39403dd>
@@ -42,87 +40,72 @@ Push from local repository to independent remote repository
     git push --force your_user@your.domain:path/to/repository-name.git \
         local_branch:remote_branch
 
-## Branch
+## Branches lise
 
-### Current branch
+    git branch --all
+
+## Create remote branch
+
+    git push origin your-branch-name
+
+## Get current branch
 
 Get/print current branch
 
     echo $(git rev-parse --abbrev-ref HEAD)
 
-### Create and checkout
+## Branch create and checkout
 
     git checkout -b newbranch
 
-## Branching and Merging
+## Branch delete
 
-<http://book.git-scm.com/3_basic_branching_and_merging.html>
+    git branch --delete your-branch-name
 
-    git checkout production
-    git branch --all
-    git merge production
-    git branch breadcrumbs-1423
+## Delete remote branch
 
-<http://stackoverflow.com/questions/658885/how-do-you-get-git-to-always-pull-from-a-specific-branch#answer-659804>
-
-    git config branch.breadcrumbs-1423.remote origin
-    git config branch.breadcrumbs-1423.merge refs/heads/production
-
-    git branch --delete breadcrumbs-1423
-
-### Abort merge
-
-    git merge --abort
-
-### Merge without commit
-
-<http://stackoverflow.com/questions/8640887/git-merge-without-auto-commit#8641053>
-
-    git merge --no-commit --no-ff your-branch-name
-
-### Rename
-
-    git branch -m old_branch new_branch
-
-#### Remote branch
-
-origin/master to origin/master-old
-<http://stackoverflow.com/questions/1526794/git-rename-remote-branch#answer-1527004>
-
-    git branch -m master master-old
-
-Delete master
-
-    git push origin :master
-
-Create master-old on remote
-
-    git push origin master-old
-
-### Delete remote branch
-
-    git push origin :accounting
+    git push origin :your-branch-name
 
 ### Cleanup remote branch
 
     git remote prune origin
 
-### Checkout in bare repository
+## Branch rename
 
-<http://stackoverflow.com/questions/3301956/git-correct-way-to-change-active-branch-in-a-bare-repository#3302018>
+    git branch -m old_branch new_branch
 
-    git symbolic-ref HEAD refs/heads/you-branch-name
+## Rename remote branch
 
-### Merge pull request
+origin/your-new-branch to origin/your-old-branch
+<http://stackoverflow.com/questions/1526794/git-rename-remote-branch#answer-1527004>
 
-#### Step 1
+    git branch -m your-new-branch your-old-branch
+
+## Default branch to pull
+
+<http://stackoverflow.com/questions/658885/how-do-you-get-git-to-always-pull-from-a-specific-branch#answer-659804>
+
+    git config branch.your-branch-name.remote origin
+    git config branch.your-branch-name.merge refs/heads/production
+
+## Merge abort
+
+    git merge --abort
+
+## Merge without commit
+
+<http://stackoverflow.com/questions/8640887/git-merge-without-auto-commit#8641053>
+
+    git merge --no-commit --no-ff your-branch-name
+
+## Merge pull request step 1
 
 From your project repository, check out a new branch and test the changes.
 
     git checkout -b contributor-somebranch master
     git pull https://github.com/contributor/your-repository-name.git somebranch
 
-#### Step 2
+## Merge pull request step 2
 
 Merge the changes and update on upstream.
 
@@ -131,6 +114,12 @@ Merge the changes and update on upstream.
     git push origin master
 
 ## Checkout
+
+### Checkout in bare repository
+
+<http://stackoverflow.com/questions/3301956/git-correct-way-to-change-active-branch-in-a-bare-repository#3302018>
+
+    git symbolic-ref HEAD refs/heads/you-branch-name
 
 ### Directory
 
