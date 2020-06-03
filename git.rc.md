@@ -32,13 +32,18 @@ Push one commit by commit sha
 
     git push origin your-commit-sha:master
 
-## Push across repositories
+## Push local branch to another remote branch
+
+<https://stackoverflow.com/questions/13897717/push-commits-to-another-branch/13897766#13897766>
+
+    git push your-remote local-branch:remote-branch
+
+## Push to URL across repositories
 
 Push from local repository to independent remote repository
 <https://gist.github.com/domenic/ec8b0fc8ab45f39403dd>
 
-    git push --force your_user@your.domain:path/to/repository-name.git \
-        local_branch:remote_branch
+    git push git@github.com:path/to/repository.git local-branch:remote-branch
 
 ## Branches lise
 
