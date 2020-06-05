@@ -43,7 +43,7 @@ Push one commit by commit sha
 Push from local repository to independent remote repository
 <https://gist.github.com/domenic/ec8b0fc8ab45f39403dd>
 
-    git push git@github.com:path/to/repository.git local-branch:remote-branch
+    git push git@github.com:your/repo.git local-branch:remote-branch
 
 ## Branches lise
 
@@ -67,11 +67,11 @@ Get/print current branch
 
     git branch --delete your-branch-name
 
-## Delete remote branch
+## Remote branch delete
 
     git push origin :your-branch-name
 
-### Cleanup remote branch
+### Remote branchs cleanup
 
     git remote prune origin
 
@@ -150,9 +150,13 @@ Get a file from a specific revision
 
     git remote add origin ssh://john@doe.org/var/git/repository-name.git
 
-## Adding second remote
+## Second remote adding
 
     git remote add github git@github.com:path/to/repository-name.git
+
+## Remote branchs cleanup
+
+    git remote prune origin
 
 ## Copy file from branch to another
 
@@ -258,36 +262,27 @@ equal to
 
     git fetch --all
 
-## rev-list
-
-### Count commits
+## rev-list count commits
 
 Count number of commits per file
 <http://stackoverflow.com/questions/25850117/how-to-count-number-of-commits-per-file-pathname-by-author-in-a-git-repository#27386471>
 
     git rev-list HEAD --count path/to/file
 
-## Mirror
-
-Mirror git repository
-
-### First
+## Mirror repository
 
 <http://exyr.org/2011/git-mirrors>
 
-    git clone --mirror git://github.com/danil/foo.git
-    git remote add kutkevich ssh://danil@kutkevich.org/var/git/foo.git
+    git clone --mirror git://github.com:your/repo.git
+    git remote add your-remote-name you@your.host.tld:your/repo.git
+    git push --mirror your-remote-name # push all branches
 
-#### Push all branches
-
-    git push --mirror kutkevich
-
-### Second
+### Mirror repository yet another way
 
 <http://toolmantim.com/thoughts/setting_up_a_new_remote_git_repository>
 
-    git clone --bare git://github.com/sebnow/lake.git
-    git remote add origin git://github.com/sebnow/lake.git
+    git clone --bare git://github.com:your/repo.git
+    git remote add origin git://github.com:your/repo.git
     git fetch
 
 ## Convert to bare
@@ -299,7 +294,7 @@ Mirror git repository
     git --git-dir=repo.git config core.bare true
     rm -rf repo
 
-## Submodules
+## Submodule setup
 
 <http://progit.org/book/ru/ch5-8.html>
 
@@ -310,17 +305,17 @@ git submodule update
 git submodule status
 ```
 
-### Recursive init & update
+## Submodule recursive init & update
 
     git submodule update --init --recursive
 
-### Find submodules
+## Find submodules
 
 Find submodules even not listed in `.gitmodules` file
 
     git ls-files --stage | grep 160000
 
-### Remove submodule
+## Submodule remove
 
 <http://stackoverflow.com/questions/1260748/how-do-i-remove-a-git-submodule#1260982>
 
@@ -337,44 +332,38 @@ Find submodules even not listed in `.gitmodules` file
     git diff --cached --color-words
     git diff --color HEAD^..HEAD path/to/your/file.name
 
-### File names
-
-List changed file names
+## Diff and List changed file names
 
     git diff HEAD^ HEAD --name-only
 
-### diffstat of binary files
+## diffstat of binary files
 
     git diff --stat public/images/article_pics/1.jpg
 
-### Between two branches
+## Diff between two branches
 
 <http://stackoverflow.com/questions/822811/differences-in-git-branches#answer-822859>
 
     git diff --name-status production..master
 
-### Pager
-
-#### Less
+## Pager less
 
 Use custom pager `less`:
 
     GIT_PAGER='less --chop-long-lines --IGNORE-CASE --LINE-NUMBERS' git diff
 
-#### Without pager
+## Without pager
 
 Prevent git diff from using a pager
 <http://stackoverflow.com/questions/136178/git-diff-handling-long-lines#152546>
 
     GIT_PAGER='' git diff
 
-## Mirror Subversion repository to Git
-
-### With bare
+## Mirror subversion repository to git with bare
 
 <https://git.wiki.kernel.org/index.php/GitFaq#How_do_I_mirror_a_SVN_repository_to_git.3F>
 
-### Without bare
+## Mirror subversion repository to git without bare
 
     git svn init -s http://google-code-prettify.googlecode.com/svn \
         google-code-prettify
