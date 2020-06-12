@@ -67,3 +67,13 @@ Arch User Repository <https://wiki.archlinux.org/index.php/Arch_User_Repository>
 
     echo your-host-name > /etc/hostname
     hostnamectl set-hostname your-host-name
+
+## Network interfaces list
+
+    ip link
+
+## Network IP address list
+
+<https://wiki.archlinux.org/index.php/Network_configuration#IP_addresses>
+
+    ip address show
