@@ -1,36 +1,32 @@
 # Archiving and compression
 
-## tar
-
-### Read
+## tar read
 
     tar --list --file path/to/your.tar
 
-### Extract
+## tar extract
 
     tar --extract --gzip --file path/to/your.tar.gz
 
-#### From stdin to stdout
+## tar extract from stdin to stdout
 
 Via pipeline
 
     cat file.tar.gz | tar --extract --gzip --to-stdout --file - | less
 
-### Create
-
-#### With exclude
+## tar create archive with exclusion
 
 <http://stackoverflow.com/questions/984204/shell-command-to-tar-directory-excluding-certain-files-folders#984259>
 
     tar --exclude=foo.tar.xz --create --xz --file foo.tar.xz ./foo
 
-#### By list of files
+## tar create archive by list of files
 
 <http://stackoverflow.com/questions/8033857/tar-archiving-that-takes-input-from-a-list-of-files#8033891>
 
     tar --create --file foo.tar --files-from=mylist.txt
 
-#### From stdin to stdout
+## tar create archive from stdin to stdout
 
 <http://stackoverflow.com/questions/2597875/how-can-i-build-a-tar-from-stdin#14073550>
 
@@ -39,11 +35,11 @@ Via pipeline
       | gzip --compress \
       > path/to/file.tar.gz
 
-#### Each directory
+## tar create archives of the each directory
 
     for i in *; do echo "$i" && tar cJf "$i.tar.xz" "$i"; done
 
-#### By array of directories
+## tar create archives by array of directories
 
 ```sh
 read -ra arr <<<"your array of directories" && \
@@ -53,73 +49,81 @@ read -ra arr <<<"your array of directories" && \
     done
 ```
 
-## gzip
+## gzip decompress
 
-    tar --extract --gzip --verbose --file path/to/your.file.tar.gz
+    gzip --decompress --keep path/to/your.file.gz
 
-### Compress
+## gzip decompress tarball
 
-    gzip --keep --verbose path/to/your.file
-    bzip2 --keep --stdout --verbose path/to/your.file > path/to/your.file.gz
+    tar --extract --gzip --file path/to/your.file.tar.gz
 
-### Decompress
+## gzip compress
 
-    gzip --decompress --verbose --keep path/to/your.file.gz
+    gzip --keep path/to/your.file
+    gzip --keep --stdout path/to/your.file > path/to/your.file.gz
 
-## bzip2
+## bzip2 decompress
 
-    tar --extract --bzip2 --verbose --file path/to/your/dir.tar.bz2
+    bzip2 --decompress --keep path/to/your.file.bz2
     cat path/to/your.file.bz2 | bzip2 --decompress > path/to/file
 
-### Compress
+## bzip2 decompress tarball
 
-    bzip2 --keep --verbose path/to/your.file
-    bzip2 --keep --stdout --verbose path/to/your.file > path/to/your.file.bz2
+    tar --extract --bzip2 --file path/to/your/dir.tar.bz2
 
-### Decompress
+## bzip2 compress
 
-    bzip2 --decompress --keep --verbose path/to/your.file.bz2
+    bzip2 --keep path/to/your.file
+    bzip2 --keep --stdout path/to/your.file > path/to/your.file.bz2
 
-## xz
+## xz decompress
 
-    tar --extract --xz --file path/to/your.tar.xz
+    xz --decompress --keep path/to/your.file.xz
     pg_dump db_name | xz --compress > path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
 
-### Compress
+## xz decompress tarball
 
-    xz --keep --verbose path/to/your.file
-    xz --keep --stdout --verbose path/to/your.file > path/to/your.file.xz
+    tar --extract --xz --file path/to/your.tar.xz
 
-### Decompress
+## xz compress
 
-    xz --decompress --keep --verbose path/to/your.file.xz
+    xz --keep path/to/your.file
+    xz --keep --stdout path/to/your.file > path/to/your.file.xz
 
-## Zip
+## zstd decompress tarball
+
+    tar --extract --zstd --file path/to/your.file.tar.zst
+
+## zstd compress tarball
+
+    tar --create --zstd --file path/to/your.file.tar.zst path/to/dir
+
+## unzip decompress to directory
+
+    unzip foo.zip -d path/to/directory
+
+## zip decompress
+
+    unzip -p path/to/file.zip | cat
+
+## zip compress
 
     zip file-to-archive.zip file-to-archive
     echo 'Hello, World!' | zip file-to-archive.zip -
     zip --recurse-paths foo.zip foo/
-    unzip -p path/to/file.zip | cat
-
-### Create
-
     export f=filename && cat ${f} | zip --quiet ${f}.zip $f
     ls path/to/your.file | zip --quiet path/to/file.zip -@
     ls path/to/your/dir | grep filename | zip --quiet path/to/archive.zip -@
 
-#### ???
+## zip ???
 
     export f=path/to/file && ls ${f} | zip --quiet ${f}.zip -@
     export p=path/to/dir && ls ${p}/nesteddir | grep re | zip --quiet ${p}/archive.zip -@
 
-### Unzip to directory
-
-    unzip foo.zip -d path/to/directory
-
-## funzip
+## funzip decompress
 
     cat archive.zip | funzip
 
-## RAR
+## rar decompress
 
     unrar x file.rar
