@@ -15,21 +15,35 @@ Linux kernel config options: <https://github.com/systemd/systemd/blob/master/REA
     echo your-host-name > /etc/hostname
     hostnamectl set-hostname your-host-name
 
-## List
+## Time/ntp get status
+
+    timedatectl
+
+## Time enable ntp
+
+    timedatectl set-ntp true
+
+## Units list
 
 <https://wiki.archlinux.org/index.php/systemd#Analyzing_the_system_state>
 
+    systemctl status
+    systemctl
     systemctl list-unit-files
     systemctl list-units
 
-## Show/status
+## Failed units list
+
+    systemctl --failed
+
+## Unit status show
 
 Show info about service
 
     systemctl show your_unit_name
     systemctl status your_unit_name
 
-## Start/stop
+## Unit start/stop
 
 Start/stop/restart/reload
 
@@ -38,7 +52,7 @@ Start/stop/restart/reload
     systemctl restart your_unit_name
     systemctl reload your_unit_name
 
-## Autorun enable/disable
+## Unit autorun enable/disable
 
 Start/stop (enable/disable) on system boot/start
 
@@ -46,14 +60,14 @@ Start/stop (enable/disable) on system boot/start
     systemctl disable your_unit_name
     systemctl is-enabled your_unit_name
 
-## Mask/unmask
+## Unit mask/unmask
 
 Completely mask/unmask (enable/disable)
 
     systemctl mask your_unit_name
     systemctl unmask your_unit_name
 
-## Reload units
+## Unit reload
 
 <https://wiki.archlinux.org/index.php/systemd#Editing_provided_unit_files>
 
