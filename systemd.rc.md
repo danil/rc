@@ -4,6 +4,17 @@
 
 Linux kernel config options: <https://github.com/systemd/systemd/blob/master/README>
 
+## Hostname get
+
+    hostnamectl
+
+## Hostname set
+
+<https://wiki.archlinux.org/index.php/Network_configuration#Set_the_hostname>
+
+    echo your-host-name > /etc/hostname
+    hostnamectl set-hostname your-host-name
+
 ## List
 
 <https://wiki.archlinux.org/index.php/systemd#Analyzing_the_system_state>
