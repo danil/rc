@@ -25,11 +25,14 @@ Linux kernel config options: <https://github.com/systemd/systemd/blob/master/REA
 
 ## Units list
 
+    systemctl list-unit-files
+
+## Running units list
+
 <https://wiki.archlinux.org/index.php/systemd#Analyzing_the_system_state>
 
     systemctl status
     systemctl
-    systemctl list-unit-files
     systemctl list-units
 
 ## Failed units list
