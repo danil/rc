@@ -1,12 +1,30 @@
 # Arch Linux
 
+## Packages list
+
+    pacman --query --quiet
+
+## Packages list explicitly installed
+
+    pacman --query --explicit --quiet
+
 ## Package install
 
     pacman --verbose --sync your-pkg-name
 
+## Packages list install
+
+    pacman --sync --needed - < path/to/pkg/list
+
 ## Package remove
 
     pacman --remove --recursive your-pkg-name
+
+## Remove packages unless list
+
+<https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Install_packages_from_a_list>
+
+    pacman --remove --recursive --unneeded $(comm -23 <(pacman --query --quiet | sort) <(sort path/to/pkg/list))
 
 ## Packages sync/check outdated
 
