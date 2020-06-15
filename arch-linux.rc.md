@@ -62,6 +62,18 @@ Useless packages, that are not associated with explicitly installed packages
 
     pacman --query --deps --unrequired --quiet
 
+## Configs outdated search
+
+<https://wiki.archlinux.org/index.php/Pacman/Pacnew_and_Pacsave#Locating_.pac*_files>
+
+    locate --existing --regex "\.pac(new|save)$"
+    find /etc -regextype posix-extended -regex ".+\.pac(new|save)" 2> /dev/null
+    grep --extended-regexp "\.pac(new|save)" /var/log/pacman.log
+
+## Configs outdated diff/update by emacs
+
+<https://github.com/UndeadKernel/pacfiles-mode>
+
 ## File belong to package
 
     pkgfile your-pkg-name
