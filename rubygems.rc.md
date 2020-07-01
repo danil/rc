@@ -6,6 +6,12 @@
 
     gem install your_gem_name -v '>= 1.2.3'
 
+## Install/vendoring
+
+Installing to custom directory
+
+    gem unpack your_gem_name --target path/to/directory
+
 ## Uninstall
 
     gem uninstall your_gem_name -v '<= 1.2.3'
