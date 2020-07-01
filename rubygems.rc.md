@@ -1,4 +1,4 @@
-# RubyGems
+# Rubygems
 
 <http://rubygems.org/>
 
@@ -10,7 +10,7 @@
 
     gem uninstall your_gem_name -v '<= 1.2.3'
 
-### Local source
+## Uninstall local source
 
     ruby ./rubygems-1.3.0/setup.rb
 
