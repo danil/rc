@@ -7,6 +7,8 @@
 ## Pretty print stream
 
 Pretty print stream/server output/followed tail
+<https://github.com/stedolan/jq/issues/884#issuecomment-338326479>,
+<https://github.com/stedolan/jq/issues/477#issuecomment-48632464>
 
     tail --follow path/to/stream | jq --raw-input --raw-output '. as $line | try fromjson catch $line'
 
