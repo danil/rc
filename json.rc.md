@@ -4,6 +4,12 @@
 
     echo '{"your":"json"} | jq .
 
+## Pretty print stream
+
+Pretty print stream/server output/followed tail
+
+    tail --follow path/to/stream | jq --raw-input --raw-output '. as $line | try fromjson catch $line'
+
 ## Pretty print without colors
 
     echo '{"your":"json"} | python -m json.tool
