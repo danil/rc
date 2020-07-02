@@ -1,14 +1,12 @@
 # JSON
 
-## Pretty print
+## Pretty print colored
 
-### Without colors
+    echo '{"your":"json"} | jq .
 
-    curl -s https://api.github.com/repos/tomnomnom/gron/commits?per_page=1 | python -m json.tool
+## Pretty print without colors
 
-### Colored
-
-    curl -s https://api.github.com/repos/tomnomnom/gron/commits?per_page=1 | jq .
+    echo '{"your":"json"} | python -m json.tool
 
 ## Generate
 
@@ -23,24 +21,22 @@
 
     cat path/to/file.json | `npm bin`/json --validate
 
-## Query
-
-### gron
+## Query gron
 
 Greppable JSON <https://github.com/tomnomnom/gron>
 
     gron "https://api.github.com/repos/tomnomnom/gron/commits?per_page=1" \
       | fgrep "commit.author"
 
-### jq
+## Query jq
 
 Command-line JSON processor <http://stedolan.github.io/jq>
 
-#### Select first item
+## Query jq select first item
 
     cat path/to/file.json | jq .[0]
 
-#### Filter array
+## Query jq filter array
 
 Filter and count objects in array
 <https://stackoverflow.com/questions/26701538/how-to-filter-an-array-of-objects-based-on-values-in-an-inner-array-with-jq#26701851>
@@ -49,7 +45,7 @@ Filter and count objects in array
     cat path/to/file.json | jq 'map(select(.yourProperty == "Foo")) | length'
     cat path/to/file.json | jq '[ .[] | select(.yourProperty == "Bar") ] | length'
 
-##### filter property by type string then by substring then by regexp
+## Query jq filter array by type string then by substring then by regexp
 
     cat path/to/file.json | \
       jq 'map(select(.yourId == 89 and (.yourValue | type) == "string"))' | \
