@@ -4,6 +4,11 @@
 
     gem install activesupport
 
+```ruby
+require 'active_support/core_ext'
+your.presence || variable.present? || name.blank?
+```
+
 ## Transliteration
 
 Replaces non-ASCII characters with an ASCII approximation
