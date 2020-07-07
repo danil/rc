@@ -56,7 +56,7 @@ List all services by run levels
     useradd -D
     useradd --comment "Your user name" \
             --user-group --groups your,groups,names \
-            --create-home --base-dir /path/to/user/dir \
+            --create-home --home-dir /path/to/home/your_user \
             --shell /bin/bash your_user
 
 ### Edit
