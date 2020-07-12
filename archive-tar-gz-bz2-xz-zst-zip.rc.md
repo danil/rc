@@ -62,6 +62,17 @@ read -ra arr <<<"your array of directories" && \
     gzip --keep path/to/your.file
     gzip --keep --stdout path/to/your.file > path/to/your.file.gz
 
+## pigz decompress tarball
+
+<https://github.com/madler/pigz>
+
+    pigz --decompress --stdout path/to/your.file.tar.gz | tar --extract --file -
+
+## pigz compress tarball
+
+    tar --use-compress-program="pigz --best --recursive" -cf path/to/your.file.tar.gz path/to/dir
+    tar --create --file - path/to/dir | pigz --best --recursive > path/to/your.file.tar.gz
+
 ## bzip2 decompress
 
     bzip2 --decompress --keep path/to/your.file.bz2
@@ -91,6 +102,8 @@ read -ra arr <<<"your array of directories" && \
     xz --keep --stdout path/to/your.file > path/to/your.file.xz
 
 ## zstd decompress tarball
+
+<https://github.com/facebook/zstd>
 
     tar --extract --zstd --file path/to/your.file.tar.zst
 
