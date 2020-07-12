@@ -71,7 +71,7 @@ read -ra arr <<<"your array of directories" && \
 ## pigz compress tarball
 
     tar --use-compress-program="pigz --best --recursive" -cf path/to/your.file.tar.gz path/to/dir
-    tar --create --file - path/to/dir | pigz --best --recursive > path/to/your.file.tar.gz
+    tar --create --file - path/to/dir | pigz --best > path/to/your.file.tar.gz
 
 ## bzip2 decompress
 
@@ -106,10 +106,12 @@ read -ra arr <<<"your array of directories" && \
 <https://github.com/facebook/zstd>
 
     tar --extract --zstd --file path/to/your.file.tar.zst
+    zstd --threads=0 --force --decompress --stdout path/to/your.file.tar.zst | tar --extract --file -
 
 ## zstd compress tarball
 
     tar --create --zstd --file path/to/your.file.tar.zst path/to/dir
+    tar --create --file - path/to/dir | zstd -10 --threads=0 --force --compress --stdout > path/to/your.file.tar.gz
 
 ## unzip decompress to directory
 
