@@ -1,3 +1,3 @@
 # whois
 
-    whois example.org
+    whois example.tld

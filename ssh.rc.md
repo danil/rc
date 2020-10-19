@@ -1,13 +1,13 @@
 # SSH
 
     ssh -t root@santaslittlehelper "ssh danil@homer"
-    sshfs -p 61022 example.org:/home/danil/ mnt/example_org/
+    sshfs -p 61022 example.tld:/home/danil/ mnt/example_org/
 
 ## Key authentication
 
 <https://help.github.com/articles/generating-ssh-keys/#step-2-generate-a-new-ssh-key>
 
-    ssh-keygen -t rsa -C "your.email@example.org"
+    ssh-keygen -t rsa -C "your.email@example.tld"
 
 ## Generate private and public keys
 
@@ -29,13 +29,13 @@
 
 ## Copy public key to remote host
 
-    ssh-copy-id -i ~/.ssh/key-file-name.pub -p54321 anonymous@example.org
+    ssh-copy-id -i ~/.ssh/key-file-name.pub -p54321 anonymous@example.tld
 
 ## Get server key
 
 Set `~/.ssh/known_hosts` or `/etc/ssh/ssh_known_hosts`
 
-    ssh-keyscan -t rsa example.org > /etc/ssh/ssh_known_hosts
+    ssh-keyscan -t rsa example.tld > /etc/ssh/ssh_known_hosts
 
 ## One hop tunnel
 
@@ -70,7 +70,7 @@ Set `~/.ssh/known_hosts` or `/etc/ssh/ssh_known_hosts`
 
 <http://tunnelsup.com/raspberry-pi-phoning-home-using-a-reverse-remote-ssh-tunnel>
 
-    ssh -N -R localhost:remote_port:localhost:local_port your_user@example.org
+    ssh -N -R localhost:remote_port:localhost:local_port your_user@example.tld
 
 ## Reverse tunneling on remote server
 
@@ -93,4 +93,4 @@ Set `~/.ssh/known_hosts` or `/etc/ssh/ssh_known_hosts`
 `tail -f` command over ssh
 <https://serverfault.com/questions/1669/shell-command-to-monitor-changes-in-a-file-whats-it-called-again/1670#1670>
 
-    ssh your_user@your_user@example.org "tail -f path/to/your.log"
+    ssh your_user@your_user@example.tld "tail -f path/to/your.log"

@@ -142,13 +142,13 @@ Create one web server
 
 ## Add
 
-    heroku domains:add example.org
+    heroku domains:add example.tld
 
 ## Remove
 
 <https://devcenter.heroku.com/articles/custom-domains#remove-a-domain>
 
-    heroku domains:remove example.com
+    heroku domains:remove example.tld
 
 ## DNS
 
@@ -217,7 +217,7 @@ Should use `DATABASE_URL` environment variable.
 
 Sql Backup
 
-    pg_dump postgres://your_user:your_password@example.com:5432/your_db_name \
+    pg_dump postgres://your_user:your_password@example.tld:5432/your_db_name \
         | xz --compress \
         > path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
 

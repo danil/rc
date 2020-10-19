@@ -76,7 +76,7 @@ Recompiling all packages on the system.
     export subj="$(hostname): Emerge empty tree system $(date --utc +%Y%m%dT%H%M%SZ)" && \
            emerge --emptytree --oneshot system; \
            echo -e "Subject: $subj\n\n$subj\n" | \
-           /usr/sbin/sendmail your.name@example.org
+           /usr/sbin/sendmail your.name@example.tld
 
 ### Unmerge
 

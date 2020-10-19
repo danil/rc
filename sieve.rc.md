@@ -30,7 +30,7 @@ Test the syntax of sieve-scripts
 
 ```sieve
 require ["fileinto"];
-if allof (address :all :is "to" "user@example.org",
+if allof (address :all :is "to" "user@example.tld",
                header :matches "X-Attached" ["*.docm", "*.zip"]) {
   fileinto "INBOX.Junk Mail";
 }

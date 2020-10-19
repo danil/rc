@@ -20,26 +20,26 @@
     curl --request POST \
          --header "Content-Type: application/x-www-form-urlencoded" \
          --data "foo=123&bar=xyz" \
-         "http://example.org"
+         "http://example.tld"
 
 ### JSON
 
     curl --request POST \
          --header "Content-Type: application/json" \
          --data '{"foo":123,"bar":"xyz"}' \
-         "http://example.org"
+         "http://example.tld"
 
 ## Gzipped
 
-    curl --header "Accept-encoding: gzip" "http://example.org" | gunzip
+    curl --header "Accept-encoding: gzip" "http://example.tld" | gunzip
 
 <http://stackoverflow.com/questions/8364640/how-to-properly-handle-a-gzipped-page-when-using-curl#8365089>
 
-    curl --compressed "http://example.org"
+    curl --compressed "http://example.tld"
 
 ## Follow redirect
 
-    curl --location http://example.org
+    curl --location http://example.tld
 
 ## Output to file
 
@@ -50,8 +50,8 @@
 
 Accept JSON response
 
-    curl --verbose --header "Accept: application/json" http://example.org
+    curl --verbose --header "Accept: application/json" http://example.tld
 
 ## Other
 
-    curl --verbose --request HEAD http://example.org
+    curl --verbose --request HEAD http://example.tld
