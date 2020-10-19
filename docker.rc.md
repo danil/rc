@@ -243,5 +243,5 @@ docker system prune
 ## Login
 
 ```sh
-docker login --username=your-user http://example.tld
+docker login --username=your-user http://your.tld
 ```

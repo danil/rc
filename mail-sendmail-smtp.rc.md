@@ -7,7 +7,7 @@
 ```sh
 echo -e "Subject: Your subject\n\nYour mail body\n" \
     | /usr/sbin/sendmail your.name@domain.com
-echo "Your mail body" | mail --subject="Your subject" your.name@example.tld
+echo "Your mail body" | mail --subject="Your subject" your.name@your.tld
 ```
 
 ### HTML
@@ -17,7 +17,7 @@ Mail with HTML body
 ```sh
 mail --append="Content-type: text/html;" \
      --subject="Your subject" \
-     your.name@example.tld < path/to/index.html
+     your.name@your.tld < path/to/index.html
 ```
 
 ### SMTP
@@ -31,12 +31,12 @@ telnet localhost smtp
 Trying 127.0.0.1...
 Connected to localhost.
 Escape character is '^]'.
-220 example.tld ESMTP Exim 4.90_1 Tue, 29 May 2018 07:27:36 +0000
+220 your.tld ESMTP Exim 4.90_1 Tue, 29 May 2018 07:27:36 +0000
 HELO localhost
-250 example.tld Hello localhost [127.0.0.1]
-mail from: your.name@example.tld
+250 your.tld Hello localhost [127.0.0.1]
+mail from: your.name@your.tld
 250 OK
-rcpt to: your.name@example.tld
+rcpt to: your.name@your.tld
 250 Accepted
 data
 354 Enter message, ending with "." on a line by itself
@@ -46,7 +46,7 @@ Your mail body
 .
 250 OK id=1fNZ3C-0001X2-6P
 quit
-221 example.tld closing connection
+221 your.tld closing connection
 Connection closed by foreign host.
 ```
 
@@ -66,7 +66,7 @@ Connection closed by foreign host.
           --server your.smtp.domain \
           --auth-user your-login \
           --auth-password your-password \
-          --to your.name@example.tld \
+          --to your.name@your.tld \
           --h-Subject: "Your subject" \
           --body "Your mail body"
 
@@ -77,7 +77,7 @@ curl -s --user 'api:YOUR_API_KEY' \
     https://api.mailgun.net/v3/YOUR_DOMAIN_NAME/messages \
     -F from='Excited User <mailgun@YOUR_DOMAIN_NAME>' \
     -F to=YOU@YOUR_DOMAIN_NAME \
-    -F to=bar@example.tld \
+    -F to=bar@your.tld \
     -F subject='Hello' \
     -F text='Testing some Mailgun awesomeness!'
 ```

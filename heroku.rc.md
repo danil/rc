@@ -142,13 +142,13 @@ Create one web server
 
 ## Add
 
-    heroku domains:add example.tld
+    heroku domains:add your.tld
 
 ## Remove
 
 <https://devcenter.heroku.com/articles/custom-domains#remove-a-domain>
 
-    heroku domains:remove example.tld
+    heroku domains:remove your.tld
 
 ## DNS
 
@@ -184,7 +184,7 @@ Naked, bare or root domain have two options:
 
 # Deploy hook
 
-    heroku addons:create deployhooks:http --url https://example.org/path-to-your-hook
+    heroku addons:create deployhooks:http --url https://your.tld/path-to-your-hook
 
 # PostgreSQL
 
@@ -217,7 +217,7 @@ Should use `DATABASE_URL` environment variable.
 
 Sql Backup
 
-    pg_dump postgres://your_user:your_password@example.tld:5432/your_db_name \
+    pg_dump postgres://your_user:your_password@your.tld:5432/your_db_name \
         | xz --compress \
         > path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
 
@@ -255,7 +255,7 @@ Scheduling backups
 
 ### Restore
 
-    heroku pg:backups restore "http://example.org/path/to/dump" DATABASE_URL
+    heroku pg:backups restore "http://your.tld/path/to/dump" DATABASE_URL
 
 # Sendgrid
 

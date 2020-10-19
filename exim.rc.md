@@ -49,11 +49,11 @@ Remove all email messages by specific sender address from mail queue
 
 ### Route
 
-    exim -bt your.mail@example.tld
+    exim -bt your.mail@your.tld
 
 ### Rewrite rules
 
-    exim -brw your.mail@example.tld
+    exim -brw your.mail@your.tld
 
 ## Find all address
 

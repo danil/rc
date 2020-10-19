@@ -10,7 +10,7 @@ rsync --verbose \
       --append-verify \
       --progress \
       --stats \
-      your_user@example.tld:/path/to/file .
+      your_user@your.tld:/path/to/file .
 ```
 
 ## Upload
@@ -25,18 +25,18 @@ rsync --verbose \
       --append-verify \
       --progress \
       --stats \
-      your_user@example.tld:/path/to/file .
+      your_user@your.tld:/path/to/file .
 ```
 
 ## Compress
 
 Archive
 
-    rsync --compress your_user@example.tld:/path/to/file .
+    rsync --compress your_user@your.tld:/path/to/file .
 
 ## Specify port
 
-    rsync --rsh='ssh -p22022' your_user@example.tld:/path/to/file .
+    rsync --rsh='ssh -p22022' your_user@your.tld:/path/to/file .
 
 ## Exclude directory
 
@@ -61,9 +61,9 @@ Copy directory exclude directory
           path/to/dir1 \
           path/to/dir2 \
           path/to/dir3 \
-          your_user@example.tld:~/git/vendor/ 
+          your_user@your.tld:~/git/vendor/ 
 
 ## Other
 
     rsync -rv --stats --delete --compress --skip-compress=jpg,gif,png,mp4 \
-      your_user@example.tld:~/foo/bar foo
+      your_user@your.tld:~/foo/bar foo

@@ -9,9 +9,9 @@
 ## httperf
 
     httperf --num-conns=10 --rate=120 \
-            --server=example.tld --port=443 --ssl --uri /index.html
+            --server=your.tld --port=443 --ssl --uri /index.html
     httperf --num-conns=10 --rate=120 \
-            --server=example.tld --port 80 --wsesslog=10,1,wsesslog_your
+            --server=your.tld --port 80 --wsesslog=10,1,wsesslog_your
 
 ## siege
 

@@ -1,4 +1,4 @@
 # telnet
 
-    telnet example.tld 25
-    busybox telnet example.tld 22
+    telnet your.tld 25
+    busybox telnet your.tld 22

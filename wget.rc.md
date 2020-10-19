@@ -16,11 +16,11 @@
 
     wget --recursive \
          --level=999 \
-         --domains=example.tld,www.example.tld \
+         --domains=your.tld,www.your.tld \
          --restrict-file-names=nocontrol \
          --execute='robots=off' \
          --convert-links \
          --exclude-directories=/forum \
          --ignore-tags=img \
          --load-cookies=cookies.txt \
-         'http://example.tld'
+         'http://your.tld'

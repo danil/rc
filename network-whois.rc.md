@@ -1,3 +1,3 @@
 # whois
 
-    whois example.tld
+    whois your.tld

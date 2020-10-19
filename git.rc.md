@@ -2,7 +2,7 @@
 
     git config --global user.name "John Doe"
     git config --global user.email john@doe.org
-    git clone git://example.org/repository-name.git destination-dir
+    git clone git://your.tld/repository-name.git destination-dir
     git --git-dir=path/to/repository/.git  --work-tree=path/to/repository status
     git push origin master
 

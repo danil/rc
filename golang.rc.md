@@ -18,17 +18,17 @@ Get test dependencies
 
 ## Package update
 
-    go get -u example.org/path/to/package
+    go get -u your.tld/path/to/package
 
 ## Package dependencies list
 
 List package dependencies
 
-    go list -f '{{ .Deps }}' example.org/path/to/package
+    go list -f '{{ .Deps }}' your.tld/path/to/package
 
 ## Package install
 
-    go install example.org/path/to/package
+    go install your.tld/path/to/package
 
 ## Packages list
 
@@ -44,7 +44,7 @@ List installed packages
 
 Run test suite
 
-    go test -v example.org/path/to/package
+    go test -v your.tld/path/to/package
     go test -v ./...
 
 ## Test without cache

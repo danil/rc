@@ -7,7 +7,7 @@
 ### By domain
 
 ```sieve
-if address :is :domain "to" "example.xyz"
+if address :is :domain "to" "your.tld"
 {
     fileinto "yourdir";
 }
@@ -16,7 +16,7 @@ if address :is :domain "to" "example.xyz"
 or equivalent to
 
 ```sieve
-if address :matches :all "to" "*@example.xyz"
+if address :matches :all "to" "*@your.tld"
 {
     fileinto "yourdir";
 }
@@ -30,7 +30,7 @@ Test the syntax of sieve-scripts
 
 ```sieve
 require ["fileinto"];
-if allof (address :all :is "to" "user@example.tld",
+if allof (address :all :is "to" "user@your.tld",
                header :matches "X-Attached" ["*.docm", "*.zip"]) {
   fileinto "INBOX.Junk Mail";
 }

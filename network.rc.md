@@ -12,7 +12,7 @@
     killall wpa_supplicant && sleep 5 \
      && wpa_supplicant -i ath0 -c /etc/wpa_supplicant/wpa_supplicant.conf
     wvdial megafon
-    curlftpfs -o "user=danil" example.tld mnt/example_org/
+    curlftpfs -o "user=danil" your.tld mnt/example_org/
     smbtree [-N] -d 2
     smbclient [-N] -L server
     smbclient -N "\\\\server\\store (e)"
