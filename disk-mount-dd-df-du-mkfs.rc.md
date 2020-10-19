@@ -11,13 +11,11 @@ Validate fstab syntax
 
     mount --verbose --all --fake
 
-## Formatting
-
-### mke2fs
+## Format by mke2fs
 
     mkfs.ext2 -L fs_boot /dev/sde1
 
-#### fat32
+## Format by mke2fs to fat32
 
 Format usb to fat32 (a-la `mkdosfs`)
 
@@ -25,7 +23,7 @@ Format usb to fat32 (a-la `mkdosfs`)
 mkfs.vfat -F 32 /dev/sdg1
 ```
 
-#### Set number of inodes
+## Set number of inodes by mke2fs
 
     mkfs.ext4 -N 1000432 /dev/sda5
 
@@ -37,17 +35,18 @@ mkfs.vfat -F 32 /dev/sdg1
 
     df -hi
 
-### Directories list sizes
+## Directories list sizes
 
     du -sh ./*/
 
-### Finding largest files/directories
+## Finding largest files/directories
 
 * <http://superuser.com/questions/9847/linux-utility-for-finding-the-largest-files-directories>
 * <http://cyberciti.biz/faq/how-do-i-find-the-largest-filesdirectories-on-a-linuxunixbsd-filesystem/>
 * <http://cyberciti.biz/faq/find-large-files-linux/>
 
-    du -hx ./ | grep -E ^[0-9.,]+[MG]
+    du --all /var/log | sort --numeric-sort --reverse--reverse | head --lines=20
+    du --human-readable --one-file-system ./ | grep --extended-regexp ^[0-9.,]+[MG]
     find  -ctime +30 -daystart -type d \
       | xargs du -b 2>/dev/null \
       | awk '{total += $1; print $0} END{print total}'
@@ -58,9 +57,7 @@ mkfs.vfat -F 32 /dev/sdg1
 
     ls -l /dev/disk/by-uuid | grep sda1
 
-## dd
-
-### Copy partition
+## dd copy partition
 
 * <https://wiki.archlinux.org/index.php/Disk_cloning>
 * <http://askubuntu.com/questions/173907/when-cloning-ext4-partition-with-the-dd-command-to-a-bigger-partition-free-spa#173968>
@@ -68,29 +65,29 @@ mkfs.vfat -F 32 /dev/sdg1
 
     dd if=/dev/your-source1 of=/dev/your-destination1 bs=512 conv=sync
 
-#### Free free space
+## dd free free space
 
     resize2fs /dev/sda99
 
-### Create ISO
+## dd create ISO
 
 Copy from cd-rom disc to ISO image
 
     dd if=/dev/cdrom of=myimage.iso
 
-### Create usb
+## dd create usb
 
 Copy ISO image to bootable usb
 
     dd if=path/to/your.iso of=/dev/your-usb
 
-### Benchmark
+## dd benchmark
 
 <https://haydenjames.io/web-host-doesnt-want-read-benchmark-vps>
 
     dd if=/dev/zero of=/tmp/foobar bs=1M count=1024 conv=fdatasync
 
-### Other
+## dd other
 
     dd if=/dev/sdb of=mybackup.img bs=130M count=1
     dd if=bootldr.rom of=/dev/sdb
@@ -105,18 +102,14 @@ Copy ISO image to bootable usb
     blkid
     mount /dev/sr0 path/to/mnt
 
-## Duplicate files
-
-Find duplicate files
-
-### fdupes
+## fdupes find duplicate files
 
 <https://github.com/adrianlopezroche/fdupes>,
 <https://unix.stackexchange.com/questions/71176/find-duplicate-files#71178>
 
     fdupes --recurse .
 
-### fslint
+## fslint find duplicate files
 
 <https://unix.stackexchange.com/questions/71176/find-duplicate-files#71201>
 

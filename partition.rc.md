@@ -4,8 +4,8 @@
 
 List all partitions
 
-    fdisk -l
     parted -l
+    fdisk -l
 
 ## UUIDs and labels
 

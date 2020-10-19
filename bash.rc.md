@@ -24,6 +24,14 @@ Escape single quotes within single quotes
     echo 'Here'"'"'s my test...'
     echo 'Here'\''s my test...'
 
+## Iterate over strings
+
+```bash
+$ for s in World1 World2 ; do echo $ "Hello, $s!" ; done
+Hello, World1!
+Hello, World2!
+```
+
 ## Iterate over range
 
 <http://stackoverflow.com/questions/18460123/how-to-add-leading-zeros-for-for-loop-in-shell#18460742>

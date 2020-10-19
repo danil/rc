@@ -2,13 +2,11 @@
 
 Distributions like Ubuntu/Debian
 
-## Packages
-
-### List all
+## Packages list
 
     apt list --installed
 
-### List explicitly installed
+## Packages explicitly installed list
 
 List manually/explicitly installed packages
 
@@ -21,7 +19,7 @@ comm -23 <(aptitude search '~i !~M' -F '%p' | sed "s/ *$//" | sort -u) <(gzip -d
 
 `/etc/init.d` (https://wiki.debian.org/RunLevel)
 
-### List
+## Runlevels list
 
 List all services by run levels
 <https://askubuntu.com/questions/698993/disable-services-on-startup-in-ubuntu/699015#699015>
@@ -29,87 +27,33 @@ List all services by run levels
     service --status-all
     ls /etc/rc*.d
 
-### Status
+## Status on runlevel
 
     service your_daemon status
 
-### Start
+## Start on runlevel
 
     service your_daemon start
 
-### Stop
+## Stop on runlevel
 
     service your_daemon stop
 
-### Add
+## Add to runlevel
 
     update-rc.d your_daemon defaults
 
-### Remove
+## Remove from runlevel
 
     update-rc.d -f your_daemon remove
 
-## Users
-
-### Add
-
-    useradd -D
-    useradd --comment "Your user name" \
-            --user-group --groups your,groups,names \
-            --create-home --home-dir /path/to/home/your_user \
-            --shell /bin/bash your_user
-
-### Edit
-
-    usermod --comment "Your user name" \
-            --home /path/to/user/dir --move-home \
-            --user-group --groups your,groups,names --append \
-            --shell /bin/bash \
-            --gid your_user --login your_user your_user
-
-### Remove
-
-    deluser --remove-all-files --backup --backup-to path/to/backup your_user
-    userdel --remove your_user
-
-## Groups
-
-### List
-
-    groups your_user
-
-### Create
-
-    groupadd your_group
-
-### Edit
-
-    groupmod -n new_group_name your_group
-
-### Remove
-
-    groupdel your_group
-    delgroup --only-if-empty your_group
-
-### Add to group
-
-    gpasswd --add your_user your_group #and then `newgrp`
-
-### Other
-
-    grpck
-
-## Passwords
-
-### Set
+## Password set
 
     passwd your-user-name
 
-### Delete
+## Password delete
 
     passwd --delete your-user-name
-
-## dpkg-query
 
 ### List files from package
 
@@ -134,3 +78,7 @@ Change timezone
     echo "%superusers ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/001_superusers
     chmod 0440 /etc/sudoers.d/001_superusers
     gpasswd --add your_user superusers
+
+## Create bootable USB
+
+Install `usb-creator-gtk` or `mkusb-nox` (https://launchpad.net/~mkusb/+archive/ubuntu/ppa)

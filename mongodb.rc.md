@@ -63,89 +63,105 @@ Get current db statistics
 
 ## Collection create
 
-    db.createCollection("your_collection")
-    mongo your_db_name --eval="db.createCollection('your_collection')"
+    db.createCollection("yourCollName")
+    mongo your_db_name --eval='db.createCollection("yourCollName');'
 
 ## Collection help/list available commands
 
-    mongo your_db_name --eval='printjson(db.your_collection.help());'
+    mongo your_db_name --eval='printjson(db.yourCollName.help());'
 
 ## Collection stats/count documents
 
-    mongo your_db_name --eval='printjson(db.your_collection.count());'
+    mongo your_db_name --eval='printjson(db.yourCollName.count({yourFldName: {$gt: 42}}));'
 
 ## Collection stats/count documents
 
-    mongo your_db_name --eval='printjson(db.your_collection.stats());'
+    mongo your_db_name --eval='printjson(db.yourCollName.stats());'
 
 ## Collection drop/remove
 
-    mongo your_db_name --eval='printjson(db.your_collection.drop());'
-    mongo your_db_name --eval='printjson(db.your_collection.remove());'
+    mongo your_db_name --eval='printjson(db.yourCollName.drop());'
+    mongo your_db_name --eval='printjson(db.yourCollName.remove());'
 
 ## Insert into collection
 
 Insert into collection
 
-    db.your_collection.insert({"foo": "bar"}));
+    db.yourCollName.insert({"foo": "bar"});
 
 ## Insert raw string into collection
 
-    db.your_collection.insert(JSON.parse("{\"foo\": \"bar\"}")));
+    db.yourCollName.insert(JSON.parse("{\"foo\": \"bar\"}"));
 
 ## Find in collection
 
-    db.your_collection.find({"_id": ObjectId("123456789012345678901234")}));
-    printjson(db.your_collection.find({"foo": {$eq: "bar"}}));
+    db.yourCollName.find({"_id": ObjectId("123456789012345678901234")});
+    db.yourCollName.find({"foo": {$eq: "bar"}});
 
 ## Find highest value in collection
 
 Find greatest value
 
-    db.your_collection.find().sort({yourPropertyName:-1}).limit(1));
+    db.yourCollName.find().sort({yourFldName:-1}).limit(1);
 
 ## Find lowest value in collection
 
 Find lowest value
 
-    db.your_collection.find().sort({yourPropertyName:1}).limit(1));
+    db.yourCollName.find().sort({yourFldName:1}).limit(1);
+
+## Find and paginate
+
+    db.yourCollName.find().limit(1).skip(1);
+
+## Find and select specific fields
+
+    db.yourCollName.find({}, {_id: 0, yourFldName: 1});
+
+## Sort ascending
+
+    db.yourCollName.find().sort({yourFldName: 1});
+
+## Sort descending
+
+    db.yourCollName.find().sort({yourFldName: -1});
 
 ## List latest records in collection
 
 List 3 last (tail) records
 
-    db.your_collection.find().sort({$natural:-1}).limit(3));
+    db.yourCollName.find().sort({$natural:-1}).limit(3);
 
 ## List oldest records in collection
 
 List 3 last (tail) records
 
-    printjson(db.your_collection.find().sort({$natural:-1}).limit(3).toArray());
+    db.yourCollName.find().sort({$natural:-1}).limit(3).toArray();
 
 ## Update/overwrite whole object
 
-    db.your_collection.update({_id: ObjectId("42")}, {foo: "bar"}));
+    db.yourCollName.update({_id: ObjectId("42")}, {foo: "bar"});
 
 ## Update individual field
 
-    db.your_collection.update({_id: ObjectId("42")}, {$set: {foo: 42}}));
+    db.yourCollName.update({_id: ObjectId("42")}, {$set: {foo: 42}});
 
 ## Upsert
 
 Insert object with id or update/increment individual field
 
-    db.your_collection.update({_id: ObjectId("42")}, {$inc: {count: 1}}, true));
+    db.yourCollName.update({_id: ObjectId("42")}, {$inc: {yourFldName: 1}}, true);
 
 ## Update batch
 
-    db.your_collection.update({}, {$set: {foo: 42}}, false, true));
+    db.yourCollName.update({}, {$set: {foo: 42}}, false, true);
 
 ## Strict JSON
 
 Print JSON in strict mode compatible with [JSON RFC](http://www.json.org)
 
-    mongo your_db_name --eval='JSON.stringify(db.your_collection.find().sort({$natural:-1}).limit(3).toArray(), null, 2);'
-    mongoexport --db your_db_name --collection your_collection --jsonArray
+    mongo your_db_name --eval='JSON.stringify(db.yourCollName.find().sort({$natural:-1}).limit(3).toArray(), null, 2);'
+    mongoexport --db your_db_name --collection yourCollName --jsonArray
 
 ## GUI
 

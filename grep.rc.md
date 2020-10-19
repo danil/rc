@@ -11,6 +11,10 @@
 
     grep --invert-match foo.*bar
 
+## Recursive
+
+    grep --recursive
+
 ## pcregrep
 
 * Multiple lines matching

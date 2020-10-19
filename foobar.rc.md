@@ -329,3 +329,4 @@ Test configs
     tput cols && tput lines
     chsh -s /bin/zsh
     echo $?
+    ldd $(which i3status)
