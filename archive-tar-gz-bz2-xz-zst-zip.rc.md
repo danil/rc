@@ -115,7 +115,7 @@ read -ra arr <<<"your array of directories" && \
 
 ## unzip decompress to directory
 
-    unzip foo.zip -d path/to/directory
+    unzip foo.zip -d path/to/dir
 
 ## zip decompress
 

@@ -53,7 +53,7 @@ Get bucket disk size usage
 
 ### Files list
 
-    aws s3 ls --recursive --human-readable --summarize bucket/path/to/directory
+    aws s3 ls --recursive --human-readable --summarize bucket/path/to/dir
 
 ### Cat file
 
@@ -66,11 +66,11 @@ Get bucket disk size usage
 ### Upload public files
 
     aws s3 cp --recursive --region your-region --acl public-read
-              path/to/directory s3://your-bucket
+              path/to/dir s3://your-bucket
 
 ### Upload with symlinks
 
-    aws s3 cp --recursive --follow-symlinks path/to/directory s3://your-bucket
+    aws s3 cp --recursive --follow-symlinks path/to/dir s3://your-bucket
 
 ### Remove
 
@@ -80,7 +80,7 @@ Get bucket disk size usage
 
 #### Directory
 
-    aws s3 rm --recursive s3://your-bucket/path/to/directory
+    aws s3 rm --recursive s3://your-bucket/path/to/dir
 
 ### Get region
 

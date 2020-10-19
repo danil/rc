@@ -10,7 +10,7 @@
 
 Installing to custom directory
 
-    gem unpack your_gem_name --target path/to/directory
+    gem unpack your_gem_name --target path/to/dir
 
 ## Uninstall
 
