@@ -1,11 +1,9 @@
 # nginx
 
-## Config
-
-### reload
+## Config reload
 
     kill -HUP `cat /usr/local/nginx/logs/nginx.pid`
 
-### Test
+## Config test
 
     nginx -t -c path/to/nginx.conf
