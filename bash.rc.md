@@ -27,7 +27,7 @@ Escape single quotes within single quotes
 ## Iterate over strings
 
 ```bash
-$ for s in World1 World2 ; do echo $ "Hello, $s!" ; done
+$ for s in World1 World2 ; do echo "Hello, $s!" ; done
 Hello, World1!
 Hello, World2!
 ```
