@@ -18,3 +18,7 @@ https://wiki.archlinux.org/index.php/Certbot#Installation
 https://wiki.archlinux.org/index.php/Certbot#Nginx
 
     certbot --nginx
+
+## Let's Encrypt certbot configure automatic renewal by systemd
+
+https://wiki.archlinux.org/index.php/Certbot#systemd
