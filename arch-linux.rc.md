@@ -106,7 +106,7 @@ Arch User Repository <https://wiki.archlinux.org/index.php/Arch_User_Repository>
 
     ip address show
 
-## Custom local repository
+## Add package to custom repository
 
 https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Custom_local_repository
 
