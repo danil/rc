@@ -105,3 +105,33 @@ Arch User Repository <https://wiki.archlinux.org/index.php/Arch_User_Repository>
 <https://wiki.archlinux.org/index.php/Network_configuration#IP_addresses>
 
     ip address show
+
+## Custom local repository
+
+https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Custom_local_repository
+
+    curl --output your_prog.tar.gz  https://aur.archlinux.org/cgit/aur.git/snapshot/your_prog.tar.gz
+    tar --extract --gzip --file your_prog.tar.gz
+    cd your_prog
+    makepkg
+    mv your_prog.pkg.tar.zst /path/to/x86_64/
+    repo-add /path/to/x86_64/your-name.db.tar.gz /path/to/x86_64/*.pkg.tar.zst
+
+```bash
+cat >> /etc/pacman.conf
+[your-name]
+SigLevel = Optional TrustAll
+Server = http://arch.your-name.tld/x86_64
+^D
+```
+
+```bash
+cat >> /etc/nginx/nginx.conf
+server {
+    listen       80;
+    server_name  arch.your-name.tld;
+    root         /path/to/x86_64;
+    autoindex    on;
+}
+^D
+```
