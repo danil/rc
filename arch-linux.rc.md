@@ -26,9 +26,13 @@
 
     pacman --remove --recursive --unneeded $(comm -23 <(pacman --query --quiet | sort) <(sort path/to/pkg/list))
 
-## Packages sync/check/update
+## Packages update
 
-    pacman --sync --refresh --sysupgrade
+    pacman --sync --refresh
+
+## Packages upgrade
+
+    pacman --sync --sysupgrade
 
 ## Package search
 
