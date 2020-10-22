@@ -17,6 +17,8 @@ Linux kernel config options: <https://github.com/systemd/systemd/blob/master/REA
 
 ## Time/ntp get status
 
+https://wiki.archlinux.org/index.php/Systemd-timesyncd#Usage
+
     timedatectl
 
 ## Time enable ntp
@@ -54,6 +56,10 @@ Start/stop/restart/reload
     systemctl stop your_unit_name
     systemctl restart your_unit_name
     systemctl reload your_unit_name
+
+## Autorun units list
+
+    systemctl list-unit-files | grep enabled
 
 ## Unit autorun enable/disable
 
