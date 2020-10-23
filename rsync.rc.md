@@ -60,7 +60,6 @@ Copy directory exclude directory
           --archive \
           path/to/dir1 \
           path/to/dir2 \
-          path/to/dir3 \
           your_user@your.tld:~/git/vendor/ 
 
 ## Other
