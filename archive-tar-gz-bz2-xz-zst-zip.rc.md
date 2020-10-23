@@ -49,6 +49,13 @@ read -ra arr <<<"your array of directories" && \
     done
 ```
 
+## tar pipe backup over ssh
+
+    tar --create --to-stdout --file - paht/to/dir | \
+        zstd -3 --threads=0 --force --compress --stdout | \
+        ssh danil@h20.kutkevich.org \
+            tar --extract --zstd --file - --directory path/to/dir
+
 ## gzip decompress
 
     gzip --decompress --keep path/to/your.file.gz
