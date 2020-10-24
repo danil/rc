@@ -37,10 +37,6 @@ s = [[My friend said: "What's up?"]]
 
 [Date with time zone]: http://lua-users.org/wiki/TimeZone
 
-## LuaRocks install
-
-    luarocks install kepler-xavante KEPLER_WEB=/var/www/kepler
-
 ## LuaRocks search
 
     luarocks search your_rock
@@ -48,3 +44,15 @@ s = [[My friend said: "What's up?"]]
 ## LuaRocks lists installed
 
     luarocks list your_rock
+
+## LuaRocks install
+
+    luarocks install your_rock
+
+## LuaRocks install local
+
+    luarocks install --local your_rock
+
+## LuaRocks install
+
+    luarocks remove your_rock
