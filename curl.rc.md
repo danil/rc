@@ -43,7 +43,7 @@
 
 ## Output to file
 
-    curl --output=file.tar.gz https://your.tld/path/to/file.tar.gz
+    curl --output file.tar.gz https://your.tld/path/to/file.tar.gz
 
 ## Accept header
 
