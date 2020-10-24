@@ -43,8 +43,8 @@ s = [[My friend said: "What's up?"]]
 
 ## LuaRocks search
 
-    luarocks search wsapi
+    luarocks search your_rock
 
 ## LuaRocks lists installed
 
-    luarocks list wsapi
+    luarocks list your_rock
