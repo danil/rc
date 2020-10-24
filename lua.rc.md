@@ -3,9 +3,7 @@
     lua -lluarocks.require
     require "luarocks.require"
 
-## Debugging
-
-### Pretty print
+## Pretty print/debugging
 
 <https://stackoverflow.com/questions/9168058/how-to-dump-a-table-to-console#9168316>
 
@@ -39,16 +37,14 @@ s = [[My friend said: "What's up?"]]
 
 [Date with time zone]: http://lua-users.org/wiki/TimeZone
 
-## LuaRocks
-
-### Install
+## LuaRocks install
 
     luarocks install kepler-xavante KEPLER_WEB=/var/www/kepler
 
-### Search
+## LuaRocks search
 
     luarocks search wsapi
 
-### Lists installed
+## LuaRocks lists installed
 
     luarocks list wsapi
