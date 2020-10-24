@@ -43,8 +43,7 @@
 
 ## Output to file
 
-    curl --output=top-1m.csv.zip
-         http://s3.amazonaws.com/alexa-static/top-1m.csv.zip
+    curl --output=file.tar.gz https://your.tld/path/to/file.tar.gz
 
 ## Accept header
 
