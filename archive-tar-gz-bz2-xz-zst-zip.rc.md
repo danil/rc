@@ -53,7 +53,7 @@ read -ra arr <<<"your array of directories" && \
 
     tar --create --to-stdout --file - paht/to/dir | \
         zstd -3 --threads=0 --force --compress --stdout | \
-        ssh danil@h20.kutkevich.org \
+        ssh you@your.tld \
             tar --extract --zstd --file - --directory path/to/dir
 
 ## gzip decompress
