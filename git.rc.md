@@ -701,11 +701,11 @@ Binary Search <http://progit.org/book/ru/ch6-5.html>.
     git ls-tree -r HEAD | grep fetcher_log
     git ls-tree -r --name-only master |grep -i public/stylesheets/.*doc.*css
 
-## Remove
+## Remove/delete
 
     git rm file1 \*.md
 
-### Remove from git, working tree files will be left alone
+### Remove/delete from git, working tree files will be left alone
 
     git rm --cached .config/gajim/config
 
