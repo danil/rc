@@ -118,7 +118,7 @@ read -ra arr <<<"your array of directories" && \
 ## zstd compress tarball
 
     tar --create --zstd --file path/to/your.file.tar.zst path/to/dir
-    tar --create --file - path/to/dir | zstd -10 --threads=0 --force --compress --stdout > path/to/your.file.tar.gz
+    tar --create --file - path/to/dir | zstd -10 --threads=0 --force --compress --stdout > path/to/your.file.tar.zst
 
 ## unzip decompress to directory
 
