@@ -7,4 +7,4 @@
 <http://linuxcommando.blogspot.com/2008/05/compare-directories-using-diff-in-linux.html>
 
     diff --recursive --brief ~/dir1 ~/dir2| grep Only
-    colordiff --recursive prealpha.kutkevich-org/ alpha.kutkevich-org/
+    colordiff --recursive path/to/dir1 path/to/dir2

@@ -6,7 +6,7 @@ emerge --config =dev-db/postgresql-11.3
 
 ## psql
 
-    psql --host=kutkevich.org.ru --username=your_role
+    psql --host=your.tld --username=your_role
     psql --dbname=your_db
     psql dbname
     psql --echo-hidden
