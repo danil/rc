@@ -1,12 +1,12 @@
 # cp
 
-## Preserving attributes
+## Backup/preserving attributes
 
 Preserve the specified attributes such as directory an file mode,
 ownership, timestamps,
 if possible additional attributes: context, links, xattr, all.
 
-    cp --archive ~/var/www/ ~/tmp/
+    cp --archive path/to/src/dir1 path/to/src/dir2 path/to/dest/dir
 
 ## Preserving directory path
 
