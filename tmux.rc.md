@@ -13,6 +13,10 @@ https://robots.thoughtbot.com/a-tmux-crash-course
 * copy region `M-w`
 * past selection `prefix+]`
 
+## Yank
+
+Copying to operation system clipboard https://github.com/tmux-plugins/tmux-yank
+
 ## Window
 
 `split-window`
