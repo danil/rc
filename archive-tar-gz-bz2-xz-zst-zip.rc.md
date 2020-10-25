@@ -49,7 +49,7 @@ read -ra arr <<<"your array of directories" && \
     done
 ```
 
-## tar pipe backup over ssh
+## backup by tar pipe over ssh
 
     tar --create --to-stdout --file - paht/to/dir | \
         zstd -3 --threads=0 --force --compress --stdout | \
