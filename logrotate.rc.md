@@ -1,5 +1,11 @@
 # logrotate
 
-Test configs https://wiki.archlinux.org/index.php/logrotate#Configuration
+https://wiki.archlinux.org/index.php/logrotate#Configuration
 
-    logrotate --debug --force /etc/logrotate.conf
+## Run
+
+    logrotate --verbose /etc/logrotate.conf
+
+## Test configs
+
+    logrotate --debug /etc/logrotate.conf
