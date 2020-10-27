@@ -7,51 +7,35 @@ Statistics report
     exiwhat
     eximstats /var/log/exim/exim_main.log
 
-## Queue
-
-Messages queue 
-
-### Count
-
-Messages count
+## Queue messages count
 
     mailq
     exim -bpc
 
-### List
-
-Messages list
+## Queue messages list
 
     exim -bp
     exim -bp | exiqsumm
 
-### Delete
-
-Remove messages from queue
-
-### By id
-
-Remove one email message by id from queue
+## Delete/remove on message from queue by id
 
     exim -Mrm your_message_id_to_delete
 
-### By sender
+## Delete/remove messages from queue by sender
 
 Remove all email messages by specific sender address from mail queue
 
     exiqgrep -i -f sender_email | xargs exim -Mrm
 
-### Remove all
+## Delete/remove all messages from queue
 
     exim -bp | exiqgrep -i | xargs exim -Mrm
 
-## Test address
-
-### Route
+## Test address route
 
     exim -bt your.mail@your.tld
 
-### Rewrite rules
+## Test address rewrite rules
 
     exim -brw your.mail@your.tld
 
@@ -67,9 +51,7 @@ Remove all email messages by specific sender address from mail queue
 
     exim -Mvb <message_id>
 
-## Retry
-
-### Force
+## Retry force
 
 Force queue resend
 
