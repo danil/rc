@@ -1,16 +1,16 @@
 # Wget
 
-    wget ftp://anonymous@domain.tld/path/to/file.tar
+    wget ftp://anonymous@your.tld/path/to/file.tar
     wget --continue -t inf --waitretry=30 -b --retry-connrefused \
-         [-O output_file ] "ftp://domain.tld/path/to/file.tar"
+         [-O output_file ] "ftp://your.tld/path/to/file.tar"
     wget --page-requisites \
          --convert-links \
          --reject "robots.txt" \
-         http://domain.tld/path/to/file.tar
+         http://your.tld/path/to/file.tar
 
 ## Resume download
 
-    wget --continue http://domain.tld/path/to/file.tar
+    wget --continue http://your.tld/path/to/file.tar
 
 ## Recursive
 

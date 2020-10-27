@@ -7,13 +7,13 @@ nc110 <http://nc110.sourceforge.net>
 ### http 80
 
 ```
-printf "GET / HTTP/1.0\r\nHost: your.domain.tld\r\n\r\n" | nc your.domain.tld 443
+printf "GET / HTTP/1.0\r\nHost: your.tld\r\n\r\n" | nc your.tld 443
 ```
 
 ### https 443
 
 ```
-printf "GET / HTTP/1.0\r\nHost: your.domain.tld\r\n\r\n" | nc your.domain.tld 443
+printf "GET / HTTP/1.0\r\nHost: your.tld\r\n\r\n" | nc your.tld 443
 ```
 
 ## Other
