@@ -72,9 +72,14 @@ Useless packages, that are not associated with explicitly installed packages
 
 <https://github.com/UndeadKernel/pacfiles-mode>
 
-## File belong to package
+## List files belongs to package
 
-    pkgfile your-pkg-name
+https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Listing_files_owned_by_a_package_with_size
+
+    pacman --query --list --quiet mailutils \
+           | grep --invert-match '/$' \
+           | xargs --no-run-if-empty du --human-readable \
+           | sort --human-numeric-sort
 
 ## AUR PKGBUILD
 
