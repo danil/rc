@@ -4,11 +4,13 @@
 
 <http://debian-administration.org/article/171/Send_an_HTML_file_as_email_from_the_command_line>
 
-```sh
-echo -e "Subject: Your subject\n\nYour mail body\n" \
-    | /usr/sbin/sendmail your.name@your.tld
-echo "Your mail body" | mail --subject="Your subject" your.name@your.tld
-```
+    echo -e "Subject: Your subject\n\nYour mail body\n" \
+         | /usr/sbin/sendmail your.name@your.tld
+
+    echo -e "Your body" | mail --subject="Your subject" your.name@your.tld
+
+    printf %b "From: your.name+1@your.tld\nTo: your.name+2@your.tld\nSubject: Your subject\n\nYour body" | \
+           /usr/sbin/sendmail -f "your.name+1@your.tld" "your.name+2@your.tld"
 
 ### HTML
 
