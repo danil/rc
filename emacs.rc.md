@@ -13,11 +13,11 @@ https://www.gnu.org/software/emacs/history.html
 
     ./configure --prefix=$HOME && make --jobs=2 && make install
 
-## Other
+## (write-file)
 
-`C-x C-w` Save the current buffer with a specified file name (write-file)  
-`C-x C-v` Find alternate file  
-`C-x i` Insert file at cursor position
+Save the current buffer with a specified file name (write-file)  
+
+    C-x C-w
 
 ## Delete blank lines
 
@@ -26,15 +26,6 @@ https://www.gnu.org/software/emacs/history.html
 <http://emacswiki.org/EmacsNiftyTricks#toc11>.
 
 `C-x C-o` Delete blank lines around the current line (delete-blank-lines)
-
-## 9.2 Editing in the Minibuffer
-
-<http://gnu.org/software/emacs/manual/html_node/emacs/Minibuffer-Edit.html>.
-
-    C-o
-    C-q C-j
-        Insert a newline in the minibuffer. (The newline character is
-        really the ASCII character control-J.)
 
 ## Search/Replace with regular expressions
 
@@ -82,14 +73,7 @@ In Ibuffer mode <http://emacswiki.org/emacs/IbufferMode>,
 
 [Window commands]: http://gnu.org/software/emacs/manual/html_node/emacs/Windows.html
 
-## Frame commands
-
-    C-x 5 1
-        Delete all frames except the selected one.
-    C-x 5 f
-        Find file in other frame.
-
-## 27.11 Specifying a Coding System for File Text
+## Specifying a coding system for file text
 
 Charset encoding.
 
@@ -104,105 +88,16 @@ Charset encoding.
         Use coding system coding for keyboard input
         (set-keyboard-coding-system).
 
-## 23.13 Accessing Compressed Files
-
-<http://gnu.org/software/emacs/manual/html_node/emacs/Compressed-Files.html>
-
-    M-x auto-compression-mode
-
 ## Dired (DIRectory EDitor)
 
-<http://gnu.org/software/emacs/manual/html_node/emacs/Dired.html>.
-
-    M-x speedbar
-        Starts up a separate window with a directory view.
-    G
-        Change group permissions (chgrp).
-    v
-        View file content.
-    Z
-        Compress file.
-    m
-    * m
-        Mark the current file with `*' (dired-mark). With a numeric
-        argument n, mark the next n files starting with the current
-        file. (If n is negative, mark the previous −n files.)
-    u
-    * u
-        Remove any mark on this line (dired-unmark).
-    ~
-        Mark backup files (name~ files) for deletion.
-    #
-        Mark auto-save files (#name#) for deletion.
-    * /
-        Mark with `*' all files which are directories, except for
-        . and .. (dired-mark-directories). With a numeric argument,
-        unmark all those files.
-    C-u * /
-        Removes that mark again.
-    * s
-        Mark all the files in the current subdirectory, aside from `.`
-        and `..` (dired-mark-subdir-files).
     * !
-    U
          Remove all marks from all the files in this Dired buffer
          (`dired-unmark-all-marks').
-    M-<DEL>
-        Remove all marks that use the character markchar
-        (dired-unmark-all-files). The argument is a single character—do
-        not use <RET> to terminate it. See the description of the * c
-        command below, which lets you replace one mark character with
-        another.
-
-        With a numeric argument, this command queries about each marked
-        file, asking whether to remove its mark. You can answer y meaning
-        yes, n meaning no, or ! to remove the marks from the remaining
-        files without asking about them.
-    t
     * t
         Toggle all marks (dired-toggle-marks): files marked with `*'
         become unmarked, and unmarked files are marked with `*'. Files
         marked in any other way are not affected.
-    =
-        Compare this file.
-    M-=
-        Compare this file with it's backup file.
-
-    % m regexp <RET>
     * % regexp <RET>
-
-Mark (with `*`) all files whose names match the regular expression
-regexp (dired-mark-files-regexp). This command is like % d, except
-that it marks files with `*` instead of flagging with `D`.
-
-Only the non-directory part of the file name is used in
-matching. Use `^` and `$` to anchor matches. You can exclude
-subdirectories by temporarily hiding them (see Hiding Subdirectories).
-
-    C-u * % regexp <RET>
-
-Unmark by regexp
-
-    C-x u
-    C-_
-    C-/
-        Undo changes in the Dired buffer, such as adding or removing marks
-        (dired-undo). This command does not revert the actual file
-        operations, nor recover lost files! It just undoes changes in the
-        buffer itself.
-
-        In some cases, using this after commands that operate on files can
-        cause trouble. For example, after renaming one or more files,
-        dired-undo restores the original names in the Dired buffer, which
-        gets the Dired buffer out of sync with the actual contents of the
-        directory.
-    >
-        Changed to next dir.
-    <
-        Change to previous dir.
-    C-u s SWITCHES <RET>
-        Refresh the Dired buffer using SWITCHES as
-        dired-listing-switches.
 
 ### (find-dired)
 
@@ -225,80 +120,14 @@ Stop find-grep-dired
 
     C-c C-k
 
-## Operating on Files
-
-<http://gnu.org/software/emacs/manual/html_node/emacs/Operating-on-Files.html>.
-
-    A regexp <RET>
-        Search all the specified files for the regular expression regexp
-        (dired-do-search).
-        This command is a variant of tags-search. The search stops at the
-        first match it finds; use M-, to resume the search and find the
-        next match. See Tags Search.
-    Q regexp <RET> to <RET>
-        Perform query-replace-regexp on each of the specified files,
-        replacing matches for regexp with the string to
-        (dired-do-query-replace-regexp).
-        This command is a variant of tags-query-replace. If you exit the
-        query replace loop, you can use M-, to resume the scan and replace
-        more matches. See Tags Search.
-
-## 37.8 Shell Commands in Dired
-
-### dired-do-shell-command
+## (dired-do-shell-command)
 
 Runs tar on the entire list of file names, putting them into one tar
 file foo.tar:
 
     ! tar cf foo.tar * <RET>
 
-## Buffer List
-
-    C-d
-        Request to delete and move up afterwards instead of down.
-    s
-        Request to save the buffer. The request shows as an `S' on the
-        line. Requested saves take place when you type the x command. You
-        may request both saving and deletion for the same buffer.
-    o
-        Immediately select this line's buffer in another window as if by
-        C-x 4 b, leaving `*Buffer List*' visible.
-    C-o
-        Immediately display this line's buffer in another window, but
-        don't select the window.
-    b
-        Bury the buffer listed on this line.
-
-## 31.15. Shell
-
-    M-x shell
-        Start a shell in window *shell*.
-    C-c C-u
-        Kill all text pending at end of buffer to be sent as input
-        (comint-kill-input).
-    C-c C-w
-        Kill a word before point (backward-kill-word).
-    C-c C-c
-        Stop running job.
-    C-d
-        Delete char forward.
-    C-c C-d
-        Send EOF.
-    C-c C-z
-        Suspend job (C-z under unix).
-    M-p
-        Fetch the next earlier old shell command.
-    M-n
-        Fetch the next later old shell command.
-    M-r regexp <RET>
-    M-s regexp <RET>
-        Search backwards or forwards for old shell commands that match
-        regexp.
-
-### (shell-command-on-region)
-
-Run the shell command line cmd with region contents as input;
-optionally replace the region with the output.
+## (shell-command-on-region)
 
     M-| cmd RET
 
