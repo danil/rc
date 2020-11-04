@@ -572,49 +572,15 @@ Set `SQL` in buffer with sql query:
 
     sql-send-region
 
-## Other
-
-    C-x ;
-    C-x l
-    M-x toggle-truncate-lines
-    M-x font-lock-mode
-        Highlights (or “fontifies”) the buffer contents according to the
-        syntax of the text you are editing.
-    M-x eshell
-    M-x describe-bindings
-        View all the Buffer-menu key bindings.
-    M-x describe-key
-    M-x list-colors-display
-    M-x nxml-mode
-        Mode for editing XML documents.
-    M-x picture-mode
-        Draw ascii art.
-    M-x calc
-    M-x calendar
-    M-x set-language-environment
-    M-x save-some-buffers
-        Display each unsaved file and ask if you want it saved.
-    M-x kill-emacs
-        To kill the Emacs process, when Emacs is started as a daemon.
-    C-x h
-        (mark-whole-buffer)
-    M-x load-file RET ~/.emacs RET
-        Execute a file of Emacs Lisp code (reload .emacs without
-        restarting for example) ([load-file][])
-    emacs --daemon --socket-name /tmp/emacs-foo --load ~/.emacs.d/init.el
-
 [load-file]: http://gnu.org/software/emacs/manual/html_node/emacs/Lisp-Libraries.html#index-load_002dfile-2360
 
-### (normal-mode)
+## (normal-mode)
 
 Choose the major mode for this buffer automatically
 
-### (toggle-read-only)
+## (toggle-read-only)
 
     C-x C-q
-
-Toggle read-only status of buffer
-<http://gnu.org/software/emacs/manual/html_node/emacs/Misc-Buffer.html>.
 
 ## Projectile
 
