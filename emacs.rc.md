@@ -582,6 +582,4 @@ Choose the major mode for this buffer automatically
 
     C-x C-q
 
-## Projectile
-
-`(projectile-invalidate-cache)`
+## (projectile-invalidate-cache)
