@@ -9,7 +9,7 @@
 
 ## Cargo install package
 
-    cargo install --force --version=2.1.39 your-pkg-name
+    cargo install --force your-pkg-name
 
 ## Cargo install specific version
 
