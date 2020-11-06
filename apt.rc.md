@@ -48,7 +48,7 @@ sudo dpkg -i ../your-pkg-name_1.2.3-1+19700101_amd64.deb
 
 List of depended packages
 
-    apt-cache rdepends --installed your_package_name
+    apt-cache rdepends --installed your_pkg_name
 
 ## List all versions of the package
 

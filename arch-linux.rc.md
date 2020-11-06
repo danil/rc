@@ -92,7 +92,7 @@ Arch User Repository <https://wiki.archlinux.org/index.php/Arch_User_Repository>
 
 ## AUR PKGBUILD install
 
-    pacman --upgrade your-pkg-name-1.2-3-any.pkg.tar.xz
+    pacman --upgrade your-1.2-3-any.pkg.tar.xz
 
 ## Set hostname
 
@@ -120,7 +120,7 @@ https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Custom_local_reposit
     cd your_prog
     makepkg
     mv your_prog.pkg.tar.zst /path/to/x86_64/
-    repo-add /path/to/x86_64/your-name.db.tar.gz /path/to/x86_64/*.pkg.tar.zst
+    repo-add /path/to/x86_64/your-name.db.tar.zst /path/to/x86_64/*.pkg.tar.zst
 
 ```bash
 cat >> /etc/pacman.conf
@@ -140,3 +140,7 @@ server {
 }
 ^D
 ```
+
+## Remove/delete package from custom repository
+
+    repo-remove /path/to/x86_64/your-name.db.tar.zst your-1.2-3-any.pkg.tar.xz

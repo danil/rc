@@ -18,17 +18,17 @@ Get test dependencies
 
 ## Package update
 
-    go get -u your.tld/path/to/package
+    go get -u your.tld/path/to/pkg
 
 ## Package dependencies list
 
 List package dependencies
 
-    go list -f '{{ .Deps }}' your.tld/path/to/package
+    go list -f '{{ .Deps }}' your.tld/path/to/pkg
 
 ## Package install
 
-    go install your.tld/path/to/package
+    go install your.tld/path/to/pkg
 
 ## Packages list
 
@@ -44,7 +44,7 @@ List installed packages
 
 Run test suite
 
-    go test -v your.tld/path/to/package
+    go test -v your.tld/path/to/pkg
     go test -v ./...
 
 ## Test without cache
@@ -80,7 +80,7 @@ Find function definition by package/function name
 
 ```sh
 go get github.com/rogpeppe/godef
-godef -f path/to/file.go 'yourpackagename.YourFunctionName'
+godef -f path/to/file.go 'yourpkgname.YourFunctionName'
 ```
 
 ## Build

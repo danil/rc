@@ -1,10 +1,25 @@
-# Bash
+# Bash rc
 
 ## Path related to script
 
 File path related to script
 
     ls "${BASH_SOURCE%/*}"/path/to/file
+
+## Condition by one line
+
+    [ "$your_var" = "foo" ] && echo 1 || echo 0
+    if [ "$your_var" = "foo" ]; then echo 1; else echo 0; fi
+
+## Condition
+
+```bash
+if [ "$your_var" = "foo" ]; then
+    echo 1
+else
+    echo 0
+fi
+```
 
 ## Temporary file
 
@@ -50,3 +65,7 @@ Hello, World010!
 export USER=$(whoami) && echo $(eval echo ~$USER)
 echo $(eval echo ~$(whoami))
 ```
+
+## UUID generation
+
+    cat /proc/sys/kernel/random/uuid

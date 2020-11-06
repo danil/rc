@@ -60,7 +60,7 @@ List all services by run levels
 List files from installed package
 <https://askubuntu.com/questions/32507/how-do-i-get-a-list-of-installed-files-from-a-package#32509>
 
-    dpkg-query --listfiles your_package_name
+    dpkg-query --listfiles your_pkg_name
 
 ## Timezone
 

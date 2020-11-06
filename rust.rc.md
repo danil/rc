@@ -1,17 +1,32 @@
-# Rust
+# Rust rc
 
 ## Install
 
-<http://rustup.rs>
+`curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh` [1][][2][]
 
-## Packages
+[1]: http://rustup.rs
+[2]: https://www.rust-lang.org/tools/install
 
-### Install
+## Cargo install package
 
-Install `Cargo.toml`
+    cargo install --force --version=2.1.39 your-pkg-name
+
+## Cargo install specific version
+
+    cargo install --force --version=1.2.3 your-pkg-name
+
+## `Cargo.toml` package build/install
 
     cargo build
 
-### Update
+## Cargo update/upgrade package
+
+    cargo install --force your-pkg-name
+
+## `Cargo.toml` package update/upgrade
 
     cargo update
+
+## Cargo uninstall package
+
+    cargo uninstall your_pkg_name

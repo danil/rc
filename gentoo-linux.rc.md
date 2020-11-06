@@ -39,7 +39,7 @@ Cloning the all partitions one by one and the all their content
 
 ## Emerge
 
-    MAKEOPTS="-j1" USE="-mmx" emerge --ask --oneshot your-package/name
+    MAKEOPTS="-j1" USE="-mmx" emerge --ask --oneshot your-pkg/name
     emerge --verbose --search emacs
     emerge --prune gentoo-sources
     emerge --verbose --ask --deep --noreplace =gentoo-sources-2.6.30-r4
@@ -80,13 +80,13 @@ Recompiling all packages on the system.
 
 ### Unmerge
 
-    emerge --oneshot --deep --depclean your-package/name
+    emerge --oneshot --deep --depclean your-pkg/name
 
 #### Temporary
 
 Remove/delete
 
-    emerge --oneshot --unmerge your-package/name
+    emerge --oneshot --unmerge your-pkg/name
 
 ### Ceanup all
 
@@ -111,7 +111,7 @@ List Gentoo profiles
     equery list nginx
     equery list "*" |wc -l
     equery files alsa-lib
-    equery depends your-package/name
+    equery depends your-pkg/name
     equery uses =emacs-22.3-r2 --all
 
 ### Files belong to package
@@ -124,10 +124,10 @@ same as:
 
 ### Packages depends on package
 
-List packages depends on package `your-package/name`
+List packages depends on package `your-pkg/name`
 <https://wiki.gentoo.org/wiki/Equery#Listing_all_packages_depending_on_a_package_with_depends_.28d.29>
 
-    equery depends your-package/name
+    equery depends your-pkg/name
 
 ## Portage-utils
 
@@ -228,7 +228,7 @@ twice) might be installed from overlay
 
 ### List packages in loop
 
-    read -ra arr <<<"you/first-package your/second-package" && for i in "${arr[@]}"; do eix "$i"; done
+    read -ra arr <<<"you/first-pkg your/second-pkg" && for i in "${arr[@]}"; do eix "$i"; done
 
 ## repoman
 

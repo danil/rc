@@ -8,16 +8,16 @@ Python packages management system
 
 ## Show version
 
-    pip show your-package-name
+    pip show your-pkg-name
 
 ## Install
 
     pip install --user git+git://your.tld/your/repository.git@stable-1.2.3
-    pip install --user "your_package_name>=1.2.3,<3.2.1"
+    pip install --user "your_pkg_name>=1.2.3,<3.2.1"
 
 ## Uninstall
 
-    pip uninstall your-package-name
+    pip uninstall your-pkg-name
 
 ## requirements.txt
 

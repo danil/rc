@@ -20,8 +20,8 @@ C package manager-ish <https://github.com/clibs/clib>
 
 Packages list <https://github.com/clibs/clib/wiki/Packages>
 
-    PREFIX=$HOME clib install your/package-name
+    PREFIX=$HOME clib install your/pkg-name
 
 ### Uninstall
 
-    PREFIX=$HOME clib-uninstall your/package-name
+    PREFIX=$HOME clib-uninstall your/pkg-name
