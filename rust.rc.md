@@ -2,7 +2,7 @@
 
 ## Install <sup>[1][] [2][]</sup>
 
-`curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 [1]: http://rustup.rs
 [2]: https://www.rust-lang.org/tools/install
