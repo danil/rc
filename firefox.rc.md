@@ -2,10 +2,6 @@
 
 ## Vertical tabs
 
-A-la side bar
-
-### Tab Center Redux
-
 * https://github.com/eoger/tabcenter-redux
 * https://addons.mozilla.org/en-GB/firefox/addon/tab-center-redux
 
