@@ -1,6 +1,6 @@
 # Rust rc
 
-## Install <sub><sup>[1][] [2][]</sup></sub>
+## Install <sup>[1][] [2][]</sup>
 
 `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 
