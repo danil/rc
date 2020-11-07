@@ -99,12 +99,17 @@ Copy ISO image to bootable usb
 * `diskonaut` terminal disk space navigator https://github.com/imsnif/diskonaut
 * `ncdu` show disk space usage, is an `baobab` and `gt5` replacement https://dev.yorhel.nl/ncdu
 
-## Duplicate file find
+## Find duplicate files
 
-1. `ddh` written in rust programming language https://github.com/darakian/ddh
-2. https://github.com/justinhj/justinhj-emacs-utils emacs dired
-3. http://justinsboringpage.blogspot.ru/2011/06/finding-duplicate-files-in-dired-buffer.html emacs dired
-4. https://www.emacswiki.org/emacs/RemoveDuplicateFiles emacs dired
+* `ddh` written in rust programming language https://github.com/darakian/ddh
+* `fclones` written in rust programming language https://github.com/pkolaczk/fclones
+* `fdupes` written in c programming language https://github.com/adrianlopezroche/fdupes
+* `jdupes` written in c programming language https://github.com/jbruchon/jdupes
+* `rdfind` written in c++ programming language https://github.com/pauldreik/rdfind
+* `rmlint` written in c programming language https://github.com/sahib/rmlint
+* https://github.com/justinhj/justinhj-emacs-utils emacs dired
+* http://justinsboringpage.blogspot.ru/2011/06/finding-duplicate-files-in-dired-buffer.html emacs dired
+* https://www.emacswiki.org/emacs/RemoveDuplicateFiles emacs dired
 
 ## Mount cdrom
 
