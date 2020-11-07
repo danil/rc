@@ -1,4 +1,4 @@
-# systemd
+# systemd rc
 
 ## Install requirements
 

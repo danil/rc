@@ -14,5 +14,5 @@
 ## Alternatives
 
 1. https://bitbucket.org/sshguard/sshguard, written on c (<https://sshguard.net>, <https://wiki.archlinux.org/index.php/Sshguard>)
-2. https://github.com/jaredfolkins/badactor written on c
-3. https://github.com/jvinet/knock written on c
+2. https://github.com/jaredfolkins/badactor written on golang
+3. https://github.com/jvinet/knock actually is not client block/jail, is an port knocking <https://en.wikipedia.org/wiki/Port_knocking>, written on c
