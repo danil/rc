@@ -56,9 +56,18 @@ Except `base` and `base-devel` packages
 ## Package search orphans
 
 Useless packages, that are not associated with explicitly installed packages
+<https://wiki.archlinux.org/index.php/System_maintenance#Check_for_orphans_and_dropped_packages>,
 <https://bbs.archlinux.org/viewtopic.php?pid=690008#p690008>.
 
     pacman --query --deps --unrequired --quiet
+
+## Cleaning the package cache
+
+https://wiki.archlinux.org/index.php/Pacman#Cleaning_the_package_cache
+
+    paccache --remove --keep 1
+    paccache --remove --uninstalled --keep 0
+    pacman --sync --clean
 
 ## Configs outdated search
 
