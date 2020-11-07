@@ -13,6 +13,7 @@
 
 ## Alternatives
 
-1. https://bitbucket.org/sshguard/sshguard, written on c (<https://sshguard.net>, <https://wiki.archlinux.org/index.php/Sshguard>)
-2. https://github.com/jaredfolkins/badactor written on golang
-3. https://github.com/jvinet/knock actually is not client block/jail, is an port knocking <https://en.wikipedia.org/wiki/Port_knocking>, written on c
+1. `sshguard` written on c <https://bitbucket.org/sshguard/sshguard>, <https://sshguard.net>, <https://wiki.archlinux.org/index.php/Sshguard>
+2. `badactor` written on golang https://github.com/jaredfolkins/badactor
+3. `denyhosts` written on python https://github.com/denyhosts/denyhosts
+4. `knock` actually is not client block/jail, is an port knocking daemon, written on c <https://github.com/jvinet/knock>, <https://en.wikipedia.org/wiki/Port_knocking>
