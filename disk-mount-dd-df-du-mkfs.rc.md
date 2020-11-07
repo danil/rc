@@ -93,9 +93,18 @@ Copy ISO image to bootable usb
     dd if=bootldr.rom of=/dev/sdb
     dd if=debian-eeepc.img of=/dev/sdf
 
-## Free space
+## Free space/space usage
 
-`sys-fs/ncdu` Diskspace a-la usage is an baobab and gt5 replacement
+* `dust` show disk space usage, is an du replacement https://github.com/bootandy/dust
+* `diskonaut` terminal disk space navigator https://github.com/imsnif/diskonaut
+* `ncdu` show disk space usage, is an `baobab` and `gt5` replacement https://dev.yorhel.nl/ncdu
+
+## Duplicate file find
+
+1. `ddh` written in rust programming language https://github.com/darakian/ddh
+2. https://github.com/justinhj/justinhj-emacs-utils emacs dired
+3. http://justinsboringpage.blogspot.ru/2011/06/finding-duplicate-files-in-dired-buffer.html emacs dired
+4. https://www.emacswiki.org/emacs/RemoveDuplicateFiles emacs dired
 
 ## Mount cdrom
 
