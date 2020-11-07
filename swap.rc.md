@@ -21,7 +21,10 @@
 
 Sleep/suspend/hibernate to disk do **NOT** work by default with file swap
 
-    dd if=/dev/zero of=/swapfile bs=1M count=4000
+    dd if=/dev/zero of=/path/to/swap bs=1M count=4000
+    chmod 0600 /path/to/swap
+    mkswap /path/to/swap
+    swapon /path/to/swap
 
 ## Create file fallocate
 
@@ -55,10 +58,6 @@ Higher value causes the kernel to try to use swap space
 or
 
     echo 100 > /proc/sys/vm/swappiness
-
-## Other
-
-    chmod 600 /path/to/swap && mkswap /path/to/swap && swapon /path/to/swap
 
 ## Partition
 
