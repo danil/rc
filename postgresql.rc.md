@@ -245,6 +245,10 @@ ORDER BY 1;
     REVOKE ALL PRIVILEGES ON DATABASE your_db FROM your_role;
     revoke SELECT, INSERT, UPDATE, DELETE ON billing.rebates_agg FROM your_role;
 
+## Get curretn database
+
+    SELECT current_database();
+
 ## Database list
 
     -- \l list all databases (add "+" for more detail)
