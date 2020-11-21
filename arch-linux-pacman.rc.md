@@ -103,6 +103,10 @@ Arch User Repository <https://wiki.archlinux.org/index.php/Arch_User_Repository>
 
     pacman --upgrade your-1.2-3-any.pkg.tar.xz
 
+## Compare pacman commands with apt/dnf/zypper/emerge
+
+https://wiki.archlinux.org/index.php/Pacman/Rosetta
+
 ## Set hostname
 
 <https://wiki.archlinux.org/index.php/Network_configuration#Set_the_hostname>
