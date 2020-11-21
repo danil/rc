@@ -107,6 +107,10 @@ Arch User Repository <https://wiki.archlinux.org/index.php/Arch_User_Repository>
 
 https://wiki.archlinux.org/index.php/Pacman/Rosetta
 
+## Pacman-like wrapper for many package managers apt/dnf/zypper/emerge and so on
+
+https://github.com/icy/pacapt
+
 ## Set hostname
 
 <https://wiki.archlinux.org/index.php/Network_configuration#Set_the_hostname>
