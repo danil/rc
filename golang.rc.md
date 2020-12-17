@@ -132,8 +132,11 @@ Minimize binary size
 
 Set some string variable on compile time (for example your some "version")
 
-    go build -ldflags "-X main.yourVariable=`echo 'Your value'`" main.go
-    go run -ldflags "-X main.foo=123 -X main.bar=xyz" main.go
+```bash
+go build -ldflags "-X path/to/package.Foo=$(git describe --abbrev=0 --tags) -X path/to/package.bar=$(git rev-parse --short HEAD) -X path/to/package.Baz=$(date --utc +%s) -X path/to/package.xyz=$(date --utc +%Y%m%dT%H%M%SZ)" main.go
+
+go run -ldflags "-X path/to/package.foo=123 -X path/to/package.Bar=xyz" main.go
+```
 
 ## Cross compilation
 
