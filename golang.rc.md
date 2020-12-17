@@ -134,7 +134,6 @@ Set some string variable on compile time (for example your some "version")
 
 ```bash
 go build -ldflags "-X path/to/package.foo=$(git describe --abbrev=0 --tags) -X path/to/package.Bar=$(git rev-parse --short HEAD) -X path/to/package.baz=$(date --utc +%s) -X path/to/package.Xyz=$(date --utc +%Y%m%dT%H%M%SZ)" main.go
-
 go run -ldflags "-X path/to/package.foo=123 -X path/to/package.Bar=xyz" main.go
 ```
 
