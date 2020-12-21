@@ -1,26 +1,22 @@
 # Regular expressions
 
-# Lookahead
+## Positive lookahead
 
 <http://www.regular-expressions.info/lookaround.html#lookahead>
 
-## Positive
-
     foo(?=bar)
 
-## Negative
+## Negative lookahead
 
     foo(?!bar)
 
-# Lookbehind
+## Positive lookbehind
 
 <http://www.regular-expressions.info/lookaround.html#lookbehind>
 
-## Positive
-
     (?<=bar)foo
 
-## Negative
+## Negative lookbehind
 
     (?<!bar)foo
 
@@ -28,3 +24,7 @@
 
 <http://stackoverflow.com/questions/8010005/python-re-infinite-execution>
 <https://habrahabr.ru/post/131915/>
+
+## To investigate
+
+* https://regexr.com
