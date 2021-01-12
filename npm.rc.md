@@ -14,15 +14,23 @@ Node package manager
 
     npm install package-name
 
+## List outdated
+
+    npm outdated
+
 ## Update
 
     npm update package-name
+
+## Update all
+
+    npm update
 
 ## Uninstall
 
     npm uninstall package-name
 
-## ls
+## List
 
 List all dependencies tree
 
