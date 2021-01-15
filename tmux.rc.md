@@ -80,6 +80,11 @@ Socket session create
 
     tmux kill-session -t danil
 
+## Change status line color to black
+
+    prefix + :
+    set status-style bg=black
+
 ## Other
 
     tmux new -s danil
