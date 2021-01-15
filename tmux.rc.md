@@ -27,20 +27,18 @@ Copying to operation system clipboard https://github.com/tmux-plugins/tmux-yank
 
     prefix + %
 
-## Pane
-
-### Select by number
+## Pane select by number
 
     prefix + q
     0
 
-### Break
+## Pane break
 
 `break-pane`
 
     prefix + !
 
-### Join
+## Pane join
 
 Join pane 1 from pane 0 <https://forums.pragprog.com/forums/242/topics/10533>
 
@@ -53,34 +51,32 @@ Join pane 1 from pane 0 <https://forums.pragprog.com/forums/242/topics/10533>
 
     prefix + space
 
-## Session
-
-### List
+## Sessions list
 
     tmux -S /tmp/pair ls
 
-### Create
+## Session create
 
 Socket session create
 
     tmux -S /tmp/pair -s foobar
     chmod 777 /tmp/pair
 
-### Attach
+## Session attach
 
     tmux -S /tmp/pair attach -t foobar
 
-### Detach
+## Session detach
 
 `tmux detach`: `prefix + d`
 
-### Dettach by name
+## Session dettach by name
 
 <https://stackoverflow.com/questions/22138211/how-do-i-disconnect-all-other-users-in-tmux>
 
     prefix + D
 
-### Kill
+## Session kill
 
     tmux kill-session -t danil
 
