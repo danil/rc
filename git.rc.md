@@ -269,6 +269,12 @@ Count number of commits per file
 
     git rev-list HEAD --count path/to/file
 
+## Move
+
+Move file and directory into a other directory along with commit history
+
+    git mv your/dir1/* your/dir2
+
 ## Mirror repository
 
 <http://exyr.org/2011/git-mirrors>
