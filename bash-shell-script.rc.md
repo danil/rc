@@ -69,3 +69,7 @@ echo $(eval echo ~$(whoami))
 ## UUID generation
 
     cat /proc/sys/kernel/random/uuid
+
+## sudo
+
+    sudo -u your_user -g your_group path/to/your/script
