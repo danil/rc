@@ -38,6 +38,10 @@ Push one commit by commit sha
 
     git push your-remote local-branch:remote-branch
 
+## Push all branches
+
+    git push --all origin
+
 ## Push to URL across repositories
 
 Push from local repository to independent remote repository
