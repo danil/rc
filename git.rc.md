@@ -174,6 +174,10 @@ A la restore deleted file
 
     git tag
 
+## Remote tags list
+
+    git ls-remote --tags https://your.tld/path/to/repo.git
+
 ## Checkout to tag
 
 Select tag <http://git-scm.com/book/en/Git-Basics-Tagging#Listing-Your-Tags>
