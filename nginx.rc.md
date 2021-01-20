@@ -22,3 +22,15 @@ https://wiki.archlinux.org/index.php/Certbot#Nginx
 ## Let's Encrypt certbot configure automatic renewal by systemd
 
 https://wiki.archlinux.org/index.php/Certbot#systemd
+
+## Linux
+
+Efficient connection processing method used on Linux 2.6+
+
+    events { use epoll; }
+
+## FreeBSD/OpenBSD/NetBSD/DragonFly BSD
+
+Efficient connection processing method used on FreeBSD 4.1+, OpenBSD 2.9+, NetBSD 2.0
+
+    events { use kqueue; }
