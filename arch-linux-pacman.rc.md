@@ -53,6 +53,14 @@ Except `base` and `base-devel` packages
     pacman --query --explicit --info \
       | awk '/^Name/ { name=$3 } /^Groups/ { if ( $3 != "base" && $3 != "base-devel" ) { print name } }'
 
+## Package dependencies list
+
+* https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Getting_the_dependencies_list_of_several_packages
+* https://wiki.archlinux.org/index.php/Pacman/Rosetta#Querying_package_dependencies
+
+    pacman --query --info your-pkg1 your-pkg2 | awk -F'[:<=>]' '/^Depends/ {print $2}' | xargs -n1 | sort -u
+    pacman --query --info | awk -F'[:<=>]' '/^Depends/ {print $2}' | xargs -n1 | sort -u
+
 ## Package search orphans
 
 Useless packages, that are not associated with explicitly installed packages
