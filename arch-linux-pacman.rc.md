@@ -10,7 +10,7 @@
 
 ## Package install
 
-    pacman --verbose --sync your-pkg-name
+    pacman --verbose --sync your-pkg
 
 ## Packages list install
 
@@ -18,7 +18,7 @@
 
 ## Package remove
 
-    pacman --remove --recursive your-pkg-name
+    pacman --remove --recursive your-pkg
 
 ## Remove packages unless list
 
@@ -38,18 +38,18 @@
 
 <https://wiki.archlinux.org/index.php/Pacman#Querying_package_databases>
 
-    pacman --sync --search your-pkg-name
+    pacman --sync --search your-pkg
 
 ## Package search installed
 
-    pacman --query --search your-pkg-name
+    pacman --query --search your-pkg
 
 ## Package search explicitly installed
 
 Except `base` and `base-devel` packages
 <https://bbs.archlinux.org/viewtopic.php?pid=690050#p690050>.
 
-    pacman --query --quiet --explicit | grep your-pkg-name
+    pacman --query --quiet --explicit | grep your-pkg
     pacman --query --explicit --info \
       | awk '/^Name/ { name=$3 } /^Groups/ { if ( $3 != "base" && $3 != "base-devel" ) { print name } }'
 
