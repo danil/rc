@@ -1,30 +1,37 @@
-# Regular expressions
+Regular expressions
+===================
 
-## Positive lookahead
+Positive lookahead
+------------------
 
 <http://www.regular-expressions.info/lookaround.html#lookahead>
 
     foo(?=bar)
 
-## Negative lookahead
+Negative lookahead
+------------------
 
     foo(?!bar)
 
-## Positive lookbehind
+Positive lookbehind
+-------------------
 
 <http://www.regular-expressions.info/lookaround.html#lookbehind>
 
     (?<=bar)foo
 
-## Negative lookbehind
+Negative lookbehind
+-------------------
 
     (?<!bar)foo
 
-## Catastrophic backtracking
+Catastrophic backtracking
+-------------------------
 
 <http://stackoverflow.com/questions/8010005/python-re-infinite-execution>
 <https://habrahabr.ru/post/131915/>
 
-## To investigate
+TODO
+----
 
 * https://regexr.com
