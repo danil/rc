@@ -44,8 +44,8 @@ List installed packages
 
     go list ./...
 
-Testsing
---------
+Testing
+-------
 
 * <https://blog.golang.org/examples>
 * <https://blog.golang.org/subtests>
