@@ -317,7 +317,6 @@ Start a process in the background and have it keep running after you log off
     vlc -I ncurses
     vobcopy
     evolution --force-shutdown
-    sloccount .
     xmodmap ~/.Xmodmap
     xmodmap -pke > .xmodmap.orig
     tput cols && tput lines
