@@ -1,5 +1,5 @@
-Lua
-===
+Lua rc
+======
 
     lua -lluarocks.require
     require "luarocks.require"
