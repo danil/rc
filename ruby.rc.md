@@ -1,4 +1,8 @@
-# Activesupport
+Ruby rc
+=======
+
+Activesupport
+-------------
 
 <http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html>.
 
@@ -9,7 +13,8 @@ require 'active_support/core_ext'
 your.presence || variable.present? || name.blank?
 ```
 
-## Transliteration
+Activesupport transliteration
+-----------------------------
 
 Replaces non-ASCII characters with an ASCII approximation
 <http://api.rubyonrails.org/classes/ActiveSupport/Inflector.html#method-i-transliterate>.
