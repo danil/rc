@@ -1,5 +1,5 @@
-Go rc
-=====
+Golang rc
+=========
 
 <https://go-proverbs.github.io>
 
