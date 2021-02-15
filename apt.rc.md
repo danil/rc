@@ -63,6 +63,18 @@ List all versions of the package
 
     apt-cache madison your-pkg-name
 
+Add trusted key
+---------------
+
+    apt-key add path/to/file.asc
+
+Add trusted key
+---------------
+
+Fixing following signatures were invalid (https://github.com/yarnpkg/yarn/issues/7866)
+
+    apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
+
 Other
 -----
 
@@ -73,7 +85,6 @@ Other
     apt-get --purge remove your-pkg-name
     apt-get clean
     apt-cdrom [--cdrom /home/danil/mnt/cdrom] add
-    apt-key add path/to/file.asc
     apt-mark unmarkauto
     reprepro
     wget --output-document=- http://backports.org/debian/archive.key \
