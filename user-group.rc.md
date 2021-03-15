@@ -2,14 +2,14 @@
 
 ## User add
 
-    useradd -D
-    useradd --comment "Your user name" \
+    useradd --comment="Your user name" \
             --user-group \
-            --groups your,groups,names \
+            --groups=your,groups,names \
             --create-home \
             --home-dir=/path/to/home/your_user \
             --shell=/bin/bash \
             your_user
+    useradd -D
 
 ## Add no login/unprivileged user
 
