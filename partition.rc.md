@@ -1,13 +1,16 @@
-# Partitions
+Partitions
+==========
 
-## List
+List
+----
 
 List all partitions
 
     parted -l
     fdisk -l
 
-## UUIDs and labels
+UUIDs and labels
+----------------
 
 <https://wiki.gentoo.org/wiki/Fstab#UUIDs_and_labels>,
 <https://wiki.gentoo.org/wiki/Removable_media#UUIDs_and_labels>
@@ -15,7 +18,8 @@ List all partitions
     tree /dev/disk
     lsblk -o +fstype,label,uuid,partuuid
 
-## MBR & GPT
+MBR & GPT
+---------
 
 <https://wiki.archlinux.org/index.php/partitioning#Partitioning_tools>
 
@@ -37,7 +41,8 @@ List all partitions
                  | partitionmanager | partitionmanager
 ```
 
-## lsblk
+lsblk
+-----
 
 List partitions:
 * <https://wiki.archlinux.org/index.php/persistent_block_device_naming#Persistent_naming_methods>
@@ -45,9 +50,8 @@ List partitions:
 
     lsblk
 
-## GPT
-
-### Copy
+GPT Copy
+--------
 
 <http://unix.stackexchange.com/questions/93385/how-to-restore-the-partition-layout-for-gpt-disk#93391>
 
@@ -55,23 +59,27 @@ Copy partitions table from /dev/sda to /dev/sdb
 
     sgdisk --replicate=/dev/sdb /dev/sda
 
-#### Make unique its GUID as it was cloned and is identical with /dev/sda
+GPT Copy: make unique its GUID as it was cloned and is identical with /dev/sda
+------------------------------------------------------------------------------
 
     sgdisk --randomize-guids /dev/sdb
 
-### parted
+GPT: parted
+-----------
 
 <http://gentoo.org/doc/en/handbook/handbook-amd64.xml?part=1&chap=4>
 
     parted /dev/sda
 
-#### Make GPT
+Make GPT
+--------
 
 <https://wiki.archlinux.org/index.php/GUID_Partition_Table#parted_basic_.28via_command_line_options.29>
 
     parted --script /dev/sda mklabel gpt
 
-### gdisk
+GPT: gdisk
+----------
 
 <https://wiki.archlinux.org/index.php/Partitioning#Partitioning_tools>.
 
@@ -84,11 +92,10 @@ Copy partitions table from /dev/sda to /dev/sdb
       sda3               Primary    Linux swap / Solaris               9000,00
       sda4               Primary    Linux ext4         [fs_root]     109000,00
 
-## MBR
+MBR: fdisk & sfdisk
+-------------------
 
 Legacy!
-
-### fdisk & sfdisk
 
     fdisk -l /dev/sdb
     sfdisk -l -uM
@@ -101,9 +108,8 @@ Legacy!
   sda3               Primary    Linux ext4         [fs_root]     110000,00
 ```
 
-## cfdisk
-
-### Warning
+cfdisk: WARNING
+---------------
 
 <https://wiki.archlinux.org/index.php/Partitioning#Partitioning_tools>.
 
