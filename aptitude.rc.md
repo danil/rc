@@ -13,7 +13,7 @@
 Upgrades installed packages to their most recent version
 
     aptitude update
-    aptitude --prompt safe-upgrade
+    DEBIAN_FRONTEND=noninteractive aptitude --prompt safe-upgrade
 
 ## Download newest version of outdated packages
 
