@@ -1,10 +1,12 @@
-# PostgreSQL
+PostgreSQL rc
+=============
 
 ```sh
 emerge --config =dev-db/postgresql-11.3
 ```
 
-## psql
+psql
+----
 
     psql --host=your.tld --username=your_role
     psql --dbname=your_db
@@ -12,17 +14,20 @@ emerge --config =dev-db/postgresql-11.3
     psql --echo-hidden
     psql --single-transaction
 
-## psql input/output
+psql input/output
+-----------------
 
     psql --file=path/to/file.sql
     cat path/to/file.sql | psql
     psql < path/to/file.sql
 
-## URL
+URL
+---
 
     psql postgres://your_user:your-password@your.host:5432/your_db
 
-## Create dump by pg_dump
+Create dump by pg_dump
+----------------------
 
 Backuping:
 
@@ -32,44 +37,53 @@ pg_dump --host=localhost --port=5432 --username=your_role \
         | xz --compress > path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
 ```
 
-## Restore dump by psql
+Restore dump by psql
+--------------------
 
     cat path/to/dump.sql.xz | xz --decompress | psql your_db
 
-## Create dump of all databases by pg_dumpall
+Create dump of all databases by pg_dumpall
+------------------------------------------
 
     pg_dumpall --host=localhost --port=5432 --username=your_role \
                > path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql
 
-## Create dump of all databases by pg_dump by URL
+Create dump of all databases by pg_dump by URL
+----------------------------------------------
 
     pg_dump postgres://your_user:your-password@your.host:5432/your_db \
             > path/to/dump.sql
 
-## Create dump of all databases by psql
+Create dump of all databases by psql
+------------------------------------
 
     \i path/to/dump.sql
 
-## Restor binary dump by pg_restore
+Restor binary dump by pg_restore
+--------------------------------
 
     pg_restore --username=your_role --dbname=your_db --no-owner file.backup
 
-## List indexes
+List indexes
+------------
 
     \di
     \d your_tb
 
-## Show index
+Show index
+----------
 
 ```sql
 SELECT * FROM "pg_indexes" WHERE "tablename" = 'entities';
 ```
 
-## Show index size
+Show index size
+---------------
 
     \di+ your_idx
 
-## Create index
+Create index
+------------
 
 ```sql
 CREATE INDEX "your_idx_name" ON "your_tbl" ("your_col");
@@ -81,25 +95,29 @@ This equivalent to (B-tree is default):
 CREATE INDEX "your_idx_name" ON "your_tbl" USING btree ("your_col");
 ```
 
-## Create unique index
+Create unique index
+-------------------
 
 ```sql
 CREATE UNIQUE INDEX "your_idx_name" ON "your_tbl" ("your_col");
 ```
 
-## Create compound index
+Create compound index
+---------------------
 
 ```sql
 CREATE INDEX "your_idx_name" ON "your_tbl" ("your_col1", "your_col2");
 ```
 
-## Create partial index
+Create partial index
+--------------------
 
 ```sql
 CREATE INDEX "your_idx_name" ON "your_tbl" ("your_col1") WHERE ("your_col2" IS NULL);
 ```
 
-## Create index on jsonb
+Create index on jsonb
+---------------------
 
 ```sql
 CREATE INDEX "your_idx_name" ON "your_tbl" (
@@ -109,39 +127,46 @@ CREATE INDEX "your_idx_name" ON "your_tbl" (
 
 ```
 
-## Drop/delete/remove index
+Drop/delete/remove index
+------------------------
 
 ```sql
 DROP INDEX your_index_name;
 ```
 
-## Rename index
+Rename index
+------------
 
 ```sql
 ALTER INDEX IF EXISTS "your_idx_name" RENAME TO "your_idx_new_name";
 ```
 
-## Indexes usage stats
+Indexes usage stats
+-------------------
 
 ```sql
 SELECT * FROM pg_stat_user_indexes;
 SELECT * FROM pg_statio_user_indexes;
 ```
 
-## Create enum
+Create enum
+-----------
 
     CREATE TYPE your_tbl AS ENUM ('foo','bar','xyz');
 
-## Delete enum
+Delete enum
+-----------
 
     DROP TYPE your_tbl;
 
-## Change output format
+Change output format
+--------------------
 
     psql ska_production --no-align --command="SELECT id,name FROM foobars;" \
       | sed G | tr '|' '\n' | sed '/./,/^$/!d'
 
-## Environment variables
+Environment variables
+---------------------
 
 <http://www.postgresql.org/docs/current/static/libpq-envars.html>
 
@@ -152,7 +177,8 @@ SELECT * FROM pg_statio_user_indexes;
       PGPASSWORD=your-password \
       psql
 
-## Version
+Version
+-------
 
     mydb=> SELECT version();
 
@@ -162,7 +188,8 @@ SELECT * FROM pg_statio_user_indexes;
     compiled by GCC cc (GCC) 4.1.2 20061115 (prerelease) (Debian 4.1.1-21)
     (1 row)
 
-## hba_file
+hba_file
+--------
 
 Find pg_hba.conf location
 <http://askubuntu.com/questions/256534/how-do-i-find-the-path-to-pg-hba-conf-from-the-shell>,
@@ -170,17 +197,20 @@ Find pg_hba.conf location
 
     psql --tuples-only --pset='format=unaligned' --command='show data_directory'
 
-## Roles/users list
+Roles/users list
+----------------
 
     -- \du [PATTERN]
     SELECT * FROM pg_user ORDER BY id DESC LIMIT 1;
 
-## Create role
+Create role
+-----------
 
 `CREATE USER` is an alias for `CREATE ROLE`. The only difference is that
 when the command is spelled `CREATE USER`, `LOGIN` is assumed by default.
 
-## Create standard user
+Create standard user
+--------------------
 
 ```sql
 CREATE ROLE your_role WITH LOGIN PASSWORD 'password'
@@ -192,27 +222,32 @@ createuser --no-createrole --no-createdb --no-superuser --pwprompt \
            --encrypted --username=your_role --password testuser
 ```
 
-## Create Superuser
+Create Superuser
+----------------
 
     CREATE ROLE your_role WITH SUPERUSER LOGIN PASSWORD 'password'
     VALID UNTIL '2009-01-01';
 
     createuser --superuser --pwprompt --encrypted --username=postgres --password your_role
 
-## Alter/update role
+Alter/update role
+-----------------
 
     ALTER ROLE your_role WITH PASSWORD 'znVOIuah';
     ALTER ROLE your_role CREATEDB | NOCREATEDB;
 
-## Drop/remove role
+Drop/remove role
+----------------
 
     DROP ROLE your_role;
 
-## Privileges
+Privileges
+----------
 
 Grant privileges to the roles/users
 
-## List
+List
+----
 
 List roles and privileges
 
@@ -235,42 +270,50 @@ FROM pg_catalog.pg_roles r
 ORDER BY 1;
 ```
 
-## Grant privileges
+Grant privileges
+----------------
 
     GRANT ALL ON DATABASE your_db TO your_role;
     GRANT SELECT, INSERT, UPDATE, DELETE ON your_db TO your_role;
 
-## Remove privileges
+Remove privileges
+-----------------
 
     REVOKE ALL PRIVILEGES ON DATABASE your_db FROM your_role;
     revoke SELECT, INSERT, UPDATE, DELETE ON billing.rebates_agg FROM your_role;
 
-## Get curretn database
+Get curretn database
+--------------------
 
     SELECT current_database();
 
-## Database list
+Database list
+-------------
 
     -- \l list all databases (add "+" for more detail)
 
     SELECT datname FROM pg_database WHERE datistemplate = false;
 
-## Create database
+Create database
+---------------
 
     CREATE DATABASE "your_db" WITH OWNER your_role ENCODING = 'UTF8';
     createdb --owner=your_role --username=postgres --password your_db
 
-## Drop database
+Drop database
+-------------
 
     DROP DATABASE your_db;
     dropdb --username=your_role --password test
 
-## Get databases owner
+Get databases owner
+-------------------
 
     SELECT d.datname as "Name", pg_catalog.pg_get_userbyid(d.datdba) as "Owner"
            FROM pg_catalog.pg_database d WHERE d.datname = 'your_db' ORDER BY 1;
 
-## Copy database
+Copy database
+-------------
 
 <http://stackoverflow.com/questions/876522/creating-a-copy-of-a-database-in-postgres#876565>
 
@@ -280,29 +323,35 @@ ORDER BY 1;
 
     createdb -O ownername -T originaldb newdb
 
-## Rename database
+Rename database
+---------------
 
     ALTER DATABASE medapp_dev RENAME TO medapp_dev_master;
 
-## Schemas list
+Schemas list
+------------
 
     \dn
 
-## List tables within schema
+List tables within schema
+-------------------------
 
     \dt your_schema.*
 
-## List functions within schema
+List functions within schema
+----------------------------
 
     \df your_schema.*
 
-## Drop schema
+Drop schema
+-----------
 
 <http://www.postgresql.org/docs/current/static/sql-dropschema.html>
 
     DROP SCHEMA IF EXISTS your_schema1, your_schema2 CASCADE;
 
-## Default schema
+Default schema
+--------------
 
 Set a default schema for a session
 <http://www.postgresql.org/message-id/200307222318.58234.barwick@gmx.net>,
@@ -310,54 +359,62 @@ Set a default schema for a session
 
     SET search_path TO "$user",your_schema;
 
-## Sequences list
+Sequences list
+--------------
 
     \ds
 
-## Get sequence
+Get sequence
+------------
 
 ```sql
 SELECT nextval('your_sequence_name');
 ```
 
-## Set sequence
+Set sequence
+------------
 
 ```sql
 SELECT setval('your_sequence_name', 1234567890, true);
 ```
 
-## Tables list
+Tables list
+-----------
 
     \dt [PATTERN] (add "+" for more detail)
 
-## list tables by the SQL
-
-List tables by SQL
+List tables by the SQL
+----------------------
 
     SELECT * from information_schema.tables
     WHERE table_name LIKE '%your_tbl%'
           AND table_schema = current_schema();
 
-## Create table
+Create table
+------------
 
     CREATE TABLE your_tbl
       (some_id BIGSERIAL primary key, name varchar(10), bio TEXT, age INTEGER);
 
-## Describe table
+Describe table
+--------------
 
     \d some_table
 
-## Describe table by the SQL
+Describe table by the SQL
+-------------------------
 
     SELECT your_col, data_type, character_maximum_length
     FROM information_schema.columns
     WHERE table_name = 'your-table-name';
 
-## Drop table
+Drop table
+----------
 
     DROP TABLE schema_migrations, products;
 
-## Drop all talbles
+Drop all talbles
+----------------
 
 List all tables then drop them.
 
@@ -365,61 +422,73 @@ List all tables then drop them.
     FROM pg_tables
     WHERE tableowner = 'msls' AND schemaname = 'public';
 
-## Add column to table
+Add column to table
+-------------------
 
     ALTER TABLE your_tbl
         ADD COLUMN your_col1 integer NOT NULL DEFAULT 123,
         ADD COLUMN your_col2 timestamp with time zone;
 
-## Remove column
+Remove column
+-------------
 
     ALTER TABLE your_tbl DROP COLUMN your_col1, DROP COLUMN your_col2;
 
-## Rename table
+Rename table
+------------
 
     ALTER TABLE your_old_tbl1 RENAME TO your_new_tbl2;
 
-## Rename column
+Rename column
+-------------
 
     ALTER TABLE your_tbl RENAME old_name TO new_name;
 
-## Change column type
+Change column type
+------------------
 
     ALTER TABLE your_tbl ALTER COLUMN col_name TYPE smallint;
     ALTER TABLE your_tbl ALTER COLUMN col_name TYPE bigint;
 
-## Add unique constraint
+Add unique constraint
+---------------------
 
     ALTER TABLE "your_tbl" ADD CONSTRAINT your_cstr UNIQUE (your_col1, your_col2);
 
-## Delete constraint
+Delete constraint
+-----------------
 
 Remove constraint by name
 
     ALTER TABLE "your_tbl" DROP CONSTRAINT your_cstr;
 
-## Rename constraint
+Rename constraint
+-----------------
 
     ALTER TABLE your_tbl
         RENAME CONSTRAINT your_cstr_old TO your_cstr_new;
 
-## Create temporary table
+Create temporary table
+----------------------
 
     CREATE TEMP TABLE your_tbl
       (some_id BIGSERIAL, name varchar(10), bio TEXT, age INTEGER);
 
-## Update data
+Update data
+-----------
 
 <http://www.postgresql.org/docs/current/static/sql-update.html>
 
     UPDATE your_tbl SET foo = 'bar' || id;
 
-## Swap/update two column's values
+Swap/update two column's values
+-------------------------------
 
     UPDATE your_tbl SET your_col1 = your_col2, your_col2 = your_col1
            WHERE your_col3 IS NOT NULL;
 
-## Update multiple rows with subquery
+Update multiple rows with subquery
+----------------------------------
 
 Update multiple rows in one query
 <https://stackoverflow.com/questions/18797608/update-multiple-rows-in-same-query-using-postgresql#18799497>
@@ -428,24 +497,28 @@ Update multiple rows in one query
     FROM (SELECT foo, bar FROM xyz WHERE id = 123) AS subquery
     WHERE id = 321;
 
-## Insert row
+Insert row
+----------
 
     INSERT INTO your_tbl (name, age) VALUES('John', 3);
     COPY your_tbl FROM STDIN WITH DELIMITER AS ',';
 
-## Upsert/update/insert/create
+Upsert/update/insert/create
+---------------------------
 
     INSERT INTO your_tbl ("latitude", "longitude", "name") 
         VALUES (1,2,'foobar')
         ON CONFLICT ON CONSTRAINT your_tbl_pkey
             DO UPDATE SET "name" = 'foobar';
 
-## Insert by query
+Insert by query
+---------------
 
     INSERT INTO your_tbl (id, name, age)
     SELECT 2, name, age FROM your_tbl WHERE id = 1;
 
-## Increment/upsert/update counter
+Increment/upsert/update counter
+-------------------------------
 
 ```sql
 INSERT INTO "your_tbl" ("id", "count")
@@ -454,26 +527,31 @@ ON CONFLICT ("id")
 DO UPDATE SET "count" = COALESCE("your_tbl"."count", EXCLUDED."count") + 1;
 ```
 
-## Delete row
+Delete row
+----------
 
     DELETE FROM users WHERE id = 3;
 
-## Truncate data
+Truncate data
+-------------
 
 <http://www.postgresql.org/docs/current/static/sql-truncate.html>
 
     TRUNCATE timeline_items CASCADE;
 
-## Queries
+Queries
+-------
 
     SELECT * FROM your_tbl;
 
-## Query/convert timestamp to datetime
+Query/convert timestamp to datetime
+-----------------------------------
 
     SELECT *, to_timestamp("created_at") FROM "your_tbl"
         ORDER BY "created_at" DESC;
 
-## Distinct
+Distinct
+--------
 
 Remove duplicate rows from the result set (one row is kept from each
 group of duplicates).
@@ -481,7 +559,8 @@ group of duplicates).
     SELECT DISTINCT ON (your_col) your_col FROM your_tbl;
     SELECT DISTINCT your_col FROM your_tbl;
 
-## Exclude list condition
+Exclude list condition
+----------------------
 
 <http://www.postgresql.org/docs/current/static/functions-comparisons.html#AEN20298>
 <http://www.postgresql.org/docs/current/static/functions.html>
@@ -495,13 +574,15 @@ WHERE (
 );
 ```
 
-## Array contains condition
+Array contains condition
+------------------------
 
 <https://stackoverflow.com/questions/16606357/how-to-make-a-select-with-array-contains-value-clause-in-psql#16606612>
 
     select * from your_tbl where your_col @> ARRAY[1234567890]::bigint[];
 
-## Current date
+Current date
+------------
 
     mydb=> SELECT current_date;
         date
@@ -509,7 +590,8 @@ WHERE (
      2002-08-31
     (1 row)
 
-## Arithmetics
+Arithmetics
+-----------
 
     mydb=> SELECT 2 + 2;
      ?column?
@@ -517,20 +599,23 @@ WHERE (
             4
     (1 row)
 
-## Timestamp with timezone type
+Timestamp with timezone type
+----------------------------
 
 Today in past year
 
     SELECT (CURRENT_DATE - INTERVAL '1 year')::timestamptz;
     german_test=# show timezone;
 
-## Describe enum type
+Describe enum type
+------------------
 
 <http://stackoverflow.com/questions/9535937/is-there-a-way-to-show-a-user-defined-postgresql-enumerated-type-definition#25326877>
 
     SELECT enum_range(null::my_type);
 
-## Create range
+Create range
+------------
 
 Create dates range from now to 1 year ago
 
@@ -542,47 +627,55 @@ SELECT tstzrange(
 );
 ```
 
-## Intersection (overlapping)
+Intersection (overlapping)
+--------------------------
 
     SELECT tstzrange('1999-01-01', '1999-12-31', '[]')
         && tstzrange('1970-01-01', '2000-12-31', '[]');
 
-## List functions
+List functions
+--------------
 
 List functions in schema `foo`
 
     \df foo.*
 
-## Extensions list
+Extensions list
+---------------
 
     \dx
     SELECT * FROM pg_extension;
 
-## Extension create
+Extension create
+----------------
 
 <http://www.postgresql.org/docs/current/static/sql-createextension.html>
 
     CREATE EXTENSION IF NOT EXISTS plv8 WITH SCHEMA pg_catalog;
 
-## Single quotes
+Single quotes
+-------------
 
 <http://www.postgresql.org/docs/current/static/sql-syntax-lexical.html#SQL-SYNTAX-STRINGS>
 
 Single quotes used for `string constants`. For example: `'This is a string'`.
 
-## Double quotes
+Double quotes
+-------------
 
 <http://www.postgresql.org/docs/current/static/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS>
 
 Single quotes used for `identifiers` (like table names). For example:
 `UPDATE "your_tbl" SET "a" = 5;`
 
-## Key words
+Key words
+---------
 
 Key words should be escaped (for example if used as table name or column name)
 <http://www.postgresql.org/docs/current/static/sql-keywords-appendix.html#KEYWORDS-TABLE>
 
-## Concatenation
+Concatenation
+-------------
 
 <http://www.postgresql.org/docs/9.1/static/functions-string.html#FUNCTIONS-STRING-SQL>
 
@@ -592,28 +685,32 @@ Key words should be escaped (for example if used as table name or column name)
 
     SELECT concat('foo', 'bar', 'xyz')
 
-## CSV Export by SQL to STDOUT
+CSV Export by SQL to STDOUT
+---------------------------
 
 ```sql
 COPY (SELECT your_col1, your_col2 FROM your_tbl)
 TO STDOUT csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
 ```
 
-## CSV Export by SQL to file
+CSV Export by SQL to file
+-------------------------
 
 ```sql
 COPY (SELECT your_col1, your_col2 FROM your_tbl)
 TO 'path/to/file.csv' csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
 ```
 
-## CSV Export by psql command by SQL to file
+CSV Export by psql command by SQL to file
+-----------------------------------------
 
 ```sh
 psql --command="COPY (SELECT your_col1, your_col2 FROM your_tbl)
                 TO STDOUT csv DELIMITER ';' NULL AS '\N' QUOTE '"'"'"' ESCAPE '\';"
 ```
 
-## CSV import by psql command by SQL from file
+CSV import by psql command by SQL from file
+-------------------------------------------
 
 Load data from csv file
 
@@ -625,7 +722,8 @@ FROM 'path/to/file.csv'
 csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
 ```
 
-## CSV import by psql command by SQL from STDIN
+CSV import by psql command by SQL from STDIN
+--------------------------------------------
 
 ```sh
 cat path/to/file.csv \
@@ -634,7 +732,8 @@ cat path/to/file.csv \
                       csv DELIMITER ';' NULL AS '\N' QUOTE '"'"'"' ESCAPE '\';"
 ```
 
-## CSV import by psql command by from file
+CSV import by psql command by from file
+---------------------------------------
 
 <http://www.postgresql.org/docs/current/static/app-psql.html#APP-PSQL-META-COMMANDS-COPY>
 
@@ -644,7 +743,8 @@ cat path/to/file.csv \
       csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
 ```
 
-## Password file
+Password file
+-------------
 
 Save password in `~/.pgpass` file and connect without password prompt:
 
@@ -652,7 +752,8 @@ Save password in `~/.pgpass` file and connect without password prompt:
 * <https://wiki.postgresql.org/wiki/Pgpass>
 * <http://dba.stackexchange.com/questions/14740/how-to-use-psql-with-no-password-prompt#14741>
 
-## Current number of connections
+Current number of connections
+-----------------------------
 
 Getting the current number of connections in a PostgreSQL
 
@@ -660,33 +761,38 @@ Getting the current number of connections in a PostgreSQL
 
     SELECT sum(numbackends) FROM pg_stat_database;
 
-## Profiling
+Profiling
+---------
 
 Get query execution time/duration
 
     \timing
 
-## Explain
+Explain
+-------
 
 <http://www.postgresql.org/docs/current/static/sql-explain.html>  
 <https://wiki.postgresql.org/wiki/Using_EXPLAIN>
 
     EXPLAIN SELECT * FROM your_tbl;
 
-## Explain analyze
+Explain analyze
+---------------
 
     BEGIN;
     EXPLAIN ANALYZE UPDATE your_tbl SET foo = 'bar' || id;
     ROLLBACK;
 
-## Disk usage psql command
+Disk usage psql command
+-----------------------
 
 <http://stackoverflow.com/questions/2596624/how-do-you-find-the-disk-size-of-a-postgres-postgresql-table-and-its-indexes>
 
     \l+
     \d+
 
-## Disk usage SQL query
+Disk usage SQL query
+--------------------
 
 `pg_toast` | is an temporary schema (for temporary tables)
 -----------|----------------------------------------------
@@ -699,7 +805,8 @@ Get query execution time/duration
     ORDER BY pg_relation_size(pg_class.oid) DESC
     LIMIT 10;
 
-## Print notice
+Print notice
+------------
 
 <http://stackoverflow.com/questions/18828127/how-to-raise-a-notice-in-postgresql#18828523>
 
@@ -709,13 +816,13 @@ Get query execution time/duration
     END
     $$;
 
-## Vacuum
+Vacuum
+------
 
 <https://wiki.postgresql.org/wiki/Tuning_Your_PostgreSQL_Server#autovacuum>
 
-## Prepared statement create
-
-<http://www.postgresql.org/docs/current/static/sql-prepare.html>
+Prepared statement create
+-------------------------
 
 <http://www.postgresql.org/docs/current/static/sql-prepare.html>
 
@@ -723,17 +830,20 @@ Get query execution time/duration
       SELECT * FROM "your_tbl"
       WHERE "name" = $1 AND "age" = $2;
 
-## Prepared statement execute
+Prepared statement execute
+--------------------------
 
     EXECUTE your_statement_name ('foo', 123);
 
-## Prepared statement delete
+Prepared statement delete
+-------------------------
 
 <http://www.postgresql.org/docs/current/static/sql-deallocate.html>
 
     DEALLOCATE your_statement_name;
 
-## Log all queries
+Log all queries
+---------------
 
 `postgresql.conf`
 
@@ -745,7 +855,8 @@ Log statements with any durations
 
     log_min_duration_statement = 0
 
-## pgbench
+pgbench
+-------
 
 <http://www.postgresql.org/docs/current/static/pgbench.html>
 
@@ -757,13 +868,15 @@ Log statements with any durations
               -c 100 -C -d -S -t 1000 \
               -f path/to/file.sql your_db
 
-## List active connections
+List active connections
+-----------------------
 
 <http://serverfault.com/questions/128284/how-to-see-active-connections-and-current-activity-in-postgresql-8-4#128292>
 
     SELECT * FROM pg_stat_activity WHERE datname = 'your-db-name';
 
-## Fix PostgreSQL locale
+Fix PostgreSQL locale
+---------------------
 
 * <http://stackoverflow.com/questions/16736891/pgerror-error-new-encoding-utf8-is-incompatible#16737776>
 * <https://wiki.gentoo.org/wiki/PostgreSQL#Changing_the_Default_Encoding_of_New_Databases>
@@ -784,6 +897,7 @@ CREATE ROLE your_role WITH SUPERUSER LOGIN PASSWORD 'your-password';
 CREATE DATABASE your_db WITH OWNER your_role ENCODING = 'UTF8';
 ```
 
-## Reserved key words
+Reserved key words
+------------------
 
 <https://www.postgresql.org/docs/current/static/sql-keywords-appendix.html>
