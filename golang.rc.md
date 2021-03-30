@@ -161,3 +161,8 @@ Cross compilation
 -----------------
 
     env GOARCH=arm64 go build
+
+Time
+----
+
+Arguments against time.Date type https://github.com/golang/go/issues/19700#issuecomment-559250634
