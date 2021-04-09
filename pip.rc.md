@@ -6,6 +6,11 @@ Python packages management system
 
     pip list
 
+## Search
+
+`pip search` currently disabled https://github.com/pypa/pip/issues/5216#issuecomment-744605466
+use https://pypi.org
+
 ## Show version
 
     pip show your-pkg-name
