@@ -21,7 +21,7 @@ Latest modified/newest files (42 items)
 
 <https://stackoverflow.com/questions/4561895/how-to-recursively-find-the-latest-modified-file-in-a-directory#4561987>
 
-find . -type f -printf '%T@ %p\n' | sort -n | tail -42 | cut -f2- -d" "
+    find . -type f -printf '%T@ %p\n' | sort -n | tail -42 | cut -f2- -d" "
 
 ## Search and remove file with inode number
 
