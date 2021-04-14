@@ -46,3 +46,7 @@ Only one url (no multiple urls)
 ## Herd
 
 <https://github.com/imjacobclark/Herd>
+
+## Pandora
+
+HTTP/S/1/2 load generator http://github.com/yandex/pandora
