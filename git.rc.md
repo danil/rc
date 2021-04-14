@@ -24,6 +24,10 @@ Stage all files
 
     git add --all
 
+## Commit in the past
+
+    git commit --message="your message" --date="1970-12-34T01:23:45Z"
+
 ## Push specific commit
 
 Push one commit by commit sha
