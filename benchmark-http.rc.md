@@ -1,4 +1,4 @@
-# HTTP benchmarks
+# HTTP benchmarks rc
 
 ## ab
 
@@ -49,4 +49,4 @@ Only one url (no multiple urls)
 
 ## Pandora
 
-HTTP/S/1/2 load generator http://github.com/yandex/pandora
+Produce HTTP/S/1/2 load http://github.com/yandex/pandora
