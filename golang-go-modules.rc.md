@@ -1,20 +1,17 @@
-Go Modules rc
-=============
+# Go modules rc
 
 Go mod
 
 * https://blog.golang.org/using-go-modules
 * https://github.com/golang/go/wiki/Modules
 
-Init
-----
+## Init
 
 Init dependencies
 
     go mod init your.tld/hello
 
-Init (long)
------------
+## Init (long)
 
 ```sh
 cd path/to/module
@@ -42,22 +39,19 @@ go test
 go mod init your.tld/hello
 ```
 
-List
-----
+## List
 
 List all modules including dependencies
 
     go list -m all
 
-Add
----
+## Add
 
 Adding dependency happens automatically
 
     go test
 
-Add private non standard url
-----------------------------
+## Add private non standard url
 
 Adding dependency from private git repository with non standard path,
 for example `your.tld/your/non/standard/dir/your-user/your-module-name`
@@ -70,36 +64,31 @@ GOPRIVATE=your.tld go get -v -u your.tld/your-user/your-module-name
 go test
 ```
 
-Upgrade
--------
+## Upgrade
 
 Upgrading dependency
 
     go get -v -u your.tld/your-user/your-module-name@your-commit-hash-or-tag
 
-Testsing
---------
+## Testsing
 
 Test all packages sub directories
 
     find . -name '*_test.go' -exec sh -c 'echo "{}" && cd $(dirname "{}")  && go test' \;
 
-Why
----
+## Why
 
 Find out wrhere the dependence is used
 
     go mod why -m
 
-Remove unused
--------------
+## Remove unused
 
 Removing/pruning unused dependencies
 
     go mod tidy -v
 
-Gitlab private sub group module get error
------------------------------------------
+## Gitlab private sub group module get error
 
 * https://gitlab.com/gitlab-org/gitlab-foss/-/issues/37832
 * https://gitlab.com/gitlab-org/gitlab-foss/-/issues/65681
