@@ -364,6 +364,10 @@ Find submodules even not listed in `.gitmodules` file
 
     git diff --name-status production..master
 
+## Diff: count lines added/removed/changed lines in stage/index
+
+    git diff --cached --stat
+
 ## Pager less
 
 Use custom pager `less`:
