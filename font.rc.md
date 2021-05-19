@@ -1,31 +1,26 @@
-Font
-====
+# Font
 
-Get default
------------
+## Get default
 
 <http://stackoverflow.com/questions/2153772/linux-firefox-default-sans-serif-font#2539979>.
 
     fc-match sans-serif
     fc-match monospace
 
-List
-----
+## List
 
 List all fonts
 
     fc-cache --force --verbose
 
-Rebuilding cache
-----------------
+## Rebuilding cache
 
 * <https://wiki.archlinux.org/index.php/fonts#Manual_installation>
 * <https://wiki.ubuntu.com/Fonts#Manually>
 
     fc-cache --force --verbose
 
-OTF better than TTF
--------------------
+## OTF better than TTF
 
 Difference between OTF (Open Type) or TTF (True Type)
 <http://superuser.com/questions/96390/difference-between-otf-open-type-or-ttf-true-type-font-formats#96399>
