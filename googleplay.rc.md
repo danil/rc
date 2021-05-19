@@ -1,5 +1,9 @@
 # Google play
 
+## Subscriptions list
+
+https://play.google.com/store/account/subscriptions
+
 ## Client authorization
 
 Authorize google client with `client_id`, `client_secret` and `redirect_uri`
