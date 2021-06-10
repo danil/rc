@@ -326,6 +326,12 @@ SELECT nextval('your_sequence_name');
 SELECT setval('your_sequence_name', 1234567890, true);
 ```
 
+## Reset sequence
+
+```sql
+ALTER SEQUENCE your_sequence_name RESTART WITH 1;
+```
+
 ## Tables list
 
     \dt [PATTERN] (add "+" for more detail)
