@@ -1,6 +1,6 @@
 # Hashing
 
-md5 vs crc32 vs murmur3 vs xxhash
+CRC-32 vs Adler-32 vs MD5 vs MurmurHash3 vs xxHash
 
 ## MD5
 
