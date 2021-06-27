@@ -59,7 +59,7 @@ Disable test cache
 
 Run benchmarks
 
-    go test -v -bench=.
+    go test -v -bench=. -benchmem ./...
 
 ## Test coverage
 
