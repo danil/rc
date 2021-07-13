@@ -94,9 +94,3 @@ Set `~/.ssh/known_hosts` or `/etc/ssh/ssh_known_hosts`
 <https://serverfault.com/questions/1669/shell-command-to-monitor-changes-in-a-file-whats-it-called-again/1670#1670>
 
     ssh your_user@your_user@your.tld "tail -f path/to/your.log"
-
-## WiFi WPA/WPA2 Enterprise TLS
-
-    openssl pkcs12 -in your-name-pfx.p12 -nocerts -out your-name-secret-key.key
-    openssl pkcs12 -in your-name-pfx.p12 -cacerts -nokeys -chain -out your-name-cacert.crt
-    openssl pkcs12 -in your-name-pfx.p12 -clcerts -nokeys -out your-name-cert.crt
