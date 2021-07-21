@@ -31,25 +31,27 @@ Upgrades installed packages to their most recent version
 
     aptitude remove your-pkg-name
 
-## Search
+## Reinstall all
 
-### Installed
+    aptitude reinstall '~i'
+
+## Search installed
 
 <http://unix.stackexchange.com/questions/104374/how-to-show-only-installed-packages-by-executing-aptitude-search#104388>
 
     aptitude search '~i ^emacs'
 
-#### By description
+## Search installed by description
 
     aptitude search '~i ~d ^emacs'
 
-### Not installed
+## Search not installed
 
 <http://unix.stackexchange.com/questions/104374/how-to-show-only-installed-packages-by-executing-aptitude-search#104388>
 
     aptitude search '!~i ^emacs'
 
-#### From source
+## Install from source
 
 <http://askubuntu.com/questions/437255/how-to-install-emacs-24-4-on-ubuntu#546050>
 
