@@ -42,9 +42,12 @@ Display size (resolution)
 
 Scale to virtual resolution
 
-<http://unix.stackexchange.com/questions/69104/can-x11-scale-to-virtual-resoltions-on-hidpi-retina-screens-the-way-os-x-does#69109>
+* https://wiki.archlinux.org/title/HiDPI#Xorg
+* <http://unix.stackexchange.com/questions/69104/can-x11-scale-to-virtual-resoltions-on-hidpi-retina-screens-the-way-os-x-does#69109>
 
-    xrandr --output LVDS-1 --scale 0.5x0.5
+Determine output `xrandr | grep "connected primary"`, for example eDP1 or LVDS-1
+
+    xrandr --output eDP1 --scale 0.5x0.5
 
 ## Default applications
 
