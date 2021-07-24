@@ -2,6 +2,12 @@
 
 The silver searcher <https://github.com/ggreer/the_silver_searcher>.
 
+## Install
+
+https://github.com/ggreer/the_silver_searcher#building-from-source
+
+    make clean && git clean -d -X --force && ./build.sh --prefix="$HOME"/.local && make install
+
 ## Search
 
     ag your-search-text path/to/your/dir
