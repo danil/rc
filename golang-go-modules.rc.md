@@ -51,7 +51,13 @@ Adding dependency happens automatically
 
     go test
 
-## Add private non standard url
+## Private module url
+
+* <https://proxy.golang.org>
+
+`GOPRIVATE=your.tld` или `GOPROXY="https://proxy.your.tld,direct"`
+
+## Private/standard module url
 
 Adding dependency from private git repository with non standard path,
 for example `your.tld/your/non/standard/dir/your-user/your-module-name`
