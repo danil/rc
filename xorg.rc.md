@@ -109,10 +109,6 @@ Keyboard/language layout (flag)
 * https://github.com/scientistnik/xxkb
 * https://github.com/zen-tools/gxkb
 
-## TODO
-
-* https://github.com/baskerville/xtitle outputs X window titles
-
 ## Other
 
     echo "lalala" |xclip -selection clip
