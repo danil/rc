@@ -2,7 +2,9 @@
 
 The silver searcher <https://github.com/ggreer/the_silver_searcher>.
 
-    ag Webpage ~/src/jobtest-aviasales-ru/
+## Search
+
+    ag your-search-text path/to/your/dir
 
 ## Search for file name
 
