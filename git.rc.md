@@ -700,7 +700,11 @@ Search through all commits (and all branches)
 
     git gc --prune=now --aggressive
 
-## Clean working tree
+## Clean ignored by .gitignore
+
+    git clean -d -X --force
+
+## Clean all working tree
 
 Remove untracked files from the working tree
 
