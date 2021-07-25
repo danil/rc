@@ -6,6 +6,14 @@
     git --git-dir=path/to/repository/.git  --work-tree=path/to/repository status
     git push origin master
 
+## Status
+
+    git status
+
+## Status only staged files
+
+    git diff --name-only --cached
+
 ## Init
 
     git --bare init
