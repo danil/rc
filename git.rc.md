@@ -71,6 +71,10 @@ Get/print current branch
 
     git checkout -b newbranch
 
+## Branch create by remote with name different from default
+
+    git checkout -b your-branch your-remote/remote-branch
+
 ## Branch delete
 
     git branch --delete your-branch-name
