@@ -60,6 +60,6 @@ Upgrades installed packages to their most recent version
     wget http://mirror.team-cymru.org/gnu/emacs/emacs-24.4.tar.gz \
       && tar xf emacs-24.4.tar.gz \
       && cd emacs-24.4
-    ./configure --prefix=$HOME \
+    ./configure --prefix="$HOME" \
       && make -j9 \
       && make install

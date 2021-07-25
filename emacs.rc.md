@@ -11,7 +11,7 @@ https://www.gnu.org/software/emacs/history.html
 
 <http://www.emacswiki.org/emacs/BuildingEmacs>
 
-    ./configure --prefix=$HOME && make --jobs=2 && make install
+    ./configure --prefix="$HOME" && make --jobs=2 && make install
 
 ## (write-file)
 

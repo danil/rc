@@ -6,13 +6,13 @@ C package manager-ish <https://github.com/clibs/clib>
 
     git clone https://github.com/clibs/clib.git /tmp/clib
     cd /tmp/clib
-    PREFIX=$HOME make install
+    PREFIX="$HOME" make install
 
 ## Uninstall
 
     git clone https://github.com/clibs/clib.git /tmp/clib
     cd /tmp/clib
-    PREFIX=$HOME make uninstall
+    PREFIX="$HOME" make uninstall
 
 ## Usage
 
@@ -20,8 +20,8 @@ C package manager-ish <https://github.com/clibs/clib>
 
 Packages list <https://github.com/clibs/clib/wiki/Packages>
 
-    PREFIX=$HOME clib install your/pkg-name
+    PREFIX="$HOME" clib install your/pkg-name
 
 ### Uninstall
 
-    PREFIX=$HOME clib-uninstall your/pkg-name
+    PREFIX="$HOME" clib-uninstall your/pkg-name

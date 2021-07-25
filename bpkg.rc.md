@@ -6,8 +6,8 @@ Lightweight bash package manager
 
 ## Install
 
-    curl -Lo- http://get.bpkg.io | PREFIX=$HOME bash
-    export PATH=$PATH:$HOME/deps/bin
+    curl -Lo- http://get.bpkg.io | PREFIX="$HOME" bash
+    export PATH="$PATH":"$HOME"/deps/bin
 
 ## Uninstall
 

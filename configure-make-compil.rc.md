@@ -13,5 +13,5 @@
     autoheader
     automake --force-missing --add-missing
     autoconf
-    ./configure --prefix=$HOME --with-baseruby="/home/danil/bin/ruby" \
+    ./configure --prefix="$HOME" --with-baseruby="/home/danil/bin/ruby" \
                 --enable-shared --enable-pthread --enable-install-doc
