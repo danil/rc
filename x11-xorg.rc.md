@@ -1,4 +1,4 @@
-# X
+# X rc
 
 ## Restart
 
@@ -115,8 +115,6 @@ Keyboard/language layout (flag)
     echo -en "trulala" | xsel -i -b -p
     xev
     xset b off
-    xrdb -merge ~/.Xresources
-    xrdb -merge ~/.Xdefaults
     xinit `which nice` -n 1 `which wine` "./falloutw.exe" -- :1 -depth 16
     xclock &
     xdg-open micronika.xls
