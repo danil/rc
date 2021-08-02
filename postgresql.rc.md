@@ -146,11 +146,15 @@ SELECT * FROM pg_statio_user_indexes;
 <http://www.postgresql.org/docs/current/static/libpq-envars.html>
 
     PGHOST=localhost \
-      PGDATABASE=your-db-name \
-      PGPORT=5433 \
-      PGUSER=your-user \
-      PGPASSWORD=your-password \
-      psql
+    PGDATABASE=your-db-name \
+    PGPORT=5433 \
+    PGUSER=your-user \
+    PGPASSWORD=your-password \
+    psql
+
+## Reserved key Words
+
+https://www.postgresql.org/docs/9.4/errcodes-appendix.html
 
 ## Version
 
