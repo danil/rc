@@ -81,3 +81,7 @@ Completely mask/unmask (enable/disable)
 <https://wiki.archlinux.org/index.php/systemd#Editing_provided_unit_files>
 
     systemctl daemon-reload
+
+## X11 restart
+
+    systemctl restart display-manager
