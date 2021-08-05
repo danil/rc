@@ -84,4 +84,6 @@ Completely mask/unmask (enable/disable)
 
 ## X11 restart
 
+<https://askubuntu.com/questions/1220/how-to-restart-x-window-server-from-command-line#1222>
+
     systemctl restart display-manager
