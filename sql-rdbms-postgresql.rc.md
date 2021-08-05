@@ -674,19 +674,6 @@ Get query execution time/duration
 
     \timing
 
-## Explain
-
-<http://www.postgresql.org/docs/current/static/sql-explain.html>  
-<https://wiki.postgresql.org/wiki/Using_EXPLAIN>
-
-    EXPLAIN SELECT * FROM your_tbl;
-
-## Explain analyze
-
-    BEGIN;
-    EXPLAIN ANALYZE UPDATE your_tbl SET foo = 'bar' || id;
-    ROLLBACK;
-
 ## Disk usage psql command
 
 <http://stackoverflow.com/questions/2596624/how-do-you-find-the-disk-size-of-a-postgres-postgresql-table-and-its-indexes>
