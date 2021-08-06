@@ -11,7 +11,7 @@ In a tty terminal, not a terminal window (get there with [Ctrl] +
 
 ## Hardware information for VESA PnP monitors
 
-    get-edid |parse-edid
+    get-edid | parse-edid
 
 ## DPI
 
