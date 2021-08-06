@@ -101,6 +101,10 @@ This equivalent to (B-tree is default):
     SELECT * FROM pg_stat_user_indexes;
     SELECT * FROM pg_statio_user_indexes;
 
+## Statistics
+
+    SELECT * FROM pg_catalog.pg_stats WHERE tablename = 'your_tbl';
+
 ## Create enum
 
     CREATE TYPE your_tbl AS ENUM ('foo','bar','xyz');
