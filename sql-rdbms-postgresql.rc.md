@@ -1,9 +1,5 @@
 # PostgreSQL rc
 
-```sh
-emerge --config =dev-db/postgresql-11.3
-```
-
 ## psql
 
     psql --host=your.tld --username=your_role
@@ -26,11 +22,9 @@ emerge --config =dev-db/postgresql-11.3
 
 Backuping:
 
-```sh
-pg_dump --host=localhost --port=5432 --username=your_role \
-        --table="your_tbl" --attribute-inserts your_db \
-        | xz --compress > path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
-```
+    pg_dump --host=localhost --port=5432 --username=your_role \
+            --table="your_tbl" --attribute-inserts your_db \
+            | xz --compress > path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
 
 ## Restore dump by psql
 
@@ -61,9 +55,7 @@ pg_dump --host=localhost --port=5432 --username=your_role \
 
 ## Show index
 
-```sql
-SELECT * FROM "pg_indexes" WHERE "tablename" = 'entities';
-```
+    SELECT * FROM "pg_indexes" WHERE "tablename" = 'entities';
 
 ## Show index size
 
@@ -71,62 +63,43 @@ SELECT * FROM "pg_indexes" WHERE "tablename" = 'entities';
 
 ## Create index
 
-```sql
-CREATE INDEX "your_idx_name" ON "your_tbl" ("your_col");
-```
+    CREATE INDEX "your_idx_name" ON "your_tbl" ("your_col");
 
 This equivalent to (B-tree is default):
 
-```sql
-CREATE INDEX "your_idx_name" ON "your_tbl" USING btree ("your_col");
-```
+    CREATE INDEX "your_idx_name" ON "your_tbl" USING btree ("your_col");
 
 ## Create unique index
 
-```sql
-CREATE UNIQUE INDEX "your_idx_name" ON "your_tbl" ("your_col");
-```
+    CREATE UNIQUE INDEX "your_idx_name" ON "your_tbl" ("your_col");
 
 ## Create compound index
 
-```sql
-CREATE INDEX "your_idx_name" ON "your_tbl" ("your_col1", "your_col2");
-```
+    CREATE INDEX "your_idx_name" ON "your_tbl" ("your_col1", "your_col2");
 
 ## Create partial index
 
-```sql
-CREATE INDEX "your_idx_name" ON "your_tbl" ("your_col1") WHERE ("your_col2" IS NULL);
-```
+    CREATE INDEX "your_idx_name" ON "your_tbl" ("your_col1") WHERE ("your_col2" IS NULL);
 
 ## Create index on jsonb
 
-```sql
-CREATE INDEX "your_idx_name" ON "your_tbl" (
-       (your_col1->>'your_prop1'),
-       (your_col2->>'your_prop2')
-);
-
-```
+    CREATE INDEX "your_idx_name" ON "your_tbl" (
+           (your_col1->>'your_prop1'),
+           (your_col2->>'your_prop2')
+    );
 
 ## Drop/delete/remove index
 
-```sql
-DROP INDEX your_index_name;
-```
+    DROP INDEX your_index_name;
 
 ## Rename index
 
-```sql
-ALTER INDEX IF EXISTS "your_idx_name" RENAME TO "your_idx_new_name";
-```
+    ALTER INDEX IF EXISTS "your_idx_name" RENAME TO "your_idx_new_name";
 
 ## Indexes usage stats
 
-```sql
-SELECT * FROM pg_stat_user_indexes;
-SELECT * FROM pg_statio_user_indexes;
-```
+    SELECT * FROM pg_stat_user_indexes;
+    SELECT * FROM pg_statio_user_indexes;
 
 ## Create enum
 
@@ -186,15 +159,11 @@ when the command is spelled `CREATE USER`, `LOGIN` is assumed by default.
 
 ## Create standard user
 
-```sql
-CREATE ROLE your_role WITH LOGIN PASSWORD 'password'
-VALID UNTIL '2009-01-01';
-```
+    CREATE ROLE your_role WITH LOGIN PASSWORD 'password'
+    VALID UNTIL '2009-01-01';
 
-```sh
-createuser --no-createrole --no-createdb --no-superuser --pwprompt \
-           --encrypted --username=your_role --password testuser
-```
+    createuser --no-createrole --no-createdb --no-superuser --pwprompt \
+               --encrypted --username=your_role --password testuser
 
 ## Create Superuser
 
@@ -220,24 +189,22 @@ Grant privileges to the roles/users
 
 List roles and privileges
 
-```sql
-SELECT r.rolname,
-       r.rolsuper,
-       r.rolinherit,
-       r.rolcreaterole,
-       r.rolcreatedb,
-       r.rolcanlogin,
-       r.rolconnlimit,
-       r.rolvaliduntil,
-       ARRAY(SELECT b.rolname
-             FROM pg_catalog.pg_auth_members m
-             JOIN pg_catalog.pg_roles b ON (m.roleid = b.oid)
-             WHERE m.member = r.oid) AS memberof,
-       r.rolreplication,
-       r.rolbypassrls
-FROM pg_catalog.pg_roles r
-ORDER BY 1;
-```
+    SELECT r.rolname,
+           r.rolsuper,
+           r.rolinherit,
+           r.rolcreaterole,
+           r.rolcreatedb,
+           r.rolcanlogin,
+           r.rolconnlimit,
+           r.rolvaliduntil,
+           ARRAY(SELECT b.rolname
+                 FROM pg_catalog.pg_auth_members m
+                 JOIN pg_catalog.pg_roles b ON (m.roleid = b.oid)
+                 WHERE m.member = r.oid) AS memberof,
+           r.rolreplication,
+           r.rolbypassrls
+    FROM pg_catalog.pg_roles r
+    ORDER BY 1;
 
 ## Grant privileges
 
@@ -320,21 +287,15 @@ Set a default schema for a session
 
 ## Get sequence
 
-```sql
-SELECT nextval('your_sequence_name');
-```
+    SELECT nextval('your_sequence_name');
 
 ## Set sequence
 
-```sql
-SELECT setval('your_sequence_name', 1234567890, true);
-```
+    SELECT setval('your_sequence_name', 1234567890, true);
 
 ## Reset sequence
 
-```sql
-ALTER SEQUENCE your_sequence_name RESTART WITH 1;
-```
+    ALTER SEQUENCE your_sequence_name RESTART WITH 1;
 
 ## Tables list
 
@@ -455,12 +416,10 @@ Update multiple rows in one query
 
 ## Increment/upsert/update counter
 
-```sql
-INSERT INTO "your_tbl" ("id", "count")
-VALUES(nextval('your_tbl_id_seq'::regclass), 1)
-ON CONFLICT ("id")
-DO UPDATE SET "count" = COALESCE("your_tbl"."count", EXCLUDED."count") + 1;
-```
+    INSERT INTO "your_tbl" ("id", "count")
+    VALUES(nextval('your_tbl_id_seq'::regclass), 1)
+    ON CONFLICT ("id")
+    DO UPDATE SET "count" = COALESCE("your_tbl"."count", EXCLUDED."count") + 1;
 
 ## Delete row
 
@@ -494,14 +453,12 @@ group of duplicates).
 <http://www.postgresql.org/docs/current/static/functions-comparisons.html#AEN20298>
 <http://www.postgresql.org/docs/current/static/functions.html>
 
-```sql
-SELECT * FROM your_tbl1
-WHERE (
-       your_col1, your_col2
-) NOT IN (
-       SELECT your_col3, your_col4 FROM your_tbl2
-);
-```
+    SELECT * FROM your_tbl1
+    WHERE (
+           your_col1, your_col2
+    ) NOT IN (
+           SELECT your_col3, your_col4 FROM your_tbl2
+    );
 
 ## Array contains condition
 
@@ -542,13 +499,11 @@ Today in past year
 
 Create dates range from now to 1 year ago
 
-```sql
-SELECT tstzrange(
-       (CURRENT_DATE - INTERVAL '1 year')::timestamptz,
-       CURRENT_DATE,
-       '[]'
-);
-```
+    SELECT tstzrange(
+           (CURRENT_DATE - INTERVAL '1 year')::timestamptz,
+           CURRENT_DATE,
+           '[]'
+    );
 
 ## Intersection (overlapping)
 
@@ -602,24 +557,18 @@ Key words should be escaped (for example if used as table name or column name)
 
 ## CSV Export by SQL to STDOUT
 
-```sql
-COPY (SELECT your_col1, your_col2 FROM your_tbl)
-TO STDOUT csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
-```
+    COPY (SELECT your_col1, your_col2 FROM your_tbl)
+    TO STDOUT csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
 
 ## CSV Export by SQL to file
 
-```sql
-COPY (SELECT your_col1, your_col2 FROM your_tbl)
-TO 'path/to/file.csv' csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
-```
+    COPY (SELECT your_col1, your_col2 FROM your_tbl)
+    TO 'path/to/file.csv' csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
 
 ## CSV Export by psql command by SQL to file
 
-```sh
-psql --command="COPY (SELECT your_col1, your_col2 FROM your_tbl)
-                TO STDOUT csv DELIMITER ';' NULL AS '\N' QUOTE '"'"'"' ESCAPE '\';"
-```
+    psql --command="COPY (SELECT your_col1, your_col2 FROM your_tbl)
+                    TO STDOUT csv DELIMITER ';' NULL AS '\N' QUOTE '"'"'"' ESCAPE '\';"
 
 ## CSV import by psql command by SQL from file
 
@@ -627,30 +576,24 @@ Load data from csv file
 
 <http://www.postgresql.org/docs/current/static/sql-copy.html>
 
-```sql
-COPY your_tbl (your_col1, your_col2)
-FROM 'path/to/file.csv'
-csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
-```
+    COPY your_tbl (your_col1, your_col2)
+    FROM 'path/to/file.csv'
+    csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
 
 ## CSV import by psql command by SQL from STDIN
 
-```sh
-cat path/to/file.csv \
-    | psql --command="COPY your_tbl (your_col1, your_col2)
-                      FROM STDIN
-                      csv DELIMITER ';' NULL AS '\N' QUOTE '"'"'"' ESCAPE '\';"
-```
+    cat path/to/file.csv \
+        | psql --command="COPY your_tbl (your_col1, your_col2)
+                          FROM STDIN
+                          csv DELIMITER ';' NULL AS '\N' QUOTE '"'"'"' ESCAPE '\';"
 
 ## CSV import by psql command by from file
 
 <http://www.postgresql.org/docs/current/static/app-psql.html#APP-PSQL-META-COMMANDS-COPY>
 
-```sql
-\copy your_tbl (your_col1, your_col2)
-      FROM 'path/to/file.csv'
-      csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
-```
+    \copy your_tbl (your_col1, your_col2)
+          FROM 'path/to/file.csv'
+          csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
 
 ## Password file
 
@@ -764,18 +707,16 @@ Log statements with any durations
 * <http://www.postgresql.org/message-id/43FE1E65.3030000@genome.chop.edu>
 * <http://www.postgresql.org/docs/current/static/multibyte.html#AEN35730>
 
-```sql
-UPDATE pg_database SET datistemplate = FALSE WHERE datname = 'template1';
-DROP DATABASE template1;
-CREATE DATABASE template1
-       WITH TEMPLATE = template0
-            ENCODING = 'UNICODE'
-            LC_COLLATE='en_US.UTF-8'
-            LC_CTYPE='en_US.UTF-8';
-UPDATE pg_database SET datistemplate = TRUE WHERE datname = 'template1';
-CREATE ROLE your_role WITH SUPERUSER LOGIN PASSWORD 'your-password';
-CREATE DATABASE your_db WITH OWNER your_role ENCODING = 'UTF8';
-```
+    UPDATE pg_database SET datistemplate = FALSE WHERE datname = 'template1';
+    DROP DATABASE template1;
+    CREATE DATABASE template1
+           WITH TEMPLATE = template0
+                ENCODING = 'UNICODE'
+                LC_COLLATE='en_US.UTF-8'
+                LC_CTYPE='en_US.UTF-8';
+    UPDATE pg_database SET datistemplate = TRUE WHERE datname = 'template1';
+    CREATE ROLE your_role WITH SUPERUSER LOGIN PASSWORD 'your-password';
+    CREATE DATABASE your_db WITH OWNER your_role ENCODING = 'UTF8';
 
 ## Reserved key words
 
