@@ -1,8 +1,15 @@
 # GRUB2
 
-## Configuration
+## Ubuntu configuration
 
-<http://wiki.gentoo.org/wiki/GRUB2#Configuration>
+Applying `/etc/default/grub` and `/etc/grub.d/*`
+
+    update-grub
+
+## Arch/Gentoo configuration
+
+* https://wiki.archlinux.org/title/GRUB#Generated_grub.cfg
+* http://wiki.gentoo.org/wiki/GRUB2#Configuration
 
     grub2-mkconfig -o /boot/grub/grub.cfg
 
