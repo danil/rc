@@ -3,6 +3,7 @@
 ## Ubuntu configuration
 
 Applying `/etc/default/grub` and `/etc/grub.d/*`
+https://help.ubuntu.com/community/Grub2/Setup#Introduction
 
     update-grub
 
