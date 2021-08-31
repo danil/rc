@@ -1,19 +1,15 @@
-Vim rc
-======
+# Vim rc
 
-Delete
-------
+## Delete
 
 `dd`  Delete the current line
 
-Yanks
------
+## Yanks
 
 `Y` or `yy`
 
 `10Y`
 
-Paste
------
+## Paste
 
 `P` or `p`
