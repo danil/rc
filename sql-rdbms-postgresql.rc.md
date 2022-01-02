@@ -178,8 +178,9 @@ when the command is spelled `CREATE USER`, `LOGIN` is assumed by default.
 
 ## Alter/update role
 
-    ALTER ROLE your_role WITH PASSWORD 'znVOIuah';
-    ALTER ROLE your_role CREATEDB | NOCREATEDB;
+    ALTER ROLE your_role WITH PASSWORD 'your*password';
+    ALTER ROLE your_role CREATEDB;
+    ALTER ROLE your_role NOCREATEDB;
 
 ## Drop/remove role
 
@@ -314,7 +315,7 @@ Set a default schema for a session
 ## Create table
 
     CREATE TABLE your_tbl
-      (some_id BIGSERIAL primary key, name varchar(10), bio TEXT, age INTEGER);
+      (some_id BIGSERIAL PRIMARY KEY, name varchar(10), bio text, age integer);
 
 ## Describe table
 
@@ -442,7 +443,7 @@ Update multiple rows in one query
 ## Query/convert timestamp to datetime
 
     SELECT *, to_timestamp("created_at") FROM "your_tbl"
-        ORDER BY "created_at" DESC;
+    ORDER BY "created_at" DESC;
 
 ## Distinct
 
@@ -464,11 +465,22 @@ group of duplicates).
            SELECT your_col3, your_col4 FROM your_tbl2
     );
 
+## Array length
+
+    SELECT cardinality('{1,2,3}'::smallint[]);
+    SELECT array_length('{1,2,3}'::smallint[], 1);
+
 ## Array contains condition
 
 <https://stackoverflow.com/questions/16606357/how-to-make-a-select-with-array-contains-value-clause-in-psql#16606612>
 
     select * from your_tbl where your_col @> ARRAY[1234567890]::bigint[];
+
+## Exclude array/not in array condition
+
+<https://stackoverflow.com/questions/11730777/postgres-not-in-array/43380487#11730789>
+
+    SELECT * FROM your_tbl1 WHERE NOT (your_col = ANY ('{0,1,2}'::smallint[]));
 
 ## Current date
 

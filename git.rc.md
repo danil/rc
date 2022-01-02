@@ -61,9 +61,15 @@ Push from local repository to independent remote repository
 
     git push git@github.com:your/repo.git local-branch:remote-branch
 
-## Branches lise
+## Branches list
 
     git branch --all
+
+## List branch sort/order by time
+
+https://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit#5188364
+
+    git for-each-ref --sort=-committerdate refs/heads
 
 ## Create remote branch
 
@@ -585,6 +591,12 @@ Reduce repository size
 
     git log --reverse
     git log --patch --no-merges  HEAD^^^ HEAD
+
+## Log origin master branch
+
+<https://stackoverflow.com/questions/1331385/how-can-i-see-incoming-commits-in-git#1331753>
+
+    git log ..origin/master
 
 ### By date
 

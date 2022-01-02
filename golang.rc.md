@@ -73,6 +73,29 @@ Race conditions and [Race Detector](https://blog.golang.org/race-detector)
 
     go test -race ./...
 
+## Test file
+
+https://pkg.go.dev/testing/fstest
+
+```go
+package main
+
+import "testing/fstest"
+
+func main() {
+   m := fstest.MapFS{
+      "hello.txt": {
+         Data: []byte("hello, world"),
+      },
+   }
+   b, e := m.ReadFile("hello.txt")
+   if e != nil {
+      panic(e)
+   }
+   println(string(b) == "hello, world")
+}
+```
+
 ## godef
 
 Find function definition by package/function name

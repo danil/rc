@@ -70,11 +70,18 @@ GOPRIVATE=your.tld go get -v -u your.tld/your-user/your-module-name
 go test
 ```
 
-## Upgrade
+## Update
 
 Upgrading dependency
 
     go get -v -u your.tld/your-user/your-module-name@your-commit-hash-or-tag
+
+## Update all
+
+Upgrading all dependencies
+
+    go get -u all
+    go mod tidy
 
 ## Testsing
 
