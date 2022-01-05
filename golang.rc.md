@@ -122,7 +122,10 @@ Invalidate cache
 [Runtime]: https://golang.org/pkg/runtime
 [Gosched]: https://golang.org/pkg/runtime/#Gosched
 
-Yields the processor, allowing other goroutines to run.
+Yields the processor, allowing other goroutines to run.  
+It necessary for cooperative scheduler (кооперативного планировщика) until Go 1.13
+and unnecessary for preemptive scheduler (вытесняющего планировщика) starts Go 1.14
+<https://habr.com/ru/post/502506>.
 
     runtime.Gosched()
 
