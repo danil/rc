@@ -19,9 +19,7 @@ Validate fstab syntax
 
 Format usb to fat32 (a-la `mkdosfs`)
 
-```sh
-mkfs.vfat -F 32 /dev/sdg1
-```
+    mkfs.vfat -F 32 /dev/sdg1
 
 ## Set number of inodes by mke2fs
 
