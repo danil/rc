@@ -1,5 +1,9 @@
 # cURL
 
+## View sent/received headers
+
+    curl --verbose --head http://wikipedia.org
+
 ## Without progress bar
 
     curl --silent https://api.github.com/repos/tomnomnom/gron/commits?per_page=1
