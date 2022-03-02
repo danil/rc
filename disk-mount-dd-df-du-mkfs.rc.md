@@ -133,6 +133,15 @@ Check/clean disk after reboot
 
     touch /forcefsck
 
+## USB Win
+
+<https://askubuntu.com/questions/1281698/what-is-the-best-way-to-format-a-usb-stick-such-that-it-can-be-used-with-both-li#1281771>
+
+    fdisk /dev/sda
+    n
+    t 7
+    mkfs.exfat /dev/sda1
+
 ## Other
 
     bchunk Dungeon_Keeper.BIN Dungeon_Keeper.cue Dungeon_Keeper.iso
