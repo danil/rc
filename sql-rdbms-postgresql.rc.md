@@ -426,9 +426,31 @@ Update multiple rows in one query
     ON CONFLICT ("id")
     DO UPDATE SET "count" = COALESCE("your_tbl"."count", EXCLUDED."count") + 1;
 
+## Insert/update new line character
+
+    INSERT INTO your_tbl (your_col) VALUES (E'First Line.\nSecond line.');
+    UPDATE your_tbl SET your_col = E'First Line.\nSecond line.';
+
 ## Delete row
 
     DELETE FROM users WHERE id = 3;
+
+## Delete union
+
+DELETE FROM your_tbl
+WHERE your_col IN (
+      SELECT your_col AS your_als
+             FROM your_tbl
+             WHERE your_col = 42
+             UNION ALL
+      SELECT your_col2 AS your_als
+             FROM your_tbl
+             WHERE your_col = 42
+             UNION ALL
+      SELECT your_col3 AS your_als
+             FROM your_tbl
+             WHERE your_col = 42
+) RETURNING your_col;
 
 ## Truncate data
 
