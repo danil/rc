@@ -7,11 +7,24 @@ https://www.gnu.org/software/emacs/history.html
     curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
     cd ~/.emacs.d && cask install
 
-## Compile from from source
+## Compile source code and run without X11
 
 <http://www.emacswiki.org/emacs/BuildingEmacs>
 
-    ./configure --prefix="$HOME" && make --jobs=2 && make install
+    ./configure --prefix="$HOME"/.local/usr/local \
+                --with-x-toolkit=no \
+                --with-xpm=no \
+                --with-jpeg=no \
+                --with-png=no \
+                --with-gif=no \
+                --with-tiff=no \
+                && make --jobs=2 && make install
+    cd ~/.emacs.d && cask install
+    emacs -nw
+
+## Troubleshooting: Compile Emacs 27.2 in Ubuntu 21.10 error: `static unsigned char sigsegv_stack[SIGSTKSZ]`
+
+<https://www.reddit.com/r/emacs/comments/q99ygd/emacs_272_doesnt_compile_in_kubuntu_2110/>
 
 ## (write-file)
 
