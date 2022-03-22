@@ -37,13 +37,16 @@ List all partitions
                  | partitionmanager | partitionmanager
 ```
 
-## lsblk
+## List partitions
 
-List partitions:
 * <https://wiki.archlinux.org/index.php/persistent_block_device_naming#Persistent_naming_methods>
 * <https://wiki.archlinux.org/index.php/fstab#Kernel_name_descriptors>
 
     lsblk
+
+## List file system types
+
+    lsblk -f
 
 ## GPT Copy
 
