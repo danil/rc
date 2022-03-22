@@ -1,5 +1,18 @@
 # Date and time
 
+## Get timezone
+
+    ls -l /etc/localtime
+    timedatectl status
+
+## List timezones
+
+    timedatectl list-timezones
+
+## Set timezone
+
+    timedatectl set-timezone UTC
+
 ## Timestamp to date/time
 
     date --date=@1480865885 --rfc-3339=seconds
