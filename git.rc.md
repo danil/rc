@@ -88,6 +88,7 @@ Get/print current branch
 ## Branch create by remote with name different from default
 
     git checkout -b your-branch your-remote/remote-branch
+    git switch   -c your-branch your-remote/remote-branch
 
 ## Branch delete
 
@@ -545,6 +546,10 @@ You have three steps there:
     git cherry-pick --abort
 
 ## Rebase
+
+### Rebase master into your branch
+
+    git rebase master your-branch
 
 ### Squash latest commits into one
 
