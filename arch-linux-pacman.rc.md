@@ -1,4 +1,8 @@
-# Arch Linux
+# Arch Linux/pacman
+
+## pacman package manager
+
+    pacman --verbose
 
 ## Packages list
 
@@ -10,7 +14,7 @@
 
 ## Package install
 
-    pacman --verbose --sync your-pkg
+    pacman --sync your-pkg
 
 ## Packages list install
 
