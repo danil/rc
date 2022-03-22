@@ -1,12 +1,10 @@
 # Date and time
 
-## Timestamp
-
-### To time/date
+## Timestamp to date/time
 
     date --date=@1480865885 --rfc-3339=seconds
 
-### To timestamp
+## Date/time to timestamp
 
     date +%s --date="1970-01-01T00:00:00+0000"
 
@@ -31,7 +29,7 @@
     ntpq -c readvar
     ntpq -c peers
 
-### Other
+## Other
 
     date +%Y%m%d%H%M%S #19700101000000
     date +%z
