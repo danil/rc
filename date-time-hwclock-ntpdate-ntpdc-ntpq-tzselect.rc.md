@@ -2,6 +2,8 @@
 
 ## Get timezone
 
+https://wiki.archlinux.org/title/System_time#Time_zone
+
     ls -l /etc/localtime
     timedatectl status
 
