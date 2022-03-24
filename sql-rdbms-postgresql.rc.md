@@ -292,15 +292,15 @@ Set a default schema for a session
 
 ## Get sequence
 
-    SELECT nextval('your_sequence_name');
+    SELECT nextval('your_seq');
 
 ## Set sequence
 
-    SELECT setval('your_sequence_name', 1234567890, true);
+    SELECT setval('your_seq', 1234567890, true);
 
 ## Reset sequence
 
-    ALTER SEQUENCE your_sequence_name RESTART WITH 1;
+    ALTER SEQUENCE your_seq RESTART WITH 1;
 
 ## Tables list
 
@@ -452,11 +452,11 @@ WHERE your_col IN (
              WHERE your_col = 42
 ) RETURNING your_col;
 
-## Truncate data
+## Truncate all data
 
 <http://www.postgresql.org/docs/current/static/sql-truncate.html>
 
-    TRUNCATE timeline_items CASCADE;
+    BEGIN; TRUNCATE your_tbl, your_tbl2 CASCADE; ALTER SEQUENCE your_seq RESTART WITH 1; COMMIT;
 
 ## Queries
 
