@@ -18,6 +18,6 @@ https://help.ubuntu.com/community/Grub2/Setup#Introduction
 
 <http://wiki.gentoo.org/wiki/GRUB2#Configuration>
 
-    grub2-mkfont /usr/share/fonts/fantasque-sans/FantasqueSansMono-Regular.ttf
-                 --size=20
+    grub2-mkfont /usr/share/fonts/fantasque-sans/FantasqueSansMono-Regular.ttf \
+                 --size=20 \
                  --output /boot/grub/fonts/FantasqueSansMono-Regular-20.pcf
