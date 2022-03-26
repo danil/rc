@@ -114,6 +114,32 @@ Copy ISO image to bootable usb
     blkid
     mount /dev/sr0 path/to/mnt
 
+## Mount raw ext4 disk image
+
+Get the sector size and the sector start of the partition:
+
+    # fdisk -lu path/to/image.raw
+    Disk path/to/image.raw: 90 GiB, 96636764160 bytes, 188743680 sectors
+    Units: sectors of 1 * 512 = 512 bytes
+    Sector size (logical/physical): 512 bytes / 512 bytes
+    I/O size (minimum/optimal): 512 bytes / 512 bytes
+    Disklabel type: dos
+    Disk identifier: 0x000b7568
+    Device             Boot Start       End   Sectors Size Id Type
+    path/to/image.raw1       2048     63487     61440  30M 82 Linux swap / Solaris
+    path/to/image.raw2 *    63488 188743678 188680191  90G 83 Linux
+
+Calculate the offset from the start of the image to the partition start
+multiplying sector size to sector start: `512 * 63488 = 32505856`
+
+Mount partition on loop devices:
+
+    losetup -o 32505856 /dev/loop0 path/to/image.raw
+
+Mount partition on file system:
+
+    mount /dev/loop0 /mnt/image_raw
+
 ## fdupes find duplicate files
 
 <https://github.com/adrianlopezroche/fdupes>,
