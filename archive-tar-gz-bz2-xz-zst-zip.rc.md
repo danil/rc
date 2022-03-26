@@ -18,13 +18,13 @@ Via pipeline
 
 <http://stackoverflow.com/questions/984204/shell-command-to-tar-directory-excluding-certain-files-folders#984259>
 
-    tar --exclude=foo.tar.xz --create --xz --file foo.tar.xz ./foo
+    tar --exclude=your.tar.xz --create --xz --file your.tar.xz ./your
 
 ## tar create archive by list of files
 
 <http://stackoverflow.com/questions/8033857/tar-archiving-that-takes-input-from-a-list-of-files#8033891>
 
-    tar --create --file foo.tar --files-from=mylist.txt
+    tar --create --file your.tar --files-from=mylist.txt
 
 ## tar create archive from stdin to stdout
 
@@ -68,6 +68,10 @@ read -ra arr <<<"your array of directories" && \
 
     gzip --keep path/to/your.file
     gzip --keep --stdout path/to/your.file > path/to/your.file.gz
+
+## gzip compress tarball
+
+    tar --create --gzip --file your.tar.gz ./your
 
 ## pigz decompress tarball
 
@@ -122,7 +126,7 @@ read -ra arr <<<"your array of directories" && \
 
 ## unzip decompress to directory
 
-    unzip foo.zip -d path/to/dir
+    unzip your.zip -d path/to/dir
 
 ## zip decompress
 
@@ -132,7 +136,7 @@ read -ra arr <<<"your array of directories" && \
 
     zip file-to-archive.zip file-to-archive
     echo 'Hello, World!' | zip file-to-archive.zip -
-    zip --recurse-paths foo.zip foo/
+    zip --recurse-paths your.zip path/to/dir
     export f=filename && cat ${f} | zip --quiet ${f}.zip $f
     ls path/to/your.file | zip --quiet path/to/file.zip -@
     ls path/to/your/dir | grep filename | zip --quiet path/to/archive.zip -@
