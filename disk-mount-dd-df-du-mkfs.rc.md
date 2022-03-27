@@ -114,7 +114,7 @@ Copy ISO image to bootable usb
     blkid
     mount /dev/sr0 path/to/mnt
 
-## Mount raw ext4 disk image
+## Mount raw disk image (ext3, ext4 and so on)
 
 Get the sector size and the sector start of the partition:
 
