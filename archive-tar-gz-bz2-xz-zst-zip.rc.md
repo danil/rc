@@ -117,6 +117,7 @@ read -ra arr <<<"your array of directories" && \
 <https://github.com/facebook/zstd>
 
     tar --extract --zstd --file path/to/your.file.tar.zst
+    tar --extract --use-compress-program="zstd --threads=0 --force --decompress" --file path/to/your.file.tar.zst
     zstd --threads=0 --force --decompress --stdout path/to/your.file.tar.zst | tar --extract --file -
 
 ## zstd compress tarball
