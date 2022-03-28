@@ -45,7 +45,7 @@
 
     curl --location http://your.tld
 
-## Output to file
+## Download output to file
 
     curl --output file.tar.gz https://your.tld/path/to/file.tar.gz
 
