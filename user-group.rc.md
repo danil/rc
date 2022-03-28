@@ -51,7 +51,7 @@
 
 ## Add to group
 
-    gpasswd --add your_user your_group #and then `newgrp`
+    gpasswd --add your_user your_group && newgrp
 
 ## Group other
 
