@@ -116,6 +116,8 @@ Copy ISO image to bootable usb
 
 ## Mount raw disk image (ext3, ext4 and so on)
 
+<https://askubuntu.com/questions/69363/mount-single-partition-from-image-of-entire-disk-device#69447>
+
 Get the sector size and the sector start of the partition:
 
     # fdisk -lu path/to/image.raw
