@@ -93,6 +93,10 @@ https://wiki.archlinux.org/index.php/Pacman#Cleaning_the_package_cache
 
 <https://github.com/UndeadKernel/pacfiles-mode>
 
+## Which package file belongs to
+
+    pacman --query --owns path/to/your-pkg
+
 ## List files belongs to package
 
 https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Listing_files_owned_by_a_package_with_size
