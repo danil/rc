@@ -4,7 +4,10 @@ https://robots.thoughtbot.com/a-tmux-crash-course
 
 ## Install
 
-    ./autogen.sh && ./configure --prefix="$HOME"/.local && make --jobs=5 && make install
+    ./autogen.sh \
+    && ./configure --prefix="$HOME"/.local/usr/local \
+    && make --jobs=5 \
+    && make install
 
 ## Copy past
 
