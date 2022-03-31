@@ -18,7 +18,8 @@ https://www.gnu.org/software/emacs/history.html
                 --with-png=no \
                 --with-gif=no \
                 --with-tiff=no \
-                && make --jobs=2 && make install
+                && make --jobs=2 \
+                && make install
     cd ~/.emacs.d && cask install
     emacs -nw
 
