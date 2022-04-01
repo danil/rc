@@ -95,7 +95,7 @@ https://wiki.archlinux.org/index.php/Pacman#Cleaning_the_package_cache
 
 ## Which package file belongs to
 
-    pacman --query --owns path/to/your-pkg
+    pacman --query --owns path/to/your-file
 
 ## List files belongs to package
 
