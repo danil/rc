@@ -2,10 +2,10 @@
 
 https://robots.thoughtbot.com/a-tmux-crash-course
 
-## Install
+## Install/compile/build
 
     ./autogen.sh \
-    && ./configure --prefix="$HOME"/.local/usr/local \
+    && ./configure --prefix="$HOME"/.local/usr/local --enable-utempter \
     && make --jobs=5 \
     && make install
 
