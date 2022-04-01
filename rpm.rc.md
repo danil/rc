@@ -1,9 +1,9 @@
 # RPM
 
-Red Hat Package Manager
+RPM Package Manager (originally Red Hat Package Manager)
 
-    rpm -qa |grep -i emacs
-    rpm -qfa |grep -i xyz\.so
-    rpm -ihv emacs
-    rpm -Uhv emacs
-    rpm -e package
+    rpm -qa | grep -i your-pkg
+    rpm -qfa | grep -i your_lib\.so
+    rpm -ihv your-pkg
+    rpm -Uhv your-pkg
+    rpm -e your-pkg
