@@ -2,11 +2,14 @@
 
 The silver searcher <https://github.com/ggreer/the_silver_searcher>.
 
-## Install
+## Install/compile/build
 
 https://github.com/ggreer/the_silver_searcher#building-from-source
 
-    make clean ; git clean -d -X --force && ./build.sh --prefix="$HOME"/.local && make install
+    make clean \
+    ; git clean -d -X --force \
+    && ./build.sh --prefix="$HOME"/.local/usr/local \
+    && make install
 
 ## Search
 
