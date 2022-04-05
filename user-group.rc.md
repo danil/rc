@@ -11,7 +11,10 @@
             --home-dir=/path/to/home/your_user \
             --shell=/bin/bash \
             your_user
-    useradd -D
+
+## Add user and group with the same name
+
+    useradd --user-group your_user_and_group
 
 ## Add no login/unprivileged user
 
@@ -33,6 +36,10 @@
 ## User remove
 
     userdel --remove your_user
+
+## User other
+
+    useradd -D
 
 ## Group list
 
