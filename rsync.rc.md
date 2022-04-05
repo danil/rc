@@ -2,31 +2,27 @@
 
 ## Download
 
-```sh
-rsync --verbose \
-      --human-readable \
-      --checksum \
-      --partial \
-      --append-verify \
-      --progress \
-      --stats \
-      your_user@your.tld:/path/to/file .
-```
+    rsync --verbose \
+          --human-readable \
+          --checksum \
+          --partial \
+          --append-verify \
+          --progress \
+          --stats \
+          your_user@your.tld:/path/to/file .
 
 ## Upload
 
 <http://stackoverflow.com/questions/9090817/copying-files-using-rsync-from-remote-server-to-local-machine#9090859>
 
-```sh
-rsync --verbose \
-      --human-readable \
-      --checksum \
-      --partial \
-      --append-verify \
-      --progress \
-      --stats \
-      your_user@your.tld:/path/to/file .
-```
+    rsync --verbose \
+          --human-readable \
+          --checksum \
+          --partial \
+          --append-verify \
+          --progress \
+          --stats \
+          your_user@your.tld:/path/to/file .
 
 ## Compress
 
