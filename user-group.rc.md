@@ -2,7 +2,9 @@
 
 ## User add
 
-    useradd --comment="Your user name" \
+    useradd --uid=1000 \
+            --gid=1000 \
+            --comment="Your user name" \
             --user-group \
             --groups=your,groups,names \
             --create-home \
@@ -38,7 +40,7 @@
 
 ## Group create
 
-    groupadd your_group
+    groupadd --gid=1000 your_group
 
 ## Group edit
 
