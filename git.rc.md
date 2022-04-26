@@ -278,6 +278,11 @@ add the things you want to keep, then run it.
 
     git show stash@{0}:README.md
 
+## Stash to patch file
+
+    git stash show "stash@{0}" --patch > stash.patch
+    git stash show "stash@{0}" -p > stash.patch
+
 ## Fetch
 
     git fetch origin master
@@ -677,11 +682,7 @@ git log \
     | sed ':a;N;$!ba;s/\n/ /g'
 ```
 
-## Shortlog
-
-### Contributors
-
-#### List
+## Shortlog contributors list
 
 List of contributors/authors
 
@@ -690,7 +691,11 @@ List of contributors/authors
 
     git shortlog --summary --email --numbered --since="7 days ago" path/to/file | cut -c8-
 
-#### Count
+## Shortlog branch contributors list
+
+    git shortlog --summary --email --numbered HEAD origin/your-branch | cut -c8- 
+
+## Shortlog count authors contribution lines
 
 Count contributors to file:
 
