@@ -795,7 +795,7 @@ Merge two repositories with history
                bar/master
     git commit --message='Merge branch v0.0.1 into v0.0.2'
 
-## Change the default git branch in a bare repository
+## Bare repository default branch
 
 Setting/changing the default git branch in a bare repository
 <https://stackoverflow.com/questions/3301956/git-correct-way-to-change-active-branch-in-a-bare-repository#3302018>
