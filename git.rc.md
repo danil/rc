@@ -65,7 +65,7 @@ Push from local repository to independent remote repository
 
     git branch --all
 
-## List branch sort/order by time
+## List branchs sort/order by date/time
 
 https://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit#5188364
 
