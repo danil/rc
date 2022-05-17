@@ -34,4 +34,6 @@ precaching a file or URL.
 
 ## Screenshot
 
-    s
+```
+s
+```
