@@ -33,6 +33,10 @@
             --shell /bin/bash \
             --gid your_user --login your_user your_user
 
+## Adding user to multiple groups
+
+    usermod --append --groups=your_group1,your_group2 your_user
+
 ## User remove
 
     userdel --remove your_user

@@ -4,6 +4,7 @@
 
 Install command line interface
 
+    brew install awscli
     pip install awscli
 
 ## Authentication/authorization
