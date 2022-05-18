@@ -435,6 +435,15 @@ Update multiple rows in one query
 
     DELETE FROM users WHERE id = 3;
 
+## Delete limit
+
+   WITH del AS (
+        SELECT id FROM your_tbl
+        WHERE your_col = 'foobar'
+        LIMIT 42
+   ) DELETE FROM your_tbl
+     WHERE id IN (SELECT FROM del);
+
 ## Delete union
 
     DELETE FROM your_tbl
