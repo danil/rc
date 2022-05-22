@@ -516,6 +516,14 @@ You have three steps there:
 
 ## Patch
 
+### Patch from one commit
+
+    git show your-commit-sha > your_patch_name.patch
+
+### Patch from one commit with blobs by email
+
+    git format-patch -1 your-commit-sha --stdout > your_patch_name.patch
+
 ### Easy way
 
     sed --in-place 's/foo/bar/g' path/to/file.c
@@ -646,11 +654,11 @@ List all file names changed by author
 <https://stackoverflow.com/questions/6349139/can-i-get-git-to-tell-me-all-the-files-one-user-has-modified#6349405>
 
 ```sh
-git log --pretty="%H" --author="your_name" app/models | while read commit_hash; do git show --oneline --name-only $commit_hash | tail -n+2; done | sort | uniq | grep 'app/models'
+git log --pretty="%H" --author="your_name" app/models | while read your_commit_sha; do git show --oneline --name-only $your_commit_sha | tail -n+2; done | sort | uniq | grep 'app/models'
 
 git log --pretty="%H" --author="your_author_name" your/path | \
-    while read commit_hash; do \
-          git show --oneline --name-only $commit_hash | \
+    while read your_commit_sha; do \
+          git show --oneline --name-only $your_commit_sha | \
           tail -n+2; \
     done | \
     sort | uniq | grep "your/path"
