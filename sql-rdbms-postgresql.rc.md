@@ -471,10 +471,17 @@ Update multiple rows in one query
 
     SELECT * FROM your_tbl;
 
-## Query/convert timestamp to datetime
+## Query/convert timestamp to string
 
-    SELECT *, to_timestamp("created_at") FROM "your_tbl"
-    ORDER BY "created_at" DESC;
+    SELECT to_char(now(), 'YYYY-MM-DD hh24:mi:ss TZ');
+
+## Query/convert unix time to timestamp
+
+    SELECT to_timestamp(1234567890);
+
+## Query/convert string to timestamp
+
+    SELECT to_timestamp('1970-12-31 23:45:01 UTC', 'YYYY-MM-DD hh24:mi:ss TZ');
 
 ## Distinct
 
@@ -554,8 +561,8 @@ Create dates range from now to 1 year ago
 
 ## Intersection (overlapping)
 
-    SELECT tstzrange('1999-01-01', '1999-12-31', '[]')
-        && tstzrange('1970-01-01', '2000-12-31', '[]');
+    SELECT tstzrange('1970-12-31', '2000-12-31', '[]')
+        && tstzrange('1970-12-31', '2000-12-31', '[]');
 
 ## List functions
 
