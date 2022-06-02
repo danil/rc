@@ -508,11 +508,17 @@ group of duplicates).
     SELECT cardinality('{1,2,3}'::smallint[]);
     SELECT array_length('{1,2,3}'::smallint[], 1);
 
-## Array contains condition
+## Array contains
 
 <https://stackoverflow.com/questions/16606357/how-to-make-a-select-with-array-contains-value-clause-in-psql#16606612>
 
-    select * from your_tbl where your_col @> ARRAY[1234567890]::bigint[];
+    SELECT * FROM your_tbl WHERE 'your array item' = ANY(your_col);
+    SELECT * FROM your_tbl WHERE your_col @> ARRAY['foobar']::text[];
+    SELECT * FROM your_tbl WHERE your_col && ARRAY['foo','bar']::text[];
+
+## Array append
+
+    UPDATE your_tbl SET your_col = array_append(your_col, 'new array item');
 
 ## Exclude array/not in array condition
 
