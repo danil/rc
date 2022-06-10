@@ -113,7 +113,7 @@ godef -f path/to/file.go 'yourpkgname.YourFunctionName'
 
 ## Build cache invalidation
 
-Invalidate cache
+Invalidate cache/recompile
 
     go build -a path/to/package
 
