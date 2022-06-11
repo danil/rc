@@ -1,4 +1,4 @@
-Golang rc
+# Golang rc
 
 <https://go-proverbs.github.io>
 
