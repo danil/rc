@@ -692,7 +692,7 @@ git log \
 
 ## Shortlog contributors list
 
-List of contributors/authors
+List of contributors/authors/owners
 
 * <http://stackoverflow.com/questions/9597410/list-all-developers-on-project-in-git#9597462>
 * <http://www.commandlinefu.com/commands/view/4519/list-all-authors-of-a-particular-git-project>
