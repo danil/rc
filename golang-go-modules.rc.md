@@ -1,6 +1,6 @@
 # Go modules rc
 
-Go mod
+go.mod, go.sum and friends
 
 * https://blog.golang.org/using-go-modules
 * https://github.com/golang/go/wiki/Modules
