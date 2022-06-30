@@ -311,6 +311,10 @@ Move file and directory into a other directory along with commit history
 
     git mv your/dir1/* your/dir2
 
+## Get short commit hash/object ID
+
+    git rev-parse --short HEAD
+
 ## Mirror repository
 
 <http://exyr.org/2011/git-mirrors>
