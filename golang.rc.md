@@ -173,12 +173,10 @@ Arguments against time.Date type <https://github.com/golang/go/issues/19700#issu
 
 ## Multiply duration
 
-    d2 := time.Duration(float64(d1) * 1.23)
+    fmt.Println(time.Duration(float64(42*time.Second) * 1.23))
 
 ## Duration growth logarithmically
 
     for i := 1; i < 100500; i++ {
-        d2 := time.Duration(
-            float64(d1) * (1 + math.Log(float64(i))),
-        )
+        time.Duration(float64(42*time.Second) * (1 + math.Log(float64(i))))
     }
