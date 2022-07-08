@@ -207,7 +207,7 @@ Select tag <http://git-scm.com/book/en/Git-Basics-Tagging#Listing-Your-Tags>
 
     git checkout v0.0.1
 
-## Latest/newest tag
+## Latest/newest tag by timestamp/date/time
 
 Newest tag
 <http://stackoverflow.com/questions/1404796/how-to-get-the-latest-tag-name-in-current-branch-in-git#7261049>
