@@ -167,6 +167,18 @@ go run -ldflags "-X path/to/package.foo=123 -X path/to/package.Bar=xyz" main.go
 
     env GOARCH=arm64 go build
 
-## Time
+## Civil time vs monotonic
 
-Arguments against time.Date type https://github.com/golang/go/issues/19700#issuecomment-559250634
+Arguments against time.Date type <https://github.com/golang/go/issues/19700#issuecomment-559250634>
+
+## Multiply duration
+
+    d2 := time.Duration(float64(d1) * 1.23)
+
+## Duration growth logarithmically
+
+    for i := 1; i < 100500; i++ {
+        d2 := time.Duration(
+            float64(d1) * (1 + math.Log(float64(i))),
+        )
+    }
