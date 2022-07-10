@@ -1,36 +1,30 @@
-APT (Advanced Packaging Tool)
-=============================
+# APT (Advanced Packaging Tool)
 
-Repository add
---------------
+## Repository add
 
     add-apt-repository ppa:your-ppa-name/ppa
     apt-get update
 
-Repository remove
------------------
+## Repository remove
 
     add-apt-repository --remove ppa:your-ppa-name/ppa
     apt-get update
 
-Finding which package contains a file
--------------------------------------
+## Finding which package contains a file
 
 <http://debian-administration.org/articles/334>
 
     apt-file update
     apt-file search /usr/bin/your_file_name
 
-Upgrade
--------
+## Upgrade
 
 Upgrades installed packages to their most recent version
 
     apt-get update
     apt-get --show-upgraded upgrade
 
-Download, modify, build and install packag
-------------------------------------------
+## Download, modify, build and install packag
 
 Get package source
 
@@ -44,39 +38,33 @@ debuild -us -uc -b
 sudo dpkg -i ../your-pkg-name_1.2.3-1+19700101_amd64.deb
 ```
 
-Dependencies
-------------
+## Dependencies
 
     apt-cache depends your-pkg-name
 
-Depended
---------
+## Depended
 
 List of depended packages
 
     apt-cache rdepends --installed your_pkg_name
 
-List all versions of the package
---------------------------------
+## List all versions of the package
 
 <https://askubuntu.com/questions/447/how-can-i-see-all-versions-of-a-package-that-are-available-in-the-archive#2108>
 
     apt-cache madison your-pkg-name
 
-Add trusted key
----------------
+## Add trusted key
 
     apt-key add path/to/file.asc
 
-Add trusted key
----------------
+## Add trusted key
 
 Fixing following signatures were invalid (https://github.com/yarnpkg/yarn/issues/7866)
 
     apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
 
-Other
------
+## Other
 
     apt-get --show-upgraded dist-upgrade
     apt-cash [--full] search your-pkg-name
