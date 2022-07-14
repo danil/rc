@@ -1,8 +1,6 @@
-Gentoo Linux
-============
+# Gentoo Linux
 
-Installation via copy MBR partitions
-------------------------------------
+## Installation via copy MBR partitions
 
 Install via clone/copy all system from source device to destination device.
 
@@ -11,13 +9,11 @@ Copy partitions table from `/dev/your_source` to `/dev/your_destination`
 
     sgdisk --replicate=/dev/your_destination /dev/your_source
 
-Installation via copy MBR partitions: make unique its GUID as it was cloned and is identical with source device
----------------------------------------------------------------------------------------------------------------
+## Installation via copy MBR partitions: make unique its GUID as it was cloned and is identical with source device
 
     sgdisk --randomize-guids /dev/your_destination
 
-Installation via copy MBR partitions: copy raw partitions byte by byte
-----------------------------------------------------------------------
+## Installation via copy MBR partitions: copy raw partitions byte by byte
 
 Cloning the all partitions one by one and the all their content
 
@@ -27,23 +23,19 @@ Cloning the all partitions one by one and the all their content
 
     dd if=/dev/your_source1 of=/dev/your_destination1 bs=512 conv=sync
 
-Installation via copy MBR partitions: GRUB
-------------------------------------------
+## Installation via copy MBR partitions: GRUB
 
 <https://wiki.gentoo.org/wiki/GRUB2#BIOS_with_MBR>
 
-Installation via copy MBR partitions: GRUB mount `boot` partition
------------------------------------------------------------------
+## Installation via copy MBR partitions: GRUB mount `boot` partition
 
     mount /dev/your_destination1 /boot
 
-Installation via copy MBR partitions: install GRUB
---------------------------------------------------
+## Installation via copy MBR partitions: install GRUB
 
     grub-install /dev/your_destination
 
-Emerge
-------
+## Emerge
 
     MAKEOPTS="-j1" USE="-mmx" emerge --ask --oneshot your-pkg/name
     emerge --verbose --search emacs
@@ -51,68 +43,58 @@ Emerge
     emerge --verbose --ask --deep --noreplace =gentoo-sources-2.6.30-r4
     emerge --info
 
-Emerge update with build time dependencies
-------------------------------------------
+## Emerge update with build time dependencies
 
 <https://www.gentoo.org/proj/en/portage/doc/faq.xml?style=printable#doc_chap1_sect2>
 
     emerge --color=y --oneshot --deep --newuse --update \
            --backtrack=1000000 --with-bdeps=y @world
 
-Emerge update exclude
----------------------
+## Emerge update exclude
 
     emerge --update --exclude you-whant/to-exclude-package -- world
 
-Emerge update kernel modules
-----------------------------
+## Emerge update kernel modules
 
 <http://wiki.gentoo.org/wiki/Kernel/Upgrade#Reinstall_external_kernel_modules>
 
     emerge --oneshot @module-rebuild
 
-Emerge recompile
-----------------
+## Emerge recompile
 
 Recompiling all packages on the system.
 
     emerge --emptytree system
     emerge --emptytree world
 
-Emerge recompile with notification
-----------------------------------
+## Emerge recompile with notification
 
     export subj="$(hostname): Emerge empty tree system $(date --utc +%Y%m%dT%H%M%SZ)" && \
            emerge --emptytree --oneshot system; \
            echo -e "Subject: $subj\n\n$subj\n" | \
            /usr/sbin/sendmail your.name@your.tld
 
-Emerge unmerge
---------------
+## Emerge unmerge
 
     emerge --oneshot --deep --depclean your-pkg/name
 
-Emerge unmerge temporary
-------------------------
+## Emerge unmerge temporary
 
 Remove/delete
 
     emerge --oneshot --unmerge your-pkg/name
 
-Emerge ceanup all
------------------
+## Emerge ceanup all
 
     emerge --quiet --deep --depclean
 
-Emerge format output
---------------------
+## Emerge format output
 
 Output by columns (only package name)
 
     emerge --columns | awk '{print $4}'
 
-Profile
--------
+## Profile
 
 <https://wiki.gentoo.org/wiki/Profile_(Portage)>
 
@@ -120,8 +102,7 @@ List Gentoo profiles
 
     eselect profile list
 
-Equery
-------
+## Equery
 
     equery list nginx
     equery list "*" |wc -l
@@ -129,8 +110,7 @@ Equery
     equery depends your-pkg/name
     equery uses =emacs-22.3-r2 --all
 
-Equery files belong to package
-------------------------------
+## Equery files belong to package
 
     equery belongs /usr/share/fonts/misc/9x18.pcf.gz
 
@@ -138,16 +118,14 @@ same as:
 
     qfile /usr/share/fonts/misc/9x18.pcf.gz
 
-Equery packages depends on package
-----------------------------------
+## Equery packages depends on package
 
 List packages depends on package `your-pkg/name`
 <https://wiki.gentoo.org/wiki/Equery#Listing_all_packages_depending_on_a_package_with_depends_.28d.29>
 
     equery depends your-pkg/name
 
-Portage utils
--------------
+## Portage utils
 
     qsize emacs
     qsize -a -k | sort -n -k 6
@@ -157,8 +135,7 @@ Portage utils
     qsearch emacs
     emaint --check world
 
-USE flags
----------
+## USE flags
 
     equery hasuse ogg
     grep -i "ogg - " /usr/portage/profiles/use.desc
@@ -166,8 +143,7 @@ USE flags
     euse --info ogg
     equery uses =sys-devel/gcc-4.6.0
 
-Layman
-------
+## Layman
 
 * <http://gentoo.org/proj/en/overlays/userguide.xml?style=printable#doc_chap2_sect2>
 * <http://en.gentoo-wiki.com/wiki/Overlay#Layman>
@@ -179,23 +155,19 @@ Layman
     layman --delete=sunrise
     layman --sync=sunrise
 
-Ebuild compile
---------------
+## Ebuild compile
 
     ebuild ~/path/to/ebuild/skippy-xd-0.5.0-r1.ebuild compile
 
-Ebuild install
---------------
+## Ebuild install
 
     ebuild ~/path/to/ebuild/skippy-xd-0.5.0-r1.ebuild install
 
-[Ebuild policy][]
------------------
+## [Ebuild policy][]
 
 [Ebuild policy]: <http://gentoo.org/proj/en/devrel/handbook/handbook.xml?style=printable&part=3&chap=1>
 
-Ebuild [manifest][]
--------------------
+## Ebuild [manifest][]
 
 [Manifest]: <http://devmanual.gentoo.org/general-concepts/manifest/index.html>
 
@@ -208,18 +180,15 @@ eix
     eix --world --categor
     eix-test-obsolete detail
 
-eix cache refresh
------------------
+## eix cache refresh
 
     eix-update
 
-eix downgrade (delete) or upgrade list
---------------------------------------
+## eix downgrade (delete) or upgrade list
 
     eix --upgrade
 
-eix overlays
-------------
+## eix overlays
 
 List packages install from overlay <http://bugs.gentoo.org/204324>,
 <http://bugs.gentoo.org/138622>.
@@ -227,66 +196,56 @@ List packages install from overlay <http://bugs.gentoo.org/204324>,
     eix --installed-overlay
     eix --in-overlay unity-gentoo
 
-eix recompile all ebuilds from overlay
---------------------------------------
+## eix recompile all ebuilds from overlay
 
     emerge --verbose --oneshot $(eix --installed --only-names --in-overlay unity-gentoo)
 
-eix installed list
-------------------
+## eix installed list
 
 Installed packages
 
     eix-installed -a
 
-eix installed count
--------------------
+## eix installed count
 
 Count all packages
 
     eix --installed --compact | grep Found.*matches
 
-eix installed and deprecated
-----------------------------
+## eix installed and deprecated
 
 Installed packages and listed in overlay (this command counts then
 twice) might be installed from overlay
 
     equery list -o | sort | uniq --count | sort --numeric-sort
 
-eix list packages in loop
--------------------------
+## eix list packages in loop
 
     read -ra arr <<<"you/first-pkg your/second-pkg" && for i in "${arr[@]}"; do eix "$i"; done
 
-repoman
--------
+## repoman
 
     repoman manifest
     repoman full --without-mask --include-dev
 
-GCC upgrade
------------
+## GCC upgrade
 
 <https://wiki.gentoo.org/wiki/Upgrading_GCC#Short_version>
 
-GCC upgrade rebuild
--------------------
+## GCC upgrade rebuild
 
 <https://wiki.gentoo.org/wiki/Upgrading_GCC#Which_packages_are_known_to_need_a_rebuild.3F>
 
     emerge --ask --oneshot --verbose sys-devel/libtool sys-devel/llvm
 
-GCC other
----------
+## GCC other
 
 Symptom: `checking whether the C compiler works... no`
 
     gcc-config --list-profiles
     gcc-config 2
 
-Freeing Up Disk Space
----------------------
+## Freeing Up Disk Space
 
 WARNING: Avoid using eclean!
 <http://makuro.wordpress.com/2010/12/12/intro-to-portage-sets>.
@@ -302,20 +261,17 @@ WARNING: Avoid using eclean!
 
 <http://en.gentoo-wiki.com/wiki/Freeing_Up_Disk_Space#Removing_Ancient_Distfiles_and_Binaries>
 
-TAB-Completion list
--------------------
+## TAB-Completion list
 
 <https://wiki.gentoo.org/wiki/Bash#Tab_completion>
 
     eselect bashcomp list --global
 
-TAB-Completion enable
----------------------
+## TAB-Completion enable
 
     eselect bashcomp enable --global {0..703}
 
-Fix
----
+## Fix
 
 Fix broken completions
 <https://www.gentoo.org/support/news-items/2014-11-25-bash-completion-2_1-r90.html>
@@ -323,8 +279,7 @@ Fix broken completions
     find /usr/share/bash-completion -maxdepth 1 -type f \
       '!' -name 'bash_completion' -exec emerge -1v {} +
 
-Updates perl cleans all packages
---------------------------------
+## Updates perl cleans all packages
 
 * <http://www.gentoo.org/proj/en/perl/perl-cleaner.xml?style=printable>
 * <http://wiki.gentoo.org/wiki/Project:Perl/perl-cleaner>
@@ -332,48 +287,41 @@ Updates perl cleans all packages
     emerge --nodeps dev-lang/perl
     perl-cleaner --all
 
-Updates python
---------------
+## Updates python
 
     eselect python set --python2 python2.7
     eselect python set --python3 python3.3
 
-Updates other
--------------
+## Updates other
 
 Update/upgrade
 
     emacs-updater
     haskell-updater
 
-Updates udept
--------------
+## Updates udept
 
 Clean out your world file
 <http://forums.gentoo.org/viewtopic-t-142475.html>.
 
     dep --pretend --pruneworld
 
-Init status
------------
+## Init status
 
     /etc/init.d/your_service status
     rc-service your_service status
 
-Init start
-----------
+## Init start
 
     /etc/init.d/your_service start
     rc-service your_service start
 
-Init stop
----------
+## Init stop
 
     /etc/init.d/your_service stop
     rc-service your_service stop
 
-Runlevels
----------
+## Runlevels
 
 Run levels (start at boot)
 
@@ -382,8 +330,7 @@ Run levels (start at boot)
     rc-update del xdm default
     rc-status
 
-La files
---------
+## La files
 
     lafilefixer --justfixit
 
@@ -391,50 +338,42 @@ La files
 
     sudo sh -c 'env-update && source /etc/profile'
 
-Merge configuration first
--------------------------
+## Merge configuration first
 
     dispatch-conf
 
-Merge configuration second
---------------------------
+## Merge configuration second
 
     etc-update
 
-Netfilter
----------
+## Netfilter
 
 <http://wiki.gentoo.org/wiki/Iptables#Firewall>
 
 Rules saved to `/var/lib/$ipt/rules-save` and will be loaded
 with `/etc/init.d/$ipt` when machine is powered on.
 
-Netfilter iptables
-------------------
+## Netfilter iptables
 
     /etc/init.d/iptables save
     /etc/init.d/iptables start
 
-Netfilter ip6tables
--------------------
+## Netfilter ip6tables
 
     /etc/init.d/ip6tables save
     /etc/init.d/ip6tables start
 
-Rebuilding
-----------
+## Rebuilding
 
     emerge @preserved-rebuild && revdep-rebuild
 
-Rebuilding revdep-rebuild
--------------------------
+## Rebuilding revdep-rebuild
 
     revdep-rebuild --pretend
     revdep-rebuild --ignore
     revdep-rebuild --verbose --pretend --library libreadline.so.5
 
-Set UTC time zone
------------------
+## Set UTC time zone
 
 <https://wiki.gentoo.org/wiki/System_time#OpenRC>
 
@@ -442,36 +381,30 @@ Set UTC time zone
          -exec sh -c 'echo {} | sed "s|^/usr/share/zoneinfo/||" > /etc/timezone' \;
     emerge --config timezone-data
 
-ccache show
------------
+## ccache show
 
     CCACHE_DIR="/var/tmp/ccache" ccache --show-stats
 
-ccache clear
-------------
+## ccache clear
 
     CCACHE_DIR="/var/tmp/ccache" ccache --clear
 
-PostgreSQL
-----------
+## PostgreSQL
 
 <https://wiki.gentoo.org/wiki/PostgreSQL/QuickStart#Preparing_to_Initialize_the_Database_Cluster>
 
     emerge --config dev-db/postgresql:12.3
 
-Gnome applet
-------------
+## Gnome applet
 
 * https://packages.gentoo.org/packages/gnome-extra/nm-applet
 * https://faq.i3wm.org/question/2/how-can-i-use-networkmanager-with-i3.1.html
 
-TODO
-----
+## TODO
 
 * https://wiki.gentoo.org/wiki/Distcc copile on first host and distribute binary to the second host
 
-Other
------
+## Other
 
     sudo sh -c "layman --sync-all && emerge --sync && eix-update"
     find /etc -iname "._cfg????_*" 2> /dev/null
