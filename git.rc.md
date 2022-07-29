@@ -71,6 +71,10 @@ https://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches
 
     git for-each-ref --sort=-committerdate refs/heads --format='%(refname:short) %(committerdate:iso8601) %(objectname:short)'
 
+## List remote branchs sort/order by date/time
+
+    git branch -r --sort=committerdate --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+
 ## Create remote branch
 
     git push origin your-branch-name
@@ -258,6 +262,10 @@ Remove local tags thats deleted on remote
     git pop
     git apply
     git stash show --patch
+
+## Stash one file
+
+    git stash push --message="Hello, World!" path/to/hello.c
 
 ## Stash specific file in the first way
 

@@ -13,7 +13,7 @@ use https://pypi.org
 
 ## Show version
 
-    pip show your-pkg-name
+    pip show your-pkg
 
 ## Install
 
@@ -22,7 +22,7 @@ use https://pypi.org
 
 ## Uninstall
 
-    pip uninstall your-pkg-name
+    pip uninstall your-pkg
 
 ## requirements.txt
 

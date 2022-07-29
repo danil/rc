@@ -21,15 +21,15 @@ Upgrades installed packages to their most recent version
 
 ## Install
 
-    aptitude install your-pkg-name
+    aptitude install your-pkg
 
 ## Update one package
 
-    aptitude install your-pkg-name
+    aptitude install your-pkg
 
 ## Uninstall
 
-    aptitude remove your-pkg-name
+    aptitude remove your-pkg
 
 ## Reinstall all
 

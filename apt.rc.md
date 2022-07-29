@@ -29,18 +29,18 @@ Upgrades installed packages to their most recent version
 Get package source
 
 ```sh
-apt-get source your-pkg-name
-cd your-pkg-name
-sudo apt-get build-dep your-pkg-name
+apt-get source your-pkg
+cd your-pkg
+sudo apt-get build-dep your-pkg
 sudo apt-get -f install
 dch -i
 debuild -us -uc -b
-sudo dpkg -i ../your-pkg-name_1.2.3-1+19700101_amd64.deb
+sudo dpkg -i ../your-pkg_1.2.3-1+19700101_amd64.deb
 ```
 
 ## Dependencies
 
-    apt-cache depends your-pkg-name
+    apt-cache depends your-pkg
 
 ## Depended
 
@@ -52,7 +52,7 @@ List of depended packages
 
 <https://askubuntu.com/questions/447/how-can-i-see-all-versions-of-a-package-that-are-available-in-the-archive#2108>
 
-    apt-cache madison your-pkg-name
+    apt-cache madison your-pkg
 
 ## Add trusted key
 
@@ -67,10 +67,10 @@ Fixing following signatures were invalid (https://github.com/yarnpkg/yarn/issues
 ## Other
 
     apt-get --show-upgraded dist-upgrade
-    apt-cash [--full] search your-pkg-name
-    apt-cash show your-pkg-name
-    apt-get --target-release testing install your-pkg-name
-    apt-get --purge remove your-pkg-name
+    apt-cash [--full] search your-pkg
+    apt-cash show your-pkg
+    apt-get --target-release testing install your-pkg
+    apt-get --purge remove your-pkg
     apt-get clean
     apt-cdrom [--cdrom /home/danil/mnt/cdrom] add
     apt-mark unmarkauto

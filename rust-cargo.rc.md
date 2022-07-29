@@ -9,11 +9,11 @@
 
 ## Cargo install package
 
-    cargo install your-pkg-name
+    cargo install your-pkg
 
 ## Cargo install specific version
 
-    cargo install --version=1.2.3 your-pkg-name
+    cargo install --version=1.2.3 your-pkg
 
 ## `Cargo.toml` package build/install
 
@@ -21,7 +21,7 @@
 
 ## Cargo update/upgrade package
 
-    cargo install --force your-pkg-name
+    cargo install --force your-pkg
 
 ## `Cargo.toml` package update/upgrade
 
