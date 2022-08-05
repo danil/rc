@@ -72,4 +72,4 @@ echo $(eval echo ~$(whoami))
 
 ## sudo
 
-    sudo -u your_user -g your_group path/to/your/script
+    sudo -u your_usr -g your_grp path/to/your/script

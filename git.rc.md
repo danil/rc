@@ -791,7 +791,8 @@ Binary Search <http://progit.org/book/ru/ch6-5.html>.
 
 ### Remove/delete from git, working tree files will be left alone
 
-    git rm --cached .config/gajim/config
+    git rm --cached path/to/your/file
+    git rm -r --cached path/to/your/dir
 
 ## Subtree
 
@@ -804,7 +805,7 @@ Deploy to GitHub Pages <http://yeoman.io/learning/deployment.html>
 
 Find reseted commit (no longer are being pointed to by some other ref):
 
-    git reflog --pretty=fuller --color -p --author=your_user --since="1 hours"
+    git reflog --pretty=fuller --color -p --author=your_usr --since="1 hours"
 
 ## Merge repositories
 

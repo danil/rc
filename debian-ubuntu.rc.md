@@ -77,7 +77,7 @@ Change timezone
     groupadd superusers
     echo "%superusers ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/001_superusers
     chmod 0440 /etc/sudoers.d/001_superusers
-    gpasswd --add your_user superusers
+    gpasswd --add your_usr superusers
 
 ## Create bootable USB
 

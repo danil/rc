@@ -60,13 +60,13 @@ Adding dependency happens automatically
 ## Private/standard module url
 
 Adding dependency from private git repository with non standard path,
-for example `your.tld/your/non/standard/dir/your-user/your-module-name`
+for example `your.tld/your/non/standard/dir/your-user/your-mod-nm`
 
 ```sh
 git config --global url."git@your.tld:your/non/standard/dir".insteadOf "https://your.tld/"
 cd path/to/module
 GOPRIVATE=your.tld go clean --modcache .
-GOPRIVATE=your.tld go get -v -u your.tld/your-user/your-module-name
+GOPRIVATE=your.tld go get -v -u your.tld/your-user/your-mod-nm
 go test
 ```
 
@@ -74,7 +74,7 @@ go test
 
 Upgrading dependency
 
-    go get -v -u your.tld/your-user/your-module-name@your-commit-hash-or-tag
+    go get -v -u your.tld/your-user/your-mod-nm@your-commit-hash-or-tag
 
 ## Update all
 

@@ -41,17 +41,17 @@
 
 ### List
 
-    lsmod | grep your_module_name
+    lsmod | grep your_mod_nm
 
 ### Load
 
 Add/activat
 
-    modprobe your_module_name
+    modprobe your_mod_nm
 
 ### Unload
 
 Remove/deactivate
 
     modprobe --remove module_name
-    rmmod your_module_name
+    rmmod your_mod_nm

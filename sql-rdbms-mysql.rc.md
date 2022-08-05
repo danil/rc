@@ -1,6 +1,6 @@
 # MySQL
 
-    mysql --host=192.168.1.2 --user=your_user [--passowrd] --table=your_table_name \
+    mysql --host=192.168.1.2 --user=your_usr [--passowrd] --table=your_table_name \
      < path/to/dump.sql > path/to/output.sql
     mysql -h localhost -u root [-p] \
      -e "SELECT * FROM test_db.test_table;"
@@ -51,7 +51,7 @@ with latin1 character set.  But data stored in database may be utf8.
 
 ```sh
 export foo=your_db_name && \
-  mysqldump -h127.0.0.1 -Pyour_port -uyour_user \
+  mysqldump -h127.0.0.1 -Pyour_port -uyour_usr \
             --default-character-set=latin1 -r \
             --no-create-info --complete-insert \
             $foo your_table_name1, your_table_name2 | \
@@ -71,7 +71,7 @@ Dump schema without data
 ### Restore
 
     mysql < path/to/dump.sql
-    cat path/to/dump.sql.xz | xz --decompress | mysql --user=your_user --password your_db_name
+    cat path/to/dump.sql.xz | xz --decompress | mysql --user=your_usr --password your_db_name
 
 ## Show system variables
 
@@ -94,9 +94,9 @@ Dump schema without data
 ### Create
 
     GRANT CREATE, INSERT, DELETE, UPDATE, SELECT, DROP, INDEX, ALTER, LOCK TABLES
-      ON `your_db_name`.* TO 'your_user'@'%' IDENTIFIED BY 'password';
-    GRANT ALL ON `your_db_name`.* TO 'your_user'@'localhost';
-    GRANT ALL ON *.* TO 'your_user'@'localhost';
+      ON `your_db_name`.* TO 'your_usr'@'%' IDENTIFIED BY 'password';
+    GRANT ALL ON `your_db_name`.* TO 'your_usr'@'localhost';
+    GRANT ALL ON *.* TO 'your_usr'@'localhost';
 
 Privileges: ALL, CREATE, DELETE, GRANT OPTION, INSERT, SELECT, SHOW
 DATABASES, UPDATE, USAGE, LOCK TABLES and so on
@@ -104,23 +104,23 @@ DATABASES, UPDATE, USAGE, LOCK TABLES and so on
 
 ### Set password
 
-    SET PASSWORD FOR 'your_user'@'localhost' = PASSWORD('password');
+    SET PASSWORD FOR 'your_usr'@'localhost' = PASSWORD('password');
     mysqladmin -u root -h localhost password 'new-password'
 
 ### Show grants
 
     SHOW GRANTS;
-    SHOW GRANTS FOR 'your_user'@'localhost';
-    SHOW GRANTS FOR 'your_user'@'%';
-    SELECT Host, User FROM mysql.user WHERE User = 'your_user';
+    SHOW GRANTS FOR 'your_usr'@'localhost';
+    SHOW GRANTS FOR 'your_usr'@'%';
+    SELECT Host, User FROM mysql.user WHERE User = 'your_usr';
 
 ### Revoke grants
 
-    REVOKE ALL ON your_user.* FROM 'your_user'@'localhost';
+    REVOKE ALL ON your_usr.* FROM 'your_usr'@'localhost';
 
 ### Remove user
 
-    DELETE FROM mysql.user WHERE User = 'your_user';
+    DELETE FROM mysql.user WHERE User = 'your_usr';
 
 ## Show character sets
 
@@ -217,9 +217,9 @@ INSERT INTO your_table_name (name, age)
 ## List tables
 
     SHOW TABLES;
-    SHOW FULL TABLES FROM your_user LIKE 'test%';
+    SHOW FULL TABLES FROM your_usr LIKE 'test%';
     +-------------------------+------------+
-    | Tables_in_your_user (test%) | Table_type |
+    | Tables_in_your_usr (test%) | Table_type |
     +-------------------------+------------+
     | test_table              | BASE TABLE |
     +-------------------------+------------+
@@ -234,7 +234,7 @@ INSERT INTO your_table_name (name, age)
 
     DESCRIBE test_table;
     SELECT * FROM INFORMATION_SCHEMA.TABLES
-    WHERE table_schema = 'your_user'
+    WHERE table_schema = 'your_usr'
           AND table_name LIKE 'test_table';
 
 ### Table charset
@@ -245,7 +245,7 @@ Describe table  character set and collation
 
 ## Create table
 
-    CREATE TABLE IF NOT EXISTS your_user.test_table
+    CREATE TABLE IF NOT EXISTS your_usr.test_table
       (
         id INT(11) unsigned NOT NULL AUTO_INCREMENT,
         tag_id INT(11) unsigned NOT NULL,
@@ -259,8 +259,8 @@ Describe table  character set and collation
 
 ### Create table by table
 
-    CREATE TABLE IF NOT EXISTS your_user.test_table_2
-     LIKE your_user.test_table;
+    CREATE TABLE IF NOT EXISTS your_usr.test_table_2
+     LIKE your_usr.test_table;
 
 ## Drop table
 
@@ -279,11 +279,11 @@ Generated set of drop statements
 
 Get engine type (MyISAM or InnoDB)
 
-    SHOW TABLE STATUS FROM your_user LIKE 'test%';
+    SHOW TABLE STATUS FROM your_usr LIKE 'test%';
 
 ## Describe columns
 
-    DESCRIBE your_user.test_table '%';
+    DESCRIBE your_usr.test_table '%';
     +------------+----------+------+-----+---------+----------------+
     | Field      | Type     | Null | Key | Default | Extra          |
     +------------+----------+------+-----+---------+----------------+

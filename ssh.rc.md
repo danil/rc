@@ -64,18 +64,18 @@ Set `~/.ssh/known_hosts` or `/etc/ssh/ssh_known_hosts`
 
 <http://askubuntu.com/questions/444729/redirect-port-80-to-8080-and-make-it-work-on-local-machine#444737>
 
-    ssh -gNL 80:127.0.0.1:8080 your_user@localhost
+    ssh -gNL 80:127.0.0.1:8080 your_usr@localhost
 
 ## Reverse tunneling on localhost
 
 <http://tunnelsup.com/raspberry-pi-phoning-home-using-a-reverse-remote-ssh-tunnel>
 
-    ssh -N -R localhost:remote_port:localhost:local_port your_user@your.tld
+    ssh -N -R localhost:remote_port:localhost:local_port your_usr@your.tld
 
 ## Reverse tunneling on remote server
 
     # if you tunnel ssh
-    ssh -l your_user -p remote_port localhost
+    ssh -l your_usr -p remote_port localhost
     # or if you tunnel http
     curl localhost:remote_port
 
@@ -93,4 +93,4 @@ Set `~/.ssh/known_hosts` or `/etc/ssh/ssh_known_hosts`
 `tail -f` command over ssh
 <https://serverfault.com/questions/1669/shell-command-to-monitor-changes-in-a-file-whats-it-called-again/1670#1670>
 
-    ssh your_user@your_user@your.tld "tail -f path/to/your.log"
+    ssh your_usr@your_usr@your.tld "tail -f path/to/your.log"

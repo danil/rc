@@ -16,7 +16,7 @@
 
 ## URL
 
-    psql postgres://your_user:your-password@your.host:5432/your_db
+    psql postgres://your_usr:your-password@your.host:5432/your_db
 
 ## Create dump by pg_dump
 
@@ -24,7 +24,7 @@ Backuping:
 
     pg_dump --host=localhost --port=5432 --username=your_role \
             --table="your_tbl" --attribute-inserts your_db \
-            | xz --compress > path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
+            | xz --compress > path/to/dump_$(hostname)_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
 
 ## Restore dump by psql
 
@@ -33,11 +33,11 @@ Backuping:
 ## Create dump of all databases by pg_dumpall
 
     pg_dumpall --host=localhost --port=5432 --username=your_role \
-               > path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql
+               > path/to/dump_$(hostname)_$(date --utc +%Y%m%dT%H%M%SZ).sql
 
 ## Create dump of all databases by pg_dump by URL
 
-    pg_dump postgres://your_user:your-password@your.host:5432/your_db \
+    pg_dump postgres://your_usr:your-password@your.host:5432/your_db \
             > path/to/dump.sql
 
 ## Create dump of all databases by psql
@@ -190,10 +190,12 @@ when the command is spelled `CREATE USER`, `LOGIN` is assumed by default.
 
 Grant privileges to the roles/users
 
-## List
+## List roles
 
 List roles and privileges
 
+    \du
+    \du+
     SELECT r.rolname,
            r.rolsuper,
            r.rolinherit,
@@ -233,7 +235,11 @@ List roles and privileges
 
 ## Create database
 
-    CREATE DATABASE "your_db" WITH OWNER your_role ENCODING = 'UTF8';
+    CREATE DATABASE "your_db"
+           WITH OWNER your_role
+           ENCODING = 'UTF8'
+           LC_COLLATE = 'en_US.UTF-8'
+           LC_CTYPE = 'en_US.UTF-8';
     createdb --owner=your_role --username=postgres --password your_db
 
 ## Drop database
@@ -759,7 +765,11 @@ Log statements with any durations
 
     SELECT * FROM pg_stat_activity WHERE datname = 'your-db-name';
 
-## Fix PostgreSQL locale
+## Get locale
+
+    SHOW LC_COLLATE;
+
+## Fix locale
 
 * <http://stackoverflow.com/questions/16736891/pgerror-error-new-encoding-utf8-is-incompatible#16737776>
 * <https://wiki.gentoo.org/wiki/PostgreSQL#Changing_the_Default_Encoding_of_New_Databases>

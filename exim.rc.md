@@ -19,7 +19,7 @@ Statistics report
 
 ## Delete/remove on message from queue by id
 
-    exim -Mrm your_message_id_to_delete
+    exim -Mrm your_msg_id_to_delete
 
 ## Delete/remove messages from queue by sender
 

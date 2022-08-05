@@ -27,8 +27,8 @@ Size and so on.
 
 Create and start (or run) image as container
 
-    docker create --env=HOME=/home/your_user \
-                  --user="your_user"
+    docker create --env=HOME=/home/your_usr \
+                  --user="your_usr"
                   --interactive \
                   --tty \
                   --volume=/path/to/host/dir:/path/to/container/dir:ro \
@@ -47,6 +47,8 @@ from outside)
     busybox telnet localhost 5433
 
 ## Image crate privileged
+
+Run docker inside docker
 
 Run docker inside docker
 <https://docs.docker.com/reference/commandline/cli/#create>
@@ -68,7 +70,7 @@ Run docker inside docker
 
 Save container as image after interactive changes
 
-    docker commit your_user_name/your_container_name \
+    docker commit your_usr_name/your_container_name \
                   your_image_name:1970_01_01
 
 ## Copy to container 

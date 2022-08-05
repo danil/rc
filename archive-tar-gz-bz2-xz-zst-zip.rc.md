@@ -101,7 +101,7 @@ read -ra arr <<<"your array of directories" && \
 ## xz decompress
 
     xz --decompress --keep path/to/your.file.xz
-    pg_dump db_name | xz --compress > path/to/dump_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
+    pg_dump db_name | xz --compress > path/to/dump_$(hostname)_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
 
 ## xz decompress tarball
 

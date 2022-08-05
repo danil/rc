@@ -86,7 +86,7 @@ Public access to laptop
 On laptop:
 
     ssh -N -R localhost:port_on_server:localhost:port_on_laptop \
-        your_user_name@your.host.name
+        your_usr_name@your.host.name
 
 On server:
 
@@ -98,7 +98,7 @@ On server:
 mongrel_rails cluster::configure -e production -p 8000 -a 127.0.0.1 \
               -N 2 -c /home/danil/var/www/hello_rails/current
 bundle exec rake db:sessions:clear
-bundle exec rake paperclip:refresh CLASS=YourModelName
+bundle exec rake paperclip:refresh CLASS=YourMdelNm
 bundle exec rake rails:freeze:gems
 bundle exec rake rails:freeze:edge REVISION=1234
 bundle exec rake rails:freeze:edge TAG=rel_1-2-0
