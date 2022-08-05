@@ -30,7 +30,7 @@ rake db:create RAILS_ENV=test
 
 #### Create
 
-    bundle exec bin/rails generate migration YourMigrationName
+    bundle exec bin/rails generate migration YourMigrationNm
 
 #### Status
 
@@ -86,7 +86,7 @@ Public access to laptop
 On laptop:
 
     ssh -N -R localhost:port_on_server:localhost:port_on_laptop \
-        your_usr_name@your.host.name
+        your_usr_nm@your.host.nm
 
 On server:
 

@@ -103,13 +103,13 @@ Find function definition by package/function name
 
 ```sh
 go get github.com/rogpeppe/godef
-godef -f path/to/file.go 'yourpkgname.YourFunctionName'
+godef -f path/to/file.go 'yourpkgnm.YourFunctionNm'
 ```
 
 ## Build
 
     go build
-    go build -o your_resulting_executable_name
+    go build -o your_resulting_executable_nm
 
 ## Build cache invalidation
 

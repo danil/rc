@@ -49,18 +49,18 @@ List all services by run levels
 
 ## Password set
 
-    passwd your-user-name
+    passwd your-user-nm
 
 ## Password delete
 
-    passwd --delete your-user-name
+    passwd --delete your-user-nm
 
 ### List files from package
 
 List files from installed package
 <https://askubuntu.com/questions/32507/how-do-i-get-a-list-of-installed-files-from-a-package#32509>
 
-    dpkg-query --listfiles your_pkg_name
+    dpkg-query --listfiles your_pkg_nm
 
 ## Timezone
 

@@ -2,7 +2,7 @@
 
     git config --global user.name "John Doe"
     git config --global user.email john@doe.org
-    git clone git://your.tld/repository-name.git destination-dir
+    git clone git://your.tld/repository-nm.git destination-dir
     git --git-dir=path/to/repository/.git  --work-tree=path/to/repository status
     git push origin master
 
@@ -77,7 +77,7 @@ https://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches
 
 ## Create remote branch
 
-    git push origin your-branch-name
+    git push origin your-branch-nm
 
 ## Get current branch
 
@@ -96,11 +96,11 @@ Get/print current branch
 
 ## Branch delete
 
-    git branch --delete your-branch-name
+    git branch --delete your-branch-nm
 
 ## Remote branch delete
 
-    git push origin :your-branch-name
+    git push origin :your-branch-nm
 
 ### Remote branchs cleanup
 
@@ -121,12 +121,12 @@ origin/your-new-branch to origin/your-old-branch
 
 <http://stackoverflow.com/questions/658885/how-do-you-get-git-to-always-pull-from-a-specific-branch#answer-659804>
 
-    git config branch.your-branch-name.remote origin
-    git config branch.your-branch-name.merge refs/heads/production
+    git config branch.your-branch-nm.remote origin
+    git config branch.your-branch-nm.merge refs/heads/production
 
 ## Branch upstream
 
-    git branch --set-upstream-to=origin/your-remoute-branch-name
+    git branch --set-upstream-to=origin/your-remoute-branch-nm
 
 ## Merge abort
 
@@ -136,14 +136,14 @@ origin/your-new-branch to origin/your-old-branch
 
 <http://stackoverflow.com/questions/8640887/git-merge-without-auto-commit#8641053>
 
-    git merge --no-commit --no-ff your-branch-name
+    git merge --no-commit --no-ff your-branch-nm
 
 ## Merge pull request step 1
 
 From your project repository, check out a new branch and test the changes.
 
     git checkout -b contributor-somebranch master
-    git pull https://github.com/contributor/your-repository-name.git somebranch
+    git pull https://github.com/contributor/your-repository-nm.git somebranch
 
 ## Merge pull request step 2
 
@@ -164,7 +164,7 @@ Merge the changes and update on upstream.
 Get/copy a directories recursively from a specific revision
 <http://stackoverflow.com/questions/9670745/how-to-restore-a-whole-directory-from-history-of-git-repository#9671161>
 
-    git checkout your-branch-name -- path/to/direcotry
+    git checkout your-branch-nm -- path/to/direcotry
 
 ## Show/copy file
 
@@ -195,7 +195,7 @@ Get a file from a specific revision
 A la restore deleted file
 <http://stackoverflow.com/questions/953481/restore-a-deleted-file-in-a-git-repo#answer-1113140>.
 
-    git checkout your-otherbranch-name in/current/branch/path/to/file.txt
+    git checkout your-otherbranch-nm in/current/branch/path/to/file.txt
 
 ## Tag list
 
@@ -238,7 +238,7 @@ Newest tag
 
 <http://stackoverflow.com/questions/4061481/git-push-tag-master#4061529>
 
-    git push --tags your-remote-name
+    git push --tags your-remote-nm
 
 ## Tag delete
 
@@ -332,8 +332,8 @@ Move file and directory into a other directory along with commit history
 <http://exyr.org/2011/git-mirrors>
 
     git clone --mirror git://github.com:your/repo.git
-    git remote add your-remote-name you@your.host.tld:your/repo.git
-    git push --mirror your-remote-name # push all branches
+    git remote add your-remote-nm you@your.host.tld:your/repo.git
+    git push --mirror your-remote-nm # push all branches
 
 ### Mirror repository yet another way
 
@@ -388,7 +388,7 @@ Find submodules even not listed in `.gitmodules` file
 ## Diff
 
     git diff --cached --color-words
-    git diff --color HEAD^..HEAD path/to/your/file.name
+    git diff --color HEAD^..HEAD path/to/your/file.nm
 
 ## Diff and List changed file names
 
@@ -534,11 +534,11 @@ You have three steps there:
 
 ### Patch from one commit
 
-    git show your-commit-sha > your_patch_name.patch
+    git show your-commit-sha > your_patch_nm.patch
 
 ### Patch from one commit with blobs by email
 
-    git format-patch -1 your-commit-sha --stdout > your_patch_name.patch
+    git format-patch -1 your-commit-sha --stdout > your_patch_nm.patch
 
 ### Easy way
 
@@ -556,10 +556,10 @@ You have three steps there:
 
 <http://ariejan.net/2009/10/26/how-to-create-and-apply-a-patch-with-git>
 
-    git format-patch HEAD^..HEAD --stdout > your_patch_name.patch
-    git apply --stat your_patch_name.patch
-    git apply --check your_patch_name.patch
-    git am --reject your_patch_name.patch
+    git format-patch HEAD^..HEAD --stdout > your_patch_nm.patch
+    git apply --stat your_patch_nm.patch
+    git apply --check your_patch_nm.patch
+    git am --reject your_patch_nm.patch
     git am --abort
 
 ## Cherry-pick
@@ -670,9 +670,9 @@ List all file names changed by author
 <https://stackoverflow.com/questions/6349139/can-i-get-git-to-tell-me-all-the-files-one-user-has-modified#6349405>
 
 ```sh
-git log --pretty="%H" --author="your_name" app/models | while read your_commit_sha; do git show --oneline --name-only $your_commit_sha | tail -n+2; done | sort | uniq | grep 'app/models'
+git log --pretty="%H" --author="your_nm" app/models | while read your_commit_sha; do git show --oneline --nm-only $your_commit_sha | tail -n+2; done | sort | uniq | grep 'app/models'
 
-git log --pretty="%H" --author="your_author_name" your/path | \
+git log --pretty="%H" --author="your_author_nm" your/path | \
     while read your_commit_sha; do \
           git show --oneline --name-only $your_commit_sha | \
           tail -n+2; \
@@ -691,7 +691,7 @@ git log --pretty="%H" --author="your_author_name" your/path | \
 Search file name in all commits history
 <http://stackoverflow.com/questions/7203515/how-to-locate-a-deleted-file-in-the-commit-history#7203551>
 
-    git log --all -- path/to/your/file.name
+    git log --all -- path/to/your/file.nm
 
 ### Other
 
@@ -849,9 +849,9 @@ Setting/changing the default git branch in a bare repository
 ## Git flow
 
     git flow init
-    git flow feature start feat-1234-your-feature-name
+    git flow feature start feat-1234-your-feature-nm
     git commit --message="feat: some commit"
-    git flow feature finish feat-1234-your-feature-name
+    git flow feature finish feat-1234-your-feature-nm
 
 ## Other
 

@@ -8,15 +8,15 @@
 
 ## Described table
 
-    .schema your_table_name
+    .schema your_table_nm
 
 ## Create table
 
-    CREATE TABLE your_table_name(id INTEGER PRIMARY KEY NOT NULL, name TEXT);
+    CREATE TABLE your_table_nm(id INTEGER PRIMARY KEY NOT NULL, nm TEXT);
 
 ## Drop table
 
-    DROP TABLE IF EXISTS your_table_name;
+    DROP TABLE IF EXISTS your_table_nm;
 
 # Query
 

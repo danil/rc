@@ -43,7 +43,7 @@ OmniOS               | root         |
 
 ### Get bucket region
 
-    aws s3api get-bucket-location --bucket=your-bucket-name
+    aws s3api get-bucket-location --bucket=your-bucket-nm
 
 ### Get bucket info
 
@@ -85,4 +85,4 @@ Get bucket disk size usage
 
 ### Get region
 
-    aws s3api get-bucket-location --bucket your-bucket-name
+    aws s3api get-bucket-location --bucket your-bucket-nm

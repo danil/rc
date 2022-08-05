@@ -18,11 +18,11 @@ Debian package
 
 <http://cyberciti.biz/faq/ubuntu-linux-how-do-i-install-deb-packages>
 
-    dpkg --install your_pkg_name.deb
+    dpkg --install your_pkg_nm.deb
 
 ## Remove
 
-    dpkg --remove your_pkg_name.deb
+    dpkg --remove your_pkg_nm.deb
 
 ## Files belongs to package
 

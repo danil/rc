@@ -29,4 +29,4 @@
 
 ## Cargo uninstall package
 
-    cargo uninstall your_pkg_name
+    cargo uninstall your_pkg_nm

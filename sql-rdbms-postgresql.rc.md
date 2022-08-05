@@ -2,7 +2,7 @@
 
 ## psql
 
-    psql --host=your.tld --username=your_role
+    psql --host=your.tld --usernm=your_role
     psql --dbname=your_db
     psql dbname
     psql --echo-hidden
@@ -63,38 +63,38 @@ Backuping:
 
 ## Create index
 
-    CREATE INDEX "your_idx_name" ON "your_tbl" ("your_col");
+    CREATE INDEX "your_idx_nm" ON "your_tbl" ("your_col");
 
 This equivalent to (B-tree is default):
 
-    CREATE INDEX "your_idx_name" ON "your_tbl" USING btree ("your_col");
+    CREATE INDEX "your_idx_nm" ON "your_tbl" USING btree ("your_col");
 
 ## Create unique index
 
-    CREATE UNIQUE INDEX "your_idx_name" ON "your_tbl" ("your_col");
+    CREATE UNIQUE INDEX "your_idx_nm" ON "your_tbl" ("your_col");
 
 ## Create compound index
 
-    CREATE INDEX "your_idx_name" ON "your_tbl" ("your_col1", "your_col2");
+    CREATE INDEX "your_idx_nm" ON "your_tbl" ("your_col1", "your_col2");
 
 ## Create partial index
 
-    CREATE INDEX "your_idx_name" ON "your_tbl" ("your_col1") WHERE ("your_col2" IS NULL);
+    CREATE INDEX "your_idx_nm" ON "your_tbl" ("your_col1") WHERE ("your_col2" IS NULL);
 
 ## Create index on jsonb
 
-    CREATE INDEX "your_idx_name" ON "your_tbl" (
+    CREATE INDEX "your_idx_nm" ON "your_tbl" (
            (your_col1->>'your_prop1'),
            (your_col2->>'your_prop2')
     );
 
 ## Drop/delete/remove index
 
-    DROP INDEX your_index_name;
+    DROP INDEX your_index_nm;
 
 ## Rename index
 
-    ALTER INDEX IF EXISTS "your_idx_name" RENAME TO "your_idx_new_name";
+    ALTER INDEX IF EXISTS "your_idx_nm" RENAME TO "your_idx_new_nm";
 
 ## Indexes usage stats
 
@@ -123,7 +123,7 @@ This equivalent to (B-tree is default):
 <http://www.postgresql.org/docs/current/static/libpq-envars.html>
 
     PGHOST=localhost \
-    PGDATABASE=your-db-name \
+    PGDATABASE=your-db-nm \
     PGPORT=5433 \
     PGUSER=your-user \
     PGPASSWORD=your-password \
@@ -331,7 +331,7 @@ Set a default schema for a session
 
     SELECT your_col, data_type, character_maximum_length
     FROM information_schema.columns
-    WHERE table_name = 'your-table-name';
+    WHERE table_name = 'your-table-nm';
 
 ## Drop table
 
@@ -361,12 +361,12 @@ List all tables then drop them.
 
 ## Rename column
 
-    ALTER TABLE your_tbl RENAME old_name TO new_name;
+    ALTER TABLE your_tbl RENAME old_nm TO new_nm;
 
 ## Change column type
 
-    ALTER TABLE your_tbl ALTER COLUMN col_name TYPE smallint;
-    ALTER TABLE your_tbl ALTER COLUMN col_name TYPE bigint;
+    ALTER TABLE your_tbl ALTER COLUMN col_nm TYPE smallint;
+    ALTER TABLE your_tbl ALTER COLUMN col_nm TYPE bigint;
 
 ## Add unique constraint
 
@@ -410,19 +410,19 @@ Update multiple rows in one query
 
 ## Insert row
 
-    INSERT INTO your_tbl (name, age) VALUES('John', 3);
+    INSERT INTO your_tbl (nm, age) VALUES('John', 3);
     COPY your_tbl FROM STDIN WITH DELIMITER AS ',';
 
 ## Upsert/update/insert/create
 
-    INSERT INTO your_tbl ("latitude", "longitude", "name") 
+    INSERT INTO your_tbl ("latitude", "longitude", "nm") 
         VALUES (1,2,'foobar')
         ON CONFLICT ON CONSTRAINT your_tbl_pkey
             DO UPDATE SET "name" = 'foobar';
 
 ## Insert by query
 
-    INSERT INTO your_tbl (id, name, age)
+    INSERT INTO your_tbl (id, nm, age)
     SELECT 2, name, age FROM your_tbl WHERE id = 1;
 
 ## Increment/upsert/update counter
@@ -721,19 +721,19 @@ Get query execution time/duration
 
 <http://www.postgresql.org/docs/current/static/sql-prepare.html>
 
-    PREPARE your_statement_name (text, int) AS
+    PREPARE your_statement_nm (text, int) AS
       SELECT * FROM "your_tbl"
       WHERE "name" = $1 AND "age" = $2;
 
 ## Prepared statement execute
 
-    EXECUTE your_statement_name ('foo', 123);
+    EXECUTE your_statement_nm ('foo', 123);
 
 ## Prepared statement delete
 
 <http://www.postgresql.org/docs/current/static/sql-deallocate.html>
 
-    DEALLOCATE your_statement_name;
+    DEALLOCATE your_statement_nm;
 
 ## Log all queries
 
@@ -763,7 +763,7 @@ Log statements with any durations
 
 <http://serverfault.com/questions/128284/how-to-see-active-connections-and-current-activity-in-postgresql-8-4#128292>
 
-    SELECT * FROM pg_stat_activity WHERE datname = 'your-db-name';
+    SELECT * FROM pg_stat_activity WHERE datname = 'your-db-nm';
 
 ## Get locale
 

@@ -8,7 +8,7 @@
 
 ```ruby
 require 'active_support/core_ext'
-your.presence || variable.present? || name.blank?
+your.presence || variable.present? || nm.blank?
 ```
 
 ## Activesupport transliteration

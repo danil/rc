@@ -12,8 +12,8 @@ Linux kernel config options: <https://github.com/systemd/systemd/blob/master/REA
 
 <https://wiki.archlinux.org/index.php/Network_configuration#Set_the_hostname>
 
-    echo your-host-name > /etc/hostname
-    hostnamectl set-hostname your-host-name
+    echo your-host-nm > /etc/hostnm
+    hostnmctl set-hostnm your-host-nm
 
 ## Time/ntp get status
 
@@ -45,17 +45,17 @@ https://wiki.archlinux.org/index.php/Systemd-timesyncd#Usage
 
 Show info about service
 
-    systemctl show your_unit_name
-    systemctl status your_unit_name
+    systemctl show your_unit_nm
+    systemctl status your_unit_nm
 
 ## Unit start/stop
 
 Start/stop/restart/reload
 
-    systemctl start your_unit_name
-    systemctl stop your_unit_name
-    systemctl restart your_unit_name
-    systemctl reload your_unit_name
+    systemctl start your_unit_nm
+    systemctl stop your_unit_nm
+    systemctl restart your_unit_nm
+    systemctl reload your_unit_nm
 
 ## Autorun units list
 
@@ -65,16 +65,16 @@ Start/stop/restart/reload
 
 Start/stop (enable/disable) on system boot/start
 
-    systemctl enable your_unit_name
-    systemctl disable your_unit_name
-    systemctl is-enabled your_unit_name
+    systemctl enable your_unit_nm
+    systemctl disable your_unit_nm
+    systemctl is-enabled your_unit_nm
 
 ## Unit mask/unmask
 
 Completely mask/unmask (enable/disable)
 
-    systemctl mask your_unit_name
-    systemctl unmask your_unit_name
+    systemctl mask your_unit_nm
+    systemctl unmask your_unit_nm
 
 ## Unit reload
 

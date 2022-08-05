@@ -5,12 +5,12 @@
 <http://debian-administration.org/article/171/Send_an_HTML_file_as_email_from_the_command_line>
 
     echo -e "Subject: Your subject\n\nYour mail body\n" \
-         | /usr/sbin/sendmail your.name@your.tld
+         | /usr/sbin/sendmail your.nm@your.tld
 
-    echo -e "Your body" | mail --subject="Your subject" your.name@your.tld
+    echo -e "Your body" | mail --subject="Your subject" your.nm@your.tld
 
-    printf %b "From: your.name+1@your.tld\nTo: your.name+2@your.tld\nSubject: Your subject\n\nYour body" | \
-           /usr/sbin/sendmail -f "your.name+1@your.tld" "your.name+2@your.tld"
+    printf %b "From: your.nm+1@your.tld\nTo: your.nm+2@your.tld\nSubject: Your subject\n\nYour body" | \
+           /usr/sbin/sendmail -f "your.nm+1@your.tld" "your.nm+2@your.tld"
 
 ### HTML
 
@@ -19,7 +19,7 @@ Mail with HTML body
 ```sh
 mail --append="Content-type: text/html;" \
      --subject="Your subject" \
-     your.name@your.tld < path/to/index.html
+     your.nm@your.tld < path/to/index.html
 ```
 
 ### SMTP
@@ -36,9 +36,9 @@ Escape character is '^]'.
 220 your.tld ESMTP Exim 4.90_1 Tue, 29 May 2018 07:27:36 +0000
 HELO localhost
 250 your.tld Hello localhost [127.0.0.1]
-mail from: your.name@your.tld
+mail from: your.nm@your.tld
 250 OK
-rcpt to: your.name@your.tld
+rcpt to: your.nm@your.tld
 250 Accepted
 data
 354 Enter message, ending with "." on a line by itself
@@ -68,7 +68,7 @@ Connection closed by foreign host.
           --server your.smtp.domain \
           --auth-user your-login \
           --auth-password your-password \
-          --to your.name@your.tld \
+          --to your.nm@your.tld \
           --h-Subject: "Your subject" \
           --body "Your mail body"
 
@@ -76,9 +76,9 @@ Connection closed by foreign host.
 
 ```sh
 curl -s --user 'api:YOUR_API_KEY' \
-    https://api.mailgun.net/v3/YOUR_DOMAIN_NAME/messages \
-    -F from='Excited User <mailgun@YOUR_DOMAIN_NAME>' \
-    -F to=YOU@YOUR_DOMAIN_NAME \
+    https://api.mailgun.net/v3/YOUR_DOMAIN_NM/messages \
+    -F from='Excited User <mailgun@YOUR_DOMAIN_NM>' \
+    -F to=YOU@YOUR_DOMAIN_NM \
     -F to=bar@your.tld \
     -F subject='Hello' \
     -F text='Testing some Mailgun awesomeness!'

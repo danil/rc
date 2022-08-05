@@ -33,13 +33,13 @@ Create and start (or run) image as container
                   --tty \
                   --volume=/path/to/host/dir:/path/to/container/dir:ro \
                   --entrypoint="/bin/bash"
-                  --name=your-container-name \
+                  --name=your-container-nm \
                   --publish=your_external_port:your_internal_port \
                   --publish=your_external_port_2:your_internal_port_2 \
-                  your/image-name \
+                  your/image-nm \
                   -l -c 'export LANG="C.UTF-8" \
                          && service postgresql start'
-    docker start your-container-name
+    docker start your-container-nm
 
 Get response from published port (get internal port 5432 as 5433 port
 from outside)
@@ -53,14 +53,14 @@ Run docker inside docker
 Run docker inside docker
 <https://docs.docker.com/reference/commandline/cli/#create>
 
-    docker create --privileged --name=your-container-name your/image-name
+    docker create --privileged --name=your-container-nm your/image-nm
 
 ## Image run
 
     docker run --detach
-               --name=your-container-name \
+               --name=your-container-nm \
                --publish=80:80 \
-               your/image-name
+               your/image-nm
 
 ## Image inspect
 
@@ -70,8 +70,8 @@ Run docker inside docker
 
 Save container as image after interactive changes
 
-    docker commit your_usr_name/your_container_name \
-                  your_image_name:1970_01_01
+    docker commit your_usr_nm/your_container_nm \
+                  your_image_nm:1970_01_01
 
 ## Copy to container 
 
@@ -125,7 +125,7 @@ Start container and attach STDOUT and STDERR
 
 ## Rename container
 
-    docker rename your-old-name your-new-name
+    docker rename your-old-nm your-new-nm
 
 ## Container stats
 
@@ -137,11 +137,11 @@ Start container and attach STDOUT and STDERR
 
 Create container with `--link` option like this
 
-    docker create --name your_container_name \
-                  --link your_linked_container_name:your_alias_name \
-                  your_image_name
+    docker create --name your_container_nm \
+                  --link your_linked_container_nm:your_alias_nm \
+                  your_image_nm
 
-Then environment variable `$YOUR_ALIAS_NAME_PORT_666_TCP_ADDR`
+Then environment variable `$YOUR_ALIAS_NM_PORT_666_TCP_ADDR`
 will contain linked container `IP` addres.
 
 ## Backup save
@@ -160,7 +160,7 @@ will contain linked container `IP` addres.
 Import will flatten and reduce image size
 <https://www.ctl.io/developers/blog/post/optimizing-docker-images>
 
-    cat file.tar.gz | docker import - your-image-name
+    cat file.tar.gz | docker import - your-image-nm
 
 ## init scripts
 
@@ -170,7 +170,7 @@ Host system init scripts (upstart or systemd)
 
 ## Log
 
-    docker logs -f your-container-name_1
+    docker logs -f your-container-nm_1
 
 ## Cleanup
 

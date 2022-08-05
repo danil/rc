@@ -9,7 +9,7 @@
 ## Configure
 
     yandex-disk setup
-    yandex-disk token your_login_name
+    yandex-disk token your_login_nm
 
 ## Start/sync/stop
 

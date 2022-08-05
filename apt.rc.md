@@ -2,12 +2,12 @@
 
 ## Repository add
 
-    add-apt-repository ppa:your-ppa-name/ppa
+    add-apt-repository ppa:your-ppa-nm/ppa
     apt-get update
 
 ## Repository remove
 
-    add-apt-repository --remove ppa:your-ppa-name/ppa
+    add-apt-repository --remove ppa:your-ppa-nm/ppa
     apt-get update
 
 ## Finding which package contains a file
@@ -15,7 +15,7 @@
 <http://debian-administration.org/articles/334>
 
     apt-file update
-    apt-file search /usr/bin/your_file_name
+    apt-file search /usr/bin/your_file_nm
 
 ## Upgrade
 
@@ -46,7 +46,7 @@ sudo dpkg -i ../your-pkg_1.2.3-1+19700101_amd64.deb
 
 List of depended packages
 
-    apt-cache rdepends --installed your_pkg_name
+    apt-cache rdepends --installed your_pkg_nm
 
 ## List all versions of the package
 

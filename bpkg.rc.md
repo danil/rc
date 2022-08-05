@@ -19,4 +19,4 @@ Lightweight bash package manager
 
 Packages list <https://github.com/bpkg/bpkg/wiki/index>
 
-    bpkg install your/pkg-name
+    bpkg install your/pkg-nm

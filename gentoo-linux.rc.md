@@ -37,7 +37,7 @@ Cloning the all partitions one by one and the all their content
 
 ## Emerge
 
-    MAKEOPTS="-j1" USE="-mmx" emerge --ask --oneshot your-pkg/name
+    MAKEOPTS="-j1" USE="-mmx" emerge --ask --oneshot your-pkg/nm
     emerge --verbose --search emacs
     emerge --prune gentoo-sources
     emerge --verbose --ask --deep --noreplace =gentoo-sources-2.6.30-r4
@@ -72,17 +72,17 @@ Recompiling all packages on the system.
     export subj="$(hostname): Emerge empty tree system $(date --utc +%Y%m%dT%H%M%SZ)" && \
            emerge --emptytree --oneshot system; \
            echo -e "Subject: $subj\n\n$subj\n" | \
-           /usr/sbin/sendmail your.name@your.tld
+           /usr/sbin/sendmail your.nm@your.tld
 
 ## Emerge unmerge
 
-    emerge --oneshot --deep --depclean your-pkg/name
+    emerge --oneshot --deep --depclean your-pkg/nm
 
 ## Emerge unmerge temporary
 
 Remove/delete
 
-    emerge --oneshot --unmerge your-pkg/name
+    emerge --oneshot --unmerge your-pkg/nm
 
 ## Emerge ceanup all
 
@@ -107,7 +107,7 @@ List Gentoo profiles
     equery list nginx
     equery list "*" |wc -l
     equery files alsa-lib
-    equery depends your-pkg/name
+    equery depends your-pkg/nm
     equery uses =emacs-22.3-r2 --all
 
 ## Equery files belong to package
@@ -120,10 +120,10 @@ same as:
 
 ## Equery packages depends on package
 
-List packages depends on package `your-pkg/name`
+List packages depends on package `your-pkg/nm`
 <https://wiki.gentoo.org/wiki/Equery#Listing_all_packages_depending_on_a_package_with_depends_.28d.29>
 
-    equery depends your-pkg/name
+    equery depends your-pkg/nm
 
 ## Portage utils
 

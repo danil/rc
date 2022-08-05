@@ -16,8 +16,8 @@ Virtual machines
 
 <http://unix.stackexchange.com/questions/28611/how-to-automatically-start-and-shut-down-virtualbox-machines#answer-29384>
 
-    VBoxManage controlvm your-virtual-machine-name poweroff
-    VBoxManage unregistervm your-virtual-machine-name --delete
+    VBoxManage controlvm your-virtual-machine-nm poweroff
+    VBoxManage unregistervm your-virtual-machine-nm --delete
 
 ## Clone
 

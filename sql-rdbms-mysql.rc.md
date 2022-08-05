@@ -1,6 +1,6 @@
 # MySQL
 
-    mysql --host=192.168.1.2 --user=your_usr [--passowrd] --table=your_table_name \
+    mysql --host=192.168.1.2 --user=your_usr [--passowrd] --table=your_table_nm \
      < path/to/dump.sql > path/to/output.sql
     mysql -h localhost -u root [-p] \
      -e "SELECT * FROM test_db.test_table;"
@@ -44,17 +44,17 @@ WHERE PLUGIN_NAME = 'innodb';
 
 ### Create
 
-    mysqldump --result-file=~/backup.sql your_db_name
+    mysqldump --result-file=~/backup.sql your_db_nm
 
 `--default-character-set=latin1` option mean what MySQL server runing
 with latin1 character set.  But data stored in database may be utf8.
 
 ```sh
-export foo=your_db_name && \
+export foo=your_db_nm && \
   mysqldump -h127.0.0.1 -Pyour_port -uyour_usr \
             --default-character-set=latin1 -r \
             --no-create-info --complete-insert \
-            $foo your_table_name1, your_table_name2 | \
+            $foo your_table_nm1, your_table_nm2 | \
   xz --compress > $foo\_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
 ```
 
@@ -62,16 +62,16 @@ export foo=your_db_name && \
 
 Dump schema without data
 
-    mysqldump --no-data your_db_name > dump.sql
+    mysqldump --no-data your_db_nm > dump.sql
 
 #### Without drop tables
 
-    mysqldump --skip-add-drop-table your_db_name > dump.sql
+    mysqldump --skip-add-drop-table your_db_nm > dump.sql
 
 ### Restore
 
     mysql < path/to/dump.sql
-    cat path/to/dump.sql.xz | xz --decompress | mysql --user=your_usr --password your_db_name
+    cat path/to/dump.sql.xz | xz --decompress | mysql --user=your_usr --password your_db_nm
 
 ## Show system variables
 
@@ -94,8 +94,8 @@ Dump schema without data
 ### Create
 
     GRANT CREATE, INSERT, DELETE, UPDATE, SELECT, DROP, INDEX, ALTER, LOCK TABLES
-      ON `your_db_name`.* TO 'your_usr'@'%' IDENTIFIED BY 'password';
-    GRANT ALL ON `your_db_name`.* TO 'your_usr'@'localhost';
+      ON `your_db_nm`.* TO 'your_usr'@'%' IDENTIFIED BY 'password';
+    GRANT ALL ON `your_db_nm`.* TO 'your_usr'@'localhost';
     GRANT ALL ON *.* TO 'your_usr'@'localhost';
 
 Privileges: ALL, CREATE, DELETE, GRANT OPTION, INSERT, SELECT, SHOW
@@ -192,7 +192,7 @@ Retrieve rows 6-15.
 
 ### Group by with count
 
-    SELECT your_col1, count(*) FROM your_table_name
+    SELECT your_col1, count(*) FROM your_table_nm
     GROUP BY your_col2 HAVING count(*) > 1;
 
 ### Query from file
@@ -210,8 +210,8 @@ To copy with indexes and triggers
 ### Copy rows in same table
 
 ```SQL
-INSERT INTO your_table_name (name, age)
-  SELECT 'John', age FROM your_table_name WHERE name = 'Alice';
+INSERT INTO your_table_nm (nm, age)
+  SELECT 'John', age FROM your_table_nm WHERE nm = 'Alice';
 ```
 
 ## List tables
@@ -241,7 +241,7 @@ INSERT INTO your_table_name (name, age)
 
 Describe table  character set and collation
 
-    SHOW TABLE STATUS WHERE NAME LIKE 'your_table_name';
+    SHOW TABLE STATUS WHERE NAME LIKE 'your_table_nm';
 
 ## Create table
 
@@ -264,7 +264,7 @@ Describe table  character set and collation
 
 ## Drop table
 
-    DROP TABLE IF EXISTS your_db_name.your_table_name1, your_db_name.your_table_name1;
+    DROP TABLE IF EXISTS your_db_nm.your_table_nm1, your_db_nm.your_table_nm1;
 
 ### Drop all tables
 
@@ -299,21 +299,21 @@ Get engine type (MyISAM or InnoDB)
 
 ### Add column
 
-    ALTER TABLE your_table_name ADD COLUMN your_col2 INT(11) AFTER your_col1;
+    ALTER TABLE your_table_nm ADD COLUMN your_col2 INT(11) AFTER your_col1;
 
 ### Delete column
 
-    ALTER TABLE `your_table_name` DROP `your_col1`, DROP `your_col2`;
+    ALTER TABLE `your_table_nm` DROP `your_col1`, DROP `your_col2`;
 
 ### Rename column
 
-    ALTER TABLE your_table_name CHANGE COLUMN old_name new_name varchar(255);
+    ALTER TABLE your_table_nm CHANGE COLUMN old_nm new_nm varchar(255);
 
 ### Modify column
 
 Modify column without rename
 
-    ALTER TABLE your_table_name MODIFY COLUMN your_col VARCHAR(255) NOT NULL;
+    ALTER TABLE your_table_nm MODIFY COLUMN your_col VARCHAR(255) NOT NULL;
 
 ## Index
 
@@ -327,19 +327,19 @@ Describe index
 
 ### Create
 
-    ALTER TABLE `your_table` ADD INDEX `your_index_name`(`your_col`);
+    ALTER TABLE `your_table` ADD INDEX `your_index_nm`(`your_col`);
     ALTER TABLE `your_table`
-      ADD UNIQUE `your_index_name`(`your_col1`, `your_col2`);
+      ADD UNIQUE `your_index_nm`(`your_col1`, `your_col2`);
 
 ### Create uniqe constraint
 
-    ALTER TABLE `your_table` ADD CONSTRAINT 'your_constraint_name'
+    ALTER TABLE `your_table` ADD CONSTRAINT 'your_constraint_nm'
       UNIQUE (`your_col1`, `your_col2`);
 
 ### Remove
 
     ALTER TABLE `your_table` DROP INDEX 'your_index';
-    DROP INDEX 'your_index_name' ON `your_table_name`;
+    DROP INDEX 'your_index_nm' ON `your_table_nm`;
 
 ## Explain
 
@@ -353,7 +353,7 @@ Empties a table completely.
 
 ## Insert
 
-    INSERT INTO `your_db_name`.`your_table_name1` (id, text)
+    INSERT INTO `your_db_nm`.`your_table_nm1` (id, text)
       VALUES (1, 'foo'), (2, 'bar');
     INSERT INTO table_temp2 (fld_id)
         SELECT table_temp1.fld_order_id
@@ -362,7 +362,7 @@ Empties a table completely.
 
 ## Update if duplicate
 
-    INSERT INTO your_table_name ("latitude", "longitude", "name")
+    INSERT INTO your_table_nm ("latitude", "longitude", "nm")
         VALUES (1,2,'foobar')
         ON DUPLICATE KEY UPDATE "name" = 'foobar';
 
@@ -372,7 +372,7 @@ Empties a table completely.
 
 ## Update columns
 
-    UPDATE `your_db_name`.`your_table_name`
+    UPDATE `your_db_nm`.`your_table_nm`
       SET your_col1='foo', your_col2='bar' WHERE id='1';
     Query OK, 1 row affected (0.01 sec)
 
@@ -380,7 +380,7 @@ Empties a table completely.
 
 Suitable with self referened/sourced update/set
 
-    UPDATE your_table_name t1 join your_table_name t2
+    UPDATE your_table_nm t1 join your_table_nm t2
       ON t1.your_col1 = t2.your_col1
       SET t1.your_col2 = t2.your_col2
       WHERE t1.your_col3 = 'foo' AND t2.your_col3 = 'bar';
@@ -409,7 +409,7 @@ Suitable with self referened/sourced update/set
 
 ### Timestamp to datetime
 
-    SELECT *, from_unixtime(`created_at`) FROM `your_table_name`
+    SELECT *, from_unixtime(`created_at`) FROM `your_table_nm`
         ORDER BY created_at DESC;
 
 ### CSV
@@ -421,7 +421,7 @@ Suitable with self referened/sourced update/set
 
 ### Enum
 
-    ALTER TABLE your_table_name CHANGE your_col your_col ENUM('foo','bar');
+    ALTER TABLE your_table_nm CHANGE your_col your_col ENUM('foo','bar');
 
 ## Binary log
 

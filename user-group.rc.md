@@ -4,7 +4,7 @@
 
     useradd --uid=1000 \
             --gid=1000 \
-            --comment="Your user name" \
+            --comment="Your user nm" \
             --user-group \
             --groups=your,groups,names \
             --create-home \
@@ -19,7 +19,7 @@
 ## Add no login/unprivileged user
 
     useradd --system \
-            --comment="Your daemon/proces user name"\
+            --comment="Your daemon/proces user nm"\
             --user-group=your_usr
             --home-dir=/dev/null
             --shell=/sbin/nologin \
@@ -27,7 +27,7 @@
 
 ## User edit
 
-    usermod --comment "Your user name" \
+    usermod --comment "Your user nm" \
             --home /path/to/user/dir --move-home \
             --user-group --groups your,groups,names --append \
             --shell /bin/bash \

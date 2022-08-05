@@ -4,7 +4,7 @@
 * <https://devcenter.heroku.com/articles/getting-started-with-ruby-o>
 * <https://devcenter.heroku.com/articles/getting-started-with-rails4>
 
-All commands can recive `--app your-app-name`
+All commands can recive `--app your-app-nm`
 
 # Applications
 
@@ -17,11 +17,11 @@ All commands can recive `--app your-app-name`
 
 <https://devcenter.heroku.com/articles/git>
 
-    heroku git:remote -a your-app-name
+    heroku git:remote -a your-app-nm
 
 ## Create
 
-    heroku apps:create --region eu your-app-name
+    heroku apps:create --region eu your-app-nm
 
 # Web server
 
@@ -176,11 +176,11 @@ Naked, bare or root domain have two options:
 
 ## Install
 
-    heroku addons:create your-addon-name
+    heroku addons:create your-addon-nm
 
 ## Uninstall
 
-    heroku addons:destroy your-addon-name
+    heroku addons:destroy your-addon-nm
 
 # Deploy hook
 
@@ -207,17 +207,17 @@ Should use `DATABASE_URL` environment variable.
 
 ## Connect
 
-    heroku pg:psql YOUR_DB_NAME
+    heroku pg:psql YOUR_DB_NM
 
 ## Execute query
 
-    heroku pg:psql YOUR_DB_NAME --command 'SELECT 1 + 1'
+    heroku pg:psql YOUR_DB_NM --command 'SELECT 1 + 1'
 
 ## Sql dump
 
 Sql Backup
 
-    pg_dump postgres://your_usr:your_password@your.tld:5432/your_db_name \
+    pg_dump postgres://your_usr:your_password@your.tld:5432/your_db_nm \
         | xz --compress \
         > path/to/dump_$(hostname)_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
 
@@ -227,7 +227,7 @@ Restore from from sql dump file
 
 <http://stackoverflow.com/questions/20508898/how-can-i-import-a-sql-file-into-my-heroku-postgres-database#20511058>
 
-    heroku pg:psql YOUR_DB_NAME < path/to/dump.sql
+    heroku pg:psql YOUR_DB_NM < path/to/dump.sql
 
 ## Binary dump
 

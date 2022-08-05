@@ -4,17 +4,17 @@
 
 ## Install
 
-    gem install your_gem_name -v '>= 1.2.3'
+    gem install your_gem_nm -v '>= 1.2.3'
 
 ## Install/vendoring
 
 Installing to custom directory
 
-    gem unpack your_gem_name --target path/to/dir
+    gem unpack your_gem_nm --target path/to/dir
 
 ## Uninstall
 
-    gem uninstall your_gem_name -v '<= 1.2.3'
+    gem uninstall your_gem_nm -v '<= 1.2.3'
 
 ## Uninstall local source
 

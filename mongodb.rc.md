@@ -2,7 +2,7 @@
 
 ## Get version
 
-    mongo your_db_name --eval='printjson(db.version());'
+    mongo your_db_nm --eval='printjson(db.version());'
 
 ## Backup create
 
@@ -16,7 +16,7 @@
 
 Execute via shell/bash script
 
-    mongo your_db_name --eval='printjson(db.serverStatus());'
+    mongo your_db_nm --eval='printjson(db.serverStatus());'
 
 ## REPL
 
@@ -30,138 +30,138 @@ Client interactive connection
 
 ## Database help/list available commands
 
-    mongo your_db_name --eval='printjson(db.help());'
+    mongo your_db_nm --eval='printjson(db.help());'
 
 ## Databasrs list
 
-    echo "show dbs" | mongo your_db_name
+    echo "show dbs" | mongo your_db_nm
 
 ## Database get name
 
 Get current db name
 
-    mongo your_db_name --eval='printjson(db.getName());'
+    mongo your_db_nm --eval='printjson(db.getName());'
 
 ## Stats
 
 Get current db statistics
 
-    mongo your_db_name --eval='printjson(db.stats());'
+    mongo your_db_nm --eval='printjson(db.stats());'
 
 ## Database create or use
 
-    use your_db_name
+    use your_db_nm
 
 ## Database drop/remove
 
-    mongo your_db_name --eval='printjson(db.dropDatabase());'
+    mongo your_db_nm --eval='printjson(db.dropDatabase());'
 
 ## Collections list
 
     show collections
-    echo "printjson(db.getCollectionNames());" | mongo your_db_name
+    echo "printjson(db.getCollectionNames());" | mongo your_db_nm
 
 ## Collection create
 
-    db.createCollection("yourCollName")
-    mongo your_db_name --eval='db.createCollection("yourCollName');'
+    db.createCollection("yourCollNm")
+    mongo your_db_nm --eval='db.createCollection("yourCollNm');'
 
 ## Collection help/list available commands
 
-    mongo your_db_name --eval='printjson(db.yourCollName.help());'
+    mongo your_db_nm --eval='printjson(db.yourCollNm.help());'
 
 ## Collection stats/count documents
 
-    mongo your_db_name --eval='printjson(db.yourCollName.count({yourFldName: {$gt: 42}}));'
+    mongo your_db_nm --eval='printjson(db.yourCollNm.count({yourFldNm: {$gt: 42}}));'
 
 ## Collection stats/count documents
 
-    mongo your_db_name --eval='printjson(db.yourCollName.stats());'
+    mongo your_db_nm --eval='printjson(db.yourCollNm.stats());'
 
 ## Collection drop/remove
 
-    mongo your_db_name --eval='printjson(db.yourCollName.drop());'
-    mongo your_db_name --eval='printjson(db.yourCollName.remove());'
+    mongo your_db_nm --eval='printjson(db.yourCollNm.drop());'
+    mongo your_db_nm --eval='printjson(db.yourCollNm.remove());'
 
 ## Insert into collection
 
 Insert into collection
 
-    db.yourCollName.insert({"foo": "bar"});
+    db.yourCollNm.insert({"foo": "bar"});
 
 ## Insert raw string into collection
 
-    db.yourCollName.insert(JSON.parse("{\"foo\": \"bar\"}"));
+    db.yourCollNm.insert(JSON.parse("{\"foo\": \"bar\"}"));
 
 ## Find in collection
 
-    db.yourCollName.find({"_id": ObjectId("123456789012345678901234")});
-    db.yourCollName.find({"foo": {$eq: "bar"}});
+    db.yourCollNm.find({"_id": ObjectId("123456789012345678901234")});
+    db.yourCollNm.find({"foo": {$eq: "bar"}});
 
 ## Find highest value in collection
 
 Find greatest value
 
-    db.yourCollName.find().sort({yourFldName:-1}).limit(1);
+    db.yourCollNm.find().sort({yourFldNm:-1}).limit(1);
 
 ## Find lowest value in collection
 
 Find lowest value
 
-    db.yourCollName.find().sort({yourFldName:1}).limit(1);
+    db.yourCollNm.find().sort({yourFldNm:1}).limit(1);
 
 ## Find and paginate
 
-    db.yourCollName.find().limit(1).skip(1);
+    db.yourCollNm.find().limit(1).skip(1);
 
 ## Find and select specific fields
 
-    db.yourCollName.find({}, {_id: 0, yourFldName: 1});
+    db.yourCollNm.find({}, {_id: 0, yourFldNm: 1});
 
 ## Sort ascending
 
-    db.yourCollName.find().sort({yourFldName: 1});
+    db.yourCollNm.find().sort({yourFldNm: 1});
 
 ## Sort descending
 
-    db.yourCollName.find().sort({yourFldName: -1});
+    db.yourCollNm.find().sort({yourFldNm: -1});
 
 ## List latest records in collection
 
 List 3 last (tail) records
 
-    db.yourCollName.find().sort({$natural:-1}).limit(3);
+    db.yourCollNm.find().sort({$natural:-1}).limit(3);
 
 ## List oldest records in collection
 
 List 3 last (tail) records
 
-    db.yourCollName.find().sort({$natural:-1}).limit(3).toArray();
+    db.yourCollNm.find().sort({$natural:-1}).limit(3).toArray();
 
 ## Update/overwrite whole object
 
-    db.yourCollName.update({_id: ObjectId("42")}, {foo: "bar"});
+    db.yourCollNm.update({_id: ObjectId("42")}, {foo: "bar"});
 
 ## Update individual field
 
-    db.yourCollName.update({_id: ObjectId("42")}, {$set: {foo: 42}});
+    db.yourCollNm.update({_id: ObjectId("42")}, {$set: {foo: 42}});
 
 ## Upsert
 
 Insert object with id or update/increment individual field
 
-    db.yourCollName.update({_id: ObjectId("42")}, {$inc: {yourFldName: 1}}, true);
+    db.yourCollNm.update({_id: ObjectId("42")}, {$inc: {yourFldNm: 1}}, true);
 
 ## Update batch
 
-    db.yourCollName.update({}, {$set: {foo: 42}}, false, true);
+    db.yourCollNm.update({}, {$set: {foo: 42}}, false, true);
 
 ## Strict JSON
 
 Print JSON in strict mode compatible with [JSON RFC](http://www.json.org)
 
-    mongo your_db_name --eval='JSON.stringify(db.yourCollName.find().sort({$natural:-1}).limit(3).toArray(), null, 2);'
-    mongoexport --db your_db_name --collection yourCollName --jsonArray
+    mongo your_db_nm --eval='JSON.stringify(db.yourCollNm.find().sort({$natural:-1}).limit(3).toArray(), null, 2);'
+    mongoexport --db your_db_nm --collection yourCollNm --jsonArray
 
 ## GUI
 

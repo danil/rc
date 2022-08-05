@@ -131,8 +131,8 @@ https://github.com/icy/pacapt
 
 <https://wiki.archlinux.org/index.php/Network_configuration#Set_the_hostname>
 
-    echo your-host-name > /etc/hostname
-    hostnamectl set-hostname your-host-name
+    echo your-host-nm > /etc/hostnm
+    hostnmctl set-hostnm your-host-nm
 
 ## Network interfaces list
 
@@ -153,13 +153,13 @@ https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Custom_local_reposit
     cd your_prog
     makepkg
     mv your_prog.pkg.tar.zst /path/to/x86_64/
-    repo-add /path/to/x86_64/your-name.db.tar.zst /path/to/x86_64/*.pkg.tar.zst
+    repo-add /path/to/x86_64/your-nm.db.tar.zst /path/to/x86_64/*.pkg.tar.zst
 
 ```bash
 cat >> /etc/pacman.conf
-[your-name]
+[your-nm]
 SigLevel = Optional TrustAll
-Server = http://arch.your-name.tld/x86_64
+Server = http://arch.your-nm.tld/x86_64
 ^D
 ```
 
@@ -167,7 +167,7 @@ Server = http://arch.your-name.tld/x86_64
 cat >> /etc/nginx/nginx.conf
 server {
     listen       80;
-    server_name  arch.your-name.tld;
+    server_nm  arch.your-nm.tld;
     root         /path/to/x86_64;
     autoindex    on;
 }
@@ -176,4 +176,4 @@ server {
 
 ## Remove/delete package from custom repository
 
-    repo-remove /path/to/x86_64/your-name.db.tar.zst your-1.2-3-any.pkg.tar.xz
+    repo-remove /path/to/x86_64/your-nm.db.tar.zst your-1.2-3-any.pkg.tar.xz
