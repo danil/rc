@@ -1,6 +1,6 @@
 # MySQL
 
-    mysql --host=192.168.1.2 --user=your_usr [--passowrd] --table=your_table_nm \
+    mysql --host=192.168.1.2 --user=your_usr [--passowrd] --table=your_tbl_nm \
      < path/to/dump.sql > path/to/output.sql
     mysql -h localhost -u root [-p] \
      -e "SELECT * FROM test_db.test_table;"
@@ -54,7 +54,7 @@ export foo=your_db_nm && \
   mysqldump -h127.0.0.1 -Pyour_port -uyour_usr \
             --default-character-set=latin1 -r \
             --no-create-info --complete-insert \
-            $foo your_table_nm1, your_table_nm2 | \
+            $foo your_tbl_nm1, your_tbl_nm2 | \
   xz --compress > $foo\_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
 ```
 
@@ -192,7 +192,7 @@ Retrieve rows 6-15.
 
 ### Group by with count
 
-    SELECT your_col1, count(*) FROM your_table_nm
+    SELECT your_col1, count(*) FROM your_tbl_nm
     GROUP BY your_col2 HAVING count(*) > 1;
 
 ### Query from file
@@ -210,8 +210,8 @@ To copy with indexes and triggers
 ### Copy rows in same table
 
 ```SQL
-INSERT INTO your_table_nm (nm, age)
-  SELECT 'John', age FROM your_table_nm WHERE nm = 'Alice';
+INSERT INTO your_tbl_nm (nm, age)
+  SELECT 'John', age FROM your_tbl_nm WHERE nm = 'Alice';
 ```
 
 ## List tables
@@ -241,11 +241,11 @@ INSERT INTO your_table_nm (nm, age)
 
 Describe table  character set and collation
 
-    SHOW TABLE STATUS WHERE NAME LIKE 'your_table_nm';
+    SHOW TABLE STATUS WHERE NAME LIKE 'your_tbl_nm';
 
 ## Create table
 
-    CREATE TABLE IF NOT EXISTS your_usr.test_table
+    CREATE TABLE IF NOT EXISTS your_usr.test_tbl
       (
         id INT(11) unsigned NOT NULL AUTO_INCREMENT,
         tag_id INT(11) unsigned NOT NULL,
@@ -259,12 +259,12 @@ Describe table  character set and collation
 
 ### Create table by table
 
-    CREATE TABLE IF NOT EXISTS your_usr.test_table_2
-     LIKE your_usr.test_table;
+    CREATE TABLE IF NOT EXISTS your_usr.test_tbl_2
+     LIKE your_usr.test_tbl;
 
 ## Drop table
 
-    DROP TABLE IF EXISTS your_db_nm.your_table_nm1, your_db_nm.your_table_nm1;
+    DROP TABLE IF EXISTS your_db_nm.your_tbl_nm1, your_db_nm.your_tbl_nm1;
 
 ### Drop all tables
 
@@ -283,7 +283,7 @@ Get engine type (MyISAM or InnoDB)
 
 ## Describe columns
 
-    DESCRIBE your_usr.test_table '%';
+    DESCRIBE your_usr.test_tbl '%';
     +------------+----------+------+-----+---------+----------------+
     | Field      | Type     | Null | Key | Default | Extra          |
     +------------+----------+------+-----+---------+----------------+
@@ -299,21 +299,21 @@ Get engine type (MyISAM or InnoDB)
 
 ### Add column
 
-    ALTER TABLE your_table_nm ADD COLUMN your_col2 INT(11) AFTER your_col1;
+    ALTER TABLE your_tbl_nm ADD COLUMN your_col2 INT(11) AFTER your_col1;
 
 ### Delete column
 
-    ALTER TABLE `your_table_nm` DROP `your_col1`, DROP `your_col2`;
+    ALTER TABLE `your_tbl_nm` DROP `your_col1`, DROP `your_col2`;
 
 ### Rename column
 
-    ALTER TABLE your_table_nm CHANGE COLUMN old_nm new_nm varchar(255);
+    ALTER TABLE your_tbl_nm CHANGE COLUMN old_nm new_nm varchar(255);
 
 ### Modify column
 
 Modify column without rename
 
-    ALTER TABLE your_table_nm MODIFY COLUMN your_col VARCHAR(255) NOT NULL;
+    ALTER TABLE your_tbl_nm MODIFY COLUMN your_col VARCHAR(255) NOT NULL;
 
 ## Index
 
@@ -323,37 +323,37 @@ Indeces
 
 Describe index
 
-    SHOW INDEX FROM your_table;
+    SHOW INDEX FROM your_tbl;
 
 ### Create
 
-    ALTER TABLE `your_table` ADD INDEX `your_index_nm`(`your_col`);
-    ALTER TABLE `your_table`
-      ADD UNIQUE `your_index_nm`(`your_col1`, `your_col2`);
+    ALTER TABLE `your_tbl` ADD INDEX `your_idx_nm`(`your_col`);
+    ALTER TABLE `your_tbl`
+      ADD UNIQUE `your_idx_nm`(`your_col1`, `your_col2`);
 
 ### Create uniqe constraint
 
-    ALTER TABLE `your_table` ADD CONSTRAINT 'your_constraint_nm'
+    ALTER TABLE `your_tbl` ADD CONSTRAINT 'your_constraint_nm'
       UNIQUE (`your_col1`, `your_col2`);
 
 ### Remove
 
-    ALTER TABLE `your_table` DROP INDEX 'your_index';
-    DROP INDEX 'your_index_nm' ON `your_table_nm`;
+    ALTER TABLE `your_tbl` DROP INDEX 'your_idx_nm';
+    DROP INDEX 'your_idx_nm' ON `your_tbl_nm`;
 
 ## Explain
 
-    EXPLAIN SELECT * FROM your_table WHERE id = 1;
+    EXPLAIN SELECT * FROM your_tbl WHERE id = 1;
 
 ## Truncate
 
 Empties a table completely.
 
-    TRUNCATE TABLE your_table;
+    TRUNCATE TABLE your_tbl;
 
 ## Insert
 
-    INSERT INTO `your_db_nm`.`your_table_nm1` (id, text)
+    INSERT INTO `your_db_nm`.`your_tbl_nm1` (id, text)
       VALUES (1, 'foo'), (2, 'bar');
     INSERT INTO table_temp2 (fld_id)
         SELECT table_temp1.fld_order_id
@@ -362,7 +362,7 @@ Empties a table completely.
 
 ## Update if duplicate
 
-    INSERT INTO your_table_nm ("latitude", "longitude", "nm")
+    INSERT INTO your_tbl_nm ("latitude", "longitude", "nm")
         VALUES (1,2,'foobar')
         ON DUPLICATE KEY UPDATE "name" = 'foobar';
 
@@ -372,7 +372,7 @@ Empties a table completely.
 
 ## Update columns
 
-    UPDATE `your_db_nm`.`your_table_nm`
+    UPDATE `your_db_nm`.`your_tbl_nm`
       SET your_col1='foo', your_col2='bar' WHERE id='1';
     Query OK, 1 row affected (0.01 sec)
 
@@ -380,7 +380,7 @@ Empties a table completely.
 
 Suitable with self referened/sourced update/set
 
-    UPDATE your_table_nm t1 join your_table_nm t2
+    UPDATE your_tbl_nm t1 join your_tbl_nm t2
       ON t1.your_col1 = t2.your_col1
       SET t1.your_col2 = t2.your_col2
       WHERE t1.your_col3 = 'foo' AND t2.your_col3 = 'bar';
@@ -409,7 +409,7 @@ Suitable with self referened/sourced update/set
 
 ### Timestamp to datetime
 
-    SELECT *, from_unixtime(`created_at`) FROM `your_table_nm`
+    SELECT *, from_unixtime(`created_at`) FROM `your_tbl_nm`
         ORDER BY created_at DESC;
 
 ### CSV
@@ -421,7 +421,7 @@ Suitable with self referened/sourced update/set
 
 ### Enum
 
-    ALTER TABLE your_table_nm CHANGE your_col your_col ENUM('foo','bar');
+    ALTER TABLE your_tbl_nm CHANGE your_col your_col ENUM('foo','bar');
 
 ## Binary log
 

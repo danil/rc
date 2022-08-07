@@ -90,11 +90,16 @@ This equivalent to (B-tree is default):
 
 ## Drop/delete/remove index
 
-    DROP INDEX your_index_nm;
+    DROP INDEX your_idx_nm;
 
 ## Rename index
 
     ALTER INDEX IF EXISTS "your_idx_nm" RENAME TO "your_idx_new_nm";
+
+## Alter index
+
+    DROP INDEX your_idx_nm;
+    CREATE INDEX your_idx_nm ON your_tbl (your_col);
 
 ## Indexes usage stats
 
@@ -331,7 +336,7 @@ Set a default schema for a session
 
     SELECT your_col, data_type, character_maximum_length
     FROM information_schema.columns
-    WHERE table_name = 'your-table-nm';
+    WHERE table_name = 'your-tbl-nm';
 
 ## Drop table
 
