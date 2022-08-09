@@ -187,7 +187,7 @@ Get a file from a specific revision
 
 ## Add local path as remote branch
 
-    git remote add your-remote path/to/your/repo
+    git remote add your-remote path/to/your/repo/.git
 
 ## Remote branchs cleanup
 
