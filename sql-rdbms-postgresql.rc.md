@@ -46,7 +46,7 @@ Backuping:
 
 ## Restor binary dump by pg_restore
 
-    pg_restore --username=your_role --dbname=your_db --no-owner file.backup
+    pg_restore --username=your_role --dbname=your_db --no-owner your_file.backup
 
 ## List indexes
 
@@ -625,6 +625,14 @@ Key words should be escaped (for example if used as table name or column name)
 <http://www.postgresql.org/docs/9.1/static/functions-string.html#FUNCTIONS-STRING-OTHER>
 
     SELECT concat('foo', 'bar', 'xyz')
+
+## psql: write to stdout
+
+    \o
+
+## psql: write to file
+
+    \o path/to/your_file
 
 ## CSV Export by SQL to STDOUT
 
