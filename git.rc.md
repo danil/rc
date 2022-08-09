@@ -2,8 +2,8 @@
 
     git config --global user.name "John Doe"
     git config --global user.email john@doe.org
-    git clone git://your.tld/repository-nm.git destination-dir
-    git --git-dir=path/to/repository/.git  --work-tree=path/to/repository status
+    git clone git://your.tld/ropo-nm.git destination-dir
+    git --git-dir=path/to/ropo/.git  --work-tree=path/to/ropo status
     git push origin master
 
 ## Status
@@ -59,7 +59,7 @@ Push one commit by commit sha
 Push from local repository to independent remote repository
 <https://gist.github.com/domenic/ec8b0fc8ab45f39403dd>
 
-    git push git@github.com:your/repo.git local-branch:remote-branch
+    git push git@your.tld:your/repo.git local-branch:remote-branch
 
 ## Branches list
 
@@ -126,7 +126,7 @@ origin/your-new-branch to origin/your-old-branch
 
 ## Branch upstream
 
-    git branch --set-upstream-to=origin/your-remoute-branch-nm
+    git branch --set-upstream-to=origin/your-remote-branch-nm
 
 ## Merge abort
 
@@ -143,7 +143,7 @@ origin/your-new-branch to origin/your-old-branch
 From your project repository, check out a new branch and test the changes.
 
     git checkout -b contributor-somebranch master
-    git pull https://github.com/contributor/your-repository-nm.git somebranch
+    git pull https://your.tld/contributor/your-ropo-nm.git somebranch
 
 ## Merge pull request step 2
 
@@ -173,17 +173,21 @@ Get a file from a specific revision
 
     git show HEAD^^^:path/to/file.txt > local/path/to/file.txt
 
-## Remote remove
+## Remove remote
 
-    git remote remove github
+    git remote remove your-remote
 
-## Remote add
+## Add remote
 
-    git remote add origin ssh://john@doe.org/var/git/repository-name.git
+    git remote add origin ssh://john@doe.org/var/git/ropo-nm.git
 
-## Second remote adding
+## Add second remote
 
-    git remote add github git@github.com:path/to/repository-name.git
+    git remote add your-remote git@your.tld:path/to/ropo-nm.git
+
+## Add local path as remote branch
+
+    git remote add your-remote path/to/your/repo
 
 ## Remote branchs cleanup
 
@@ -331,7 +335,7 @@ Move file and directory into a other directory along with commit history
 
 <http://exyr.org/2011/git-mirrors>
 
-    git clone --mirror git://github.com:your/repo.git
+    git clone --mirror git://your.tld:your/repo.git
     git remote add your-remote-nm you@your.host.tld:your/repo.git
     git push --mirror your-remote-nm # push all branches
 
@@ -339,8 +343,8 @@ Move file and directory into a other directory along with commit history
 
 <http://toolmantim.com/thoughts/setting_up_a_new_remote_git_repository>
 
-    git clone --bare git://github.com:your/repo.git
-    git remote add origin git://github.com:your/repo.git
+    git clone --bare git://your.tld:your/repo.git
+    git remote add origin git://your.tld:your/repo.git
     git fetch
 
 ## Convert to bare
@@ -357,7 +361,7 @@ Move file and directory into a other directory along with commit history
 <http://progit.org/book/ru/ch5-8.html>
 
 ```sh
-git submodule add git@github.com:your/repo.git local/path
+git submodule add git@your.tld:your/repo.git local/path
 git submodule init
 git submodule update
 git submodule status
