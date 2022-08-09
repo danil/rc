@@ -8,7 +8,7 @@ Size and so on.
 
 ## Image build
 
-    docker build --tag=your-repository/your-image:your-tag \
+    docker build --tag=your-ropo/your-image:your-tag \
                  --file=path/to/Dockerfile ./
 
 ## Image tag add

@@ -17,7 +17,7 @@ use https://pypi.org
 
 ## Install
 
-    pip install --user git+git://your.tld/your/repository.git@stable-1.2.3
+    pip install --user git+git://your.tld/your/ropo.git@stable-1.2.3
     pip install --user "your_pkg_nm>=1.2.3,<3.2.1"
 
 ## Uninstall

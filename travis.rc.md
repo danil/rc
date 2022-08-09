@@ -30,11 +30,11 @@ creates possibility to use variable in scripts a-la `echo $YOUR_VARIABLE_NM`.
 <https://docs.travis-ci.com/user/encrypting-files>
 <http://scurker.com/automated-deploys-with-travis/>
 
-Encryption of file `path/inside/repository/file` generates file
-`path/inside/repository/file.enc` and add decryption rule
+Encryption of file `path/inside/ropo/file` generates file
+`path/inside/ropo/file.enc` and add decryption rule
 to `.travis.yml`.
 
-    travis encrypt-file path/inside/repository/file --add
+    travis encrypt-file path/inside/ropo/file --add
 
 ## Compile
 
