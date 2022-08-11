@@ -514,7 +514,7 @@ group of duplicates).
            SELECT your_col3, your_col4 FROM your_tbl2
     );
 
-## Array length
+## Array length/count
 
     SELECT cardinality('{1,2,3}'::smallint[]);
     SELECT array_length('{1,2,3}'::smallint[], 1);
