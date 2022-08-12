@@ -1,4 +1,4 @@
-# X rc
+# X11 rc
 
 ## Restart
 
