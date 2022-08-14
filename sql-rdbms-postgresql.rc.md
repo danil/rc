@@ -662,9 +662,9 @@ Load data from csv file
 ## CSV import by psql command by SQL from STDIN
 
     cat path/to/file.csv \
-        | psql --command="COPY your_tbl (your_col1, your_col2)
-                          FROM STDIN
-                          csv DELIMITER ';' NULL AS '\N' QUOTE '"'"'"' ESCAPE '\';"
+    | psql --command="COPY your_tbl (your_col1, your_col2)
+                      FROM STDIN
+                      csv DELIMITER ';' NULL AS '\N' QUOTE '"'"'"' ESCAPE '\';"
 
 ## CSV import by psql command by from file
 
