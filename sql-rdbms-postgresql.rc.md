@@ -415,13 +415,13 @@ Update multiple rows in one query
 
 ## Insert row
 
-    INSERT INTO your_tbl (nm, age) VALUES('John', 3);
+    INSERT INTO your_tbl (nm, age) VALUES ('John', 3);
     COPY your_tbl FROM STDIN WITH DELIMITER AS ',';
 
 ## Upsert/update/insert/create
 
     INSERT INTO your_tbl ("latitude", "longitude", "nm") 
-        VALUES (1,2,'foobar')
+        VALUES (1 ,2 ,'foobar')
         ON CONFLICT ON CONSTRAINT your_tbl_pkey
             DO UPDATE SET "name" = 'foobar';
 
@@ -433,7 +433,7 @@ Update multiple rows in one query
 ## Increment/upsert/update counter
 
     INSERT INTO "your_tbl" ("id", "count")
-    VALUES(nextval('your_tbl_id_seq'::regclass), 1)
+    VALUES (nextval('your_tbl_id_seq'::regclass), 1)
     ON CONFLICT ("id")
     DO UPDATE SET "count" = COALESCE("your_tbl"."count", EXCLUDED."count") + 1;
 
