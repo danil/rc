@@ -31,21 +31,19 @@ Adds `\n` at the end of the file only if it doesn’t already end with a newline
 <http://unix.stackexchange.com/questions/31947/how-to-add-a-newline-to-the-end-of-a-file#31955>,
 <http://unix.stackexchange.com/questions/31947/how-to-add-a-newline-to-the-end-of-a-file#comment-43399>.
 
-sed --in-place --expression='$a\' ~/.dmenu_history
+    sed --in-place --expression='$a\' ~/.dmenu_history
 
 ## Placeholders/variables
 
     sed -e 's/\(unchangeable str\)str to replace/\1new str/g' path/to/file
 
-# tr
-
-## Convert uppercase to lowercase
+## tr converts uppercase to lowercase
 
 <http://cyberciti.biz/faq/linux-unix-shell-programming-converting-lowercase-uppercase>
 
     tr '[:upper:]' '[:lower:]' < input.txt > output.txt
 
-## Replacing returns with space
+## tr replaces returns with space
 
     cat ./file | tr '\n' ' '
 
