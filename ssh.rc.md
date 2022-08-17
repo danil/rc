@@ -79,6 +79,12 @@ Set `~/.ssh/known_hosts` or `/etc/ssh/ssh_known_hosts`
     # or if you tunnel http
     curl localhost:remote_port
 
+## Agent authentication
+
+    eval `ssh-agent -s`
+    ssh-add ~/.ssh/id_rsa
+    ssh your@your.tld
+
 ## Transparent multi-hop SSH agent forwarding
 
 <http://stackoverflow.com/questions/17846529/could-not-open-a-connection-to-your-authentication-agent#17695338>
