@@ -53,11 +53,11 @@ Backuping:
     \di
     \d your_tb
 
-## Show index
+## Show/describe index
 
-    SELECT * FROM "pg_indexes" WHERE "tablename" = 'entities';
+    SELECT * FROM "pg_indexes" WHERE "tablename" = 'your_tbl';
 
-## Show index size
+## Show/describe index size
 
     \di+ your_idx
 
@@ -328,11 +328,11 @@ Set a default schema for a session
     CREATE TABLE your_tbl
       (some_id BIGSERIAL PRIMARY KEY, name varchar(10), bio text, age integer);
 
-## Describe table
+## Show/describe table
 
     \d some_table
 
-## Describe table by the SQL
+## Show/describe table by the SQL
 
     SELECT your_col, data_type, character_maximum_length
     FROM information_schema.columns
@@ -560,7 +560,7 @@ Today in past year
     SELECT (CURRENT_DATE - INTERVAL '1 year')::timestamptz;
     german_test=# show timezone;
 
-## Describe enum type
+## Show/describe enum type
 
 <http://stackoverflow.com/questions/9535937/is-there-a-way-to-show-a-user-defined-postgresql-enumerated-type-definition#25326877>
 
