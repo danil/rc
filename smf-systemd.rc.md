@@ -1,5 +1,7 @@
 # systemd rc
 
+Service Management Facility
+
 ## Install requirements
 
 Linux kernel config options: <https://github.com/systemd/systemd/blob/master/README>
