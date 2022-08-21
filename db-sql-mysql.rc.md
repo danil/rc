@@ -1,4 +1,4 @@
-# MySQL
+# MySQL RDBMS rc
 
     mysql --host=192.168.1.2 --user=your_usr [--passowrd] --table=your_tbl_nm \
      < path/to/dump.sql > path/to/output.sql

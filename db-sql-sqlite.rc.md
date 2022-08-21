@@ -1,6 +1,4 @@
-# SQLite
-
-# Tables
+# SQLite RDBMS rc
 
 ## List tables
 
@@ -18,22 +16,20 @@
 
     DROP TABLE IF EXISTS your_tbl_nm;
 
-# Query
-
 ## Execute query
 
     sqlite3 db/development.sqlite3 "SELECT version FROM schema_migrations;"
 
-## Dump
+## Dump query
 
     sqlite3 db/development.sqlite3 < dump.sql
     sqlite3 db/development.sqlite3 .dump > dump.sql
 
-# Insert row
+## Insert row
 
     INSERT INTO test_table (name, age) VALUES('John', 3);
     COPY test_table FROM STDIN WITH DELIMITER AS ',';
 
-# Delete row
+## Delete row
 
     DELETE FROM users WHERE id = 3;

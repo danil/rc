@@ -1,4 +1,4 @@
-# PostgreSQL rc
+# PostgreSQL RDBMS rc
 
 ## psql
 
