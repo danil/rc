@@ -146,15 +146,30 @@ This equivalent to (B-tree is default):
 
 https://www.postgresql.org/docs/9.4/errcodes-appendix.html
 
-## Version
+## Server version
 
-    mydb=> SELECT version();
+```sql
+yourdb=> SELECT version();
+                               version
+----------------------------------------------------------------------
+ PostgreSQL 13.6 (Ubuntu 13.6-1.pgdg18.04+1) on x86_64-pc-linux-gnu,
+ compiled by gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0, 64-bit
+(1 row)
 
-                                   version
-    ----------------------------------------------------------------------
-     PostgreSQL 8.1.11 on i486-pc-linux-gnu,
-    compiled by GCC cc (GCC) 4.1.2 20061115 (prerelease) (Debian 4.1.1-21)
-    (1 row)
+
+yourdb=> SHOW server_version;
+          server_version
+----------------------------------
+ 13.6 (Ubuntu 13.6-1.pgdg18.04+1)
+(1 row)
+
+
+yourdb=> SHOW server_version_num;
+ server_version_num
+--------------------
+ 130006
+(1 row)
+```
 
 ## hba_file
 
