@@ -48,6 +48,14 @@ Backuping:
 
     pg_restore --username=your_role --dbname=your_db --no-owner your_file.backup
 
+## Enable sequential scan (default)
+
+    set enable_seqscan = on;
+
+## Disable sequential scan for the debug purpose (index debug)
+
+    set enable_seqscan = off;
+
 ## List indexes
 
     \di
