@@ -14,6 +14,17 @@
     cat path/to/file.sql | psql
     psql < path/to/file.sql
 
+## psql print multiline to stdout
+
+    $ psql -qAtX --quiet --no-align --tuples-only --no-psqlrc --command="select E'Your first Line.\nYour second line.';"
+    Your first Line.
+    Your second line.
+
+## Print to stdout
+
+    man -P cat --pager=cat 
+    man ksh | col -b > ksh.txt
+
 ## URL
 
     psql postgres://your_usr:your-password@your.host:5432/your_db
@@ -567,6 +578,14 @@ group of duplicates).
     ------------
      2002-08-31
     (1 row)
+
+## Multiline JSON output to stdout
+
+    $ psql -qAtX --quiet --no-align --tuples-only --no-psqlrc --command="select E'{\n    \"yourKey\": \"Your value\",\n    \"yourKey2\": 42\n}';"
+    {
+        "yourKey": "Your value",
+        "yourKey2": 42
+    }
 
 ## Arithmetics
 
