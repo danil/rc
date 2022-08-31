@@ -3,17 +3,23 @@
     ssh -t root@santaslittlehelper "ssh danil@homer"
     sshfs -p 61022 your.tld:/home/danil/ mnt/example_org/
 
-## Key authentication
-
-<https://help.github.com/articles/generating-ssh-keys/#step-2-generate-a-new-ssh-key>
-
-    ssh-keygen -t rsa -C "your.email@your.tld"
-
 ## Generate private and public keys
 
 <http://superuser.com/questions/585429/can-i-change-the-filename-of-my-ssh-public-private-key-pair>
 
     ssh-keygen -f path/to/private_key
+
+## Generate RSA keys with email
+
+<https://help.github.com/articles/generating-ssh-keys/#step-2-generate-a-new-ssh-key>
+
+    ssh-keygen -f path/to/private_key -t rsa -C "your.email@your.tld"
+
+## Change key with email
+
+<https://help.github.com/articles/generating-ssh-keys/#step-2-generate-a-new-ssh-key>
+
+    ssh-keygen -c -C "your.email2@your.tld"
 
 ## Generate public key by private key
 
