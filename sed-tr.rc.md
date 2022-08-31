@@ -11,9 +11,9 @@ Stream Editor
 
     sed --in-place 's/your_old_string/your_new_string/g' path/to/file
 
-## Remove the 7rd line
+## Remove the 42nd line
 
-    sed --in-place '7d' ~/.ssh/known_hosts
+    sed --in-place '42d' ~/.ssh/known_hosts
 
 ## Remove 3-7 lines
 
