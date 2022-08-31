@@ -805,11 +805,15 @@ Deploy to GitHub Pages <http://yeoman.io/learning/deployment.html>
     git add --update foobar/ && git commit -m 'deploy'
     git push origin :gh-pages && git subtree push --prefix foobar origin gh-pages
 
-## Reflog
+## Reflog for the last hour
 
 Find reseted commit (no longer are being pointed to by some other ref):
 
-    git reflog --pretty=fuller --color -p --author=your_usr --since="1 hours"
+    git reflog --pretty=fuller --color -p --patch --author=your_usr --since="1 hours"
+
+## Reflog between 21:00 and 12:00
+
+    git reflog --pretty=fuller --color --since="1970-01-31 21:00:00 UTC" --until="1970-02-01 12:00:00 UTC"
 
 ## Merge repositories
 
