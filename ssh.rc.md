@@ -9,11 +9,21 @@
 
     ssh-keygen -f path/to/private_key
 
-## Generate RSA keys with email
+## Generate RSA key
 
 <https://help.github.com/articles/generating-ssh-keys/#step-2-generate-a-new-ssh-key>
 
-    ssh-keygen -f path/to/private_key -t rsa -C "your.email@your.tld"
+    ssh-keygen -t rsa
+
+## Generate Ed25519 key
+
+  ssh-keygen -o -a 100 -t ed25519
+
+## Generate key with email
+
+<https://help.github.com/articles/generating-ssh-keys/#step-2-generate-a-new-ssh-key>
+
+    ssh-keygen -C "your.email@your.tld"
 
 ## Change key with email
 
