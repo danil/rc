@@ -815,6 +815,10 @@ Find reseted commit (no longer are being pointed to by some other ref):
 
     git reflog --pretty=fuller --color --since="1970-01-31 21:00:00 UTC" --until="1970-02-01 12:00:00 UTC"
 
+## Reflog search/filter commit message by regex
+
+    git reflog --grep="[yY]our [mM]sg"
+
 ## Merge repositories
 
 Merge two repositories with history
