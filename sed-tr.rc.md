@@ -9,11 +9,11 @@ Stream Editor
 
 ## Inplace replacement
 
-    sed --in-place 's/your_old_string/your_new_string/g' path/to/file
+    sed -i --in-place 's/your_old_string/your_new_string/g' path/to/file
 
 ## Remove the 42nd line
 
-    sed --in-place '42d' ~/.ssh/known_hosts
+    sed -i --in-place '42d' ~/.ssh/known_hosts
 
 ## Remove 3-7 lines
 
@@ -31,7 +31,7 @@ Adds `\n` at the end of the file only if it doesn’t already end with a newline
 <http://unix.stackexchange.com/questions/31947/how-to-add-a-newline-to-the-end-of-a-file#31955>,
 <http://unix.stackexchange.com/questions/31947/how-to-add-a-newline-to-the-end-of-a-file#comment-43399>.
 
-    sed --in-place --expression='$a\' ~/.dmenu_history
+    sed -i --in-place --expression='$a\' ~/.dmenu_history
 
 ## Placeholders/variables
 
