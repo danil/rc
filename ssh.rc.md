@@ -27,7 +27,7 @@
 
 ## Change key with email
 
-<https://help.github.com/articles/generating-ssh-keys/#step-2-generate-a-new-ssh-key>
+<https://serverfault.com/questions/309171/possible-to-change-email-address-in-keypair>
 
     ssh-keygen -c -C "your.email2@your.tld"
 
