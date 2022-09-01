@@ -15,7 +15,7 @@
 
     ssh-keygen -t rsa
 
-## Generate Ed25519 key
+## TODO: generate Ed25519 key
 
   ssh-keygen -o -a 100 -t ed25519
 
