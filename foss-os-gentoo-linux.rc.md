@@ -173,8 +173,7 @@ List packages depends on package `your-pkg/nm`
 
     ebuild msort-8.53.ebuild manifest
 
-eix
----
+## eix
 
     eix -vAS dev-ruby
     eix --world --categor
