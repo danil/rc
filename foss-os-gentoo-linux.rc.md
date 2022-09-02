@@ -173,6 +173,11 @@ List packages depends on package `your-pkg/nm`
 
     ebuild msort-8.53.ebuild manifest
 
+## Naming convention
+
+* https://devmanual.gentoo.org/ebuild-writing/file-format/index.html#file-naming-rules
+* https://wiki.gentoo.org/wiki/Version_specifier
+
 ## eix
 
     eix -vAS dev-ruby
