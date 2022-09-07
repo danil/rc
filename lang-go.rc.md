@@ -109,7 +109,14 @@ godef -f path/to/file.go 'yourpkgnm.YourFunctionNm'
 ## Build
 
     go build
-    go build -o your_resulting_executable_nm
+
+## Build with custom executable name and custom output directory
+
+    go build -o path/to/your/executable
+
+## Build with directory change within go.mod
+
+    cd path/to/go/mod/dir && go build
 
 ## Build cache invalidation
 
