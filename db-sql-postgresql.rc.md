@@ -433,7 +433,7 @@ Remove constraint by name
     UPDATE your_tbl SET your_col1 = your_col2, your_col2 = your_col1
            WHERE your_col3 IS NOT NULL;
 
-## Update multiple rows with subquery
+## Multiple updates with subquery
 
 Update multiple rows in one query
 <https://stackoverflow.com/questions/18797608/update-multiple-rows-in-same-query-using-postgresql#18799497>
@@ -442,7 +442,7 @@ Update multiple rows in one query
     FROM (SELECT foo, bar FROM xyz WHERE id = 123) AS subquery
     WHERE id = 321;
 
-## Insert row
+## Insert
 
     INSERT INTO your_tbl (nm, age) VALUES ('John', 3);
     COPY your_tbl FROM STDIN WITH DELIMITER AS ',';
@@ -471,7 +471,7 @@ Update multiple rows in one query
     INSERT INTO your_tbl (your_col) VALUES (E'First Line.\nSecond line.');
     UPDATE your_tbl SET your_col = E'First Line.\nSecond line.';
 
-## Delete row
+## Delete
 
     DELETE FROM users WHERE id = 3;
 
