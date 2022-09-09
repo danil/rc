@@ -430,8 +430,10 @@ Remove constraint by name
 
 ## Swap/update two column's values
 
-    UPDATE your_tbl SET your_col1 = your_col2, your_col2 = your_col1
-           WHERE your_col3 IS NOT NULL;
+    UPDATE your_tbl
+    SET your_col1 = your_col2,
+        your_col2 = your_col1
+    WHERE your_col3 IS NOT NULL;
 
 ## Multiple updates with subquery
 
