@@ -165,21 +165,16 @@ yourdb=> SELECT version();
 ----------------------------------------------------------------------
  PostgreSQL 13.6 (Ubuntu 13.6-1.pgdg18.04+1) on x86_64-pc-linux-gnu,
  compiled by gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0, 64-bit
-(1 row)
-
 
 yourdb=> SHOW server_version;
           server_version
 ----------------------------------
  13.6 (Ubuntu 13.6-1.pgdg18.04+1)
-(1 row)
-
 
 yourdb=> SHOW server_version_num;
  server_version_num
 --------------------
  130006
-(1 row)
 ```
 
 ## hba_file
@@ -577,7 +572,6 @@ group of duplicates).
         date
     ------------
      2002-08-31
-    (1 row)
 
 ## Multiline JSON output to stdout
 
@@ -593,7 +587,6 @@ group of duplicates).
      ?column?
     ----------
             4
-    (1 row)
 
 ## Timestamp with timezone type
 
