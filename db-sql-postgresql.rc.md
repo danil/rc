@@ -142,6 +142,14 @@ This equivalent to (B-tree is default):
 
     \di+ your_idx
 
+## Add comment to index
+
+    COMMENT ON INDEX your_idx IS 'Your idx comment.';
+
+## Remove comment from index
+
+    COMMENT ON INDEX your_idx IS NULL;
+
 ## Indexes usage stats
 
     SELECT * FROM pg_stat_user_indexes;
