@@ -80,6 +80,17 @@ Backuping:
 
     \di+ your_idx
 
+## btree index
+
+btree index is a multidirectional balanced tree
+(многонаправленое сбалансированое дерево
+https://postgrespro.ru/docs/postgresql/12/btree-intro).
+
+## GIN index
+
+GIN is a generalized inverted index (обобщённый инвертированный индекс
+https://postgrespro.ru/docs/postgrespro/10/gin-intro).
+
 ## Create index
 
     CREATE INDEX "your_idx_nm" ON "your_tbl" ("your_col");
