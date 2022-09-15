@@ -79,6 +79,7 @@ Backuping:
 ## Show/describe index size
 
     \di+ your_idx
+    SELECT pg_table_size('your_idx'); -- bytes
 
 ## btree index
 
@@ -93,43 +94,47 @@ https://postgrespro.ru/docs/postgrespro/10/gin-intro).
 
 ## Create index
 
-    CREATE INDEX "your_idx_nm" ON "your_tbl" ("your_col");
+    CREATE INDEX "your_idx" ON "your_tbl" ("your_col");
 
 This equivalent to (B-tree is default):
 
-    CREATE INDEX "your_idx_nm" ON "your_tbl" USING btree ("your_col");
+    CREATE INDEX "your_idx" ON "your_tbl" USING btree ("your_col");
 
 ## Create unique index
 
-    CREATE UNIQUE INDEX "your_idx_nm" ON "your_tbl" ("your_col");
+    CREATE UNIQUE INDEX "your_idx" ON "your_tbl" ("your_col");
 
 ## Create compound index
 
-    CREATE INDEX "your_idx_nm" ON "your_tbl" ("your_col1", "your_col2");
+    CREATE INDEX "your_idx" ON "your_tbl" ("your_col1", "your_col2");
 
 ## Create partial index
 
-    CREATE INDEX "your_idx_nm" ON "your_tbl" ("your_col1") WHERE ("your_col2" IS NULL);
+    CREATE INDEX "your_idx" ON "your_tbl" ("your_col1") WHERE ("your_col2" IS NULL);
 
 ## Create index on jsonb
 
-    CREATE INDEX "your_idx_nm" ON "your_tbl" (
+    CREATE INDEX "your_idx" ON "your_tbl" (
            (your_col1->>'your_prop1'),
            (your_col2->>'your_prop2')
     );
 
 ## Drop/delete/remove index
 
-    DROP INDEX your_idx_nm;
+    DROP INDEX your_idx;
 
 ## Rename index
 
-    ALTER INDEX IF EXISTS "your_idx_nm" RENAME TO "your_idx_new_nm";
+    ALTER INDEX IF EXISTS "your_idx" RENAME TO "your_idx_new_nm";
 
 ## Alter index
 
-    DROP INDEX your_idx_nm;
-    CREATE INDEX your_idx_nm ON your_tbl (your_col);
+    DROP INDEX your_idx;
+    CREATE INDEX your_idx ON your_tbl (your_col);
+
+## Show/read index comment
+
+    \di+ your_idx
 
 ## Indexes usage stats
 
