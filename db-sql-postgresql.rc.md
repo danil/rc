@@ -119,6 +119,10 @@ This equivalent to (B-tree is default):
            (your_col2->>'your_prop2')
     );
 
+## Create index with include
+
+    CREATE INDEX your_idx ON your_tbl USING btree (your_col1) INCLUDE youre_col2;
+
 ## Drop/delete/remove index
 
     DROP INDEX your_idx;
