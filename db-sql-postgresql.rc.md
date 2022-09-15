@@ -575,6 +575,12 @@ group of duplicates).
            SELECT your_col3, your_col4 FROM your_tbl2
     );
 
+
+## Array
+
+    SELECT ARRAY['foo','bar']::text[];
+    SELECT ARRAY[1,2,3]::smallint[];
+
 ## Array length/count
 
     SELECT cardinality('{1,2,3}'::smallint[]);
