@@ -575,7 +575,6 @@ group of duplicates).
            SELECT your_col3, your_col4 FROM your_tbl2
     );
 
-
 ## Array
 
     SELECT ARRAY['foo','bar']::text[];
