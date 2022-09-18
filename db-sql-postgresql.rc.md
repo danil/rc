@@ -122,8 +122,8 @@ This equivalent to (B-tree is default):
 ## Create index with include
 
     CREATE INDEX your_idx ON your_tbl
-    USING btree (your_col1)
-    INCLUDE (youre_col2);
+    USING btree (your_col1, your_col2)
+    INCLUDE (your_col3, your_col4);
 
 ## Drop/delete/remove index
 
