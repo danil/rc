@@ -603,6 +603,18 @@ group of duplicates).
 
     SELECT * FROM your_tbl1 WHERE NOT (your_col = ANY ('{0,1,2}'::smallint[]));
 
+## Array to multiple rows
+
+<https://stackoverflow.com/questions/7309568/unwrap-postgresql-array-into-rows#21933908>
+
+    SELECT unnest(ARRAY[1,2,3]) AS rows;
+    --  rows 
+    -- ------
+    --     1
+    --     2
+    --     3
+    -- (3 rows)
+
 ## Current date
 
     mydb=> SELECT current_date;
