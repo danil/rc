@@ -177,10 +177,10 @@ This equivalent to (B-tree is default):
 <http://www.postgresql.org/docs/current/static/libpq-envars.html>
 
     PGHOST=localhost \
-    PGDATABASE=your-db-nm \
+    PGDATABASE=your-db \
     PGPORT=5433 \
-    PGUSER=your-user \
-    PGPASSWORD=your-password \
+    PGUSER=your-usr \
+    PGPASSWORD=your-pwd \
     psql
 
 ## Reserved key Words
@@ -876,7 +876,7 @@ Log statements with any durations
 
 <http://serverfault.com/questions/128284/how-to-see-active-connections-and-current-activity-in-postgresql-8-4#128292>
 
-    SELECT * FROM pg_stat_activity WHERE datname = 'your-db-nm';
+    SELECT * FROM pg_stat_activity WHERE datname = 'your-db';
 
 ## Get locale
 
