@@ -465,13 +465,29 @@ Remove constraint by name
         your_col2 = your_col1
     WHERE your_col3 IS NOT NULL;
 
-## Multiple updates with subquery
+## Update concurrently multiple rows without deadlock
+
+<https://stackoverflow.com/questions/44660368/postgres-update-with-order-by-how-to-do-it#44669989>
+
+    UPDATE your_tbl
+    SET your_col1 = 42
+    WHERE id IN (
+          SELECT id
+          FROM your_tbl
+          WHERE id IN (1,2,3)
+          ORDER BY id
+          FOR UPDATE
+    ) AS subquery;
+
+## Update multiple rows from subquery
 
 Update multiple rows in one query
 <https://stackoverflow.com/questions/18797608/update-multiple-rows-in-same-query-using-postgresql#18799497>
 
-    UPDATE xyz SET foo=subquery.foo, bar=subquery.bar
-    FROM (SELECT foo, bar FROM xyz WHERE id = 123) AS subquery
+    UPDATE your_tbl
+    SET your_col1 = subquery.your_col1,
+        your_col2 = subquery.your_col2
+    FROM (SELECT your_col1, your_col2 FROM your_tbl WHERE id = 123) AS subquery
     WHERE id = 321;
 
 ## Insert
