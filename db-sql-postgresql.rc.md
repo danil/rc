@@ -605,7 +605,7 @@ group of duplicates).
 
 <https://stackoverflow.com/questions/16606357/how-to-make-a-select-with-array-contains-value-clause-in-psql#16606612>
 
-    SELECT * FROM your_tbl WHERE ANY(your_col) = 'your array item';
+    SELECT * FROM your_tbl WHERE 'your array item' = ANY(your_col);
     SELECT * FROM your_tbl WHERE your_col @> ARRAY['foobar']::text[];
     SELECT * FROM your_tbl WHERE your_col && ARRAY['foo','bar']::text[];
 
