@@ -605,7 +605,7 @@ group of duplicates).
 
 <https://stackoverflow.com/questions/16606357/how-to-make-a-select-with-array-contains-value-clause-in-psql#16606612>
 
-    SELECT * FROM your_tbl WHERE 'your array item' = ANY(your_col);
+    SELECT * FROM your_tbl WHERE ANY(your_col) = 'your array item';
     SELECT * FROM your_tbl WHERE your_col @> ARRAY['foobar']::text[];
     SELECT * FROM your_tbl WHERE your_col && ARRAY['foo','bar']::text[];
 
@@ -624,12 +624,22 @@ group of duplicates).
 <https://stackoverflow.com/questions/7309568/unwrap-postgresql-array-into-rows#21933908>
 
     SELECT unnest(ARRAY[1,2,3]) AS rows;
-    --  rows 
+    --  rows
     -- ------
     --     1
     --     2
     --     3
     -- (3 rows)
+
+## Unnest array alongside other column
+
+    SELECT id, unnest(your_col) FROM your_tbl;
+    --  id | your_col
+    -- ----+----------
+    --  42 | 1
+    --  42 | 2
+    --  42 | 3
+    -- ...
 
 ## Current date
 
