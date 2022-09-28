@@ -622,15 +622,15 @@ WITH cte AS (
 
     SELECT * FROM your_tbl;
 
-## Query/convert timestamp to string
+## Convert timestamp to string
 
     SELECT to_char(now(), 'YYYY-MM-DD hh24:mi:ss TZ');
 
-## Query/convert unix time to timestamp
+## Convert unix time to timestamp
 
     SELECT to_timestamp(1234567890);
 
-## Query/convert string to timestamp
+## Convert string to timestamp
 
     SELECT to_timestamp('1970-12-31 23:45:01 UTC', 'YYYY-MM-DD hh24:mi:ss TZ');
 
