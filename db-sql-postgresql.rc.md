@@ -622,6 +622,12 @@ WITH cte AS (
 
     SELECT * FROM your_tbl;
 
+## Fetch with reference a CTE in subsequent CTE
+
+    WITH your_cte1 AS (SELECT * FROM your_tbl),
+         your_cte2 AS (SELECT * FROM your_cte1)
+    SELECT * FROM your_cte2;
+
 ## Convert timestamp to string
 
     SELECT to_char(now(), 'YYYY-MM-DD hh24:mi:ss TZ');
