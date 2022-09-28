@@ -452,6 +452,35 @@ Remove constraint by name
     CREATE TEMP TABLE your_tbl
     (some_id BIGSERIAL, name varchar(10), bio TEXT, age INTEGER);
 
+## Insert
+
+    INSERT INTO your_tbl (nm, age) VALUES ('John', 3);
+    COPY your_tbl FROM STDIN WITH DELIMITER AS ',';
+
+## Upsert/update/insert/create
+
+    INSERT INTO your_tbl ("latitude", "longitude", "nm") 
+        VALUES (1 ,2 ,'foobar')
+        ON CONFLICT ON CONSTRAINT your_tbl_pkey
+            DO UPDATE SET "name" = 'foobar';
+
+## Insert by query
+
+    INSERT INTO your_tbl (id, nm, age)
+    SELECT 2, name, age FROM your_tbl WHERE id = 1;
+
+## Increment/upsert/update counter
+
+    INSERT INTO "your_tbl" ("id", "count")
+    VALUES (nextval('your_tbl_id_seq'::regclass), 1)
+    ON CONFLICT ("id")
+    DO UPDATE SET "count" = COALESCE("your_tbl"."count", EXCLUDED."count") + 1;
+
+## Insert/update new line character
+
+    INSERT INTO your_tbl (your_col) VALUES (E'First Line.\nSecond line.');
+    UPDATE your_tbl SET your_col = E'First Line.\nSecond line.';
+
 ## Update data
 
 <http://www.postgresql.org/docs/current/static/sql-update.html>
@@ -552,35 +581,6 @@ WITH cte AS (
   FROM cte
   WHERE u1.name IS NULL;
 ```
-
-## Insert
-
-    INSERT INTO your_tbl (nm, age) VALUES ('John', 3);
-    COPY your_tbl FROM STDIN WITH DELIMITER AS ',';
-
-## Upsert/update/insert/create
-
-    INSERT INTO your_tbl ("latitude", "longitude", "nm") 
-        VALUES (1 ,2 ,'foobar')
-        ON CONFLICT ON CONSTRAINT your_tbl_pkey
-            DO UPDATE SET "name" = 'foobar';
-
-## Insert by query
-
-    INSERT INTO your_tbl (id, nm, age)
-    SELECT 2, name, age FROM your_tbl WHERE id = 1;
-
-## Increment/upsert/update counter
-
-    INSERT INTO "your_tbl" ("id", "count")
-    VALUES (nextval('your_tbl_id_seq'::regclass), 1)
-    ON CONFLICT ("id")
-    DO UPDATE SET "count" = COALESCE("your_tbl"."count", EXCLUDED."count") + 1;
-
-## Insert/update new line character
-
-    INSERT INTO your_tbl (your_col) VALUES (E'First Line.\nSecond line.');
-    UPDATE your_tbl SET your_col = E'First Line.\nSecond line.';
 
 ## Delete
 
