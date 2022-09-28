@@ -497,9 +497,9 @@ Update multiple rows in one query
          SELECT your_col1, your_col2 FROM your_tbl2 t2 WHERE t2.id = t1.id
     ) WHERE t1.id IN (1,2,3);
 
-## Update multiple rows with CTE
+## Update null columns in multiple rows with CTE
 
-    WITH cte AS (
+    WITH your_cte AS (
          SELECT t2.your_col1, t2.your_col2
          FROM your_tbl1 AS t1
          JOIN your_tbl2 AS t2
@@ -508,8 +508,22 @@ Update multiple rows in one query
            AND t2.your_col1 IS NOT NULL
          LIMIT 42
     ) UPDATE your_tbl1 AS t1
-      SET name=cte.your_col1, age=cte.your_col2 FROM cte
+      SET name=cte.your_col1, age=cte.your_col2 FROM your_cte
       WHERE t1.your_col1 IS NULL;
+
+## Update JSON timestamptz by timestamptz
+
+    UPDATE your_tbl
+    SET your_col = jsonb_set(
+        your_col,
+        '{YourProp1}',
+        to_jsonb(
+            to_char(
+                ((your_col ->> 'YourProp2')::timestamptz - INTERVAL '3 hours'),
+                'YYYY-MM-DD"T"HH24:MI:SSZ'
+            )
+        )
+    ) WHERE (your_col ->> 'YourProp1') IS NULL;
 
 ## Update via subquery or with CTE
 
