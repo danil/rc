@@ -624,6 +624,8 @@ WITH cte AS (
 
 ## Fetch with reference a CTE in subsequent CTE
 
+<https://stackoverflow.com/questions/27204824/sql-use-a-reference-of-a-cte-to-another-cte#27205768>
+
     WITH your_cte1 AS (SELECT * FROM your_tbl),
          your_cte2 AS (SELECT * FROM your_cte1)
     SELECT * FROM your_cte2;
