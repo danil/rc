@@ -695,6 +695,25 @@ group of duplicates).
     -- -------
     --  {1,2}
 
+## Exclude first array within column from second array
+
+    WITH your_cte1 AS (
+         SELECT your_col1,
+                unnest(your_col2) AS your_col2
+         FROM your_tbl1
+         LIMIT 123
+    ),   your_cte2 AS (
+        (SELECT your_col1,
+                unnest(your_col2) AS your_col2
+         FROM your_tbl1)
+         EXCEPT ALL
+        (SELECT your_col1,
+                unnest(your_col2) AS your_col2
+         FROM your_tbl1)
+         ORDER BY your_col1
+         LIMIT 321
+    ) SELECT * FROM your_cte2;
+
 ## Array to multiple rows
 
 <https://stackoverflow.com/questions/7309568/unwrap-postgresql-array-into-rows#21933908>
