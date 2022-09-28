@@ -599,17 +599,17 @@ WITH cte AS (
 
     DELETE FROM your_tbl
     WHERE your_col IN (
-          SELECT your_col AS your_als
+         (SELECT your_col AS your_als
+                FROM your_tbl
+                WHERE your_col = 42)
+         UNION ALL
+         (SELECT your_col2 AS your_als
                  FROM your_tbl
-                 WHERE your_col = 42
-                 UNION ALL
-          SELECT your_col2 AS your_als
+                 WHERE your_col = 42)
+         UNION ALL
+         (SELECT your_col3 AS your_als
                  FROM your_tbl
-                 WHERE your_col = 42
-                 UNION ALL
-          SELECT your_col3 AS your_als
-                 FROM your_tbl
-                 WHERE your_col = 42
+                 WHERE your_col = 42)
     ) RETURNING your_col;
 
 ## Truncate all data
