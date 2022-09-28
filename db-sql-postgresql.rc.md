@@ -450,7 +450,7 @@ Remove constraint by name
 ## Create temporary table
 
     CREATE TEMP TABLE your_tbl
-      (some_id BIGSERIAL, name varchar(10), bio TEXT, age INTEGER);
+    (some_id BIGSERIAL, name varchar(10), bio TEXT, age INTEGER);
 
 ## Update data
 
