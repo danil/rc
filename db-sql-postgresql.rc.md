@@ -618,7 +618,7 @@ WITH cte AS (
 
     BEGIN; TRUNCATE your_tbl, your_tbl2 CASCADE; ALTER SEQUENCE your_seq RESTART WITH 1; COMMIT;
 
-## Queries
+## Fetch query
 
     SELECT * FROM your_tbl;
 
@@ -649,9 +649,9 @@ group of duplicates).
 
     SELECT * FROM your_tbl1
     WHERE (
-           your_col1, your_col2
+      your_col1, your_col2
     ) NOT IN (
-           SELECT your_col3, your_col4 FROM your_tbl2
+      SELECT your_col3, your_col4 FROM your_tbl2
     );
 
 ## Array
