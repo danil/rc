@@ -682,6 +682,19 @@ group of duplicates).
 
     SELECT * FROM your_tbl1 WHERE NOT (your_col = ANY ('{0,1,2}'::smallint[]));
 
+## Exclude first array from second array
+
+    WITH your_arr1 AS (
+         SELECT unnest(ARRAY[3,4]::int[]) AS your_col
+    ),   your_arr2 AS (
+        (SELECT unnest(ARRAY[1,2,3,4]::int[]) AS your_col)
+         EXCEPT ALL
+        (SELECT * FROM your_arr1)
+    ) SELECT ARRAY(SELECT * FROM your_arr2)::int[];
+    --  array
+    -- -------
+    --  {1,2}
+
 ## Array to multiple rows
 
 <https://stackoverflow.com/questions/7309568/unwrap-postgresql-array-into-rows#21933908>
