@@ -445,7 +445,7 @@ Remove constraint by name
 ## Rename constraint
 
     ALTER TABLE your_tbl
-        RENAME CONSTRAINT your_cstr_old TO your_cstr_new;
+          RENAME CONSTRAINT your_cstr_old TO your_cstr_new;
 
 ## Create temporary table
 
