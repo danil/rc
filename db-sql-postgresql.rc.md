@@ -601,13 +601,13 @@ WITH cte AS (
     WHERE your_col IN (
          (SELECT your_col AS your_als
                 FROM your_tbl
-                WHERE your_col = 42)
-         UNION ALL
-         (SELECT your_col2 AS your_als
+                WHERE your_col = 42
+         ) UNION ALL (
+          SELECT your_col2 AS your_als
                  FROM your_tbl
-                 WHERE your_col = 42)
-         UNION ALL
-         (SELECT your_col3 AS your_als
+                 WHERE your_col = 42
+         ) UNION ALL (
+          SELECT your_col3 AS your_als
                  FROM your_tbl
                  WHERE your_col = 42)
     ) RETURNING your_col;
@@ -711,12 +711,12 @@ group of duplicates).
     ),   your_cte2 AS (
         (SELECT your_col1,
                 unnest(your_col2) AS your_col2
-         FROM your_tbl1)
-         EXCEPT ALL
-        (SELECT your_col1,
+         FROM your_tbl1
+        ) EXCEPT ALL (
+         SELECT your_col1,
                 unnest(your_col2) AS your_col2
-         FROM your_tbl1)
-         ORDER BY your_col1
+         FROM your_tbl1
+        ) ORDER BY your_col1
          LIMIT 321
     ) SELECT * FROM your_cte2;
 
