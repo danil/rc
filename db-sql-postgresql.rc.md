@@ -465,7 +465,7 @@ Remove constraint by name
         your_col2 = your_col1
     WHERE your_col3 IS NOT NULL;
 
-## Update concurrently multiple rows without deadlock
+## Update multiple rows concurrently without deadlock
 
 <https://stackoverflow.com/questions/44660368/postgres-update-with-order-by-how-to-do-it#44669989>
 
@@ -482,13 +482,62 @@ Remove constraint by name
 ## Update multiple rows from subquery
 
 Update multiple rows in one query
-<https://stackoverflow.com/questions/18797608/update-multiple-rows-in-same-query-using-postgresql#18799497>
+<https://stackoverflow.com/questions/18797608/update-multiple-rows-in-same-query-using-postgresql#18799497>.
 
     UPDATE your_tbl
     SET your_col1 = subquery.your_col1,
         your_col2 = subquery.your_col2
     FROM (SELECT your_col1, your_col2 FROM your_tbl WHERE id = 123) AS subquery
     WHERE id = 321;
+
+## Update multiple rows via subquery
+
+    UPDATE your_tbl1 t1
+    SET (your_col1, your_col2) = (
+         SELECT your_col1, your_col2 FROM your_tbl2 t2 WHERE t2.id = t1.id
+    ) WHERE t1.id IN (1,2,3);
+
+## Update multiple rows with CTE
+
+    WITH cte AS (
+         SELECT t2.your_col1, t2.your_col2
+         FROM your_tbl1 AS t1
+         JOIN your_tbl2 AS t2
+              ON t2.your_id = t1.your_id
+         WHERE t1.your_col1 IS NULL
+           AND t2.your_col1 IS NOT NULL
+         LIMIT 42
+    ) UPDATE your_tbl1 AS t1
+      SET name=cte.your_col1, age=cte.your_col2 FROM cte
+      WHERE t1.your_col1 IS NULL;
+
+## Update via subquery or with CTE
+
+<https://postgrespro.ru/docs/postgresql/9.6/sql-update>
+
+```sql
+CREATE TABLE users1 (id BIGSERIAL primary key, name varchar(10), age integer);
+CREATE TABLE users2 (id BIGSERIAL primary key, age integer);
+
+INSERT INTO users1 (id) VALUES (1), (2), (3);
+INSERT INTO users2 (id,name,age) VALUES (1,'foo',11), (2,'bar',22), (3,'xyz',33);
+UPDATE users1 u1
+       SET (name,age) = (SELECT name,age FROM users2 u2 WHERE u2.id = u1.id)
+       WHERE u1.id IN (1,2);
+
+WITH cte AS (
+     SELECT u2.name, u2.age
+     FROM users1 AS u1
+     JOIN users2 AS u2
+          ON u2.id = u1.id
+     WHERE u1.name IS NULL
+       AND u2.name IS NOT NULL
+     LIMIT 42
+) UPDATE users1 AS u1
+  SET name=cte.name, age=cte.age
+  FROM cte
+  WHERE u1.name IS NULL;
+```
 
 ## Insert
 
