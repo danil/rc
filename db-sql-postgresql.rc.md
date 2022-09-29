@@ -622,6 +622,10 @@ WITH cte AS (
 
     SELECT * FROM your_tbl;
 
+## Check row exists
+
+    SELECT EXISTS(SELECT 1 FROM your_tbl where id = 42);
+
 ## Fetch with reference a CTE in subsequent CTE
 
 <https://stackoverflow.com/questions/27204824/sql-use-a-reference-of-a-cte-to-another-cte#27205768>
