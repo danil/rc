@@ -460,9 +460,9 @@ Remove constraint by name
 ## Upsert/update/insert/create
 
     INSERT INTO your_tbl ("latitude", "longitude", "nm") 
-        VALUES (1 ,2 ,'foobar')
-        ON CONFLICT ON CONSTRAINT your_tbl_pkey
-            DO UPDATE SET "name" = 'foobar';
+    VALUES (1 ,2 ,'foobar')
+    ON CONFLICT ON CONSTRAINT your_tbl_pkey
+    DO UPDATE SET "name" = 'foobar';
 
 ## Insert by query
 
