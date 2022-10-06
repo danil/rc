@@ -676,6 +676,28 @@ group of duplicates).
     SELECT cardinality('{1,2,3}'::smallint[]);
     SELECT array_length('{1,2,3}'::smallint[], 1);
 
+## Array to multiple rows
+
+<https://stackoverflow.com/questions/7309568/unwrap-postgresql-array-into-rows#21933908>
+
+    SELECT unnest(ARRAY[1,2,3]) AS rows;
+    --  rows
+    -- ------
+    --     1
+    --     2
+    --     3
+    -- (3 rows)
+
+## Unnest array alongside other column
+
+    SELECT id, unnest(your_col) FROM your_tbl;
+    --  id | your_col
+    -- ----+----------
+    --  42 | 1
+    --  42 | 2
+    --  42 | 3
+    -- ...
+
 ## Array contains
 
 <https://stackoverflow.com/questions/16606357/how-to-make-a-select-with-array-contains-value-clause-in-psql#16606612>
@@ -683,6 +705,12 @@ group of duplicates).
     SELECT * FROM your_tbl WHERE 'your array item' = ANY(your_col);
     SELECT * FROM your_tbl WHERE your_col @> ARRAY['foobar']::text[];
     SELECT * FROM your_tbl WHERE your_col && ARRAY['foo','bar']::text[];
+
+## Arrays contains/overlaps
+
+<https://stackoverflow.com/questions/21742929/postgresql-check-if-array-contains-any-element-from-left-hand-array#21743100>
+
+    SELECT ARRAY[1,2] && ARRAY[1,3,4,7];
 
 ## Array append
 
@@ -725,28 +753,6 @@ group of duplicates).
         ) ORDER BY your_col1
          LIMIT 321
     ) SELECT * FROM your_cte2;
-
-## Array to multiple rows
-
-<https://stackoverflow.com/questions/7309568/unwrap-postgresql-array-into-rows#21933908>
-
-    SELECT unnest(ARRAY[1,2,3]) AS rows;
-    --  rows
-    -- ------
-    --     1
-    --     2
-    --     3
-    -- (3 rows)
-
-## Unnest array alongside other column
-
-    SELECT id, unnest(your_col) FROM your_tbl;
-    --  id | your_col
-    -- ----+----------
-    --  42 | 1
-    --  42 | 2
-    --  42 | 3
-    -- ...
 
 ## Current date
 
