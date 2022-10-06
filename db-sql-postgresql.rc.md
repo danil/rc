@@ -671,10 +671,12 @@ group of duplicates).
     SELECT ARRAY['foo','bar']::text[];
     SELECT ARRAY[1,2,3]::smallint[];
 
-## Array length/count
+## Array
 
-    SELECT cardinality('{1,2,3}'::smallint[]);
-    SELECT array_length('{1,2,3}'::smallint[], 1);
+    SELECT ARRAY(SELECT id FROM your_tbl)::integer[];
+    --  array
+    -- -------
+    --  {1,2,3}
 
 ## Array to multiple rows
 
@@ -697,6 +699,11 @@ group of duplicates).
     --  42 | 2
     --  42 | 3
     -- ...
+
+## Array length/count
+
+    SELECT cardinality('{1,2,3}'::smallint[]);
+    SELECT array_length('{1,2,3}'::smallint[], 1);
 
 ## Array contains
 
@@ -725,12 +732,12 @@ group of duplicates).
 ## Exclude first array from second array
 
     WITH your_arr1 AS (
-         SELECT unnest(ARRAY[3,4]::int[]) AS your_col
+         SELECT unnest(ARRAY[3,4]::integer[]) AS your_col
     ),   your_arr2 AS (
-        (SELECT unnest(ARRAY[1,2,3,4]::int[]) AS your_col)
+        (SELECT unnest(ARRAY[1,2,3,4]::integer[]) AS your_col)
          EXCEPT ALL
         (SELECT * FROM your_arr1)
-    ) SELECT ARRAY(SELECT * FROM your_arr2)::int[];
+    ) SELECT ARRAY(SELECT * FROM your_arr2)::integer[];
     --  array
     -- -------
     --  {1,2}
@@ -958,8 +965,8 @@ Get query execution time/duration
 <http://www.postgresql.org/docs/current/static/sql-prepare.html>
 
     PREPARE your_statement_nm (text, int) AS
-      SELECT * FROM "your_tbl"
-      WHERE "name" = $1 AND "age" = $2;
+    SELECT * FROM "your_tbl"
+    WHERE "name" = $1 AND "age" = $2;
 
 ## Prepared statement execute
 
