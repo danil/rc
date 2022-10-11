@@ -44,6 +44,19 @@ https://wiki.archlinux.org/title/System_time#Time_zone
     ntpq -c readvar
     ntpq -c peers
 
+## Timestamp seconds since *nix epoch january 1 1970
+
+    date +%s
+
+## Timestamp milliseconds since *nix epoch january 1 1970
+
+    date +%s%N | cut -b1-13
+    echo $(($(date +%s%N)/1000000))
+
+## Timestamp nanoseconds since *nix epoch january 1 1970
+
+    date +%s%N
+
 ## Other
 
     date +%Y%m%d%H%M%S #19700101000000
