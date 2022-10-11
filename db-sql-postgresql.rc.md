@@ -360,7 +360,7 @@ Set a default schema for a session
 
     \ds
 
-## Get sequence
+## Get/read sequence
 
     SELECT nextval('your_seq');
 
@@ -371,6 +371,10 @@ Set a default schema for a session
 ## Reset sequence
 
     ALTER SEQUENCE your_seq RESTART WITH 1;
+
+## Read sequence without incrementing
+
+    SELECT last_value FROM your_seq;
 
 ## Tables list
 
