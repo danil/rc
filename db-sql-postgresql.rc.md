@@ -468,7 +468,7 @@ Remove constraint by name
     ON CONFLICT ON CONSTRAINT your_tbl_pkey
     DO UPDATE SET "name" = 'foobar';
 
-## Insert by query
+## Insert from select
 
     INSERT INTO your_tbl (id, nm, age)
     SELECT 2, name, age FROM your_tbl WHERE id = 1;
