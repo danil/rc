@@ -638,7 +638,7 @@ WITH cte AS (
          your_cte2 AS (SELECT * FROM your_cte1)
     SELECT * FROM your_cte2;
 
-## Convert timestamp to string
+## Convert/format timestamp/datetime to string
 
     SELECT to_char(now(), 'YYYY-MM-DD hh24:mi:ss TZ');
 
