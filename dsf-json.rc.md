@@ -56,6 +56,6 @@ Filter and count objects in array
 ## Query jq filter array by type string then by substring then by regexp
 
     cat path/to/file.json | \
-      jq 'map(select(.yourId == 89 and (.yourValue | type) == "string"))' | \
+      jq 'map(select(.yourId == 89 and (.yourVal | type) == "string"))' | \
       jq 'map(select(.value | match("foo";"i")))' | \
       jq 'map(select(.value | test(".*bar")))'

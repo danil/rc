@@ -20,10 +20,10 @@ The commit that the current build is testing `$TRAVIS_COMMIT`
 
 <https://docs.travis-ci.com/user/encryption-keys>
 
-Addition encrypted variable `$YOUR_VARIABLE_NM` to `.travis.yml`
-creates possibility to use variable in scripts a-la `echo $YOUR_VARIABLE_NM`.
+Addition encrypted variable `$YOUR_VAR_NM` to `.travis.yml`
+creates possibility to use variable in scripts a-la `echo $YOUR_VAR_NM`.
 
-    travis encrypt YOUR_VARIABLE_NM=YOUR_VARIABLE_VALUE --add
+    travis encrypt YOUR_VAR_NM=YOUR_VAR_VAL --add
 
 ## Encrypt file
 
