@@ -67,7 +67,7 @@ Push from local repository to independent remote repository
 
 ## List branchs sort/order by date/time
 
-https://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit#5188364
+<https://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit#5188364>
 
     git for-each-ref --sort=-committerdate refs/heads --format='%(refname:short) %(committerdate:iso8601) %(objectname:short)'
 
