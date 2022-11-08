@@ -29,6 +29,13 @@
 
     psql postgres://your_usr:your-password@your.host:5432/your_db
 
+## Maximum query size/length limit
+
+Limited to 1 gigabyte (2^30) in size, minus 1 byte for a terminating null byte
+<https://doxygen.postgresql.org/memutils_8h.html>.
+
+    #define     MaxAllocSize   ((Size) 0x3fffffff) /* 1 gigabyte - 1 */
+
 ## Create dump by pg_dump
 
 Backuping:
