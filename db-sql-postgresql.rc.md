@@ -877,18 +877,18 @@ Key words should be escaped (for example if used as table name or column name)
 
 ## CSV Export by SQL to STDOUT
 
-    COPY (SELECT your_col1, your_col2 FROM your_tbl)
-    TO STDOUT csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
+    COPY (SELECT your_col1, your_col2 FROM your_tbl) TO STDOUT
+    WITH (FORMAT csv, DELIMITER ';', NULL '\N', QUOTE '"', ESCAPE '\');
 
 ## CSV Export by SQL to file
 
-    COPY (SELECT your_col1, your_col2 FROM your_tbl)
-    TO 'path/to/file.csv' csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
+    COPY (SELECT your_col1, your_col2 FROM your_tbl) TO 'path/to/file.csv'
+    WITH (FORMAT csv, DELIMITER ';', NULL '\N', QUOTE '"', ESCAPE '\');
 
 ## CSV Export by psql command by SQL to file
 
-    psql --command="COPY (SELECT your_col1, your_col2 FROM your_tbl)
-                    TO STDOUT csv DELIMITER ';' NULL AS '\N' QUOTE '"'"'"' ESCAPE '\';"
+    psql --command="COPY (SELECT your_col1, your_col2 FROM your_tbl) TO STDOUT
+                    WITH (FORMAT csv, DELIMITER ';', NULL '\N', QUOTE '"'"'"', ESCAPE '\');
 
 ## CSV import by psql command by SQL from file
 
