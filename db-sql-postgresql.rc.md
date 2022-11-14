@@ -890,6 +890,18 @@ Key words should be escaped (for example if used as table name or column name)
     psql --command="COPY (SELECT your_col1, your_col2 FROM your_tbl) TO STDOUT
                     WITH (FORMAT csv, DELIMITER ';', NULL '\N', QUOTE '"'"'"', ESCAPE '\');
 
+## CSV Export by SQL to STDOUT as insert values
+
+    COPY (
+    SELECT 'WITH i1 AS (INSERT INTO your_tbl1 VALUES (', t1.*, ') RETURNING 1',
+           '),     i2 AS (INSERT INTO your_tbl2 VALUES (', t2.*, ') RETURNING 1',
+           ') SELECT (SELECT count(*) FROM i1) AS your_tbl1,
+           (SELECT count(*) FROM i2) AS your_tbl2;'
+    FROM your_tbl1 AS t1
+    LEFT JOIN your_tbl2 AS t2 ON t2.id = t1.tbl1_id
+    WHERE t1.id = 42
+    ) TO STDOUT WITH (FORMAT csv, DELIMITER ',', NULL 'NULL', QUOTE '''', ESCAPE '\', FORCE_QUOTE *);
+
 ## CSV import by psql command by SQL from file
 
 Load data from csv file
