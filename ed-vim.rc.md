@@ -14,16 +14,8 @@ https://vim.rtorr.com
 
 ## Mode
 
-* `i`          Insert
+* `i` or `a`   Insert
 * `v` or `C v` Visual
-
-## Search
-
-`/`
-
-## Unhighlight
-
-`:noh`
 
 ## Yanks
 
@@ -46,6 +38,7 @@ https://vim.rtorr.com
 
 * `^` Line begin
 * `$` Line end
+* `C o` and `C i` moving to previous postion
 
 ## Scroll
 
@@ -54,9 +47,41 @@ https://vim.rtorr.com
 
 ## Buffer
 
-* `:bd` Delete
+<https://github.com/jlanzarotta/bufexplorer> buffer of a buffers list
+
+* `C ^` or <C 6>  Open previous
+* `:bd`           Delete
+* `:bw`           Delete
+* `:file your-nm` Rename
+
+## Window
+
+* `:Close` `C w c`
+* `:Only`  `C w o` Close other
+
+## Case conversion
+
+* `~`    Switch char case
+* `guaw` Word to lower
+* `gUaw` Word to uppper
+
+## Directories/file system navigation
+
+`:Ex`
+
+## Search
+
+* `/`    Case sensitive
+* `/\c`  Case insensitive
+* `:noh` Unhighlight
+
+## Fuzzy
+
+* https://github.com/junegunn/fzf.vim
 
 ## Session
+
+<https://github.com/tpope/vim-obsession>
 
 * `:mks!`               Save
 * `:source Session.vim` Load
@@ -64,3 +89,16 @@ https://vim.rtorr.com
 ## Autocomplete
 
 `C n`
+
+## Terminal mode
+
+* `:h terminal-emulator`
+* `:terminal` Terminal
+* `C w N`     Normal
+* `i` or `a`  Terminal
+
+## Plugins
+
+* <https://github.com/junegunn/vim-plug> plugins manager
+* <https://github.com/tpope/vim-fugitive> git
+* <https://github.com/vim-airline/vim-airline> status line a-la powerline
