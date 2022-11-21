@@ -36,13 +36,15 @@ https://vim.rtorr.com
 
 ## Cursor move/navigation
 
+* `b` Backwards to the start of a word
+* `w` Forwards to the start of a word
 * `^` Line begin
 * `$` Line end
 
 ## Jump list
 
-* `Ctrl i` newer position
-* `Ctrl o` older position
+* `Ctrl i` Newer position
+* `Ctrl o` Older position
 
 ## Scroll
 
@@ -77,6 +79,8 @@ https://vim.rtorr.com
 
 * `/`    Case sensitive
 * `/\c`  Case insensitive
+* `*`    Word under cursor forward
+* `#`    Word under cursor backward
 * `:noh` Unhighlight
 
 ## Fuzzy
