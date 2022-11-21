@@ -15,7 +15,7 @@ https://vim.rtorr.com
 ## Mode
 
 * `i` or `a`   Insert
-* `v` or `C v` Visual
+* `v` or `Ctrl v` Visual
 
 ## Yanks
 
@@ -34,30 +34,34 @@ https://vim.rtorr.com
 
 `:sort`
 
-## Move cursor
+## Cursor move/navigation
 
 * `^` Line begin
 * `$` Line end
-* `C o` and `C i` moving to previous postion
+
+## Jump list
+
+* `Ctrl i` newer position
+* `Ctrl o` older position
 
 ## Scroll
 
-* `C e` Down
-* `C y` Up
+* `Ctrl e` Down
+* `Ctrl y` Up
 
 ## Buffer
 
 <https://github.com/jlanzarotta/bufexplorer> buffer of a buffers list
 
-* `C ^` or <C 6>  Open previous
-* `:bd`           Delete
-* `:bw`           Delete
-* `:file your-nm` Rename
+* `Ctrl ^` or <Ctrl 6>  Open previous
+* `:bd`                 Delete
+* `:bw`                 Delete
+* `:file your-nm`       Rename
 
 ## Window
 
-* `:Close` `C w c`
-* `:Only`  `C w o` Close other
+* `:Close` `Ctrl w c`
+* `:Only`  `Ctrl w o` Close other
 
 ## Case conversion
 
@@ -88,13 +92,13 @@ https://vim.rtorr.com
 
 ## Autocomplete
 
-`C n`
+`Ctrl n`
 
 ## Terminal mode
 
 * `:h terminal-emulator`
 * `:terminal` Terminal
-* `C w N`     Normal
+* `Ctrl w N`     Normal
 * `i` or `a`  Terminal
 
 ## Plugins
