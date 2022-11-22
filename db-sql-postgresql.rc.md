@@ -517,18 +517,25 @@ Remove constraint by name
           WHERE id IN (1,2,3)
           ORDER BY id
           FOR UPDATE
-    ) AS subquery;
+    ) AS sub_t;
 
-## Update multiple rows from subquery
+## Update multiple rows from subquery data
 
 Update multiple rows in one query
 <https://stackoverflow.com/questions/18797608/update-multiple-rows-in-same-query-using-postgresql#18799497>.
 
-    UPDATE your_tbl
-    SET your_col1 = subquery.your_col1,
-        your_col2 = subquery.your_col2
-    FROM (SELECT your_col1, your_col2 FROM your_tbl WHERE id = 123) AS subquery
-    WHERE id = 321;
+    UPDATE your_tbl AS upd_t
+    SET your_col1 = sub_t.your_col1,
+        your_col2 = sub_t.your_col2
+    FROM (SELECT your_col1, your_col2 FROM your_tbl WHERE id = 123) AS sub_t
+    WHERE upd_t.id = 321;
+
+## Update multiple rows from subquery condition
+
+    UPDATE your_tbl AS upd_t
+    SET your_col = 42
+    FROM (SELECT id FROM your_tbl WHERE id = 123) AS sub_t
+    WHERE upd_t.id = sub_t.id;
 
 ## Update multiple rows via subquery
 
