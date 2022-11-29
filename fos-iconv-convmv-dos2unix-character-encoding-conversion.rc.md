@@ -1,4 +1,4 @@
-# Character encoding conversion util rcc
+# Character encoding conversion util rc
 
 ## File content **TEXT**
 
