@@ -464,7 +464,7 @@ Prevent git diff from using a pager
 
 ## Migrate cvs to git
 
-    git cvsimport -k -d :ext:your.name@ssh.barm.nichost.ru:/home/barm/cvsroot \
+    git cvsimport -k -d :ext:your.name@your.tld:/path/to/cvsroot \
                   -A path/to/file -C to_dir path/to/dir
 
 * `man gitcvs-migration`
