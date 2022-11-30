@@ -462,7 +462,7 @@ Prevent git diff from using a pager
    git push git@your.tld:your/repo.git master
    ```
 
-## Migrate CVS to Git
+## Migrate cvs to git
 
     git cvsimport -k -d :ext:your.name@ssh.barm.nichost.ru:/home/barm/cvsroot \
                   -A path/to/file -C to_dir path/to/dir
