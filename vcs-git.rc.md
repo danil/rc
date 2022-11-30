@@ -663,10 +663,8 @@ List of the changed file names
 
 <http://stackoverflow.com/questions/14207414/how-to-show-changed-file-name-only-with-git-log#14227496>
 
-```sh
-git log --name-only
-git log --stat
-```
+    git log --name-only
+    git log --stat
 
 ### Files changed by author
 
