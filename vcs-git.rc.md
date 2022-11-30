@@ -436,7 +436,7 @@ Prevent git diff from using a pager
     cd google-code-prettify; git config svn.authorsfile .git/authors_file
     git svn fetch
 
-## Migrate from via temporary repository
+## Migrate from subversion via temporary repository
 
 <http://jonmaddox.com/2008/03/05/cleanly-migrate-your-subversion-repository-to-a-git-repository/>
 
