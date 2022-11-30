@@ -457,7 +457,7 @@ Prevent git diff from using a pager
    git --bare path/to/tmp/git/repo repo.git
    ```
 
-4. Push to Gitorious <http://gitorious.org/about/faq>.
+4. Push to gitorious <http://gitorious.org/about/faq>.
    ```
    git push git@your.tld:your/repo.git master
    ```
