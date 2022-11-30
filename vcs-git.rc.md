@@ -1,7 +1,7 @@
 # Git
 
     git config --global user.name "John Doe"
-    git config --global user.email john@doe.org
+    git config --global user.email your.name@your.tld
     git clone git://your.tld/ropo-nm.git destination-dir
     git --git-dir=path/to/ropo/.git  --work-tree=path/to/ropo status
     git push origin master
@@ -102,7 +102,7 @@ Get/print current branch
 
     git push origin :your-branch-nm
 
-### Remote branchs cleanup
+## Remote branchs cleanup
 
     git remote prune origin
 
@@ -179,7 +179,7 @@ Get a file from a specific revision
 
 ## Add remote
 
-    git remote add origin ssh://john@doe.org/var/git/ropo-nm.git
+    git remote add origin ssh://your.name@your.tld/var/git/ropo-nm.git
 
 ## Add second remote
 
@@ -339,7 +339,7 @@ Move file and directory into a other directory along with commit history
     git remote add your-remote-nm you@your.host.tld:your/repo.git
     git push --mirror your-remote-nm # push all branches
 
-### Mirror repository yet another way
+## Mirror repository yet another way
 
 <http://toolmantim.com/thoughts/setting_up_a_new_remote_git_repository>
 
@@ -436,87 +436,81 @@ Prevent git diff from using a pager
     cd google-code-prettify; git config svn.authorsfile .git/authors_file
     git svn fetch
 
-## Migrate Subversion repository to Git
+## Migrate from via temporary repository
 
 <http://jonmaddox.com/2008/03/05/cleanly-migrate-your-subversion-repository-to-a-git-repository/>
 
-You have three steps there:
+1. Create temporary repository.
+   ```
+   git svn init --no-metadata svn+ssh://your.tld/path/to/svn/trunk path/to/tmp/git/repo
+   cd path/to/tmp/git/repo ; git config svn.authorsfile path/to/authors/file
+   git svn fetch
+   ```
 
-### Temporary repository
+2. Get subversion commit usernames <http://stackoverflow.com/questions/2494984>.
+   ```
+   svn log --quiet |awk '/^r/ {print $3}' | sort -u > path/to/authors/file
+   ```
 
-    git svn init --no-metadata \
-      svn+ssh://li42-44.members.linode.com/var/svn/ska/skaonrails/trunk \
-      skaonrails_tmp
-    cd skaonrails_tmp; git config svn.authorsfile ~/tmp/authors_file_ska
-    git svn fetch
+3. Clone from temporary repository.
+   ```
+   git --bare path/to/tmp/git/repo repo.git
+   ```
 
-#### Get all Subversion commit usernames
-
-<http://stackoverflow.com/questions/2494984>
-
-    svn log --quiet |awk '/^r/ {print $3}' |sort -u > ~/tmp/authors_file_ska
-
-### Clone from temporary repository
-
-    git --bare clone skaonrails_tmp skaonrails.git
-
-### Push to Gitorious
-
-<http://gitorious.org/about/faq>
-
-    git push git@gitorious.org:ska/skaonrails.git master
+4. Push to Gitorious <http://gitorious.org/about/faq>.
+   ```
+   git push git@your.tld:your/repo.git master
+   ```
 
 ## Migrate CVS to Git
 
-    git cvsimport -k -d :ext:barm@ssh.barm.nichost.ru:/home/barm/cvsroot \
-                  -A ~/tmp/authors_file -C to_dir johnstudio/barmadmin
+    git cvsimport -k -d :ext:your.name@ssh.barm.nichost.ru:/home/barm/cvsroot \
+                  -A path/to/file -C to_dir path/to/dir
 
 * `man gitcvs-migration`
 * `man git-cvsimport`
 * <http://www.chem.helsinki.fi/~jonas/git_guides/HTML/CVS2git>
 
-## Undoing in Git - Reset, Checkout and Revert
+## Undoing in git: reset, checkout and revert
 
 <http://book.git-scm.com/4_undoing_in_git_-_reset,_checkout_and_revert.html>
 
-### Fixing un-committed mistakes
+1. Fixing un-committed mistakes
+   <http://stackoverflow.com/questions/7723037/git-checkout-delete-directory#7723128>.
+   ```
+   git checkout HEAD -- app/views/homepages/index.en.html
+   ```
 
-<http://stackoverflow.com/questions/7723037/git-checkout-delete-directory#7723128>
-
-    git checkout HEAD -- app/views/homepages/index.en.html
-
-### Correct commit message
-
-<http://stackoverflow.com/questions/179123/how-do-i-edit-an-incorrect-commit-message-in-git>
-
+2. Correct commit message
+   <http://stackoverflow.com/questions/179123/how-do-i-edit-an-incorrect-commit-message-in-git>.
+   ```
     git commit --amend -m "Your new message"
+   ```
 
-### Correct commit date
+3. Correct commit date
+   <http://stackoverflow.com/questions/454734/how-can-one-change-the-timestamp-of-an-old-commit-in-git#answer-5017265>.
+   ```
+   git commit --amend --date="Wed Feb 16 14:00 2011 +0400"
+   ```
 
-<http://stackoverflow.com/questions/454734/how-can-one-change-the-timestamp-of-an-old-commit-in-git#answer-5017265>
-
-    git commit --amend --date="Wed Feb 16 14:00 2011 +0400"
-
-### Work tree
-
-#### Reset index
+## Reset work treeindex
 
     git reset file1 file2
     git reset # Reset whole index.
 
-#### Reset commit
+## Reset commit
 
 <http://stackoverflow.com/questions/927358/git-undo-last-commit#answer-927386>
 
     git reset --soft HEAD^
 
-#### Reset initial commit
+## Reset initial commit
 
 <http://stackoverflow.com/questions/6632191/how-to-revert-initial-git-commit#6637891>
 
     git update-ref -d HEAD
 
-##### Hard
+## Hard reset
 
 "Жёсткий" реcет (следует использовать с осторожностью) вернет дерево
 проекта и индекс в состояние, соответствующее указанному коммиту,
@@ -524,27 +518,25 @@ You have three steps there:
 
     git reset --hard HEAD~1
 
-#### Revert
+## Revert
 
     git revert --no-commit HEAD^^^..HEAD^^
 
-### Bare repository
+## Rest within bare repository
 
 [Git reset allow soft in a bare repo](http://kerneltrap.org/mailarchive/git/2007/7/14/251527)
 
     git reset --soft HEAD~1
 
-## Patch
-
-### Patch from one commit
+## Patch from one commit
 
     git show your-commit-sha > your_patch_nm.patch
 
-### Patch from one commit with blobs by email
+## Patch from one commit with blobs by email
 
     git format-patch -1 your-commit-sha --stdout > your_patch_nm.patch
 
-### Easy way
+## Patch easy way
 
     sed --in-place 's/foo/bar/g' path/to/file.c
     git diff > path/to/1.patch
@@ -556,7 +548,7 @@ You have three steps there:
     git apply path/to/1.patch
     git apply path/to/2.patch
 
-### Hard way
+## Patch hard way
 
 <http://ariejan.net/2009/10/26/how-to-create-and-apply-a-patch-with-git>
 
@@ -570,45 +562,41 @@ You have three steps there:
 
     git cherry-pick 92117a11fdfdb75a72dd8d3f1c5f25800e827589
 
-## Continue
+## Cherry-pick continue
 
     git cherry-pick --continue
 
-### Abort
+## Cherry-pick abort
 
     git cherry-pick --abort
 
-## Rebase
-
-### Rebase master into your branch
+## Rebase master into your branch
 
     git rebase master your-branch
 
-### Squash latest commits into one
+## Rebase by squash latest commits into one
 
 Reduce repository size
-<https://stackoverflow.com/questions/598672/squash-the-first-two-commits-in-git#598788>
+<https://stackoverflow.com/questions/598672/squash-the-first-two-commits-in-git#598788>.
 
     git rebase --interactive --root HEAD
     git rebase --continue
 
-### Other1
+## Rebase empty
 
     git fetch
     git rebase --keep-empty
 
-### Conflict
-
-#### Continue
+## Rebase conflict and continue
 
     git add .
     git rebase --continue
 
-#### Abort
+## Rebase abort
 
     git rebase --abort
 
-### Other2
+## Other rebase conflict
 
     git checkout foobar
     git branch foobar-for-rebase
@@ -636,40 +624,39 @@ Reduce repository size
 
     git log ..origin/master
 
-### By date
+## Log by date
 
     git log --since="1 day 2 hours"
     git log --after=2013-06-07
 
-### By authors
+## Log by many/multiple authors
 
 <http://stackoverflow.com/questions/4259996/how-can-i-view-a-git-log-of-just-one-users-commits#4262780>.
 
     git log --author='\(mikhail\|danil\)'
 
-### By file type
+## Log by file type
 
     git log -- '*.txt'
 
-### Git tree in terminal
+## Log with git tree in terminal/command line
 
 <http://stackoverflow.com/questions/1064361/unable-to-show-a-git-tree-in-terminal#5354644>.
 
     git log --color --graph --decorate --pretty=oneline --abbrev-commit
 
-### File name
+## Log file name
 
 List of the changed file names
-
-<http://stackoverflow.com/questions/14207414/how-to-show-changed-file-name-only-with-git-log#14227496>
+<http://stackoverflow.com/questions/14207414/how-to-show-changed-file-name-only-with-git-log#14227496>.
 
     git log --name-only
     git log --stat
 
-### Files changed by author
+## Log files changed by author
 
 List all file names changed by author
-<https://stackoverflow.com/questions/6349139/can-i-get-git-to-tell-me-all-the-files-one-user-has-modified#6349405>
+<https://stackoverflow.com/questions/6349139/can-i-get-git-to-tell-me-all-the-files-one-user-has-modified#6349405>.
 
 ```sh
 git log --pretty="%H" --author="your_nm" app/models | while read your_commit_sha; do git show --oneline --nm-only $your_commit_sha | tail -n+2; done | sort | uniq | grep 'app/models'
@@ -682,20 +669,20 @@ git log --pretty="%H" --author="your_author_nm" your/path | \
     sort | uniq | grep "your/path"
 ```
 
-### Search commit message
+## Log via search commit message by regex
 
 <http://stackoverflow.com/questions/7124914/how-to-search-a-git-repository-by-commit-message#7124949>
 
     git log --grep='your-desired-feature'
 
-### Search file in all commits
+## Log by search file in all commits
 
 Search file name in all commits history
 <http://stackoverflow.com/questions/7203515/how-to-locate-a-deleted-file-in-the-commit-history#7203551>
 
     git log --all -- path/to/your/file.nm
 
-### Other
+## Log other filter
 
 <http://stackoverflow.com/questions/949314/how-to-retrieve-the-hash-for-the-current-commit-in-git>
 <http://stackoverflow.com/questions/2798822/can-i-get-git-log-to-print-the-history-in-reverse-order>
@@ -741,7 +728,7 @@ Count contributors to file:
 
     git grep -e 'first' --and -e 'another'
 
-### Search through all commits
+## grep search through all commits
 
 Search through all commits (and all branches)
 <http://stackoverflow.com/questions/2928584/how-to-grep-in-the-git-history#answer-2929502>
@@ -791,7 +778,7 @@ Binary Search <http://progit.org/book/ru/ch6-5.html>.
 
     git rm file1 \*.md
 
-### Remove/delete from git, working tree files will be left alone
+## Remove/delete from git, working tree files will be left alone
 
     git rm --cached path/to/your/file
     git rm -r --cached path/to/your/dir
