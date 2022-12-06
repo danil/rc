@@ -944,6 +944,11 @@ WITH cte AS (
 
     SELECT * FROM your_tbl;
 
+## Sort order with nulls at beginning/end
+
+    SELECT * FROM your_tbl ORDER BY your_col NULLS FIRST;
+    SELECT * FROM your_tbl ORDER BY your_col NULLS LAST;
+
 ## Check row exists
 
     SELECT EXISTS(SELECT 1 FROM your_tbl where id = 42);
