@@ -191,6 +191,18 @@ Backuping:
     ----------
             4
 
+## Timestamp/datetime convert/format to string
+
+    SELECT to_char(now(), 'YYYY-MM-DD hh24:mi:ss TZ');
+
+## Timestamp convert to unix time
+
+    SELECT to_timestamp(1234567890);
+
+## Timestamp parse from string
+
+    SELECT to_timestamp('1970-12-31 23:45:01 UTC', 'YYYY-MM-DD hh24:mi:ss TZ');
+
 ## Timestamp with timezone type
 
 Today in past year
@@ -943,18 +955,6 @@ WITH cte AS (
     WITH your_cte1 AS (SELECT * FROM your_tbl),
          your_cte2 AS (SELECT * FROM your_cte1)
     SELECT * FROM your_cte2;
-
-## Convert/format timestamp/datetime to string
-
-    SELECT to_char(now(), 'YYYY-MM-DD hh24:mi:ss TZ');
-
-## Convert unix time to timestamp
-
-    SELECT to_timestamp(1234567890);
-
-## Convert string to timestamp
-
-    SELECT to_timestamp('1970-12-31 23:45:01 UTC', 'YYYY-MM-DD hh24:mi:ss TZ');
 
 ## Distinct
 
