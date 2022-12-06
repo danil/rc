@@ -74,6 +74,298 @@ Backuping:
 
     set enable_seqscan = off;
 
+## Array
+
+    SELECT ARRAY['foo','bar']::text[];
+    SELECT ARRAY[1,2,3]::smallint[];
+
+## Array
+
+    SELECT ARRAY(SELECT id FROM your_tbl)::integer[];
+    --  array
+    -- -------
+    --  {1,2,3}
+
+## Array to multiple rows
+
+<https://stackoverflow.com/questions/7309568/unwrap-postgresql-array-into-rows#21933908>
+
+    SELECT unnest(ARRAY[1,2,3]) AS rows;
+    --  rows
+    -- ------
+    --     1
+    --     2
+    --     3
+    -- (3 rows)
+
+## Unnest array alongside other column
+
+    SELECT id, unnest(your_col) FROM your_tbl;
+    --  id | your_col
+    -- ----+----------
+    --  42 | 1
+    --  42 | 2
+    --  42 | 3
+    -- ...
+
+## Array length/count
+
+    SELECT cardinality('{1,2,3}'::smallint[]);
+    SELECT array_length('{1,2,3}'::smallint[], 1);
+
+## Array contains
+
+<https://stackoverflow.com/questions/16606357/how-to-make-a-select-with-array-contains-value-clause-in-psql#16606612>
+
+    SELECT * FROM your_tbl WHERE 'your array item' = ANY(your_col);
+    SELECT * FROM your_tbl WHERE your_col @> ARRAY['foobar']::text[];
+    SELECT * FROM your_tbl WHERE your_col && ARRAY['foo','bar']::text[];
+
+## Arrays contains/overlaps
+
+<https://stackoverflow.com/questions/21742929/postgresql-check-if-array-contains-any-element-from-left-hand-array#21743100>
+
+    SELECT ARRAY[1,2] && ARRAY[1,3,4,7];
+
+## Array append
+
+    UPDATE your_tbl SET your_col = array_append(your_col, 'new array item');
+
+## Exclude array/not in array condition
+
+<https://stackoverflow.com/questions/11730777/postgres-not-in-array/43380487#11730789>
+
+    SELECT * FROM your_tbl1 WHERE NOT (your_col = ANY ('{0,1,2}'::smallint[]));
+
+## Exclude first array from second array
+
+    WITH your_arr1 AS (
+         SELECT unnest(ARRAY[3,4]::integer[]) AS your_col
+    ),   your_arr2 AS (
+        (SELECT unnest(ARRAY[1,2,3,4]::integer[]) AS your_col)
+         EXCEPT ALL
+        (SELECT * FROM your_arr1)
+    ) SELECT ARRAY(SELECT * FROM your_arr2)::integer[];
+    --  array
+    -- -------
+    --  {1,2}
+
+## Exclude first array within column from second array
+
+    WITH your_cte1 AS (
+         SELECT your_col1,
+                unnest(your_col2) AS your_col2
+         FROM your_tbl1
+         LIMIT 123
+    ),   your_cte2 AS (
+        (SELECT your_col1,
+                unnest(your_col2) AS your_col2
+         FROM your_tbl1
+        ) EXCEPT ALL (
+         SELECT your_col1,
+                unnest(your_col2) AS your_col2
+         FROM your_tbl1
+        ) ORDER BY your_col1
+         LIMIT 321
+    ) SELECT * FROM your_cte2;
+
+## Current date
+
+    mydb=> SELECT current_date;
+        date
+    ------------
+     2002-08-31
+
+## Multiline JSON output to stdout
+
+    $ psql -qAtX --quiet --no-align --tuples-only --no-psqlrc --command="select E'{\n    \"yourKey\": \"Your value\",\n    \"yourKey2\": 42\n}';"
+    {
+        "yourKey": "Your value",
+        "yourKey2": 42
+    }
+
+## Arithmetics
+
+    mydb=> SELECT 2 + 2;
+     ?column?
+    ----------
+            4
+
+## Timestamp with timezone type
+
+Today in past year
+
+    SELECT (CURRENT_DATE - INTERVAL '1 year')::timestamptz;
+    german_test=# show timezone;
+
+## Show/describe enum type
+
+<http://stackoverflow.com/questions/9535937/is-there-a-way-to-show-a-user-defined-postgresql-enumerated-type-definition#25326877>
+
+    SELECT enum_range(null::my_type);
+
+## Create range
+
+Create dates range from now to 1 year ago
+
+    SELECT tstzrange(
+           (CURRENT_DATE - INTERVAL '1 year')::timestamptz,
+           CURRENT_DATE,
+           '[]'
+    );
+
+## Extensions list
+
+    \dx
+    SELECT * FROM pg_extension;
+
+## Extension create
+
+<http://www.postgresql.org/docs/current/static/sql-createextension.html>
+
+    CREATE EXTENSION IF NOT EXISTS plv8 WITH SCHEMA pg_catalog;
+
+## Single quotes
+
+<http://www.postgresql.org/docs/current/static/sql-syntax-lexical.html#SQL-SYNTAX-STRINGS>
+
+Single quotes used for `string constants`. For example: `'This is a string'`.
+
+## Double quotes
+
+<http://www.postgresql.org/docs/current/static/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS>
+
+Single quotes used for `identifiers` (like table names). For example:
+`UPDATE "your_tbl" SET "a" = 5;`
+
+## Key words
+
+Key words should be escaped (for example if used as table name or column name)
+<http://www.postgresql.org/docs/current/static/sql-keywords-appendix.html#KEYWORDS-TABLE>
+
+## Concatenation
+
+<http://www.postgresql.org/docs/9.1/static/functions-string.html#FUNCTIONS-STRING-SQL>
+
+    SELECT 'foo' || 'bar'
+
+<http://www.postgresql.org/docs/9.1/static/functions-string.html#FUNCTIONS-STRING-OTHER>
+
+    SELECT concat('foo', 'bar', 'xyz')
+
+## Password file
+
+Save password in `~/.pgpass` file and connect without password prompt:
+
+* <http://www.postgresql.org/docs/current/static/libpq-pgpass.html>
+* <https://wiki.postgresql.org/wiki/Pgpass>
+* <http://dba.stackexchange.com/questions/14740/how-to-use-psql-with-no-password-prompt#14741>
+
+## Current number of connections
+
+Getting the current number of connections in a PostgreSQL
+
+<http://stackoverflow.com/questions/5267715/getting-the-current-number-of-connections-in-a-postgresql-db#5270806>
+
+    SELECT sum(numbackends) FROM pg_stat_database;
+
+## Profiling
+
+Get query execution time/duration
+
+    \timing
+
+## Disk usage psql command
+
+<http://stackoverflow.com/questions/2596624/how-do-you-find-the-disk-size-of-a-postgres-postgresql-table-and-its-indexes>
+
+    \l+
+    \d+
+
+## Disk usage SQL query
+
+`pg_toast` | is an temporary schema (for temporary tables)
+-----------|----------------------------------------------
+
+    SELECT nspname || '.' || relname AS "relation",
+           pg_size_pretty(pg_relation_size(pg_class.oid)) AS "size"
+    FROM pg_class
+    LEFT JOIN pg_namespace N ON (N.oid = pg_class.relnamespace)
+    WHERE nspname NOT IN ('pg_catalog', 'information_schema', 'pg_toast')
+    ORDER BY pg_relation_size(pg_class.oid) DESC
+    LIMIT 10;
+
+## Print notice
+
+<http://stackoverflow.com/questions/18828127/how-to-raise-a-notice-in-postgresql#18828523>
+
+    DO language plpgsql $$
+    BEGIN
+      RAISE NOTICE 'Hello, world!';
+    END
+    $$;
+
+## Vacuum
+
+<https://wiki.postgresql.org/wiki/Tuning_Your_PostgreSQL_Server#autovacuum>
+
+## Log all queries
+
+`postgresql.conf`
+
+Log all statements
+
+    line="log_statement = 'all'
+
+Log statements with any durations
+
+    log_min_duration_statement = 0
+
+## pgbench
+
+<http://www.postgresql.org/docs/current/static/pgbench.html>
+
+    pgbench -h localhost -p 51000 -c 1000 -C -S -t 1 \
+            -U your_role -f ./pgbouncer/pgbench.sql your_db
+
+    PGPASSWORD=your-password \
+      pgbench -h localhost -p 5433 -U your_role \
+              -c 100 -C -d -S -t 1000 \
+              -f path/to/file.sql your_db
+
+## List active connections
+
+<http://serverfault.com/questions/128284/how-to-see-active-connections-and-current-activity-in-postgresql-8-4#128292>
+
+    SELECT * FROM pg_stat_activity WHERE datname = 'your-db';
+
+## Get locale
+
+    SHOW LC_COLLATE;
+
+## Fix locale
+
+* <http://stackoverflow.com/questions/16736891/pgerror-error-new-encoding-utf8-is-incompatible#16737776>
+* <https://wiki.gentoo.org/wiki/PostgreSQL#Changing_the_Default_Encoding_of_New_Databases>
+* <https://wiki.archlinux.org/index.php/PostgreSQL#Change_default_encoding_of_new_databases_to_UTF-8>
+* <http://www.postgresql.org/message-id/43FE1E65.3030000@genome.chop.edu>
+* <http://www.postgresql.org/docs/current/static/multibyte.html#AEN35730>
+
+    UPDATE pg_database SET datistemplate = FALSE WHERE datname = 'template1';
+    DROP DATABASE template1;
+    CREATE DATABASE template1
+           WITH TEMPLATE = template0
+                ENCODING = 'UNICODE'
+                LC_COLLATE='en_US.UTF-8'
+                LC_CTYPE='en_US.UTF-8';
+    UPDATE pg_database SET datistemplate = TRUE WHERE datname = 'template1';
+    CREATE ROLE your_role WITH SUPERUSER LOGIN PASSWORD 'your-password';
+    CREATE DATABASE your_db WITH OWNER your_role ENCODING = 'UTF8';
+
+## Reserved key words
+
+<https://www.postgresql.org/docs/current/static/sql-keywords-appendix.html>
+
 ## List indexes
 
     \di
@@ -636,7 +928,7 @@ WITH cte AS (
 
     BEGIN; TRUNCATE your_tbl, your_tbl2 CASCADE; ALTER SEQUENCE your_seq RESTART WITH 1; COMMIT;
 
-## Fetch query
+## Select/fetch query
 
     SELECT * FROM your_tbl;
 
@@ -684,146 +976,6 @@ group of duplicates).
       SELECT your_col3, your_col4 FROM your_tbl2
     );
 
-## Array
-
-    SELECT ARRAY['foo','bar']::text[];
-    SELECT ARRAY[1,2,3]::smallint[];
-
-## Array
-
-    SELECT ARRAY(SELECT id FROM your_tbl)::integer[];
-    --  array
-    -- -------
-    --  {1,2,3}
-
-## Array to multiple rows
-
-<https://stackoverflow.com/questions/7309568/unwrap-postgresql-array-into-rows#21933908>
-
-    SELECT unnest(ARRAY[1,2,3]) AS rows;
-    --  rows
-    -- ------
-    --     1
-    --     2
-    --     3
-    -- (3 rows)
-
-## Unnest array alongside other column
-
-    SELECT id, unnest(your_col) FROM your_tbl;
-    --  id | your_col
-    -- ----+----------
-    --  42 | 1
-    --  42 | 2
-    --  42 | 3
-    -- ...
-
-## Array length/count
-
-    SELECT cardinality('{1,2,3}'::smallint[]);
-    SELECT array_length('{1,2,3}'::smallint[], 1);
-
-## Array contains
-
-<https://stackoverflow.com/questions/16606357/how-to-make-a-select-with-array-contains-value-clause-in-psql#16606612>
-
-    SELECT * FROM your_tbl WHERE 'your array item' = ANY(your_col);
-    SELECT * FROM your_tbl WHERE your_col @> ARRAY['foobar']::text[];
-    SELECT * FROM your_tbl WHERE your_col && ARRAY['foo','bar']::text[];
-
-## Arrays contains/overlaps
-
-<https://stackoverflow.com/questions/21742929/postgresql-check-if-array-contains-any-element-from-left-hand-array#21743100>
-
-    SELECT ARRAY[1,2] && ARRAY[1,3,4,7];
-
-## Array append
-
-    UPDATE your_tbl SET your_col = array_append(your_col, 'new array item');
-
-## Exclude array/not in array condition
-
-<https://stackoverflow.com/questions/11730777/postgres-not-in-array/43380487#11730789>
-
-    SELECT * FROM your_tbl1 WHERE NOT (your_col = ANY ('{0,1,2}'::smallint[]));
-
-## Exclude first array from second array
-
-    WITH your_arr1 AS (
-         SELECT unnest(ARRAY[3,4]::integer[]) AS your_col
-    ),   your_arr2 AS (
-        (SELECT unnest(ARRAY[1,2,3,4]::integer[]) AS your_col)
-         EXCEPT ALL
-        (SELECT * FROM your_arr1)
-    ) SELECT ARRAY(SELECT * FROM your_arr2)::integer[];
-    --  array
-    -- -------
-    --  {1,2}
-
-## Exclude first array within column from second array
-
-    WITH your_cte1 AS (
-         SELECT your_col1,
-                unnest(your_col2) AS your_col2
-         FROM your_tbl1
-         LIMIT 123
-    ),   your_cte2 AS (
-        (SELECT your_col1,
-                unnest(your_col2) AS your_col2
-         FROM your_tbl1
-        ) EXCEPT ALL (
-         SELECT your_col1,
-                unnest(your_col2) AS your_col2
-         FROM your_tbl1
-        ) ORDER BY your_col1
-         LIMIT 321
-    ) SELECT * FROM your_cte2;
-
-## Current date
-
-    mydb=> SELECT current_date;
-        date
-    ------------
-     2002-08-31
-
-## Multiline JSON output to stdout
-
-    $ psql -qAtX --quiet --no-align --tuples-only --no-psqlrc --command="select E'{\n    \"yourKey\": \"Your value\",\n    \"yourKey2\": 42\n}';"
-    {
-        "yourKey": "Your value",
-        "yourKey2": 42
-    }
-
-## Arithmetics
-
-    mydb=> SELECT 2 + 2;
-     ?column?
-    ----------
-            4
-
-## Timestamp with timezone type
-
-Today in past year
-
-    SELECT (CURRENT_DATE - INTERVAL '1 year')::timestamptz;
-    german_test=# show timezone;
-
-## Show/describe enum type
-
-<http://stackoverflow.com/questions/9535937/is-there-a-way-to-show-a-user-defined-postgresql-enumerated-type-definition#25326877>
-
-    SELECT enum_range(null::my_type);
-
-## Create range
-
-Create dates range from now to 1 year ago
-
-    SELECT tstzrange(
-           (CURRENT_DATE - INTERVAL '1 year')::timestamptz,
-           CURRENT_DATE,
-           '[]'
-    );
-
 ## Intersection (overlapping)
 
     SELECT tstzrange('1970-12-31', '2000-12-31', '[]')
@@ -834,45 +986,6 @@ Create dates range from now to 1 year ago
 List functions in schema `foo`
 
     \df foo.*
-
-## Extensions list
-
-    \dx
-    SELECT * FROM pg_extension;
-
-## Extension create
-
-<http://www.postgresql.org/docs/current/static/sql-createextension.html>
-
-    CREATE EXTENSION IF NOT EXISTS plv8 WITH SCHEMA pg_catalog;
-
-## Single quotes
-
-<http://www.postgresql.org/docs/current/static/sql-syntax-lexical.html#SQL-SYNTAX-STRINGS>
-
-Single quotes used for `string constants`. For example: `'This is a string'`.
-
-## Double quotes
-
-<http://www.postgresql.org/docs/current/static/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS>
-
-Single quotes used for `identifiers` (like table names). For example:
-`UPDATE "your_tbl" SET "a" = 5;`
-
-## Key words
-
-Key words should be escaped (for example if used as table name or column name)
-<http://www.postgresql.org/docs/current/static/sql-keywords-appendix.html#KEYWORDS-TABLE>
-
-## Concatenation
-
-<http://www.postgresql.org/docs/9.1/static/functions-string.html#FUNCTIONS-STRING-SQL>
-
-    SELECT 'foo' || 'bar'
-
-<http://www.postgresql.org/docs/9.1/static/functions-string.html#FUNCTIONS-STRING-OTHER>
-
-    SELECT concat('foo', 'bar', 'xyz')
 
 ## psql: write to stdout
 
@@ -941,62 +1054,6 @@ Load data from csv file
           FROM 'path/to/file.csv'
           csv DELIMITER ';' NULL AS '\N' QUOTE '"' ESCAPE '\';
 
-## Password file
-
-Save password in `~/.pgpass` file and connect without password prompt:
-
-* <http://www.postgresql.org/docs/current/static/libpq-pgpass.html>
-* <https://wiki.postgresql.org/wiki/Pgpass>
-* <http://dba.stackexchange.com/questions/14740/how-to-use-psql-with-no-password-prompt#14741>
-
-## Current number of connections
-
-Getting the current number of connections in a PostgreSQL
-
-<http://stackoverflow.com/questions/5267715/getting-the-current-number-of-connections-in-a-postgresql-db#5270806>
-
-    SELECT sum(numbackends) FROM pg_stat_database;
-
-## Profiling
-
-Get query execution time/duration
-
-    \timing
-
-## Disk usage psql command
-
-<http://stackoverflow.com/questions/2596624/how-do-you-find-the-disk-size-of-a-postgres-postgresql-table-and-its-indexes>
-
-    \l+
-    \d+
-
-## Disk usage SQL query
-
-`pg_toast` | is an temporary schema (for temporary tables)
------------|----------------------------------------------
-
-    SELECT nspname || '.' || relname AS "relation",
-           pg_size_pretty(pg_relation_size(pg_class.oid)) AS "size"
-    FROM pg_class
-    LEFT JOIN pg_namespace N ON (N.oid = pg_class.relnamespace)
-    WHERE nspname NOT IN ('pg_catalog', 'information_schema', 'pg_toast')
-    ORDER BY pg_relation_size(pg_class.oid) DESC
-    LIMIT 10;
-
-## Print notice
-
-<http://stackoverflow.com/questions/18828127/how-to-raise-a-notice-in-postgresql#18828523>
-
-    DO language plpgsql $$
-    BEGIN
-      RAISE NOTICE 'Hello, world!';
-    END
-    $$;
-
-## Vacuum
-
-<https://wiki.postgresql.org/wiki/Tuning_Your_PostgreSQL_Server#autovacuum>
-
 ## Prepared statement create
 
 <http://www.postgresql.org/docs/current/static/sql-prepare.html>
@@ -1014,60 +1071,3 @@ Get query execution time/duration
 <http://www.postgresql.org/docs/current/static/sql-deallocate.html>
 
     DEALLOCATE your_statement_nm;
-
-## Log all queries
-
-`postgresql.conf`
-
-Log all statements
-
-    line="log_statement = 'all'
-
-Log statements with any durations
-
-    log_min_duration_statement = 0
-
-## pgbench
-
-<http://www.postgresql.org/docs/current/static/pgbench.html>
-
-    pgbench -h localhost -p 51000 -c 1000 -C -S -t 1 \
-            -U your_role -f ./pgbouncer/pgbench.sql your_db
-
-    PGPASSWORD=your-password \
-      pgbench -h localhost -p 5433 -U your_role \
-              -c 100 -C -d -S -t 1000 \
-              -f path/to/file.sql your_db
-
-## List active connections
-
-<http://serverfault.com/questions/128284/how-to-see-active-connections-and-current-activity-in-postgresql-8-4#128292>
-
-    SELECT * FROM pg_stat_activity WHERE datname = 'your-db';
-
-## Get locale
-
-    SHOW LC_COLLATE;
-
-## Fix locale
-
-* <http://stackoverflow.com/questions/16736891/pgerror-error-new-encoding-utf8-is-incompatible#16737776>
-* <https://wiki.gentoo.org/wiki/PostgreSQL#Changing_the_Default_Encoding_of_New_Databases>
-* <https://wiki.archlinux.org/index.php/PostgreSQL#Change_default_encoding_of_new_databases_to_UTF-8>
-* <http://www.postgresql.org/message-id/43FE1E65.3030000@genome.chop.edu>
-* <http://www.postgresql.org/docs/current/static/multibyte.html#AEN35730>
-
-    UPDATE pg_database SET datistemplate = FALSE WHERE datname = 'template1';
-    DROP DATABASE template1;
-    CREATE DATABASE template1
-           WITH TEMPLATE = template0
-                ENCODING = 'UNICODE'
-                LC_COLLATE='en_US.UTF-8'
-                LC_CTYPE='en_US.UTF-8';
-    UPDATE pg_database SET datistemplate = TRUE WHERE datname = 'template1';
-    CREATE ROLE your_role WITH SUPERUSER LOGIN PASSWORD 'your-password';
-    CREATE DATABASE your_db WITH OWNER your_role ENCODING = 'UTF8';
-
-## Reserved key words
-
-<https://www.postgresql.org/docs/current/static/sql-keywords-appendix.html>
