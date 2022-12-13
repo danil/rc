@@ -417,15 +417,15 @@ This equivalent to (B-tree is default):
 
 ## Create compound index
 
-    CREATE INDEX your_idx ON your_tbl ("your_col1", "your_col2");
+    CREATE INDEX your_idx ON your_tbl (your_col1, your_col2);
 
 ## Create partial index
 
-    CREATE INDEX your_idx ON your_tbl ("your_col1") WHERE ("your_col2" IS NULL);
+    CREATE INDEX your_idx ON your_tbl (your_col1) WHERE (your_col2 IS NULL);
 
 ## Create functional index
 
-    CREATE INDEX your_idx ON your_tbl ("your_col1") WHERE ("your_col2" IS NULL);
+    CREATE INDEX your_idx ON your_tbl (your_col1) WHERE (your_col2 IS NULL);
 
 ## Create index on jsonb
 
