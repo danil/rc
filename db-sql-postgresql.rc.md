@@ -423,10 +423,6 @@ This equivalent to (B-tree is default):
 
     CREATE INDEX your_idx ON your_tbl (your_col1) WHERE (your_col2 IS NULL);
 
-## Create functional index
-
-    CREATE INDEX your_idx ON your_tbl (your_col1) WHERE (your_col2 IS NULL);
-
 ## Create index on jsonb
 
     CREATE INDEX your_idx ON your_tbl (
