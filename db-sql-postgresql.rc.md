@@ -425,6 +425,8 @@ This equivalent to (B-tree is default):
 
 ## Create index on function expression
 
+<https://postgresql.org/docs/current/functions-bitstring.html>
+
     CREATE INDEX your_bit_0_1_idx ON your_tbl (id)
     WHERE your_col IS NULL
        OR get_bit(your_col::bit(64), 63) = 0
