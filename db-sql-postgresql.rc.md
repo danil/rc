@@ -614,7 +614,7 @@ List roles and privileges
 
 ## Create database
 
-    CREATE DATABASE "your_db"
+    CREATE DATABASE your_db
            WITH OWNER your_role
            ENCODING = 'UTF8'
            LC_COLLATE = 'en_US.UTF-8'
@@ -778,7 +778,7 @@ Remove constraint by name
 
 ## Upsert/update/insert/create
 
-    INSERT INTO your_tbl ("latitude", "longitude", "nm") 
+    INSERT INTO your_tbl (latitude, longitude, "nm") 
     VALUES (1 ,2 ,'foobar')
     ON CONFLICT ON CONSTRAINT your_tbl_pkey
     DO UPDATE SET "name" = 'foobar';
