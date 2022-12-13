@@ -423,7 +423,7 @@ This equivalent to (B-tree is default):
 
     CREATE INDEX your_idx ON your_tbl (your_col1) WHERE (your_col2 IS NULL);
 
-## Create functional index
+## Create index on function expression
 
     CREATE INDEX your_bit0_idx ON your_tbl (
       get_bit(your_col::bit(64), 63)::bigint
