@@ -248,7 +248,7 @@ Single quotes used for `string constants`. For example: `'This is a string'`.
 <http://www.postgresql.org/docs/current/static/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS>
 
 Single quotes used for `identifiers` (like table names). For example:
-`UPDATE "your_tbl" SET "a" = 5;`
+`UPDATE "your_tbl" SET "your_col" = 5;`
 
 ## Key words
 
@@ -405,27 +405,31 @@ https://postgrespro.ru/docs/postgrespro/10/gin-intro).
 
 ## Create index
 
-    CREATE INDEX "your_idx" ON "your_tbl" ("your_col");
+    CREATE INDEX your_idx ON your_tbl (your_col);
 
 This equivalent to (B-tree is default):
 
-    CREATE INDEX "your_idx" ON "your_tbl" USING btree ("your_col");
+    CREATE INDEX your_idx ON your_tbl USING btree (your_col);
 
 ## Create unique index
 
-    CREATE UNIQUE INDEX "your_idx" ON "your_tbl" ("your_col");
+    CREATE UNIQUE INDEX your_idx ON your_tbl (your_col);
 
 ## Create compound index
 
-    CREATE INDEX "your_idx" ON "your_tbl" ("your_col1", "your_col2");
+    CREATE INDEX your_idx ON your_tbl ("your_col1", "your_col2");
 
 ## Create partial index
 
-    CREATE INDEX "your_idx" ON "your_tbl" ("your_col1") WHERE ("your_col2" IS NULL);
+    CREATE INDEX your_idx ON your_tbl ("your_col1") WHERE ("your_col2" IS NULL);
+
+## Create functional index
+
+    CREATE INDEX your_idx ON your_tbl ("your_col1") WHERE ("your_col2" IS NULL);
 
 ## Create index on jsonb
 
-    CREATE INDEX "your_idx" ON "your_tbl" (
+    CREATE INDEX your_idx ON your_tbl (
            (your_col1->>'your_prop1'),
            (your_col2->>'your_prop2')
     );
@@ -442,7 +446,7 @@ This equivalent to (B-tree is default):
 
 ## Rename index
 
-    ALTER INDEX IF EXISTS "your_idx" RENAME TO "your_idx_new_nm";
+    ALTER INDEX IF EXISTS your_idx RENAME TO your_idx_new_nm;
 
 ## Alter index
 
@@ -749,13 +753,13 @@ List all tables then drop them.
 
 ## Add unique constraint
 
-    ALTER TABLE "your_tbl" ADD CONSTRAINT your_cstr UNIQUE (your_col1, your_col2);
+    ALTER TABLE your_tbl ADD CONSTRAINT your_cstr UNIQUE (your_col1, your_col2);
 
 ## Delete constraint
 
 Remove constraint by name
 
-    ALTER TABLE "your_tbl" DROP CONSTRAINT your_cstr;
+    ALTER TABLE your_tbl DROP CONSTRAINT your_cstr;
 
 ## Rename constraint
 
@@ -786,10 +790,10 @@ Remove constraint by name
 
 ## Increment/upsert/update counter
 
-    INSERT INTO "your_tbl" ("id", "count")
+    INSERT INTO your_tbl ("id", "count")
     VALUES (nextval('your_tbl_id_seq'::regclass), 1)
     ON CONFLICT ("id")
-    DO UPDATE SET "count" = COALESCE("your_tbl"."count", EXCLUDED."count") + 1;
+    DO UPDATE SET "count" = COALESCE(your_tbl."count", EXCLUDED."count") + 1;
 
 ## Insert/update new line character
 
@@ -1064,7 +1068,7 @@ Load data from csv file
 <http://www.postgresql.org/docs/current/static/sql-prepare.html>
 
     PREPARE your_statement_nm (text, int) AS
-    SELECT * FROM "your_tbl"
+    SELECT * FROM your_tbl
     WHERE "name" = $1 AND "age" = $2;
 
 ## Prepared statement execute
