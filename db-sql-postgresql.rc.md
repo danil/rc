@@ -433,6 +433,12 @@ This equivalent to (B-tree is default):
       get_bit(your_col::bit(64), 62)::bigint
     ) WHERE (your_col IS NOT NULL);
 
+    SELECT count(*)
+    FROM your_tbl
+    WHERE your_col IS NOT NULL
+      AND (get_bit(your_col::bit(64), 63)::bigint = 1 OR
+           get_bit(your_col::bit(64), 62)::bigint = 1);
+
 ## Create index on jsonb
 
     CREATE INDEX your_idx ON your_tbl (
