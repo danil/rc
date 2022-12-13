@@ -425,19 +425,17 @@ This equivalent to (B-tree is default):
 
 ## Create index on function expression
 
-    CREATE INDEX your_bit0_idx ON your_tbl (
-      get_bit(your_col::bit(64), 63)::bigint
-    ) WHERE (your_col IS NOT NULL);
+    CREATE INDEX your_bit_0_1_idx ON your_tbl (id)
+    WHERE your_col IS NULL
+       OR get_bit(your_col::bit(64), 63) = 0
+       OR get_bit(your_col::bit(64), 62) = 0;
 
-    CREATE INDEX your_bit1_idx ON your_tbl (
-      get_bit(your_col::bit(64), 62)::bigint
-    ) WHERE (your_col IS NOT NULL);
-
-    SELECT count(*)
+    SELECT id
     FROM your_tbl
-    WHERE your_col IS NOT NULL
-      AND (get_bit(your_col::bit(64), 63)::bigint = 1 OR
-           get_bit(your_col::bit(64), 62)::bigint = 1);
+    WHERE your_col IS NULL
+       OR get_bit(your_col::bit(64), 63) = 0
+       OR get_bit(your_col::bit(64), 62) = 0
+    LIMIT 12345;
 
 ## Create index on jsonb
 
