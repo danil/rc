@@ -73,6 +73,10 @@ Race conditions and [Race Detector](https://blog.golang.org/race-detector)
 
     go test -race ./...
 
+## Table tests
+
+Generator <https://github.com/cweill/gotests>
+
 ## Test file
 
 https://pkg.go.dev/testing/fstest
