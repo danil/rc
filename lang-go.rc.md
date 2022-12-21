@@ -192,6 +192,12 @@ Arguments against time.Date type <https://github.com/golang/go/issues/19700#issu
         time.Duration(float64(42*time.Second) * (1 + math.Log(float64(i))))
     }
 
+## Three-index/primary/full slice
+
+https://go.dev/ref/spec#Slice_expressions
+
+For examle `a[low:high:max]` or `a[0:0:0]` or `a[:0:0]`
+
 ## Copy slice
 
 https://github.com/golang/go/wiki/SliceTricks#copy
