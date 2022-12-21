@@ -194,7 +194,8 @@ Arguments against time.Date type <https://github.com/golang/go/issues/19700#issu
 
 ## Three-index/primary/full slice
 
-https://go.dev/ref/spec#Slice_expressions
+* https://go.dev/ref/spec#Slice_expressions
+* https://docs.google.com/document/d/1GKKdiGYAghXRxC2BFrSEbHBZZgAGKQ-yXK-hRKBo0Kk/pub
 
 For examle `a[low:high:max]` or `a[0:0:0]` or `a[:0:0]`
 
