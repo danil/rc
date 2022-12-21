@@ -191,3 +191,11 @@ Arguments against time.Date type <https://github.com/golang/go/issues/19700#issu
     for i := 1; i < 100500; i++ {
         time.Duration(float64(42*time.Second) * (1 + math.Log(float64(i))))
     }
+
+## Copy slice
+
+https://github.com/golang/go/wiki/SliceTricks#copy
+
+1. `b := make([]T, len(a))` and then `copy(b, a)`
+2. `b := append(a[:0:0], a...)` is the same as `b = append([]T(nil), a...)`
+3. `b := append(make([]T, 0, len(a)), a...)`
