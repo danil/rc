@@ -206,3 +206,8 @@ https://github.com/golang/go/wiki/SliceTricks#copy
 1. `b := make([]T, len(a))` and then `copy(b, a)`
 2. `b := append(a[:0:0], a...)` is the same as `b = append([]T(nil), a...)`
 3. `b := append(make([]T, 0, len(a)), a...)`
+
+## Language/locale
+
+* https://go.dev/blog/matchlang
+* https://pkg.go.dev/golang.org/x/text/language
