@@ -201,7 +201,9 @@ For examle `a[low:high:max]` or `a[0:0:0]` or `a[:0:0]`
 
 ## Copy slice
 
-https://github.com/golang/go/wiki/SliceTricks#copy
+* https://pkg.go.dev/builtin#copy
+* https://pkg.go.dev/builtin#append
+* https://github.com/golang/go/wiki/SliceTricks#copy
 
 1. `b := make([]T, len(a))` and then `copy(b, a)`
 2. `b := append(a[:0:0], a...)` is the same as `b = append([]T(nil), a...)`
