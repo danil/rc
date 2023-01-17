@@ -741,7 +741,7 @@ List all tables then drop them.
 
     ALTER TABLE your_tbl
         ADD COLUMN your_col1 integer NOT NULL DEFAULT 123,
-        ADD COLUMN your_col2 timestamp with time zone;
+        ADD COLUMN your_col2 timestamptz;
 
 ## Remove column
 
