@@ -203,9 +203,7 @@ Backuping:
 
     SELECT to_timestamp('1970-12-31 23:45:01 UTC', 'YYYY-MM-DD hh24:mi:ss TZ');
 
-## Timestamp with timezone type
-
-Today in past year
+## Timestamp today in past year
 
     SELECT (CURRENT_DATE - INTERVAL '1 year')::timestamptz;
 
