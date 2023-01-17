@@ -208,7 +208,6 @@ Backuping:
 Today in past year
 
     SELECT (CURRENT_DATE - INTERVAL '1 year')::timestamptz;
-    german_test=# show timezone;
 
 ## Show/describe enum type
 
