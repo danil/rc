@@ -46,7 +46,8 @@ Latest modified/newest files (42 items)
 
 ## Remove empty/zero size files
 
-    find path/to/dir -type f -size 0 -delete
+    find -type f -empty -delete
+    find -type f -size 0 -delete
 
 ## Remove temporary files
 
