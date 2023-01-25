@@ -35,22 +35,26 @@ Latest modified/newest files (42 items)
 
     find / -type l -exec sh -c 'lname="{}"; ltarget=$(readlink "${lname}"); rm "${lname}"; ln -s "${ltarget}" "${lname}"' \;
 
-## Remove empty dirs
+## Empty directories
 
-    find -depth -type d -empty -exec rmdir {} \;
+    find -type d -empty
 
-    find ./ -mount -type f -iname "*~" -exec rm {} \;
-    find /lib/modules/2.6.30/ -type f -iname '*.o' -or -iname '*.ko'
+## Remove empty directories
 
-## Remove empty files
+    find -type d -empty -delete
+    find -type d -empty -depth -exec rmdir {} \;
 
-Remove files with zero sizes
+## Remove empty/zero size files
 
     find path/to/dir -type f -size 0 -delete
 
-## Remove empy directories
+## Remove temporary files
 
-    find path/to/dir -type d -empty -delete
+    find -mount -type f -iname "*~" -exec rm {} \;
+
+## Remove compilation files
+
+    find -type f -iname '*.o' -or -iname '*.ko'
 
 ## Exclude dirs
 
