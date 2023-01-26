@@ -853,6 +853,16 @@ Remove constraint by name
     FROM (SELECT id FROM your_tbl WHERE id = 123) AS sub_t
     WHERE upd_t.id = sub_t.id;
 
+## Update multiple rows from subquery join
+
+    UPDATE your_tbl AS upd_t
+       SET your_col = sub_t.your_col,
+           your_col2 = joi_t.your_col
+    FROM your_tbl2 AS sub_t
+    JOIN your_tbl3 AS joi_t
+      ON joi_t.ref_id = upd_t.id
+    WHERE upd_t.id = sub_t.id;
+
 ## Update multiple rows via subquery
 
     UPDATE your_tbl1 t1
