@@ -740,8 +740,8 @@ List all tables then drop them.
 ## Add column to table
 
     ALTER TABLE your_tbl
-        ADD COLUMN your_col1 integer NOT NULL DEFAULT 123,
-        ADD COLUMN your_col2 timestamptz;
+      ADD COLUMN your_col1 integer NOT NULL DEFAULT 123,
+      ADD COLUMN your_col2 timestamptz;
 
 ## Remove column
 
