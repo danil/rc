@@ -838,8 +838,7 @@ Remove constraint by name
 
 ## Update multiple rows from subquery data
 
-Update multiple rows in one query
-<https://stackoverflow.com/questions/18797608/update-multiple-rows-in-same-query-using-postgresql#18799497>.
+<https://stackoverflow.com/questions/18797608/update-multiple-rows-in-same-query-using-postgresql#18799497>
 
     UPDATE your_tbl AS upd_t
     SET your_col1 = sub_t.your_col1,
