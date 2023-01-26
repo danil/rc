@@ -899,14 +899,14 @@ CREATE TABLE users2 (id BIGSERIAL primary key, age integer);
 INSERT INTO users1 (id) VALUES (1), (2), (3);
 INSERT INTO users2 (id,name,age) VALUES (1,'foo',11), (2,'bar',22), (3,'xyz',33);
 UPDATE users1 u1
-       SET (name,age) = (SELECT name,age FROM users2 u2 WHERE u2.id = u1.id)
-       WHERE u1.id IN (1,2);
+SET (name,age) = (SELECT name,age FROM users2 u2 WHERE u2.id = u1.id)
+WHERE u1.id IN (1,2);
 
 WITH cte AS (
      SELECT u2.name, u2.age
      FROM users1 AS u1
      JOIN users2 AS u2
-          ON u2.id = u1.id
+       ON u2.id = u1.id
      WHERE u1.name IS NULL
        AND u2.name IS NOT NULL
      LIMIT 42
