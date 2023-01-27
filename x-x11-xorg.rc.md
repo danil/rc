@@ -60,7 +60,7 @@ gvfs-open, kde-open or exo-open respectively.
 
     xdg-open ~/Downloads/tasks.csv
 
-## stdout to clipboard
+## Copy stdout to clipboard
 
 <http://cyberciti.biz/faq/xclip-linux-insert-files-command-output-intoclipboard>.
 

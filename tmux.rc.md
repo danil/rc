@@ -16,7 +16,7 @@ https://robots.thoughtbot.com/a-tmux-crash-course
 * copy region `M-w`
 * past selection `prefix+]`
 
-## Yank
+## Coppy yank
 
 Copying to operation system clipboard https://github.com/tmux-plugins/tmux-yank
 
