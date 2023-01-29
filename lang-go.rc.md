@@ -225,3 +225,30 @@ For examle `a[low:high:max]` or `a[0:0:0]` or `a[:0:0]`
 
 * https://go.dev/blog/matchlang
 * https://pkg.go.dev/golang.org/x/text/language
+
+## Copy struct to struct of another type
+
+https://pkg.go.dev/testing/fstest
+
+```go
+package main
+
+import "github.com/jinzhu/copier"
+
+type T1 struct {
+    Name string
+}
+
+type T2 struct {
+    Name string
+    Age  int
+}
+
+func main() {
+    t1 := T1{Name: "John Doe"}
+    t2 := T2{Age: 42}
+    if err := copier.Copy(&t2, &t1); err != nil {
+        panic(err)
+    }
+}
+```
