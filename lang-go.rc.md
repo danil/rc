@@ -192,6 +192,18 @@ Arguments against time.Date type <https://github.com/golang/go/issues/19700#issu
         time.Duration(float64(42*time.Second) * (1 + math.Log(float64(i))))
     }
 
+## Regexp match string
+
+    regexp.MustCompile("^[a-z]+$").MatchString("foo")
+
+## Regexp multiline/new line
+
+    regexp.MustCompile("(?m)^[a-z]*$\n[a-z]*").MatchString("foo\nxyz")
+
+## Regexp replacement variable/submatch/capturing group
+
+    regexp.MustCompile("(.{3})").ReplaceAll([]byte("foo3"), []byte("${1}12"))
+
 ## Three-index/primary/full slice
 
 * https://go.dev/ref/spec#Slice_expressions
