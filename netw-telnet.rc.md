@@ -1,4 +1,4 @@
-# telnet
+# telnet rc
 
     telnet your.tld 25
     busybox telnet your.tld 22
