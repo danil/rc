@@ -90,12 +90,12 @@ Backuping:
 
 <https://stackoverflow.com/questions/7309568/unwrap-postgresql-array-into-rows#21933908>
 
-    SELECT unnest(ARRAY[1,2,3]) AS rows;
-    --  rows
-    -- ------
-    --     1
-    --     2
-    --     3
+    SELECT unnest(ARRAY['Alice','Bob','Carol']) AS name;
+    --  name
+    -- -------
+    --  Alice
+    --  Bob
+    --  Carol
     -- (3 rows)
 
 ## Unnest array alongside other column
