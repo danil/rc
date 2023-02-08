@@ -850,6 +850,11 @@ Setting/changing the default git branch in a bare repository
     git commit --message="feat: some commit"
     git flow feature finish feat-1234-your-feature-nm
 
+## Find worktree files and directories
+
+    find -not -path '*/.git*'
+    find -not -iwholename '*/.git*'
+
 ## Other
 
     git mv oldname newname
