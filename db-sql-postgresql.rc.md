@@ -278,9 +278,9 @@ Getting the current number of connections in a PostgreSQL
 
     SELECT sum(numbackends) FROM pg_stat_database;
 
-## Profiling
+## Profiling/timing
 
-Get query execution time/duration
+Get/measure query execution timing/duration
 
     \timing
 
