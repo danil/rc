@@ -59,6 +59,12 @@ Disable test cache
 
 Run benchmarks
 
+    func BenchmarkYourFunc(b *testing.B) {
+        for i := 0; i < b.N; i++ {
+            yourpkg.YourFunc()
+        }
+    }
+
     go test -v -bench=. -benchmem ./...
 
 ## Test coverage
