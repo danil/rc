@@ -1,4 +1,4 @@
-# host
+# Network host NS/DNS rc
 
 Get `A` and `MX` records
 
