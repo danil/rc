@@ -25,8 +25,8 @@
 <http://stackoverflow.com/questions/8010005/python-re-infinite-execution>
 <https://habrahabr.ru/post/131915/>
 
-## TODO
+## Live evaluation/debug
 
-* https://regex101.com
-* https://regexr.com
-* https://rubular.com
+1. https://regex101.com cons: no source code (proprietary)
+2. https://regexr.com
+3. https://rubular.com
