@@ -1,5 +1,9 @@
 # Markdown
 
+## Strikethrough
+
+    ~~strikethrough~~
+
 ## Tables
 
 <https://guides.github.com/features/mastering-markdown/>
