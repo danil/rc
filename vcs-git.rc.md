@@ -651,7 +651,11 @@ List of the changed file names
 <http://stackoverflow.com/questions/14207414/how-to-show-changed-file-name-only-with-git-log#14227496>.
 
     git log --name-only
+
+## Log changed/add/removed/deleted count lines statistics
+
     git log --stat
+    git log --numstat
 
 ## Log files changed by author
 
