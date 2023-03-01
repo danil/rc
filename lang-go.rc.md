@@ -232,7 +232,7 @@ For examle `a[low:high:max]` or `a[0:0:0]` or `a[:0:0]`
 * https://go.dev/blog/matchlang
 * https://pkg.go.dev/golang.org/x/text/language
 
-## Copy struct to struct of another type
+## Copy/clone/duplicate struct to struct of another type
 
 https://pkg.go.dev/testing/fstest
 
