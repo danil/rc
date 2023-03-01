@@ -1014,11 +1014,11 @@ List functions in schema `foo`
 
     \df foo.*
 
-## psql: write to stdout
+## psql: write output to stdout
 
     \o
 
-## psql: write to file
+## psql: write output to file
 
     \o path/to/your_file
 
