@@ -142,6 +142,10 @@ https://vim.rtorr.com
    :e messages.txt
    ```
 
+## Configuration reload/refresh
+
+`:so $MYVIMRC`
+
 ## Session
 
 [vim-obsession][]
