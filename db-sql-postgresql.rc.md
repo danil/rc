@@ -76,10 +76,22 @@ Backuping:
 
 ## Array
 
-    SELECT ARRAY['foo','bar']::text[];
-    SELECT ARRAY[1,2,3]::smallint[];
+    SELECT ARRAY['foo','bar'];
+    SELECT '{1,2,3}'::smallint[];
 
-## Array
+## Array length/size
+
+    SELECT array_upper(ARRAY['foo','bar'], 1);
+
+## Array firt element
+
+    SELECT (ARRAY['foo','bar'])[1];
+
+## Array last element
+
+    SELECT (ARRAY['foo','bar'])[array_upper(ARRAY['foo','bar'], 1)];
+
+## Array from multiple rows
 
     SELECT ARRAY(SELECT id FROM your_tbl)::integer[];
     --  array
