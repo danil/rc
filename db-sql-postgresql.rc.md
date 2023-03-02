@@ -83,11 +83,11 @@ Backuping:
 
     SELECT array_upper(ARRAY['foo','bar'], 1);
 
-## Array firt element
+## Array get firt element
 
     SELECT (ARRAY['foo','bar'])[1];
 
-## Array last element
+## Array get last element
 
     SELECT (ARRAY['foo','bar'])[array_upper(ARRAY['foo','bar'], 1)];
 
