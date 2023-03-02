@@ -34,12 +34,20 @@ https://vim.rtorr.com
 
 `:sort`
 
-## Cursor move/navigation
+## Cursor move/navigation by word
 
 * `b` Backwards to the start of a word.
 * `w` Forwards to the start of a word.
+
+## Cursor move/navigation by line
+
 * `^` Line begin.
 * `$` Line end.
+
+## Cursor move/navigation by file
+
+* `gg` File beginning.
+* `G`  File end.
 
 ## Jump list position
 
