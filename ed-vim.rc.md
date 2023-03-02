@@ -103,9 +103,11 @@ https://vim.rtorr.com
 
 ## Fuzzy
 
-[fzf.vim][]
+* [fzf.vim][]
+* [vim-clap][]
 
 [fzf.vim]: https://github.com/junegunn/fzf.vim
+[vim-clap]: https://github.com/liuchengxu/vim-clap
 
 ## History/recent files
 
@@ -113,7 +115,7 @@ https://vim.rtorr.com
 
 ## List error messages
 
-1. `:echo :messages`
+1. `::messages`
 2. `:enew` then `:put = execute('messages')`
 3. Redirect to file:
    ```
