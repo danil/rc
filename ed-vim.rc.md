@@ -114,7 +114,7 @@ https://vim.rtorr.com
 ## List error messages
 
 1. `echo :messages`
-2. redirect to file
+2. Redirect to file
    ```
    :redir > messages.txt
    :messages
