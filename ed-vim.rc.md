@@ -63,6 +63,8 @@ https://vim.rtorr.com
 * `:enew` In the current window.
 * `:vnew` In a vertically split window.
 
+<https://stackoverflow.com/questions/4478111/vim-how-do-you-open-another-no-name-buffer-like-the-one-on-startup#4478193>
+
 ## Buffer close/delete buffer
 
 * `:bd` or `:bdel` or `:bdelete` Hide.
