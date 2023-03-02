@@ -94,8 +94,11 @@ https://vim.rtorr.com
 
 ## Window
 
-* `:Close` `<C-w>c`
-* `:Only`  `<C-w>o` Close/delete other.
+* `<C-w>o` `:Only` Close/delete other.
+* `<C-w>=` Balance/equalize width and height of all windows.
+* `<C-w>+` `<C-w>-` Increase/decrease height.
+* `<C-w>>` `<C-w><` Increase/decrease width.
+* `<C-w>c` `:Close`
 
 ## Window navigation
 
