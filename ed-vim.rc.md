@@ -53,12 +53,14 @@ https://vim.rtorr.com
 
 ## Buffer
 
-<https://github.com/jlanzarotta/bufexplorer> buffer of a buffers list
+[bufexplorer][] is a buffer of a buffers list
 
 * `Ctrl ^` or <Ctrl 6>  Open previous
 * `:bd`                 Delete
 * `:bw`                 Delete
 * `:file your-nm`       Rename
+
+[bufexplorer]: https://github.com/jlanzarotta/bufexplorer
 
 ## Window
 
@@ -85,14 +87,18 @@ https://vim.rtorr.com
 
 ## Fuzzy
 
-* https://github.com/junegunn/fzf.vim
+[fzf.vim][]
+
+[fzf.vim]: https://github.com/junegunn/fzf.vim
 
 ## Session
 
-<https://github.com/tpope/vim-obsession>
+[vim-obsession][]
 
 * `:mks!`               Save
 * `:source Session.vim` Load
+
+[vim-obsession]: https://github.com/tpope/vim-obsession
 
 ## Autocomplete
 
@@ -107,6 +113,10 @@ https://vim.rtorr.com
 
 ## Plugins
 
-* <https://github.com/junegunn/vim-plug> plugins manager
-* <https://github.com/tpope/vim-fugitive> git
-* <https://github.com/vim-airline/vim-airline> status line a-la powerline
+* [vim-plug][] plugins manager
+* [vim-fugitive][] git
+* [vim-airline][] status line a-la powerline
+
+[vim-plug]: https://github.com/junegunn/vim-plug
+[vim-fugitive]: https://github.com/tpope/vim-fugitive
+[vim-airline]: https://github.com/vim-airline/vim-airline
