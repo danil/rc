@@ -55,17 +55,33 @@ https://vim.rtorr.com
 
 [bufexplorer][] is a buffer of a buffers list
 
+[bufexplorer]: https://github.com/jlanzarotta/bufexplorer
+
+## Buffer open/create new unnamed buffer
+
+* `:new`  in a horizontally split window
+* `:enew` in the current window
+* `:vnew` in a vertically split window
+
+## Buffer close/delete buffer
+
+* `:bd` or `:bdel` or `:bdelete` hide
+* `:bw` destroy/wipeout
+
+## Buffer
+
 * `Ctrl ^` or <Ctrl 6>  Open previous
-* `:bd`                 Delete
-* `:bw`                 Delete
 * `:file your-nm`       Rename
 
-[bufexplorer]: https://github.com/jlanzarotta/bufexplorer
+## Tab
+
+* `:tabnew` open/create unnamed buffer in a new tab
+* `:tabc` or `:tabclose` close/delete tab
 
 ## Window
 
 * `:Close` `Ctrl w c`
-* `:Only`  `Ctrl w o` Close other
+* `:Only`  `Ctrl w o` Close/Delete other
 
 ## Case conversion
 
@@ -94,6 +110,16 @@ https://vim.rtorr.com
 ## History/recent files
 
 * `:bro ol` or `:browse oldfiles` then type number of file name
+
+## List error messages
+
+1. `echo :messages`
+2. ```
+   :redir > messages.txt
+   :messages
+   :redir END
+   :e messages.txt
+   ```
 
 ## Session
 
