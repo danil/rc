@@ -14,8 +14,8 @@ https://vim.rtorr.com
 
 ## Mode
 
-* `i` or `a`      Insert.
-* `v` or `Ctrl v` Visual.
+* `i` or `a`     Insert.
+* `v` or `<C-v>` Visual.
 
 ## Yanks
 
@@ -43,13 +43,13 @@ https://vim.rtorr.com
 
 ## Jump list position
 
-* `Ctrl i` Newer.
-* `Ctrl o` Older.
+* `<C-i>` Newer.
+* `<C-o>` Older.
 
 ## Scroll
 
-* `Ctrl e` Down.
-* `Ctrl y` Up.
+* `<C-e>` Down.
+* `<C-y>` Up.
 
 ## Buffer
 
@@ -72,8 +72,8 @@ https://vim.rtorr.com
 
 ## Buffer
 
-* `Ctrl ^` or <Ctrl 6> Open previous.
-* `:file your-nm`      Rename.
+* `<C-^>` or <C-6> Open previous.
+* `:file your-nm`  Rename.
 
 ## Tab
 
@@ -82,8 +82,15 @@ https://vim.rtorr.com
 
 ## Window
 
-* `:Close` `Ctrl w c`
-* `:Only`  `Ctrl w o` Close/delete other.
+* `:Close` `<C-w>c`
+* `:Only`  `<C-w>o` Close/delete other.
+
+## Window navigation
+
+* `<C-w>j`
+* `<C-w>k`
+* `<C-w>h`
+* `<C-w>l`
 
 ## Case conversion
 
@@ -138,13 +145,13 @@ https://vim.rtorr.com
 
 ## Autocomplete
 
-`Ctrl n`
+`<C-n>`
 
 ## Terminal mode
 
 * `:h terminal-emulator`
 * `:terminal` Terminal.
-* `Ctrl w N`  Normal.
+* `<C-w>N`    Normal.
 * `i` or `a`  Terminal.
 
 ## Plugins
