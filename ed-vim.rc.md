@@ -91,6 +91,10 @@ https://vim.rtorr.com
 
 [fzf.vim]: https://github.com/junegunn/fzf.vim
 
+## History/recent files
+
+* `:bro ol` or `:browse oldfiles` then type number of file name
+
 ## Session
 
 [vim-obsession][]
