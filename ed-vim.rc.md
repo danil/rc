@@ -176,6 +176,6 @@ https://vim.rtorr.com
 * [vim-fugitive][] Git.
 * [vim-airline][]  Status line a-la powerline.
 
-[vim-plug]: https://github.com/junegunn/vim-plug
-[vim-fugitive]: https://github.com/tpope/vim-fugitive
 [vim-airline]: https://github.com/vim-airline/vim-airline
+[vim-fugitive]: https://github.com/tpope/vim-fugitive
+[vim-plug]: https://github.com/junegunn/vim-plug
