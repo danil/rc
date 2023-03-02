@@ -8,11 +8,16 @@
     psql --echo-hidden
     psql --single-transaction
 
-## psql input/output
+## psql input from file
 
     psql --file=path/to/file.sql
     cat path/to/file.sql | psql
     psql < path/to/file.sql
+
+## psql output to file
+
+    psql -o path/to/file.sql
+    psql --output=path/to/file.sql
 
 ## psql print multiline to stdout
 
