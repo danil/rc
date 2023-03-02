@@ -59,6 +59,10 @@ https://vim.rtorr.com
 * `<C-e>` Down.
 * `<C-y>` Up.
 
+## Command mode
+
+`:` then `<C-f>` Search command history.
+
 ## Buffer
 
 [bufexplorer][] is a buffer of a buffers list.
