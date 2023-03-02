@@ -115,9 +115,10 @@ https://vim.rtorr.com
 * `guaw` Word to lower.
 * `gUaw` Word to uppper.
 
-## Directories/file system navigation
+## Open directory of the current open file/file system navigation
 
-`:Ex`
+* `:Ex` or `:Explore`
+* `:Sex`
 
 ## Search
 
@@ -127,12 +128,15 @@ https://vim.rtorr.com
 * `#`    Word under cursor backward.
 * `:noh` Unhighlight.
 
+## Create a new file in the directory of the current open file
+
+`:e %:h/your.file`
+
 ## Fuzzy
 
 * [fzf.vim][]
 * [vim-clap][]
 
-[fzf.vim]: https://github.com/junegunn/fzf.vim
 [vim-clap]: https://github.com/liuchengxu/vim-clap
 
 ## History/recent files
