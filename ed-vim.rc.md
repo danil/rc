@@ -63,11 +63,13 @@ https://vim.rtorr.com
 
 `:` then `<C-f>` Search command history.
 
-## Buffer
+## Buffer list
 
-[bufexplorer][] is a buffer of a buffers list.
+1. `:BufExplorer` List buffers in a [bufexplorer][] buffer.
+2. `:Buffers` Fuzzy find buffer by [fzf.vim][].
 
 [bufexplorer]: https://github.com/jlanzarotta/bufexplorer
+[fzf.vim]: https://github.com/junegunn/fzf.vim
 
 ## Buffer open/create new unnamed buffer
 
