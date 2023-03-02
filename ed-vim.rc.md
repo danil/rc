@@ -113,8 +113,9 @@ https://vim.rtorr.com
 
 ## List error messages
 
-1. `echo :messages`
-2. Redirect to file:
+1. `:echo :messages`
+2. `:enew` then `:put = execute('messages')`
+3. Redirect to file:
    ```
    :redir > messages.txt
    :messages
