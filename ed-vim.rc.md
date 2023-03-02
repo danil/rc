@@ -14,7 +14,7 @@ https://vim.rtorr.com
 
 ## Mode
 
-* `i` or `a`   Insert
+* `i` or `a`      Insert
 * `v` or `Ctrl v` Visual
 
 ## Yanks
