@@ -160,6 +160,7 @@ by popular alternative:
 ## Search
 
 * `/`    Case sensitive.
+* `?`    Backward.
 * `/\c`  Case insensitive.
 * `*`    Word under cursor forward.
 * `#`    Word under cursor backward.
