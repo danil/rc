@@ -98,7 +98,7 @@ by popular alternative:
 
 ## Buffer list
 
-1. `:BufExplorer` List buffers in a [bufexplorer][] buffer.
+1. `<\-be>` or `:BufExplorer` List buffers in a [bufexplorer][] buffer.
 2. `:Buffers` Fuzzy find buffer by [fzf.vim][].
 
 [bufexplorer]: https://github.com/jlanzarotta/bufexplorer
