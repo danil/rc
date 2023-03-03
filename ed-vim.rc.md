@@ -11,11 +11,21 @@ Default [leader key][] key `\` redefine/replace by popular alternative:
 
 [leader key]: https://reddit.com/r/vim/wiki/the_leader_mechanism
 
-## Command-line mode
+## Modes
 
-`:` enter [command-line mode][]
+* `i`     *[Insert][]* before the cursor.
+* `a`     *[Insert][]* insert (append) after the cursor.
+* `I`     *[Insert][]* at the beginning of the line.
+* `A`     *[Insert][]* (append) at the end of the line.
+* `v`     *[Visual][]* character*.
+* `V`     *[Visual][]* line*.
+* `<C-v>` *[Visual][]* block*.
+* `:`     *[Command-line][]*.
+* `:` then `<C-f>` Search [command-line][] history.
 
-[command-line mode]: https://vimhelp.org/cmdline.txt.html
+[command-line]: https://vimhelp.org/cmdline.txt.html
+[insert]: https://vimhelp.org/insert.txt.html
+[visual]: https://vimhelp.org/visual.txt.html
 
 ## Undo/redo
 
@@ -26,13 +36,6 @@ Default [leader key][] key `\` redefine/replace by popular alternative:
 
 * `x`  Delete character.
 * `dd` Delete a line.
-
-## Modes
-
-* `i` or `a` Insert mode.
-* `v`     Visual character mode.
-* `V`     Visual line mode.
-* `<C-v>` Visual block mode.
 
 ## Copy/yank line
 
@@ -75,10 +78,6 @@ Default [leader key][] key `\` redefine/replace by popular alternative:
 
 * `<C-e>` Down.
 * `<C-y>` Up.
-
-## Command mode
-
-`:` then `<C-f>` Search command history.
 
 ## Buffer list
 
