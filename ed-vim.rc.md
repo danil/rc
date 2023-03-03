@@ -8,12 +8,14 @@
 
 ## Leader key
 
-Default [leader key][] key `\` redefine/replace by popular alternative:
+Default [leader key][] key `\` [remap leader key][]/redefine/replace
+by popular alternative:
 
     " Map the leader key to a comma.
     let mapleader = ','
 
 [leader key]: https://reddit.com/r/vim/wiki/the_leader_mechanism
+[remap leader key]: https://vimhelp.org/map.txt.html#mapleader
 
 ## Modes
 
