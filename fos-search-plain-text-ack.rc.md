@@ -1,4 +1,4 @@
-# ack
+# ack rc
 
     ack Webpage ~/src/jobtest-aviasales-ru/
 
