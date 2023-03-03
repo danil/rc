@@ -1,6 +1,10 @@
 # Vim rc
 
-https://vim.rtorr.com
+1. [documentation][];
+2. [cheat sheet][];
+
+[cheat sheet]: https://vim.rtorr.com
+[documentation]: https://vimhelp.org
 
 ## Leader key
 
