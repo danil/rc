@@ -31,6 +31,7 @@ Esc or <C-[>.
 `:nmap` [Normal][] mode mappings.
 `:vmap` [Visual][] mode mappingsl
 `:imap` [Insert][] mode mappings.
+`:Maps` [Normal][] mode mappings via [fzf.vim][].
 
 ## Leader key
 
