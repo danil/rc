@@ -2,6 +2,21 @@
 
 https://vim.rtorr.com
 
+## Leader key
+
+Default [leader key][] key `\` redefine/replace by popular alternative:
+
+    " Map the leader key to a comma.
+    let mapleader = ','
+
+[leader key]: https://reddit.com/r/vim/wiki/the_leader_mechanism
+
+## Command-line mode
+
+`:` enter [command-line mode][]
+
+[command-line mode]: https://vimhelp.org/cmdline.txt.html
+
 ## Undo/redo
 
 * `u` Undo.
@@ -12,12 +27,14 @@ https://vim.rtorr.com
 * `x`  Delete character.
 * `dd` Delete a line.
 
-## Mode
+## Modes
 
-* `i` or `a`     Insert.
-* `v` or `<C-v>` Visual.
+* `i` or `a` Insert mode.
+* `v`     Visual character mode.
+* `V`     Visual line mode.
+* `<C-v>` Visual block mode.
 
-## Yanks
+## Copy/yank line
 
 * `Y` or `yy`
 * `10Y`
