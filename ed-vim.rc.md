@@ -6,19 +6,11 @@
 [cheat sheet]: https://vim.rtorr.com
 [documentation]: https://vimhelp.org
 
-## Leader key
-
-Default [leader key][] key `\` [remap leader key][]/redefine/replace
-by popular alternative:
-
-    " Map the leader key to a comma.
-    let mapleader = ','
-
-[leader key]: https://reddit.com/r/vim/wiki/the_leader_mechanism
-[remap leader key]: https://vimhelp.org/map.txt.html#mapleader
-
 ## Modes
 
+Esc or <C-[>.
+
+* `Esc` or `<C-[>` *[Normal][]*.
 * `i`     *[Insert][]* before the cursor.
 * `a`     *[Insert][]* insert (append) after the cursor.
 * `I`     *[Insert][]* at the beginning of the line.
@@ -31,7 +23,25 @@ by popular alternative:
 
 [command-line]: https://vimhelp.org/cmdline.txt.html
 [insert]: https://vimhelp.org/insert.txt.html
+[normal]: https://vimhelp.org/index.txt.html#normal-index
 [visual]: https://vimhelp.org/visual.txt.html
+
+## Key mappings/bindings
+
+`:nmap` [Normal][] mode mappings.
+`:vmap` [Visual][] mode mappingsl
+`:imap` [Insert][] mode mappings.
+
+## Leader key
+
+Default [leader key][] key `\` [remap leader key][]/redefine/replace
+by popular alternative:
+
+    " Map the leader key to a comma.
+    let mapleader = ','
+
+[leader key]: https://reddit.com/r/vim/wiki/the_leader_mechanism
+[remap leader key]: https://vimhelp.org/map.txt.html#mapleader
 
 ## Undo/redo
 
@@ -139,7 +149,11 @@ by popular alternative:
 
 ## Open directory of the current open file/file system navigation
 
-* `:Ex` or `:Explore`
+* `:e` then *your/file.name*
+
+## Open directory of the current open file/file system navigation
+
+* `:Ex` or `:Explore` then *your/dir/name*
 * `:Sex`
 
 ## Search
