@@ -96,6 +96,11 @@ by popular alternative:
 * `<C-e>` Down.
 * `<C-y>` Up.
 
+## Line numbers
+
+* `set nu` or `set number` Show/turn on.
+* `set nonu` or `set nonumber` Hide/turn off.
+
 ## Buffer list
 
 1. `<Leader-be>` or `:BufExplorer` List buffers in a [bufexplorer][] buffer.
