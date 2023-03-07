@@ -1,4 +1,4 @@
-# YUM
+# YUM rc
 
 Yellowdog Updater Modified
 

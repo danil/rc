@@ -1,4 +1,4 @@
-# Aptitude
+# Aptitude rc
 
     aptitude --prompt clean
     aptitude --prompt full-upgrade

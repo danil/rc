@@ -1,4 +1,4 @@
-# dpkg
+# dpkg rc
 
 Debian package
 

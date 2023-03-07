@@ -1,4 +1,4 @@
-# bpkg
+# bpkg rc
 
 Lightweight bash package manager
 <http://www.bpkg.io>,

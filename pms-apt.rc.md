@@ -1,4 +1,4 @@
-# APT (Advanced Packaging Tool)
+# APT (Advanced Packaging Tool) rc
 
 ## Repository add
 
