@@ -6,8 +6,6 @@
     aptitude search . | grep "^i   " \
                       | awk '{ FS = " " ; OFS = " " ; print $2 }' \
                       | less --chop-long-lines --ignore-case
-    aptitude show catdoc
-
 ## Upgrade all packages
 
 Upgrades installed packages to their most recent version
@@ -34,6 +32,10 @@ Upgrades installed packages to their most recent version
 ## Reinstall all
 
     aptitude reinstall '~i'
+
+## Show version
+
+    aptitude show your-pkg
 
 ## Search installed
 
