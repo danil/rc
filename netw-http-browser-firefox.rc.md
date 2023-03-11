@@ -17,10 +17,10 @@ You should place `userChrome.css` and
 
 ## SOCKS5
 
-<https://github.com/FelisCatus/SwitchyOmega>
+<https://github.com/feliscatus/switchyomega>
 <https://addons.mozilla.org/en-US/firefox/addon/switchyomega>
 
-[ShadowFox]: https://github.com/overdodactyl/ShadowFox
+[shadowfox]: https://github.com/overdodactyl/ShadowFox
 [1]: https://support.mozilla.org/en-US/questions/1198235
 [2]: http://kb.mozillazine.org/Chrome_folder
 [3]: http://kb.mozillazine.org/Profile_folder
