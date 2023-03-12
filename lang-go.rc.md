@@ -227,6 +227,17 @@ For examle `a[low:high:max]` or `a[0:0:0]` or `a[:0:0]`
 2. `b := append(a[:0:0], a...)` is the same as `b = append([]T(nil), a...)`
 3. `b := append(make([]T, 0, len(a)), a...)`
 
+## Compare byte slices
+
+`bytes.Compare` returns **0** if a == b, **-1** if a < b, and **+1** if a > b
+
+    bytes.Compare([]byte{1,2}, []byte{3,4})
+
+## Compare byte arrays
+
+    a1, a2 := [2]byte{1, 2}, [2]byte{3, 4}
+    fmt.Println(bytes.Compare(a1[:], a2[:]))
+
 ## Language/locale
 
 * https://go.dev/blog/matchlang
