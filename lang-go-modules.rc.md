@@ -90,13 +90,13 @@ Test all packages sub directories
 
     find . -name '*_test.go' -exec sh -c 'echo "{}" && cd $(dirname "{}")  && go test' \;
 
-## Why
+## Mod why
 
 Find out wrhere the dependence is used
 
     go mod why -m
 
-## Remove unused
+## Remove unused modules
 
 Removing/pruning unused dependencies
 
