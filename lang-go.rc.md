@@ -269,3 +269,9 @@ func main() {
     }
 }
 ```
+
+## JSON marshaling of map fields in sorted order
+
+The Go standard library already preserves sorted order of map keys:
+
+> The map keys are sorted
