@@ -5,7 +5,7 @@
 3. [dpkg][]
 4. [apt][] dpkg frontend
 5. [dnf][] rpm frontend
-6. [yum][] rpm frontend (DEPRECATED)
+6. [yum][] rpm frontend DEPRECATED
 
 [apt]: https://salsa.debian.org/apt-team/apt
 [dnf]: https://github.com/rpm-software-management/dnf
