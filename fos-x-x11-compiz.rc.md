@@ -1,12 +1,10 @@
-# Compiz
+# Compiz rc
 
-## Temporary files
-
-### Window decorations
+## Window decorations
 
     emerald --replace
 
-### Cleanup
+## Temporary files cleanup
 
 <http://forums.gentoo.org/viewtopic-p-7111782.html#7111782>.
 
