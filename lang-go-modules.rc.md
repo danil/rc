@@ -102,6 +102,12 @@ Removing/pruning unused dependencies
 
     go mod tidy -v
 
+## Mod checksum mismatch
+
+> This download does NOT match an earlier download recorded in go.sum.
+
+    go clean -modcache
+
 ## Gitlab private sub group module get error
 
 * https://gitlab.com/gitlab-org/gitlab-foss/-/issues/37832
