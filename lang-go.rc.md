@@ -270,6 +270,32 @@ func main() {
 }
 ```
 
+## Context
+
+1. [context.Context][]
+2. [net.Context][] Is a former beta version.
+
+[context.context]: https://pkg.go.dev/context
+[net.context]: https://pkg.go.dev/golang.org/x/net/context
+
+## Query string key-value pairs
+
+[Query string][] of Uniform Resource Identifier URI encoded in
+[application/x-www-form-urlencoded][] algorithm is a _sorted list_
+of [name-value pair][]s implemented by [net/url][] package
+encodes the values into URL encoded form _sorted by key_.
+
+    v := url.Values{}
+    v.Add("3", "xyz"); v.Add("1", "foo"); v.Add("2", "bar")
+    fmt.Println(v.Encode()) // 1=foo&2=bar&3=xyz
+
+<https://go.dev/play/p/gCRFEuO4CkC>
+
+[application/x-www-form-urlencoded]: <http://w3.org/TR/html5/forms.html#application/x-www-form-urlencoded-encoding-algorithm>
+[name-value pair]: https://en.wikipedia.org/wiki/Name-value_pair
+[net/url]: <https://pkg.go.dev/net/url>
+[query string]: <https://www.rfc-editor.org/rfc/rfc3986#section-3.4>
+
 ## JSON marshaling of map fields in sorted order
 
 The Go standard library already preserves sorted order of map keys:
