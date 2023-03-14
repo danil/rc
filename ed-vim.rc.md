@@ -147,21 +147,6 @@ by popular alternative:
 * `<C-w>h`
 * `<C-w>l`
 
-## Case conversion
-
-* `~`    Switch char case.
-* `guaw` Word to lower.
-* `gUaw` Word to uppper.
-
-## Open directory of the current open file/file system navigation
-
-* `:e` then *your/file.name*
-
-## Open directory of the current open file/file system navigation
-
-* `:Ex` or `:Explore` then *your/dir/name*
-* `:Sex`
-
 ## Search
 
 * `/`    Case sensitive.
@@ -171,9 +156,18 @@ by popular alternative:
 * `#`    Word under cursor backward.
 * `:noh` Unhighlight.
 
+## Open directory of the current open file/file system navigation
+
+* `:e` then *your/file.name*
+
 ## Create a new file in the directory of the current open file
 
 `:e %:h/your.file`
+
+## Open directory of the current open file/file system navigation
+
+* `:Ex` or `:Explore` then *your/dir/name*
+* `:Sex`
 
 ## Fuzzy
 
@@ -231,3 +225,9 @@ by popular alternative:
 [vim-airline]: https://github.com/vim-airline/vim-airline
 [vim-fugitive]: https://github.com/tpope/vim-fugitive
 [vim-plug]: https://github.com/junegunn/vim-plug
+
+## Case conversion
+
+* `~`    Switch char case.
+* `guaw` Word to lower.
+* `gUaw` Word to uppper.
