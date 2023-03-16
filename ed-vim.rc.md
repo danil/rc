@@ -171,10 +171,10 @@ by popular alternative:
 
 ## Fuzzy
 
-* [fzf][]
-* [vim clap][]
+1. [fzf][]
+2. [clap][]
 
-[vim clap]: https://github.com/liuchengxu/vim-clap
+[clap]: https://github.com/liuchengxu/vim-clap
 
 ## History/recent files
 
