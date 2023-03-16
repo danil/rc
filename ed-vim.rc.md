@@ -231,3 +231,7 @@ by popular alternative:
 * `~`    Switch char case.
 * `guaw` Word to lower.
 * `gUaw` Word to uppper.
+
+## Dark high-contrast color scheme.
+
+1. https://github.com/tpope/vim-vividchalk
