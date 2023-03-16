@@ -4,19 +4,19 @@
 
 [CRC-32][] vs [Adler-32][] vs [MurmurHash3][] vs [xxHash][] vs [BLAKE3][]
 
-[Adler-32]: https://github.com/madler/zlib
-[BLAKE3]: https://github.com/blake3-team/blake3
-[CRC-32]: https://en.wikipedia.org/wiki/Cyclic_redundancy_check
-[MurmurHash3]: https://github.com/aappleby/smhasher
+[adler-32]: https://github.com/madler/zlib
+[blake3]: https://github.com/blake3-team/blake3
+[crc-32]: https://en.wikipedia.org/wiki/Cyclic_redundancy_check
+[murmurhash3]: https://github.com/aappleby/smhasher
 [speed test]: https://github.com/rurban/smhasher
-[xxHash]: https://github.com/cyan4973/xxhash
+[xxhash]: https://github.com/cyan4973/xxhash
 
 ## [MD5][] create
 
     cat path/to/file | md5sum
     md5sum path/to/file
 
-[MD5]: https://en.wikipedia.org/wiki/MD5
+[md5]: https://en.wikipedia.org/wiki/MD5
 
 ## MD5 verify/check
 
@@ -28,7 +28,7 @@
     cat path/to/file | sha1sum
     sha1sum path/to/file
 
-[SHA-1]: https://en.wikipedia.org/wiki/SHA-1
+[sha-1]: https://en.wikipedia.org/wiki/SHA-1
 
 ## SHA-1 verify/check
 
