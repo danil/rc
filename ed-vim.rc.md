@@ -18,10 +18,10 @@ Esc or <C-[>.
 * `v`     *[Visual][]* character*.
 * `V`     *[Visual][]* line*.
 * `<C-v>` *[Visual][]* block*.
-* `:`     *[Command-line][]*.
-* `:` then `<C-f>` Search [command-line][] history.
+* `:`     *[command line][]*.
+* `:` then `<C-f>` Search [command line][] history.
 
-[command-line]: https://vimhelp.org/cmdline.txt.html
+[command line]: https://vimhelp.org/cmdline.txt.html
 [insert]: https://vimhelp.org/insert.txt.html
 [normal]: https://vimhelp.org/index.txt.html#normal-index
 [visual]: https://vimhelp.org/visual.txt.html
@@ -31,7 +31,7 @@ Esc or <C-[>.
 `:nmap` [Normal][] mode mappings.
 `:vmap` [Visual][] mode mappingsl
 `:imap` [Insert][] mode mappings.
-`:Maps` [Normal][] mode mappings via [fzf.vim][].
+`:Maps` [Normal][] mode mappings via [fzf][].
 
 ## Leader key
 
@@ -104,10 +104,10 @@ by popular alternative:
 ## Buffer list
 
 1. `<Leader-be>` or `:BufExplorer` List buffers in a [bufexplorer][] buffer.
-2. `:Buffers` Fuzzy find buffer by [fzf.vim][].
+2. `:Buffers` Fuzzy find buffer by [fzf][].
 
 [bufexplorer]: https://github.com/jlanzarotta/bufexplorer
-[fzf.vim]: https://github.com/junegunn/fzf.vim
+[fzf]: https://github.com/junegunn/fzf.vim
 
 ## Buffer open/create new unnamed buffer
 
@@ -171,10 +171,10 @@ by popular alternative:
 
 ## Fuzzy
 
-* [fzf.vim][]
-* [vim-clap][]
+* [fzf][]
+* [vim clap][]
 
-[vim-clap]: https://github.com/liuchengxu/vim-clap
+[vim clap]: https://github.com/liuchengxu/vim-clap
 
 ## History/recent files
 
@@ -198,12 +198,12 @@ by popular alternative:
 
 ## Session
 
-[vim-obsession][]
+[obsession][]
 
 * `:mks!`               Save.
 * `:source Session.vim` Load.
 
-[vim-obsession]: https://github.com/tpope/vim-obsession
+[obsession]: https://github.com/tpope/vim-obsession
 
 ## Autocomplete
 
@@ -218,13 +218,13 @@ by popular alternative:
 
 ## Plugins
 
-* [vim-plug][]     Plugins manager.
-* [vim-fugitive][] Git.
-* [vim-airline][]  Status line a-la powerline.
+* [plug][]     Plugins manager.
+* [fugitive][] Git.
+* [airline][]  Status line a-la powerline.
 
-[vim-airline]: https://github.com/vim-airline/vim-airline
-[vim-fugitive]: https://github.com/tpope/vim-fugitive
-[vim-plug]: https://github.com/junegunn/vim-plug
+[airline]: https://github.com/vim-airline/vim-airline
+[fugitive]: https://github.com/tpope/vim-fugitive
+[plug]: https://github.com/junegunn/vim-plug
 
 ## Case conversion
 
