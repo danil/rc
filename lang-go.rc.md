@@ -184,6 +184,19 @@ go run -ldflags "-X path/to/package.foo=123 -X path/to/package.Bar=xyz" main.go
 
     env GOARCH=arm64 go build
 
+## [Type conversion][]
+
+    var i int = 42; f float64 = float(i)
+    i := (*int)(nil)
+
+[type conversion]: https://go.dev/ref/spec#Conversions
+
+## [Type assertion][]
+
+    var x interface{} = 42; i := x.(int)
+
+[type assertion]: https://go.dev/ref/spec#Type_assertions
+
 ## Civil time vs monotonic
 
 Arguments for `time.Time` type and against `time.Date` type
