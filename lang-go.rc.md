@@ -186,7 +186,8 @@ go run -ldflags "-X path/to/package.foo=123 -X path/to/package.Bar=xyz" main.go
 
 ## Civil time vs monotonic
 
-Arguments against time.Date type <https://github.com/golang/go/issues/19700#issuecomment-559250634>
+Arguments for `time.Time` type and against `time.Date` type
+<https://github.com/golang/go/issues/19700#issuecomment-559250634>.
 
 ## Multiply duration
 
