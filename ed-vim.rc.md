@@ -184,7 +184,7 @@ by popular alternative:
 
 1. `::messages`
 2. `:enew` then `:put = execute('messages')`
-3. Redirect to file:
+3. Redirect to a file:
    ```
    :redir > messages.txt
    :messages
