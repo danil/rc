@@ -182,7 +182,7 @@ by popular alternative:
 
 ## List error messages
 
-1. `::messages`
+1. `:messages`
 2. `:enew` then `:put = execute('messages')`
 3. Redirect to a file:
    ```
