@@ -238,6 +238,6 @@ by popular alternative:
 
 ## Dark high-contrast color scheme.
 
-1. Put `vividchalk` in `~/vim/colors/` or `Plug 'tpope/vim-vividchalk'`
+1. Put [vividchalk][] in `~/vim/colors/` or `Plug 'tpope/vim-vividchalk'`
 
 [vividchalk]: https://github.com/tpope/vim-vividchalk
