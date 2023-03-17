@@ -26,16 +26,16 @@ Esc or <C-[>.
 [normal]: https://vimhelp.org/index.txt.html#normal-index
 [visual]: https://vimhelp.org/visual.txt.html
 
-## Key mappings/bindings
+## Key mod mappings/bindings
 
-`:nmap` [Normal][] mode mappings.
-`:vmap` [Visual][] mode mappingsl
-`:imap` [Insert][] mode mappings.
-`:Maps` [Normal][] mode mappings via [fzf][].
+`:nmap` [Normal][].
+`:vmap` [Visual][].
+`:imap` [Insert][].
+`:Maps` [Normal][] by [fzf][].
 
 ## Leader key
 
-Default [leader key][] key `\` [remap leader key][]/redefine/replace
+Default [leader key][] key is `\` [remap leader key][]/redefine/replace
 by popular alternative:
 
     " Map the leader key to a comma.
@@ -63,13 +63,21 @@ by popular alternative:
 
 `P` or `p`
 
-## Reload/reread file
+## Window navigation
 
-`:e`
+* `<C-w>j`
+* `<C-w>k`
+* `<C-w>h`
+* `<C-w>l`
 
-## Sort visual lines
+## Search
 
-`:sort`
+* `/`    Case sensitive.
+* `?`    Backward.
+* `/\c`  Case insensitive.
+* `*`    Word under cursor forward.
+* `#`    Word under cursor backward.
+* `:noh` Unhighlight.
 
 ## Cursor move/navigation by word
 
@@ -95,11 +103,6 @@ by popular alternative:
 
 * `<C-e>` Down.
 * `<C-y>` Up.
-
-## Line numbers
-
-* `set nu` or `set number` Show/turn on.
-* `set nonu` or `set nonumber` Hide/turn off.
 
 ## Buffer list
 
@@ -140,21 +143,14 @@ by popular alternative:
 * `<C-w>>` `<C-w><` Increase/decrease width.
 * `<C-w>c` `:Close`
 
-## Window navigation
+## Line numbers
 
-* `<C-w>j`
-* `<C-w>k`
-* `<C-w>h`
-* `<C-w>l`
+* `set nu` or `set number` Show/turn on.
+* `set nonu` or `set nonumber` Hide/turn off.
 
-## Search
+## Reload/reread file
 
-* `/`    Case sensitive.
-* `?`    Backward.
-* `/\c`  Case insensitive.
-* `*`    Word under cursor forward.
-* `#`    Word under cursor backward.
-* `:noh` Unhighlight.
+`:e`
 
 ## Open directory of the current open file/file system navigation
 
@@ -180,6 +176,10 @@ by popular alternative:
 
 * `:bro ol` or `:browse oldfiles` then type number of file name.
 
+## Sort visual lines
+
+`:sort`
+
 ## List error messages
 
 1. `::messages`
@@ -194,7 +194,11 @@ by popular alternative:
 
 ## Configuration reload/refresh
 
-`:so $MYVIMRC`
+`:so $MYVIMRC` or `:source $MYVIMRC`
+
+## Read/evaluate current file
+
+`:so %` or `:source %`
 
 ## Session
 
@@ -234,4 +238,6 @@ by popular alternative:
 
 ## Dark high-contrast color scheme.
 
-1. https://github.com/tpope/vim-vividchalk
+1. Put `vividchalk` in `~/vim/colors/` or `Plug 'tpope/vim-vividchalk'`
+
+[vividchalk]: https://github.com/tpope/vim-vividchalk
