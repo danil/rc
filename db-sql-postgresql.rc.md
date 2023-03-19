@@ -1079,6 +1079,22 @@ https://www.postgresql.org/docs/current/queries-table-expressions.html#id-1.5.6.
     SELECT * FROM your_tbl1 JOIN AS t1 JOIN your_tbl2 AS t2 ON t1.id = t2.rel_id;
     SELECT * FROM your_tbl1 INNER JOIN AS t1 JOIN your_tbl2 AS t2 ON t1.id = t2.rel_col;
 
+## Join conditional/case/polymorphic association
+
+<https://stackoverflow.com/questions/2333501/sql-conditional-case-joining-polymorphic-associations#2333543>
+
+    SELECT cli.id AS client_id,
+           CASE WHEN per.id IS NOT NULL THEN 'person'
+                WHEN cop.id IS NOT NULL THEN 'company'
+           END AS person_type,
+           COALESCE(per.id, cop.id) AS person_id,
+           COALESCE(per.first_name, cop.first_name) AS first_name
+    FROM clients AS cli
+    LEFT JOIN people AS per ON per.client_id = cli.id
+    LEFT JOIN companies AS com ON com.client_id = cli.id
+    LEFT JOIN people AS cop ON cop.id = com.person_id
+    WHERE cli.id = 42;
+
 ## Combining queries/сочетание запросов union/intersect/except
 
 https://postgrespro.ru/docs/postgresql/current/queries-union
