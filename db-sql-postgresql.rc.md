@@ -1025,6 +1025,101 @@ group of duplicates).
     SELECT tstzrange('1970-12-31', '2000-12-31', '[]')
         && tstzrange('1970-12-31', '2000-12-31', '[]');
 
+## Join/соединение
+
+* <https://postgrespro.ru/docs/postgrespro/current/tutorial-join>
+* <https://en.wikipedia.org/wiki/Join_(SQL)>
+
+## Join types: outer (left/right/full) and inner and cross
+
+1. `INNER JOIN` = `JOIN`
+2. `LEFT OUTER JOIN`  = `LEFT JOIN`
+   `RIGHT OUTER JOIN` = `RIGHT JOIN`
+   `FULL OUTER JOIN`  = `FULL JOIN`
+3. `CROSS JOIN`
+
+* <https://postgresql.org/docs/current/queries-table-expressions.html#id-1.5.6.6.5.6.4.3.1.1>
+* <https://postgrespro.ru/docs/postgrespro/15/queries-table-expressions#id-1.5.6.6.5.6.4.3.1.1>
+* <https://stackoverflow.com/questions/406294/left-join-vs-left-outer-join-in-sql-server#42854352>
+
+## Outer join shorthand as left join and right join
+
+* `LEFT JOIN`  = `LEFT OUTER JOIN`
+* `RIGHT JOIN` = `RIGHT OUTER JOIN`
+
+https://www.postgresql.org/docs/current/queries-table-expressions.html#id-1.5.6.6.5.6.4.3.1.1
+
+## Join behavior/description
+
+* `INNER JOIN`
+   Returns rows when there is a match in both tables.
+* `LEFT JOIN`
+   Returns all rows from the left table, even if there
+   are no matches in the right table.
+* `RIGHT JOIN`
+   Returns all rows from the right table, even if there
+   are no matches in the left table.
+* `FULL JOIN`
+   Combines the results of both left and right outer joins.
+   The joined table will contain all records from both the tables
+   and fill in NULLs for missing matches on either side.
+* `SELF JOIN`
+   Joins a table to itself as if the table were two tables,
+   temporarily renaming at least one table in the SQL statement.
+* `CROSS JOIN` or `CARTESIAN JOIN`
+   Returns the Cartesian product of the sets of records
+   from the two or more joined tables.
+
+<https://stackoverflow.com/questions/5706437/whats-the-difference-between-inner-join-left-join-right-join-and-full-join#28719292>
+
+## Inner join is default
+
+<https://www.postgresql.org/docs/current/queries-table-expressions.html#id-1.5.6.6.5.6.4.3.1.1>
+
+    SELECT * FROM your_tbl1 JOIN AS t1 JOIN your_tbl2 AS t2 ON t1.id = t2.rel_id;
+    SELECT * FROM your_tbl1 INNER JOIN AS t1 JOIN your_tbl2 AS t2 ON t1.id = t2.rel_col;
+
+## Combining queries/сочетание запросов union/intersect/except
+
+https://postgrespro.ru/docs/postgresql/current/queries-union
+
+## Union/объединение
+
+* <https://en.wikipedia.org/wiki/Union_(SQL)>
+* <https://postgrespro.ru/docs/postgrespro/current/tutorial-join>
+
+```sql
+WITH cte AS (
+     SELECT id,
+            your_tbl2_id,
+            your_id2
+     FROM your_tbl1
+     WHERE id = 42
+) ( SELECT 'your_tbl1' AS table_nm,
+           id,
+           your_col1,
+           NULL AS your_col2,
+           NULL AS your_col3
+    FROM 'your_tbl1'
+    WHERE id IN (SELECT id FROM cte)
+  ) UNION ALL (
+    SELECT 'your_tbl2' AS table_nm,
+           id,
+           NULL AS your_col1,
+           your_col2,
+           -1 AS your_col3
+    FROM your_tbl2
+    WHERE your_tbl1_id = IN (SELECT id FROM cte)
+  ) UNION ALL (
+    SELECT 'your_tbl3' AS table_nm,
+           id,
+           NULL AS your_col1,
+           NULL AS your_col2
+    FROM your_tbl3
+    WHERE id IN (SELECT your_id2 FROM cte)
+  ) ORDER BY your_col1 NULLS LAST;
+```
+
 ## List functions
 
 List functions in schema `foo`
