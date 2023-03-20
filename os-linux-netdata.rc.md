@@ -1,6 +1,6 @@
-# netdata
+# netdata rc
 
-<https://github.com/firehol/netdata>
+<https://github.com/netdata/netdata>
 
 ## Module debugging
 

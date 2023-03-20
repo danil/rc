@@ -1,4 +1,4 @@
-# webpack
+# webpack rc
 
 ## Public host serving
 

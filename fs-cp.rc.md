@@ -1,4 +1,4 @@
-# cp
+# cp rc
 
 ## Backup/preserving attributes
 
