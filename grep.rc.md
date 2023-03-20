@@ -7,8 +7,9 @@
 
     grep --files-with-matches --no-messages
 
-## Select non-matching lines
+## Select reverse/exclude/negative/non-matching lines
 
+    grep -v foo.*bar
     grep --invert-match foo.*bar
 
 ## Recursive
