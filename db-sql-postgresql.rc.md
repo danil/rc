@@ -79,6 +79,35 @@ Backuping:
 
     set enable_seqscan = off;
 
+## Primary key/identifier UUIDv4
+
+1. `SELECT gen_random_uuid();` supersedes `SELECT uuid_generate_v4();`
+2. `SELECT idkit_uuidv7_generate();` and `SELECT idkit_uuidv6_generate();` is a [rfc 4122][]
+3. `SELECT idkit_nanoid_generate();`
+4. `SELECT idkit_ksuid_generate();`
+5. `SELECT idkit_ulid_generate();`
+6. `SELECT idkit_timeflake_generate();` inspired by Twitter's Snowflake, Instagram's ID and Firebase's PushID
+7. `SELECT idkit_pushid_generate();`
+8. `SELECT idkit_xid_generate();`
+9. `SELECT idkit_cuid_generate();`
+
+## Primary key/identifier UUIDv6/UUIDv7/UUIDv8 TODO
+
+[pg_idkit][] is a PostgreSQL extension for generating UUID by [pgx framework][]
+[rfc 4122][] <https://supabase.com/blog/choosing-a-postgres-primary-key>.
+
+[pg_idkit]: https://github.com/vadosware/pg_idkit
+[pgx framework]: https://github.com/tcdi/pgx
+[rfc 4122]: https://datatracker.ietf.org/doc/html/draft-peabody-dispatch-new-uuid-format-04
+
+## Random integer/int4
+
+    SELECT floor(random() * 2147483647 + 1)::bigint;
+
+## Random bigint/int8
+
+    SELECT floor(random() * 9223372036854775807 + 1)::bigint;
+
 ## Array
 
     SELECT ARRAY['foo','bar'];
