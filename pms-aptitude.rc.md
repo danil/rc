@@ -6,6 +6,7 @@
     aptitude search . | grep "^i   " \
                       | awk '{ FS = " " ; OFS = " " ; print $2 }' \
                       | less --chop-long-lines --ignore-case
+
 ## Upgrade all packages
 
 Upgrades installed packages to their most recent version
