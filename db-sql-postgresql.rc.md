@@ -79,7 +79,7 @@ Backuping:
 
     set enable_seqscan = off;
 
-## Primary key/identifier UUIDv4
+## Primary key/identifier
 
 1. `SELECT gen_random_uuid();` supersedes `SELECT uuid_generate_v4();`
 2. `SELECT idkit_uuidv7_generate();` and `SELECT idkit_uuidv6_generate();` is a [rfc 4122][]
@@ -91,10 +91,10 @@ Backuping:
 8. `SELECT idkit_xid_generate();`
 9. `SELECT idkit_cuid_generate();`
 
-## Primary key/identifier UUIDv6/UUIDv7/UUIDv8 TODO
+## Primary key/identifier [rfc 4122][] UUIDv6/UUIDv7/UUIDv8
 
 [pg_idkit][] is a PostgreSQL extension for generating UUID by [pgx framework][]
-[rfc 4122][] <https://supabase.com/blog/choosing-a-postgres-primary-key>.
+<https://supabase.com/blog/choosing-a-postgres-primary-key>.
 
 [pg_idkit]: https://github.com/vadosware/pg_idkit
 [pgx framework]: https://github.com/tcdi/pgx
