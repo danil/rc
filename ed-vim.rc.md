@@ -120,10 +120,15 @@ by popular alternative:
 
 <https://stackoverflow.com/questions/4478111/vim-how-do-you-open-another-no-name-buffer-like-the-one-on-startup#4478193>
 
-## Buffer close/delete buffer
+## Buffer/file close/delete buffer _without save_
 
 * `:bd` or `:bdel` or `:bdelete` Hide.
 * `:bw` Destroy/wipeout.
+
+## Save file and close/delete buffer
+
+* `:w|bd` Save and hide.
+* `:w|bw` Save and destroy.
 
 ## Buffer
 
@@ -151,6 +156,10 @@ by popular alternative:
 ## Reload/reread file
 
 `:e`
+
+## Save file/write
+
+* `:w`
 
 ## Open directory of the current open file/file system navigation
 
