@@ -13,10 +13,6 @@
 
     flatpak install --verbose flathub your.package.Name
 
-## Run
-
-    flatpak run your.package.Name "$@"
-
 ## Remove/delete package
 
     flatpak uninstall your.package.Name
@@ -28,6 +24,10 @@
 ## Update all packages
 
     flatpak update
+
+## Run
+
+    flatpak run your.package.Name "$@"
 
 ## List remotes
 
