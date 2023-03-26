@@ -1,4 +1,4 @@
-# GPG
+# GPG rc
 
 GNU Privacy Guard
 

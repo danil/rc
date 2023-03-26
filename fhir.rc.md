@@ -1,11 +1,9 @@
-# FHIR
+# FHIR rc
 
 Fast Healthcare Interoperability Resources
 <http://hl7-fhir.github.io>
 
-## OperationOutcome
-
-### Types
+## OperationOutcome types
 
 Content Logical Definition
 

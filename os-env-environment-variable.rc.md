@@ -1,4 +1,4 @@
-# Env
+# Env rc
 
     LANG=ru_RU.UTF-8; export LANG;
 

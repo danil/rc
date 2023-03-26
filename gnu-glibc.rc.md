@@ -1,7 +1,7 @@
-# glibc
+# glibc rc
 
 GNU libc6 (also called glibc2) C library
-<https://www.gnu.org/software/libc/libc.html>
+<https://gnu.org/software/libc/libc.html>
 
 ## Get number of CPU cores
 

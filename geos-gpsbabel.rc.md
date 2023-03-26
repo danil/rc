@@ -1,4 +1,4 @@
-# GPSBabel
+# GPSBabel rc
 
 ## Reduce track points
 

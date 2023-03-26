@@ -1,4 +1,4 @@
-# Gnome keyring
+# Gnome keyring rc
 
 ## Reset all passwords
 
