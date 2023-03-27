@@ -120,7 +120,7 @@ by popular alternative:
 
 <https://stackoverflow.com/questions/4478111/vim-how-do-you-open-another-no-name-buffer-like-the-one-on-startup#4478193>
 
-## Buffer/file close/delete buffer _without save_
+## Buffer/file close/delete/kill buffer _without save_
 
 * `:bd` or `:bdel` or `:bdelete` Hide.
 * `:bw` Destroy/wipeout.
