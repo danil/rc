@@ -3,9 +3,13 @@
 [mime]: https://freedesktop.org/wiki/Specifications/mime-apps-spec
 [xdg]: https://freedesktop.org/wiki/Software/xdg-utils
 
-## Query
+## Query default application of MIME type
 
     xdg-mime query default text/html
+
+## Query MIME type of file
+
+    file --mime-type -b path/to/file
 
 ## Open
 

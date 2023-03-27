@@ -73,7 +73,7 @@ Socket session create
 
 `tmux detach`: `prefix + d`
 
-## Session dettach by name
+## Session dettach/close/kill by name
 
 <https://stackoverflow.com/questions/22138211/how-do-i-disconnect-all-other-users-in-tmux>
 
