@@ -26,3 +26,10 @@ gvfs-open, kde-open or exo-open respectively.
 
     zypper install perl-File-MimeInfo || apt-get install libfile-mimeinfo-perl
     mimeopen --ask-default path/to/your/file
+
+## Update database of desktop entries
+
+* https://wiki.archlinux.org/title/desktop_entries#Update_database_of_desktop_entries
+* https://wiki.archlinux.org/title/XDG_MIME_Applications
+
+    update-desktop-database -v ~/.local/share/applications
