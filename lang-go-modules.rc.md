@@ -114,13 +114,13 @@ Removing/pruning unused dependencies
 * https://gitlab.com/gitlab-org/gitlab-foss/-/issues/65681
 * <https://www.reddit.com/r/golang/comments/9n2phh/go_1111_module_issue_with_gitlab> nginx proxy workaround
 
-## TROUBLESHOOTING: Fatal: could not read Username for 'https://your.tld': terminal prompts disabled
+## TROUBLESHOOTING Fatal: could not read Username for 'https://your.tld': terminal prompts disabled
 
     $ cat >> ~/.gitconfig
     [url "git@tyour.tld:"]
         insteadOf = https://your.tld/
 
-## TROUBLESHOOTING: Remote: ERROR: The project you were looking for could not be found or you don't have permission to view it
+## TROUBLESHOOTING Remote: ERROR: The project you were looking for could not be found or you don't have permission to view it
 
 Maybe missing proxy?
 
