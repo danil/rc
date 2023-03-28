@@ -1,10 +1,12 @@
 # Vim rc
 
 1. [documentation][];
-2. [cheat sheet][];
+2. [vim script][]s;
+3. [cheat sheet][];
 
 [cheat sheet]: https://vim.rtorr.com
 [documentation]: https://vimhelp.org
+[vim script]: https://github.com/vim-scripts
 
 ## Modes
 
