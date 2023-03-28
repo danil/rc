@@ -6,7 +6,7 @@
 
     sysbench --test=cpu --cpu-max-prime=20000 run
 
-### Multithreaded
+## CPU Multithreaded
 
     sysbench --test=cpu --num-threads=4 run
 
@@ -14,15 +14,13 @@
 
     sysbench --test=memory --memory-total-size=1G run
 
-## Disk
-
-### dd
+## Disk dd
 
 <https://haydenjames.io/web-host-doesnt-want-read-benchmark-vps>
 
     dd if=/dev/zero of=/tmp/foobar bs=1M count=1024 conv=fdatasync
 
-### Other
+## Disk TODO
 
 * app-benchmarks/bonnie++
 * app-benchmarks/dbench
