@@ -1,4 +1,4 @@
-# Travis CI
+# Travis CI rc
 
 Command line interface (CLI) for Travis CI (install via RubyGems)
 <https://rubygems.org/gems/travis>
@@ -8,11 +8,11 @@ Command line interface (CLI) for Travis CI (install via RubyGems)
 
 <https://docs.travis-ci.com/user/environment-variables/#Default-Environment-Variables>
 
-### Language version
+## Language version environment variable
 
-`$TRAVIS_RUBY_VERSION` or `$TRAVIS_GO_VERSION`
+`$TRAVIS_RUBY_VERSION` or `$TRAVIS_GO_VERSION`.
 
-### Current commit
+## Current commit environment variable
 
 The commit that the current build is testing `$TRAVIS_COMMIT`
 
@@ -56,7 +56,7 @@ Compile dependencies from source
 
     travis setup releases
 
-### Conditional deploy
+## Conditional deploy
 
 <https://docs.travis-ci.com/user/deployment#Conditional-Releases-with-on%3A>
 
