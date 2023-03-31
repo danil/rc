@@ -20,6 +20,10 @@
 
     brew list
 
+## Check if package is installed
+
+    brew list your-pkg
+
 ## Search
 
     brew search your-pkg
