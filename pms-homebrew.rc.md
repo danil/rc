@@ -33,6 +33,14 @@
 
     brew desc your-pkg
 
+## List package files excludes jpeg, png, gif, conf and so on
+
+    brew ls your-pkg
+
+## List all files of package
+
+    brew ls --verbose your-pkg
+
 ## Install
 
     brew install your-pkg
