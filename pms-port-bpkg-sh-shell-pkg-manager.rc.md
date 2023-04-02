@@ -1,21 +1,19 @@
 # bpkg rc
 
 Lightweight bash package manager
-<http://www.bpkg.io>,
+<http://bpkg.io>,
 <https://github.com/bpkg/bpkg>
 
-## Install
+## Install bpkg
 
     curl -Lo- http://get.bpkg.io | PREFIX="$HOME" bash
     export PATH="$PATH":"$HOME"/deps/bin
 
-## Uninstall
+## Uninstall bpkg
 
     rm `which bpkg`*
 
-## Usage
-
-### Install
+## Install
 
 Packages list <https://github.com/bpkg/bpkg/wiki/index>
 
