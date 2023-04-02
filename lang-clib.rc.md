@@ -1,4 +1,4 @@
-# clib
+# clib rc
 
 C package manager-ish <https://github.com/clibs/clib>
 
