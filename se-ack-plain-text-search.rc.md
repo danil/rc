@@ -1,6 +1,8 @@
-# ack rc
+# [ack][] rc
 
-    ack Webpage ~/src/jobtest-aviasales-ru/
+    ack your-search-term path/to/your.file
+
+[ack]: https://github.com/beyondgrep/ack3
 
 ## Search for file name
 
@@ -8,4 +10,4 @@
 
 ## Only print filenames containing matches
 
-    ack --files-with-matches "{{" config/
+    ack --files-with-matches "your-search-term" path/to/your.file
