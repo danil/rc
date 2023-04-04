@@ -269,7 +269,7 @@ Backuping:
     --  00:00:08.1545
     -- (1 row)
 
-[aggregate][] [aggregate ru][]
+<sup>[aggregate][] [aggregate ru][]</sup>
 
 ## Show/describe enum type
 
