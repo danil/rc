@@ -1,4 +1,4 @@
-# Mail.ru cloud
+# Mail.ru cloud rc
 
 ## Config
 
