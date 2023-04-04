@@ -262,12 +262,14 @@ Backuping:
        SELECT '1970-01-01 23:59:44.111Z'::timestamptz AS started_at,
               '1970-01-01 23:59:59.222Z'::timestamptz AS finished_at )
 
-    ) SELECT avg(finished_at - started_at) FROM your_cte;
+    ) SELECT avg(finished_at - started_at) AS aggregate FROM your_cte;
 
-    --       avg
+    -- avg
     -- ---------------
     --  00:00:08.1545
     -- (1 row)
+
+[aggregate][] [aggregate ru][]
 
 ## Show/describe enum type
 
@@ -1271,3 +1273,8 @@ Load data from csv file
 <http://www.postgresql.org/docs/current/static/sql-deallocate.html>
 
     DEALLOCATE your_statement_nm;
+
+<!-- Reference -->
+
+[aggregate]: https://postgresql.org/docs/current/functions-aggregate.html
+[aggregate ru]: https://postgrespro.ru/docs/postgrespro/15/functions-aggregate
