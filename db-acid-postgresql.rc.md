@@ -253,6 +253,22 @@ Backuping:
 
     SELECT (CURRENT_DATE - INTERVAL '1 year')::timestamptz;
 
+## Average timestamp duration/interval
+
+    WITH your_cte AS (
+     ( SELECT '1970-01-01 23:59:42.123Z'::timestamptz AS started_at,
+              '1970-01-01 23:59:43.321Z'::timestamptz AS finished_at
+     ) UNION ALL (
+       SELECT '1970-01-01 23:59:44.111Z'::timestamptz AS started_at,
+              '1970-01-01 23:59:59.222Z'::timestamptz AS finished_at )
+
+    ) SELECT avg(finished_at - started_at) FROM your_cte;
+
+    --       avg
+    -- ---------------
+    --  00:00:08.1545
+    -- (1 row)
+
 ## Show/describe enum type
 
 <http://stackoverflow.com/questions/9535937/is-there-a-way-to-show-a-user-defined-postgresql-enumerated-type-definition#25326877>
@@ -424,7 +440,7 @@ Log statements with any durations
 ## List indexes
 
     \di
-    \d your_tb
+    \d your_tbl
 
 ## Show/describe index
 
