@@ -1,4 +1,4 @@
-# X11 rc
+# X11 display manager rc
 
 ## Restart
 
