@@ -1,8 +1,8 @@
-# Regular expressions
+# Regular expressions rc
 
 ## Positive lookahead
 
-<http://www.regular-expressions.info/lookaround.html#lookahead>
+<http://regular-expressions.info/lookaround.html#lookahead>
 
     foo(?=bar)
 
@@ -12,7 +12,7 @@
 
 ## Positive lookbehind
 
-<http://www.regular-expressions.info/lookaround.html#lookbehind>
+<http://regular-expressions.info/lookaround.html#lookbehind>
 
     (?<=bar)foo
 
