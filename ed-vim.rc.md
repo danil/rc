@@ -134,7 +134,7 @@ by popular alternative:
 
 ## Buffer
 
-* `<C-^>` or <C-6> Open previous.
+* `<C-^>` or `<C-6>` Open previous.
 * `:file your-nm`  Rename.
 
 ## Tab
