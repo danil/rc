@@ -22,7 +22,7 @@
 * `<Prefix-">` or `:split-window`
 * `<Prefix-%>` or `:split-window -h`
 
-## Pane
+## Pane within window
 
 * `<Prefix-q-0>` Pane select by number.
 * `<Prefix-!>` or `:break-pane` Pane break.
