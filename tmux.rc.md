@@ -12,15 +12,13 @@
     && make --jobs=5 \
     && make install
 
-## Navigate windows
+## Window
 
 * `<Prefix-'>` Select the window index <https://superuser.com/questions/755634/how-to-quickly-switch-to-n-10-windows-in-tmux#764108>.
 * `<Prefix-w>` Choose index interactively <https://superuser.com/questions/755634/how-to-quickly-switch-to-n-10-windows-in-tmux#764108>.
-
-## Split windows
-
-* `<Prefix-">` or `:split-window`
-* `<Prefix-%>` or `:split-window -h`
+* `<Prefix-">` or `:split-window`    Split window.
+* `<Prefix-%>` or `:split-window -h` Split window.
+* `:move-window -t 42`
 
 ## Pane within window
 
