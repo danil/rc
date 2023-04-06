@@ -12,6 +12,11 @@
     && make --jobs=5 \
     && make install
 
+## Navigate windows
+
+* `<Prefix-'>` Select the window index.
+* `<Prefix-w>` Choose index interactively.
+
 ## Split windows
 
 * `<Prefix-">` or `:split-window`
