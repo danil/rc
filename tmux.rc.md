@@ -12,7 +12,7 @@
     && make --jobs=5 \
     && make install
 
-## Window
+## Split windows
 
 * `<prefix-">` or `:split-window`
 * `<prefix-%>` or `:split-window -h`
