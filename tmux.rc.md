@@ -14,11 +14,13 @@
 
 ## Window
 
+* `<Prefix-c>` Create new window with next availble index.
+* `<Prefix-3>` Select window by index from 0 to 9 (for examle 3).
 * `<Prefix-'>` Select the window index <https://superuser.com/questions/755634/how-to-quickly-switch-to-n-10-windows-in-tmux#764108>.
 * `<Prefix-w>` Choose index interactively <https://superuser.com/questions/755634/how-to-quickly-switch-to-n-10-windows-in-tmux#764108>.
 * `<Prefix-">` or `:split-window`    Split window.
 * `<Prefix-%>` or `:split-window -h` Split window.
-* `:move-window -t 42`
+* `:move-window -t 42` Move current window from his index to new index (for example to 42).
 
 ## Pane within window
 
