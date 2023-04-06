@@ -1,6 +1,9 @@
-# tmux
+# tmux terminal multiplexer rc
 
-https://robots.thoughtbot.com/a-tmux-crash-course
+[tmux][] [crash course][].
+
+[crash course]: https://robots.thoughtbot.com/a-tmux-crash-course
+[tmux]: https://github.com/tmux/tmux
 
 ## Install/compile/build
 
@@ -9,87 +12,45 @@ https://robots.thoughtbot.com/a-tmux-crash-course
     && make --jobs=5 \
     && make install
 
-## Copy past
-
-* enter copy mode using `prefix+[`
-* start selecting `C-space`
-* copy region `M-w`
-* past selection `prefix+]`
-
-## Coppy yank
-
-Copying to operation system clipboard https://github.com/tmux-plugins/tmux-yank
-
 ## Window
 
-`split-window`
+* `<prefix-">` or `:split-window`
+* `<prefix-%>` or `:split-window -h`
 
-    prefix + "
+## Pane
 
-`split-window -h`
-
-    prefix + %
-
-## Pane select by number
-
-    prefix + q
-    0
-
-## Pane break
-
-`break-pane`
-
-    prefix + !
-
-## Pane join
-
-Join pane 1 from pane 0 <https://forums.pragprog.com/forums/242/topics/10533>
-
-    join-pane -s 1
+* `<prefix-q-0>` Pane select by number.
+* `<prefix-!>` or `:break-pane` Pane break.
+* `:join-pane -s 1` Pane join. For example join pane 1 from pane 0 <https://forums.pragprog.com/forums/242/topics/10533>
 
 ## Layout
 
-`next-layout` cycles through available layouts
-<http://superuser.com/questions/493048/how-to-convert-2-horizontal-panes-to-vertical-panes-in-tmux#493057>.
+`<prefix-space>` or `next-layout` Cycles through available layouts <http://superuser.com/questions/493048/how-to-convert-2-horizontal-panes-to-vertical-panes-in-tmux#493057>.
 
-    prefix + space
+## Session
 
-## Sessions list
+* `tmux -S /tmp/pair ls` List.
+* `tmux -S /tmp/pair -s your-sess && chmod 777 /tmp/pair` Socket session create.
+* `tmux -S /tmp/pair attach -t your-sess` Attach.
+* `<prefix-d>` or `tmux detach` Detach.
+* `<prefix-D>` Dettach/close/kill by name <https://stackoverflow.com/questions/22138211/how-do-i-disconnect-all-other-users-in-tmux>.
+* `tmux kill-session -t your-sess` Kill.
 
-    tmux -S /tmp/pair ls
+## Session attach by hostname or create new session if no session exists
 
-## Session create
-
-Socket session create
-
-    tmux -S /tmp/pair -s foobar
-    chmod 777 /tmp/pair
-
-## Session attach
-
-    tmux -S /tmp/pair attach -t foobar
-
-## Session detach
-
-`tmux detach`: `prefix + d`
-
-## Session dettach/close/kill by name
-
-<https://stackoverflow.com/questions/22138211/how-do-i-disconnect-all-other-users-in-tmux>
-
-    prefix + D
-
-## Session kill
-
-    tmux kill-session -t danil
+`tmux -S /tmp/tmux-pair attach -t $(hostname) || tmux -S /tmp/tmux-pair new -s $(hostname)`
 
 ## Change status line color to black
 
-    prefix + :
-    set status-style bg=black
+`:set status-style bg=black`
 
-## Other
+## Copy past
 
-    tmux new -s danil
-    ^b d
-    tmux attach -t danil
+1. `<prefix-[>` Enter copy mode.
+2. `<C-space>`  Start selecting.
+3. `<M-w>`      Copy region.
+4. `<prefix-]>` Past selection.
+
+## Coppy yank plugin
+
+Copying to operation system clipboard https://github.com/tmux-plugins/tmux-yank
