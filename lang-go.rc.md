@@ -206,10 +206,14 @@ Arguments for `time.Time` type and against `time.Date` type
 
     fmt.Println(time.Duration(float64(42*time.Second) * 1.23))
 
-## Duration growth logarithmically
+## Duration growth logarithmically a-la exponential/expotential backoff
 
     for i := 1; i < 100500; i++ {
-        time.Duration(float64(42*time.Second) * (1 + math.Log(float64(i))))
+        d := time.Duration(float64(42*time.Second) * (1 + math.Log(float64(i))))
+        if d > 3*time.Minute {
+            d = 3 * time.Minute
+        }
+        time.Sleep(d)
     }
 
 ## Regexp match string
