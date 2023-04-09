@@ -163,7 +163,7 @@ Print JSON in strict mode compatible with [JSON RFC](http://www.json.org)
     mongo your_db_nm --eval='JSON.stringify(db.yourCollNm.find().sort({$natural:-1}).limit(3).toArray(), null, 2);'
     mongoexport --db your_db_nm --collection yourCollNm --jsonArray
 
-## GUI
+## GUI TODO
 
 * https://github.com/Studio3T/robomongo
 * https://github.com/mongo-express/mongo-express
