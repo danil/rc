@@ -1,4 +1,4 @@
-# Wget
+# Wget rc
 
     wget ftp://anonymous@your.tld/path/to/file.tar
     wget --continue -t inf --waitretry=30 -b --retry-connrefused \
