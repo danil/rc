@@ -216,6 +216,17 @@ Arguments for `time.Time` type and against `time.Date` type
         time.Sleep(d)
     }
 
+## [Fix timer reset deadlock][]
+
+    timer.Stop()
+    select {
+    case <-timer.C:
+    default:
+    }
+    timer.Reset(d)
+
+[fix timer reset deadlock]: https://github.com/golang/go/issues/27169
+
 ## Regexp match string
 
     regexp.MustCompile("^[a-z]+$").MatchString("foo")
