@@ -1,5 +1,13 @@
 # diff rc
 
+## Compare stdin/pipelines
+
+    diff <(echo -e "foo\n123") <(echo -e "foo\n123" | tr '[:upper:][:lower:]' '[:lower:][:upper:]')
+
+## Compare wordwise/word per word basis
+
+    wdiff <(echo foo bar) <(echo foo xyz)
+
 ## Compare directories
 
 <http://linuxcommando.blogspot.com/2008/05/compare-directories-using-diff-in-linux.html>
