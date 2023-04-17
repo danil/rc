@@ -216,7 +216,7 @@ Arguments for `time.Time` type and against `time.Date` type
         time.Sleep(d)
     }
 
-## [Fix timer reset deadlock][]
+## [Fix of timer reset deadlock][]
 
     timer.Stop()
     select {
@@ -225,7 +225,7 @@ Arguments for `time.Time` type and against `time.Date` type
     }
     timer.Reset(d)
 
-[fix timer reset deadlock]: https://github.com/golang/go/issues/27169
+[fix of timer reset deadlock]: https://github.com/golang/go/issues/27169
 
 ## Regexp match string
 
