@@ -21,6 +21,10 @@
 
     echo "rename old.nm new.nm" | sftp sftp://your_nm@your.tld:2022/path/to/dir
 
+## Rename/move directory
+
+    echo "rename your-dir-nm your-dir-new-nm" | sftp sftp://your_nm@your.tld:2022/path/to/dir
+
 ## Remove/delete
 
     echo "rm file.nm" | sftp sftp://your_nm@your.tld:2022/path/to/dir
