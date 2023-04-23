@@ -778,12 +778,11 @@ Set a default schema for a session
 
 ## Create table
 
-    CREATE TABLE your_tbl
-      (some_id BIGSERIAL PRIMARY KEY, name varchar(10), bio text, age integer);
+    CREATE TABLE your_tbl (id BIGSERIAL PRIMARY KEY, name text, age integer);
 
 ## Show/describe table
 
-    \d some_table
+    \d your_tbl
 
 ## Show/describe table by the SQL
 
@@ -844,7 +843,7 @@ Remove constraint by name
 ## Create temporary table
 
     CREATE TEMP TABLE your_tbl
-    (some_id BIGSERIAL, name varchar(10), bio TEXT, age INTEGER);
+    (your_id BIGSERIAL, name varchar(10), bio TEXT, age INTEGER);
 
 ## Insert
 
