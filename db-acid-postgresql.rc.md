@@ -159,13 +159,15 @@ Backuping:
     SELECT cardinality('{1,2,3}'::smallint[]);
     SELECT array_length('{1,2,3}'::smallint[], 1);
 
-## Array contains
-
-<https://stackoverflow.com/questions/16606357/how-to-make-a-select-with-array-contains-value-clause-in-psql#16606612>
+## Array contains <sup>[1][array contains stackoverflow] [2][array contains doc en] [3][array contains doc ru]</sup>
 
     SELECT * FROM your_tbl WHERE 'your array item' = ANY(your_col);
     SELECT * FROM your_tbl WHERE your_col @> ARRAY['foobar']::text[];
     SELECT * FROM your_tbl WHERE your_col && ARRAY['foo','bar']::text[];
+
+[array contains stackoverflow]: <https://stackoverflow.com/questions/16606357/how-to-make-a-select-with-array-contains-value-clause-in-psql#16606612>
+[array contains doc en]: <https://www.postgresql.org/docs/current/functions-array.html>
+[array contains doc ru]: <https://postgrespro.ru/docs/postgrespro/15/functions-array>
 
 ## Arrays contains/overlaps
 
@@ -852,7 +854,7 @@ Remove constraint by name
 ## Upsert/update/insert/create
 
     INSERT INTO your_tbl (latitude, longitude, "nm") 
-    VALUES (1 ,2 ,'foobar')
+    VALUES (1, 2, 'foobar')
     ON CONFLICT ON CONSTRAINT your_tbl_pkey
     DO UPDATE SET "name" = 'foobar';
 
