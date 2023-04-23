@@ -851,24 +851,37 @@ Remove constraint by name
     INSERT INTO your_tbl (nm, age) VALUES ('John', 3);
     COPY your_tbl FROM STDIN WITH DELIMITER AS ',';
 
-## Upsert/update/insert/create
-
-    INSERT INTO your_tbl (latitude, longitude, "nm") 
-    VALUES (1, 2, 'foobar')
-    ON CONFLICT ON CONSTRAINT your_tbl_pkey
-    DO UPDATE SET "name" = 'foobar';
-
 ## Insert from select
 
     INSERT INTO your_tbl (id, nm, age)
     SELECT 2, name, age FROM your_tbl WHERE id = 1;
 
-## Increment/upsert/update counter
+## Upsert and returning or select<sup>[1][upsert and returning or select]</sup>
 
-    INSERT INTO your_tbl ("id", "count")
+    WITH cte AS (
+      INSERT INTO your_tbl (id, name, revision)
+      VALUES (42, 'foobar', 123)
+      ON CONFLICT (id)
+      DO UPDATE SET revision = 123
+         WHERE your_tbl.revision < 123
+         RETURNING id, name, revision
+    ) (SELECT id, name, revision, true AS ok
+       FROM cte
+       WHERE EXISTS (SELECT 1 FROM cte))
+      UNION ALL
+      (SELECT id, name, revision, false AS ok
+       FROM your_tbl
+       WHERE id = 42
+         AND NOT EXISTS (SELECT 1 FROM cte));
+
+[upsert and returning or select]: https://stackoverflow.com/questions/49597668/postgres-9-5-on-conflict-do-select
+
+## Upsert/update/increment counter
+
+    INSERT INTO your_tbl (id, count)
     VALUES (nextval('your_tbl_id_seq'::regclass), 1)
-    ON CONFLICT ("id")
-    DO UPDATE SET "count" = COALESCE(your_tbl."count", EXCLUDED."count") + 1;
+    ON CONFLICT (id)
+    DO UPDATE SET count = COALESCE(your_tbl.count, EXCLUDED.count) + 1;
 
 ## Insert/update new line character
 
