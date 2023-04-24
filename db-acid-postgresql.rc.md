@@ -855,25 +855,48 @@ Remove constraint by name
     INSERT INTO your_tbl (id, nm, age)
     SELECT 2, name, age FROM your_tbl WHERE id = 1;
 
-## Upsert and returning or select<sup>[1][upsert and returning or select]</sup>
+## Insert and returning or select<sup>[1][insert and returning or select]</sup>
 
     WITH cte AS (
-      INSERT INTO your_tbl (id, name, revision)
-      VALUES (42, 'foobar', 123)
-      ON CONFLICT (id)
-      DO UPDATE SET revision = 123
-         WHERE your_tbl.revision < 123
-         RETURNING id, name, revision
+      INSERT INTO your_tbl (
+        id, name
+      ) VALUES (
+        111, 'foo'
+      ), (
+        222, 'bar'
+      ) ON CONFLICT (id)
+        DO NOTHING
+        RETURNING id, name
+    ) (SELECT id, name, true AS ok
+       FROM cte)
+      UNION ALL
+      (SELECT id, name, false AS ok
+       FROM your_tbl
+       WHERE id IN (111, 222)
+         AND id NOT IN (SELECT id FROM cte));
+
+[insert and returning or select]: https://stackoverflow.com/questions/49597668/postgres-9-5-on-conflict-do-select
+
+## Upsert and returning or select<sup>[1][insert and returning or select]</sup>
+
+    WITH cte AS (
+      INSERT INTO your_tbl (
+        id, name, revision
+      ) VALUES (
+        111, 'foo', 123
+      ), (
+        222, 'bar', 321
+      ) ON CONFLICT (id)
+        DO UPDATE SET revision = EXCLUDED.revision
+           WHERE your_tbl.revision < EXCLUDED.revision
+           RETURNING id, name, revision
     ) (SELECT id, name, revision, true AS ok
-       FROM cte
-       WHERE EXISTS (SELECT 1 FROM cte))
+       FROM cte)
       UNION ALL
       (SELECT id, name, revision, false AS ok
        FROM your_tbl
-       WHERE id = 42
-         AND NOT EXISTS (SELECT 1 FROM cte));
-
-[upsert and returning or select]: https://stackoverflow.com/questions/49597668/postgres-9-5-on-conflict-do-select
+       WHERE id IN (111, 222)
+         AND id NOT IN (SELECT id FROM cte));
 
 ## Upsert/update/increment counter
 
