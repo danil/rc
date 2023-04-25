@@ -35,7 +35,7 @@
 
 ## Description
 
-    brew desc your-pkg
+    brew desc --eval-all your-pkg
 
 ## List package files excludes jpeg, png, gif, conf and so on
 
