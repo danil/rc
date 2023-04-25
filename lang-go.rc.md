@@ -184,6 +184,41 @@ go run -ldflags "-X path/to/package.foo=123 -X path/to/package.Bar=xyz" main.go
 
     env GOARCH=arm64 go build
 
+## Package naming convention style
+
+* https://github.com/golang/go/wiki/CodeReviewComments#package-names
+* https://golang.org/doc/effective_go.html#package-names
+* https://blog.golang.org/package-names
+* <https://talks.golang.org/2016/refactor.article#TOC_3.>
+
+## Code review bad/meaningless package name convention style
+
+1. https://go.dev/doc/effective_go#package-names>
+2. https://go.dev/blog/package-names#bad-package-names
+3. https://github.com/golang/go/wiki/CodeReviewComments#package-names
+
+Bad package name examples: `util`, `common` and `misc`
+
+## Code review [N characters line length convention][] style
+
+80 characters or not?
+
+[n characters line length convention]: http://github.com/golang/go/wiki/CodeReviewComments#line-length
+
+## Code review abbreviation [initialism convention][] style
+
+For example: `Id` -> `ID` `Url` -> `URL` `Xml` -> `XML`
+
+[initialism convention]: https://github.com/golang/go/wiki/CodeReviewComments#initialisms
+
+## Code review the named return is good but the naked/bare return is bad convention style
+
+Discussion <sup>[1][named naked bare return issues 20859] [2][named naked bare return issues 21291] [3][named naked bare return]</sup>
+
+[named naked bare return issues 20859]: https://github.com/golang/go/issues/20859
+[named naked bare return issues 21291]: https://github.com/golang/go/issues/21291
+[named naked bare return]: https://golang.org/s/style#named-result-parameters
+
 ## [Type conversion][]
 
     var i int = 42; f float64 = float(i)
@@ -196,6 +231,27 @@ go run -ldflags "-X path/to/package.foo=123 -X path/to/package.Bar=xyz" main.go
     var x interface{} = 42; i := x.(int)
 
 [type assertion]: https://go.dev/ref/spec#Type_assertions
+
+## Non-nil interface type and nil interface value
+
+    if i, ok := value.source.(fmt.Stringer); ok {
+        if i == nil || (reflect.ValueOf(i).Kind() == reflect.Ptr && reflect.ValueOf(i).IsNil()) {
+            return "This is real nil or nil value and non nil type."
+        }
+    }
+
+## Formatter
+
+* <http://golang.org/pkg/fmt/#Formatter>
+* <http://godoc.org/github.com/pkg/errors#Frame.Format>
+
+    type Formatter interface {
+            Format(f State, c rune)
+    }
+
+## Explicit argument indexes of formatter
+
+    fmt.Sprintf("%[2]d %[1]d", 11, 22)
 
 ## Civil time vs monotonic
 
