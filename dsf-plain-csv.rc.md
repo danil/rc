@@ -2,8 +2,8 @@
 
 ## Convert CSV to JSON <sup>[1][rust json] [2][node json]</sup>
 
-    npx csvtojson ./path/to/file.csv > path/to/file.json
-    cargo install csvkit && csvjson ./path/to/file.csv > path/to/file.json
+    brew install csvkit && csvjson path/to/file.csv > path/to/file.json
+    npx csvtojson path/to/file.csv > path/to/file.json
 
 [node json]: https://github.com/keyang/node-csvtojson#command-line-usage
 [rust json]: https://github.com/wireservice/csvkit/blob/master/docs/scripts/csvjson.rst
