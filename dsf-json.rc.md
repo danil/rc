@@ -20,14 +20,13 @@ Pretty print stream/server output/followed tail
 
 <https://github.com/webroo/dummy-json>
 
-    t=$(mktemp /tmp/XXX.json) echo '{"id": "{{guid}}"}' > $t \
-      && `npm bin`/dummyjson $t && rm $t
+    t=$(mktemp /tmp/XXX.json) echo '{"id": "{{guid}}"}' > $t && npx bin dummyjson $t && rm $t
 
 ## Validate
 
 <http://trentm.com/json/#FEATURE-Validation>
 
-    cat path/to/file.json | `npm bin`/json --validate
+    cat path/to/file.json | npx json --validate
 
 ## Query gron
 

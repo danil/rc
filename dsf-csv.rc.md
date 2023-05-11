@@ -1,10 +1,14 @@
-# CSV
+# CSV comma-separated values rc
 
-Comma-separated values
+## Convert CSV to JSON <sup>[1][rust json] [2][node json]</sup>
 
-## csvtojson
+    npx csvtojson ./path/to/file.csv > path/to/file.json
+    cargo install csvkit && csvjson ./path/to/file.csv > path/to/file.json
 
-CSV to JSON converter
-<https://github.com/Keyang/node-csvtojson#command-line-tools>
+[node json]: https://github.com/keyang/node-csvtojson#command-line-usage
+[rust json]: https://github.com/wireservice/csvkit/blob/master/docs/scripts/csvjson.rst
 
-    `npm bin`/csvtojson ./path/to/file.csv > path/to/file.json
+## TODO
+
+* https://github.com/burntsushi/xsv
+* https://github.com/joppich/csvgen

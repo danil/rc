@@ -4,15 +4,15 @@ Node package manager
 
 ## Path to executeable
 
-    `npm bin`/bower install package-name
+    npx bower install pkg-nm
 
 ## Search
 
-    npm search package-name
+    npm search pkg-nm
 
 ## Install
 
-    npm install package-name
+    npm install pkg-nm
 
 ## List outdated
 
@@ -20,7 +20,7 @@ Node package manager
 
 ## Update
 
-    npm update package-name
+    npm update pkg-nm
 
 ## Update all
 
@@ -28,7 +28,7 @@ Node package manager
 
 ## Uninstall
 
-    npm uninstall package-name
+    npm uninstall pkg-nm
 
 ## List
 
