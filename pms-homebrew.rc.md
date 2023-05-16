@@ -66,6 +66,10 @@
 
     brew upgrade
 
+## Determine which package provides a given file
+
+    ls -l $(which your-file)
+
 ## Add repository
 
     brew tap your-repo
