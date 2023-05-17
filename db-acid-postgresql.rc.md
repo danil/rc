@@ -758,6 +758,10 @@ Set a default schema for a session
 
     SELECT setval('your_seq', 1234567890, true);
 
+## Create sequence
+
+    CREATE SEQUENCE your_seq INCREMENT 42 START 100500;
+
 ## Reset sequence
 
     ALTER SEQUENCE your_seq RESTART WITH 1;
