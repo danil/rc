@@ -1269,7 +1269,7 @@ WITH cte AS (
 
 ## Create or replace/update trigger function
 
-    CREATE OR REPLACE FUNCTION your_trigger() RETURNS trigger AS $$
+    CREATE OR REPLACE FUNCTION your_trig() RETURNS trigger AS $$
       BEGIN
         IF NEW.your_col1 <> OLD.your_col1 OR
            NEW.your_col2 <> OLD.your_col2
@@ -1281,12 +1281,12 @@ WITH cte AS (
 
 ## Create or replace trigger
 
-    CREATE TRIGGER your_trigger_on_your_tbl BEFORE INSERT OR UPDATE
-        ON your_tbl FOR EACH ROW EXECUTE PROCEDURE your_trigger();
+    CREATE TRIGGER your_trig_on_your_tbl BEFORE INSERT OR UPDATE
+        ON your_tbl FOR EACH ROW EXECUTE PROCEDURE your_trig();
 
 ## Drop trigger
 
-    DROP TRIGGER IF EXISTS your_trigger ON your_tbl;
+    DROP TRIGGER IF EXISTS your_trig ON your_tbl;
 
 ## psql: repeat/re-execute query every 5 seconds within loop
 
