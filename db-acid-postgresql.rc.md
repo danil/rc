@@ -1226,7 +1226,67 @@ WITH cte AS (
 
 ## List functions
 
+    \df
     \df your_schema.* -- List functions in schema `your_schema`.
+
+## Show function/trigger by name
+
+    \df+ your_nm
+
+## List all trigger functions
+
+    SELECT * FROM information_schema.triggers;
+
+## List trigger functions of table
+
+    SELECT event_object_table,
+           trigger_name,
+           event_manipulation,
+           action_statement,
+           action_timing
+    FROM information_schema.triggers
+    WHERE event_object_table = 'your_tbl'
+    ORDER BY event_object_table,
+             event_manipulation;
+
+## Remove function
+
+    DROP FUNCTION your_fn;
+
+## Create or replace function
+
+    CREATE OR REPLACE FUNCTION your_fn(
+      IN key text
+    ) RETURNS TABLE (value bigint) AS
+    $BODY$
+      INSERT INTO serialkeys (key, value) VALUES (key, 1)
+      ON CONFLICT (key)
+      DO UPDATE SET value = serialkeys.value + 1,
+                    updated_at = now()
+      RETURNING value;
+    $BODY$
+      LANGUAGE sql;
+
+## Create or replace/update trigger function
+
+    CREATE OR REPLACE FUNCTION your_trigger() RETURNS trigger AS $$
+      BEGIN
+        IF NEW.your_col1 <> OLD.your_col1 OR
+           NEW.your_col2 <> OLD.your_col2
+        THEN
+          NEW.your_col3 := 'your new value';
+        END IF;
+        RETURN NEW;
+      END
+
+## Create or replace trigger
+
+    CREATE TRIGGER your_trigger_on_your_tbl BEFORE INSERT OR UPDATE
+        ON your_tbl FOR EACH ROW EXECUTE PROCEDURE your_trigger();
+
+## Drop trigger
+
+    DROP TRIGGER IF EXISTS your_trigger ON your_tbl;
 
 ## psql: write output to stdout
 
