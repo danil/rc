@@ -1288,6 +1288,11 @@ WITH cte AS (
 
     DROP TRIGGER IF EXISTS your_trigger ON your_tbl;
 
+## psql: repeat/re-execute query every 5 seconds within loop
+
+    select 42;
+    \watch 5
+
 ## psql: write output to stdout
 
     \o
