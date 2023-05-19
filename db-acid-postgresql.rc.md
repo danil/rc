@@ -1226,9 +1226,7 @@ WITH cte AS (
 
 ## List functions
 
-List functions in schema `foo`
-
-    \df foo.*
+    \df your_schema.* -- List functions in schema `your_schema`.
 
 ## psql: write output to stdout
 
