@@ -380,7 +380,9 @@ Get/measure query execution timing/duration
     END
     $$;
 
-## Vacuum
+## Vacuum full
+
+    VACUUM FULL your_tbl;
 
 <https://wiki.postgresql.org/wiki/Tuning_Your_PostgreSQL_Server#autovacuum>
 
@@ -445,6 +447,10 @@ Log statements with any durations
 
     \di
     \d your_tbl
+
+## List indexes size
+
+    \di+
 
 ## Show/describe index
 
