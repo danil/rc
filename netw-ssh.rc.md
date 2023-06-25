@@ -53,6 +53,10 @@ Set `~/.ssh/known_hosts` or `/etc/ssh/ssh_known_hosts`
 
     ssh-keyscan -t rsa your.tld > /etc/ssh/ssh_known_hosts
 
+## Cleanup/remove/delete outdated known host
+
+    sed -i --in-place '42d' ~/.ssh/known_hosts
+
 ## One hop tunnel
 
 <http://revsys.com/writings/quicktips/ssh-tunnel.html>
