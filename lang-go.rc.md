@@ -283,6 +283,15 @@ Arguments for `time.Time` type and against `time.Date` type
 
 [fix of timer reset deadlock]: https://github.com/golang/go/issues/27169
 
+## String [convertor to CamelCase][google.golang.org/protobuf]
+
+    import "google.golang.org/protobuf/internal/strs"
+
+    strs.GoCamelCase("text_2") // Text_2
+    strs.GoCamelCase("text2")  // Text2
+
+[google.golang.org/protobuf]: https://github.com/protocolbuffers/protobuf-go
+
 ## Regexp match string
 
     regexp.MustCompile("^[a-z]+$").MatchString("foo")
