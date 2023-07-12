@@ -1,6 +1,8 @@
 # GPG rc
 
-GNU Privacy Guard
+[GPG][] is the GNU Privacy Guard.
+
+[gpg]: https://github.com/gpg/gnupg
 
 ## Encrypt asymmetric by key
 
