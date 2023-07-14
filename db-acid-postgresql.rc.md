@@ -443,10 +443,7 @@ Log statements with any durations
 
 <https://www.postgresql.org/docs/current/static/sql-keywords-appendix.html>
 
-## Index
-
-The [maximum index identifier][]/name length is 63 bytes
-limited by the [NAMEDATALEN][] constant.
+## [Maximum index identifier][]/name length is 63 limited by [NAMEDATALEN][] constant
 
 [maximum index identifier]: https://postgresql.org/docs/current/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS
 [namedatalen]: https://github.com/postgres/postgres/blob/REL_15_3/src/include/pg_config_manual.h#L29
