@@ -6,7 +6,6 @@ Debian package
     dpkg --listfiles emacs21-nox
     dpkg --search stdio.h
     dpkg-architecture
-    dpkg-reconfigure xserver-xorg locales
     dpkg --extract xlibs_4.3.0.dfsg.1-14sarge7_all.deb ./
     dpkg-scanpackages
 
