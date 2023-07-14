@@ -79,6 +79,10 @@ Change timezone
     chmod 0440 /etc/sudoers.d/001_superusers
     gpasswd --add your_usr superusers
 
+## Setup/configure X11 locales
+
+    dpkg-reconfigure xserver-xorg locales
+
 ## Create bootable USB
 
 Install `usb-creator-gtk` or `mkusb-nox` (https://launchpad.net/~mkusb/+archive/ubuntu/ppa)
