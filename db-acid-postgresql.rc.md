@@ -443,6 +443,19 @@ Log statements with any durations
 
 <https://www.postgresql.org/docs/current/static/sql-keywords-appendix.html>
 
+## Index
+
+The [maximum index identifier][]/name length is 63 bytes
+limited by the [NAMEDATALEN][] constant.
+
+[maximum index identifier]: https://postgresql.org/docs/current/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS
+[namedatalen]: https://github.com/postgres/postgres/blob/REL_15_3/src/include/pg_config_manual.h#L29
+
+The system uses no more than NAMEDATALEN-1 bytes of an identifier;
+longer names can be written in commands, but they will be
+truncated. By default, NAMEDATALEN is 64 so the maximum identifier
+length is 63 bytes.
+
 ## List indexes
 
     \di
