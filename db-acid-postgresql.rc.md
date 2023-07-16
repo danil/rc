@@ -100,6 +100,16 @@ Backuping:
 [pgx framework]: https://github.com/tcdi/pgx
 [rfc 4122]: https://datatracker.ietf.org/doc/html/draft-peabody-dispatch-new-uuid-format-04
 
+## [UUIDv7][RFC 4122]
+
+Pros:
+
+* Sortable.
+
+Cons:
+
+* Limited to 5000 RPS.
+
 ## Random integer/int4
 
     SELECT floor(random() * 2147483647 + 1)::bigint;
