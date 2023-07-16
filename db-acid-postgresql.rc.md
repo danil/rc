@@ -91,7 +91,7 @@ Backuping:
 8. `SELECT idkit_xid_generate();`
 9. `SELECT idkit_cuid_generate();`
 
-## Primary key/identifier [rfc 4122][] UUIDv6/UUIDv7/UUIDv8
+## Primary key/identifier [RFC 4122][] UUIDv6/UUIDv7/UUIDv8
 
 [pg_idkit][] is a PostgreSQL extension for generating UUID by [pgx framework][]
 <https://supabase.com/blog/choosing-a-postgres-primary-key>.
