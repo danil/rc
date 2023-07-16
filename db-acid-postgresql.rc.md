@@ -108,7 +108,7 @@ Pros:
 
 Cons:
 
-* Limited to 5000 RPS.
+* ???.
 
 ## Random integer/int4
 
