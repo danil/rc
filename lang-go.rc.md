@@ -274,6 +274,7 @@ Arguments for `time.Time` type and against `time.Date` type
 
 ## [Fix of timer reset deadlock][]
 
+    timer := time.NewTimer(time.Second)
     timer.Stop()
     select {
     case <-timer.C:
