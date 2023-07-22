@@ -874,6 +874,60 @@ Remove constraint by name
     CREATE TEMP TABLE your_tbl
     (your_id BIGSERIAL, name varchar(10), bio TEXT, age INTEGER);
 
+## [Transaction][]
+
+    BEGIN; SELECT 'Hello, World!'; COMMIT;
+    BEGIN; SELECT 'Hello, Work!'; ROLLBACK;
+
+[transaction]: https://postgresql.org/docs/current/tutorial-transactions.html
+
+## List [transaction isolation][] levels/уровени изоляции транзакции <sup>[1][habr isolation]</sup>
+
+1. read uncommitted (cons: dirty read/грязное чтение)
+2. read committed (cons: non-repeatable read/неповторяемое чтение)
+3. repeatable read (cons: phantom reads/чтения фантомов)
+4. serializable
+
+[habr isolation]: https://habr.com/ru/post/469415
+[transaction isolation]: https://postgresql.org/docs/current/transaction-iso.html
+
+## Show [transaction isolation][] level default
+
+    SHOW default_transaction_isolation;
+
+## Set [transaction isolation][] level default
+
+    echo "default_transaction_isolation = 'read committed'" >> postgresql.conf
+
+## Transactions list
+
+    SELECT *
+    FROM pg_stat_activity
+    WHERE (state = 'idle in transaction')
+          AND xact_start IS NOT NULL;
+
+## List long running queries
+
+    SELECT pid,
+           now() - pg_stat_activity.query_start AS duration,
+           query,
+           state
+    FROM pg_stat_activity
+    WHERE (now() - pg_stat_activity.query_start) > interval '5 minutes';
+
+## Kill 15 long running queries
+
+    WITH pids AS (
+      SELECT unnest(ARRAY[
+      123,
+      321
+      ]::integer[]) AS pid
+    ) SELECT pg_cancel_backend(pid) FROM pids; /* kill -15 */
+
+## Kill 9 long running query
+
+    SELECT pg_terminate_backend(your_pid); /* kill -9 */
+
 ## Insert
 
     INSERT INTO your_tbl (nm, age) VALUES ('John', 3);
