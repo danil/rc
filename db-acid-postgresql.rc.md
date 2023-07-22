@@ -708,6 +708,10 @@ List roles and privileges
 
     SELECT datname FROM pg_database WHERE datistemplate = false;
 
+## [Data Definition Language][DDL] for create/drop/alter database/table/column
+
+[ddl]: https://postgresql.org/docs/current/ddl.html
+
 ## Create database
 
     CREATE DATABASE your_db
@@ -717,7 +721,7 @@ List roles and privileges
            LC_CTYPE = 'en_US.UTF-8';
     createdb --owner=your_role --username=postgres --password your_db
 
-## Drop database
+## Delete database
 
     DROP DATABASE your_db;
     dropdb --username=your_role --password test
@@ -1082,9 +1086,9 @@ WITH cte AS (
                  WHERE your_col = 42)
     ) RETURNING your_col;
 
-## Truncate all data
+## Truncate all data is a [DDL][] statement
 
-<http://www.postgresql.org/docs/current/static/sql-truncate.html>
+<http://postgresql.org/docs/current/static/sql-truncate.html>
 
     BEGIN; TRUNCATE your_tbl, your_tbl2 CASCADE; ALTER SEQUENCE your_seq RESTART WITH 1; COMMIT;
 
