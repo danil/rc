@@ -883,10 +883,18 @@ Remove constraint by name
 
 ## List [transaction isolation][] levels/уровени изоляции транзакции <sup>[1][habr isolation]</sup>
 
-1. read uncommitted (cons: dirty read/грязное чтение)
-2. read committed (cons: non-repeatable read/неповторяемое чтение)
-3. repeatable read (cons: phantom reads/чтения фантомов)
-4. serializable
+```
+   |      level       |                    cons
+---+------------------+------------------------------------------
+ 1 | read uncommitted | dirty read/грязное чтение
+---+------------------+------------------------------------------
+ 2 | read committed   | non-repeatable read/неповторяемое чтение
+---+------------------+------------------------------------------
+ 3 | repeatable read  | phantom reads/чтения фантомов
+---+------------------+------------------------------------------
+ 4 | serializable     |
+---+------------------+------------------------------------------
+```
 
 [habr isolation]: https://habr.com/ru/post/469415
 [transaction isolation]: https://postgresql.org/docs/current/transaction-iso.html
