@@ -881,22 +881,45 @@ Remove constraint by name
 
 [transaction]: https://postgresql.org/docs/current/tutorial-transactions.html
 
-## List [transaction isolation][] levels/уровени изоляции транзакции <sup>[1][habr isolation]</sup>
+## List [transaction isolation][] levels/уровени изоляции транзакции <sup>[1][transaction isolation ru]</sup> <sup>[2][habr isolation]</sup>
 
 ```
-   |      level       |                    cons
----+------------------+------------------------------------------
- 1 | read uncommitted | dirty read/грязное чтение
----+------------------+------------------------------------------
- 2 | read committed   | non-repeatable read/неповторяемое чтение
----+------------------+------------------------------------------
- 3 | repeatable read  | phantom reads/чтения фантомов
----+------------------+------------------------------------------
- 4 | serializable     |
----+------------------+------------------------------------------
+   |          level           |                    cons
+---+--------------------------+-----------------------------------------------
+ 1 | read uncommitted         | * dirty read/грязное чтение
+   | незафиксированное чтение |
+---+--------------------------+-----------------------------------------------
+ 2 | read committed           | * nonrepeatable read/неповторяемое чтение
+   | зафиксированное чтение   |
+---+--------------------------+-----------------------------------------------
+ 3 | repeatable read          | * phantom reads/чтения фантомов
+   | повторяемое чтение       | * serialization anomaly/аномалия сериализации
+---+--------------------------+-----------------------------------------------
+ 4 | serializable             |
+   | сериализуемость          |
+---+--------------------------+-----------------------------------------------
 ```
+
+* `dirty read`/`грязное чтение`
+  a transaction reads data written by a concurrent uncommitted transaction
+
+* `nonrepeatable read`/`неповторяемое чтение`
+  a transaction re-reads data it has previously read and finds that data
+  has been modified by another transaction (that committed since
+  the initial read)
+
+* `phantom read`/`фантомное чтение`
+  a transaction re-executes a query returning a set of rows that satisfy
+  a search condition and finds that the set of rows satisfying
+  the condition has changed due to another recently-committed transaction
+
+* `serialization anomaly`/`аномалия сериализации`
+  the result of successfully committing a group of transactions is
+  inconsistent with all possible orderings of running those
+  transactions one at a time
 
 [habr isolation]: https://habr.com/ru/post/469415
+[transaction isolation ru]: https://postgrespro.ru/docs/postgrespro/current/transaction-iso
 [transaction isolation]: https://postgresql.org/docs/current/transaction-iso.html
 
 ## Show [transaction isolation][] level default
