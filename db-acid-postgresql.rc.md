@@ -25,6 +25,10 @@
     Your first Line.
     Your second line.
 
+## psql shell/bash query repeat loop iteration
+
+    for your_n in $(seq 1 3); do psql --command="SELECT ${your_n};" postgres://your_usr@your.host:5432/your_db ; done 
+
 ## Print to stdout
 
     man -P cat --pager=cat 
