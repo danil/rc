@@ -1,12 +1,13 @@
 # Markdown
 
-## Strikethrough
+## Syntax
 
-    ~~strikethrough~~
+* ~~Typographical strikethrough is a words with a central horizontal line~~.
+* [link text](https://your.tld/your/link/url)
 
 ## Tables
 
-<https://guides.github.com/features/mastering-markdown/>
+<https://guides.github.com/features/mastering-markdown>
 
     First Header | Second Header
     ------------ | -------------
