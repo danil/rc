@@ -59,11 +59,19 @@ Disable test cache
 
 Run benchmarks
 
-    func BenchmarkYourFunc(b *testing.B) {
-        for i := 0; i < b.N; i++ {
-            yourpkg.YourFunc()
-        }
+```go
+package main
+
+import "testing"
+
+func BenchmarkYourFunc(b *testing.B) {
+    yourVar := yourpkg.New()
+    b.ResetTimer()
+    for i := 0; i < b.N; i++ {
+        yourVar.YourFunc()
     }
+}
+```
 
     go test -v -bench=. -benchmem ./...
 
