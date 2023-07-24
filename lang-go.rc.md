@@ -65,10 +65,22 @@ package main
 import "testing"
 
 func BenchmarkYourFunc(b *testing.B) {
+    tests := []struct {
+        name  string
+        in    string
+    }{
+        {name: "test 1", in: "foo"},
+        {name: "test 2", in: "bar"},
+    }
+    b.ReportAllocs()
     yourVar := yourpkg.New()
     b.ResetTimer()
-    for i := 0; i < b.N; i++ {
-        yourVar.YourFunc()
+    for _, tt := range tests {
+        b.Run(tt.name, func(b *testing.B) {
+            for i := 0; i < b.N; i++ {
+                _ = yourVar.YourFunc(tt.in)
+            }
+        })
     }
 }
 ```
