@@ -73,12 +73,15 @@ func BenchmarkYourFunc(b *testing.B) {
         {name: "test 2", in: "bar"},
     }
     b.ReportAllocs()
-    yourVar := yourpkg.New()
+    yourpkg.Init()
     b.ResetTimer()
     for _, tt := range tests {
         b.Run(tt.name, func(b *testing.B) {
             for i := 0; i < b.N; i++ {
-                _ = yourVar.YourFunc(tt.in)
+                b.StopTimer()
+                yourVar := yourpkg.New(tt.in)
+                b.StartTimer()
+                _ = yourVar.YourFunc()
             }
         })
     }
