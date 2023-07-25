@@ -1156,7 +1156,7 @@ WITH cte AS (
         WHERE your_col = 'foobar'
         LIMIT 42
    ) DELETE FROM your_tbl
-     WHERE id IN (SELECT FROM del);
+     WHERE id IN (SELECT id FROM del);
 
 ## Delete union
 
