@@ -1,22 +1,29 @@
 # Aptitude rc
 
-    aptitude --prompt clean
-    aptitude --prompt full-upgrade
-    aptitude --prompt purge ~c
-    aptitude search . | grep "^i   " \
-                      | awk '{ FS = " " ; OFS = " " ; print $2 }' \
-                      | less --chop-long-lines --ignore-case
+## List explicitly installed packages
 
-## Upgrade all packages
+    aptitude search '~i!~M'
 
-Upgrades installed packages to their most recent version
+## List all installed packages with dependencies
 
-    aptitude update
-    DEBIAN_FRONTEND=noninteractive aptitude --prompt safe-upgrade
+    aptitude search '~i'
+    aptitude search . | grep "^i  " | awk '{ FS = " " ; OFS = " " ; print $2 }'
 
-## Download newest version of outdated packages
+## Search one installed package
 
-    aptitude --prompt --download-only safe-upgrade
+<http://unix.stackexchange.com/questions/104374/how-to-show-only-installed-packages-by-executing-aptitude-search#104388>
+
+    aptitude search '~i ^your-pkg'
+
+## Search installed by description
+
+    aptitude search '~i ~d ^your-pkg'
+
+## Search not installed
+
+<http://unix.stackexchange.com/questions/104374/how-to-show-only-installed-packages-by-executing-aptitude-search#104388>
+
+    aptitude search '!~i ^your-pkg'
 
 ## Install
 
@@ -30,29 +37,20 @@ Upgrades installed packages to their most recent version
 
     aptitude remove your-pkg
 
+## Upgrade all packages
+
+Upgrades installed packages to their most recent version
+
+    aptitude update
+    DEBIAN_FRONTEND=noninteractive aptitude --prompt safe-upgrade
+
+## Download newest version of outdated packages
+
+    aptitude --prompt --download-only safe-upgrade
+
 ## Reinstall all
 
     aptitude reinstall '~i'
-
-## Show version
-
-    aptitude show your-pkg
-
-## Search installed
-
-<http://unix.stackexchange.com/questions/104374/how-to-show-only-installed-packages-by-executing-aptitude-search#104388>
-
-    aptitude search '~i ^emacs'
-
-## Search installed by description
-
-    aptitude search '~i ~d ^emacs'
-
-## Search not installed
-
-<http://unix.stackexchange.com/questions/104374/how-to-show-only-installed-packages-by-executing-aptitude-search#104388>
-
-    aptitude search '!~i ^emacs'
 
 ## Install from source
 
@@ -66,3 +64,9 @@ Upgrades installed packages to their most recent version
     ./configure --prefix="$HOME" \
       && make -j9 \
       && make install
+
+## TODO
+
+    aptitude --prompt full-upgrade
+    aptitude --prompt clean
+    aptitude --prompt purge ~c
