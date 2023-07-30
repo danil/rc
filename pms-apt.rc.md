@@ -64,6 +64,10 @@ Fixing following signatures were invalid (https://github.com/yarnpkg/yarn/issues
 
     apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
 
+## TROUBLESHOOTING: NO_PUBKEY
+
+    wget https://your.tld/your/key.gpg -O- | sudo apt-key add - 
+
 ## Other
 
     apt-get --show-upgraded dist-upgrade
