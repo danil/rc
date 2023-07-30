@@ -54,17 +54,21 @@ List of depended packages
 
     apt-cache madison your-pkg
 
-## Add trusted key
+## Add trusted key DEPRECATED
 
     apt-key add path/to/file.asc
 
-## Add trusted key
+## Add trusted key DEPRECATED
 
 Fixing following signatures were invalid (https://github.com/yarnpkg/yarn/issues/7866)
 
     apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
 
 ## TROUBLESHOOTING: NO_PUBKEY
+
+    curl https://your.tld/your/key.gpg | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/your_key.gpg --import
+
+## TROUBLESHOOTING: NO_PUBKEY DEPRECATED
 
     wget https://your.tld/your/key.gpg -O- | sudo apt-key add - 
 
