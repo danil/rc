@@ -103,23 +103,18 @@ https://en.opensuse.org/images/1/17/Zypper-cheat-sheet-1.pdf
     zypper ar -f -c http://download.opensuse.org/update/tumbleweed/ repo-update
     zypper dup
 
-## Upgrade Leap 15.1 to 15.2
+## Upgrade Leap 15.abc to 15.xyz <sup>[1][leap-15.4-up]</sup> and [fix version][leap-15.2-fix-ver] number if hard-coded
 
-Update the system:
-
+    zypper patch
     zypper ref
     zypper up
     reboot
+    zypper --releasever=15.xyz ref # switch repositories step one
+    zypper --releasever=15.xyz dup --no-recommends --download-in-advance --allow-vendor-change  # switch repositories step two
+    reboot
 
-And then fix version number if hard-coded like described here
-<https://cyberciti.biz/faq/how-to-upgrade-opensuse-15-1-to-15-2-using-the-cli>.
-
-And then switch repositories like this:
-
-    zypper --releasever=15.2 ref
-    zypper --releasever=15.2 dup --no-recommends --download-in-advance --allow-vendor-change
-
-And then `reboot`.
+[leap-15.2-fix-ver]: https://cyberciti.biz/faq/how-to-upgrade-opensuse-15-1-to-15-2-using-the-cli
+[leap-15.4-up]: https://doc.opensuse.org/documentation/leap/archive/15.4/startup/html/book-startup/cha-update-osuse.html
 
 ## TODO
 
