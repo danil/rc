@@ -66,10 +66,12 @@ Fixing following signatures were invalid (https://github.com/yarnpkg/yarn/issues
 
 ## TROUBLESHOOTING: NO_PUBKEY
 
-    curl https://your.tld/your/key.gpg | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/your_key.gpg --import
+    curl https://your.tld/your/key.gpg | sudo gpg --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/your-key.gpg --import
+    echo -e "deb [signed-by=/usr/share/keyrings/your-key.gpg] https://your.tld.ru/your/ppa stable main" > /etc/apt/sources.list.d/your-list.list
 
 ## TROUBLESHOOTING: NO_PUBKEY DEPRECATED
 
+    curl https://your.tld/your/key.gpg | sudo gpg --no-default-keyring --keyring gnupg-ring:/etc/apt/trusted.gpg.d/your-key.gpg --import
     wget https://your.tld/your/key.gpg -O- | sudo apt-key add - 
 
 ## Other
