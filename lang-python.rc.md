@@ -1,14 +1,17 @@
-# Python
+# Python rc
 
-## HTTP server
+## Python 3 HTTP server <sup>[1][python 3 http server]</sup>
 
-<https://docs.python.org/2/library/simplehttpserver.html>
+    python3 -m http.server
 
-    cd path/to/my/project
+[python 3 http server]: <https://docs.python.org/3/library/http.server.html>
+
+## Python 2 HTTP server <sup>[2][python 2 http server]</sup>
+
     python -m SimpleHTTPServer
 
-## Gentoo
+[python 2 http server]: <https://docs.python.org/2/library/simplehttpserver.html>
 
-### Current stable
+## Python in Gentoo linux
 
 <https://wiki.gentoo.org/wiki/Project:Python/Implementations>
