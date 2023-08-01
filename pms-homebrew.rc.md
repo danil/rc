@@ -54,6 +54,10 @@
     brew uninstall your-pkg
     brew remove your-pkg
 
+## Reinstall all packages
+
+    brew list | xargs brew reinstall
+
 ## List outdated packages
 
     brew outdated
