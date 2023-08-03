@@ -1402,6 +1402,19 @@ WITH cte AS (
 
     DROP TRIGGER IF EXISTS your_trig ON your_tbl;
 
+## Select where a text column equal to a value returned by the left function
+
+    SELECT count(*) FROM cities WHERE left(name, 3) = 'Mos';
+
+## Select where a text column equal to a value extracted by the substring function with a regexp
+
+   SELECT substring(your_col, 'foo.{3}') as your_alias,
+          count(*)
+   FROM your_tbl
+   WHERE substring(your_col, 'foo.{3}') IN ('bar', 'xyz')
+   GROUP BY your_alias
+   ORDER BY your_alias;
+
 ## psql: repeat/re-execute query every 5 seconds within loop
 
     select 42;
