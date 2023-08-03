@@ -1,4 +1,4 @@
-# Bash rc
+# Bash shell scrip rc
 
 ## Path related to script
 
