@@ -1406,7 +1406,7 @@ WITH cte AS (
 
     SELECT count(*) FROM cities WHERE left(name, 3) = 'Mos';
 
-## Select where a text column equal to a value extracted by the substring function with a regexp
+## Select where a text column equal and grouped by a value extracted by the substring function with a regexp
 
    SELECT substring(your_col, 'foo.{3}') as your_alias,
           count(*)
