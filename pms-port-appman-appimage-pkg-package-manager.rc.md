@@ -22,7 +22,7 @@ Based on [AM][] application manager.
 
     appman -i your-pkg-nm
 
-## Uninstall
+## Uninstall/remove
 
     appman -r your-pkg-nm
 
