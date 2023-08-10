@@ -252,3 +252,7 @@ by popular alternative:
 1. Put [vividchalk][] in `~/vim/colors/` or `Plug 'tpope/vim-vividchalk'`
 
 [vividchalk]: https://github.com/tpope/vim-vividchalk
+
+## Vim9 script
+
+Start file with line `vim9script`.
