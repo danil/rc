@@ -8,9 +8,7 @@
 
     tar --extract --gzip --file path/to/your.tar.gz
 
-## tar extract from stdin to stdout
-
-Via pipeline
+## tar extract from stdin to stdout via pipeline
 
     cat file.tar.gz | tar --extract --gzip --to-stdout --file - | less
 
