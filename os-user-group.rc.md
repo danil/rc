@@ -14,7 +14,7 @@
 
 ## Add user and group with the same name
 
-    useradd --user-group your_usr_and_group
+    useradd --user-group your_usr_and_grp
 
 ## Add no login/unprivileged user
 
@@ -55,7 +55,7 @@
 
 ## Group edit
 
-    groupmod -n new_group_name your_grp
+    groupmod -n new_grp_name your_grp
 
 ## Group remove
 
