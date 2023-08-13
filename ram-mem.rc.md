@@ -1,4 +1,4 @@
-# RAM rc
+# RAM memory rc
 
 Random-access memory
 
