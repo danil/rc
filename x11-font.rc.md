@@ -7,11 +7,15 @@
     fc-match sans-serif
     fc-match monospace
 
-## List
+## [List all fonts][]
 
-List all fonts
+    fc-list
 
-    fc-cache --force --verbose
+[list all fonts]: https://wiki.archlinux.org/title/fonts#List_all_installed_fonts
+
+## Find font
+
+    fc-list | grep -i dejavu
 
 ## Rebuilding cache
 
