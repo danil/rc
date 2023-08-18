@@ -776,7 +776,7 @@ Binary Search <http://progit.org/book/ru/ch6-5.html>.
 ## Search filenames
 
     git ls-tree -r HEAD | grep fetcher_log
-    git ls-tree -r --name-only master |grep -i public/stylesheets/.*doc.*css
+    git ls-tree -r --name-only master | grep -i public/stylesheets/.*doc.*css
 
 ## Remove/delete
 
