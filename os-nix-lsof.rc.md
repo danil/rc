@@ -1,4 +1,4 @@
-# lsof
+# lsof rc
 
 ## Get pid/name by port
 
