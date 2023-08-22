@@ -1,4 +1,7 @@
-# openSUSE Linux/Zypper RPM rc
+# openSUSE Linux/[Zypper][] [RPM][] rc
+
+[rpm]: https://github.com/rpm-software-management/rpm
+[zypper]: https://github.com/opensuse/zypper
 
 ## Version
 
