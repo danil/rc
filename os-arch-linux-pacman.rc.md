@@ -1,4 +1,8 @@
-# Arch Linux/pacman
+# [Arch][] [Linux][]s [Pacman][] rc
+
+[arch]: https://github.com/archlinux
+[linux]: https://github.com/torvalds/linux
+[pacman]: https://en.wikipedia.org/wiki/Arch_Linux#Pacman
 
 ## pacman package manager
 

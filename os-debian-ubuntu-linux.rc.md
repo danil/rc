@@ -1,6 +1,8 @@
-# APT based distributions rc
+# [APT][] based distributions ([Debian][], [Ubuntu][]) rc
 
-Distributions like Ubuntu/Debian
+[apt]: https://en.wikipedia.org/wiki/APT_(software)
+[debian]: https://github.com/debian
+[ubuntu]: https://github.com/ubuntu
 
 ## Packages list
 

@@ -1,4 +1,7 @@
-# Rust rc
+# [Rust][] programing language/[Cargo][] rc
+
+[rust]: https://github.com/rust-lang/rust
+[cargo]: https://github.com/rust-lang/cargo
 
 ## Install <sup>[1][] [2][]</sup>
 

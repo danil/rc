@@ -1,4 +1,8 @@
-# APT (Advanced Packaging Tool) rc
+# [APT][] (Advanced Packaging Tool) of [Debian][]/[Ubuntu][] rc
+
+[apt]: https://en.wikipedia.org/wiki/APT_(software)
+[debian]: https://github.com/debian
+[ubuntu]: https://github.com/ubuntu
 
 ## Repository add
 

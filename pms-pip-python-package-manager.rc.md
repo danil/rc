@@ -1,6 +1,8 @@
-# pip rc
+# [Python][] [pip][] [PMS][] (package management system) rc
 
-Python packages management system
+[pip]: https://github.com/pypa/pip
+[pms]: https://en.wikipedia.org/wiki/Package_manager
+[python]: https://github.com/python/cpython
 
 ## List
 
