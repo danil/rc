@@ -60,11 +60,9 @@ gvfs-open, kde-open or exo-open respectively.
 
     xdg-open ~/Downloads/tasks.csv
 
-## Copy stdout to clipboard
+## [Copy stdout to clipboard][]
 
-<http://cyberciti.biz/faq/xclip-linux-insert-files-command-output-intoclipboard>.
-
-    cat /var/tmp/portage/unity-base/bamf-0.2.118/temp/build.log | xsel
+    cat path/to/file | xsel
 
 ## GLX
 
