@@ -1,4 +1,4 @@
-# Archiving and compression
+# Archiving and compression rc
 
 ## tar read
 
@@ -120,8 +120,8 @@ read -ra arr <<<"your array of directories" && \
 
 ## zstd compress tarball
 
-    tar --create --zstd --file path/to/your.file.tar.zst path/to/dir
-    tar --create --file - path/to/dir | zstd -10 --threads=0 --force --compress --stdout > path/to/your.file.tar.zst
+    tar --create --zstd --file path/to/your.file_$(hostname)_$(date --utc +%Y%m%dT%H%M%SZ).tar.zst path/to/dir
+    tar --create --file - path/to/dir | zstd -10 --threads=0 --force --compress --stdout > path/to/your.file_$(hostname)_$(date --utc +%Y%m%dT%H%M%SZ).tar.zst
 
 ## unzip decompress to directory
 
