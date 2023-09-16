@@ -82,10 +82,22 @@
 
     brew untap your-repo
 
+## Services list
+
+    brew services list
+
 ## Service start
+
+    brew services run your-srv
+
+## Service stop
+
+    brew services kill your-srv
+
+## Service autorun enable
 
     brew services start your-srv
 
-## Service stop
+## Service autorun disable
 
     brew services stop your-srv
