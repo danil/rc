@@ -74,18 +74,18 @@
 
     ls -l $(which your-file)
 
-## Add repository
+## Repository add
 
     brew tap your-repo
 
-## Remove repository
+## Repository remove
 
     brew untap your-repo
 
-## Start service
+## Service start
 
     brew services start your-srv
 
-## Stop service
+## Service stop
 
     brew services stop your-srv
