@@ -1,5 +1,10 @@
 # Archiving and compression rc
 
+## Backuping
+
+    file_nm="$(hostname | tr '[:lower:]' '[:upper:]')BAK$(date --utc +%Y%m%dT%H%M%SZ)"
+    tar --create --zstd --file path/to/your${file_nm}.tar.zst path/to/dir
+
 ## tar read
 
     tar --list --file path/to/your.tar
@@ -47,7 +52,7 @@ read -ra arr <<<"your array of directories" && \
     done
 ```
 
-## backup by tar pipe over ssh
+## Backuping by tar pipe over ssh
 
     tar --create --to-stdout --file - paht/to/dir | \
         zstd -3 --threads=0 --force --compress --stdout | \
@@ -99,7 +104,7 @@ read -ra arr <<<"your array of directories" && \
 ## xz decompress
 
     xz --decompress --keep path/to/your.file.xz
-    pg_dump db_name | xz --compress > path/to/dump_$(hostname)_$(date --utc +%Y%m%dT%H%M%SZ).sql.xz
+    pg_dump db_name | xz --compress > path/to/dump_${file_nm}.sql.xz
 
 ## xz decompress tarball
 
@@ -120,8 +125,8 @@ read -ra arr <<<"your array of directories" && \
 
 ## zstd compress tarball
 
-    tar --create --zstd --file path/to/your.file_$(hostname)_$(date --utc +%Y%m%dT%H%M%SZ).tar.zst path/to/dir
-    tar --create --file - path/to/dir | zstd -10 --threads=0 --force --compress --stdout > path/to/your.file_$(hostname)_$(date --utc +%Y%m%dT%H%M%SZ).tar.zst
+    tar --create --zstd --file path/to/your${file_nm}.tar.zst path/to/dir
+    tar --create --file - path/to/dir | zstd -10 --threads=0 --force --compress --stdout > path/to/your${file_nm}.tar.zst
 
 ## unzip decompress to directory
 
