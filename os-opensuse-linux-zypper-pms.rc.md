@@ -75,7 +75,7 @@ https://en.opensuse.org/images/1/17/Zypper-cheat-sheet-1.pdf
 
     zypper se --provides --match-exact path/to/your-file
 
-## TODO: Configuration .rpmnew .rpmsave
+## TODO Configuration .rpmnew .rpmsave
 
 ## Package repositories list
 
