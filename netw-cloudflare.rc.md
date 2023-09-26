@@ -10,14 +10,12 @@ also environmental variables can be used
 
     `CF_API_EMAIL=your.nm@your.tld CF_API_KEY=your_api_key cli4 /zones`
 
-## Zones
-
-### List
+## Zone list
 
     curl https://api.cloudflare.com/client/v4/zones
     cli4 /zones
 
-### DNS
+## DNS
 
     curl https://api.cloudflare.com/client/v4/zones/your_zone_internal_id/dns_records
     cli4 /zones/:your.tld/dns_records
