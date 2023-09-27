@@ -60,7 +60,7 @@ gvfs-open, kde-open or exo-open respectively.
 
     xdg-open ~/Downloads/tasks.csv
 
-## [Copy stdout to clipboard][]
+## Copy stdout to clipboard
 
     cat path/to/file | xsel
 
