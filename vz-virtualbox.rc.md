@@ -1,14 +1,10 @@
-# VirtualBox
+# VirtualBox virtualization rc
 
 Host IP 10.0.2.2
 
     sudo bash -c "export VBOX_USER_HOME=/home/you/.VirtualBox && VirtualBox"
 
-# vms
-
-Virtual machines
-
-## List
+## List virtual machine vms
 
     VBoxManage list vms
 

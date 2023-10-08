@@ -1,4 +1,6 @@
-# Linux
+# [Linux][] kernel rc
+
+[linux]: https://github.com/torvalds/linux
 
 ## menuconfig
 
@@ -37,21 +39,15 @@
 
 <https://www.kernel.org/pub/linux/kernel/>
 
-## Kernel modules
-
-### List
+## List modules
 
     lsmod | grep your_mod_nm
 
-### Load
-
-Add/activat
+## Load module (add/activate)
 
     modprobe your_mod_nm
 
-### Unload
-
-Remove/deactivate
+## Unload module (remove/deactivate)
 
     modprobe --remove module_name
     rmmod your_mod_nm

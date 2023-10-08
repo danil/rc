@@ -99,12 +99,12 @@ Copy ISO image to bootable usb
 
 ## Find duplicate files
 
-* `ddh` written in rust programming language https://github.com/darakian/ddh
-* `fclones` written in rust programming language https://github.com/pkolaczk/fclones
-* `fdupes` written in c programming language https://github.com/adrianlopezroche/fdupes
-* `jdupes` written in c programming language https://github.com/jbruchon/jdupes
-* `rdfind` written in c++ programming language https://github.com/pauldreik/rdfind
-* `rmlint` written in c programming language https://github.com/sahib/rmlint
+* `ddh` Written in Rust programming language <https://github.com/darakian/ddh>.
+* `fclones` Written in Rust programming language <https://github.com/pkolaczk/fclones>.
+* `fdupes` Written in C programming language <https://github.com/adrianlopezroche/fdupes>.
+* `jdupes` Written in C programming language <https://github.com/jbruchon/jdupes>.
+* `rdfind` Written in C++ programming language <https://github.com/pauldreik/rdfind>.
+* `rmlint` Written in C programming language <https://github.com/sahib/rmlint>.
 * https://github.com/justinhj/justinhj-emacs-utils emacs dired
 * http://justinsboringpage.blogspot.ru/2011/06/finding-duplicate-files-in-dired-buffer.html emacs dired
 * https://www.emacswiki.org/emacs/RemoveDuplicateFiles emacs dired

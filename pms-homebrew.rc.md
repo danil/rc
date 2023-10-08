@@ -101,3 +101,19 @@
 ## Service autorun disable
 
     brew services stop your-srv
+
+## TROUBLESHOOTING nginx service
+
+If fails to brew services run:
+
+```sh
+$ brew services run nginx
+$ grep "unexpected end of parameter" /home/linuxbrew/.linuxbrew/var/log/nginx/error.log | head -n 1
+1970/01/01 00:00:00 [emerg] 100500#0: unexpected end of parameter, expecting ";" in command line
+```
+
+Then run executable:
+
+    brew install libcap
+    sudo setcap cap_net_bind_service=ep /home/linuxbrew/.linuxbrew/Cellar/nginx/1.2.3.42/bin/nginx
+    /home/linuxbrew/.linuxbrew/Cellar/nginx/1.2.3.42/bin/nginx

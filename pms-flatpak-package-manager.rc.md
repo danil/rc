@@ -1,4 +1,4 @@
-# flatpak rc
+# Flatpak rc
 
 ## Install package manager
 
@@ -32,3 +32,7 @@
 ## List remotes
 
     flatpak remotes
+
+## TROUBLESHOOTING setting up custom mouse cursor theme
+
+    flatpak --user override --filesystem=/home/$USER/.icons/:ro # Custom mouse cursor theme files reside in the home `~/.icons` directory and whouse Flatpak configuration override reside in `~/.local/share/flatpak/overrides/global` file.

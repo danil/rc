@@ -1,4 +1,4 @@
-# Mail
+# Mail rcc
 
 ## Send
 
@@ -12,7 +12,7 @@
     printf %b "From: your.nm+1@your.tld\nTo: your.nm+2@your.tld\nSubject: Your subject\n\nYour body" | \
            /usr/sbin/sendmail -f "your.nm+1@your.tld" "your.nm+2@your.tld"
 
-### HTML
+## Send HTML
 
 Mail with HTML body
 
@@ -22,11 +22,7 @@ mail --append="Content-type: text/html;" \
      your.nm@your.tld < path/to/index.html
 ```
 
-### SMTP
-
-Send by SMTP
-
-#### Telnet
+## Send by SMTP through TELNET
 
 ```sh
 telnet localhost smtp
@@ -57,9 +53,7 @@ Connection closed by foreign host.
     /usr/sbin/sendmail -bV
     exim -bV
 
-## SMTP
-
-### swaks
+## SMTP Swaks
 
 `net-mail/swaks` command line smtp testing, including tls and auth
 <http://jetmore.org/john/code/swaks/>

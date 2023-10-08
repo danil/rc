@@ -1,4 +1,4 @@
-# Synaptics touchpad
+# Synaptics touchpad rc
 
 <http://en.wikipedia.org/wiki/Synaptics>,  
 <http://en.gentoo-wiki.com/wiki/Synaptics_Touchpad>.
@@ -10,7 +10,7 @@
 
     synclient EmulateTwoFingerMinZ=40
 
-## xorg.conf
+## X11 xorg.conf
 
     Section "InputDevice"
       Identifier "Synaptics Touchpad"
@@ -21,7 +21,7 @@
       Option "SendCoreEvents"
       Option "Protocol" "auto-dev"
 
-### Real-Time Tweaking
+## X11 real-Time Tweaking
 
 <http://en.gentoo-wiki.com/wiki/Synaptics_Touchpad#.22Can.27t_access_shared_memory_area._SHMConfig_disabled.3F.22_error>,  
 <http://wiki.archlinux.org/index.php/Touchpad_Synaptics#Fine-tuning_with_synclient>.
@@ -30,7 +30,7 @@ Options: "on" or "off".
 
       Option "SHMConfig" "on"
 
-### Touchpad device file
+## X11 touchpad device file
 
 <http://en.gentoo-wiki.com/wiki/Synaptics_Touchpad#Touchpad_device_file>
 
@@ -56,8 +56,7 @@ Options: "on" or "off".
       Option "MaxSpeed"    "1"
       Option "AccelFactor" "0.15"
 
-
-### [Tapping][]
+## X11 [tapping][]
 
 * `1` — левая кнопка
 * `2` — средняя кнопка (колесо)
@@ -95,14 +94,14 @@ Max time in ms for detecting tap.
 
 [Tapping]: http://wiki.archlinux.org/index.php/Touchpad_Synaptics#Tapping_issues
 
-### [Edge scrolling][]
+## X11 [Edge scrolling][]
 
       Option "VertEdgeScroll"  "0"
       Option "HorizEdgeScroll" "0"
 
 [Edge scrolling]: http://wiki.archlinux.org/index.php/Touchpad_Synaptics#Edge_scrolling
 
-### [Two-Finger scrolling][]
+## X11 [Two-Finger scrolling][]
 
       Option "VertTwoFingerScroll"  "0"
       Option "HorizTwoFingerScroll" "1"
@@ -114,7 +113,7 @@ Max time in ms for detecting tap.
 
 [Two-Finger scrolling]: http://wiki.archlinux.org/index.php/Touchpad_Synaptics#Two-Finger_scrolling
 
-### Circular scrolling
+## X11 circular scrolling
 
 <http://wiki.archlinux.org/index.php/Touchpad_Synaptics#Circular_scrolling>,  
 <http://wiki.archlinux.org/index.php/Тачпад_Synaptics#.D0.9A.D1.80.D1.83.D0.B3.D0.BE.D0.B2.D0.B0.D1.8F_.D0.BF.D1.80.D0.BE.D0.BA.D1.80.D1.83.D1.82.D0.BA.D0.B0>.
@@ -129,7 +128,7 @@ Max time in ms for detecting tap.
 * `7` — Left Edge
 * `8` — Top Left Corner
 
-#### Enable circular scrolling
+## X11 enabling of circular scrolling
 
       Option "CircularScrolling" "1"
       Option "CircScrollTrigger" "3"
