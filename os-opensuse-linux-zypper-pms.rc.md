@@ -71,7 +71,7 @@ https://en.opensuse.org/images/1/17/Zypper-cheat-sheet-1.pdf
 
     zypper se --requires your-pkg
 
-## Which package file belongs to
+## Find package a file belongs to
 
     zypper se --provides --match-exact path/to/your-file
 

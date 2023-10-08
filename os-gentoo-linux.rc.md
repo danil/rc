@@ -1,4 +1,4 @@
-# Gentoo Linux
+# Gentoo Linux rc
 
 ## Installation via copy MBR partitions
 

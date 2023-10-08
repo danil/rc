@@ -29,10 +29,9 @@ Debian package
 
     dpkg-query --listfiles <package_name>
 
-## Find what package a file belongs to
-
-Find what package a file belongs to
-<https://superuser.com/questions/10997/find-what-package-a-file-belongs-to-in-ubuntu-debian>
+## Find package a file belongs to <sup>[*][superuser 11003]</sup>
 
     dpkg --search path/to/file
     apt-file search path/to/file
+
+[superuser 11003]: <https://superuser.com/questions/10997/find-what-package-a-file-belongs-to-in-ubuntu-debian#11003>

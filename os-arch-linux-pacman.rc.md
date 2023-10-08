@@ -97,7 +97,7 @@ https://wiki.archlinux.org/index.php/Pacman#Cleaning_the_package_cache
 
 <https://github.com/UndeadKernel/pacfiles-mode>
 
-## Which package file belongs to
+## Find package a file belongs to
 
     pacman --query --owns path/to/your-file
 
