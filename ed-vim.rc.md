@@ -81,17 +81,19 @@ by popular alternative:
 * `#`    Word under cursor backward.
 * `:noh` Unhighlight.
 
-## Cursor move/navigation by word
+## Cursor move/navigate by word/token
 
 * `b` Backwards to the start of a word.
 * `w` Forwards to the start of a word.
+* `B` Backwards to the start of a word that includes special characters (_-).
+* `W` Forwards to the start of a word that includes special characters (_-).
 
-## Cursor move/navigation by line
+## Cursor move/navigate by line
 
 * `^` Line begin.
 * `$` Line end.
 
-## Cursor move/navigation by file
+## Cursor move/navigate by file
 
 * `gg` File beginning.
 * `G`  File end.

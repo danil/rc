@@ -3,33 +3,55 @@
 [rust]: https://github.com/rust-lang/rust
 [cargo]: https://github.com/rust-lang/cargo
 
-## Install <sup>[1][] [2][]</sup>
+## HOWTO Install by [Homebrew][]
+
+    brew install rust
+
+[homebrew]: https://formulae.brew.sh/formula/rust#default
+
+## HOWTO [Install][] by [rustup][]
 
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-[1]: http://rustup.rs
-[2]: https://www.rust-lang.org/tools/install
+[install]: https://rust-lang.org/tools/install
+[rustup]: http://rustup.rs
 
-## Cargo install package
+## HOWTO [Hello, World!][]
+
+```rust
+fn main() {
+    println!("Hello, World!");
+}
+```
+
+```sh
+$ rustc main.rs
+$ ./main
+Hello, World!
+```
+
+[hello, world!]: https://doc.rust-lang.org/book/ch01-02-hello-world.html#writing-and-running-a-rust-program
+
+## HOWTO Cargo install package
 
     cargo install your-pkg
 
-## Cargo install specific version
+## HOWTO Cargo install specific version
 
     cargo install --version=1.2.3 your-pkg
 
-## `Cargo.toml` package build/install
+## HOWTO `Cargo.toml` package build/install
 
     cargo build
 
-## Cargo update/upgrade package
+## HOWTO Cargo update/upgrade package
 
     cargo install --force your-pkg
 
-## `Cargo.toml` package update/upgrade
+## HOWTO `Cargo.toml` package update/upgrade
 
     cargo update
 
-## Cargo uninstall package
+## HOWTO Cargo uninstall package
 
     cargo uninstall your_pkg_nm

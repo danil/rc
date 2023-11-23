@@ -1,8 +1,8 @@
-# FFmpeg
+# [CGI][] FFmpeg rc
 
-## Codecs
+[cgi]: https://en.wikipedia.org/wiki/Computer-generated_imagery
 
-### List
+## Codec list
 
     ffmpeg -codecs
 
@@ -23,7 +23,7 @@ and audio to vorbis compression format <http://en.wikipedia.org/wiki/Vorbis>.
            -vf "scale=trunc(in_w/2)*2:trunc(in_h/2)*2" \
            output.webm
 
-### Map
+## Map
 
 <http://trac.ffmpeg.org/wiki/How%20to%20use%20-map%20option>
 

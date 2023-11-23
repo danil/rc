@@ -66,7 +66,7 @@ Connection closed by foreign host.
           --h-Subject: "Your subject" \
           --body "Your mail body"
 
-## Mailgun
+## [Mailgun][] [MTA][]
 
 ```sh
 curl -s --user 'api:YOUR_API_KEY' \
@@ -77,3 +77,6 @@ curl -s --user 'api:YOUR_API_KEY' \
     -F subject='Hello' \
     -F text='Testing some Mailgun awesomeness!'
 ```
+
+[mailgun]: https://mailgun.com
+[mta]: https://en.wikipedia.org/wiki/Message_transfer_agent
