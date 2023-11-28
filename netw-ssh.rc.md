@@ -1,4 +1,4 @@
-# SSH
+# SSH rc
 
     ssh -t root@santaslittlehelper "ssh danil@homer"
     sshfs -p 61022 your.tld:/home/danil/ mnt/example_org/
@@ -9,15 +9,17 @@
 
     ssh-keygen -f path/to/private_key
 
-## Generate RSA key
+## Generate [Ed25519][] key
 
-<https://help.github.com/articles/generating-ssh-keys/#step-2-generate-a-new-ssh-key>
+    ssh-keygen -t ed25519
+
+[ed25519]: https://github.com/orlp/ed25519
+
+## DEPRECATED Generate [RSA][] key
 
     ssh-keygen -t rsa
 
-## TODO generate Ed25519 key
-
-  ssh-keygen -o -a 100 -t ed25519
+[rsa]: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key
 
 ## Generate key with email
 
