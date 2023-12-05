@@ -73,7 +73,7 @@ Save container as image after interactive changes
     docker commit your_usr_nm/your_container_nm \
                   your_image_nm:1970_01_01
 
-## Copy to container 
+## Copy to container
 
 Copy from container to host
 
@@ -85,8 +85,7 @@ Copy from host to container
 
 ## Registry
 
-Push image to local registry repository  
-<http://blog.docker.com/2013/07/how-to-use-your-own-registry/>
+Push image to local registry repository.
 
     docker tag my-image-id localhost:63711/medapp-demo
     docker push localhost:63711/medapp-demo
