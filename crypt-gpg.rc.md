@@ -22,7 +22,7 @@ Prompt password interactively
 
 Get password from standard input
 
-    echo $your_password | gpg --passphrase-fd 0 --symmetric --armor file.tar.gz
+    echo $your_pwd| gpg --passphrase-fd 0 --symmetric --armor file.tar.gz
 
 ## Encrypt symmetric by password file from stdin
 
@@ -53,7 +53,7 @@ Prompt password interactively
 Redirect password from stdin
 <http://stackoverflow.com/questions/19895122/how-to-use-gnupgs-passphrase-fd-argument#21007390>
 
-    echo $your_password \
+    echo $your_pwd \
       | gpg --passphrase-fd 0 --decrypt --batch -- path/to/file.tar.gz.asc \
       | tar --extract --gzip --file -
 

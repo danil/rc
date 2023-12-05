@@ -94,7 +94,7 @@ Dump schema without data
 ### Create
 
     GRANT CREATE, INSERT, DELETE, UPDATE, SELECT, DROP, INDEX, ALTER, LOCK TABLES
-      ON `your_db_nm`.* TO 'your_usr'@'%' IDENTIFIED BY 'password';
+      ON `your_db_nm`.* TO 'your_usr'@'%' IDENTIFIED BY 'your-pwd';
     GRANT ALL ON `your_db_nm`.* TO 'your_usr'@'localhost';
     GRANT ALL ON *.* TO 'your_usr'@'localhost';
 
@@ -104,7 +104,7 @@ DATABASES, UPDATE, USAGE, LOCK TABLES and so on
 
 ### Set password
 
-    SET PASSWORD FOR 'your_usr'@'localhost' = PASSWORD('password');
+    SET PASSWORD FOR 'your_usr'@'localhost' = PASSWORD('your-pwd');
     mysqladmin -u root -h localhost password 'new-password'
 
 ### Show grants
@@ -427,5 +427,5 @@ Suitable with self referened/sourced update/set
 
 ### Purge
 
-    mysql --user=root --password='your password' \
+    mysql --user=root --password='your pwd' \
       --execute="PURGE BINARY LOGS BEFORE '1970-01-01 00:00:00';"

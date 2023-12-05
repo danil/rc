@@ -36,7 +36,7 @@
 
 ## URL
 
-    psql postgres://your_usr:your-password@your.host:5432/your_db
+    psql postgres://your_usr:your-pwd@your.host:5432/your_db
 
 ## Maximum query size/length limit
 
@@ -64,7 +64,7 @@ Backuping:
 
 ## Create dump of all databases by pg_dump by URL
 
-    pg_dump postgres://your_usr:your-password@your.host:5432/your_db \
+    pg_dump postgres://your_usr:your-pwd@your.host:5432/your_db \
             > path/to/dump.sql
 
 ## Create dump of all databases by psql
@@ -419,7 +419,7 @@ Log statements with any durations
     pgbench -h localhost -p 51000 -c 1000 -C -S -t 1 \
             -U your_role -f ./pgbouncer/pgbench.sql your_db
 
-    PGPASSWORD=your-password \
+    PGPASSWORD=your-pwd \
       pgbench -h localhost -p 5433 -U your_role \
               -c 100 -C -d -S -t 1000 \
               -f path/to/file.sql your_db
@@ -450,7 +450,7 @@ Log statements with any durations
                 LC_COLLATE='en_US.UTF-8'
                 LC_CTYPE='en_US.UTF-8';
     UPDATE pg_database SET datistemplate = TRUE WHERE datname = 'template1';
-    CREATE ROLE your_role WITH SUPERUSER LOGIN PASSWORD 'your-password';
+    CREATE ROLE your_role WITH SUPERUSER LOGIN PASSWORD 'your-pwd';
     CREATE DATABASE your_db WITH OWNER your_role ENCODING = 'UTF8';
 
 ## Reserved key words
@@ -642,7 +642,7 @@ when the command is spelled `CREATE USER`, `LOGIN` is assumed by default.
 
 ## Create standard user
 
-    CREATE ROLE your_role WITH LOGIN PASSWORD 'password'
+    CREATE ROLE your_role WITH LOGIN PASSWORD 'your-pwd'
     VALID UNTIL '2009-01-01';
 
     createuser --no-createrole --no-createdb --no-superuser --pwprompt \
@@ -650,14 +650,14 @@ when the command is spelled `CREATE USER`, `LOGIN` is assumed by default.
 
 ## Create Superuser
 
-    CREATE ROLE your_role WITH SUPERUSER LOGIN PASSWORD 'password'
+    CREATE ROLE your_role WITH SUPERUSER LOGIN PASSWORD 'your-pwd'
     VALID UNTIL '2009-01-01';
 
     createuser --superuser --pwprompt --encrypted --username=postgres --password your_role
 
 ## Alter/update role
 
-    ALTER ROLE your_role WITH PASSWORD 'your*password';
+    ALTER ROLE your_role WITH PASSWORD 'your-pwd';
     ALTER ROLE your_role CREATEDB;
     ALTER ROLE your_role NOCREATEDB;
 

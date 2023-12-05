@@ -61,7 +61,7 @@ Connection closed by foreign host.
     swaks --auth \
           --server your.smtp.domain \
           --auth-user your-login \
-          --auth-password your-password \
+          --auth-password your-pwd \
           --to your.nm@your.tld \
           --h-Subject: "Your subject" \
           --body "Your mail body"
