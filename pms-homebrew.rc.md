@@ -102,6 +102,11 @@
 
     brew services stop your-srv
 
+## TROUBLESHOOTING
+
+    brew doctor
+    brew config
+
 ## TROUBLESHOOTING nginx service
 
 If fails to brew services run:
