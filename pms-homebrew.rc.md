@@ -2,7 +2,7 @@
 
 [homebrew]: https://github.com/homebrew/brew
 
-## [Install homebrew][] itself on Linux
+## HOWTO [Install homebrew][] itself on Linux
 
     test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
     test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -12,93 +12,89 @@
 
 [install homebrew]: https://docs.brew.sh/Homebrew-on-Linux#install
 
-## Update homebrew itself and its metadata
-
-    brew update --verbose
-
-## List installed
+## HOWTO List installed
 
     brew list
 
-## Check if package is installed
+## HOWTO Check if package is installed
 
     brew list your-pkg
 
-## Search
+## HOWTO Search
 
     brew search your-pkg
     brew search /^your-pkg$/
 
-## Package version
+## HOWTO Package version
 
     brew info --json your-pkg | jq -r '.[].versioned_formulae[]'
 
-## Description
+## HOWTO Description
 
     brew desc --eval-all your-pkg
 
-## List package files excludes jpeg, png, gif, conf and so on
+## HOWTO List package files excludes jpeg, png, gif, conf and so on
 
     brew ls your-pkg
 
-## List all files of package
+## HOWTO List all files of package
 
     brew ls --verbose your-pkg
 
-## Install
+## HOWTO Install
 
     brew install your-pkg
 
-## Uninstall
+## HOWTO Uninstall
 
     brew uninstall your-pkg
     brew remove your-pkg
 
-## Reinstall all packages
+## HOWTO Reinstall all packages
 
     brew list | xargs brew reinstall
 
-## List outdated packages
+## HOWTO List outdated packages
 
     brew outdated
 
-## Update package
+## HOWTO Update package
 
     brew upgrade your-pkg
 
-## Update all packages
+## HOWTO Update all packages
 
     brew upgrade
 
-## Determine which package provides a given file
+## HOWTO Determine which package provides a given file
 
     ls -l $(which your-file)
 
-## Repository add
+## HOWTO Repository add
 
     brew tap your-repo
 
-## Repository remove
+## HOWTO Repository remove
 
     brew untap your-repo
 
-## Services list
+## HOWTO Services list
 
     brew services list
 
-## Service start
+## HOWTO Service start
 
     brew services run your-srv
 
-## Service stop
+## HOWTO Service stop
 
     brew services kill your-srv
 
-## Service autorun enable
+## HOWTO Service autorun enable
 
     brew services start your-srv
 
-## Service autorun disable
+## HOWTO Service autorun disable
 
     brew services stop your-srv
 
