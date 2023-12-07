@@ -1,7 +1,7 @@
 # Non [PCRE][] [regexp][] [sed][] Stream Editor rc
 
 [sed]: https://github.com/mirror/sed
-[pcre]: https://github.com/PCRE2Project/pcre2
+[pcre]: https://github.com/pcre2project/pcre2
 [regexp]: https://en.wikipedia.org/wiki/Regular_expression
 
     find ./ -type f -iregex ".*e?rb" -exec sed -i -r \
