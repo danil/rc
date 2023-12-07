@@ -27,6 +27,6 @@
 
 ## Live evaluation/debug
 
-1. https://regex101.com cons: no source code (proprietary)
+1. https://regex101.com CONS: No source code (proprietary).
 2. https://regexr.com
 3. https://rubular.com
