@@ -1,4 +1,6 @@
-# Regular expressions rc
+# Regexp [PCRE] regular expression rc
+
+[PCRE]: https://github.com/PCRE2Project/pcre2
 
 ## Positive lookahead
 
