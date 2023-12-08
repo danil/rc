@@ -36,11 +36,11 @@ Runs a benchmark for 30 seconds, using 12 threads, and keeping
 
 ## [hey][]
 
+Runs 1000 requests, using 100 threads.
+
     hey -n 1000 -c 100 https://localhost
 
 [hey]: https://github.com/rakyll/hey
-
-Runs 1000 requests, using 100 threads
 
 ## [bombardier][]
 
@@ -56,10 +56,12 @@ Only one url (no multiple urls)
 
 ## [Pandora][]
 
-Produce HTTP/S/1/2 load
+Produce HTTP/S/1/2 load.
 
 [pandora]: http://github.com/yandex/pandora
 
 ## [k6][]
+
+Written in Go programming language and scripting JavaScript.
 
 [k6]: https://github.com/grafana/k6
