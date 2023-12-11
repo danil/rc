@@ -103,11 +103,13 @@ Copy ISO image to bootable usb
 * `fclones` Written in Rust programming language <https://github.com/pkolaczk/fclones>.
 * `fdupes` Written in C programming language <https://github.com/adrianlopezroche/fdupes>.
 * `jdupes` Written in C programming language <https://github.com/jbruchon/jdupes>.
-* `rdfind` Written in C++ programming language <https://github.com/pauldreik/rdfind>.
+* `rdfind` Written in [C++][] programming language <https://github.com/pauldreik/rdfind>.
 * `rmlint` Written in C programming language <https://github.com/sahib/rmlint>.
 * https://github.com/justinhj/justinhj-emacs-utils emacs dired
 * http://justinsboringpage.blogspot.ru/2011/06/finding-duplicate-files-in-dired-buffer.html emacs dired
 * https://www.emacswiki.org/emacs/RemoveDuplicateFiles emacs dired
+
+[c++]: https://en.wikipedia.org/wiki/C%2B%2B
 
 ## Mount cdrom
 
