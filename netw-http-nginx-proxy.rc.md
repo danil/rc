@@ -1,4 +1,4 @@
-# nginx rcc
+# nginx rc
 
 ## Config reload
 
