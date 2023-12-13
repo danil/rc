@@ -2,11 +2,11 @@
 
 ## Hash function quality and [speed test][]
 
-[CRC-32][] vs [Adler-32][] vs [MurmurHash3][] vs [xxHash][] vs [BLAKE3][]
+[CRC-32][crc32] vs [Adler-32][] vs [MurmurHash3][] vs [xxHash][] vs [BLAKE3][]
 
 [adler-32]: https://github.com/madler/zlib
 [blake3]: https://github.com/blake3-team/blake3
-[crc-32]: https://en.wikipedia.org/wiki/Cyclic_redundancy_check
+[crc32]: https://en.wikipedia.org/wiki/Cyclic_redundancy_check
 [murmurhash3]: https://github.com/aappleby/smhasher
 [speed test]: https://github.com/rurban/smhasher
 [xxhash]: https://github.com/cyan4973/xxhash
