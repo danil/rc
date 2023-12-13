@@ -11,13 +11,15 @@
 [speed test]: https://github.com/rurban/smhasher
 [xxhash]: https://github.com/cyan4973/xxhash
 
-## [CRC32][] create
+## [CRC32][] create<sup>[*][crc32.online]</sup>
 
     brew install gzip 
     echo -n "Hello, World!" | gzip -1 | tail -c 8 | head -c 4 | hexdump -e '1/4 "%08x" "\n"'
 
     brew install rhash
     echo -n "Hello, World!" | rhash --crc32 -
+
+[crc32.online]: https://crc32.online
 
 ## [MD5][] create
 
