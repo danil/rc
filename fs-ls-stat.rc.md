@@ -1,9 +1,13 @@
-# ls rc
+# ls and stat rc
 
-## HOWTO sort by size largest first
+## HOWTO ls: sort by size largest first
 
     ls -l -a --all -h --human-readable -S --sort=size your/dir | tail -n 1
 
-## HOWTO sort by size smallest first
+## HOWTO ls: sort by size smallest first
 
     ls -l -a --all -h --human-readable -S --sort=size  -r --reverse your/dir | tail -n 1
+
+## HOWTO stat: last modified time
+
+    stat your/file
