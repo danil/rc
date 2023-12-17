@@ -294,7 +294,7 @@ For example: `Id` -> `ID` `Url` -> `URL` `Xml` -> `XML`
             Format(f State, c rune)
     }
 
-## HOWTO Error wrap and format <sup>[*][1238582052] [*][2031092561] [*][2122683529]</sup>
+## HOWTO Error wrapping and formatting <sup>[*][1238582052] [*][2031092561] [*][2122683529]</sup>
 
     fmt.Errorf("your error: %w", errors.New("something went wrong"))
 
