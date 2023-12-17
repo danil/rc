@@ -294,6 +294,14 @@ For example: `Id` -> `ID` `Url` -> `URL` `Xml` -> `XML`
             Format(f State, c rune)
     }
 
+## HOWTO Error wrap and format <sup>[*][1238582052] [*][2031092561] [*][2122683529]</sup>
+
+    fmt.Errorf("your error: %w", errors.New("something went wrong"))
+
+[1238582052]: https://pkg.go.dev/errors#pkg-overview
+[2031092561]: https://pkg.go.dev/fmt#Errorf
+[2122683529]: https://go.dev/blog/go1.13-errors#wrapping-errors-with-w
+
 ## HOWTO Explicit argument indexes of formatter
 
     fmt.Sprintf("%[2]d %[1]d", 11, 22)
