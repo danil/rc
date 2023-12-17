@@ -24,6 +24,11 @@
 [rhash sf]: https://rhash.sourceforge.io
 [rhash]: https://github.com/rhash/rhash
 
+## [CRC32][] create and return integer
+
+    brew install gzip
+    echo -n "Hello, World!" | gzip -1 | tail -c 8 | head -c 4 | hexdump -e '1/4 "%08d" "\n"'
+
 ## [MD5][] create
 
     brew install coreutils
