@@ -461,6 +461,8 @@ The Go standard library already preserves sorted order of map keys:
 [http]: https://pkg.go.dev/net/http
 [multipart]: https://pkg.go.dev/mime/multipart
 
+    curl -X POST "https://your.tld/your/path" -H "Content-Type: multipart/form-data" -F "file=@/etc/hosts;filename=your.file;type=*/*" --basic --user your_user:your_password
+
 ```go
 package main
 
@@ -496,7 +498,7 @@ func main() {
 	writer.Close()
 
 	client := &http.Client{}
-	req, err := http.NewRequest("POST", "http://your.tld/your/path", form)
+	req, err := http.NewRequest("POST", "https://your.tld/your/path", form)
 	if err != nil {
 		log.Fatal(err)
 	}
