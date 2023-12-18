@@ -1,5 +1,6 @@
-# Go programming language <sup>[*][proverbs]</sup> rc
+# [Go][] programming language <sup>[*][proverbs]</sup> rc
 
+[go]: https://github.com/golang/go
 [proverbs]: https://go-proverbs.github.io
 
 ## HOWTO Install by [Homebrew][]
