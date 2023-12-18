@@ -452,3 +452,69 @@ The Go standard library already preserves sorted order of map keys:
 > The map keys are sorted
 
 [json]: https://pkg.go.dev/encoding/json
+
+
+## HOWTO [HTTP][] `multipart/form-data` `POST` of file by local path <sup>[*][multipart] [1102513506][] [1351755388][]</sup>
+
+[1102513506]: https://github.com/curlconverter/curlconverter
+[1351755388]: https://curlconverter.com/go
+[http]: https://pkg.go.dev/net/http
+[multipart]: https://pkg.go.dev/mime/multipart
+
+```go
+package main
+
+import (
+	"bytes"
+	"fmt"
+	"io"
+	"log"
+	"mime/multipart"
+	"net/http"
+	"path/filepath"
+)
+
+func main() {
+	form := new(bytes.Buffer)
+	writer := multipart.NewWriter(form)
+	fw, err := writer.CreateFormFile("file", filepath.Base("your.file"))
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fd, err := os.Open("/etc/hosts")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer fd.Close()
+
+	_, err = io.Copy(fw, fd)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	writer.Close()
+
+	client := &http.Client{}
+	req, err := http.NewRequest("POST", "http://your.tld/your/path", form)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	req.Header.Set("Content-Type", writer.FormDataContentType())
+	req.SetBasicAuth("your_user", "your_password")
+
+	resp, err := client.Do(req)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	bodyText, err := io.ReadAll(resp.Body)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Printf("%s\n", bodyText)
+}
+```
