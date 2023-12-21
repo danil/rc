@@ -14,7 +14,9 @@
 ## [CRC32][] create<sup>[*][crc32.online] [*][crc32 demystified] [*][rhash] [*][rhash sf]</sup>
 
     brew install gzip 
-    echo -n "Hello, World!" | gzip -1 | tail -c 8 | head -c 4 | hexdump -e '1/4 "%08x" "\n"'
+    echo -n "Hello, World!" | gzip -1 | tail -c 8 | head -c 4 | hexdump -e '1/4 "%08x" "\n"' # unsigned hexadecimal integer
+    echo -n "Hello, World!" | gzip -1 | tail -c 8 | head -c 4 | hexdump -e '1/4 "%08d" "\n"' # signed integer
+    echo -n "Hello, World!" | gzip -1 | tail -c 8 | head -c 4 | hexdump -e '1/4 "%08u" "\n"' # unsigned integer
 
     brew install rhash
     echo -n "Hello, World!" | rhash --crc32 -
@@ -23,11 +25,6 @@
 [crc32.online]: https://crc32.online
 [rhash sf]: https://rhash.sourceforge.io
 [rhash]: https://github.com/rhash/rhash
-
-## [CRC32][] create and return integer
-
-    brew install gzip
-    echo -n "Hello, World!" | gzip -1 | tail -c 8 | head -c 4 | hexdump -e '1/4 "%08d" "\n"'
 
 ## [MD5][] create
 
