@@ -108,11 +108,13 @@ Removing/pruning unused dependencies
 
     go clean -modcache
 
-## Gitlab private sub group module get error
+## TROUBLESHOOTING Gitlab private sub group module get error <sup>[1][1739240897] [2}[1965053761]</sup>
 
-* https://gitlab.com/gitlab-org/gitlab-foss/-/issues/37832
-* https://gitlab.com/gitlab-org/gitlab-foss/-/issues/65681
-* <https://www.reddit.com/r/golang/comments/9n2phh/go_1111_module_issue_with_gitlab> nginx proxy workaround
+* TEMP nginx proxy <sup>[*][1551010382]</sup>
+
+[1551010382]: https://reddit.com/r/golang/comments/9n2phh/go_1111_module_issue_with_gitlab
+[1739240897]: https://gitlab.com/gitlab-org/gitlab-foss/-/issues/37832
+[1965053761]: https://gitlab.com/gitlab-org/gitlab-foss/-/issues/65681
 
 ## TROUBLESHOOTING Fatal: could not read Username for 'https://your.tld': terminal prompts disabled
 

@@ -1,5 +1,6 @@
-# [Go][] programming language <sup>[*][proverbs]</sup> rc
+# [Go][] programming language <sup>[1][proverbs] [2][effective go]</sup> rc
 
+[effective go]: https://go.dev/doc/effective_go
 [go]: https://github.com/golang/go
 [proverbs]: https://go-proverbs.github.io
 
@@ -234,10 +235,14 @@ go run -ldflags "-X path/to/package.foo=123 -X path/to/package.Bar=xyz" main.go
 
 ## DOC Package naming convention style
 
-* https://github.com/golang/go/wiki/CodeReviewComments#package-names
-* https://golang.org/doc/effective_go.html#package-names
-* https://blog.golang.org/package-names
+* [Code Review Package names][]
+* [Effective Go Package names][]
+* [Go Blog Package names][]
 * <https://talks.golang.org/2016/refactor.article#TOC_3.>
+
+[code review package names]: https://github.com/golang/go/wiki/CodeReviewComments#package-names
+[effective go package names]: https://go.dev/doc/effective_go#package-names
+[go blog package names]: https://go.dev/blog/package-names
 
 ## DOC Code review bad/meaningless package name convention style
 
