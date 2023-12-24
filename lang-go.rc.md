@@ -35,7 +35,7 @@ Hello, World!
 
 ## DOC Books
 
-* The Go Programming Language Alan A. A. Donovan, Brian W. Kernighan <sup>[*][629190432]</sup>
+* "The Go Programming Language" Alan A. A. Donovan, Brian W. Kernighan <sup>[*][629190432]</sup>
 
 [629190432]: https://go.dev/learn/#featured-books
 
