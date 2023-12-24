@@ -33,6 +33,12 @@ Hello, World!
 
     go env
 
+## DOC Books
+
+* The Go Programming Language Alan A. A. Donovan, Brian W. Kernighan <sup>[*][629190432]</sup>
+
+[629190432]: https://go.dev/learn/#featured-books
+
 ## HOWTO Packages install
 
 Get with all dependencies (exclude test dependencies)
