@@ -1,4 +1,4 @@
-# rsync
+# rsync rc
 
 ## Download
 
