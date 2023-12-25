@@ -4,15 +4,13 @@
 
     rsync --verbose --human-readable --checksum --partial --append-verify --progress --stats your_usr@your.tld:/path/to/file .
 
-## Upload
-
-<http://stackoverflow.com/questions/9090817/copying-files-using-rsync-from-remote-server-to-local-machine#9090859>
+## Upload <sup>[*][3455155745]</sup>
 
     rsync --verbose --human-readable --checksum --partial --append-verify --progress --stats . your_usr@your.tld:/path/to/file
 
-## Compress
+[3455155745]: http://stackoverflow.com/questions/9090817/copying-files-using-rsync-from-remote-server-to-local-machine#9090859
 
-Archive
+## Compress/archive
 
     rsync --compress your_usr@your.tld:/path/to/file .
 
@@ -20,14 +18,13 @@ Archive
 
     rsync --rsh='ssh -p22022' your_usr@your.tld:/path/to/file .
 
-## Exclude directory
-
-Copy directory exclude directory
-<https://stackoverflow.com/questions/4585929/how-to-use-cp-command-to-exclude-a-specific-directory#14789400>
+## Copy directory exclude directory <sup>[*][664979604]</sup>
 
     rsync -av --progress sourcefolder /destinationfolder \
           --exclude thefoldertoexclude1
           --exclude thefoldertoexclude2
+
+[664979604]: https://stackoverflow.com/questions/4585929/how-to-use-cp-command-to-exclude-a-specific-directory#14789400
 
 ## Backup
 
@@ -43,8 +40,3 @@ Copy directory exclude directory
           path/to/dir1 \
           path/to/dir2 \
           your_usr@your.tld:/path/to/dir
-
-## Other
-
-    rsync -rv --stats --delete --compress --skip-compress=jpg,gif,png,mp4 \
-      your_usr@your.tld:~/foo/bar foo
