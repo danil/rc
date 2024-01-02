@@ -1,4 +1,6 @@
-# Bash shell scrip rc
+# [Bash][] shell scrip rc
+
+[bash]: https://en.wikipedia.org/wiki/Bash_(Unix_shell)
 
 ## Path related to script
 
