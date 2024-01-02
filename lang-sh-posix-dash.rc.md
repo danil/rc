@@ -1,4 +1,4 @@
-# [Dash][] [POSIX][] shell scritp rc
+# [POSIX][] shell scritp <sup>[*][dash]</sup>rc
 
 [dash]: https://en.wikipedia.org/wiki/Almquist_shell#dash
 [posix]: https://en.wikipedia.org/wiki/POSIX
