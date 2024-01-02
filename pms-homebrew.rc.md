@@ -116,5 +116,5 @@ $ grep "unexpected end of parameter" /home/linuxbrew/.linuxbrew/var/log/nginx/er
 Then run executable:
 
     brew install libcap
-    sudo setcap cap_net_bind_service=ep /home/linuxbrew/.linuxbrew/Cellar/nginx/1.2.3.42/bin/nginx
-    /home/linuxbrew/.linuxbrew/Cellar/nginx/1.2.3.42/bin/nginx
+    sudo setcap cap_net_bind_service=ep /home/linuxbrew/.linuxbrew/Cellar/nginx/0.123.42/bin/nginx
+    /home/linuxbrew/.linuxbrew/Cellar/nginx/0.123.42/bin/nginx
