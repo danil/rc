@@ -1,4 +1,7 @@
-# POSIX shell scritp rc
+# [Dash][] [POSIX][] shell scritp rc
+
+[dash]: https://en.wikipedia.org/wiki/Almquist_shell#dash
+[posix]: https://en.wikipedia.org/wiki/POSIX
 
 ## Current directory
 
