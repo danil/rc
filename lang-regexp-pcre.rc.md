@@ -1,6 +1,8 @@
-# [PCRE] [regexp][] regular expression rc
+# [PCRE][] [regexp][] regular expression <sup>[1][foss] [2][proprietary]</sup> rc
 
+[foss]: https://en.wikipedia.org/wiki/Free_and_open-source_software
 [pcre]: https://github.com/pcre2project/pcre2
+[proprietary]: https://en.wikipedia.org/wiki/Proprietary_software
 [regexp]: https://en.wikipedia.org/wiki/Regular_expression
 
 ## Positive lookahead
@@ -30,6 +32,6 @@
 
 ## Live evaluation/debug
 
-1. https://regex101.com CONS: Proprietary (no source code).
-2. https://regexr.com
+1. https://regex101.com CONS: Proprietary.
+2. https://regexr.com PROS: FOSS.
 3. https://rubular.com
