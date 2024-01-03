@@ -30,6 +30,6 @@
 
 ## Live evaluation/debug
 
-1. https://regex101.com CONS: No source code (proprietary).
+1. https://regex101.com CONS: Proprietary (no source code).
 2. https://regexr.com
 3. https://rubular.com
