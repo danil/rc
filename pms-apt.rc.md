@@ -25,8 +25,9 @@
 
 Upgrades installed packages to their most recent version
 
-    apt-get update
-    apt-get --show-upgraded upgrade
+    apt update
+    apt list --upgradable
+    apt --show-upgraded upgrade
 
 ## Download, modify, build and install packag
 
