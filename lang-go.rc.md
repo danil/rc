@@ -171,9 +171,12 @@ go get github.com/rogpeppe/godef
 godef -f path/to/file.go 'yourpkgnm.YourFunctionNm'
 ```
 
-## HOWTO Build
+## HOWTO Build <sup>[4169212427][] [318174330][]</sup>
 
-    go build
+    CGO_ENABLED=0 go build
+
+[318174330]:  https://stackoverflow.com/questions/36279253/go-compiled-binary-wont-run-in-an-alpine-docker-container-on-ubuntu-host#36308464
+[4169212427]: https://stackoverflow.com/questions/64421305/heroku-go-app-crashes-version-glibc-2-32-not-found-required-by-bin-main#65919767
 
 ## HOWTO Build with custom executable name and custom output directory
 
@@ -219,9 +222,7 @@ memory to the operating system as possible.
 
     debug.FreeOSMemory()
 
-## HOWTO Reduce binary size
-
-Minimize binary size
+## HOWTO Reduce binary size<sup>minimize binary size</sup>
 
     go build --ldflags "-s -w" path/to/package
     go run --ldflags "-s -w" path/to/package
