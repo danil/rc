@@ -1,12 +1,10 @@
-# Linux rcc
+# Linux OS rcc
 
-## Get only host name
+## HOWTO hostname: Host name only
 
     hostname
 
-## Get full domain name
-
-Full qualified domain name
+## HOWTO hostname: FQDN (full qualified domain name) <sup>domain name and host name</sup>
 
     hostname --fqdn
     hostname --long
