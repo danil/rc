@@ -20,7 +20,7 @@
 
 ## Initialize repository with custom default branch name
 
-    git --initial-branch=trunk
+    git --initial-branch=trunk init
 
 ## Add to stage/index
 
