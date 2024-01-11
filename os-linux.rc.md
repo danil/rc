@@ -1,7 +1,5 @@
 # Linux OS rcc
 
-[4031451098]: https://stackoverflow.com/questions/13322485/how-to-get-the-primary-ip-address-of-the-local-machine-on-linux-and-os-x
-
 ## HOWTO hostname: Get host name only
 
     hostname
@@ -14,3 +12,5 @@
 ## HOWTO hostname: Get local IP <sup>[4031451098][]</sup>
 
     hostname -I | cut -d' ' -f1
+
+[4031451098]: https://stackoverflow.com/questions/13322485/how-to-get-the-primary-ip-address-of-the-local-machine-on-linux-and-os-x
