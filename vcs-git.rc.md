@@ -14,9 +14,13 @@
 
     git diff --name-only --cached
 
-## Initialize/create repository
+## Initialize/create repository without work tree
 
     git --bare init
+
+## Initialize repository with custom default branch name
+
+    git --initial-branch=trunk
 
 ## Add to stage/index
 
