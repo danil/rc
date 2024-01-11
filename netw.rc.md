@@ -1,21 +1,17 @@
-# Network
+# Network rc
 
-    rtorrent -s ./.rtorrent
-    dhclient
-    ip r
-    echo "1" > /proc/sys/net/ipv4/ip_forward
-    pon darout
-    poff darout
-    iwlist ath0 scanning
-    iwconfig ath0 essid John
-    iwconfig ath0 key s:dfvgbh1234567
-    killall wpa_supplicant && sleep 5 \
-     && wpa_supplicant -i ath0 -c /etc/wpa_supplicant/wpa_supplicant.conf
-    wvdial megafon
-    curlftpfs -o "user=danil" your.tld mnt/example_org/
-    smbtree [-N] -d 2
-    smbclient [-N] -L server
-    smbclient -N "\\\\server\\store (e)"
-    smbmount "//172.16.84.14/d$" mnt/cdp0002 \
-     -o workgroup=darout,username=your_usr_nm,iocharset=UTF-8,codepage=windows-1251
-    rdesktop -g 99% -k en 192.168.91.5
+## HOWTO Get local IP <sup>[4031451098][]</sup>
+
+    sudo ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'
+    hostname -I | cut -d' ' -f1
+    nslookup your.tld | head -n2
+
+[4031451098]: https://stackoverflow.com/questions/13322485/how-to-get-the-primary-ip-address-of-the-local-machine-on-linux-and-os-x
+
+## HOWTO Network host NS/DNS: Get `A` and `MX` records
+
+    host your.tld your.dns.server.tld
+
+## HOWTO Network host NS/DNS: Get name servers
+
+    host -t ns your.tld
