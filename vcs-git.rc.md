@@ -14,7 +14,7 @@
 
     git diff --name-only --cached
 
-## Init
+## Initialize/create repository
 
     git --bare init
 
