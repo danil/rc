@@ -43,8 +43,12 @@
 
 ## HOWTO `rsyncd` daemon mode by `rsync://` protocol
 
-    printf "hosts deny = *\nread only = no\nauth users = root\nsecrets file = /etc/rsyncd.secrets\nstrict modes = true\n[your-module]\npath = /your/path\nhosts allow = your.tld\nlog file = /var/log/rsyncd.log\n" > /etc/rsyncd.conf
+    # your.server.tld:
+    printf "hosts deny = *\nread only = no\nauth users = root\nsecrets file = /etc/rsyncd.secrets\nstrict modes = true\n[your-module]\npath = /your/path\nhosts allow = your.client.tld\nlog file = /var/log/rsyncd.log\n" > /etc/rsyncd.conf
     printf "root:your-pwd\n" > /etc/rsyncd.secrets
     chmod 600 /etc/rsyncd.secrets
-    printf "your-pwd" > ~/.rsyncrc
     chmod 600 ~/.rsyncrc
+    rsync --daemon
+    # your.client.tld:
+    printf "your-pwd" > ~/.rsyncrc
+    rsync --password-file=path/to/rsync.password --list-only rsync://root@your.server.tld/your-module
