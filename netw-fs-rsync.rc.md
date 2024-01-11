@@ -40,3 +40,11 @@
           path/to/dir1 \
           path/to/dir2 \
           your_usr@your.tld:/path/to/dir
+
+## HOWTO `rsyncd` daemon mode by `rsync://` protocol
+
+    printf "hosts deny = *\nread only = no\nauth users = root\nsecrets file = /etc/rsyncd.secrets\nstrict modes = true\n[your-host]\npath = /your/path\nhosts allow = your.tld\nlog file = /var/log/rsyncd.log\n" > /etc/rsyncd.conf
+    printf "root:your-pwd\n" > /etc/rsyncd.secrets
+    chmod 600 /etc/rsyncd.secrets
+    printf "your-pwd" > ~/.rsyncrc
+    chmod 600 ~/.rsyncrc
