@@ -1,6 +1,4 @@
-# Name
-
-Domain name and host name
+# Linux rcc
 
 ## Get only host name
 
