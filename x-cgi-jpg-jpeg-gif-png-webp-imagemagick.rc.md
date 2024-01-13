@@ -2,6 +2,10 @@
 
 [cgi]: https://en.wikipedia.org/wiki/Computer-generated_imagery
 
+## HOWTO: imagemagick: Convert JPG to GIF
+
+convert "your.png" "your.gif"
+
 ## HOWTO: imagemagick: Convert PNG to JPG
 
     convert /tmp/screenshot.png -quality 30 /tmp/screenshot.jpg
