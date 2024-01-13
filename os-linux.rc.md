@@ -9,7 +9,7 @@
     hostname --fqdn
     hostname --long
 
-## HOWTO hostname: Get local IP <sup>[4031451098][]</sup>
+## HOWTO hostname: Get local IP <sup>[*][4031451098]</sup>
 
     hostname -I | cut -d' ' -f1
 
