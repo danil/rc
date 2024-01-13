@@ -4,7 +4,7 @@
 
 ## HOWTO: imagemagick: Convert JPG to GIF
 
-convert "your.png" "your.gif"
+    convert "your.png" "your.gif"
 
 ## HOWTO: imagemagick: Convert PNG to JPG
 
