@@ -2,6 +2,10 @@
 
 [cgi]: https://en.wikipedia.org/wiki/Computer-generated_imagery
 
+## HOWTO: Install imagemagick 
+
+    brew install imagemagick
+
 ## HOWTO: imagemagick: Convert JPG to GIF
 
     convert "your.png" "your.gif"
