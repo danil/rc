@@ -99,17 +99,19 @@ Copy ISO image to bootable usb
 
 ## Find duplicate files
 
-* `ddh` Written in Rust programming language <https://github.com/darakian/ddh>.
-* `fclones` Written in Rust programming language <https://github.com/pkolaczk/fclones>.
-* `fdupes` Written in C programming language <https://github.com/adrianlopezroche/fdupes>.
-* `jdupes` Written in C programming language <https://github.com/jbruchon/jdupes>.
-* `rdfind` Written in [C++][] programming language <https://github.com/pauldreik/rdfind>.
-* `rmlint` Written in C programming language <https://github.com/sahib/rmlint>.
+* `ddh` <https://github.com/darakian/ddh>. PROS: [Rust][].
+* `fclones` <https://github.com/pkolaczk/fclones>. PROS: [Rust][].
+* `fdupes` <https://github.com/adrianlopezroche/fdupes>. PROS: [C][].
+* `jdupes` <https://github.com/jbruchon/jdupes>. PROS: [C][].
+* `rdfind` <https://github.com/pauldreik/rdfind>. PROS: [C++][].
+* `rmlint` <https://github.com/sahib/rmlint>. PROS: [C][].
 * https://github.com/justinhj/justinhj-emacs-utils emacs dired
 * http://justinsboringpage.blogspot.ru/2011/06/finding-duplicate-files-in-dired-buffer.html emacs dired
 * https://www.emacswiki.org/emacs/RemoveDuplicateFiles emacs dired
 
 [c++]: https://en.wikipedia.org/wiki/C%2B%2B
+[c]: https://iso.org/standard/74528.html
+[rust]: https://github.com/rust-lang/rust
 
 ## Mount cdrom
 

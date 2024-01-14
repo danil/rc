@@ -1,4 +1,9 @@
-# PostgreSQL RDBMS rc
+# [PostgreSQL][] [RDBMS][rdb]<sup>[1][3388152588] [2][3168004801]</sup> rc
+
+[rdb]: https://en.wikipedia.org/wiki/Relational_database
+[postgresql]: https://en.wikipedia.org/wiki/PostgreSQL
+[3388152588]: https://postgresql.org/docs/current/functions-aggregate.html
+[3168004801]: https://postgrespro.ru/docs/postgrespro/current/functions-aggregate
 
 ## psql
 
@@ -103,16 +108,6 @@ Backuping:
 [pg_idkit]: https://github.com/vadosware/pg_idkit
 [pgx framework]: https://github.com/tcdi/pgx
 [rfc 4122]: https://datatracker.ietf.org/doc/html/draft-peabody-dispatch-new-uuid-format-04
-
-## [UUIDv7][RFC 4122]
-
-PROS:
-
-* Sortable.
-
-CONS:
-
-* ???.
 
 ## Random integer/int4
 
@@ -1505,7 +1500,6 @@ Load data from csv file
 
     DEALLOCATE your_statement_nm;
 
-<!-- Reference -->
+## TODO
 
-[aggregate]: https://postgresql.org/docs/current/functions-aggregate.html
-[aggregate ru]: https://postgrespro.ru/docs/postgrespro/15/functions-aggregate
+* [UUIDv7][RFC 4122] PROS: Sortable. CONS: ???.

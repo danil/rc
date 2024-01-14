@@ -13,8 +13,12 @@
 
 ## Alternatives
 
-1. `sshguard` written in C programming language <https://bitbucket.org/sshguard/sshguard>, <https://sshguard.net>, <https://wiki.archlinux.org/index.php/Sshguard>, <https://wiki.gentoo.org/wiki/Sshguard>.
-2. `badactor` Written in Go programming language <https://github.com/jaredfolkins/badactor>.
-3. `crowdsec` Written in Go programming language by french company backed <https://github.com/crowdsecurity/crowdsec>.
-4. `denyhosts` Written in Python programming language <https://github.com/denyhosts/denyhosts>.
-5. `knock` actually is not client block/jail, is an port knocking daemon, written in c programming language <https://github.com/jvinet/knock>, <https://en.wikipedia.org/wiki/Port_knocking>.
+1. `sshguard` <https://bitbucket.org/sshguard/sshguard>, <https://sshguard.net>, <https://wiki.archlinux.org/index.php/Sshguard>, <https://wiki.gentoo.org/wiki/Sshguard>. PROS: [C][].
+2. `badactor` PROS: <https://github.com/jaredfolkins/badactor>. [Go][].
+3. `crowdsec` Written by french company backed <https://github.com/crowdsecurity/crowdsec>. PROS: [Go][].
+4. `denyhosts` <https://github.com/denyhosts/denyhosts>. CONS: [Python][].
+5. `knock` actually is not client block/jail, is an port knocking daemon,<https://github.com/jvinet/knock>, <https://en.wikipedia.org/wiki/Port_knocking>. PROS: [C][].
+
+[c]: https://iso.org/standard/74528.html
+[go]: https://github.com/golang/go
+[python]: https://github.com/python/cpython
