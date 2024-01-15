@@ -33,10 +33,7 @@
 
 <http://stackoverflow.com/questions/2597875/how-can-i-build-a-tar-from-stdin#14073550>
 
-    find path/to/your/dir \
-      | tar --create --to-stdout --files-from - \
-      | gzip --compress \
-      > path/to/file.tar.gz
+    find path/to/your/dir | tar --create --to-stdout --files-from - | gzip > path/to/file.tar.gz
 
 ## tar create archives of the each directory
 
