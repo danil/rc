@@ -64,6 +64,6 @@ Produce HTTP/S/1/2 load.
 
 * [k6][] PROS: [Go][]. CONS: [JavaScript][].
 
-[JavaScript]: https://en.wikipedia.org/wiki/JavaScript
+[javascript]: https://en.wikipedia.org/wiki/JavaScript
 [go]: https://github.com/golang/go
 [k6]: https://github.com/grafana/k6
