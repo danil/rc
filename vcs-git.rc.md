@@ -89,46 +89,46 @@ Get/print current branch
 
     echo $(git rev-parse --abbrev-ref HEAD)
 
-## Branch create and checkout
+## HOWTO Branch create and checkout
 
-    git checkout -b newbranch
+    git checkout -b your-new-branch
 
-## Branch create by remote with name different from default
+## HOWTO Branch create by remote with name different from default
 
     git checkout -b your-branch your-remote/remote-branch
     git switch   -c your-branch your-remote/remote-branch
 
-## Branch delete
+## HOWTO Branch delete
 
     git branch --delete your-branch-nm
 
-## Remote branch delete
+## HOWTO Remote branch delete
 
     git push origin :your-branch-nm
 
-## Remote branchs cleanup
+## HOWTO Remote branchs cleanup
 
     git remote prune origin
 
-## Branch rename
+## HOWTO Branch rename
 
     git branch -m old_branch new_branch
 
-## Rename remote branch
+## HOWTO Rename remote branch
 
 origin/your-new-branch to origin/your-old-branch
 <http://stackoverflow.com/questions/1526794/git-rename-remote-branch#answer-1527004>
 
     git branch -m your-new-branch your-old-branch
 
-## Default branch to pull
+## HOWTO Default branch to pull
 
 <http://stackoverflow.com/questions/658885/how-do-you-get-git-to-always-pull-from-a-specific-branch#answer-659804>
 
     git config branch.your-branch-nm.remote origin
     git config branch.your-branch-nm.merge refs/heads/production
 
-## Branch upstream
+## HOWTO Branch upstream
 
     git branch --set-upstream-to=origin/your-remote-branch-nm
 
