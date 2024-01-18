@@ -89,6 +89,15 @@ Get/print current branch
 
     echo $(git rev-parse --abbrev-ref HEAD)
 
+## HOWTO Branch switching while keeping the working tree as it in original branch <sup>[*][1406089848]</sup>
+
+    # you are in the your-orig-branch
+    git checkout --detach
+    git reset --soft your-target-branch
+    git checkout master
+
+[1406089848]: https://stackoverflow.com/questions/6070179/switching-branches-without-touching-the-working-tree#15993574
+
 ## HOWTO Branch create and checkout
 
     git checkout -b your-new-branch
