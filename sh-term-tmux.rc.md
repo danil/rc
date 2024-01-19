@@ -49,6 +49,14 @@
 
 `:set status-style bg=black`
 
+## Detach self current sesstion
+
+* `<Prefix-d>`
+
+## Detach sesstion by name
+
+* `<Prefix-D>`
+
 ## Copy past
 
 1. `<Prefix-[>` Enter copy mode.
