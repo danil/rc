@@ -94,7 +94,7 @@ Get/print current branch
     # you are in the your-orig-branch
     git checkout --detach
     git reset --soft your-target-branch
-    git checkout master
+    git checkout your-target-branch
 
 [1406089848]: https://stackoverflow.com/questions/6070179/switching-branches-without-touching-the-working-tree#15993574
 
