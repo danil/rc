@@ -91,7 +91,9 @@ Get/print current branch
 
 ## HOWTO Branch switching while keeping the working tree as it in original branch <sup>[*][1406089848]</sup>
 
-    # you are in the your-orig-branch
+    # one-liner while you are in the your-orig-branch:
+    your_branch=dev && git checkout --detach && git reset --soft $your_branch && git checkout $your_branch
+    # multi-liner while you are in the your-orig-branch:
     git checkout --detach
     git reset --soft your-target-branch
     git checkout your-target-branch
