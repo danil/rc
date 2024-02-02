@@ -1,6 +1,6 @@
-# Yandex disk
+# Yandex disk <sup>[*][2598094282]</sup> rcc
 
-<https://yandex.ru/support/disk/cli-clients.html>
+[2598094282]: https://yandex.ru/support/disk/cli-clients.html
 
 ## Config
 
