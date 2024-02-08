@@ -139,7 +139,7 @@ Race conditions and [Race Detector](https://blog.golang.org/race-detector)
 
 Generator <https://github.com/cweill/gotests>
 
-## HOWTO [fstest][]: Test mocking file system <sup>[*][1056894504]</sup>
+## HOWTO [fstest][]: Test mocking file system <sup>[1][2434259655] [2][1056894504]</sup>
 
 ```go
 package main
@@ -148,11 +148,11 @@ import "testing/fstest"
 
 func main() {
    mfs := fstest.MapFS{
-      "hello.txt": {
+      "relative/path/to.file": {
          Data: []byte("Hello, world!"),
       },
    }
-   p, err := mfs.ReadFile("hello.txt")
+   p, err := mfs.ReadFile("relative/path/to.file")
    if err != nil {
       panic(err)
    }
@@ -162,6 +162,7 @@ func main() {
 
 [fstest]: https://pkg.go.dev/testing/fstest
 [1056894504]: https://github.com/spf13/afero
+[2434259655]: https://github.com/golang/go/issues/51378#issuecomment-1053427475
 
 ## HOWTO [godef][]: Find function definition by package/function name
 
