@@ -147,12 +147,12 @@ package main
 import "testing/fstest"
 
 func main() {
-   mfs := fstest.MapFS{
+   testFS := fstest.MapFS{
       "relative/path/to.file": {
          Data: []byte("Hello, world!"),
       },
    }
-   p, err := mfs.ReadFile("relative/path/to.file")
+   p, err := testFS.ReadFile("relative/path/to.file")
    if err != nil {
       panic(err)
    }
