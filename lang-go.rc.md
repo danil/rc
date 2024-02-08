@@ -139,7 +139,7 @@ Race conditions and [Race Detector](https://blog.golang.org/race-detector)
 
 Generator <https://github.com/cweill/gotests>
 
-## HOWTO Test: [fstest][]: Mocking relative path of file system <sup>[1][3825108315] [2][2434259655] [3][1056894504]</sup>
+## HOWTO Test: [fstest][]: Mocking relative path of file system <sup>[3825108315][] [1746671570][] [2434259655][] [1056894504][]</sup>
 
 ```go
 package main
@@ -162,6 +162,7 @@ func main() {
 
 [fstest]: https://pkg.go.dev/testing/fstest
 [1056894504]: https://github.com/spf13/afero
+[1746671570]: https://github.com/golang/go/issues/44166
 [2434259655]: https://github.com/golang/go/issues/51378#issuecomment-1053427475
 [3825108315]: https://github.com/golang/go/issues/44279
 
