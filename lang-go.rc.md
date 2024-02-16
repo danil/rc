@@ -86,6 +86,15 @@ List installed packages
 
 ## HOWTO Test benchmarks <sup>run benchmarks</sup>
 
+    cat go.mod
+
+```
+module yourpkg
+
+require "your.tld/you/yourpkg" v0.0.0
+replace "your.tld/you/yourpkg" v0.0.0 => "./"
+```
+
     cat yourpkg.go
 
 ```go
