@@ -155,11 +155,11 @@ func TestYourFunc(t *testing.T) {
 		t.Run(tt.line+"/"+tt.name, func(t *testing.T) {
 			t.Parallel()
 
-			x := yourpkg.New()
-			x.YourFunc(tt.in)
+			in := yourpkg.New()
+			in.YourFunc(tt.in)
 
-			if string(x) != tt.out {
-				t.Errorf("\nwant: %s\n got: %s", tt.out, x)
+			if string(in) != tt.out {
+				t.Errorf("\nwant: %s\n got: %s", tt.out, in)
 			}
 		})
 	}
@@ -173,14 +173,14 @@ func BenchmarkYourFunc(b *testing.B) {
 
 	for _, tt := range tests {
 		b.Run(tt.name, func(b *testing.B) {
-			x := yourpkg.New()
+			in := yourpkg.New()
 
 			for i := 0; i < b.N; i++ {
-				x.YourFunc(tt.in)
+				in.YourFunc(tt.in)
 			}
 
 			b.StopTimer()
-			x.YourReset()
+			in.YourReset()
 			b.StartTimer()
 		})
 	}
