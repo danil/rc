@@ -70,58 +70,124 @@ List installed packages
 
     go list ./...
 
-## HOWTO Testing
+## HOWTO Testing <sup>run test suite [2319142434][] [2570645731][]</sup>
 
-* <https://blog.golang.org/examples>
-* <https://blog.golang.org/subtests>
+    go test -v -race -count=1 your.tld/path/to/pkg
+    go test -v -race -count=1 ./...
 
-Run test suite
+[2319142434]: https://blog.golang.org/examples
+[2570645731]: https://blog.golang.org/subtests
 
-    go test -v your.tld/path/to/pkg
-    go test -v ./...
-
-## HOWTO Test without cache
-
-Disable test cache
-
-<https://github.com/golang/go/issues/24573#issuecomment-393818160>
+## HOWTO Test without cache/disable test cache <sup>[4126800382][]</sup>
 
     go test -count=1
 
-## HOWTO Test benchmarks
+[4126800382]: https://github.com/golang/go/issues/24573#issuecomment-393818160
 
-Run benchmarks
+## HOWTO Test benchmarks <sup>run benchmarks</sup>
+
+    cat yourpkg.go
 
 ```go
-package main
+package yourpkg
 
-import "testing"
+var hello string
 
-func BenchmarkYourFunc(b *testing.B) {
-    tests := []struct {
-        name  string
-        in    string
-    }{
-        {name: "test 1", in: "foo"},
-        {name: "test 2", in: "bar"},
-    }
-    b.ReportAllocs()
-    yourpkg.Init()
-    b.ResetTimer()
-    for _, tt := range tests {
-        b.Run(tt.name, func(b *testing.B) {
-            for i := 0; i < b.N; i++ {
-                b.StopTimer()
-                yourVar := yourpkg.New(tt.in)
-                b.StartTimer()
-                _ = yourVar.YourFunc()
-            }
-        })
-    }
+func YourInit() {
+	hello = "Hello"
+}
+
+func New() T {
+	return T(hello)
+}
+
+type T string
+
+func (x *T) YourFunc(s string) {
+	*x = T(string(*x)[:len(hello)] + " " + s)
+}
+
+func (x *T) YourReset() {
+	*x = T(string(*x)[:len(hello)])
 }
 ```
 
-    go test -v -bench=. -benchmem ./...
+    cat your_test.go
+
+```go
+package yourpkg_test
+
+import (
+	"fmt"
+	"path/filepath"
+	"runtime"
+	"testing"
+
+	"your.tld/you/yourpkg"
+)
+
+var tests = []struct {
+	name string
+	line string
+	in   string
+	out  string
+}{
+	{name: "test Alice", in: "Alice", out: "Hello Alice", line: line()},
+	{name: "test Bob", in: "Bob", out: "Hello Bob", line: line()},
+}
+
+func line() string {
+	_, file, line, ok := runtime.Caller(1)
+	if ok {
+		return fmt.Sprintf("%s:%d", filepath.Base(file), line)
+	}
+	return "it was not possible to recover file and line number information about function invocations"
+}
+
+func TestYourFunc(t *testing.T) {
+	t.Parallel()
+
+	yourpkg.YourInit()
+
+	for _, tt := range tests {
+		tt := tt
+
+		t.Run(tt.line+"/"+tt.name, func(t *testing.T) {
+			t.Parallel()
+
+			x := yourpkg.New()
+			x.YourFunc(tt.in)
+
+			if string(x) != tt.out {
+				t.Errorf("\nwant: %s\n got: %s", tt.out, x)
+			}
+		})
+	}
+}
+
+func BenchmarkYourFunc(b *testing.B) {
+	yourpkg.YourInit()
+
+	b.ResetTimer()
+	b.ReportAllocs()
+
+	for _, tt := range tests {
+		b.Run(tt.name, func(b *testing.B) {
+			x := yourpkg.New()
+
+			for i := 0; i < b.N; i++ {
+				x.YourFunc(tt.in)
+			}
+
+			b.StopTimer()
+			x.YourReset()
+			b.StartTimer()
+		})
+	}
+}
+```
+
+    go test -race -count=1 -bench=. -benchmem ./...
 
 ## HOWTO Test coverage
 
