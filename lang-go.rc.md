@@ -102,23 +102,13 @@ package yourpkg
 
 var hello string
 
-func YourInit() {
-	hello = "Hello"
-}
-
-func New() T {
-	return T(hello)
-}
+func YourInit() { hello = "Hello" }
 
 type T string
 
-func (x *T) YourFunc(s string) {
-	*x = T(string(*x)[:len(hello)] + " " + s)
-}
-
-func (x *T) YourReset() {
-	*x = T(string(*x)[:len(hello)])
-}
+func New() T                   { return T(hello) }
+func (x *T) YourFunc(s string) { *x = T(string(*x)[:len(hello)] + " " + s) }
+func (x *T) YourReset()        { *x = T(string(*x)[:len(hello)]) }
 ```
 
     cat your_test.go
@@ -198,17 +188,17 @@ func BenchmarkYourFunc(b *testing.B) {
 
     go test -race -count=1 -bench=. -benchmem ./...
 
-## HOWTO Test coverage
-
-[Test coverage](https://blog.golang.org/cover)
+## HOWTO [Test coverage][]
 
     go test -cover ./...
 
-## HOWTO Test races
+[test coverage]: https://blog.golang.org/cover
 
-Race conditions and [Race Detector](https://blog.golang.org/race-detector)
+## HOWTO Test races/race conditions and [Race Detector][]
 
     go test -race ./...
+
+[race detector]: https://blog.golang.org/race-detector
 
 ## HOWTO Table tests
 
