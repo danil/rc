@@ -18,7 +18,7 @@
 
 [ver2 install homebrew]: https://docs.brew.sh/Homebrew-on-Linux#install
 
-## HOWTO [Uninstall Homebrew][] itself on Linux
+## HOWTO [Uninstall Homebrew][] itself
 
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
 
