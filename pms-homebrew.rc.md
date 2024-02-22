@@ -2,7 +2,13 @@
 
 [homebrew]: https://github.com/homebrew/brew
 
-## HOWTO [Install homebrew][] itself on Linux
+## HOWTO [VER1 Install homebrew][] itself
+
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+[ver1 install homebrew]: https://brew.sh/#Install%20Homebrew
+
+## HOWTO [VER2 Install homebrew][] itself on Linux
 
     test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
     test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -10,7 +16,13 @@
     echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.profile
     You’re done! Try installing a package:
 
-[install homebrew]: https://docs.brew.sh/Homebrew-on-Linux#install
+[ver2 install homebrew]: https://docs.brew.sh/Homebrew-on-Linux#install
+
+## HOWTO [Uninstall Homebrew][] itself on Linux
+
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
+
+[uninstall homebrew]: https://github.com/homebrew/install?tab=readme-ov-file#uninstall-homebrew
 
 ## HOWTO List installed
 
