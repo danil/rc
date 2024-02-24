@@ -1,4 +1,4 @@
-# [systemd][]<sup>Service Management Facility</sup>rc
+# [systemd][]<sup>Service Management Facility</sup> rc
 
 [systemd]: https://github.com/systemd/systemd
 
