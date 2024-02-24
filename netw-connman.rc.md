@@ -1,6 +1,6 @@
 # Connman
 
-<https://wiki.archlinux.org/index.php/Connman>
+<https://wiki.archlinux.org/title/Connman>
 
 ## List device statuses
 

@@ -24,7 +24,7 @@
 
     sleep 5 && import -window root /tmp/screenshot.png
 
-[1470135740]: https://wiki.archlinux.org/index.php/Taking_a_screenshot#ImageMagick.2FGraphicsMagick
+[1470135740]: https://wiki.archlinux.org/title/Taking_a_screenshot#ImageMagick.2FGraphicsMagick
 
 ## HOWTO: Install WebP
 

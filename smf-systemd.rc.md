@@ -22,7 +22,7 @@ Require the Linux kernel config options
 
 ## HOWTO Time/ntp get status
 
-https://wiki.archlinux.org/index.php/Systemd-timesyncd#Usage
+https://wiki.archlinux.org/title/Systemd-timesyncd#Usage
 
     timedatectl
 
@@ -36,7 +36,7 @@ https://wiki.archlinux.org/index.php/Systemd-timesyncd#Usage
 
 ## Running units list
 
-<https://wiki.archlinux.org/index.php/systemd#Analyzing_the_system_state>
+<https://wiki.archlinux.org/title/systemd#Analyzing_the_system_state>
 
     systemctl status
     systemctl
@@ -83,7 +83,7 @@ Completely mask/unmask (enable/disable)
 
 ## Unit reload
 
-<https://wiki.archlinux.org/index.php/systemd#Editing_provided_unit_files>
+<https://wiki.archlinux.org/title/systemd#Editing_provided_unit_files>
 
     systemctl daemon-reload
 

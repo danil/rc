@@ -2,7 +2,7 @@
 
 ## Run
 
-https://wiki.archlinux.org/index.php/logrotate#Usage
+https://wiki.archlinux.org/title/logrotate#Usage
 
     logrotate --verbose /etc/logrotate.conf
 
@@ -12,7 +12,7 @@ https://wiki.archlinux.org/index.php/logrotate#Usage
 
 ## Test all configs
 
-https://wiki.archlinux.org/index.php/logrotate#Configuration
+https://wiki.archlinux.org/title/logrotate#Configuration
 
     logrotate --debug /etc/logrotate.conf
 

@@ -17,7 +17,7 @@
 
 ## Create file dd
 
-<https://wiki.archlinux.org/index.php/swap#Swap_file>
+<https://wiki.archlinux.org/title/swap#Swap_file>
 
 Sleep/suspend/hibernate to disk do **NOT** work by default with file swap
 
@@ -61,6 +61,6 @@ or
 
 ## Partition
 
-<https://wiki.archlinux.org/index.php/swap#Swap_partition>
+<https://wiki.archlinux.org/title/swap#Swap_partition>
 
     mkswap /dev/sda3 && swapon /dev/sda3

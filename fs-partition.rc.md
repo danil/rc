@@ -17,7 +17,7 @@ List all partitions
 
 ## MBR & GPT
 
-<https://wiki.archlinux.org/index.php/partitioning#Partitioning_tools>
+<https://wiki.archlinux.org/title/partitioning#Partitioning_tools>
 
 ```
                  |       MBR        |       GPT
@@ -39,8 +39,8 @@ List all partitions
 
 ## List partitions
 
-* <https://wiki.archlinux.org/index.php/persistent_block_device_naming#Persistent_naming_methods>
-* <https://wiki.archlinux.org/index.php/fstab#Kernel_name_descriptors>
+* <https://wiki.archlinux.org/title/persistent_block_device_naming#Persistent_naming_methods>
+* <https://wiki.archlinux.org/title/fstab#Kernel_name_descriptors>
 
     lsblk
 
@@ -68,13 +68,13 @@ Copy partitions table from /dev/sda to /dev/sdb
 
 ## Make GPT
 
-<https://wiki.archlinux.org/index.php/GUID_Partition_Table#parted_basic_.28via_command_line_options.29>
+<https://wiki.archlinux.org/title/GUID_Partition_Table#parted_basic_.28via_command_line_options.29>
 
     parted --script /dev/sda mklabel gpt
 
 ## GPT: gdisk
 
-<https://wiki.archlinux.org/index.php/Partitioning#Partitioning_tools>.
+<https://wiki.archlinux.org/title/Partitioning#Partitioning_tools>.
 
     gdisk /dev/sda
 
@@ -102,7 +102,7 @@ Legacy!
 
 ## cfdisk: WARNING
 
-<https://wiki.archlinux.org/index.php/Partitioning#Partitioning_tools>.
+<https://wiki.archlinux.org/title/Partitioning#Partitioning_tools>.
 
 The first partition created by `cfdisk` starts at sector 63,
 instead of the usual 2048. This can lead to reduced performance on _SSD_

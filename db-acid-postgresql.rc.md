@@ -433,7 +433,7 @@ Log statements with any durations
 
 * <http://stackoverflow.com/questions/16736891/pgerror-error-new-encoding-utf8-is-incompatible#16737776>
 * <https://wiki.gentoo.org/wiki/PostgreSQL#Changing_the_Default_Encoding_of_New_Databases>
-* <https://wiki.archlinux.org/index.php/PostgreSQL#Change_default_encoding_of_new_databases_to_UTF-8>
+* <https://wiki.archlinux.org/title/PostgreSQL#Change_default_encoding_of_new_databases_to_UTF-8>
 * <http://www.postgresql.org/message-id/43FE1E65.3030000@genome.chop.edu>
 * <http://www.postgresql.org/docs/current/static/multibyte.html#AEN35730>
 

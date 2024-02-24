@@ -11,17 +11,17 @@
 ## Let's Encrypt certbot install
 
 For example in Arch install `certbot-nginx` package
-https://wiki.archlinux.org/index.php/Certbot#Installation
+https://wiki.archlinux.org/title/Certbot#Installation
 
 ## Let's Encrypt certbot configure
 
-https://wiki.archlinux.org/index.php/Certbot#Nginx
+https://wiki.archlinux.org/title/Certbot#Nginx
 
     certbot --nginx
 
 ## Let's Encrypt certbot configure automatic renewal by systemd
 
-https://wiki.archlinux.org/index.php/Certbot#systemd
+https://wiki.archlinux.org/title/Certbot#systemd
 
 ## Linux
 

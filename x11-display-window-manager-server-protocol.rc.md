@@ -55,8 +55,8 @@ Open from console default application for file.
 xdg-open desktop-independent and passes arguments to
 gvfs-open, kde-open or exo-open respectively.
 
-* <https://wiki.archlinux.org/index.php/Default_Applications>
-* <https://wiki.archlinux.org/index.php/Xdg-open>
+* <https://wiki.archlinux.org/title/Default_Applications>
+* <https://wiki.archlinux.org/title/Xdg-open>
 
     xdg-open ~/Downloads/tasks.csv
 
@@ -70,7 +70,7 @@ OpenGL Extension to the X Window System
 
 ## Measure 3D performance
 
-* <https://wiki.archlinux.org/index.php/Benchmarking#glxgears>
+* <https://wiki.archlinux.org/title/Benchmarking#glxgears>
 * <http://www.free3d.org/faq>
 
     glxgears
@@ -96,7 +96,7 @@ or
 ## notify-send
 
 Show notificatioa (test x11-misc/dunst for example)
-<https://wiki.archlinux.org/index.php/Desktop_notifications#Usage_in_programming>
+<https://wiki.archlinux.org/title/Desktop_notifications#Usage_in_programming>
 
     notify-send --urgency=low --hint=int:x:1390 --hint=int:y:800 --expire-time=900 '2' 'Desktop'
 

@@ -17,7 +17,7 @@ Copy partitions table from `/dev/your_source` to `/dev/your_destination`
 
 Cloning the all partitions one by one and the all their content
 
-* <https://wiki.archlinux.org/index.php/Disk_cloning>
+* <https://wiki.archlinux.org/title/Disk_cloning>
 * <http://askubuntu.com/questions/173907/when-cloning-ext4-partition-with-the-dd-command-to-a-bigger-partition-free-spa#173968>
 * <https://linode.com/docs/migrate-to-linode/disk-images/copying-a-disk-image-to-a-different-account#copying-the-disk-image>
 

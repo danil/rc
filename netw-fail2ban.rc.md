@@ -13,7 +13,7 @@
 
 ## Alternatives
 
-1. `sshguard` <https://bitbucket.org/sshguard/sshguard>, <https://sshguard.net>, <https://wiki.archlinux.org/index.php/Sshguard>, <https://wiki.gentoo.org/wiki/Sshguard>. PROS: [C][].
+1. `sshguard` <https://bitbucket.org/sshguard/sshguard>, <https://sshguard.net>, <https://wiki.archlinux.org/title/Sshguard>, <https://wiki.gentoo.org/wiki/Sshguard>. PROS: [C][].
 2. `badactor` PROS: <https://github.com/jaredfolkins/badactor>. [Go][].
 3. `crowdsec` Written by french company backed <https://github.com/crowdsecurity/crowdsec>. PROS: [Go][].
 4. `denyhosts` <https://github.com/denyhosts/denyhosts>. CONS: [Python][].

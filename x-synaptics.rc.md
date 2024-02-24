@@ -6,7 +6,7 @@
 ## Real-Time Tweaking
 
 * <http://en.gentoo-wiki.com/wiki/Synaptics_Touchpad#Real-Time_Tweaking>
-* <https://wiki.archlinux.org/index.php/Touchpad_Synaptics#Synclient>
+* <https://wiki.archlinux.org/title/Touchpad_Synaptics#Synclient>
 
     synclient EmulateTwoFingerMinZ=40
 
@@ -24,7 +24,7 @@
 ## X11 real-Time Tweaking
 
 <http://en.gentoo-wiki.com/wiki/Synaptics_Touchpad#.22Can.27t_access_shared_memory_area._SHMConfig_disabled.3F.22_error>,  
-<http://wiki.archlinux.org/index.php/Touchpad_Synaptics#Fine-tuning_with_synclient>.
+<http://wiki.archlinux.org/title/Touchpad_Synaptics#Fine-tuning_with_synclient>.
 
 Options: "on" or "off".
 
@@ -78,11 +78,11 @@ Options: "on" or "off".
 
       Option "TapButton3" "0"
 
-<http://wiki.archlinux.org/index.php/Тачпад_Synaptics#.D0.94.D0.B5.D1.82.D0.B0.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F>
+<http://wiki.archlinux.org/title/Тачпад_Synaptics#.D0.94.D0.B5.D1.82.D0.B0.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D1.8F>
 
 Reduce delay between a button tap and the actual click.
 
-<http://wiki.archlinux.org/index.php/Touchpad_Synaptics#Delay_between_a_button_tap_and_the_actual_click>
+<http://wiki.archlinux.org/title/Touchpad_Synaptics#Delay_between_a_button_tap_and_the_actual_click>
 
       Option "FastTaps" "1"
 
@@ -92,31 +92,31 @@ Max time in ms for detecting tap.
 
       Option "MaxTapMove" "110"
 
-[Tapping]: http://wiki.archlinux.org/index.php/Touchpad_Synaptics#Tapping_issues
+[Tapping]: http://wiki.archlinux.org/title/Touchpad_Synaptics#Tapping_issues
 
 ## X11 [Edge scrolling][]
 
       Option "VertEdgeScroll"  "0"
       Option "HorizEdgeScroll" "0"
 
-[Edge scrolling]: http://wiki.archlinux.org/index.php/Touchpad_Synaptics#Edge_scrolling
+[Edge scrolling]: http://wiki.archlinux.org/title/Touchpad_Synaptics#Edge_scrolling
 
 ## X11 [Two-Finger scrolling][]
 
       Option "VertTwoFingerScroll"  "0"
       Option "HorizTwoFingerScroll" "1"
 
-<https://wiki.archlinux.org/index.php/Touchpad_Synaptics#Frequently_used_options>.
+<https://wiki.archlinux.org/title/Touchpad_Synaptics#Frequently_used_options>.
 
       Option "EmulateTwoFingerMinZ" "40"
       Option "EmulateTwoFingerMinW" "8"
 
-[Two-Finger scrolling]: http://wiki.archlinux.org/index.php/Touchpad_Synaptics#Two-Finger_scrolling
+[Two-Finger scrolling]: http://wiki.archlinux.org/title/Touchpad_Synaptics#Two-Finger_scrolling
 
 ## X11 circular scrolling
 
-<http://wiki.archlinux.org/index.php/Touchpad_Synaptics#Circular_scrolling>,  
-<http://wiki.archlinux.org/index.php/Тачпад_Synaptics#.D0.9A.D1.80.D1.83.D0.B3.D0.BE.D0.B2.D0.B0.D1.8F_.D0.BF.D1.80.D0.BE.D0.BA.D1.80.D1.83.D1.82.D0.BA.D0.B0>.
+<http://wiki.archlinux.org/title/Touchpad_Synaptics#Circular_scrolling>,  
+<http://wiki.archlinux.org/title/Тачпад_Synaptics#.D0.9A.D1.80.D1.83.D0.B3.D0.BE.D0.B2.D0.B0.D1.8F_.D0.BF.D1.80.D0.BE.D0.BA.D1.80.D1.83.D1.82.D0.BA.D0.B0>.
 
 * `0` — All Edges
 * `1` — Top Edge
