@@ -46,16 +46,12 @@ and so on <sup>[1547857926][]</sup>
 
     systemctl --failed
 
-## HOWTO Unit status show
-
-Show info about service
+## HOWTO Unit status show <sup>service info</sup>
 
     systemctl show your_unit_nm
     systemctl status your_unit_nm
 
-## HOWTO Unit start/stop
-
-Start/stop/restart/reload
+## HOWTO Unit start/stop <sup>restart/reload</sup>
 
     systemctl start your_unit_nm
     systemctl stop your_unit_nm
@@ -66,17 +62,13 @@ Start/stop/restart/reload
 
     systemctl list-unit-files | grep enabled
 
-## HOWTO Unit autorun enable/disable
-
-Start/stop (enable/disable) on system boot/start
+## HOWTO Unit autorun enable/disable <sup>start/stop on system boot/start</sup>
 
     systemctl enable your_unit_nm
     systemctl disable your_unit_nm
     systemctl is-enabled your_unit_nm
 
-## HOWTO Unit mask/unmask
-
-Completely mask/unmask (enable/disable)
+## HOWTO Unit mask/unmask <sup>completely enable/disable</sup>
 
     systemctl mask your_unit_nm
     systemctl unmask your_unit_nm
