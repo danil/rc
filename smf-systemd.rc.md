@@ -20,40 +20,40 @@ Require the Linux kernel config options
 
 [3184402845]: https://wiki.archlinux.org/title/Network_configuration#Set_the_hostname
 
-## HOWTO Time/ntp get status
-
-https://wiki.archlinux.org/title/Systemd-timesyncd#Usage
+## HOWTO Time/NTP get status <sup>[3435016567][]</sup>
 
     timedatectl
 
-## Time enable ntp
+[3435016567]: https://wiki.archlinux.org/title/Systemd-timesyncd#Usage
+
+## HOWTO Time enable NTP
 
     timedatectl set-ntp true
 
-## Units list
+## HOWTO Units list
 
     systemctl list-unit-files
 
-## Running units list
-
-<https://wiki.archlinux.org/title/systemd#Analyzing_the_system_state>
+## HOWTO Running units list <sup>[3742307392][]</sup>
 
     systemctl status
     systemctl
     systemctl list-units
 
-## Failed units list
+[3742307392]: https://wiki.archlinux.org/title/systemd#Analyzing_the_system_state
+
+## HOWTO Failed units list
 
     systemctl --failed
 
-## Unit status show
+## HOWTO Unit status show
 
 Show info about service
 
     systemctl show your_unit_nm
     systemctl status your_unit_nm
 
-## Unit start/stop
+## HOWTO Unit start/stop
 
 Start/stop/restart/reload
 
@@ -62,11 +62,11 @@ Start/stop/restart/reload
     systemctl restart your_unit_nm
     systemctl reload your_unit_nm
 
-## Autorun units list
+## HOWTO Autorun units list
 
     systemctl list-unit-files | grep enabled
 
-## Unit autorun enable/disable
+## HOWTO Unit autorun enable/disable
 
 Start/stop (enable/disable) on system boot/start
 
@@ -74,21 +74,21 @@ Start/stop (enable/disable) on system boot/start
     systemctl disable your_unit_nm
     systemctl is-enabled your_unit_nm
 
-## Unit mask/unmask
+## HOWTO Unit mask/unmask
 
 Completely mask/unmask (enable/disable)
 
     systemctl mask your_unit_nm
     systemctl unmask your_unit_nm
 
-## Unit reload
-
-<https://wiki.archlinux.org/title/systemd#Editing_provided_unit_files>
+## HOWTO Unit reload <sup>[3564854911][]</sup>
 
     systemctl daemon-reload
 
-## X11 restart
+[3564854911]: https://wiki.archlinux.org/title/systemd#Editing_provided_unit_files
 
-<https://askubuntu.com/questions/1220/how-to-restart-x-window-server-from-command-line#1222>
+## HOWTO X11 restart <sup>[640934383][]</sup>
 
     systemctl restart display-manager
+
+[640934383]: https://askubuntu.com/questions/1220/how-to-restart-x-window-server-from-command-line#1222
