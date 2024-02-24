@@ -4,8 +4,8 @@
 
 ## Install
 
-Require the Linux kernel config options
-`CONFIG_DEVTMPFS`, `CONFIG_CGROUPS` and so on <sup>[1547857926][]</sup>
+Require the Linux kernel config options `CONFIG_DEVTMPFS`, `CONFIG_CGROUPS`
+and so on <sup>[1547857926][]</sup>
 
 [1547857926]: https://github.com/systemd/systemd/blob/main/README
 
