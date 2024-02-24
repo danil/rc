@@ -1,23 +1,26 @@
-# systemd rc
+# [systemd][]<sup>Service Management Facility</sup>rc
 
-Service Management Facility
+[systemd]: https://github.com/systemd/systemd
 
-## Install requirements
+## Install
 
-Linux kernel config options: <https://github.com/systemd/systemd/blob/master/README>
+Require the Linux kernel config options
+`CONFIG_DEVTMPFS`, `CONFIG_CGROUPS` and so on <sup>[1547857926][]</sup>
 
-## Hostname get
+[1547857926]: https://github.com/systemd/systemd/blob/main/README
+
+## HOWTO Hostname get
 
     hostnamectl
 
-## Hostname set
-
-<https://wiki.archlinux.org/index.php/Network_configuration#Set_the_hostname>
+## HOWTO Hostname set <sup>[3184402845][]</sup>
 
     echo your-host-nm > /etc/hostnm
     hostnmctl set-hostnm your-host-nm
 
-## Time/ntp get status
+[3184402845]: https://wiki.archlinux.org/title/Network_configuration#Set_the_hostname
+
+## HOWTO Time/ntp get status
 
 https://wiki.archlinux.org/index.php/Systemd-timesyncd#Usage
 
