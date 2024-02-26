@@ -84,3 +84,11 @@ and so on <sup>[1547857926][]</sup>
     systemctl restart display-manager
 
 [640934383]: https://askubuntu.com/questions/1220/how-to-restart-x-window-server-from-command-line#1222
+
+## HOWTO journalctl search grep/regexp
+
+    journalctl --unit="your_unit_nm.service" --grep="your.regexp"
+
+## HOWTO journalctl real-time watch/follow
+
+    journalctl -f --follow
