@@ -89,6 +89,10 @@ and so on <sup>[1547857926][]</sup>
 
     journalctl --unit="your_unit_nm.service" --grep="your.regexp"
 
+## HOWTO journalctl show N lines
+
+    journalctl -n42 --lines=42
+
 ## HOWTO journalctl real-time watch/follow
 
     journalctl -f --follow
