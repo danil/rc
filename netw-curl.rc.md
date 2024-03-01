@@ -2,17 +2,17 @@
 
 ## View sent/received headers
 
-    curl --verbose --head http://wikipedia.org
+    curl -v --verbose -I --head http://wikipedia.org
 
 ## Without progress bar
 
-    curl --silent https://api.github.com/repos/tomnomnom/gron/commits?per_page=1
+    curl -s --silent https://api.github.com/repos/tomnomnom/gron/commits?per_page=1
 
 ## Only headers
 
 <http://stackoverflow.com/questions/3252851/how-to-display-request-headers-with-command-line-curl>
 
-    curl --head http://wikipedia.org
+    curl -I --head http://wikipedia.org
 
 ## POST
 
@@ -28,9 +28,9 @@
 
 ### JSON
 
-    curl --request POST \
-         --header "Content-Type: application/json" \
-         --data '{"foo":123,"bar":"xyz"}' \
+    curl -X POST --request POST \
+         -H "Content-Type: application/json" --header "Content-Type: application/json" \
+         -d '{"foo":123,"bar":"xyz"}' --data '{"foo":123,"bar":"xyz"}' \
          "http://your.tld"
 
 ## Gzipped
@@ -43,19 +43,18 @@
 
 ## Follow redirect
 
-    curl --location http://your.tld
+    curl -L --location http://your.tld
 
 ## Download output to file
 
-    curl --output file.tar.gz https://your.tld/path/to/file.tar.gz
-    curl -o file.tar.gz https://your.tld/path/to/file.tar.gz
+    curl -o file.tar.gz --output file.tar.gz https://your.tld/path/to/file.tar.gz
 
-## Accept header
+## Accept header <sup>accept JSON response</sup>
 
-Accept JSON response
-
-    curl --verbose --header "Accept: application/json" http://your.tld
+    curl -v --verbose \
+         -H "Accept: application/json" --header "Accept: application/json" \
+         http://your.tld
 
 ## Other
 
-    curl --verbose --request HEAD http://your.tld
+    curl -v --verbose -X HEAD --request HEAD http://your.tld
