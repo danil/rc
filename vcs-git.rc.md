@@ -371,6 +371,10 @@ Move file and directory into a other directory along with commit history
     git --git-dir=repo.git config core.bare true
     rm -rf repo
 
+## List submodules
+
+    git submodule status
+
 ## Submodule setup
 
 <http://progit.org/book/ru/ch5-8.html>
