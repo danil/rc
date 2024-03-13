@@ -19,14 +19,14 @@
 * <http://superuser.com/questions/149329/what-is-the-curl-command-line-syntax-to-do-a-post-request>
 * <https://gist.github.com/subfuzion/08c5d85437d5d4f00e58#post>
 
-### HOWTO Key-values
+## HOWTO POST Key-values
 
     curl --request POST \
          --header "Content-Type: application/x-www-form-urlencoded" \
          --data "foo=123&bar=xyz" \
          --url http://your.tld
 
-### HOWTO JSON
+## HOWTO POST JSON
 
     curl -X POST --request POST \
          -H "Content-Type: application/json" --header "Content-Type: application/json" \
