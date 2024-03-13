@@ -10,6 +10,12 @@
 
     mpv --fs
 
+## Play [ASCII][] video in terminal
+
+    mpv --vo=tct path/to/video.mp4
+
+[ascii]: https://en.wikipedia.org/wiki/ASCII_art
+
 ## Webcam
 
     mplayer tv:// -tv driver=v4l2:width=160:height=120:device=/dev/video0
