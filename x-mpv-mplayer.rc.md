@@ -8,7 +8,7 @@
 
 ## Fullscreen
 
-    mvp --fs
+    mpv --fs
 
 ## Webcam
 
