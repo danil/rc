@@ -311,8 +311,8 @@ go run -ldflags "-X path/to/package.foo=123 -X path/to/package.Bar=xyz" ./...
 
 ## DOC Package naming convention style
 
-* [Code Review Package names][]
 * [Effective Go Package names][]: By convention, packages are given lower case, single-word names; there should be no need for underscores or mixedCaps.
+* [Code Review Package names][]
 * [Go Blog Package names][]
 * <https://talks.golang.org/2016/refactor.article#TOC_3.>
 
