@@ -316,7 +316,7 @@ go run -ldflags "-X path/to/package.foo=123 -X path/to/package.Bar=xyz" ./...
 * [Go Blog Package names][]
 * <https://talks.golang.org/2016/refactor.article#TOC_3.>
 
-[code review package names]: https://github.com/golang/go/wiki/CodeReviewComments#package-names
+[code review package names]: https://go.dev/wiki/CodeReviewComments#package-names
 [effective go package names]: https://go.dev/doc/effective_go#package-names
 [go blog package names]: https://go.dev/blog/package-names
 
