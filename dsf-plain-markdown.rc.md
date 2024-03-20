@@ -1,11 +1,11 @@
 # Markdown
 
-## Syntax
+## HOWTO Syntax
 
 * ~~Typographical strikethrough is a words with a central horizontal line~~.
 * [link text](https://your.tld/your/link/url)
 
-## Tables
+## HOWTO Tables
 
 <https://guides.github.com/features/mastering-markdown>
 
@@ -14,11 +14,11 @@
     Content from cell 1 | Content from cell 2
     Content in the first column | Content in the second column
 
-## Escape numbered list
+## HOWTO Escape numbered list
 
     1\. First item
     2\. Second item
 
-## Code block language
+## DOC Code block language definition
 
 https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
