@@ -2,8 +2,11 @@
 
 ## HOWTO Syntax markup for font style and code highlighting
 
+* *Emphasis* or _italic type is a cursive font_.
+* **Strong emphasis** or __boldface font weight__.
 * ~~Typographical strikethrough is a words with a central horizontal line~~.
 * [link text](https://your.tld/your/link/url)
+* `Monospaced font or fixed-width is a source code`
 
 ## HOWTO Tables
 
