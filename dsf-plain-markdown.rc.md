@@ -1,6 +1,6 @@
 # Markdown
 
-## HOWTO Syntax highlight
+## HOWTO Syntax markup for font style and code highlighting
 
 * ~~Typographical strikethrough is a words with a central horizontal line~~.
 * [link text](https://your.tld/your/link/url)
