@@ -35,6 +35,10 @@ Adds `\n` at the end of the file only if it doesn’t already end with a newline
 
     sed -i --in-place --expression='$a\' ~/.dmenu_history
 
+## Print only matching text
+
+    sed -n --quiet 's/.*skip.*befor\(match.*text\)skip.*after.*/\1/p'
+
 ## Placeholders/variables
 
     sed -e 's/\(unchangeable str\)str to replace/\1new str/g' path/to/file
