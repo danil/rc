@@ -151,7 +151,7 @@ origin/your-new-branch to origin/your-old-branch
 
 <http://stackoverflow.com/questions/8640887/git-merge-without-auto-commit#8641053>
 
-    git merge --no-commit --no-ff your-branch-nm
+    git merge --no-commit your-branch-nm
 
 ## Merge pull request step 1
 
