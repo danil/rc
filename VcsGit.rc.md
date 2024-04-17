@@ -155,7 +155,7 @@ origin/your-new-branch to origin/your-old-branch
 
 ## Merge force our branch and ignore their branch <sup>[1604871223][] [542715930][]</sup>
 
-    git merge --strategy=ours --no-commit their-branch-nm
+    git merge -s ours --strategy=ours --no-commit their-branch-nm
 
 [1604871223]: https://git-scm.com/docs/git-merge#Documentation/git-merge.txt-ours-1
 [542715930]: https://stackoverflow.com/questions/4624357/how-do-i-overwrite-rather-than-merge-a-branch-on-another-branch-in-git#4624383
