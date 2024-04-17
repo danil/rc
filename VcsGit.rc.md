@@ -153,9 +153,10 @@ origin/your-new-branch to origin/your-old-branch
 
 [395457678]: http://stackoverflow.com/questions/8640887/git-merge-without-auto-commit#8641053
 
-## Merge force our branch and ignore their branch <sup>[1604871223][] [542715930][]</sup>
+## Merge force our branch and ignore their/ours branch <sup>[1604871223][] [542715930][]</sup>
 
     git merge -s ours --strategy=ours --no-commit their-branch-nm
+    git merge -s recursive --strategy=recursive -X theirs their-branch-nm
 
 [1604871223]: https://git-scm.com/docs/git-merge#Documentation/git-merge.txt-ours-1
 [542715930]: https://stackoverflow.com/questions/4624357/how-do-i-overwrite-rather-than-merge-a-branch-on-another-branch-in-git#4624383
