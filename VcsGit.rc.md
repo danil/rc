@@ -153,13 +153,14 @@ origin/your-new-branch to origin/your-old-branch
 
 [395457678]: http://stackoverflow.com/questions/8640887/git-merge-without-auto-commit#8641053
 
-## Merge force our branch and ignore their/ours branch <sup>[1604871223][] [542715930][] [1344526453][]</sup>
+## Merge force our branch and ignore their/ours branch <sup>[1604871223][] [542715930][] [2032822590][] [1344526453][]</sup>
 
     git merge -s ours --strategy=ours --allow-unrelated-histories --no-commit their-branch-nm
     git merge -s recursive --strategy=recursive -X theirs --allow-unrelated-histories --no-commit their-branch-nm
 
 [1344526453]: https://stackoverflow.com/questions/37937984/git-refusing-to-merge-unrelated-histories-on-rebase#37938036
 [1604871223]: https://git-scm.com/docs/git-merge#Documentation/git-merge.txt-ours-1
+[2032822590]: https://stackoverflow.com/questions/10697463/resolve-git-merge-conflicts-in-favor-of-their-changes-during-a-pull#10697463
 [542715930]: https://stackoverflow.com/questions/4624357/how-do-i-overwrite-rather-than-merge-a-branch-on-another-branch-in-git#4624383
 
 ## Merge pull request step 1
