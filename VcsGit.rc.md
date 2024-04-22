@@ -123,7 +123,7 @@ Get/print current branch
 
 ## HOWTO Branch rename
 
-    git branch -m old_branch new_branch
+    git branch -m --move old_branch new_branch
 
 ## HOWTO Rename remote branch
 
