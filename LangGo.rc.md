@@ -384,6 +384,34 @@ For example: `Id` -> `ID` `Url` -> `URL` `Xml` -> `XML`
 [2031092561]: https://pkg.go.dev/fmt#Errorf
 [2122683529]: https://go.dev/blog/go1.13-errors#wrapping-errors-with-w
 
+## DOC Common/sentinel error <sup>[564276647][] [3803648131][] [2964410316][] [1841971474][]</sup>
+
+* [io.EOF][]                 <sup>End of input</sup>
+* [os.ErrPermission][]       <sup>Permission denied</sup>
+* [os.ErrExist][]            <sup>File already exists</sup>
+* [os.ErrNotExist][]         <sup>File does not exist</sup>
+* [os.ErrClosed][]           <sup>File already closed</sup>
+* [os.ErrDeadlineExceeded][] <sup>I/O timeout</sup>
+* [fs.ErrPermission][]       <sup>Permission denied</sup>
+* [fs.ErrExist][]            <sup>File already exists</sup>
+* [fs.ErrNotExist][]         <sup>file does not exist</sup>
+* [fs.ErrClosed][]           <sup>File already closed</sup>
+
+[fs.errclosed]: https://pkg.go.dev/io/fs#ErrClosed
+[fs.errexist]: https://pkg.go.dev/io/fs#ErrExist
+[fs.errnotexist]: https://pkg.go.dev/io/fs#ErrNotExist
+[fs.errpermission]: https://pkg.go.dev/io/fs#ErrPermission
+[io.eof]: https://pkg.go.dev/io#EOF
+[os.errclosed]: https://pkg.go.dev/os#ErrClosed
+[os.errdeadlineexceeded]: https://pkg.go.dev/os#ErrDeadlineExceeded
+[os.errexist]: https://pkg.go.dev/os#ErrExist
+[os.errnotexist]: https://pkg.go.dev/os#ErrNotExist
+[os.errpermission]: https://pkg.go.dev/os#ErrPermission
+[1841971474]: https://pkg.go.dev/fs#pkg-variables
+[2964410316]: https://pkg.go.dev/os#pkg-variables
+[3803648131]: https://pkg.go.dev/io#pkg-variables
+[564276647]: https://dave.cheney.net/tag/errors
+
 ## HOWTO Explicit argument indexes of formatter
 
     fmt.Sprintf("%[2]d %[1]d", 11, 22)
