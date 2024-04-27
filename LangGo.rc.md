@@ -388,10 +388,14 @@ For example: `Id` -> `ID` `Url` -> `URL` `Xml` -> `XML`
 
     fmt.Sprintf("%[2]d %[1]d", 11, 22)
 
-## TROUBLESHOOTING Civil time vs monotonic
+## TROUBLESHOOTING Time unify types: Wall/Civil/Monotonic/Absolute
 
-Arguments for `time.Time` type and against `time.Date` type
-<https://github.com/golang/go/issues/19700#issuecomment-559250634>.
+* Wall or Civil <sup>[*][2537165088] [arguments for `time.Time` type and against `time.Date` type][3612606115]</sup>
+* Monotonic or Absolute <sup>[*][2825446405]</sup>
+
+[2537165088]: https://en.wikipedia.org/wiki/Civil_time
+[2825446405]: https://pkg.go.dev/time#hdr-Monotonic_Clocks
+[3612606115]: https://github.com/golang/go/issues/19700#issuecomment-559250634
 
 ## HOWTO Multiply duration
 
