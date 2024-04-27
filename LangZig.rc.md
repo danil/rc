@@ -1,4 +1,6 @@
-# Zig programing language rc
+# [Zig][] programing language rc
+
+[zig]: https://github.com/ziglang/zig
 
 ## HOWTO [Hello, World!][]
 
