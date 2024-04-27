@@ -386,16 +386,12 @@ For example: `Id` -> `ID` `Url` -> `URL` `Xml` -> `XML`
 
 ## DOC Common/sentinel error <sup>[564276647][] [3803648131][] [2964410316][] [1841971474][]</sup>
 
-* [io.EOF][]                 <sup>End of input</sup>
-* [os.ErrPermission][]       <sup>Permission denied</sup>
-* [os.ErrExist][]            <sup>File already exists</sup>
-* [os.ErrNotExist][]         <sup>File does not exist</sup>
-* [os.ErrClosed][]           <sup>File already closed</sup>
-* [os.ErrDeadlineExceeded][] <sup>I/O timeout</sup>
-* [fs.ErrPermission][]       <sup>Permission denied</sup>
-* [fs.ErrExist][]            <sup>File already exists</sup>
-* [fs.ErrNotExist][]         <sup>file does not exist</sup>
-* [fs.ErrClosed][]           <sup>File already closed</sup>
+* [io.EOF][]                                      <sup>End of input</sup>
+* [os.ErrPermission][]       [fs.ErrPermission][] <sup>Permission denied</sup>
+* [os.ErrExist][]            [fs.ErrExist][]      <sup>File already exists</sup>
+* [os.ErrNotExist][]         [fs.ErrNotExist][]   <sup>File does not exist</sup>
+* [os.ErrClosed][]           [fs.ErrClosed][]     <sup>File already closed</sup>
+* [os.ErrDeadlineExceeded][]                      <sup>I/O timeout</sup>
 
 [fs.errclosed]: https://pkg.go.dev/io/fs#ErrClosed
 [fs.errexist]: https://pkg.go.dev/io/fs#ErrExist
