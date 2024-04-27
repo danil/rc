@@ -384,7 +384,7 @@ For example: `Id` -> `ID` `Url` -> `URL` `Xml` -> `XML`
 [2031092561]: https://pkg.go.dev/fmt#Errorf
 [2122683529]: https://go.dev/blog/go1.13-errors#wrapping-errors-with-w
 
-## DOC Common/sentinel error <sup>[564276647][] [3803648131][] [2964410316][] [1841971474][]</sup>
+## DOC Common/sentinel error <sup>[564276647][]</sup>
 
 * [io.EOF][]                                      <sup>End of input</sup>
 * [os.ErrPermission][]       [fs.ErrPermission][] <sup>Permission denied</sup>
@@ -403,9 +403,6 @@ For example: `Id` -> `ID` `Url` -> `URL` `Xml` -> `XML`
 [os.errexist]: https://pkg.go.dev/os#ErrExist
 [os.errnotexist]: https://pkg.go.dev/os#ErrNotExist
 [os.errpermission]: https://pkg.go.dev/os#ErrPermission
-[1841971474]: https://pkg.go.dev/fs#pkg-variables
-[2964410316]: https://pkg.go.dev/os#pkg-variables
-[3803648131]: https://pkg.go.dev/io#pkg-variables
 [564276647]: https://dave.cheney.net/tag/errors
 
 ## HOWTO Explicit argument indexes of formatter
