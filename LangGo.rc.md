@@ -392,6 +392,7 @@ For example: `Id` -> `ID` `Url` -> `URL` `Xml` -> `XML`
 * [os.ErrNotExist][]         [fs.ErrNotExist][]   <sup>File does not exist</sup>
 * [os.ErrClosed][]           [fs.ErrClosed][]     <sup>File already closed</sup>
 * [os.ErrDeadlineExceeded][]                      <sup>I/O timeout</sup>
+* [sql.ErrNoRows][]                               <sup>No rows in result set</sup>
 
 [fs.errclosed]: https://pkg.go.dev/io/fs#ErrClosed
 [fs.errexist]: https://pkg.go.dev/io/fs#ErrExist
@@ -403,6 +404,7 @@ For example: `Id` -> `ID` `Url` -> `URL` `Xml` -> `XML`
 [os.errexist]: https://pkg.go.dev/os#ErrExist
 [os.errnotexist]: https://pkg.go.dev/os#ErrNotExist
 [os.errpermission]: https://pkg.go.dev/os#ErrPermission
+[sql.errnorows]: https://pkg.go.dev/database/sql#ErrNoRows
 [564276647]: https://dave.cheney.net/tag/errors
 
 ## HOWTO Explicit argument indexes of formatter
