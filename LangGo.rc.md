@@ -388,7 +388,7 @@ For example: `Id` -> `ID` `Url` -> `URL` `Xml` -> `XML`
 
     fmt.Sprintf("%[2]d %[1]d", 11, 22)
 
-## TROUBLESHOOTING Time unify types: Wall/Civil/Monotonic/Absolute
+## TROUBLESHOOTING Time type unification disclaimer (wall/civil/monotonic/absolute)
 
 * Wall or Civil <sup>[*][2537165088] [arguments for `time.Time` type and against `time.Date` type][3612606115]</sup>
 * Monotonic or Absolute <sup>[*][2825446405]</sup>
