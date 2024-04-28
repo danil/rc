@@ -1,9 +1,8 @@
-# tmux terminal multiplexer rc
+# [tmux][] terminal multiplexer <sup>[2480088451][] [585326025][]</sup> rc
 
-[tmux][] [crash course][].
-
-[crash course]: https://robots.thoughtbot.com/a-tmux-crash-course
 [tmux]: https://github.com/tmux/tmux
+[585326025]: https://thoughtbot.com/blog/a-tmux-crash-course
+[2480088451]: https://repology.org/project/tmux
 
 ## Install/compile/build
 
