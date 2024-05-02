@@ -35,6 +35,10 @@ Latest modified/newest files (42 items)
 
     find / -type l -exec sh -c 'lname="{}"; ltarget=$(readlink "${lname}"); rm "${lname}"; ln -s "${ltarget}" "${lname}"' \;
 
+## Count named directories
+
+    find -type d -name "your_nm" | wc -l
+
 ## Empty directories
 
     find -type d -empty
