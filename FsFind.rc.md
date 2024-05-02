@@ -57,9 +57,7 @@ Latest modified/newest files (42 items)
 
     find -type f -iname '*.o' -or -iname '*.ko'
 
-## Exclude dirs
-
-Find but not in some directories
+## Exclude dirs <sup>find but not in some directories</sup>
 
     find where/to/find -name *your_pattern* \
          -not -path '*/first_dir*' -not -path '*/second_dir*'
