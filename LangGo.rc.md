@@ -136,8 +136,7 @@ var tests = []struct {
 }
 
 func line() string {
-	_, file, line, ok := runtime.Caller(1)
-	if ok {
+	if _, file, line, ok := runtime.Caller(1); ok {
 		return fmt.Sprintf("%s:%d", filepath.Base(file), line)
 	}
 	return "it was not possible to recover file and line number information about function invocations"
