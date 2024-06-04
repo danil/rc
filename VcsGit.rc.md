@@ -728,14 +728,12 @@ git log \
     | sed ':a;N;$!ba;s/\n/ /g'
 ```
 
-## Shortlog contributors list
-
-List of contributors/authors/owners
-
-* <http://stackoverflow.com/questions/9597410/list-all-developers-on-project-in-git#9597462>
-* <http://www.commandlinefu.com/commands/view/4519/list-all-authors-of-a-particular-git-project>
+## Shortlog contributors list <sup>list of contributors/authors/owners [1810529833][] [848305831][]</sup>
 
     git shortlog --summary --email --numbered --since="7 days ago" path/to/file | cut -c8-
+
+[1810529833]: http://stackoverflow.com/questions/9597410/list-all-developers-on-project-in-git#9597462
+[848305831]: http://www.commandlinefu.com/commands/view/4519/list-all-authors-of-a-particular-git-project
 
 ## Shortlog branch contributors list
 
