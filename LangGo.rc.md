@@ -475,12 +475,13 @@ For examle `a[low:high:max]` or `a[0:0:0]` or `a[:0:0]`
 
 ## HOWTO Copy slice
 
+* https://go.dev/wiki/SliceTricks#copy
 * https://pkg.go.dev/builtin#copy
 * https://pkg.go.dev/builtin#append
-* https://github.com/golang/go/wiki/SliceTricks#copy
+* DEPRECATED https://github.com/golang/go/wiki/SliceTricks#copy
 
-1. `b := make([]T, len(a))` and then `copy(b, a)`
-2. `b := append(a[:0:0], a...)` is the same as `b = append([]T(nil), a...)`
+1. `b := append(a[:0:0], a...)` is the same as `b = append([]T(nil), a...)`
+2. `b := make([]T, len(a))` and then `copy(b, a)`
 3. `b := append(make([]T, 0, len(a)), a...)`
 
 ## HOWTO Compare byte slices
