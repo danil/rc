@@ -800,6 +800,10 @@ Binary Search <http://progit.org/book/ru/ch6-5.html>.
     git bisect reset
     git stash pop
 
+## List all files within branch
+
+    git ls-tree -r your-branch --name-only
+
 ## Search filenames
 
     git ls-tree -r HEAD | grep fetcher_log
