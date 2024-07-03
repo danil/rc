@@ -2,7 +2,7 @@
 
     chmod -R ug+w ./smarty/templates_c/ ./smarty/cach/
 
-## Fix files and directories permissions
+## HOWTO `chmod`: Fix files and directories permissions
 
 <http://superuser.com/questions/126073/chmod-to-allow-read-and-write-permissions-for-directory#126075>
 
