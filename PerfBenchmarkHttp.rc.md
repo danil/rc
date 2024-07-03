@@ -1,4 +1,4 @@
-# HTTP benchmarks rc
+# HTTP benchmark rc
 
 ## [ab][]
 
