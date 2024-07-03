@@ -1,6 +1,6 @@
 # HTTP benchmark rc
 
-## HOWTO [ab][] <small>`ab` is an legacy benchmark util</small>
+## HOWTO [ab][] <sup><sub>`ab` is an legacy benchmark util</sup></sub>
 
     ab -kc 10 -t 30 https://localhost
 
@@ -23,19 +23,19 @@
 
 [siege]: https://github.com/joedog/siege
 
-## HOWTO [wrk][] <small>runs a benchmark for 30 seconds, using 12 threads, and keeping 400 HTTP connections open</small>
+## HOWTO [wrk][] <sup><sub>runs a benchmark for 30 seconds, using 12 threads, and keeping 400 HTTP connections open</sup></sub>
 
     wrk --threads=12 --connections=400 --duration=30s https://localhost
 
 [wrk]: https://github.com/wg/wrk
 
-## HOWTO [hey][] <small>runs 1000 requests, using 100 threads</small>
+## HOWTO [hey][] <sup><sub>runs 1000 requests, using 100 threads</sup></sub>
 
     hey -n 1000 -c 100 https://localhost
 
 [hey]: https://github.com/rakyll/hey
 
-## HOWTO [bombardier][] <small>only one url (no multiple urls)</small>
+## HOWTO [bombardier][] <sup><sub>only one url (no multiple urls)</sup></sub>
 
     bombardier https://localhost
 
@@ -45,7 +45,7 @@
 
 [herd]: https://github.com/imjacobclark/herd
 
-## HOWTO [Pandora][] <small>produce HTTP/S/1/2 load</small>
+## HOWTO [Pandora][] <sup><sub>produce HTTP/S/1/2 load</sup></sub>
 
 [pandora]: http://github.com/yandex/pandora
 
