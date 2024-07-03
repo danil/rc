@@ -17,7 +17,7 @@
 ## HOWTO Disk `dd` <sup><sub>[297458425][]</sub></sup>
 
     dd if=/dev/zero of=/tmp/foobar bs=1M count=1024 conv=fdatasync
-    iotop
+    iotop || watch -n 5 iostat || iostat
 
 [297458425]: https://haydenjames.io/web-host-doesnt-want-read-benchmark-vps
 
