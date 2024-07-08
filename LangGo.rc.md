@@ -535,6 +535,35 @@ func main() {
 [context.context]: https://pkg.go.dev/context
 [net.context]: https://pkg.go.dev/golang.org/x/net/context
 
+## Flag set parser <sup><sub>console/terminal [1642752273][] in case you can't use, for example, [Kong][]</sub></sup>
+
+```go
+package main
+
+import (
+	"fmt"
+	"flag"
+	"os"
+)
+
+func main() {
+	switch os.Args[1] {
+	case "foo":
+		set := flag.NewFlagSet("foo", flag.ExitOnError)
+		bar := set.Bool("bar", false, "")
+		_ = set.Parse(os.Args[2:])
+		fmt.Println(*bar)
+	case "xyz":
+		set := flag.NewFlagSet("xyz", flag.ExitOnError)
+		baz := set.Bool("baz", false, "")
+		_ = set.Parse(os.Args[2:])
+		fmt.Println(*baz)
+	}
+```
+
+[kong]: https://github.com/alecthomas/kong
+[1642752273]: https://stackoverflow.com/questions/24504024/defining-independent-flagsets-in-golang#24510031
+
 ## HOWTO Query string key-value pairs
 
 [Query string][] of Uniform Resource Identifier URI encoded in
