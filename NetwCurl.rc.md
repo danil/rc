@@ -8,11 +8,11 @@
 
     curl -s --silent --url https://api.github.com/repos/tomnomnom/gron/commits?per_page=1
 
-## HOWTO Only headers
-
-<http://stackoverflow.com/questions/3252851/how-to-display-request-headers-with-command-line-curl>
+## HOWTO Only headers <sup><sub>[3737298796][]</sub></sup>
 
     curl -I --head --url http://wikipedia.org
+
+[3737298796]: http://stackoverflow.com/questions/3252851/how-to-display-request-headers-with-command-line-curl
 
 ## HOWTO POST
 
@@ -33,13 +33,12 @@
          -d '{"foo":123,"bar":"xyz"}' --data '{"foo":123,"bar":"xyz"}' \
          --url http://your.tld
 
-## HOWTO Gzipped
+## HOWTO Gzipped <sup><sub>[3168698307][]</sub></sup>
 
     curl --header "Accept-encoding: gzip" --url http://your.tld | gunzip
-
-<http://stackoverflow.com/questions/8364640/how-to-properly-handle-a-gzipped-page-when-using-curl#8365089>
-
     curl --compressed --url http://your.tld
+
+[3168698307]: http://stackoverflow.com/questions/8364640/how-to-properly-handle-a-gzipped-page-when-using-curl#8365089
 
 ## HOWTO Follow redirect
 
