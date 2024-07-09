@@ -1,5 +1,7 @@
 # cURL rc
 
+    curl -O --remote-name -C - --continue-at - -L --location --url http://your.tld/your.file
+
 ## HOWTO View sent/received headers
 
     curl -v --verbose -I --head --url http://wikipedia.org
@@ -48,6 +50,10 @@
 
     curl -o file.tar.gz --output file.tar.gz
          --url https://your.tld/path/to/file.tar.gz
+
+## HOWTO  Resume failed download
+
+    curl -O --remote-name -C - --continue-at - --url http://your.tld/your.file
 
 ## HOWTO Accept header <sup>accept JSON response</sup>
 
