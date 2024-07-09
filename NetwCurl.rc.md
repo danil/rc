@@ -51,9 +51,11 @@
     curl -o file.tar.gz --output file.tar.gz
          --url https://your.tld/path/to/file.tar.gz
 
-## HOWTO  Resume failed download
+## HOWTO  Resume failed download <sup><sub>[1443426446][]</sub></sup>
 
     curl -O --remote-name -C - --continue-at - --url http://your.tld/your.file
+
+[1443426446]: https://stackoverflow.com/questions/19728930/how-to-resume-interrupted-download-automatically-in-curl#47343997
 
 ## HOWTO Accept header <sup>accept JSON response</sup>
 
