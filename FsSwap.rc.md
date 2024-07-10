@@ -1,21 +1,21 @@
-# Swap
+# Swap rc
 
     swapon --summary
 
-## Get size
+## HOWTO Get size
 
     free --human | grep Swap
 
-## Disable
+## HOWTO Disable
 
     swapoff /path/to/swap
     swapoff --all
 
-## Enable
+## HOWTO Enable
 
     swapon /path/to/swap
 
-## Create file dd
+## HOWTO Create file by `dd`
 
 <https://wiki.archlinux.org/title/swap#Swap_file>
 
@@ -26,20 +26,20 @@ Sleep/suspend/hibernate to disk do **NOT** work by default with file swap
     mkswap /path/to/swap
     swapon /path/to/swap
 
-## Create file fallocate
+## HOWTO Create file fallocate
 
 File created by fallocate do **NOT** work
 <https://unix.stackexchange.com/questions/294600/i-cant-enable-swap-space-on-centos-7#answer-294605>
 
     fallocate --length=4GB /path/to/swap
 
-## Swappiness
+## HOWTO Swappiness
 
 <https://en.wikipedia.org/wiki/Swappiness>
 
     sysctl --all | grep swappiness
 
-## Swappiness disable
+## HOWTO Swappiness disable
 
 A low value causes the kernel to avoid swapping
 
@@ -49,7 +49,7 @@ or
 
     echo 0 > /proc/sys/vm/swappiness
 
-## Swappiness enable
+## HOWTO Swappiness enable
 
 Higher value causes the kernel to try to use swap space
 
@@ -59,7 +59,7 @@ or
 
     echo 100 > /proc/sys/vm/swappiness
 
-## Partition
+## HOWTO Partition
 
 <https://wiki.archlinux.org/title/swap#Swap_partition>
 
