@@ -8,25 +8,25 @@
 
 ## HOWTO Disable
 
-    swapoff /path/to/swap
+    swapoff /path/to/swap.img
     swapoff --all
 
 ## HOWTO Enable
 
-    swapon /path/to/swap
+    swapon /path/to/swap.img
 
 ## HOWTO Create file by `dd` <sup><sub>sleep/suspend/hibernate to disk do **NOT** work by default with file swap [2976221903][]</sub></sup>
 
-    dd if=/dev/zero of=/path/to/swap bs=1M count=4000
-    chmod 0600 /path/to/swap
-    mkswap /path/to/swap
-    swapon /path/to/swap
+    dd if=/dev/zero of=/path/to/swap.img bs=1M count=4000
+    chmod 0600 /path/to/swap.img
+    mkswap /path/to/swap.img
+    swapon /path/to/swap.img
 
 [2976221903]: https://wiki.archlinux.org/title/swap#Swap_file
 
 ## HOWTO Create file fallocate <sup><sub>file created by fallocate do **NOT** work [2771094678][]</sub></sup>
 
-    fallocate --length=4GB /path/to/swap
+    fallocate --length=4GB /path/to/swap.img
 
 [2771094678]: https://unix.stackexchange.com/questions/294600/i-cant-enable-swap-space-on-centos-7#answer-294605
 
