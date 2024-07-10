@@ -15,29 +15,26 @@
 
     swapon /path/to/swap
 
-## HOWTO Create file by `dd`
-
-<https://wiki.archlinux.org/title/swap#Swap_file>
-
-Sleep/suspend/hibernate to disk do **NOT** work by default with file swap
+## HOWTO Create file by `dd` <sup><sub>sleep/suspend/hibernate to disk do **NOT** work by default with file swap [2976221903][]</sub></sup>
 
     dd if=/dev/zero of=/path/to/swap bs=1M count=4000
     chmod 0600 /path/to/swap
     mkswap /path/to/swap
     swapon /path/to/swap
 
-## HOWTO Create file fallocate
+[2976221903]: https://wiki.archlinux.org/title/swap#Swap_file
 
-File created by fallocate do **NOT** work
-<https://unix.stackexchange.com/questions/294600/i-cant-enable-swap-space-on-centos-7#answer-294605>
+## HOWTO Create file fallocate <sup><sub>file created by fallocate do **NOT** work [2771094678][]</sub></sup>
 
     fallocate --length=4GB /path/to/swap
 
-## HOWTO Swappiness
+[2771094678]: https://unix.stackexchange.com/questions/294600/i-cant-enable-swap-space-on-centos-7#answer-294605
 
-<https://en.wikipedia.org/wiki/Swappiness>
+## HOWTO Swappiness <sup><sub>[485532627][]</sub></sup>
 
     sysctl --all | grep swappiness
+
+[485532627]: https://en.wikipedia.org/wiki/Swappiness
 
 ## HOWTO Swappiness disable
 
@@ -59,8 +56,8 @@ or
 
     echo 100 > /proc/sys/vm/swappiness
 
-## HOWTO Partition
-
-<https://wiki.archlinux.org/title/swap#Swap_partition>
+## HOWTO Partition <sup><sub>[268679158][]</sub></sup>
 
     mkswap /dev/sda3 && swapon /dev/sda3
+
+[268679158]: https://wiki.archlinux.org/title/swap#Swap_partition
