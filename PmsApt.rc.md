@@ -71,9 +71,13 @@ Fixing following signatures were invalid (https://github.com/yarnpkg/yarn/issues
 
 ## HOWTO `apt upgrade` or `apt full-upgrade`
 
-The difference between upgrade and full-upgrade is that full-upgrade removes packages if necessary.
+The difference between upgrade and full-upgrade
+is that full-upgrade removes packages if necessary.
 
-<sup><sub>So if keeping up-to-date in all cases is more important than features, apt full-upgrade is better than apt upgrade. In practice, automatically removing packages could result in an unusable system. [2810974564][]</sub></sup>
+<sup><sub>So if keeping up-to-date in all cases
+is more important than features, apt full-upgrade is better than apt upgrade.
+In practice, automatically removing packages could result in an unusable system.
+[2810974564][]</sub></sup>
 
 [2810974564]: https://unix.stackexchange.com/questions/756169/apt-upgrade-or-apt-full-upgrade#756170
 
