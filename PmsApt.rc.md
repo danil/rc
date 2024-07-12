@@ -69,6 +69,14 @@ Fixing following signatures were invalid (https://github.com/yarnpkg/yarn/issues
 
     apt-key adv --refresh-keys --keyserver keyserver.ubuntu.com
 
+## HOWTO `apt upgrade` or `apt full-upgrade`
+
+The difference between upgrade and full-upgrade is that full-upgrade removes packages if necessary.
+
+<sup><sub>So if keeping up-to-date in all cases is more important than features, apt full-upgrade is better than apt upgrade. In practice, automatically removing packages could result in an unusable system. [2810974564][]</sub></sup>
+
+[2810974564]: https://unix.stackexchange.com/questions/756169/apt-upgrade-or-apt-full-upgrade#756170
+
 ## TROUBLESHOOTING NO_PUBKEY
 
     curl https://your.tld/your/key.gpg | sudo gpg --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/your-key.gpg --import
