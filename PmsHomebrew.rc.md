@@ -110,6 +110,10 @@
 
     brew services stop your-srv
 
+## HOWTO Cleanup
+
+    brew cleanup --prune=1 -s -n
+
 ## TROUBLESHOOTING
 
     brew doctor
