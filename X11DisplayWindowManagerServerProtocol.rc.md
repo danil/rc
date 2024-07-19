@@ -1,4 +1,6 @@
-# X11 display manager rc
+# [X11][] Window System/Server Protocol <sup><sub>Display Window Manager</sub></sup> rc
+
+[x11]: https://en.wikipedia.org/wiki/X_Window_System
 
 ## Restart
 
