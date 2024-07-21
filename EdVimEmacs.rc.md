@@ -1,4 +1,4 @@
-# [Vim][] and [Emacs][] eiditors rc
+# [Vim][]/[Emacs][] editor rc
 
 [emacs]: https://github.com/emacs-mirror/emacs
 [vim]: https://github.com/vim/vim
