@@ -2,8 +2,8 @@
 
 * HOWTO `swapon --summary`
 * HOWTO Get size `free --human | grep Swap`
-* HOWTO Disable `swapoff /swap.img` | `swapoff --all`
-* HOWTO Enable `swapon /swap.img`
+* HOWTO Disable  `swapoff /swap.img` || `swapoff --all`
+* HOWTO Enable   `swapon /swap.img`
 
 ## HOWTO Create file by `dd` <sup><sub>sleep/suspend/hibernate to disk do **NOT** work by default with file swap [2976221903][]</sub></sup>
 
