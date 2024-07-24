@@ -1,4 +1,4 @@
-# jq json rcc
+# jq JSON rcc
 
 Command-line JSON processor <http://stedolan.github.io/jq>
 
