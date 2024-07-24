@@ -4,17 +4,11 @@
 
     cat path/to/file.json | jq .
 
-## HOWTO Query root property & pretty print
-
-    jq .
-
-## HOWTO Query property
-
-    jq .yourProp
-
-## HOWTO Select first item
-
-    jq .[0]
+* HOWTO Query root property `jq .` <sup><sub>Pretty print.</sub></sup>
+* HOWTO Query property `jq .yourProp`
+* HOWTO Select first item `jq .[0]`
+* HOWTO Keep one array property `jq '.yourArray[].yourProp'`
+* HOWTO Delete/remove one array property `jq 'del(.yourArray[].yourProp)'`
 
 ## HOWTO Filter array <sup><sub>Count objects in array. [3279142546][] [2395198962][]</sub></sup>
 
@@ -30,14 +24,6 @@
       jq 'map(select(.yourId == 89 and (.yourVal | type) == "string"))' | \
       jq 'map(select(.value | match("foo";"i")))' | \
       jq 'map(select(.value | test(".*bar")))'
-
-## HOWTO Keep one array property
-
-    jq '.yourArray[].yourProp'
-
-## HOWTO Delete/remove one array property
-
-    jq 'del(.yourArray[].yourProp)'
 
 ## HOWTO Get property from array
 
