@@ -1,4 +1,4 @@
-# [jq][] JSON rcc <sup><sub>Command-line JSON processor</sub></sup>
+# [jq][] Command-line JSON processor rcc
 
 [jq]: https://github.com/jqlang/jq
 
