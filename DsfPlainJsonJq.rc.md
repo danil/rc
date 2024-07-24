@@ -2,8 +2,7 @@
 
 [jq]: https://github.com/jqlang/jq
 
-    cat path/to/file.json | jq .
-
+* HOWTO `cat path/to/file.json | jq .`
 * HOWTO Query root property `jq .` <sup><sub>Pretty print.</sub></sup>
 * HOWTO Query property `jq .yourProp`
 * HOWTO Select first item `jq .[0]`
