@@ -191,12 +191,11 @@ Get/copy a directories recursively from a specific revision
 
     git checkout your-branch-nm -- path/to/direcotry
 
-## Show/copy file
-
-Get a file from a specific revision
-<http://stackoverflow.com/questions/610208/how-to-retrieve-a-single-file-from-specific-revision-in-git#answer-610315>.
+## Show/copy file <sup><sub>Get a file from a specific revision. [499421053][]</sub></sup>
 
     git show HEAD^^^:path/to/file.txt > local/path/to/file.txt
+
+[499421053]: http://stackoverflow.com/questions/610208/how-to-retrieve-a-single-file-from-specific-revision-in-git#answer-610315
 
 ## Remove remote
 
@@ -421,7 +420,7 @@ Find submodules even not listed in `.gitmodules` file
 ## Diff
 
     git diff --cached --color-words
-    git diff --color HEAD^..HEAD path/to/your/file.nm
+    git diff --color HEAD^..HEAD path/to/your/file
 
 ## Diff and List changed file names
 
@@ -713,7 +712,7 @@ git log --pretty="%H" --author="your_author_nm" your/path | \
 Search file name in all commits history
 <http://stackoverflow.com/questions/7203515/how-to-locate-a-deleted-file-in-the-commit-history#7203551>
 
-    git log --all -- path/to/your/file.nm
+    git log --all -- path/to/your/file
 
 ## Log other filter
 
