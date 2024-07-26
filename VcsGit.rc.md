@@ -48,22 +48,21 @@ Push one commit by commit sha
 
     git push origin your-commit-sha:master
 
-## Push local branch to another remote branch
-
-<https://stackoverflow.com/questions/13897717/push-commits-to-another-branch/13897766#13897766>
+## Push local branch to another remote branch <sup><sub>[3933421979][]</sub></sup>
 
     git push your-remote local-branch:remote-branch
+
+[3933421979]: https://stackoverflow.com/questions/13897717/push-commits-to-another-branch/13897766#13897766
 
 ## Push all branches
 
     git push --all origin
 
-## Push to URL across repositories
-
-Push from local repository to independent remote repository
-<https://gist.github.com/domenic/ec8b0fc8ab45f39403dd>
+## Push to URL across repositories <sup><sub>Push from local repository to independent remote repository. [79697014][]</sub></sup>
 
     git push git@your.tld:your/repo.git local-branch:remote-branch
+
+[79697014]: https://gist.github.com/domenic/ec8b0fc8ab45f39403dd
 
 ## Branches list
 
@@ -125,19 +124,18 @@ Get/print current branch
 
     git branch -m --move old-branch-nm new-branch-nm
 
-## HOWTO Rename remote branch
-
-origin/your-new-branch to origin/your-old-branch
-<http://stackoverflow.com/questions/1526794/git-rename-remote-branch#answer-1527004>
+## HOWTO Rename remote branch <sup><sub>origin/your-new-branch to origin/your-old-branch. [3001586880][]</sub></sup>
 
     git branch -m your-new-branch your-old-branch
 
-## HOWTO Default branch to pull
+[3001586880]: http://stackoverflow.com/questions/1526794/git-rename-remote-branch#answer-1527004
 
-<http://stackoverflow.com/questions/658885/how-do-you-get-git-to-always-pull-from-a-specific-branch#answer-659804>
+## HOWTO Default branch to pull <sup><sub>[2924248947][]</sub></sup>
 
     git config branch.your-branch-nm.remote origin
     git config branch.your-branch-nm.merge refs/heads/production
+
+[2924248947]: http://stackoverflow.com/questions/658885/how-do-you-get-git-to-always-pull-from-a-specific-branch#answer-659804
 
 ## HOWTO Branch upstream
 
@@ -707,12 +705,11 @@ git log --pretty="%H" --author="your_author_nm" your/path | \
 
     git log --grep='your-desired-feature'
 
-## Log by search file in all commits
-
-Search file name in all commits history
-<http://stackoverflow.com/questions/7203515/how-to-locate-a-deleted-file-in-the-commit-history#7203551>
+## Log by search file in all commits <sup><sub>Search file name in all commits history. [2798852206][]</sub></sup>
 
     git log --all -- path/to/your/file
+
+[2798852206]: http://stackoverflow.com/questions/7203515/how-to-locate-a-deleted-file-in-the-commit-history#7203551
 
 ## Log other filter
 
