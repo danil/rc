@@ -641,6 +641,7 @@ Reduce repository size
 
 ## Log
 
+    git log --oneline
     git log --reverse
     git log --patch --no-merges  HEAD^^^ HEAD
 
