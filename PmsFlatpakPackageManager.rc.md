@@ -11,15 +11,15 @@
 
 ## Install
 
-    flatpak install --verbose flathub your.package.Name
+    flatpak install --verbose flathub your.pkg.Nm
 
 ## Remove/delete package
 
-    flatpak uninstall your.package.Name
+    flatpak uninstall your.pkg.Nm
 
 ## Search
 
-    flatpak search your.package.Name
+    flatpak search your.pkg.Nm
 
 ## Update all packages
 
@@ -27,7 +27,7 @@
 
 ## Run
 
-    flatpak run your.package.Name "$@"
+    flatpak run your.pkg.Nm "$@"
 
 ## List remotes
 

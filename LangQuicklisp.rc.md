@@ -2,7 +2,7 @@
 
 ## Search
 
-    (ql:system-apropos "package-name")
+    (ql:system-apropos "pkg-nm")
 
 ### Installed
 
@@ -14,8 +14,8 @@
 
 ## Remove
 
-    (use-package :ql-dist) (uninstall (release "package-name"))
+    (use-package :ql-dist) (uninstall (release "pkg-nm"))
 
 ## Install
 
-    (ql:quickload "package-name")
+    (ql:quickload "pkg-nm")

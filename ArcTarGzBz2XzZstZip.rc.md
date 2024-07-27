@@ -140,7 +140,7 @@ read -ra arr <<<"your array of directories" && \
     zip -r --recurse-paths your.zip path/to/dir
     export f=filename && cat ${f} | zip --quiet ${f}.zip $f
     ls path/to/your.file | zip --quiet path/to/file.zip -@
-    ls path/to/your/dir | grep filenm | zip --quiet path/to/archive.zip -@
+    ls path/to/your/dir | grep your-file-nm | zip --quiet path/to/archive.zip -@
 
 ## zip ???
 

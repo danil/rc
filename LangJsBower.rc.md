@@ -2,7 +2,7 @@
 
 ## Search
 
-    bower search package-name
+    bower search pkg-nm
 
 ## Cache
 

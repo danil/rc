@@ -106,9 +106,9 @@ func YourInit() { hello = "Hello" }
 
 type T string
 
-func New() T                   { return T(hello) }
-func (x *T) YourFunc(s string) { *x = T(string(*x)[:len(hello)] + " " + s) }
-func (x *T) YourReset()        { *x = T(string(*x)[:len(hello)]) }
+func New() T                 { return T(hello) }
+func (x *T) YourFn(s string) { *x = T(string(*x)[:len(hello)] + " " + s) }
+func (x *T) YourReset()      { *x = T(string(*x)[:len(hello)]) }
 ```
 
     cat your_test.go
@@ -142,7 +142,7 @@ func line() string {
 	return "it was not possible to recover file and line number information about function invocations"
 }
 
-func TestYourFunc(t *testing.T) {
+func TestYourFn(t *testing.T) {
 	t.Parallel()
 
 	yourpkg.YourInit()
@@ -154,7 +154,7 @@ func TestYourFunc(t *testing.T) {
 			t.Parallel()
 
 			in := yourpkg.New()
-			in.YourFunc(tt.in)
+			in.YourFn(tt.in)
 
 			if string(in) != tt.out {
 				t.Errorf("\nwant: %s\n got: %s", tt.out, in)
@@ -163,7 +163,7 @@ func TestYourFunc(t *testing.T) {
 	}
 }
 
-func BenchmarkYourFunc(b *testing.B) {
+func BenchmarkYourFn(b *testing.B) {
 	yourpkg.YourInit()
 
 	b.ResetTimer()
@@ -174,7 +174,7 @@ func BenchmarkYourFunc(b *testing.B) {
 			in := yourpkg.New()
 
 			for i := 0; i < b.N; i++ {
-				in.YourFunc(tt.in)
+				in.YourFn(tt.in)
 			}
 
 			b.StopTimer()
@@ -236,7 +236,7 @@ func main() {
 
 ```sh
 go get github.com/rogpeppe/godef
-godef -f path/to/file.go 'yourpkgnm.YourFunctionNm'
+godef -f path/to/file.go 'yourpkgnm.YourFnNm'
 ```
 
 ## HOWTO Build <sup>[4169212427][] [318174330][]</sup>
