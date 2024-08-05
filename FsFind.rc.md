@@ -15,6 +15,12 @@ Find recently changed files within 1 minutes
 
     find your/path -mtime -1 -ls
 
+## Match regexp with logical operator `OR` <sup><sub>[773388999][]</sub></sup>
+
+    find -regex ".*\(your-dir1\|your-dir2\).*your.file"
+
+[773388999]: https://superuser.com/questions/1026412/use-of-the-or-regex-operator-with-the-find-command#1026420
+
 ## Latest modified/newest files
 
 Latest modified/newest files (42 items)
