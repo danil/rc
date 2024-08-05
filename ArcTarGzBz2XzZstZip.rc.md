@@ -125,16 +125,10 @@ read -ra arr <<<"your array of directories" && \
     tar --create --zstd --file path/to/your${file_nm}.tar.zst path/to/dir
     tar --create --file - path/to/dir | zstd -10 --threads=0 --force --compress --stdout > path/to/your${file_nm}.tar.zst
 
-## unzip decompress to directory
+## ZIP/UNZIP
 
-    unzip your.zip -d path/to/dir
-
-## zip decompress
-
-    unzip -p path/to/file.zip | cat
-
-## HOWTO ZIP compress
-
+* HOWTO UNZIP decompress to directory `unzip your.zip -d path/to/your/dir`
+* HOWTO UNZIP decompress to pipe `unzip -p path/to/file.zip | cat`
 * HOWTO ZIP compress `zip your.zip your.file`
 * HOWTO ZIP compress with loss of original name `echo 'Hello, World!' | zip your.zip -`
 * HOWTO ZIP compress directory `zip -r --recurse-paths your.zip path/to/dir`
