@@ -129,7 +129,7 @@ read -ra arr <<<"your array of directories" && \
 
 * HOWTO UNZIP decompress to directory `unzip your.zip -d path/to/your/dir`
 * HOWTO UNZIP decompress to pipe `unzip -p path/to/file.zip | cat`
-* HOWTO ZIP compress `zip your.zip your.file`
+* HOWTO ZIP compress `zip your.file.zip your.file`
 * HOWTO ZIP compress with loss of original name `echo 'Hello, World!' | zip your.zip -`
 * HOWTO ZIP compress directory `zip -r --recurse-paths your.zip path/to/dir`
 * HOWTO ZIP compress when passing name through pipe `export f=your.file && cat ${f} | zip --quiet ${f}.zip $f`
