@@ -133,14 +133,14 @@ read -ra arr <<<"your array of directories" && \
 
     unzip -p path/to/file.zip | cat
 
-## zip compress
+## HOWTO ZIP compress
 
-    zip file-to-archive.zip file-to-archive
-    echo 'Hello, World!' | zip file-to-archive.zip -
-    zip -r --recurse-paths your.zip path/to/dir
-    export f=filename && cat ${f} | zip --quiet ${f}.zip $f
-    ls path/to/your.file | zip --quiet path/to/file.zip -@
-    ls path/to/your/dir | grep your-file-nm | zip --quiet path/to/archive.zip -@
+* HOWTO ZIP compress `zip your.zip your.file`
+* HOWTO ZIP compress with loss of original name `echo 'Hello, World!' | zip your.zip -`
+* HOWTO ZIP compress directory `zip -r --recurse-paths your.zip path/to/dir`
+* HOWTO ZIP compress when passing name through pipe `export f=your.file && cat ${f} | zip --quiet ${f}.zip $f`
+* HOWTO ZIP compress when passing many names through pipe `ls path/to/your/dir | grep your-file-nm | zip --quiet your.zip -@`
+* HOWTO ZIP compress when passing text through pipe `export f=your.file && cd path/to/your/dir2 && cat path/to/your/dir1/$f | grep your-regexp . > $f && zip --move $f.zip $f`
 
 ## zip ???
 
