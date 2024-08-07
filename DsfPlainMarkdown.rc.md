@@ -22,7 +22,7 @@
     1\. First item
     2\. Second item
 
-## HOWTO Collapsible text `<details><summary>` <sup><sub>[2775413767][]</sub></sup>
+## HOWTO Collapsible text block `<details><summary>` <sup><sub>[2775413767][]</sub></sup>
 
 <details>
   <summary>Your click-tip for collapsed section</summary>
