@@ -25,7 +25,7 @@
 ## HOWTO Collapsible text block `<details><summary>` <sup><sub>[2775413767][]</sub></sup>
 
 <details>
-  <summary>Your click-tip for collapsed section</summary>
+  <summary>Your click-tip for spoiler</summary>
 
   ## Your markdown markup goes here
 
@@ -33,7 +33,7 @@
   * Bar
 </details>
 
-[2775413767]: https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-collapsed-sections "Collapsed section"
+[2775413767]: https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-collapsed-sections "Organizing information with collapsed section"
 
 ## DOC Code block language definition <sup><sub>[*][835216687]</sub></sup>
 
