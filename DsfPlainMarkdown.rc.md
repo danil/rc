@@ -22,6 +22,19 @@
     1\. First item
     2\. Second item
 
-## DOC Code block language definition
+## HOWTO Collapsible text `<details><summary>` <sup><sub>[2775413767][]</sub></sup>
 
-https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
+<details>
+  <summary>Your click-tip for collapsed section</summary>
+
+  ## Your markdown markup goes here
+
+  * Foo
+  * Bar
+</details>
+
+[2775413767]: https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-collapsed-sections "Collapsed section"
+
+## DOC Code block language definition <sup><sub>[*][835216687]</sub></sup>
+
+[835216687]: https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
