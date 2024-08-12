@@ -1,6 +1,9 @@
-# cURL rc
+# [cURL][] <sup><sub>[wcURL][]</sub></sup> rc
 
     curl -O --remote-name -C - --continue-at - -L --location --url http://your.tld/your.file
+
+[curl]: https://github.com/curl/curl
+[wcurl]: https://github.com/curl/wcurl
 
 ## HOWTO View sent/received headers
 
