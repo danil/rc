@@ -1,12 +1,11 @@
-# [APT][] based distributions ([Debian][], [Ubuntu][]) rc
+# [Debian][]/[Ubuntu][] <sup><sub>[APT][] based distribution</sub></sup> rc
 
 [apt]: https://en.wikipedia.org/wiki/APT_(software)
 [debian]: https://github.com/debian
 [ubuntu]: https://github.com/ubuntu
 
-## Packages list
-
-    apt list --installed
+* HOWTO Get version `cat /etc/os-release`
+* HOWTO Packages list `apt list --installed`
 
 ## Packages explicitly installed list
 
@@ -57,12 +56,25 @@ List all services by run levels
 
     passwd --delete your-user-nm
 
-### List files from package
+## HOWTO `dpkg-query --listfiles your_pkg_nm` List files from installed package <sup><sub>Find out files belongs to package. [1545327982][]</sub></sup>
 
-List files from installed package
-<https://askubuntu.com/questions/32507/how-do-i-get-a-list-of-installed-files-from-a-package#32509>
+[1545327982]: https://askubuntu.com/questions/32507/how-do-i-get-a-list-of-installed-files-from-a-package#32509
 
-    dpkg-query --listfiles your_pkg_nm
+## Find package a file belongs to <sup><sub>[2039225453][]</sub></sup>
+
+    dpkg --search path/to/file
+    apt-file search path/to/file
+
+[2039225453]: https://superuser.com/questions/10997/find-what-package-a-file-belongs-to-in-ubuntu-debian#11003
+
+## Find out what package contains a file <sup><sub>[2371447947][] [4187406413][]</sub></sup>
+
+    dpkg -S path/to/your/file
+    apt-file update
+    apt-file search path/to/your/file
+
+[2371447947]: https://cyberciti.biz/faq/equivalent-of-rpm-qf-command
+[4187406413]: http://debian-administration.org/articles/334
 
 ## Timezone
 
