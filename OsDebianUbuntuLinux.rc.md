@@ -1,10 +1,11 @@
-# [Debian][]/[Ubuntu][] <sup><sub>[APT][] based distribution</sub></sup> rc
+# [Debian][]/[Ubuntu][] <sup><sub>[APT][] based distribution.</sub></sup> rc
 
 [apt]: https://en.wikipedia.org/wiki/APT_(software)
 [debian]: https://github.com/debian
 [ubuntu]: https://github.com/ubuntu
 
-* HOWTO Get version `cat /etc/os-release`
+* HOWTO Get version `cat /etc/os-release | grep VERSION_ID | cut -f 2 --delim="="`
+* HOWTO Get version `lsb_release --all | grep Release | cut --fields=2`
 * HOWTO Packages list `apt list --installed`
 
 ## Packages explicitly installed list
