@@ -1,19 +1,8 @@
 # Docker rc
 
-## Images list
-
-Size and so on.
-
-    docker images
-
-## Image build
-
-    docker build --tag=your-ropo/your-image:your-tag \
-                 --file=path/to/Dockerfile ./
-
-## Image tag add
-
-    docker tag 7f7a5e4d89e4 fhirbase/fhirbase
+* HOWTO Images list `docker images` <sup><sub>Size and so on.</sub></sup>
+* HOWTO Image build `docker build --tag=your-ropo/your-img:your-tag --file=path/to/Dockerfile ./`
+* HOWTO Image tag add `docker tag your-img 7f7a5e4d89e4 your/img-nm`
 
 ## Image tag remove
 
@@ -36,7 +25,7 @@ Create and start (or run) image as container
                   --name=your-container-nm \
                   --publish=your_external_port:your_internal_port \
                   --publish=your_external_port_2:your_internal_port_2 \
-                  your/image-nm \
+                  your/img-nm \
                   -l -c 'export LANG="C.UTF-8" \
                          && service postgresql start'
     docker start your-container-nm
@@ -53,14 +42,14 @@ Run docker inside docker
 Run docker inside docker
 <https://docs.docker.com/reference/commandline/cli/#create>
 
-    docker create --privileged --name=your-container-nm your/image-nm
+    docker create --privileged --name=your-container-nm your/img-nm
 
 ## Image run
 
     docker run --detach
                --name=your-container-nm \
                --publish=80:80 \
-               your/image-nm
+               your/img-nm
 
 ## Image inspect
 
@@ -71,7 +60,7 @@ Run docker inside docker
 Save container as image after interactive changes
 
     docker commit your_usr_nm/your_container_nm \
-                  your_image_nm:1970_01_01
+                  your_img_nm:1970_01_01
 
 ## Copy to container
 
@@ -87,7 +76,7 @@ Copy from host to container
 
 Push image to local registry repository.
 
-    docker tag my-image-id localhost:63711/medapp-demo
+    docker tag your-img-id localhost:63711/medapp-demo
     docker push localhost:63711/medapp-demo
 
 ## Containers list
@@ -138,7 +127,7 @@ Create container with `--link` option like this
 
     docker create --name your_container_nm \
                   --link your_linked_container_nm:your_alias_nm \
-                  your_image_nm
+                  your_img_nm
 
 Then environment variable `$YOUR_ALIAS_NM_PORT_666_TCP_ADDR`
 will contain linked container `IP` addres.
@@ -147,19 +136,19 @@ will contain linked container `IP` addres.
 
 <http://stackoverflow.com/questions/21486004/how-do-i-move-a-docker-containers-image-to-a-persistent-disk#21632989>
 
-    docker save image_name > image_name.tar
-    docker export container_name > image_name.tar
+    docker save your_img_nm > your_img_nm.tar
+    docker export container_nm > your_img_nm.tar
 
 ## Backup restore
 
-    docker load < image_name.tar
+    docker load < your_img_nm.tar
 
 ## Backup import
 
 Import will flatten and reduce image size
 <https://www.ctl.io/developers/blog/post/optimizing-docker-images>
 
-    cat file.tar.gz | docker import - your-image-nm
+    cat file.tar.gz | docker import - your-img-nm
 
 ## init scripts
 
