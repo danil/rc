@@ -1,4 +1,6 @@
-# Docker rc
+# [Docker][] rc
+
+[docker]: https://github.com/docker
 
 * HOWTO Images list `docker images` <sup><sub>Size and so on.</sub></sup>
 * HOWTO Image build `docker build --tag=your-ropo/your-img:your-tag --file=path/to/Dockerfile ./`
@@ -8,9 +10,7 @@
 
 [1947444523]: https://serverfault.com/questions/703344/how-to-remove-an-image-tag-in-docker-without-removing-the-image-itself#703352
 
-## Image create
-
-Create and start (or run) image as container
+## Image create <sup><sub>create and start/run image as container</sub></sup>
 
     docker create --env=HOME=/home/your_usr \
                   --user="your_usr"
@@ -31,14 +31,11 @@ from outside)
 
     busybox telnet localhost 5433
 
-## Image crate privileged
-
-Run docker inside docker
-
-Run docker inside docker
-<https://docs.docker.com/reference/commandline/cli/#create>
+## Image crate privileged <sup><sub>run docker inside docker [2652317084][]</sub></sup>
 
     docker create --privileged --name=your-container-nm your/img-nm
+
+[2652317084]: https://docs.docker.com/reference/commandline/cli/#create
 
 ## Image run
 
@@ -51,16 +48,11 @@ Run docker inside docker
 
     docker inspect foobar_server
 
-## Image commit
+## Image commit <sup><sub>save container as image after interactive changes</sub></sup>
 
-Save container as image after interactive changes
+    docker commit your_usr_nm/your_container_nm your_img_nm:1970_01_01
 
-    docker commit your_usr_nm/your_container_nm \
-                  your_img_nm:1970_01_01
-
-## Copy to container
-
-Copy from container to host
+## Copy to container <sub><sub>copy from container to host</sub></sup>
 
     docker cp <containerId>:/file/path/within/container /path/to/host/dir
 
@@ -68,16 +60,12 @@ Copy from host to container
 
     docker cp /path/to/host/dir <containerId>:/file/path/within/container
 
-## Registry
-
-Push image to local registry repository.
+## Registry <sup><sub>push image to local registry repository</sub></sup>
 
     docker tag your-img-id localhost:63711/medapp-demo
     docker push localhost:63711/medapp-demo
 
-## Containers list
-
-List all containers
+## Containers list <sup><sub>list all containers</sub></sup>
 
     docker ps --all --no-trunc
 
@@ -89,9 +77,7 @@ List all containers
     echo -e "GET /containers/json?all=1 HTTP/1.1\r\n" \
       | socat unix-connect:/var/run/docker.sock STDIO
 
-## Container start
-
-Start container and attach STDOUT and STDERR
+## Container start <sup><sub>start container and attach STDOUT and STDERR</sub></sup>
 
     docker start --attach teamcity_agent1
 
@@ -115,11 +101,7 @@ Start container and attach STDOUT and STDERR
 
     docker stats foobar_server
 
-## Linking
-
-<https://docs.docker.com/userguide/dockerlinks/#communication-across-links>
-
-Create container with `--link` option like this
+## Linking <sup><sub>create container with `--link` option like this [3880151314][]</sub></sup>
 
     docker create --name your_container_nm \
                   --link your_linked_container_nm:your_alias_nm \
@@ -128,37 +110,34 @@ Create container with `--link` option like this
 Then environment variable `$YOUR_ALIAS_NM_PORT_666_TCP_ADDR`
 will contain linked container `IP` addres.
 
-## Backup save
+[3880151314]: https://docs.docker.com/userguide/dockerlinks/#communication-across-links
 
-<http://stackoverflow.com/questions/21486004/how-do-i-move-a-docker-containers-image-to-a-persistent-disk#21632989>
+## Backup save <sup><sub>[1142383923][]</sub></sup>
 
     docker save your_img_nm > your_img_nm.tar
     docker export container_nm > your_img_nm.tar
+
+[1142383923]: http://stackoverflow.com/questions/21486004/how-do-i-move-a-docker-containers-image-to-a-persistent-disk#21632989
 
 ## Backup restore
 
     docker load < your_img_nm.tar
 
-## Backup import
-
-Import will flatten and reduce image size
-<https://www.ctl.io/developers/blog/post/optimizing-docker-images>
+## Backup import <sup><sub>import will flatten and reduce image size [3969143878][]</sub></sup>
 
     cat file.tar.gz | docker import - your-img-nm
 
-## init scripts
+[3969143878]: https://www.ctl.io/developers/blog/post/optimizing-docker-images
 
-Host system init scripts (upstart or systemd)
+## init scripts <sup><sub>host system init scripts (upstart or systemd) [404518290][]</sub></sup>
 
-<https://docs.docker.com/engine/admin/host_integration/#/examples>
+[404518290]: https://docs.docker.com/engine/admin/host_integration/#/examples
 
 ## Log
 
     docker logs -f your-container-nm_1
 
-## Cleanup
-
-Cleanup/remove stopped containers/dangling images/build cache
+## Cleanup <sup><sub>cleanup/remove stopped containers/dangling images/build cache</sub></sup>
 
     docker system prune
 
