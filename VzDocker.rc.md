@@ -2,15 +2,11 @@
 
 * HOWTO Images list `docker images` <sup><sub>Size and so on.</sub></sup>
 * HOWTO Image build `docker build --tag=your-ropo/your-img:your-tag --file=path/to/Dockerfile ./`
-* HOWTO Image tag add `docker tag your-img 7f7a5e4d89e4 your/img-nm`
+* HOWTO Image tag add `docker tag your-img-hash your/img-nm`
+* HOWTO Image tag remove `docker rmi your-ropo/your-img:your-tag` <sup><sub>[1947444523][]</sub></sup>
+* HOWTO Image tag remove all `docker rmi $(docker images --quiet)`
 
-## Image tag remove
-
-    docker rmi foobar
-
-## Image tag remove all
-
-    docker rmi $(docker images --quiet)
+[1947444523]: https://serverfault.com/questions/703344/how-to-remove-an-image-tag-in-docker-without-removing-the-image-itself#703352
 
 ## Image create
 
