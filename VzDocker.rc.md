@@ -7,52 +7,17 @@
 * HOWTO Image tag add `docker tag your-img-hash your/img-nm`
 * HOWTO Image tag remove `docker rmi your-ropo/your-img:your-tag` <sup><sub>[1947444523][]</sub></sup>
 * HOWTO Image tag remove all `docker rmi $(docker images --quiet)`
+* HOWTO Image create `docker create --env=HOME=/home/your_usr --user="your_usr" --interactive --tty --volume=/path/to/host/dir:/path/to/container/dir:ro --entrypoint="/bin/bash" --name=your-container-nm --publish=your_external_port:your_internal_port --publish=your_external_port_2:your_internal_port_2 your/img-nm -l -c 'export LANG="C.UTF-8" && service postgresql start' && docker start your-container-nm` <sup><sub>NOTE: Create and start/run image as container.</sub></sup>
+* HOWTO Get response from published port `busybox telnet localhost 5433` <sup><sub>NOTE: Get internal port 5432 as 5433 port from outside.</sub></sup>
+* HOWTO Image crate privileged `docker create --privileged --name=your-container-nm your/img-nm` <sup><sub>NOTE: Run docker inside docker [2652317084][].</sub></sup>
+* HOWTO Image run `docker run --detach --name=your-container-nm --publish=80:80 your/img-nm`
+* HOWTO Image inspect `docker inspect foobar_server`
+* HOWTO Image commit `docker commit your_usr_nm/your_container_nm your_img_nm:1970_01_01` <sup><sub>NOTE: Save container as image after interactive changes.</sub></sup>
 
 [1947444523]: https://serverfault.com/questions/703344/how-to-remove-an-image-tag-in-docker-without-removing-the-image-itself#703352
-
-## Image create <sup><sub>create and start/run image as container</sub></sup>
-
-    docker create --env=HOME=/home/your_usr \
-                  --user="your_usr"
-                  --interactive \
-                  --tty \
-                  --volume=/path/to/host/dir:/path/to/container/dir:ro \
-                  --entrypoint="/bin/bash"
-                  --name=your-container-nm \
-                  --publish=your_external_port:your_internal_port \
-                  --publish=your_external_port_2:your_internal_port_2 \
-                  your/img-nm \
-                  -l -c 'export LANG="C.UTF-8" \
-                         && service postgresql start'
-    docker start your-container-nm
-
-Get response from published port (get internal port 5432 as 5433 port
-from outside)
-
-    busybox telnet localhost 5433
-
-## Image crate privileged <sup><sub>run docker inside docker [2652317084][]</sub></sup>
-
-    docker create --privileged --name=your-container-nm your/img-nm
-
 [2652317084]: https://docs.docker.com/reference/commandline/cli/#create
 
-## Image run
-
-    docker run --detach
-               --name=your-container-nm \
-               --publish=80:80 \
-               your/img-nm
-
-## Image inspect
-
-    docker inspect foobar_server
-
-## Image commit <sup><sub>save container as image after interactive changes</sub></sup>
-
-    docker commit your_usr_nm/your_container_nm your_img_nm:1970_01_01
-
-## Copy to container <sub><sub>copy from container to host</sub></sup>
+## Copy to container <sub><sub>NOTE: Copy from container to host.</sub></sup>
 
     docker cp <containerId>:/file/path/within/container /path/to/host/dir
 
