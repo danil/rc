@@ -593,10 +593,10 @@ The Go standard library already preserves sorted order of map keys:
 
 ## HOWTO [HTTP][] `multipart/form-data` `POST` of file by local path <sup>[*][multipart] [1102513506][] [1351755388][]</sup>
 
-[1102513506]: https://github.com/curlconverter/curlconverter
-[1351755388]: https://curlconverter.com/go
 [http]: https://pkg.go.dev/net/http
 [multipart]: https://pkg.go.dev/mime/multipart
+[1102513506]: https://github.com/curlconverter/curlconverter
+[1351755388]: https://curlconverter.com/go
 
     curl -X POST "https://your.tld/your/path" -H "Content-Type: multipart/form-data" -F "file=@/etc/hosts;filename=your.file;type=*/*" --basic --user your_user:your_password
 
