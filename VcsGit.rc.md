@@ -1,4 +1,4 @@
-# Git
+# Git rc
 
     git config --global user.name "John Doe"
     git config --global user.email your.name@your.tld
@@ -395,6 +395,8 @@ git submodule status
 
 ## Submodule recursive init & update
 
+    git submodule sync --recursive
+    git submodule init
     git submodule update --init --recursive
 
 ## Find submodules
