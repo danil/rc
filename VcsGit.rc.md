@@ -260,6 +260,12 @@ Newest tag
 
 [2204614099]: http://git-scm.com/book/en/Git-Basics-Tagging#Lightweight-Tags
 
+## Create annotated tag <sup><sub>[4254636541][]</sub></sup>
+
+    git tag -a --annotate --message="version 0.0.1" v0.0.1 HEAD^
+
+[4254636541]: https://stackoverflow.com/questions/11514075/what-is-the-difference-between-an-annotated-and-unannotated-tag#11514139
+
 ## Push all tags to remote
 
 <http://stackoverflow.com/questions/4061481/git-push-tag-master#4061529>
