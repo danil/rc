@@ -254,11 +254,11 @@ Newest tag
 
     git rev-list --tags --max-count=1
 
-## Tag create
-
-<http://git-scm.com/book/en/Git-Basics-Tagging#Lightweight-Tags>
+## Tag create <sup><sub>[2204614099][]</sub></sup>
 
     git tag v0.0.1 HEAD^
+
+[2204614099]: http://git-scm.com/book/en/Git-Basics-Tagging#Lightweight-Tags
 
 ## Push all tags to remote
 
