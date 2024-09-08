@@ -1,12 +1,17 @@
-# Markdown rc
+# Markdown <sup><sub>Syntax markup for font style and code highlighting</sub></sup> rc
 
-## HOWTO Syntax markup for font style and code highlighting
-
-* *Emphasis* or _italic type is a cursive font_.
-* **Strong emphasis** or __boldface font weight__.
-* ~~Typographical strikethrough is a words with a central horizontal line~~.
-* [link text](https://your.tld/your/link/url)
-* `Monospaced font or fixed-width is a source code`
+* HOWTO *Emphasis* or _italic type is a cursive font_.
+* HOWTO **Strong emphasis** or __boldface font weight__.
+* HOWTO ~~Typographical strikethrough is a words with a central horizontal line~~.
+* HOWTO [link text](https://your.tld/your/link/url)
+* HOWTO `Monospaced font or fixed-width is a source code inlined`
+* HOWTO Monospaced or fixed-width font block
+    ```
+    <pre>
+    First line.
+    Second line.
+    </pre>
+    ```
 
 ## HOWTO Tables
 
