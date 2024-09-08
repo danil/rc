@@ -262,7 +262,8 @@ Newest tag
 
 ## Create annotated tag <sup><sub>[4254636541][]</sub></sup>
 
-    git tag -a --annotate --message="version 0.0.1" v0.0.1 HEAD^
+    git tag -a -m "version 0.0.1" v0.0.1 HEAD^
+    git tag --annotate --message="version 0.0.1" v0.0.1 HEAD^
 
 [4254636541]: https://stackoverflow.com/questions/11514075/what-is-the-difference-between-an-annotated-and-unannotated-tag#11514139
 
