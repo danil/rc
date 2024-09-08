@@ -254,7 +254,7 @@ Newest tag
 
     git rev-list --tags --max-count=1
 
-## Tag create <sup><sub>[2204614099][]</sub></sup>
+## Create tag <sup><sub>[2204614099][]</sub></sup>
 
     git tag v0.0.1 HEAD^
 
