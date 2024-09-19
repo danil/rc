@@ -495,6 +495,8 @@ For examle `a[low:high:max]` or `a[0:0:0]` or `a[:0:0]`
     a1, a2 := [2]byte{1, 2}, [2]byte{3, 4}
     fmt.Println(bytes.Compare(a1[:], a2[:]))
 
+## HOWTO `/dev/null` `io.Copy(io.Discard, strings.NewReader("Hello, World!"))`
+
 ## DOC Language/locale
 
 * https://go.dev/blog/matchlang
