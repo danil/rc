@@ -1,5 +1,6 @@
-# Dockerfile rc
+# [Dockerfile][] <sup><sub>[1162222188][]</sub></sup> rc
 
-## Copy directory
+[dockerfile]: https://docs.docker.com/reference/dockerfile
+[1162222188]: https://docs.docker.com/build/building/best-practices
 
-    COPY ./path/to/dir-name /path/to/dir-name
+* HOWTO Copy directory `COPY ./path/to/dir-name /path/to/dir-name`
