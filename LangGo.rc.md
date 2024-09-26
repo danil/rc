@@ -1,4 +1,4 @@
-# [Go][] programming language <sup>[1][proverbs] [2][effective go]</sup> rc
+# [Go][] programming language <sup><sub>[1][proverbs] [2][effective go]</sub></sup> rc
 
 [effective go]: https://go.dev/doc/effective_go
 [go]: https://github.com/golang/go
@@ -40,7 +40,7 @@ Hello, World!
 
 ## DOC Books
 
-* "The Go Programming Language" Alan A. A. Donovan, Brian W. Kernighan <sup>[*][629190432]</sup>
+* "The Go Programming Language" Alan A. A. Donovan, Brian W. Kernighan <sup><sub>[*][629190432]</sub></sup>
 
 [629190432]: https://go.dev/learn/#featured-books
 
@@ -75,7 +75,7 @@ List installed packages
 
     go list ./...
 
-## HOWTO Testing <sup>run test suite [2319142434][] [2570645731][]</sup>
+## HOWTO Testing <sup><sub>run test suite [2319142434][] [2570645731][]</sub></sup>
 
     go test -v -race -count=1 your.tld/path/to/pkg
     go test -v -race -count=1 ./...
@@ -83,13 +83,13 @@ List installed packages
 [2319142434]: https://blog.golang.org/examples
 [2570645731]: https://blog.golang.org/subtests
 
-## HOWTO Test without cache/disable test cache <sup>[4126800382][]</sup>
+## HOWTO Test without cache/disable test cache <sup><sub>[4126800382][]</sub></sup>
 
     go test -count=1
 
 [4126800382]: https://github.com/golang/go/issues/24573#issuecomment-393818160
 
-## HOWTO Test benchmarks <sup>run benchmarks</sup>
+## HOWTO Test benchmarks <sup><sub>run benchmarks</sub></sup>
 
     cat go.mod
 
@@ -208,7 +208,7 @@ func BenchmarkYourFn(b *testing.B) {
 
 Generator <https://github.com/cweill/gotests>
 
-## HOWTO Test: [fstest][]: Mocking relative path of file system <sup>[3825108315][] [1746671570][] [2434259655][] [1056894504][]</sup>
+## HOWTO Test: [fstest][]: Mocking relative path of file system <sup><sub>[3825108315][] [1746671570][] [2434259655][] [1056894504][]</sub></sup>
 
 ```go
 package main
@@ -246,7 +246,7 @@ godef -f path/to/file.go 'yourpkgnm.YourFnNm'
 
 ## HOWTO Run
 
-## HOWTO Build <sup>[4169212427][] [318174330][]</sup>
+## HOWTO Build <sup><sub>[4169212427][] [318174330][]</sub></sup>
 
     CGO_ENABLED=0 go build
 
@@ -297,7 +297,7 @@ memory to the operating system as possible.
 
     debug.FreeOSMemory()
 
-## HOWTO Reduce binary size<sup>minimize binary size</sup>
+## HOWTO Reduce binary size<sup><sub>minimize binary size</sub></sup>
 
     go build --ldflags "-s -w" path/to/package
     go run --ldflags "-s -w" path/to/package
@@ -335,7 +335,7 @@ For example: `Id` -> `ID` `Url` -> `URL` `Xml` -> `XML`
 
 [initialism convention]: https://github.com/golang/go/wiki/CodeReviewComments#initialisms
 
-## NOTE Code review the named return is good but the naked/bare return is bad convention style <sup>[1][named naked bare return issues 20859] [2][named naked bare return issues 21291] [3][named naked bare return]</sup>
+## NOTE Code review the named return is good but the naked/bare return is bad convention style <sup><sub>[1][named naked bare return issues 20859] [2][named naked bare return issues 21291] [3][named naked bare return]</sub></sup>
 
 [named naked bare return issues 20859]: https://github.com/golang/go/issues/20859
 [named naked bare return issues 21291]: https://github.com/golang/go/issues/21291
@@ -371,7 +371,7 @@ For example: `Id` -> `ID` `Url` -> `URL` `Xml` -> `XML`
             Format(f State, c rune)
     }
 
-## HOWTO Error wrapping and formatting <sup>[*][1238582052] [*][2031092561] [*][2122683529]</sup>
+## HOWTO Error wrapping and formatting <sup><sub>[*][1238582052] [*][2031092561] [*][2122683529]</sub></sup>
 
     fmt.Errorf("your error: %w", errors.New("something went wrong"))
 
@@ -379,15 +379,15 @@ For example: `Id` -> `ID` `Url` -> `URL` `Xml` -> `XML`
 [2031092561]: https://pkg.go.dev/fmt#Errorf
 [2122683529]: https://go.dev/blog/go1.13-errors#wrapping-errors-with-w
 
-## DOC Common/sentinel error <sup>[564276647][]</sup>
+## DOC Common/sentinel error <sup><sub>[564276647][]</sub></sup>
 
-* [io.EOF][]                                      <sup>End of input</sup>
-* [os.ErrPermission][]       [fs.ErrPermission][] <sup>Permission denied</sup>
-* [os.ErrExist][]            [fs.ErrExist][]      <sup>File already exists</sup>
-* [os.ErrNotExist][]         [fs.ErrNotExist][]   <sup>File does not exist</sup>
-* [os.ErrClosed][]           [fs.ErrClosed][]     <sup>File already closed</sup>
-* [os.ErrDeadlineExceeded][]                      <sup>I/O timeout</sup>
-* [sql.ErrNoRows][]                               <sup>No rows in result set</sup>
+* [io.EOF][]                                      <sup><sub>End of input</sub></sup>
+* [os.ErrPermission][]       [fs.ErrPermission][] <sup><sub>Permission denied</sub></sup>
+* [os.ErrExist][]            [fs.ErrExist][]      <sup><sub>File already exists</sub></sup>
+* [os.ErrNotExist][]         [fs.ErrNotExist][]   <sup><sub>File does not exist</sub></sup>
+* [os.ErrClosed][]           [fs.ErrClosed][]     <sup><sub>File already closed</sub></sup>
+* [os.ErrDeadlineExceeded][]                      <sup><sub>I/O timeout</sub></sup>
+* [sql.ErrNoRows][]                               <sup><sub>No rows in result set</sub></sup>
 
 [fs.errclosed]: https://pkg.go.dev/io/fs#ErrClosed
 [fs.errexist]: https://pkg.go.dev/io/fs#ErrExist
@@ -408,8 +408,8 @@ For example: `Id` -> `ID` `Url` -> `URL` `Xml` -> `XML`
 
 ## TROUBLESHOOTING Time type unification disclaimer (wall/civil/monotonic/absolute)
 
-* Wall or Civil <sup>[*][2537165088] [arguments for `time.Time` type and against `time.Date` type][3612606115]</sup>
-* Monotonic or Absolute <sup>[*][2825446405]</sup>
+* Wall or Civil <sup><sub>[*][2537165088] [arguments for `time.Time` type and against `time.Date` type][3612606115]</sub></sup>
+* Monotonic or Absolute <sup><sub>[*][2825446405]</sub></sup>
 
 [2537165088]: https://en.wikipedia.org/wiki/Civil_time
 [2825446405]: https://pkg.go.dev/time#hdr-Monotonic_Clocks
@@ -589,7 +589,7 @@ The Go standard library already preserves sorted order of map keys:
 [json]: https://pkg.go.dev/encoding/json
 
 
-## HOWTO [HTTP][] `multipart/form-data` `POST` of file by local path <sup>[*][multipart] [1102513506][] [1351755388][]</sup>
+## HOWTO [HTTP][] `multipart/form-data` `POST` of file by local path <sup><sub>[*][multipart] [1102513506][] [1351755388][]</sub></sup>
 
 [http]: https://pkg.go.dev/net/http
 [multipart]: https://pkg.go.dev/mime/multipart
