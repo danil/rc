@@ -4,11 +4,16 @@
 [go]: https://github.com/golang/go
 [proverbs]: https://go-proverbs.github.io
 
-## HOWTO Install by [Homebrew][]
-
-    brew install go
+* HOWTO Install `brew install go` <sup><sub>[Homebrew][]</sub></sup>
+*   DOC Package name convention are given lower case, single-word names; there should be no need for underscores or mixedCaps. <sup><sub>Naming convention style [Effective Go Package names][2797441528] [Code Review Package names][186063190] [Go Blog Package names][3329569429] [4282605948][]</sub></sup>
+*   DOC Interface name convention use an -er suffix: Reader, Writer, Formatter, CloseNotifier etc. <sup><sub>Naming convention style [2453223740][]</sub></sup>
 
 [homebrew]: https://formulae.brew.sh/formula/go#default
+[186063190]: https://go.dev/wiki/CodeReviewComments#package-names "Code Review Package names"
+[2453223740]: https://go.dev/doc/effective_go#interface-names
+[2797441528]: https://go.dev/doc/effective_go#package-names "Effective Go Package names"
+[3329569429]: https://go.dev/blog/package-names "Go Blog Package names"
+[4282605948]: https://go.dev/talks/2016/refactor.article
 
 ## HOWTO [Hello, World!][]
 
@@ -239,6 +244,8 @@ go get github.com/rogpeppe/godef
 godef -f path/to/file.go 'yourpkgnm.YourFnNm'
 ```
 
+## HOWTO Run
+
 ## HOWTO Build <sup>[4169212427][] [318174330][]</sup>
 
     CGO_ENABLED=0 go build
@@ -307,17 +314,6 @@ go run -ldflags "-X path/to/package.foo=123 -X path/to/package.Bar=xyz" ./...
 ## HOWTO Cross compilation
 
     env GOARCH=arm64 go build
-
-## DOC Package naming convention style
-
-* [Effective Go Package names][]: By convention, packages are given lower case, single-word names; there should be no need for underscores or mixedCaps.
-* [Code Review Package names][]
-* [Go Blog Package names][]
-* <https://talks.golang.org/2016/refactor.article#TOC_3.>
-
-[code review package names]: https://go.dev/wiki/CodeReviewComments#package-names
-[effective go package names]: https://go.dev/doc/effective_go#package-names
-[go blog package names]: https://go.dev/blog/package-names
 
 ## DOC Code review bad/meaningless package name convention style
 
