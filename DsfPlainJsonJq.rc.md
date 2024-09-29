@@ -20,9 +20,9 @@
 ## HOWTO Filter array by type string then by substring then by regexp
 
     cat path/to/file.json | \
-      jq 'map(select(.yourId == 89 and (.yourVal | type) == "string"))' | \
-      jq 'map(select(.value | match("foo";"i")))' | \
-      jq 'map(select(.value | test(".*bar")))'
+      jq 'map(select(.yourProp2 == 89 and (.yourProp | type) == "string"))' | \
+      jq 'map(select(.yourProp | match("foo";"i")))' | \
+      jq 'map(select(.yourProp | test(".*bar")))'
 
 ## HOWTO Get property from array
 
