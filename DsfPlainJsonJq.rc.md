@@ -4,7 +4,7 @@
 
 * HOWTO Get value  VER2 `jq . < path/to/file.json`
 * HOWTO Get value  VER1 `cat path/to/file.json | jq .`
-* HOWTO Get value without quote `"` `jq -r --raw-output .` <sup><sub>Remove double-quotes</sub></sup>
+* HOWTO Get value without quote `jq -r --raw-output .` <sup><sub>Remove double-quotes `"`</sub></sup>
 * HOWTO Query root property `jq .` <sup><sub>Pretty print.</sub></sup>
 * HOWTO Query property `jq .yourProp`
 * HOWTO Select first item `jq .[0]`
