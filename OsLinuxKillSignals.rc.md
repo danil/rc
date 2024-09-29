@@ -1,43 +1,22 @@
-# Signals
+# [POSIX][] [Signal][]s rc
 
-<https://en.wikipedia.org/wiki/Signal_(IPC)#POSIX_signals>
+[posix]: https://en.wikipedia.org/wiki/POSIX
+[signal]: https://en.wikipedia.org/wiki/Signal_(IPC)#POSIX_signals>
 
-* `SIGKILL` 9   Terminate   kill (cannot be caught or ignored)
-* `SIGTERM` 15  Terminate   termination signal
+*   DOC `SIGTERM` `15` Terminate is the termination signal.
+*   DOC `SIGKILL`  `9` Kill termination cannot be caught or ignored.
+*   DOC `SIGHUP`   `1` Hangup.
+*   DOC `SIGUSR1` `10` Signal is an user-defined condition.
+*   DOC `SIGUSR2` `12` Signal is an user-defined condition.
+* HOWTO List processes `ps auxf`
+* HOWTO Kill `kill -15 -SIGKILLHUP $(cat /var/run/your/process.pid)`
+* HOWTO Kill by regex `pkill --full your-command-and-arg-regex` <sup><sub>Kill process by matched command regex</sub></sup>
+* HOWTO Kill child processes VER2 `pstree -A -p $$ | grep -Eow "[0-9]+" | xargs kill` <sup><sub>Kill all sub-processes spawned by your script [3432751458][]</sub></sup>
+* HOWTO Kill child processes VER1 `-P 100500 --parent=100500` <sup><sub>Kill sub-processes spawned by your script</sub></sup>
 
-## List processes
+[3432751458]: https://unix.stackexchange.com/questions/706765/how-do-i-kill-all-subprocesses-spawned-by-my-bash-script#706789
 
-    ps auxf
-
-## kill
-
-    kill -HUP $( cat /var/run/your_process.pid )
-
-### 10 SIGUSR1
-
-Signal `10` or `SIGUSR1` is an user-defined condition
-
-    kill -10 $( cat /var/run/your_process.pid )
-    kill -SIGUSR1 $( cat /var/run/your_process.pid )
-
-### 12 SIGUSR2
-
-Signal `12` or `SIGUSR2` user-defined condition
-
-    kill -12 $( cat /var/run/your_process.pid )
-    kill -SIGUSR2 $( cat /var/run/your_process.pid )
-
-## pkill
-
-Kill process by matched command regex
-
-    pkill --full command-match-regex
-
-## Logout user
-
-Kick them out
-
-<http://unix.stackexchange.com/questions/615/how-do-you-kick-a-benign-user-off-your-system#622>
+## HOWTO Logout user <sup><sub>Kick them out [3203453744][]</sub></sup>
 
     who
 
@@ -51,3 +30,5 @@ john     31085  0.0  0.0  29064  5028 pts/6    Ss+  15:33   0:00 -bash
 
     echo "HAHAHAHAHAHAHAHA" | write john pts/6
     kill 31085
+
+[3203453744]: http://unix.stackexchange.com/questions/615/how-do-you-kick-a-benign-user-off-your-system#622
