@@ -381,19 +381,24 @@ For example: `Id` -> `ID` `Url` -> `URL` `Xml` -> `XML`
 
 ## DOC Common/sentinel error <sup><sub>[564276647][]</sub></sup>
 
-* [io.EOF][]                                      <sup><sub>End of input</sub></sup>
-* [os.ErrPermission][]       [fs.ErrPermission][] <sup><sub>Permission denied</sub></sup>
-* [os.ErrExist][]            [fs.ErrExist][]      <sup><sub>File already exists</sub></sup>
-* [os.ErrNotExist][]         [fs.ErrNotExist][]   <sup><sub>File does not exist</sub></sup>
-* [os.ErrClosed][]           [fs.ErrClosed][]     <sup><sub>File already closed</sub></sup>
-* [os.ErrDeadlineExceeded][]                      <sup><sub>I/O timeout</sub></sup>
-* [sql.ErrNoRows][]                               <sup><sub>No rows in result set</sub></sup>
+* [io.EOF][]                                      <sup><sub>end of input</sub></sup>
+* [os.ErrInvalid][]          [fs.ErrInvalid][]    <sup><sub>invalid argument</sub></sup>
+* [os.ErrPermission][]       [fs.ErrPermission][] <sup><sub>permission denied</sub></sup>
+* [os.ErrExist][]            [fs.ErrExist][]      <sup><sub>file already exists</sub></sup>
+* [os.ErrNotExist][]         [fs.ErrNotExist][]   <sup><sub>file does not exist</sub></sup>
+* [os.ErrClosed][]           [fs.ErrClosed][]     <sup><sub>file already closed</sub></sup>
+* [os.ErrNoDeadline][]                            <sup><sub>file type does not support deadline</sub></sup>
+* [os.ErrDeadlineExceeded][]                      <sup><sub>i/o timeout</sub></sup>
+* [sql.ErrNoRows][]                               <sup><sub>no rows in result set</sub></sup>
 
+[fs.ErrInvalid]: https://pkg.go.dev/io/fs#ErrInvalid
 [fs.errclosed]: https://pkg.go.dev/io/fs#ErrClosed
 [fs.errexist]: https://pkg.go.dev/io/fs#ErrExist
 [fs.errnotexist]: https://pkg.go.dev/io/fs#ErrNotExist
 [fs.errpermission]: https://pkg.go.dev/io/fs#ErrPermission
 [io.eof]: https://pkg.go.dev/io#EOF
+[os.ErrInvalid]: https://pkg.go.dev/os#ErrInvalid
+[os.ErrNoDeadline]: https://pkg.go.dev/os#ErrNoDeadline
 [os.errclosed]: https://pkg.go.dev/os#ErrClosed
 [os.errdeadlineexceeded]: https://pkg.go.dev/os#ErrDeadlineExceeded
 [os.errexist]: https://pkg.go.dev/os#ErrExist
