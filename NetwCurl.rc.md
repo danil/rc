@@ -9,6 +9,7 @@
 * HOWTO Without progress bar `curl -s --silent --url https://api.github.com/repos/tomnomnom/gron/commits?per_page=1`
 * HOWTO Only headers `curl -I --head --url http://wikipedia.org` <sup><sub>[3737298796][]</sub></sup>
 * HOWTO *POST* <sup><sub>[*][443672816] [*][3153884880]</sub></sup>
+* HOWTO Custom certificate `curl --request POST https://your.tld/your/path --cacert certs/ca.crt --cert certs/server.crt --key certs/server.key`
 
 [wget]: https://gnu.org/software/wget
 [3153884880]: https://gist.github.com/subfuzion/08c5d85437d5d4f00e58#post
