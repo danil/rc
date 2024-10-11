@@ -4,26 +4,16 @@
 [trurl]: https://github.com/curl/trurl
 [wcurl]: https://github.com/curl/wcurl
 
-    curl -O --remote-name -C - --continue-at - -L --location --url http://your.tld/your.file
+* HOWTO Download file `curl -O --remote-name -C - --continue-at - -L --location --url http://your.tld/your.file` <sup><sub>[Wget][]</sub></sub>
+* HOWTO View sent/received headers `curl -v --verbose -I --head --url http://wikipedia.org`
+* HOWTO Without progress bar `curl -s --silent --url https://api.github.com/repos/tomnomnom/gron/commits?per_page=1`
+* HOWTO Only headers `curl -I --head --url http://wikipedia.org` <sup><sub>[3737298796][]</sub></sup>
+* HOWTO *POST* <sup><sub>[*][443672816] [*][3153884880]</sub></sup>
 
-## HOWTO View sent/received headers
-
-    curl -v --verbose -I --head --url http://wikipedia.org
-
-## HOWTO Without progress bar
-
-    curl -s --silent --url https://api.github.com/repos/tomnomnom/gron/commits?per_page=1
-
-## HOWTO Only headers <sup><sub>[3737298796][]</sub></sup>
-
-    curl -I --head --url http://wikipedia.org
-
+[wget]: https://gnu.org/software/wget
+[3153884880]: https://gist.github.com/subfuzion/08c5d85437d5d4f00e58#post
 [3737298796]: http://stackoverflow.com/questions/3252851/how-to-display-request-headers-with-command-line-curl
-
-## HOWTO POST
-
-* <http://superuser.com/questions/149329/what-is-the-curl-command-line-syntax-to-do-a-post-request>
-* <https://gist.github.com/subfuzion/08c5d85437d5d4f00e58#post>
+[443672816]: http://superuser.com/questions/149329/what-is-the-curl-command-line-syntax-to-do-a-post-request
 
 ## HOWTO POST Key-values
 
