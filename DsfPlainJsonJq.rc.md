@@ -8,10 +8,11 @@
 * HOWTO Query root property `jq .` <sup><sub>Pretty print.</sub></sup>
 * HOWTO Query property `jq .yourProp`
 * HOWTO Select first item `jq .[0]`
+* HOWTO List object properties `echo '{"foo":1,"bar":2}' | jq --raw-output '. | keys[]'` <sup><sub>List object keys.</sub></sup>
 * HOWTO Keep one array property `jq '.yourArray[].yourProp'`
 * HOWTO Delete/remove one array property `jq 'del(.yourArray[].yourProp)'`
 
-## HOWTO Filter array <sup><sub>Count objects in array. [3279142546][] [2395198962][]</sub></sup>
+## HOWTO Filter array <sup><sub>Count objects in array/size/length. [3279142546][] [2395198962][]</sub></sup>
 
     jq 'map(select(.yourProp == "Foo")) | length'
     jq '[ .[] | select(.yourProp == "Bar") ] | length'
