@@ -52,7 +52,7 @@ Copy from host to container
 
 ## HOWTO
 
-* HOWTO Container start `docker start --attach your_container_nm` <sup><sub>start container and attach STDOUT and STDERR</sub></sup>
+* HOWTO Container start `docker start --attach your_container_nm` <sup><sub>Start container and attach `STDOUT` and `STDERR`.</sub></sup>
 * HOWTO Container stop `docker stop your_container_nm`
 * HOWTO Container remove `docker rm --force your_container_nm`
 * HOWTO Remove all containers `docker rm $(docker ps --all --quiet)` <sup><sub>Remove all stopped and running containers.</sub></sup>
