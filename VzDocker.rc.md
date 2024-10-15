@@ -48,42 +48,20 @@ Copy from host to container
 * <https://docs.docker.com/reference/api/docker_remote_api_v1.17/#list-containers>
 * <http://superuser.com/questions/834307/can-curl-send-requests-to-sockets#834320>
 
-    echo -e "GET /containers/json?all=1 HTTP/1.1\r\n" \
-      | socat unix-connect:/var/run/docker.sock STDIO
+    echo -e "GET /containers/json?all=1 HTTP/1.1\r\n" | socat unix-connect:/var/run/docker.sock STDIO
 
-## Container start <sup><sub>start container and attach STDOUT and STDERR</sub></sup>
+## HOWTO
 
-    docker start --attach teamcity_agent1
+* HOWTO Container start `docker start --attach your_container_nm` <sup><sub>start container and attach STDOUT and STDERR</sub></sup>
+* HOWTO Container stop `docker stop your_container_nm`
+* HOWTO Container remove `docker rm --force your_container_nm`
+* HOWTO Remove all containers `docker rm $(docker ps --all --quiet)` <sup><sub>Remove all stopped and running containers.</sub></sup>
+* HOWTO Rename container `docker rename your-old-nm your-new-nm`
+* HOWTO Container stats `docker stats your_container_nm`
+* HOWTO Run command from container `docker exec -it your_container_nm echo "Hello from container!"` <sup><sub>[115569570][]</sub></sup>
+* HOWTO Linking containers `docker create --name your_container_nm --link your_linked_container_nm:your_alias_nm your_img_nm` <sup><sub>Create container with `--link` option like this [3880151314][]. Then environment variable `$YOUR_ALIAS_NM_PORT_666_TCP_ADDR` will contain linked container `IP` addres.</sub></sup>
 
-## Container stop
-
-    docker stop teamcity_serve
-
-## Container remove
-
-    docker rm --force teamcity_agent1
-
-## Remove all  stopped/running containers
-
-    docker rm $(docker ps --all --quiet)
-
-## Rename container
-
-    docker rename your-old-nm your-new-nm
-
-## Container stats
-
-    docker stats foobar_server
-
-## Linking <sup><sub>create container with `--link` option like this [3880151314][]</sub></sup>
-
-    docker create --name your_container_nm \
-                  --link your_linked_container_nm:your_alias_nm \
-                  your_img_nm
-
-Then environment variable `$YOUR_ALIAS_NM_PORT_666_TCP_ADDR`
-will contain linked container `IP` addres.
-
+[115569570]: https://stackoverflow.com/questions/26153686/how-do-i-run-a-command-on-an-already-existing-docker-container#41806119
 [3880151314]: https://docs.docker.com/userguide/dockerlinks/#communication-across-links
 
 ## Backup save <sup><sub>[1142383923][]</sub></sup>
