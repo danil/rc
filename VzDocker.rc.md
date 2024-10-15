@@ -17,7 +17,7 @@
 * HOWTO Image inspect `docker inspect foobar_server`
 * HOWTO Image commit `docker commit your_usr_nm/your_container_nm your_img_nm:1970_01_01` <sup><sub>NOTE: Save container as image after interactive changes.</sub></sup>
 
-[homebrew]: https://formulae.brew.sh/formula/rust#default
+[homebrew]: https://github.com/homebrew/brew
 [ubuntu]: https://github.com/ubuntu
 [1947444523]: https://serverfault.com/questions/703344/how-to-remove-an-image-tag-in-docker-without-removing-the-image-itself#703352
 [2336421907]: https://stackoverflow.com/questions/67642620/docker-credential-desktop-not-installed-or-not-available-in-path#72888813
