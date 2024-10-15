@@ -26,7 +26,7 @@
 [3054966964]: https://linuxtuto.com/how-to-install-docker-on-ubuntu-24-04
 [3590212040]: https://github.com/docker/docker-credential-helpers "Docker login credential"
 
-## Copy to container <sub><sub>NOTE: Copy from container to host.</sub></sup>
+## Copy to container <sup><sub>NOTE: Copy from container to host.</sub></sup>
 
     docker cp <containerId>:/file/path/within/container /path/to/host/dir
 
