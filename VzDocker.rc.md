@@ -1,7 +1,7 @@
-# [Docker][] [virtualization][] rc
+# [Docker][] [virtualization][vz] rc
 
 [docker]: https://github.com/docker
-[virtualization]: https://en.wikipedia.org/wiki/OS-level_virtualization
+[vz]: https://en.wikipedia.org/wiki/OS-level_virtualization
 
 * HOWTO Images list `docker images` <sup><sub>Size and so on.</sub></sup>
 * HOWTO Image build `docker build --tag=your-ropo/your-img:your-tag --file=path/to/Dockerfile ./`
