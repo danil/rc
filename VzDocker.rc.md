@@ -3,8 +3,8 @@
 [docker]: https://github.com/docker
 [vz]: https://en.wikipedia.org/wiki/OS-level_virtualization
 
-* HOWTO VER2 Install on [Ubuntu][] `apt remove docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc` & `sudo apt update` & `sudo apt install apt-transport-https ca-certificates curl software-properties-common` & `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -` & `sudo sh -c "echo 'deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable' > /etc/apt/sources.list.d/docker.list"` & `sudo apt install docker-ce docker-ce-cli` & `gpasswd --add your-usr-nm docker` & `brew install docker-credential-helper` <sup><sub>[3054966964][] [2839034136][] [Docker login credential][3590212040]</sub></sup>
-* HOWTO VER1 Install by [Homebrew][] `brew install docker` & `brew install docker-credential-helper` <sup><sub>[Docker login credential][3590212040] [2336421907][]</sub></sup>
+* HOWTO VER2 Install on [Ubuntu][] `apt remove docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc` and `sudo apt update` and `sudo apt install apt-transport-https ca-certificates curl software-properties-common` and `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -` and `sudo sh -c "echo 'deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable' > /etc/apt/sources.list.d/docker.list"` and `sudo apt install docker-ce docker-ce-cli` and `gpasswd --add your-usr-nm docker` and `brew install docker-credential-helper` <sup><sub>[3054966964][] [2839034136][] [Docker login credential][3590212040]</sub></sup>
+* HOWTO VER1 Install by [Homebrew][] `brew install docker` and `brew install docker-credential-helper` <sup><sub>[Docker login credential][3590212040] [2336421907][]</sub></sup>
 * HOWTO Images list `docker images` <sup><sub>Size and so on.</sub></sup>
 * HOWTO Image build `docker build --tag=your-ropo/your-img:your-tag --file=path/to/Dockerfile ./`
 * HOWTO Image tag add `docker tag your-img-hash your/img-nm`
