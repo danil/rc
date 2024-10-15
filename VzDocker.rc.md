@@ -3,6 +3,8 @@
 [docker]: https://github.com/docker
 [vz]: https://en.wikipedia.org/wiki/OS-level_virtualization
 
+* HOWTO VER2 Install on [Ubuntu][] `apt remove docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc` & `sudo apt update` & `sudo apt install apt-transport-https ca-certificates curl software-properties-common` & `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -` & `sudo sh -c "echo 'deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable' > /etc/apt/sources.list.d/docker.list"` & `sudo apt install docker-ce docker-ce-cli` & `gpasswd --add your-usr-nm docker` & `brew install docker-credential-helper` <sup><sub>[3054966964][] [2839034136][] [Docker login credential][3590212040]</sub></sup>
+* HOWTO VER1 Install by [Homebrew][] `brew install docker` & `brew install docker-credential-helper` <sup><sub>[Docker login credential][3590212040] [2336421907][]</sub></sup>
 * HOWTO Images list `docker images` <sup><sub>Size and so on.</sub></sup>
 * HOWTO Image build `docker build --tag=your-ropo/your-img:your-tag --file=path/to/Dockerfile ./`
 * HOWTO Image tag add `docker tag your-img-hash your/img-nm`
@@ -15,8 +17,14 @@
 * HOWTO Image inspect `docker inspect foobar_server`
 * HOWTO Image commit `docker commit your_usr_nm/your_container_nm your_img_nm:1970_01_01` <sup><sub>NOTE: Save container as image after interactive changes.</sub></sup>
 
+[homebrew]: https://formulae.brew.sh/formula/rust#default
+[ubuntu]: https://github.com/ubuntu
 [1947444523]: https://serverfault.com/questions/703344/how-to-remove-an-image-tag-in-docker-without-removing-the-image-itself#703352
+[2336421907]: https://stackoverflow.com/questions/67642620/docker-credential-desktop-not-installed-or-not-available-in-path#72888813
 [2652317084]: https://docs.docker.com/reference/commandline/cli/#create
+[2839034136]: https://docs.docker.com/engine/install/ubuntu "Official instruction from the Docker Inc of install Docker Engine on Ubuntu."
+[3054966964]: https://linuxtuto.com/how-to-install-docker-on-ubuntu-24-04
+[3590212040]: https://github.com/docker/docker-credential-helpers "Docker login credential"
 
 ## Copy to container <sub><sub>NOTE: Copy from container to host.</sub></sup>
 
