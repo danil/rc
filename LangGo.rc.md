@@ -7,13 +7,109 @@
 * HOWTO Install `brew install go` <sup><sub>[Homebrew][]</sub></sup>
 *   DOC Package name convention are given lower case, single-word names; there should be no need for underscores or mixedCaps. <sup><sub>Naming convention style [Effective Go Package names][2797441528] [Code Review Package names][186063190] [Go Blog Package names][3329569429] [4282605948][]</sub></sup>
 *   DOC Interface name convention use an -er suffix: Reader, Writer, Formatter, CloseNotifier etc. <sup><sub>Naming convention style [2453223740][]</sub></sup>
+* HOWTO Environment `go env`
+*   DOC Book "The Go Programming Language" Alan A. A. Donovan, Brian W. Kernighan <sup><sub>[*][629190432]</sub></sup>
+* HOWTO Install package `go get -v ./...` <sup><sub>Get with all dependencies (exclude test dependencies).</sub></sup>
+* HOWTO Install package with test dependencies `go get -v -t ./...` <sup><sub>Get test dependencies.</sub></sup>
+* HOWTO Update package `go get -u your.tld/path/to/pkg`
+* HOWTO Package dependencies list `go list -f '{{ .Deps }}' your.tld/path/to/pkg` <sup><sub>List package dependencies</sub></sup>
+* HOWTO Install package `go install your.tld/path/to/pkg`
+* HOWTO List packages `go list ./...` <sup><sub>List installed packages. [557989519][]</sub></sup>
+* HOWTO Testing `go test -v -race -count=1 ./...` <sup><sub>Run test suite [2319142434][] [2570645731][]</sub></sup>
+* HOWTO Testing of remote package `go test your.tld/path/to/pkg`
+* HOWTO Testing without cache `go test -count=1` <sup><sub>Testing with cache disabled. [4126800382][]</sub></sup>
+* HOWTO VER2 Test benchmark `go test -race -count=1 -bench=. -benchmem ./...` <sup><sub>Run benchmark.</sub></sup>
+* HOWTO Test coverage `go test -cover ./...` <sup><sub>[2445429477][]</sub></sup>
+* HOWTO `go test -race ./...` <sup><sub>Test races/race condition/with race detector. [1720623323][]</sub></sup>
+* HOWTO [Table test generator][1563123227]
+* HOWTO [godef finds function definition][3825457580] `go get github.com/rogpeppe/godef && godef -f path/to/file.go 'yourpkgnm.YourFnNm'` <sup><sub>Find function definition by package and function name.</sub></sup>
+* HOWTO Run `go run ./...`
+* HOWTO Build `CGO_ENABLED=0 go build ./...` <sup><sub>[4169212427][] [318174330][]</sub></sup>
+* HOWTO Build custom name `go build -o path/to/your/executable` <sup><sub>Build with custom executable name and custom output directory.</sub></sup>
+* HOWTO Build without cache `go build -a path/to/your/package` <sup><sub>Build cache invalidation. Invalidate cache. Recompile.</sub></sup>
+* HOWTO [Runtime][] [Gosched][] `runtime.Gosched()` <sup><sub>Yields the processor, allowing other goroutines to run. It necessary for cooperative scheduler (кооперативного планировщика) until Go 1.13 and unnecessary for preemptive scheduler (вытесняющего планировщика) starts Go 1.14. [3989277831][]</sub></sup>
+* HOWTO [Runtime][] [GC][2736769797] disable `GOGC=off` <sup><sub>[269738468][]</sub></sup>
+* HOWTO [Debug][] [FreeOSMemory][] `debug.FreeOSMemory()` <sup><sub>Forces a garbage collection followed by an attempt to return as much memory to the operating system as possible.</sub></sup>
+* HOWTO Reduce binary size while build `go build --ldflags "-s -w" path/to/package` <sup><sub>Minimize binary size.</sub></sup>
+* HOWTO Reduce binary size while run `go run --ldflags "-s -w" path/to/package` <sup><sub>Minimize binary size.</sub></sup>
+* HOWTO Compile time variables while build `go build -ldflags "-X path/to/package.foo=$(git describe --abbrev=0 --tags) -X path/to/package.Bar=$(git rev-parse --short HEAD) -X path/to/package.baz=$(git rev-parse HEAD) -X path/to/package.qux=$(date --utc +%s) -X path/to/package.xyz=$(date --utc +%Y%m%dT%H%M%SZ)" main.go` <sup><sub>Set some string variable on compile time (for example your some "version").</sub></sup>
+* HOWTO Compile time variables while run `go run -ldflags "-X path/to/package.foo=123 -X path/to/package.Bar=xyz" ./...` <sup><sub>Set some string variable on compile time (for example your some "version").</sub></sup>
+* HOWTO Cross compilation `env GOARCH=arm64 go build`
+* HOWTO Code review: [80 characters or not?][3571357994] <sup><sub>Code review: N characters line length convention style.</sup></sub>
+* HOWTO Code review: [Initialism convention][91357513] `Id`->`ID` `Url`->`URL` `Xml`->`XML` and so on <sup><sub>Code review abbreviation style.</sub></sup>
+* HOWTO Code review: The named return is good but the naked is bad <sup><sub>Convention style. Bare return is bad. [1][3699179768] [2][3409454453] [3][3137909250]</sub></sup>
+* HOWTO [Type conversion][] `var i int = 42; f float64 = float(i); i := (*int)(nil)` <sup><sub>Example.</sub></sup>
+* HOWTO [Type assertion][] `var x interface{} = 42; i := x.(int)` <sup><sub>Example.</sub></sup>
+* HOWTO Non-nil interface type and nil interface value `if i, ok := value.source.(fmt.Stringer); ok {; if i == nil || (reflect.ValueOf(i).Kind() == reflect.Ptr && reflect.ValueOf(i).IsNil()) {; return "This is real nil or nil value and non nil type."; }; }`
+* HOWTO [Formatter][] `type Formatter interface {; Format(f State, c rune); }` <sup><sub>[99610387][]</sub></sup>
+* HOWTO Error wrapping and formatting `fmt.Errorf("your error: %w", errors.New("something went wrong"))` <sup><sub>[*][1238582052] [*][2031092561] [*][2122683529]</sub></sup>
+*   DOC Sentinel error [io.EOF][]                                      <sup><sub>End of input. Common error. [564276647][]</sub></sup>
+*   DOC Sentinel error [os.ErrInvalid][]          [fs.ErrInvalid][]    <sup><sub>Invalid argument. Common error. [564276647][]</sub></sup>
+*   DOC Sentinel error [os.ErrPermission][]       [fs.ErrPermission][] <sup><sub>Permission denied. Common error. [564276647][]</sub></sup>
+*   DOC Sentinel error [os.ErrExist][]            [fs.ErrExist][]      <sup><sub>File already exists. Common error. [564276647][]</sub></sup>
+*   DOC Sentinel error [os.ErrNotExist][]         [fs.ErrNotExist][]   <sup><sub>File does not exist. Common error. [564276647][]</sub></sup>
+*   DOC Sentinel error [os.ErrClosed][]           [fs.ErrClosed][]     <sup><sub>File already closed. Common error. [564276647][]</sub></sup>
+*   DOC Sentinel error [os.ErrNoDeadline][]                            <sup><sub>File type does not support deadline. Common error. [564276647][]</sub></sup>
+*   DOC Sentinel error [os.ErrDeadlineExceeded][]                      <sup><sub>I/O timeout. Common error. [564276647][]</sub></sup>
+*   DOC Sentinel error [sql.ErrNoRows][]                               <sup><sub>No rows in result set. Common error. [564276647][]</sub></sup>
+* HOWTO Explicit argument indexes of formatter `fmt.Sprintf("%[2]d %[1]d", 11, 22)`
 
+[debug]: https://pkg.go.dev/runtime/debug
+[formatter]: https://pkg.go.dev/fmt#Formatter
+[freeosmemory]: https://pkg.go.dev/runtime/debug#FreeOSMemory
+[fs.ErrInvalid]: https://pkg.go.dev/io/fs#ErrInvalid
+[fs.errclosed]: https://pkg.go.dev/io/fs#ErrClosed
+[fs.errexist]: https://pkg.go.dev/io/fs#ErrExist
+[fs.errnotexist]: https://pkg.go.dev/io/fs#ErrNotExist
+[fs.errpermission]: https://pkg.go.dev/io/fs#ErrPermission
+[fstest]: https://pkg.go.dev/testing/fstest
+[gosched]: https://pkg.go.dev/runtime#Gosched
 [homebrew]: https://formulae.brew.sh/formula/go#default
+[io.eof]: https://pkg.go.dev/io#EOF
+[os.ErrInvalid]: https://pkg.go.dev/os#ErrInvalid
+[os.ErrNoDeadline]: https://pkg.go.dev/os#ErrNoDeadline
+[os.errclosed]: https://pkg.go.dev/os#ErrClosed
+[os.errdeadlineexceeded]: https://pkg.go.dev/os#ErrDeadlineExceeded
+[os.errexist]: https://pkg.go.dev/os#ErrExist
+[os.errnotexist]: https://pkg.go.dev/os#ErrNotExist
+[os.errpermission]: https://pkg.go.dev/os#ErrPermission
+[runtime]: https://pkg.go.dev/runtime
+[sql.errnorows]: https://pkg.go.dev/database/sql#ErrNoRows
+[type assertion]: https://go.dev/ref/spec#Type_assertions
+[type conversion]: https://go.dev/ref/spec#Conversions
+[1056894504]: https://github.com/spf13/afero
+[1238582052]: https://pkg.go.dev/errors#pkg-overview
+[1563123227]: https://github.com/cweill/gotests
+[1720623323]: https://go.dev/blog/race-detector
+[1746671570]: https://github.com/golang/go/issues/44166
 [186063190]: https://go.dev/wiki/CodeReviewComments#package-names "Code Review Package names"
+[2031092561]: https://pkg.go.dev/fmt#Errorf
+[2122683529]: https://go.dev/blog/go1.13-errors#wrapping-errors-with-w
+[2319142434]: https://blog.golang.org/examples
+[2434259655]: https://github.com/golang/go/issues/51378#issuecomment-1053427475
+[2445429477]: https://go.dev/blog/cover
 [2453223740]: https://go.dev/doc/effective_go#interface-names
+[2570645731]: https://blog.golang.org/subtests
+[269738468]: https://go.dev/blog/go15gc
+[2736769797]: https://pkg.go.dev/runtime#hdr-Environment_Variables
 [2797441528]: https://go.dev/doc/effective_go#package-names "Effective Go Package names"
+[3137909250]: https://go.dev/wiki/CodeReviewComments#named-result-parameters "Named naked bare return."
+[318174330]:  https://stackoverflow.com/questions/36279253/go-compiled-binary-wont-run-in-an-alpine-docker-container-on-ubuntu-host#36308464
 [3329569429]: https://go.dev/blog/package-names "Go Blog Package names"
+[3409454453]: https://github.com/golang/go/issues/21291 "Named naked bare return issues 21291."
+[3571357994]: https://go.dev/wiki/CodeReviewComments#line-length
+[3699179768]: https://github.com/golang/go/issues/20859 "Named naked bare return issues 20859."
+[3825108315]: https://github.com/golang/go/issues/44279
+[3825457580]: https://pkg.go.dev/github.com/rogpeppe/godef
+[3989277831]: https://habr.com/ru/post/502506
+[4126800382]: https://github.com/golang/go/issues/24573#issuecomment-393818160
+[4169212427]: https://stackoverflow.com/questions/64421305/heroku-go-app-crashes-version-glibc-2-32-not-found-required-by-bin-main#65919767
 [4282605948]: https://go.dev/talks/2016/refactor.article
+[557989519]: https://golang.org/doc/articles/go_command.html
+[564276647]: https://dave.cheney.net/tag/errors
+[629190432]: https://go.dev/learn/#featured-books
+[91357513]: https://go.dev/wiki/CodeReviewComments#initialisms
+[99610387]: https://pkg.go.dev/github.com/pkg/errors#Frame.Format
 
 ## HOWTO [Hello, World!][]
 
@@ -34,62 +130,7 @@ Hello, World!
 
 [hello, world!]: https://go.dev/doc/tutorial/getting-started#code
 
-## HOWTO Environment
-
-    go env
-
-## DOC Books
-
-* "The Go Programming Language" Alan A. A. Donovan, Brian W. Kernighan <sup><sub>[*][629190432]</sub></sup>
-
-[629190432]: https://go.dev/learn/#featured-books
-
-## HOWTO Packages install
-
-Get with all dependencies (exclude test dependencies)
-
-    go get -v ./...
-
-Get test dependencies
-
-    go get -v -t ./...
-
-## HOWTO Package update
-
-    go get -u your.tld/path/to/pkg
-
-## HOWTO Package dependencies list
-
-List package dependencies
-
-    go list -f '{{ .Deps }}' your.tld/path/to/pkg
-
-## HOWTO Package install
-
-    go install your.tld/path/to/pkg
-
-## HOWTO Packages list
-
-List installed packages
-<https://golang.org/doc/articles/go_command.html>
-
-    go list ./...
-
-## HOWTO Testing <sup><sub>run test suite [2319142434][] [2570645731][]</sub></sup>
-
-    go test -v -race -count=1 your.tld/path/to/pkg
-    go test -v -race -count=1 ./...
-
-[2319142434]: https://blog.golang.org/examples
-[2570645731]: https://blog.golang.org/subtests
-
-## HOWTO Test without cache/disable test cache <sup><sub>[4126800382][]</sub></sup>
-
-    go test -count=1
-
-[4126800382]: https://github.com/golang/go/issues/24573#issuecomment-393818160
-
-## HOWTO Test benchmarks <sup><sub>run benchmarks</sub></sup>
+## HOWTO VER1 Test benchmark <sup><sub>run benchmarks</sub></sup>
 
     cat go.mod
 
@@ -192,22 +233,6 @@ func BenchmarkYourFn(b *testing.B) {
 
     go test -race -count=1 -bench=. -benchmem ./...
 
-## HOWTO [Test coverage][]
-
-    go test -cover ./...
-
-[test coverage]: https://blog.golang.org/cover
-
-## HOWTO Test races/race conditions and [Race Detector][]
-
-    go test -race ./...
-
-[race detector]: https://blog.golang.org/race-detector
-
-## HOWTO Table tests
-
-Generator <https://github.com/cweill/gotests>
-
 ## HOWTO Test: [fstest][]: Mocking relative path of file system <sup><sub>[3825108315][] [1746671570][] [2434259655][] [1056894504][]</sub></sup>
 
 ```go
@@ -229,92 +254,6 @@ func main() {
 }
 ```
 
-[fstest]: https://pkg.go.dev/testing/fstest
-[1056894504]: https://github.com/spf13/afero
-[1746671570]: https://github.com/golang/go/issues/44166
-[2434259655]: https://github.com/golang/go/issues/51378#issuecomment-1053427475
-[3825108315]: https://github.com/golang/go/issues/44279
-
-## HOWTO [godef][]: Find function definition by package/function name
-
-[godef]: https://godoc.org/github.com/rogpeppe/godef
-
-```sh
-go get github.com/rogpeppe/godef
-godef -f path/to/file.go 'yourpkgnm.YourFnNm'
-```
-
-## HOWTO Run
-
-## HOWTO Build <sup><sub>[4169212427][] [318174330][]</sub></sup>
-
-    CGO_ENABLED=0 go build
-
-[318174330]:  https://stackoverflow.com/questions/36279253/go-compiled-binary-wont-run-in-an-alpine-docker-container-on-ubuntu-host#36308464
-[4169212427]: https://stackoverflow.com/questions/64421305/heroku-go-app-crashes-version-glibc-2-32-not-found-required-by-bin-main#65919767
-
-## HOWTO Build with custom executable name and custom output directory
-
-    go build -o path/to/your/executable
-
-## HOWTO Build with directory change within go.mod
-
-    cd path/to/go/mod/dir && go build
-
-## HOWTO Build cache invalidation
-
-Invalidate cache/recompile
-
-    go build -a path/to/package
-
-## HOWTO [Runtime][] [Gosched][]
-
-[Runtime]: https://golang.org/pkg/runtime
-[Gosched]: https://golang.org/pkg/runtime/#Gosched
-
-Yields the processor, allowing other goroutines to run.  
-It necessary for cooperative scheduler (кооперативного планировщика) until Go 1.13
-and unnecessary for preemptive scheduler (вытесняющего планировщика) starts Go 1.14
-<https://habr.com/ru/post/502506>.
-
-    runtime.Gosched()
-
-## HOWTO [Runtime][] [GC][] disable
-
-[GC]: https://golang.org/pkg/runtime/#hdr-Environment_Variables
-
-<https://blog.golang.org/go15gc>
-
-    GOGC=off
-
-## HOWTO [Debug][] [FreeOSMemory][]
-
-[Debug]: https://golang.org/pkg/runtime/debug
-[FreeOSMemory]: https://golang.org/pkg/runtime/debug/#FreeOSMemory
-
-Forces a garbage collection followed by an attempt to return as much
-memory to the operating system as possible.
-
-    debug.FreeOSMemory()
-
-## HOWTO Reduce binary size<sup><sub>minimize binary size</sub></sup>
-
-    go build --ldflags "-s -w" path/to/package
-    go run --ldflags "-s -w" path/to/package
-
-## HOWTO Compile time variables
-
-Set some string variable on compile time (for example your some "version")
-
-```bash
-go build -ldflags "-X path/to/package.foo=$(git describe --abbrev=0 --tags) -X path/to/package.Bar=$(git rev-parse --short HEAD) -X path/to/package.baz=$(git rev-parse HEAD) -X path/to/package.qux=$(date --utc +%s) -X path/to/package.xyz=$(date --utc +%Y%m%dT%H%M%SZ)" main.go
-go run -ldflags "-X path/to/package.foo=123 -X path/to/package.Bar=xyz" ./...
-```
-
-## HOWTO Cross compilation
-
-    env GOARCH=arm64 go build
-
 ## DOC Code review bad/meaningless package name convention style
 
 1. https://go.dev/doc/effective_go#package-names>
@@ -322,94 +261,6 @@ go run -ldflags "-X path/to/package.foo=123 -X path/to/package.Bar=xyz" ./...
 3. https://github.com/golang/go/wiki/CodeReviewComments#package-names
 
 Bad package name examples: `util`, `common` and `misc`
-
-## HOWTO Code review [N characters line length convention][] style
-
-80 characters or not?
-
-[n characters line length convention]: http://github.com/golang/go/wiki/CodeReviewComments#line-length
-
-## HOWTO Code review abbreviation [initialism convention][] style
-
-For example: `Id` -> `ID` `Url` -> `URL` `Xml` -> `XML`
-
-[initialism convention]: https://github.com/golang/go/wiki/CodeReviewComments#initialisms
-
-## NOTE Code review the named return is good but the naked/bare return is bad convention style <sup><sub>[1][named naked bare return issues 20859] [2][named naked bare return issues 21291] [3][named naked bare return]</sub></sup>
-
-[named naked bare return issues 20859]: https://github.com/golang/go/issues/20859
-[named naked bare return issues 21291]: https://github.com/golang/go/issues/21291
-[named naked bare return]: https://golang.org/s/style#named-result-parameters
-
-## HOWTO [Type conversion][]
-
-    var i int = 42; f float64 = float(i)
-    i := (*int)(nil)
-
-[type conversion]: https://go.dev/ref/spec#Conversions
-
-## HOWTO [Type assertion][]
-
-    var x interface{} = 42; i := x.(int)
-
-[type assertion]: https://go.dev/ref/spec#Type_assertions
-
-## HOWTO Non-nil interface type and nil interface value
-
-    if i, ok := value.source.(fmt.Stringer); ok {
-        if i == nil || (reflect.ValueOf(i).Kind() == reflect.Ptr && reflect.ValueOf(i).IsNil()) {
-            return "This is real nil or nil value and non nil type."
-        }
-    }
-
-## HOWTO Formatter
-
-* <http://golang.org/pkg/fmt/#Formatter>
-* <http://godoc.org/github.com/pkg/errors#Frame.Format>
-
-    type Formatter interface {
-            Format(f State, c rune)
-    }
-
-## HOWTO Error wrapping and formatting <sup><sub>[*][1238582052] [*][2031092561] [*][2122683529]</sub></sup>
-
-    fmt.Errorf("your error: %w", errors.New("something went wrong"))
-
-[1238582052]: https://pkg.go.dev/errors#pkg-overview
-[2031092561]: https://pkg.go.dev/fmt#Errorf
-[2122683529]: https://go.dev/blog/go1.13-errors#wrapping-errors-with-w
-
-## DOC Common/sentinel error <sup><sub>[564276647][]</sub></sup>
-
-* [io.EOF][]                                      <sup><sub>end of input</sub></sup>
-* [os.ErrInvalid][]          [fs.ErrInvalid][]    <sup><sub>invalid argument</sub></sup>
-* [os.ErrPermission][]       [fs.ErrPermission][] <sup><sub>permission denied</sub></sup>
-* [os.ErrExist][]            [fs.ErrExist][]      <sup><sub>file already exists</sub></sup>
-* [os.ErrNotExist][]         [fs.ErrNotExist][]   <sup><sub>file does not exist</sub></sup>
-* [os.ErrClosed][]           [fs.ErrClosed][]     <sup><sub>file already closed</sub></sup>
-* [os.ErrNoDeadline][]                            <sup><sub>file type does not support deadline</sub></sup>
-* [os.ErrDeadlineExceeded][]                      <sup><sub>i/o timeout</sub></sup>
-* [sql.ErrNoRows][]                               <sup><sub>no rows in result set</sub></sup>
-
-[fs.ErrInvalid]: https://pkg.go.dev/io/fs#ErrInvalid
-[fs.errclosed]: https://pkg.go.dev/io/fs#ErrClosed
-[fs.errexist]: https://pkg.go.dev/io/fs#ErrExist
-[fs.errnotexist]: https://pkg.go.dev/io/fs#ErrNotExist
-[fs.errpermission]: https://pkg.go.dev/io/fs#ErrPermission
-[io.eof]: https://pkg.go.dev/io#EOF
-[os.ErrInvalid]: https://pkg.go.dev/os#ErrInvalid
-[os.ErrNoDeadline]: https://pkg.go.dev/os#ErrNoDeadline
-[os.errclosed]: https://pkg.go.dev/os#ErrClosed
-[os.errdeadlineexceeded]: https://pkg.go.dev/os#ErrDeadlineExceeded
-[os.errexist]: https://pkg.go.dev/os#ErrExist
-[os.errnotexist]: https://pkg.go.dev/os#ErrNotExist
-[os.errpermission]: https://pkg.go.dev/os#ErrPermission
-[sql.errnorows]: https://pkg.go.dev/database/sql#ErrNoRows
-[564276647]: https://dave.cheney.net/tag/errors
-
-## HOWTO Explicit argument indexes of formatter
-
-    fmt.Sprintf("%[2]d %[1]d", 11, 22)
 
 ## TROUBLESHOOTING Time type unification disclaimer (wall/civil/monotonic/absolute)
 
