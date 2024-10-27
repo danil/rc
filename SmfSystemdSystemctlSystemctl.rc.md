@@ -90,3 +90,6 @@ and so on <sup><sub>[1547857926][]</sub></sup>
 * HOWTO Search grep  `journalctl --unit="your_unit_nm.service" --grep="your.regexp"` <sup><sub>Regexp</sub></sup>
 * HOWTO Show N lines `journalctl -n42 --lines=42`
 * HOWTO Follow       `journalctl -f --follow` <sup><sub>Real-time Watch</sub></sup>
+* HOWTO Tail         `journalctl -e --pager-end` <sup><sub>[3199218881][]</sub></sup>
+
+[3199218881]: https://unix.stackexchange.com/questions/654561/how-do-you-go-to-the-end-of-the-file-in-journalctl
