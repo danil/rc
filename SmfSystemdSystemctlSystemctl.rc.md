@@ -85,14 +85,8 @@ and so on <sup><sub>[1547857926][]</sub></sup>
 
 [640934383]: https://askubuntu.com/questions/1220/how-to-restart-x-window-server-from-command-line#1222
 
-## HOWTO journalctl search grep/regexp
+## HOWTO journalctl
 
-    journalctl --unit="your_unit_nm.service" --grep="your.regexp"
-
-## HOWTO journalctl show N lines
-
-    journalctl -n42 --lines=42
-
-## HOWTO journalctl real-time watch/follow
-
-    journalctl -f --follow
+* HOWTO Search grep  `journalctl --unit="your_unit_nm.service" --grep="your.regexp"` <sup><sub>Regexp</sub></sup>
+* HOWTO Show N lines `journalctl -n42 --lines=42`
+* HOWTO Follow       `journalctl -f --follow` <sup><sub>Real-time Watch</sub></sup>
