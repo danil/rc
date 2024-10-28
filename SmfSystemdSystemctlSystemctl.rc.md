@@ -48,8 +48,8 @@ and so on <sup><sub>[1547857926][]</sub></sup>
 
 ## HOWTO Unit status show <sup><sub>service info</sub></sup>
 
-    systemctl show your_unit_nm
     systemctl status your_unit_nm
+    systemctl show your_unit_nm
 
 ## HOWTO Unit start/stop <sup><sub>restart/reload</sub></sup>
 
