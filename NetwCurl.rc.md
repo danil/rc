@@ -7,7 +7,7 @@
 * HOWTO Download file `curl -O --remote-name -C - --continue-at - -L --location --url http://your.tld/your.file` <sup><sub>[Wget][]</sub></sub>
 * HOWTO View sent/received headers `curl -v --verbose -I --head --url http://wikipedia.org`
 * HOWTO Without progress bar `curl -s --silent --url https://api.github.com/repos/tomnomnom/gron/commits?per_page=1`
-* HOWTO Only headers `curl -I --head --url http://wikipedia.org` <sup><sub>[3737298796][]</sub></sup>
+* HOWTO Only headers `curl -I --head --url http://your.tld` <sup><sub>[3737298796][]</sub></sup>
 * HOWTO FIXME *POST* <sup><sub>[*][443672816] [*][3153884880]</sub></sup>
 * HOWTO Custom certificate `curl --request POST https://your.tld/your/path --cacert certs/ca.crt --cert certs/server.crt --key certs/server.key`
 
