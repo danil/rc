@@ -10,8 +10,10 @@
 * HOWTO Only headers `curl -I --head --url http://your.tld` <sup><sub>[3737298796][]</sub></sup>
 * HOWTO FIXME *POST* <sup><sub>[*][443672816] [*][3153884880]</sub></sup>
 * HOWTO Custom certificate `curl --request POST https://your.tld/your/path --cacert certs/ca.crt --cert certs/server.crt --key certs/server.key`
+* HOWTO Ignore certificate `curl --insecure https://your.tld` <sup><sub>Disable certificate verification [2626545445][]</sub></sup>
 
 [wget]: https://gnu.org/software/wget
+[2626545445]: https://serverfault.com/questions/469824/curl-disable-certificate-verification
 [3153884880]: https://gist.github.com/subfuzion/08c5d85437d5d4f00e58#post
 [3737298796]: http://stackoverflow.com/questions/3252851/how-to-display-request-headers-with-command-line-curl
 [443672816]: http://superuser.com/questions/149329/what-is-the-curl-command-line-syntax-to-do-a-post-request
