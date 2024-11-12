@@ -1,9 +1,9 @@
-# [Go modules][go.mod] <sup><sub>[go.mod][], `go.sum` and friends</sub></sup> rc
+# [Go modules][go.mod] <sup><sub>[441582151][] [3264840190][] The [go.mod][], `go.sum` and friends. </sub></sup> rc
 
 [go.mod]: https://go.dev/ref/mod
+[3264840190]: https://go.dev/wiki/Modules
+[441582151]: https://go.dev/blog/using-go-modules
 
-* https://blog.golang.org/using-go-modules
-* https://github.com/golang/go/wiki/Modules
 * HOWTO [Workspaces][] is a setup for multi-module repository <sup><sub>[Sourcing multiple modules in a single repository][368259030] [3741742184][] [484254577][]</sub></sup>
 
 [workspaces]: https://go.dev/doc/tutorial/workspaces
