@@ -5,6 +5,13 @@ go.mod, go.sum and friends
 * https://blog.golang.org/using-go-modules
 * https://github.com/golang/go/wiki/Modules
 
+* HOWTO [Workspaces][] is a setup for multi-module repository <sup><sub>[Sourcing multiple modules in a single repository][368259030] [3741742184][] [484254577][]</sub></sup>
+
+[workspaces]: https://go.dev/doc/tutorial/workspaces
+[368259030]: https://go.dev/doc/modules/managing-source#multiple-module-source "Sourcing multiple modules in a single repository."
+[3741742184]: https://github.com/golang/go/issues/27056
+[484254577]: https://github.com/golang/go/issues/50750
+
 ## Init
 
 Init dependencies
