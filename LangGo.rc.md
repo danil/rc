@@ -41,7 +41,12 @@
 * HOWTO [Type conversion][] `var i int = 42; f float64 = float(i); i := (*int)(nil)` <sup><sub>Example.</sub></sup>
 * HOWTO [Type assertion][] `var x interface{} = 42; i := x.(int)` <sup><sub>Example.</sub></sup>
 * HOWTO Non-nil interface type and nil interface value `if i, ok := value.source.(fmt.Stringer); ok {; if i == nil || (reflect.ValueOf(i).Kind() == reflect.Ptr && reflect.ValueOf(i).IsNil()) {; return "This is real nil or nil value and non nil type."; }; }`
-* HOWTO [Formatter][] `type Formatter interface {; Format(f State, c rune); }` <sup><sub>[99610387][]</sub></sup>
+* HOWTO Print [Formatter][] `type Formatter interface {; Format(f State, c rune); }` <sup><sub>[99610387][]</sub></sup>
+* HOWTO Print [Structured logging][slog] <sup><sub>Printing. Logging. [Structured logging blog article][2384274408]</sub></sup>
+* HOWTO Print [Go-cmp][] compare values `cmp.Equal(your_val1, your_val2)` and `cmp.Diff(your_val1, your_val2)` <sup><sub> Printing. Logging. Check equality or difference. `ignore := []cmp.Option{cmpopts.IgnoreFields(yourpkg.YourType{}, "YourFld1", "YourFld1")}; if !cmp.Equal(got, want, ignore...) { t.Errorf("\nyour diff:\n%s\ntest: %s", cmp.Diff(want, got, ignore...), "path/to/your_test.go:42") }` [GitLab uses go-cmp too](https://docs.gitlab.com/ee/development/go_guide/#test-diffs). [Dave Cheney uses cmp too](https://dave.cheney.net/practical-go/presentations/gophercon-singapore-2019.html). Testing. Debuging. Compare difference. Pretty print.</sub></sup>
+* HOWTO Print [Proto equal][proto] `proto.Equal(your_proto1, your_proto2)` <sup><sub>Printing. Logging. Check equality. Testing. Debugging. [DeepEqual][2542058847] </sub></sup>
+* HOWTO Print [Proto diff](https://google.golang.org/protobuf/testing/protocmp) `cmp.Diff(your_proto1, your_proto2, protocmp.Transform())` <sup><sub>Printing. Logging. Check difference. Testing. Debugging. [DeepEqual][2542058847]</sub></sup>
+* HOWTO Print [Error diff][cmpopts] `cmp.Diff(your_error1, your_error2, cmpopts.EquateErrors())`  <sup><sub>Printing. Logging. Check difference. Testing. Debugging.</sub></sup>
 * HOWTO Error wrapping and formatting `fmt.Errorf("your error: %w", errors.New("something went wrong"))` <sup><sub>[*][1238582052] [*][2031092561] [*][2122683529]</sub></sup>
 *   DOC Sentinel error [io.EOF][]                                      <sup><sub>End of input. Common error. [564276647][]</sub></sup>
 *   DOC Sentinel error [os.ErrInvalid][]          [fs.ErrInvalid][]    <sup><sub>Invalid argument. Common error. [564276647][]</sub></sup>
@@ -53,11 +58,6 @@
 *   DOC Sentinel error [os.ErrDeadlineExceeded][]                      <sup><sub>I/O timeout. Common error. [564276647][]</sub></sup>
 *   DOC Sentinel error [sql.ErrNoRows][]                               <sup><sub>No rows in result set. Common error. [564276647][]</sub></sup>
 * HOWTO Explicit argument indexes of formatter `fmt.Sprintf("%[2]d %[1]d", 11, 22)`
-* HOWTO Log [Structured logging][slog] <sup><sub>[Structured logging blog article][2384274408]</sub></sup>
-* HOWTO Log [Go-cmp][] compare values `cmp.Equal(your_val1, your_val2)` and `cmp.Diff(your_val1, your_val2)` <sup><sub>Check equality or difference. `ignore := []cmp.Option{cmpopts.IgnoreFields(yourpkg.YourType{}, "YourFld1", "YourFld1")}; if !cmp.Equal(got, want, ignore...) { t.Errorf("\nyour diff:\n%s\ntest: %s", cmp.Diff(want, got, ignore...), "path/to/your_test.go:42") }` [GitLab uses go-cmp too](https://docs.gitlab.com/ee/development/go_guide/#test-diffs). [Dave Cheney uses cmp too](https://dave.cheney.net/practical-go/presentations/gophercon-singapore-2019.html). Logging. Testing. Debuging. Compare difference. Pretty print.</sub></sup>
-* HOWTO Log [Proto equal][proto] `proto.Equal(your_proto1, your_proto2)` <sup><sub>Check equality. Testing. Debugging. [DeepEqual][2542058847] </sub></sup>
-* HOWTO Log [Proto diff](https://google.golang.org/protobuf/testing/protocmp) `cmp.Diff(your_proto1, your_proto2, protocmp.Transform())` <sup><sub>Check difference. Testing. Debugging. [DeepEqual][2542058847]</sub></sup>
-* HOWTO Log [Error diff][cmpopts] `cmp.Diff(your_error1, your_error2, cmpopts.EquateErrors())`  <sup><sub>Check difference. Testing. Debugging.</sub></sup>
 
 [cmpopts]: https://github.com/google/go-cmp/cmp/cmpopts
 [debug]: https://pkg.go.dev/runtime/debug
