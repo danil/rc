@@ -58,9 +58,13 @@
 *   DOC Sentinel error [os.ErrDeadlineExceeded][]                      <sup><sub>I/O timeout. Common error. [564276647][]</sub></sup>
 *   DOC Sentinel error [sql.ErrNoRows][]                               <sup><sub>No rows in result set. Common error. [564276647][]</sub></sup>
 * HOWTO Explicit argument indexes of formatter `fmt.Sprintf("%[2]d %[1]d", 11, 22)`
+* HOWTO [Flag][] [Kong][] is a multi command command-line parser an alternative to using [flag.FlagSet][] <sup><sub>Console. Terminal.</sub></sup>
+* HOWTO VER1 [Flag][] [Flag set][flag.FlagSet] command-line parser allow multi command <sup><sub>In case you can't use, for example, [Kong][]. Console. Terminal.</sub></sup>
 
 [cmpopts]: https://github.com/google/go-cmp/cmp/cmpopts
 [debug]: https://pkg.go.dev/runtime/debug
+[flag.FlagSet]: https://pkg.go.dev/flag#FlagSet
+[flag]: https://pkg.go.dev/flag
 [formatter]: https://pkg.go.dev/fmt#Formatter
 [freeosmemory]: https://pkg.go.dev/runtime/debug#FreeOSMemory
 [fs.ErrInvalid]: https://pkg.go.dev/io/fs#ErrInvalid
@@ -73,6 +77,7 @@
 [gosched]: https://pkg.go.dev/runtime#Gosched
 [homebrew]: https://formulae.brew.sh/formula/go#default
 [io.eof]: https://pkg.go.dev/io#EOF
+[kong]: https://github.com/alecthomas/kong
 [os.ErrInvalid]: https://pkg.go.dev/os#ErrInvalid
 [os.ErrNoDeadline]: https://pkg.go.dev/os#ErrNoDeadline
 [os.errclosed]: https://pkg.go.dev/os#ErrClosed
@@ -88,13 +93,16 @@
 [type conversion]: https://go.dev/ref/spec#Conversions
 [1056894504]: https://github.com/spf13/afero
 [1238582052]: https://pkg.go.dev/errors#pkg-overview
+[1469759186]: https://github.com/alecthomas/kong/issues/72 "Difference between Kong and Cobra and Kingpin."
 [1563123227]: https://github.com/cweill/gotests
+[1642752273]: https://stackoverflow.com/questions/24504024/defining-independent-flagsets-in-golang#24510031 "Multi flag.FlagSet"
 [1720623323]: https://go.dev/blog/race-detector
 [1746671570]: https://github.com/golang/go/issues/44166
 [186063190]: https://go.dev/wiki/CodeReviewComments#package-names "Code Review Package names"
 [2031092561]: https://pkg.go.dev/fmt#Errorf
 [2122683529]: https://go.dev/blog/go1.13-errors#wrapping-errors-with-w
 [2319142434]: https://blog.golang.org/examples
+[2344166053]: https://github.com/alecthomas/kong#supported-tags "Passthrough argument."
 [2384274408]: https://go.dev/blog/slog "Structured logging"
 [2434259655]: https://github.com/golang/go/issues/51378#issuecomment-1053427475
 [2445429477]: https://go.dev/blog/cover
@@ -400,7 +408,7 @@ func main() {
 [context.context]: https://pkg.go.dev/context
 [net.context]: https://pkg.go.dev/golang.org/x/net/context
 
-## HOWTO [Flag set][flag.FlagSet] parser <sup><sub>Console. Terminal. [Multi flag.FlagSet][1642752273] in case you can't use, for example, [Kong][].</sub></sup>
+## HOWTO VER2 [Flag][] [Flag set][flag.FlagSet] <sup><sub>Multi command and [Multi flag.FlagSet][1642752273] in case you can't use, for example, [Kong][]. Console. Terminal.</sub></sup>
 
 ```go
 package main
@@ -425,10 +433,6 @@ func main() {
 		fmt.Println(*baz)
 	}
 ```
-
-[flag.FlagSet]: https://pkg.go.dev/flag#FlagSet
-[kong]: https://github.com/alecthomas/kong
-[1642752273]: https://stackoverflow.com/questions/24504024/defining-independent-flagsets-in-golang#24510031 "Multi flag.FlagSet"
 
 ## HOWTO Query string key-value pairs
 
