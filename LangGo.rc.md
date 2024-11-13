@@ -400,7 +400,7 @@ func main() {
 [context.context]: https://pkg.go.dev/context
 [net.context]: https://pkg.go.dev/golang.org/x/net/context
 
-## Flag set parser <sup><sub>console/terminal [1642752273][] in case you can't use, for example, [Kong][]</sub></sup>
+## HOWTO [Flag set][flag.FlagSet] parser <sup><sub>Console. Terminal. [Multi flag.FlagSet][1642752273] in case you can't use, for example, [Kong][].</sub></sup>
 
 ```go
 package main
@@ -426,8 +426,9 @@ func main() {
 	}
 ```
 
+[flag.FlagSet]: https://pkg.go.dev/flag#FlagSet
 [kong]: https://github.com/alecthomas/kong
-[1642752273]: https://stackoverflow.com/questions/24504024/defining-independent-flagsets-in-golang#24510031
+[1642752273]: https://stackoverflow.com/questions/24504024/defining-independent-flagsets-in-golang#24510031 "Multi flag.FlagSet"
 
 ## HOWTO Query string key-value pairs
 
