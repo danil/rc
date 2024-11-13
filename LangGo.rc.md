@@ -53,6 +53,7 @@
 *   DOC Sentinel error [os.ErrDeadlineExceeded][]                      <sup><sub>I/O timeout. Common error. [564276647][]</sub></sup>
 *   DOC Sentinel error [sql.ErrNoRows][]                               <sup><sub>No rows in result set. Common error. [564276647][]</sub></sup>
 * HOWTO Explicit argument indexes of formatter `fmt.Sprintf("%[2]d %[1]d", 11, 22)`
+* HOWTO Log [Structured logging][slog] <sup><sub>[Structured logging blog article][2384274408]</sub></sup>
 * HOWTO Log [go-cmp][] compare values `cmp.Equal(your_val1, your_val2)` and `cmp.Diff(your_val1, your_val2)` <sup><sub>Check equality or difference. `ignore := []cmp.Option{cmpopts.IgnoreFields(yourpkg.YourType{}, "YourFld1", "YourFld1")}; if !cmp.Equal(got, want, ignore...) { t.Errorf("\nyour diff:\n%s\ntest: %s", cmp.Diff(want, got, ignore...), "path/to/your_test.go:42") }` [GitLab uses go-cmp too](https://docs.gitlab.com/ee/development/go_guide/#test-diffs). [Dave Cheney uses cmp too](https://dave.cheney.net/practical-go/presentations/gophercon-singapore-2019.html). Logging. Testing. Debuging. Compare difference. Pretty print.</sub></sup>
 * HOWTO Log [Proto equal][proto] `proto.Equal(your_proto1, your_proto2)` <sup><sub>Check equality. Testing. Debugging. [DeepEqual][2542058847] </sub></sup>
 * HOWTO Log [Proto diff](https://google.golang.org/protobuf/testing/protocmp) `cmp.Diff(your_proto1, your_proto2, protocmp.Transform())` <sup><sub>Check difference. Testing. Debugging. [DeepEqual][2542058847]</sub></sup>
@@ -81,6 +82,7 @@
 [os.errpermission]: https://pkg.go.dev/os#ErrPermission
 [proto]: https://pkg.go.dev/google.golang.org/protobuf/proto
 [runtime]: https://pkg.go.dev/runtime
+[slog]: https://pkg.go.dev/log/slog "Structured logging"
 [sql.errnorows]: https://pkg.go.dev/database/sql#ErrNoRows
 [type assertion]: https://go.dev/ref/spec#Type_assertions
 [type conversion]: https://go.dev/ref/spec#Conversions
@@ -93,6 +95,7 @@
 [2031092561]: https://pkg.go.dev/fmt#Errorf
 [2122683529]: https://go.dev/blog/go1.13-errors#wrapping-errors-with-w
 [2319142434]: https://blog.golang.org/examples
+[2384274408]: https://go.dev/blog/slog "Structured logging"
 [2434259655]: https://github.com/golang/go/issues/51378#issuecomment-1053427475
 [2445429477]: https://go.dev/blog/cover
 [2453223740]: https://go.dev/doc/effective_go#interface-names
