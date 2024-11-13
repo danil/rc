@@ -53,7 +53,12 @@
 *   DOC Sentinel error [os.ErrDeadlineExceeded][]                      <sup><sub>I/O timeout. Common error. [564276647][]</sub></sup>
 *   DOC Sentinel error [sql.ErrNoRows][]                               <sup><sub>No rows in result set. Common error. [564276647][]</sub></sup>
 * HOWTO Explicit argument indexes of formatter `fmt.Sprintf("%[2]d %[1]d", 11, 22)`
+* HOWTO Log [go-cmp][] compare values `cmp.Equal(your_val1, your_val2)` and `cmp.Diff(your_val1, your_val2)` <sup><sub>Check equality or difference. `ignore := []cmp.Option{cmpopts.IgnoreFields(yourpkg.YourType{}, "YourFld1", "YourFld1")}; if !cmp.Equal(got, want, ignore...) { t.Errorf("\nyour diff:\n%s\ntest: %s", cmp.Diff(want, got, ignore...), "path/to/your_test.go:42") }` [GitLab uses go-cmp too](https://docs.gitlab.com/ee/development/go_guide/#test-diffs). [Dave Cheney uses cmp too](https://dave.cheney.net/practical-go/presentations/gophercon-singapore-2019.html). Logging. Testing. Debuging. Compare difference. Pretty print.</sub></sup>
+* HOWTO Log [Proto equal][proto] `proto.Equal(your_proto1, your_proto2)` <sup><sub>Check equality. Testing. Debugging. [DeepEqual][2542058847] </sub></sup>
+* HOWTO Log [Proto diff](https://google.golang.org/protobuf/testing/protocmp) `cmp.Diff(your_proto1, your_proto2, protocmp.Transform())` <sup><sub>Check difference. Testing. Debugging. [DeepEqual][2542058847]</sub></sup>
+* HOWTO Log [error diff][cmpopts] `cmp.Diff(your_error1, your_error2, cmpopts.EquateErrors())`  <sup><sub>Check difference. Testing. Debugging.</sub></sup>
 
+[cmpopts]: https://github.com/google/go-cmp/cmp/cmpopts
 [debug]: https://pkg.go.dev/runtime/debug
 [formatter]: https://pkg.go.dev/fmt#Formatter
 [freeosmemory]: https://pkg.go.dev/runtime/debug#FreeOSMemory
@@ -63,6 +68,7 @@
 [fs.errnotexist]: https://pkg.go.dev/io/fs#ErrNotExist
 [fs.errpermission]: https://pkg.go.dev/io/fs#ErrPermission
 [fstest]: https://pkg.go.dev/testing/fstest
+[go-cmp]: https://github.com/google/go-cmp
 [gosched]: https://pkg.go.dev/runtime#Gosched
 [homebrew]: https://formulae.brew.sh/formula/go#default
 [io.eof]: https://pkg.go.dev/io#EOF
@@ -73,6 +79,7 @@
 [os.errexist]: https://pkg.go.dev/os#ErrExist
 [os.errnotexist]: https://pkg.go.dev/os#ErrNotExist
 [os.errpermission]: https://pkg.go.dev/os#ErrPermission
+[proto]: https://pkg.go.dev/google.golang.org/protobuf/proto
 [runtime]: https://pkg.go.dev/runtime
 [sql.errnorows]: https://pkg.go.dev/database/sql#ErrNoRows
 [type assertion]: https://go.dev/ref/spec#Type_assertions
@@ -89,6 +96,7 @@
 [2434259655]: https://github.com/golang/go/issues/51378#issuecomment-1053427475
 [2445429477]: https://go.dev/blog/cover
 [2453223740]: https://go.dev/doc/effective_go#interface-names
+[2542058847]: https://protobuf.dev/reference/go/faq/#deepequal
 [2570645731]: https://blog.golang.org/subtests
 [269738468]: https://go.dev/blog/go15gc
 [2736769797]: https://pkg.go.dev/runtime#hdr-Environment_Variables
