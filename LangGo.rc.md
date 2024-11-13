@@ -452,7 +452,7 @@ The Go standard library already preserves sorted order of map keys:
 [1102513506]: https://github.com/curlconverter/curlconverter
 [1351755388]: https://curlconverter.com/go
 
-    curl -X POST "https://your.tld/your/path" -H "Content-Type: multipart/form-data" -F "file=@/etc/hosts;filename=your.file;type=*/*" --basic --user your_user:your_password
+    curl -X POST "https://your.tld/your/path" -H "Content-Type: multipart/form-data" -F "file=@/etc/hostname;filename=your.file;type=*/*" --basic --user your_user:your_password
 
 ```go
 package main
@@ -475,7 +475,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fd, err := os.Open("/etc/hosts")
+	fd, err := os.Open("/etc/hostname")
 	if err != nil {
 		log.Fatal(err)
 	}
