@@ -24,6 +24,7 @@
 * HOWTO [Table test generator][1563123227]
 * HOWTO [godef finds function definition][3825457580] `go get github.com/rogpeppe/godef && godef -f path/to/file.go 'yourpkgnm.YourFnNm'` <sup><sub>Find function definition by package and function name.</sub></sup>
 * HOWTO Run `go run ./...`
+* HOWTO Get [build ID][buildid] `go tool buildid path/to/your/file` <sup><sub>Display or update the build ID stored in a Go package or binary.</sub></sup>
 * HOWTO Build `CGO_ENABLED=0 go build ./...` <sup><sub>[4169212427][] [318174330][]</sub></sup>
 * HOWTO Build custom name `go build -o path/to/your/executable` <sup><sub>Build with custom executable name and custom output directory.</sub></sup>
 * HOWTO Build without cache `go build -a path/to/your/package` <sup><sub>Build cache invalidation. Invalidate cache. Recompile.</sub></sup>
@@ -61,6 +62,7 @@
 * HOWTO [Flag][] [Kong][] is a multi command command-line parser an alternative to using [flag.FlagSet][] <sup><sub> PROS: [Passthrough argument][2344166053]. NOTE: Console. Terminal.</sub></sup>
 * HOWTO VER1 [Flag][] [Flag set][flag.FlagSet] command-line parser allow multi command <sup><sub>In case you can't use, for example, [Kong][]. Console. Terminal.</sub></sup>
 
+[buildid]: https://pkg.go.dev/cmd/buildid
 [cmpopts]: https://github.com/google/go-cmp/cmp/cmpopts
 [debug]: https://pkg.go.dev/runtime/debug
 [flag.FlagSet]: https://pkg.go.dev/flag#FlagSet
