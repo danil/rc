@@ -68,7 +68,7 @@ export USER=$(whoami) && echo $(eval echo ~$USER)
 echo $(eval echo ~$(whoami))
 ```
 
-## HOWTO [UUID][] generation
+## HOWTO Random [UUID][] <sup><sub>Generate</sub></sup>
 
     cat /proc/sys/kernel/random/uuid
 
