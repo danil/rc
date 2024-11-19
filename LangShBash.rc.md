@@ -2,16 +2,20 @@
 
 [bash]: https://en.wikipedia.org/wiki/Bash_(Unix_shell)
 
-## HOWTO Path related to script
+* HOWTO Path related to script `ls "${BASH_SOURCE%/*}"/path/to/file` <sup><sub>File path related to script</sub></sup>
+* HOWTO Condition by one line VER2 `[ "$your_var" = "foo" ] && echo 1 || echo 0`
+* HOWTO Condition by one line VER1 `if [ "$your_var" = "foo" ]; then echo 1; else echo 0; fi`
+* HOWTO Temporary file `t=$(mktemp /tmp/filename.XXXXXX) && echo "Hello, World!" > $t && cat $t && rm $t` <sup><sub>[4291661438][] [1184632536][] [1281005826][]</sub></sup>
+* HOWTO Escape single quotes VER2 `echo 'Here'"'"'s my test...'` <sup><sub>Escape single quotes within single quotes. [4265458641][]</sub></sup>
+* HOWTO Escape single quotes VER1 `echo 'Here'\''s my test...'`
+* HOWTO Random [UUID][] `cat /proc/sys/kernel/random/uuid` <sup><sub>Generate</sub></sup>
+* HOWTO sudo `sudo -u your_usr -g your_grp path/to/your/script`
 
-File path related to script
-
-    ls "${BASH_SOURCE%/*}"/path/to/file
-
-## HOWTO Condition by one line
-
-    [ "$your_var" = "foo" ] && echo 1 || echo 0
-    if [ "$your_var" = "foo" ]; then echo 1; else echo 0; fi
+[uuid]: https://datatracker.ietf.org/doc/html/rfc4122 "RFC 4122"
+[1184632536]: https://gnu.org/software/coreutils/manual/coreutils.html#mktemp-invocation
+[1281005826]: https://ru.wikipedia.org/wiki/GNU_Coreutils
+[4265458641]: http://stackoverflow.com/questions/1250079/how-to-escape-single-quotes-within-single-quoted-strings
+[4291661438]: http://unix.stackexchange.com/questions/181937/how-create-a-temporary-file-in-shell-script#181938
 
 ## HOWTO Condition
 
@@ -22,24 +26,6 @@ else
     echo 0
 fi
 ```
-
-## HOWTO Temporary file
-
-* http://unix.stackexchange.com/questions/181937/how-create-a-temporary-file-in-shell-script#181938
-* https://www.gnu.org/software/coreutils/manual/coreutils.html#mktemp-invocation
-* https://ru.wikipedia.org/wiki/GNU_Coreutils
-
-```bash
-t=$(mktemp /tmp/filename.XXXXXX) && echo "Hello, World!" > $t && cat $t && rm $t
-```
-
-## HOWTO Escape single quotes
-
-Escape single quotes within single quotes
-<http://stackoverflow.com/questions/1250079/how-to-escape-single-quotes-within-single-quoted-strings>
-
-    echo 'Here'"'"'s my test...'
-    echo 'Here'\''s my test...'
 
 ## HOWTO Iterate over strings
 
@@ -67,13 +53,3 @@ Hello, World010!
 export USER=$(whoami) && echo $(eval echo ~$USER)
 echo $(eval echo ~$(whoami))
 ```
-
-## HOWTO Random [UUID][] <sup><sub>Generate</sub></sup>
-
-    cat /proc/sys/kernel/random/uuid
-
-[uuid]: https://datatracker.ietf.org/doc/html/rfc4122 "RFC 4122"
-
-## HOWTO sudo
-
-    sudo -u your_usr -g your_grp path/to/your/script
