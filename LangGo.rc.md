@@ -59,7 +59,7 @@
 *   DOC Sentinel error [os.ErrDeadlineExceeded][]                      <sup><sub>I/O timeout. Common error. [564276647][]</sub></sup>
 *   DOC Sentinel error [sql.ErrNoRows][]                               <sup><sub>No rows in result set. Common error. [564276647][]</sub></sup>
 * HOWTO Explicit argument indexes of formatter `fmt.Sprintf("%[2]d %[1]d", 11, 22)`
-* HOWTO [Flag][] [Kong][] is a multi command command-line parser an alternative to using [flag.FlagSet][] <sup><sub> PROS: [Passthrough argument][2344166053]. NOTE: Console. Terminal.</sub></sup>
+* HOWTO [Flag][] [Kong][] is a multi command command-line parser an alternative to using [flag.FlagSet][] <sup><sub> PROS: [Passthrough argument][2344166053]. [3264233233][] NOTE: Console. Terminal.</sub></sup>
 * HOWTO VER1 [Flag][] [Flag set][flag.FlagSet] command-line parser allow multi command <sup><sub>In case you can't use, for example, [Kong][]. Console. Terminal.</sub></sup>
 
 [buildid]: https://pkg.go.dev/cmd/buildid
@@ -116,6 +116,7 @@
 [2797441528]: https://go.dev/doc/effective_go#package-names "Effective Go Package names"
 [3137909250]: https://go.dev/wiki/CodeReviewComments#named-result-parameters "Named naked bare return."
 [318174330]:  https://stackoverflow.com/questions/36279253/go-compiled-binary-wont-run-in-an-alpine-docker-container-on-ubuntu-host#36308464
+[3264233233]: https://github.com/alecthomas/kong/discussions/336#discussioncomment-3809634 "Setting default file configuration values by `BeforeResolve` function."
 [3329569429]: https://go.dev/blog/package-names "Go Blog Package names"
 [3409454453]: https://github.com/golang/go/issues/21291 "Named naked bare return issues 21291."
 [3571357994]: https://go.dev/wiki/CodeReviewComments#line-length
