@@ -1,8 +1,9 @@
-# [Go][] programming language <sup><sub>[1][proverbs] [2][effective go]</sub></sup> rc
+# [Go][] programming language <sup><sub>[Stdlib][] [Proverbs][] [Effective Go][]</sub></sup> rc
 
 [effective go]: https://go.dev/doc/effective_go
 [go]: https://github.com/golang/go
 [proverbs]: https://go-proverbs.github.io
+[stdlib]: https://pkg.go.dev/std "Standard library."
 
 * HOWTO Install `brew install go` <sup><sub>[Homebrew][]</sub></sup>
 *   DOC Package name convention are given lower case, single-word names; there should be no need for underscores or mixedCaps. <sup><sub>Naming convention style [Effective Go Package names][2797441528] [Code Review Package names][186063190] [Go Blog Package names][3329569429] [4282605948][]</sub></sup>
@@ -457,12 +458,11 @@ encodes the values into URL encoded form _sorted by key_.
 
 ## DOC [JSON][] marshaling of map fields in sorted order
 
-The Go [standard library][stdlib] already preserves sorted order of map keys:
+The Go [Stdlib][] already preserves sorted order of map keys:
 
 > The map keys are sorted
 
 [json]: https://pkg.go.dev/encoding/json
-[stdlib]: https://pkg.go.dev/std "Standard library."
 
 ## HOWTO [HTTP][] `multipart/form-data` `POST` of file by local path <sup><sub>[*][multipart] [1102513506][] [1351755388][]</sub></sup>
 
