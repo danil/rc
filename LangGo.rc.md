@@ -457,12 +457,12 @@ encodes the values into URL encoded form _sorted by key_.
 
 ## DOC [JSON][] marshaling of map fields in sorted order
 
-The Go standard library already preserves sorted order of map keys:
+The Go [standard library][stdlib] already preserves sorted order of map keys:
 
 > The map keys are sorted
 
 [json]: https://pkg.go.dev/encoding/json
-
+[stdlib]: https://pkg.go.dev/std "Standard library."
 
 ## HOWTO [HTTP][] `multipart/form-data` `POST` of file by local path <sup><sub>[*][multipart] [1102513506][] [1351755388][]</sub></sup>
 
