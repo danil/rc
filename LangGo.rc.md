@@ -60,6 +60,13 @@
 *   DOC Sentinel error [os.ErrDeadlineExceeded][]                      <sup><sub>I/O timeout. Common error. [564276647][]</sub></sup>
 *   DOC Sentinel error [sql.ErrNoRows][]                               <sup><sub>No rows in result set. Common error. [564276647][]</sub></sup>
 * HOWTO Explicit argument indexes of formatter `fmt.Sprintf("%[2]d %[1]d", 11, 22)`
+* HOWTO Create dir or append file if _, err := os.Stat("your.f"); errors.Is(err, os.ErrNotExist) { _ = os.MkdirAll(filepath.Dir("your.f"), os.ModePerm) }; f, _ := os.OpenFile("your.f", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644); defer f.Close(); _, _ = f.Write([]byte("Hello, World!")) <sup><sub>Create or update/append file after create directory if not exist. [2502395997][] [3382294025][]</sub></sup>
+* HOWTO Create temp file VER2 `dirNm := filepath.Join(os.TempDir(), "your_dir"); _ = os.MkdirAll(dirNm, os.ModePerm); fileNm := filepath.Join(dirNm, "file_nm"+itoa.Uitoa(rand.Uint64())); f, _ := os.Create(fileNm); defer f.Close(); _, _ = f.Write([]byte("foo bar"))` <sup><sub>Create temporary file.</sub></sup>
+* HOWTO Create temp file VER1 `f, _ := os.CreateTemp(filepath.Join(os.TempDir(), "your_dir"), "your_prefix_"); defer f.Close(); _, _ = f.Write([]byte("foo"))` <sup><sub>Create temporary file.</sub></sup>
+* HOWTO Create temp dir VER2 `_ = os.MkdirAll(filepath.Join(os.TempDir(), "your_dir"), os.ModePerm)` <sup><sub>Create temporary directory. Function `os.MkdirTemp` just like DEPRECATED `ioutil.TempDir`.</sub></sup>
+* HOWTO Create temp dir VER1 `d, _ := os.MkdirTemp("", "your_prefix_"); defer os.RemoveAll(d)` <sup><sub>Create temporary directory.</sub></sup>
+* HOWTO Read all bytes `var bbytes.Buffer; io.Copy(&b r); fmt.Println("%s", b.String())` <sup><sub>Function `io.Copy` just like DEPRECATED `ioutil.ReadAll`.</sub></sup>
+* HOWTO `paths, err := filepath.Glob(pattern)` <sup><sub>[Globbing][1331922473] pattern sets of filenames with [wildcard characters][3498575828].</sub></sup>
 * HOWTO [Flag][] [Kong][] is a multi command command-line parser an alternative to using [flag.FlagSet][] <sup><sub> PROS: [Passthrough argument][2344166053]. [3264233233][] NOTE: Console. Terminal.</sub></sup>
 * HOWTO VER1 [Flag][] [Flag set][flag.FlagSet] command-line parser allow multi command <sup><sub>In case you can't use, for example, [Kong][]. Console. Terminal.</sub></sup>
 
@@ -96,6 +103,7 @@
 [type conversion]: https://go.dev/ref/spec#Conversions
 [1056894504]: https://github.com/spf13/afero
 [1238582052]: https://pkg.go.dev/errors#pkg-overview
+[1331922473]: https://en.wikipedia.org/wiki/Glob_(programming) "Globbing."
 [1469759186]: https://github.com/alecthomas/kong/issues/72 "Difference between Kong and Cobra and Kingpin."
 [1563123227]: https://github.com/cweill/gotests
 [1642752273]: https://stackoverflow.com/questions/24504024/defining-independent-flagsets-in-golang#24510031 "Multi flag.FlagSet"
@@ -110,6 +118,7 @@
 [2434259655]: https://github.com/golang/go/issues/51378#issuecomment-1053427475
 [2445429477]: https://go.dev/blog/cover
 [2453223740]: https://go.dev/doc/effective_go#interface-names
+[2502395997]: https://pkg.go.dev/os#example-OpenFile-Append
 [2542058847]: https://protobuf.dev/reference/go/faq/#deepequal
 [2570645731]: https://blog.golang.org/subtests
 [269738468]: https://go.dev/blog/go15gc
@@ -119,7 +128,9 @@
 [318174330]:  https://stackoverflow.com/questions/36279253/go-compiled-binary-wont-run-in-an-alpine-docker-container-on-ubuntu-host#36308464
 [3264233233]: https://github.com/alecthomas/kong/discussions/336#discussioncomment-3809634 "Setting default file configuration values by `BeforeResolve` hook function."
 [3329569429]: https://go.dev/blog/package-names "Go Blog Package names"
+[3382294025]: https://stackoverflow.com/questions/12518876/how-to-check-if-a-file-exists-in-go#12518877
 [3409454453]: https://github.com/golang/go/issues/21291 "Named naked bare return issues 21291."
+[3498575828]: https://en.wikipedia.org/wiki/Wildcard_character
 [3571357994]: https://go.dev/wiki/CodeReviewComments#line-length
 [3699179768]: https://github.com/golang/go/issues/20859 "Named naked bare return issues 20859."
 [3825108315]: https://github.com/golang/go/issues/44279
