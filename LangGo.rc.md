@@ -52,15 +52,20 @@
 * HOWTO Print [Proto diff](https://google.golang.org/protobuf/testing/protocmp) `cmp.Diff(your_proto1, your_proto2, protocmp.Transform())` <sup><sub>Printing. Logging. Check difference. Testing. Debugging. [DeepEqual][2542058847]</sub></sup>
 * HOWTO Print [Error diff][cmpopts] `cmp.Diff(your_error1, your_error2, cmpopts.EquateErrors())`  <sup><sub>Printing. Logging. Check difference. Testing. Debugging.</sub></sup>
 * HOWTO Error wrapping and formatting `fmt.Errorf("your error: %w", errors.New("something went wrong"))` <sup><sub>[*][1238582052] [*][2031092561] [*][2122683529]</sub></sup>
-*   DOC Sentinel error [io.EOF][]                                      <sup><sub>End of input. Common error. [564276647][]</sub></sup>
-*   DOC Sentinel error [os.ErrInvalid][]          [fs.ErrInvalid][]    <sup><sub>Invalid argument. Common error. [564276647][]</sub></sup>
-*   DOC Sentinel error [os.ErrPermission][]       [fs.ErrPermission][] <sup><sub>Permission denied. Common error. [564276647][]</sub></sup>
-*   DOC Sentinel error [os.ErrExist][]            [fs.ErrExist][]      <sup><sub>File already exists. Common error. [564276647][]</sub></sup>
-*   DOC Sentinel error [os.ErrNotExist][]         [fs.ErrNotExist][]   <sup><sub>File does not exist. Common error. [564276647][]</sub></sup>
-*   DOC Sentinel error [os.ErrClosed][]           [fs.ErrClosed][]     <sup><sub>File already closed. Common error. [564276647][]</sub></sup>
-*   DOC Sentinel error [os.ErrNoDeadline][]                            <sup><sub>File type does not support deadline. Common error. [564276647][]</sub></sup>
-*   DOC Sentinel error [os.ErrDeadlineExceeded][]                      <sup><sub>I/O timeout. Common error. [564276647][]</sub></sup>
-*   DOC Sentinel error [sql.ErrNoRows][]                               <sup><sub>No rows in result set. Common error. [564276647][]</sub></sup>
+*   DOC Sentinel is a `sentinel error` <sup><sub>[Working with Errors in Go 1.13][1746613335] [Dave Cheney, Sentinel error][4005296955] [Error Inspection Draft Design 2018-08-27 Damien Neil][2397977476]</sub></sup>
+*   DOC Sentinel [io.EOF][]                                      <sup><sub>End of input. Common error. [564276647][]</sub></sup>
+*   DOC Sentinel [os.ErrInvalid][]          [fs.ErrInvalid][]    <sup><sub>Invalid argument. Common error. [564276647][]</sub></sup>
+*   DOC Sentinel [os.ErrPermission][]       [fs.ErrPermission][] <sup><sub>Permission denied. Common error. [564276647][]</sub></sup>
+*   DOC Sentinel [os.ErrExist][]            [fs.ErrExist][]      <sup><sub>File already exists. Common error. [564276647][]</sub></sup>
+*   DOC Sentinel [os.ErrNotExist][]         [fs.ErrNotExist][]   <sup><sub>File does not exist. Common error. [564276647][]</sub></sup>
+*   DOC Sentinel [os.ErrClosed][]           [fs.ErrClosed][]     <sup><sub>File already closed. Common error. [564276647][]</sub></sup>
+*   DOC Sentinel [os.ErrNoDeadline][]                            <sup><sub>File type does not support deadline. Common error. [564276647][]</sub></sup>
+*   DOC Sentinel [os.ErrDeadlineExceeded][]                      <sup><sub>I/O timeout. Common error. [564276647][]</sub></sup>
+*   DOC Sentinel [sql.ErrNoRows][]                               <sup><sub>No rows in result set. Common error. [564276647][]</sub></sup>
+*   DOC Sentinel [sql.ErrNoRows][]                               <sup><sub>No rows in result set. Common error. [564276647][]</sub></sup>
+*   DOC Sentinel [fs.PathError][] <sup><sub>[1595088486][]</sub></sup>
+*   DOC Sentinel [fs.PathError][] `if e, ok := err.(*fs.PathError); ok { e.Timeout() }` or [url.Error][] `if e, ok := err.(*url.Error); ok { e.Timeout() }` or in general `if e, ok := err.(interface{ Timeout() bool }); ok { e.Timeout() }` <sup><sub>[1595088486][]</sub></sup>
+*   DOC Sentinel [url.InvalidHostError][] is a `string error`.
 * HOWTO Explicit argument indexes of formatter `fmt.Sprintf("%[2]d %[1]d", 11, 22)`
 * HOWTO Create dir or append file if _, err := os.Stat("your.f"); errors.Is(err, os.ErrNotExist) { _ = os.MkdirAll(filepath.Dir("your.f"), os.ModePerm) }; f, _ := os.OpenFile("your.f", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644); defer f.Close(); _, _ = f.Write([]byte("Hello, World!")) <sup><sub>Create or update/append file after create directory if not exist. [2502395997][] [3382294025][]</sub></sup>
 * HOWTO Create temp file VER2 `dirNm := filepath.Join(os.TempDir(), "your_dir"); _ = os.MkdirAll(dirNm, os.ModePerm); fileNm := filepath.Join(dirNm, "file_nm"+itoa.Uitoa(rand.Uint64())); f, _ := os.Create(fileNm); defer f.Close(); _, _ = f.Write([]byte("foo bar"))` <sup><sub>Create temporary file.</sub></sup>
@@ -72,7 +77,6 @@
 * HOWTO [Flag][] [Kong][] is a multi command command-line parser an alternative to using [flag.FlagSet][] <sup><sub> PROS: [Passthrough argument][2344166053]. [3264233233][] NOTE: Console. Terminal.</sub></sup>
 * HOWTO VER1 [Flag][] [Flag set][flag.FlagSet] command-line parser allow multi command <sup><sub>In case you can't use, for example, [Kong][]. Console. Terminal.</sub></sup>
 
-[generic]: https://go.dev/doc/tutorial/generics
 [buildid]: https://pkg.go.dev/cmd/buildid
 [cmpopts]: https://github.com/google/go-cmp/cmp/cmpopts
 [debug]: https://pkg.go.dev/runtime/debug
@@ -85,7 +89,9 @@
 [fs.errexist]: https://pkg.go.dev/io/fs#ErrExist
 [fs.errnotexist]: https://pkg.go.dev/io/fs#ErrNotExist
 [fs.errpermission]: https://pkg.go.dev/io/fs#ErrPermission
+[fs.patherror]: https://pkg.go.dev/io/fs#PathError
 [fstest]: https://pkg.go.dev/testing/fstest
+[generic]: https://go.dev/doc/tutorial/generics
 [go-cmp]: https://github.com/google/go-cmp
 [gosched]: https://pkg.go.dev/runtime#Gosched
 [homebrew]: https://formulae.brew.sh/formula/go#default
@@ -104,14 +110,18 @@
 [sql.errnorows]: https://pkg.go.dev/database/sql#ErrNoRows
 [type assertion]: https://go.dev/ref/spec#Type_assertions
 [type conversion]: https://go.dev/ref/spec#Conversions
+[url.error]: https://pkg.go.dev/net/url#Error
+[url.invalidhosterror]: https://pkg.go.dev/net/url#InvalidHostError
 [1056894504]: https://github.com/spf13/afero
 [1238582052]: https://pkg.go.dev/errors#pkg-overview
 [127187619]: https://go.dev/blog/intro-generics "Intro generics since 1.18"
 [1331922473]: https://en.wikipedia.org/wiki/Glob_(programming) "Globbing."
 [1469759186]: https://github.com/alecthomas/kong/issues/72 "Difference between Kong and Cobra and Kingpin."
 [1563123227]: https://github.com/cweill/gotests
+[1595088486]: https://pkg.go.dev/os#PathError
 [1642752273]: https://stackoverflow.com/questions/24504024/defining-independent-flagsets-in-golang#24510031 "Multi flag.FlagSet"
 [1720623323]: https://go.dev/blog/race-detector
+[1746613335]: https://go.dev/blog/go1.13-errors "Working with Errors in Go 1.13"
 [1746671570]: https://github.com/golang/go/issues/44166
 [186063190]: https://go.dev/wiki/CodeReviewComments#package-names "Code Review Package names"
 [2031092561]: https://pkg.go.dev/fmt#Errorf
@@ -119,6 +129,7 @@
 [2319142434]: https://blog.golang.org/examples
 [2344166053]: https://github.com/alecthomas/kong#supported-tags "Passthrough argument."
 [2384274408]: https://go.dev/blog/slog "Structured logging"
+[2397977476]: https://go.googlesource.com/proposal/+/master/design/go2draft-error-inspection.md "Error Inspection Draft Design 2018-08-27 Damien Neil"
 [2434259655]: https://github.com/golang/go/issues/51378#issuecomment-1053427475
 [2445429477]: https://go.dev/blog/cover
 [2453223740]: https://go.dev/doc/effective_go#interface-names
@@ -141,6 +152,7 @@
 [3825108315]: https://github.com/golang/go/issues/44279
 [3825457580]: https://pkg.go.dev/github.com/rogpeppe/godef
 [3989277831]: https://habr.com/ru/post/502506
+[4005296955]: https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully "Dave Cheney, Sentinel error"
 [4126800382]: https://github.com/golang/go/issues/24573#issuecomment-393818160
 [4169212427]: https://stackoverflow.com/questions/64421305/heroku-go-app-crashes-version-glibc-2-32-not-found-required-by-bin-main#65919767
 [4252385712]: https://go.dev/blog/when-generics
