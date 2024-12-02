@@ -42,6 +42,8 @@
 * HOWTO Code review: The named return is good but the naked is bad <sup><sub>Convention style. Bare return is bad. [1][3699179768] [2][3409454453] [3][3137909250]</sub></sup>
 * HOWTO [Type conversion][] `var i int = 42; f float64 = float(i); i := (*int)(nil)` <sup><sub>Example.</sub></sup>
 * HOWTO [Type assertion][] `var x interface{} = 42; i := x.(int)` <sup><sub>Example.</sub></sup>
+*   DOC [Generic][] type <sup><sub>[Intro generics since 1.18][127187619]. [When generics][4252385712]. [Example][3349214068][].</sub></sup>
+* HOWTO Dave Cheney: *"accept interfaces, return structs"* <sup><sub>[991876724][] Jack Lindamood: "A great rule of thumb for Go is accept interfaces, return structs." Cite. </sub></sup>
 * HOWTO Non-nil interface type and nil interface value `if i, ok := value.source.(fmt.Stringer); ok {; if i == nil || (reflect.ValueOf(i).Kind() == reflect.Ptr && reflect.ValueOf(i).IsNil()) {; return "This is real nil or nil value and non nil type."; }; }`
 * HOWTO Print [Formatter][] `type Formatter interface {; Format(f State, c rune); }` <sup><sub>[99610387][]</sub></sup>
 * HOWTO Print [Structured logging][slog] <sup><sub>Printing. Logging. [Structured logging blog article][2384274408]</sub></sup>
@@ -70,6 +72,7 @@
 * HOWTO [Flag][] [Kong][] is a multi command command-line parser an alternative to using [flag.FlagSet][] <sup><sub> PROS: [Passthrough argument][2344166053]. [3264233233][] NOTE: Console. Terminal.</sub></sup>
 * HOWTO VER1 [Flag][] [Flag set][flag.FlagSet] command-line parser allow multi command <sup><sub>In case you can't use, for example, [Kong][]. Console. Terminal.</sub></sup>
 
+[generic]: https://go.dev/doc/tutorial/generics
 [buildid]: https://pkg.go.dev/cmd/buildid
 [cmpopts]: https://github.com/google/go-cmp/cmp/cmpopts
 [debug]: https://pkg.go.dev/runtime/debug
@@ -103,6 +106,7 @@
 [type conversion]: https://go.dev/ref/spec#Conversions
 [1056894504]: https://github.com/spf13/afero
 [1238582052]: https://pkg.go.dev/errors#pkg-overview
+[127187619]: https://go.dev/blog/intro-generics "Intro generics since 1.18"
 [1331922473]: https://en.wikipedia.org/wiki/Glob_(programming) "Globbing."
 [1469759186]: https://github.com/alecthomas/kong/issues/72 "Difference between Kong and Cobra and Kingpin."
 [1563123227]: https://github.com/cweill/gotests
@@ -128,6 +132,7 @@
 [318174330]:  https://stackoverflow.com/questions/36279253/go-compiled-binary-wont-run-in-an-alpine-docker-container-on-ubuntu-host#36308464
 [3264233233]: https://github.com/alecthomas/kong/discussions/336#discussioncomment-3809634 "Setting default file configuration values by `BeforeResolve` hook function."
 [3329569429]: https://go.dev/blog/package-names "Go Blog Package names"
+[3349214068]: https://github.com/mattn/go-generics-example
 [3382294025]: https://stackoverflow.com/questions/12518876/how-to-check-if-a-file-exists-in-go#12518877
 [3409454453]: https://github.com/golang/go/issues/21291 "Named naked bare return issues 21291."
 [3498575828]: https://en.wikipedia.org/wiki/Wildcard_character
@@ -138,11 +143,13 @@
 [3989277831]: https://habr.com/ru/post/502506
 [4126800382]: https://github.com/golang/go/issues/24573#issuecomment-393818160
 [4169212427]: https://stackoverflow.com/questions/64421305/heroku-go-app-crashes-version-glibc-2-32-not-found-required-by-bin-main#65919767
+[4252385712]: https://go.dev/blog/when-generics
 [4282605948]: https://go.dev/talks/2016/refactor.article
 [557989519]: https://golang.org/doc/articles/go_command.html
 [564276647]: https://dave.cheney.net/tag/errors
 [629190432]: https://go.dev/learn/#featured-books
 [91357513]: https://go.dev/wiki/CodeReviewComments#initialisms
+[991876724]: https://dave.cheney.net/2016/08/20/solid-go-design
 [99610387]: https://pkg.go.dev/github.com/pkg/errors#Frame.Format
 
 ## HOWTO [Hello, World!][]
