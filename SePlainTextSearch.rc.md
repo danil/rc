@@ -1,9 +1,13 @@
 # Plain text search util rc
 
-1. [ripgrep][]
-2. [ag][]
-3. [ack][] Deprecated.
+* [Ripgrep][rg].
+* [Ugrep][ug] Drop-in replacement for [Grep][].
+* [The Silver Searcher][ag].
+* [GNU Grep][grep].
+* DEPRECATED [Ack][].
 
 [ack]: https://github.com/samaaron/ack
 [ag]: https://github.com/ggreer/the_silver_searcher
-[ripgrep]: https://github.com/burntsushi/ripgrep
+[grep]: https://gnu.org/software/grep "GNU Grep"
+[rg]: https://github.com/burntsushi/ripgrep
+[ug]: https://github.com/genivia/ugrep
