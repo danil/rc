@@ -51,7 +51,8 @@
 * HOWTO Print [Proto equal][proto] `proto.Equal(your_proto1, your_proto2)` <sup><sub>Printing. Logging. Check equality. Testing. Debugging. [DeepEqual][2542058847] </sub></sup>
 * HOWTO Print [Proto diff](https://google.golang.org/protobuf/testing/protocmp) `cmp.Diff(your_proto1, your_proto2, protocmp.Transform())` <sup><sub>Printing. Logging. Check difference. Testing. Debugging. [DeepEqual][2542058847]</sub></sup>
 * HOWTO Print [Error diff][cmpopts] `cmp.Diff(your_error1, your_error2, cmpopts.EquateErrors())`  <sup><sub>Printing. Logging. Check difference. Testing. Debugging.</sub></sup>
-* HOWTO Error wrapping and formatting `fmt.Errorf("your error: %w", errors.New("something went wrong"))` <sup><sub>[*][1238582052] [*][2031092561] [*][2122683529]</sub></sup>
+* HOWTO Error wrap format join `errors.Join(fmt.Errorf("your error: %w", errors.New("foo")), errors.New("bar"))` <sup><sub>Wrapping. Formatting. Joining. [1238582052][] [2031092561][] [2122683529][]</sub></sup>
+* HOWTO Error unwrap and compare `func equal(err, err2 error) bool { if err == err2 { return true }; if err := errors.Unwrap(err); err != nil { if ok := equal(err, err2); ok { return true } }; if v, ok := err.(interface{ Unwrap() []error }); ok { for _, err := range v.Unwrap() { if ok := equal(err, err2); ok { return true } } }; return false }` <sup><sub>The example `equal` fn compares the wrapped errors recursively. [1121809002][].</sub></sup>
 *   DOC Sentinel is a `sentinel error` <sup><sub>[Working with Errors in Go 1.13][1746613335] [Dave Cheney, Sentinel error][4005296955] [Error Inspection Draft Design 2018-08-27 Damien Neil][2397977476]</sub></sup>
 *   DOC Sentinel [io.EOF][]                                      <sup><sub>End of input. Common error. [564276647][]</sub></sup>
 *   DOC Sentinel [os.ErrInvalid][]          [fs.ErrInvalid][]    <sup><sub>Invalid argument. Common error. [564276647][]</sub></sup>
@@ -113,6 +114,7 @@
 [url.error]: https://pkg.go.dev/net/url#Error
 [url.invalidhosterror]: https://pkg.go.dev/net/url#InvalidHostError
 [1056894504]: https://github.com/spf13/afero
+[1121809002]: https://reddit.com/r/golang/comments/172rj7h "What is the rationale for not providing errors Unwrap []error?"
 [1238582052]: https://pkg.go.dev/errors#pkg-overview
 [127187619]: https://go.dev/blog/intro-generics "Intro generics since 1.18"
 [1331922473]: https://en.wikipedia.org/wiki/Glob_(programming) "Globbing."
