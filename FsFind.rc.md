@@ -2,23 +2,23 @@
 
 [find]: https://en.wikipedia.org/wiki/Find_(Unix)
 
-* HOWTO Latest modified in last minute   `find your/path -mmin 1`       <sup><sub>Find recently changed files within 1 minutes. Recently changed. [4038478314][]</sub></sup>
-* HOWTO Latest modified in last 24 hours `find your/path -mtime -1 -ls` <sup><sub>[4038478314][]</sub></sup>
-* HOWTO Match regexp with logical operator *`OR`* `find -regex ".*\(your-dir1\|your-dir2\).*your.file"`         <sup><sub>[773388999][]</sub></sup>
-* HOWTO Latest modified/newest files  `find . -type f -printf '%T@ %p\n' | sort -n | tail -42 | cut -f2- -d" "` <sup><sub>Latest modified/newest files (42 items). [602259898][].</sub></sup>
-* HOWTO Search and remove file with inode number `ls -il /var/ftp/incoming` and then `find /var/ftp/incoming -inum [inode-number] -exec rm {} \;` <sup><sub>[2449165184][] [1301733587][]</sub></sup>
-* HOWTO Recreate symlinks             `find / -type l -exec sh -c 'lname="{}"; ltarget=$(readlink "${lname}"); rm "${lname}"; ln -s "${ltarget}" "${lname}"' \;`
-* HOWTO Count named directories       `find -type d -name "your_nm" | wc -l`
-* HOWTO Empty directories             `find -type d -empty`
-* HOWTO Remove empty directories      `find -type d -empty -delete` or `find -type d -empty -depth -exec rmdir {} \;`
-* HOWTO Remove empty/zero size files  `find -type f -empty -delete` or `find -type f -size 0 -delete`
-* HOWTO Remove temporary files        `find -mount -type f -iname "*~" -exec rm {} \;`
-* HOWTO Remove compilation files      `find -type f -iname '*.o' -or -iname '*.ko'`
-* HOWTO Exclude dirs VER2             `find where/to/find -name *your_pattern* -not -path '*/first_dir*' -not -path '*/second_dir*'` <sup><sub>Find but not in some directories. Except directories.</sub></sup>
-* HOWTO Exclude dirs VER1             `find where/to/find -name *your_pattern* ! -path '*/first_dir*' ! -path '*/second_dir*'`       <sup><sub>Except.</sub></sup>
-* HOWTO Exclude `git` dir VER2        `find -not -path '*/.git*'`       <sup><sub>Except `git` directory.</sub></sup>
-* HOWTO Exclude `git` dir VER1        `find -not -iwholename '*/.git*'` <sup><sub>Except.</sub></sup>
-* HOWTO Sort by date                  `find where/to/find -name *your_pattern* -printf "%T+\t%p\n" | sort` <sup><sub>Find and sort results by mtime. [981028587][]</sub></sup>
+* HOWTO Latest modified in minute   `find your/path -mmin 1`       <sup><sub>Find recently changed files within last 1 minutes. Recently changed. [4038478314][]</sub></sup>
+* HOWTO Latest modified in 24 hours `find your/path -mtime -1 -ls` <sup><sub>Latest modified in last 24 hours. [4038478314][]</sub></sup>
+* HOWTO Regexp *`OR`*       `find -regex ".*\(your-dir1\|your-dir2\).*your.file"`                     <sup><sub>Match regexp with logical *`OR`* operator. [773388999][]</sub></sup>
+* HOWTO Latest modified     `find . -type f -printf '%T@ %p\n' | sort -n | tail -42 | cut -f2- -d" "` <sup><sub>Newest files (42 items). [602259898][].</sub></sup>
+* HOWTO Recreate symlinks   `find / -type l -exec sh -c 'lname="{}"; ltarget=$(readlink "${lname}"); rm "${lname}"; ln -s "${ltarget}" "${lname}"' \;`
+* HOWTO Count named dirs    `find -type d -name "your_nm" | wc -l` <sup><sub>Count named directories.</sub></sub>
+* HOWTO Empty directories   `find -type d -empty`
+* HOWTO Remove empty dirs   `find -type d -empty -delete` or `find -type d -empty -depth -exec rmdir {} \;` <sup><sub>Remove empty directories.</sub></sup>
+* HOWTO Remove empty files  `find -type f -empty -delete` or `find -type f -size 0 -delete` <sup><sub>Remove zero size files.</sub></sup>
+* HOWTO Remove temp files   `find -mount -type f -iname "*~" -exec rm {} \;` <sup><sub>Remove temporary files.</sub></sup>
+* HOWTO Remove compil files `find -type f -iname '*.o' -or -iname '*.ko'`    <sup><sub>Remove compilation files.</sub></sup>
+* HOWTO Remove by inode     `ls -il /var/ftp/incoming` and then `find /var/ftp/incoming -inum [inode-number] -exec rm {} \;` <sup><sub>Search and remove file with inode number. [2449165184][] [1301733587][]</sub></sup>
+* HOWTO Exclude dirs VER2   `find where/to/find -name *your_pattern* -not -path '*/first_dir*' -not -path '*/second_dir*'`   <sup><sub>Find but not in some directories. Except directories.</sub></sup>
+* HOWTO Exclude dirs VER1   `find where/to/find -name *your_pattern* ! -path '*/first_dir*' ! -path '*/second_dir*'`         <sup><sub>Except.</sub></sup>
+* HOWTO Exclude `git` dir VER2 `find -not -path '*/.git*'`       <sup><sub>Except `git` directory.</sub></sup>
+* HOWTO Exclude `git` dir VER1 `find -not -iwholename '*/.git*'` <sup><sub>Except.</sub></sup>
+* HOWTO Sort by date        `find where/to/find -name *your_pattern* -printf "%T+\t%p\n" | sort` <sup><sub>Find and sort results by mtime. [981028587][]</sub></sup>
 
 [1301733587]: http://www.cyberciti.biz/tips/delete-remove-files-with-inode-number.html
 [2449165184]: http://unix.com/solaris/23278-file-no-name.html
