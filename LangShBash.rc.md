@@ -5,7 +5,7 @@
 * HOWTO Path related to script `ls "${BASH_SOURCE%/*}"/path/to/file` <sup><sub>File path related to script</sub></sup>
 * HOWTO Condition by one line VER2 `[ "$your_var" = "foo" ] && echo 1 || echo 0`
 * HOWTO Condition by one line VER1 `if [ "$your_var" = "foo" ]; then echo 1; else echo 0; fi`
-* HOWTO Temporary file `t=$(mktemp /tmp/filename.XXXXXX) && echo "Hello, World!" > $t && cat $t && rm $t` <sup><sub>[4291661438][] [1184632536][] [1281005826][]</sub></sup>
+* HOWTO Temporary file `f=$(mktemp /tmp/filename.XXXXXX) && echo "Hello, World!" > $f && cat $f && rm $f` <sup><sub>[4291661438][] [1184632536][] [1281005826][]</sub></sup>
 * HOWTO Escape single quotes VER2 `echo 'Here'"'"'s my test...'` <sup><sub>Escape single quotes within single quotes. [4265458641][]</sub></sup>
 * HOWTO Escape single quotes VER1 `echo 'Here'\''s my test...'`
 * HOWTO Random [UUID][] `cat /proc/sys/kernel/random/uuid` <sup><sub>Generate</sub></sup>
