@@ -9,7 +9,7 @@
 * HOWTO Escape single quotes VER2 `echo 'Here'"'"'s my test...'` <sup><sub>Escape single quotes within single quotes. [4265458641][]</sub></sup>
 * HOWTO Escape single quotes VER1 `echo 'Here'\''s my test...'`
 * HOWTO Random [UUID][] `cat /proc/sys/kernel/random/uuid` <sup><sub>Generate</sub></sup>
-* HOWTO sudo `sudo -u your_usr -g your_grp path/to/your/script`
+* HOWTO Run as user and group `sudo -u your_usr -g your_grp path/to/your/script`
 
 [uuid]: https://datatracker.ietf.org/doc/html/rfc4122 "RFC 4122"
 [1184632536]: https://gnu.org/software/coreutils/manual/coreutils.html#mktemp-invocation
