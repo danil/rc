@@ -10,10 +10,13 @@
 * HOWTO Escape single quotes VER1 `echo 'Here'\''s my test...'`
 * HOWTO Random [UUID][] `cat /proc/sys/kernel/random/uuid` <sup><sub>Generate</sub></sup>
 * HOWTO Run as user and group `sudo -u your_usr -g your_grp path/to/your/script`
+* HOWTO Create sequentially numbered files `for i in $(seq -w 1 10); do printf "Hello, $i" >> hello$i.txt; done` <sup><sub>Create sequentially numbered file names. [2842987397][]</sub></sup>
+* HOWTO Enlarge existent files `f=$(mktemp /tmp/your.XXXXXX) && dd if=/dev/zero bs=1M count=1 | base64 > $f && find . -type f -regex "your.*regex" -print0 | xargs -0 -I{} cp $f '{}' && rm $f` <sup><sub>Make temporary big files.</sub></sup>
 
 [uuid]: https://datatracker.ietf.org/doc/html/rfc4122 "RFC 4122"
 [1184632536]: https://gnu.org/software/coreutils/manual/coreutils.html#mktemp-invocation
 [1281005826]: https://ru.wikipedia.org/wiki/GNU_Coreutils
+[2842987397]: https://unix.stackexchange.com/questions/340010/how-do-i-create-sequentially-numbered-file-names-in-bash#340012
 [4265458641]: http://stackoverflow.com/questions/1250079/how-to-escape-single-quotes-within-single-quoted-strings
 [4291661438]: http://unix.stackexchange.com/questions/181937/how-create-a-temporary-file-in-shell-script#181938
 
