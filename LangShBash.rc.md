@@ -35,9 +35,7 @@ Hello, World1!
 Hello, World2!
 ```
 
-## HOWTO Iterate over range
-
-<http://stackoverflow.com/questions/18460123/how-to-add-leading-zeros-for-for-loop-in-shell#18460742>
+## HOWTO Iterate over range <sup><sub>[1329543776][]</sub></sup>
 
 ```bash
 $ for i in {009..010} ; do echo "Hello, World$i!" ; done
@@ -45,11 +43,13 @@ Hello, World009!
 Hello, World010!
 ```
 
-## HOWTO Get home directory by username
+[1329543776]: http://stackoverflow.com/questions/18460123/how-to-add-leading-zeros-for-for-loop-in-shell#18460742
 
-<https://superuser.com/questions/484277/get-home-directory-by-username#484280>
+## HOWTO Get home directory by username <sup><sub>[2150391725][]</sub></sup>
 
 ```bash
 export USER=$(whoami) && echo $(eval echo ~$USER)
 echo $(eval echo ~$(whoami))
 ```
+
+[2150391725]: https://superuser.com/questions/484277/get-home-directory-by-username#484280
