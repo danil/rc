@@ -1,4 +1,6 @@
-# Aptitude rc
+# Aptitude <sup><sub>[PMS][]</sub></sup> rc
+
+[pms]: https://en.wikipedia.org/wiki/Package_manager "Package Management System"
 
 ## List explicitly installed packages
 
