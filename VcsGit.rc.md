@@ -433,6 +433,12 @@ Find submodules even not listed in `.gitmodules` file
 
     git diff HEAD^ HEAD --name-only
 
+## Diff changed files <sup><sub>Diff only changed files. Filter git diff by type of change: `A` Added, `C` Copied, `D` Deleted, `M` Modified, `R` Renamed, `T` have their type (mode) changed, `U` Unmerged, `X` Unknown, `B` have had their pairing Broken, `*` All-or-none. [3009239091][]</sub></sup>
+
+    git diff --diff-filter=M
+
+[3009239091]: https://stackoverflow.com/questions/6879501/filter-git-diff-by-type-of-change#6879568
+
 ## diffstat of binary files
 
     git diff --stat public/images/article_pics/1.jpg
