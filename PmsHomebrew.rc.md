@@ -1,11 +1,11 @@
-# [Homebrew][] <sup><sub>[PMS][]</sub></sup> rc
+# [Homebrew][Brew] <sup><sub>[PMS][]</sub></sup> rc
 
-[homebrew]: https://github.com/homebrew/brew
+[brew]: https://github.com/homebrew/brew "Homebrew."
 [pms]: https://en.wikipedia.org/wiki/Package_manager "Package Management System"
 
 * HOWTO Install homebrew VER2 `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` <sup><sub>Install homebrew itself. [2745483436][]</sub></sup>
 * HOWTO Install homebrew VER1 `test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"` and `test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"` and `test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bash_profile` and `echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.profile` <sup><sub>Install homebrew itself on [Linux]. [133724532][]</sub></sup>
-* HOWTO Uninstall Homebrew `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"` <sup><sub>Uninstall Homebrew itself. [1581471907][]</sub></sup>
+* HOWTO Uninstall Homebrew `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"` <sup><sub>Uninstall Homebrew itself. [Uninstall script][3265157584]. [Uninstall FAQ][4041328573].</sub></sup>
 * HOWTO List installed    `brew list`          <sup><sub>List installed packages.</sub></sup>
 * HOWTO Check installed   `brew list your-pkg` <sup><sub>Check if package is installed.</sub></sup>
 * HOWTO Search            `brew search your-pkg`
@@ -33,7 +33,8 @@
 [linux]: https://github.com/torvalds/linux
 [133724532]: https://docs.brew.sh/Homebrew-on-Linux#install
 [2745483436]: https://brew.sh/#Install%20Homebrew
-[1581471907]: https://github.com/homebrew/install?tab=readme-ov-file#uninstall-homebrew
+[3265157584]: https://github.com/homebrew/install#uninstall-homebrew "Homebrew uninstall script"
+[4041328573]: https://docs.brew.sh/FAQ#how-do-i-uninstall-homebrew "Homebrew uninstall FAQ"
 
 ## TROUBLESHOOTING Nginx service
 

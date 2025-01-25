@@ -49,11 +49,12 @@ Format usb to fat32 (a-la `mkdosfs`)
       | xargs du -b 2>/dev/null \
       | awk '{total += $1; print $0} END{print total}'
 
-## Get UUID
-
-<http://unix.stackexchange.com/questions/658/linux-how-can-i-view-all-uuids-for-all-available-disks-on-my-system#660>
+## Get [UUID][] <sup><sub>[787061077][]</sub></sup>
 
     ls -l /dev/disk/by-uuid | grep sda1
+
+[uuid]: https://datatracker.ietf.org/doc/html/rfc4122 "RFC 4122"
+[787061077]: http://unix.stackexchange.com/questions/658/linux-how-can-i-view-all-uuids-for-all-available-disks-on-my-system#660
 
 ## dd copy partition
 
@@ -103,14 +104,14 @@ Copy ISO image to bootable usb
 * `fclones` <https://github.com/pkolaczk/fclones>. PROS: [Rust][].
 * `fdupes` <https://github.com/adrianlopezroche/fdupes>. PROS: [C][].
 * `jdupes` <https://github.com/jbruchon/jdupes>. PROS: [C][].
-* `rdfind` <https://github.com/pauldreik/rdfind>. PROS: [C++][].
+* `rdfind` <https://github.com/pauldreik/rdfind>. PROS: [C++][CPP].
 * `rmlint` <https://github.com/sahib/rmlint>. PROS: [C][].
 * https://github.com/justinhj/justinhj-emacs-utils emacs dired
 * http://justinsboringpage.blogspot.ru/2011/06/finding-duplicate-files-in-dired-buffer.html emacs dired
 * https://www.emacswiki.org/emacs/RemoveDuplicateFiles emacs dired
 
-[c++]: https://en.wikipedia.org/wiki/C%2B%2B
 [c]: https://iso.org/standard/74528.html
+[cpp]: https://isocpp.org "C++"
 [rust]: https://github.com/rust-lang/rust
 
 ## Mount cdrom

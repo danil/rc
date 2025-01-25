@@ -1,5 +1,9 @@
 # Sanp package manager rc
 
+https://snapcraft.io/docs/distro-support
+https://wiki.archlinux.org/title/Snap
+https://en.wikipedia.org/wiki/Snap_(software)
+
 ## List installed
 
     snap list

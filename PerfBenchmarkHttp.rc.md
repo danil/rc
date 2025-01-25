@@ -51,8 +51,8 @@
 
 ## TODO
 
-* [k6][] PROS: [Go][]. CONS: [JavaScript][].
+* [k6][] PROS: [Go][]. CONS: [JavaScript][JS].
 
-[javascript]: https://en.wikipedia.org/wiki/JavaScript
+[js]: https://en.wikipedia.org/wiki/JavaScript "JavaScript"
 [go]: https://github.com/golang/go
 [k6]: https://github.com/grafana/k6

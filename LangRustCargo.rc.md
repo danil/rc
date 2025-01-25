@@ -3,10 +3,10 @@
 [rust]: https://github.com/rust-lang/rust
 [cargo]: https://github.com/rust-lang/cargo
 
-* HOWTO VER2 Install by [Homebrew][] `brew install rust` <sup><sub>[3478130715][]</sub></sup>
+* HOWTO VER2 Install by [Brew][]   `brew install rust` <sup><sub>[3478130715][]</sub></sup>
 * HOWTO VER1 Install by [rustup][] `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh` <sup><sub>[4266140190][]</sub></sup>
 
-[homebrew]: https://github.com/homebrew/brew
+[brew]: https://github.com/homebrew/brew "Homebrew."
 [rustup]: http://rustup.rs
 [3478130715]: https://formulae.brew.sh/formula/rust#default
 [4266140190]: https://rust-lang.org/tools/install

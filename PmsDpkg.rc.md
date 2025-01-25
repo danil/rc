@@ -27,11 +27,8 @@ Debian package
 
 <http://askubuntu.com/questions/32507/how-do-i-get-a-list-of-installed-files-from-a-package#32509>
 
-    dpkg-query --listfiles <package_name>
+    dpkg-query --listfiles <pkg_nm>
 
-## Find package a file belongs to <sup>[*][superuser 11003]</sup>
+## HOWTO
 
-    dpkg --search path/to/file
-    apt-file search path/to/file
-
-[superuser 11003]: <https://superuser.com/questions/10997/find-what-package-a-file-belongs-to-in-ubuntu-debian#11003>
+* HOWTO File belongs to `dpkg -S path/to/your/file || dpkg --search path/to/your/file` <sup><sub>File belongs to package. Find out what package contains a file.</sub></sup>

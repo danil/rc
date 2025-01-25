@@ -7,13 +7,14 @@ List all partitions
     parted -l
     fdisk -l
 
-## UUIDs and labels
-
-<https://wiki.gentoo.org/wiki/Fstab#UUIDs_and_labels>,
-<https://wiki.gentoo.org/wiki/Removable_media#UUIDs_and_labels>
+## [UUID][]s and labels <sup><sub>[3758874528][] [2888953597][]</sub></sup>
 
     tree /dev/disk
     lsblk -o +fstype,label,uuid,partuuid
+
+[uuid]: https://datatracker.ietf.org/doc/html/rfc4122 "RFC 4122"
+[2888953597]: https://wiki.gentoo.org/wiki/Removable_media#UUIDs_and_labels
+[3758874528]: https://wiki.gentoo.org/wiki/Fstab#UUIDs_and_labels
 
 ## MBR & GPT
 

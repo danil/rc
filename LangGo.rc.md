@@ -5,7 +5,7 @@
 [proverbs]: https://go-proverbs.github.io
 [stdlib]: https://pkg.go.dev/std "Standard library."
 
-* HOWTO Install `brew install go` <sup><sub>[Homebrew][]</sub></sup>
+* HOWTO Install by [Brew][] `brew install go` <sup><sub>[Homebrew Go package][266177144].</sub></sup>
 *   DOC Package name convention are given lower case, single-word names; there should be no need for underscores or mixedCaps. <sup><sub>Naming convention style [Effective Go Package names][2797441528] [Code Review Package names][186063190] [Go Blog Package names][3329569429] [4282605948][]</sub></sup>
 *   DOC Interface name convention use an -er suffix: Reader, Writer, Formatter, CloseNotifier etc. <sup><sub>Naming convention style [2453223740][]</sub></sup>
 * HOWTO Environment `go env`
@@ -67,17 +67,18 @@
 *   DOC Sentinel [fs.PathError][] <sup><sub>[1595088486][]</sub></sup>
 *   DOC Sentinel [fs.PathError][] `if e, ok := err.(*fs.PathError); ok { e.Timeout() }` or [url.Error][] `if e, ok := err.(*url.Error); ok { e.Timeout() }` or in general `if e, ok := err.(interface{ Timeout() bool }); ok { e.Timeout() }` <sup><sub>[1595088486][]</sub></sup>
 *   DOC Sentinel [url.InvalidHostError][] is a `string error`.
-* HOWTO Explicit argument indexes of formatter `fmt.Sprintf("%[2]d %[1]d", 11, 22)`
-* HOWTO Create dir or append file if _, err := os.Stat("your.f"); errors.Is(err, os.ErrNotExist) { _ = os.MkdirAll(filepath.Dir("your.f"), os.ModePerm) }; f, _ := os.OpenFile("your.f", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644); defer f.Close(); _, _ = f.Write([]byte("Hello, World!")) <sup><sub>Create or update/append file after create directory if not exist. [2502395997][] [3382294025][]</sub></sup>
+* HOWTO Explicit argument indexes of formatter `fmt.Sprintf("%[2]d %[1]d", 11, 22)` <sup><sub>Position argument. [3426125172][]</sub></sup>
+* HOWTO Create dir or append file `if _, err := os.Stat("your.f"); errors.Is(err, os.ErrNotExist) { _ = os.MkdirAll(filepath.Dir("your.f"), os.ModePerm) }; f, _ := os.OpenFile("your.f", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644); defer f.Close(); _, _ = f.Write([]byte("Hello, World!"))` <sup><sub>Create or update/append file after create directory if not exist. [2502395997][] [3382294025][]</sub></sup>
 * HOWTO Create temp file VER2 `dirNm := filepath.Join(os.TempDir(), "your_dir"); _ = os.MkdirAll(dirNm, os.ModePerm); fileNm := filepath.Join(dirNm, "file_nm"+itoa.Uitoa(rand.Uint64())); f, _ := os.Create(fileNm); defer f.Close(); _, _ = f.Write([]byte("foo bar"))` <sup><sub>Create temporary file.</sub></sup>
 * HOWTO Create temp file VER1 `f, _ := os.CreateTemp(filepath.Join(os.TempDir(), "your_dir"), "your_prefix_"); defer f.Close(); _, _ = f.Write([]byte("foo"))` <sup><sub>Create temporary file.</sub></sup>
-* HOWTO Create temp dir VER2 `_ = os.MkdirAll(filepath.Join(os.TempDir(), "your_dir"), os.ModePerm)` <sup><sub>Create temporary directory. Function `os.MkdirTemp` just like DEPRECATED `ioutil.TempDir`.</sub></sup>
-* HOWTO Create temp dir VER1 `d, _ := os.MkdirTemp("", "your_prefix_"); defer os.RemoveAll(d)` <sup><sub>Create temporary directory.</sub></sup>
+* HOWTO Create temp dir  VER2 `_ = os.MkdirAll(filepath.Join(os.TempDir(), "your_dir"), os.ModePerm)` <sup><sub>Create temporary directory. Function `os.MkdirTemp` just like DEPRECATED `ioutil.TempDir`.</sub></sup>
+* HOWTO Create temp dir  VER1 `d, _ := os.MkdirTemp("", "your_prefix_"); defer os.RemoveAll(d)` <sup><sub>Create temporary directory.</sub></sup>
 * HOWTO Read all bytes `var bbytes.Buffer; io.Copy(&b r); fmt.Println("%s", b.String())` <sup><sub>Function `io.Copy` just like DEPRECATED `ioutil.ReadAll`.</sub></sup>
 * HOWTO `paths, err := filepath.Glob(pattern)` <sup><sub>[Globbing][1331922473] pattern sets of filenames with [wildcard characters][3498575828].</sub></sup>
 * HOWTO [Flag][] [Kong][] is a multi command command-line parser an alternative to using [flag.FlagSet][] <sup><sub> PROS: [Passthrough argument][2344166053]. [3264233233][] NOTE: Console. Terminal.</sub></sup>
 * HOWTO VER1 [Flag][] [Flag set][flag.FlagSet] command-line parser allow multi command <sup><sub>In case you can't use, for example, [Kong][]. Console. Terminal.</sub></sup>
 
+[brew]: https://github.com/homebrew/brew "Homebrew."
 [buildid]: https://pkg.go.dev/cmd/buildid
 [cmpopts]: https://github.com/google/go-cmp/cmp/cmpopts
 [debug]: https://pkg.go.dev/runtime/debug
@@ -95,7 +96,6 @@
 [generic]: https://go.dev/doc/tutorial/generics
 [go-cmp]: https://github.com/google/go-cmp
 [gosched]: https://pkg.go.dev/runtime#Gosched
-[homebrew]: https://formulae.brew.sh/formula/go#default
 [io.eof]: https://pkg.go.dev/io#EOF
 [kong]: https://github.com/alecthomas/kong
 [os.ErrInvalid]: https://pkg.go.dev/os#ErrInvalid
@@ -138,6 +138,7 @@
 [2502395997]: https://pkg.go.dev/os#example-OpenFile-Append
 [2542058847]: https://protobuf.dev/reference/go/faq/#deepequal
 [2570645731]: https://blog.golang.org/subtests
+[266177144]: https://formulae.brew.sh/formula/go#default
 [269738468]: https://go.dev/blog/go15gc
 [2736769797]: https://pkg.go.dev/runtime#hdr-Environment_Variables
 [2797441528]: https://go.dev/doc/effective_go#package-names "Effective Go Package names"
@@ -148,6 +149,7 @@
 [3349214068]: https://github.com/mattn/go-generics-example
 [3382294025]: https://stackoverflow.com/questions/12518876/how-to-check-if-a-file-exists-in-go#12518877
 [3409454453]: https://github.com/golang/go/issues/21291 "Named naked bare return issues 21291."
+[3426125172]: https://pkg.go.dev/fmt#hdr-Explicit_argument_indexes
 [3498575828]: https://en.wikipedia.org/wiki/Wildcard_character
 [3571357994]: https://go.dev/wiki/CodeReviewComments#line-length
 [3699179768]: https://github.com/golang/go/issues/20859 "Named naked bare return issues 20859."

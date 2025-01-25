@@ -1,9 +1,12 @@
-# [PostgreSQL][] [RDBMS][rdb]<sup>[1][3388152588] [2][3168004801]</sup> rc
+# [PostgreSQL][] [RDBMS][rdb] <sup>[3319663474][] [3388152588][] [3168004801][] [UUID][] [3043142539][]</sup> rc
 
+[postgresql]: https://github.com/postgres/postgres
 [rdb]: https://en.wikipedia.org/wiki/Relational_database
-[postgresql]: https://en.wikipedia.org/wiki/PostgreSQL
-[3388152588]: https://postgresql.org/docs/current/functions-aggregate.html
+[uuid]: https://datatracker.ietf.org/doc/html/rfc4122 "RFC 4122. UUIDv7."
+[3043142539]: https://datatracker.ietf.org/doc/html/draft-peabody-dispatch-new-uuid-format-04
 [3168004801]: https://postgrespro.ru/docs/postgrespro/current/functions-aggregate
+[3319663474]: https://en.wikipedia.org/wiki/PostgreSQL
+[3388152588]: https://postgresql.org/docs/current/functions-aggregate.html
 
 ## psql
 
@@ -91,7 +94,7 @@ Backuping:
 ## Primary key/identifier
 
 1. `SELECT gen_random_uuid();` supersedes `SELECT uuid_generate_v4();`
-2. `SELECT idkit_uuidv7_generate();` and `SELECT idkit_uuidv6_generate();` is a [rfc 4122][]
+2. `SELECT idkit_uuidv7_generate();` and `SELECT idkit_uuidv6_generate();` is a [UUID][]
 3. `SELECT idkit_nanoid_generate();`
 4. `SELECT idkit_ksuid_generate();`
 5. `SELECT idkit_ulid_generate();`
@@ -100,14 +103,13 @@ Backuping:
 8. `SELECT idkit_xid_generate();`
 9. `SELECT idkit_cuid_generate();`
 
-## Primary key/identifier [RFC 4122][] UUIDv6/UUIDv7/UUIDv8
+## Primary key/identifier [UUID][]/UUIDv6/UUIDv7/UUIDv8
 
 [pg_idkit][] is a PostgreSQL extension for generating UUID by [pgx framework][]
 <https://supabase.com/blog/choosing-a-postgres-primary-key>.
 
 [pg_idkit]: https://github.com/vadosware/pg_idkit
 [pgx framework]: https://github.com/tcdi/pgx
-[rfc 4122]: https://datatracker.ietf.org/doc/html/draft-peabody-dispatch-new-uuid-format-04
 
 ## Random integer/int4
 
@@ -1502,4 +1504,4 @@ Load data from csv file
 
 ## TODO
 
-* [UUIDv7][RFC 4122] PROS: Sortable. CONS: ???.
+* [UUIDv7][UUID] PROS: Sortable. CONS: ???.

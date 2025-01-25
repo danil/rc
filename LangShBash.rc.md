@@ -1,6 +1,6 @@
-# [Bash][] shell scrip rc
+# [Bash][3376136474] shell scrip rc
 
-[bash]: https://en.wikipedia.org/wiki/Bash_(Unix_shell)
+[3376136474]: https://en.wikipedia.org/wiki/Bash_(Unix_shell)
 
 * HOWTO Path related to script `ls "${BASH_SOURCE%/*}"/path/to/file` <sup><sub>File path related to script</sub></sup>
 * HOWTO Condition by one line VER2 `[ "$your_var" = "foo" ] && echo 1 || echo 0`

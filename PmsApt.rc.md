@@ -1,33 +1,25 @@
-# [APT][] (Advanced Packaging Tool) of [Debian][]/[Ubuntu][] rc
+# [Advanced Packaging Tool][APT] <sup><sub>[Debian][]/[Ubuntu][]</sub></sup> rc
 
-[apt]: https://en.wikipedia.org/wiki/APT_(software)
+[apt]: https://en.wikipedia.org/wiki/APT_(software) "Advanced Packaging Tool"
 [debian]: https://github.com/debian
 [ubuntu]: https://github.com/ubuntu
 
-## Repository add
+* HOWTO Update all      `apt update && apt list --upgradable && apt --show-upgraded upgrade` <sup><sub>Update all packages. Upgrades installed packages to their most recent version.</sub></sup>
+* HOWTO Remove unused   `apt autoremove`  <sup><sub>Packages were automatically installed and are no longer required.</sub></sup>
+* HOWTO File belongs to VER2 `dpkg -S path/to/your/file || dpkg --search path/to/your/file` <sup><sub>File belongs to package. Find out what package contains a file.</sub></sup>
+* HOWTO File belongs to VER1 `apt-file update && apt-file search path/to/your/file`         <sup><sub>[2371447947][] [4187406413][]</sub></sup>
+* HOWTO Add [PPA][]     `add-apt-repository          ppa:your-ppa-nm/ppa && apt-get update`  <sup><sub>[PPA][] [3939807489][]</sub></sup>
+* HOWTO Del [PPA][]     `add-apt-repository --remove ppa:your-ppa-nm/ppa && apt-get update`  <sup><sub>Delete repository.</sub></sup>
+* HOWTO [PPA][] Key dir VER2 `/etc/apt/trusted.gpg.d` <sup><sub>Trusted implicitly by [APT][]. Signature key location directory path. [508573924][]</sub></sup>
+* HOWTO [PPA][] Key dir VER1 `/usr/share/keyrings`    <sup><sub>Is not specific to [APT][], but [APT][] can use the keyrings stored there, but if are referenced explicitly, via `[signed-by=]`.</sub></sup>
+* DEPRECATED HOWTO [PPA][] Key dir `/etc/apt/trusted.gpg` <sup><sub>[1580539965][]</sub></sup>
 
-    add-apt-repository ppa:your-ppa-nm/ppa
-    apt-get update
-
-## Repository remove
-
-    add-apt-repository --remove ppa:your-ppa-nm/ppa
-    apt-get update
-
-## Finding which package contains a file
-
-<http://debian-administration.org/articles/334>
-
-    apt-file update
-    apt-file search /usr/bin/your_file_nm
-
-## Upgrade
-
-Upgrades installed packages to their most recent version
-
-    apt update
-    apt list --upgradable
-    apt --show-upgraded upgrade
+[ppa]: https://help.launchpad.net/Packaging/PPA "Personal Package Archive"
+[1580539965]: https://askubuntu.com/questions/1436343/move-keys-from-legacy-trusted-gpg-to-usr-share-keyrings-for-ubuntu-sources-as-we#1436346
+[2371447947]: https://cyberciti.biz/faq/equivalent-of-rpm-qf-command
+[3939807489]: https://launchpad.net/ubuntu/+ppas
+[4187406413]: http://debian-administration.org/articles/334
+[508573924]: https://reddit.com/r/linux4noobs/comments/1bvpwhe/comment/ky3a235
 
 ## Download, modify, build and install packag
 

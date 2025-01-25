@@ -1,10 +1,12 @@
 # Git rc
 
-    git config --global user.name "John Doe"
-    git config --global user.email your.name@your.tld
-    git clone git://your.tld/ropo-nm.git destination-dir
-    git --git-dir=path/to/ropo/.git  --work-tree=path/to/ropo status
-    git push origin master
+* HOWTO Setup global user      `git config --global user.name "John Doe" && git config --global user.email your.name@your.tld` <sup><sub>Setup global user name and e-mail for all commits.</sub></sup>
+* HOWTO Get repo               `git clone git://your.tld/ropo-nm.git destination-dir` <sup><sub>Downloading remote repository.</sub></sup>
+* HOWTO Get status             `git --git-dir=path/to/ropo/.git  --work-tree=path/to/ropo status` <sup><sub>Get repository status from another directory.</sub></sup>
+* HOWTO Push                   `git push origin master`
+* HOWTO Move changes to branch `your_target_branch=your-branch-nm && git checkout --detach && git reset --soft $your_target_branch && git checkout $your_target_branch` <sup><sub>One-liner while you are in the your-orig-branch to branch switching while keeping the working tree as it in original branch. One-liner while you are in the your-orig-branch to reduce repository size and compacting by squash or unite or consolidate last N commits together into one commit. [*][1406089848]</sub></sup>
+
+[1406089848]: https://stackoverflow.com/questions/6070179/switching-branches-without-touching-the-working-tree#15993574
 
 ## Status
 
@@ -88,17 +90,6 @@ Get/print current branch
 
     echo $(git rev-parse --abbrev-ref HEAD)
 
-## HOWTO Branch switching while keeping the working tree as it in original branch <sup>[*][1406089848]</sup>
-
-    # one-liner while you are in the your-orig-branch:
-    your_target_branch=dev && git checkout --detach && git reset --soft $your_target_branch && git checkout $your_target_branch
-    # multi-liner while you are in the your-orig-branch:
-    git checkout --detach
-    git reset --soft your-target-branch
-    git checkout your-target-branch
-
-[1406089848]: https://stackoverflow.com/questions/6070179/switching-branches-without-touching-the-working-tree#15993574
-
 ## HOWTO Branch create and checkout
 
     git checkout -b your-new-branch
@@ -145,13 +136,13 @@ Get/print current branch
 
     git merge --abort
 
-## Merge without commit <sup>[395457678][]</sup>
+## Merge without commit <sup><sub>[395457678][]</sub></sup>
 
     git merge --no-commit your-branch-nm
 
 [395457678]: http://stackoverflow.com/questions/8640887/git-merge-without-auto-commit#8641053
 
-## Merge force our branch and ignore their/ours branch <sup>[1604871223][] [542715930][] [2032822590][] [1344526453][]</sup>
+## Merge force our branch and ignore their/ours branch <sup><sub>[1604871223][] [542715930][] [2032822590][] [1344526453][]</sub></sup>
 
     git merge -s ours --strategy=ours --allow-unrelated-histories --no-commit their-branch-nm
     git merge -s recursive --strategy=recursive -X theirs --allow-unrelated-histories --no-commit their-branch-nm
@@ -412,6 +403,19 @@ Find submodules even not listed in `.gitmodules` file
 
     git ls-files --stage | grep 160000
 
+## Submodule hard reset
+
+    git submodule sync --recursive
+    git submodule update --init --recursive
+    git submodule foreach git reset --hard
+    git submodule foreach git clean -xfd
+    git submodule foreach git submodule sync
+    git submodule foreach git submodule update --init
+    git submodule foreach git submodule foreach git reset --hard
+    git submodule foreach git submodule foreach git clean -xfd
+
+https://clickhouse.com/docs/ru/development/developer-instruction
+
 ## Submodule remove
 
 <http://stackoverflow.com/questions/1260748/how-do-i-remove-a-git-submodule#1260982>
@@ -615,14 +619,6 @@ Prevent git diff from using a pager
 
     git rebase master your-branch
 
-## Rebase by squash latest commits into one
-
-Reduce repository size
-<https://stackoverflow.com/questions/598672/squash-the-first-two-commits-in-git#598788>.
-
-    git rebase --interactive --root HEAD
-    git rebase --continue
-
 ## Rebase empty
 
     git fetch
@@ -654,17 +650,16 @@ Reduce repository size
         git --git-dir="$P.git" --work-tree="$P" status --short ; \
     done
 
-## Log
+## HOWTO
 
-    git log --oneline
-    git log --reverse
-    git log --patch --no-merges  HEAD^^^ HEAD
+* HOWTO                     `git log --patch --no-merges  HEAD^^^ HEAD` <sup><sub>Log with code diff and without merges</sub></sup>
+* HOWTO Compact log         `git log --oneline`
+* HOWTO Sort log            `git log --reverse`
+* HOWTO Log origin          `git log ..origin/master` <sup><sub>Log origin master branch. [1593113077][]</sub></sup>
+* HOWTO Last commit message `git log -1` <sup><sub>Show last commit message. [1056154960][]</sub></sup>
 
-## Log origin master branch
-
-<https://stackoverflow.com/questions/1331385/how-can-i-see-incoming-commits-in-git#1331753>
-
-    git log ..origin/master
+[1056154960]: https://stackoverflow.com/questions/7293008/display-last-git-commit-comment#7293026
+[1593113077]: https://stackoverflow.com/questions/1331385/how-can-i-see-incoming-commits-in-git#1331753
 
 ## Log by date
 
@@ -740,7 +735,7 @@ git log \
     | sed ':a;N;$!ba;s/\n/ /g'
 ```
 
-## Shortlog contributors list <sup>list of contributors/authors/owners [1810529833][] [848305831][]</sup>
+## Shortlog contributors list <sup><sub>list of contributors/authors/owners [1810529833][] [848305831][]</sub></sup>
 
     git shortlog --summary --email --numbered --since="7 days ago" path/to/file | cut -c8-
 

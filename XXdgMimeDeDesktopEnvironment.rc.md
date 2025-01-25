@@ -12,7 +12,9 @@
 
     file --mime-type -b path/to/file
 
-## Open
+## Open <sup><sub>[4289472207][]</sub></sup>
+
+https://techbase.kde.org/Development/Tools/Using_kfmclient
 
 Open from console default application for file.
 xdg-open desktop-independent and passes arguments to
@@ -22,6 +24,8 @@ gvfs-open, kde-open or exo-open respectively.
 * <https://wiki.archlinux.org/title/Xdg-open>
 
     xdg-open path/to/your/file
+
+[4289472207]: https://wiki.archlinux.org/title/Default_applications#Resource_openers
 
 ## Open with interactive menu/dialog
 

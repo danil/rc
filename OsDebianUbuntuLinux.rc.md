@@ -7,19 +7,11 @@
 * HOWTO Get version `cat /etc/os-release | grep VERSION_ID | cut -f 2 --delim="="`
 * HOWTO Get version `lsb_release --all | grep Release | cut --fields=2`
 * HOWTO Packages list `apt list --installed`
+* HOWTO VER2 Explicitly installed `comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)` <sup><sub>List manually installed packages.</sub></sup>
+* HOWTO VER1 Explicitly installed `comm -23 <(aptitude search '~i !~M' -F '%p' | sed "s/ *$//" | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)`
+* HOWTO Runlevels `/etc/init.d` <sup><sub>[1750992265][]</sub></sup>
 
-## Packages explicitly installed list
-
-List manually/explicitly installed packages
-
-```sh
-comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
-comm -23 <(aptitude search '~i !~M' -F '%p' | sed "s/ *$//" | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u)
-```
-
-## Runlevels
-
-`/etc/init.d` (https://wiki.debian.org/RunLevel)
+[1750992265]: https://wiki.debian.org/RunLevel
 
 ## Runlevels list
 
@@ -49,13 +41,14 @@ List all services by run levels
 
     update-rc.d -f your_daemon remove
 
-## Password set
+## HOWTO
 
-    passwd your-user-nm
+* HOWTO Set password `passwd` <sup><sub>Change your password. [2626954789][]</sub></sup>
+* HOWTO Set *`root`* password `sudo passwd`
+* HOWTO Set user password `passwd your-user-nm` <sup><sub>Change other user password.</sub></sup>
+* HOWTO Unset password `passwd --delete your-user-nm`
 
-## Password delete
-
-    passwd --delete your-user-nm
+[2626954789]: https://askubuntu.com/questions/423942/change-password-on-root-user-and-user-account#424039
 
 ## HOWTO `dpkg-query --listfiles your_pkg_nm` List files from installed package <sup><sub>Find out files belongs to package. [1545327982][]</sub></sup>
 
@@ -68,14 +61,9 @@ List all services by run levels
 
 [2039225453]: https://superuser.com/questions/10997/find-what-package-a-file-belongs-to-in-ubuntu-debian#11003
 
-## Find out what package contains a file <sup><sub>[2371447947][] [4187406413][]</sub></sup>
+## HOWTO File belongs to package <sup><sub>Find out what package contains a file.</sub></sup>
 
-    dpkg -S path/to/your/file
-    apt-file update
-    apt-file search path/to/your/file
-
-[2371447947]: https://cyberciti.biz/faq/equivalent-of-rpm-qf-command
-[4187406413]: http://debian-administration.org/articles/334
+    dpkg -S path/to/your/file || dpkg --search path/to/your/file
 
 ## Timezone
 

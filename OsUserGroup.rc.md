@@ -1,16 +1,11 @@
 # User/group rc
 
-## User add
+* HOWTO Add user `useradd --uid=1000 --gid=1000 --comment="Your user nm" --user-group --groups=your,groups,names --create-home --home-dir=/path/to/home/your_usr --shell=/bin/bash your_usr`
+* HOWTO UID VER2 `ls -n --numeric-uid-gid path/to/your/file` <sup><sub>Get user identifier by file name. [POSIX UID][3814734741]</sub></sup>
+* HOWTO UID VER1 `id -u --user your_usr_nm`                  <sup><sub>Get user identifier by user name. [1791636291][]</sub></sup>
 
-    useradd --uid=1000 \
-            --gid=1000 \
-            --comment="Your user nm" \
-            --user-group \
-            --groups=your,groups,names \
-            --create-home \
-            --home-dir=/path/to/home/your_usr \
-            --shell=/bin/bash \
-            your_usr
+[1791636291]: https://askubuntu.com/questions/468236/how-can-i-find-my-user-id-uid-from-terminal#468239
+[3814734741]: https://en.wikipedia.org/wiki/User_identifier
 
 ## Add user and group with the same name
 
