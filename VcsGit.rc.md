@@ -2,19 +2,12 @@
 
 * HOWTO Setup global user      `git config --global user.name "John Doe" && git config --global user.email your.name@your.tld` <sup><sub>Setup global user name and e-mail for all commits.</sub></sup>
 * HOWTO Get repo               `git clone git://your.tld/ropo-nm.git destination-dir` <sup><sub>Downloading remote repository.</sub></sup>
-* HOWTO Get status             `git --git-dir=path/to/ropo/.git  --work-tree=path/to/ropo status` <sup><sub>Get repository status from another directory.</sub></sup>
+* HOWTO Status of only staged  `git diff --name-only --cached` <sup><sub>Status of only staged files.</sub></sup>
+* HOWTO Status                 `git --git-dir=path/to/ropo/.git  --work-tree=path/to/ropo status` <sup><sub>Get repository status from another directory.</sub></sup>
 * HOWTO Push                   `git push origin master`
 * HOWTO Move changes to branch `your_target_branch=your-branch-nm && git checkout --detach && git reset --soft $your_target_branch && git checkout $your_target_branch` <sup><sub>One-liner while you are in the your-orig-branch to branch switching while keeping the working tree as it in original branch. One-liner while you are in the your-orig-branch to reduce repository size and compacting by squash or unite or consolidate last N commits together into one commit. [*][1406089848]</sub></sup>
 
 [1406089848]: https://stackoverflow.com/questions/6070179/switching-branches-without-touching-the-working-tree#15993574
-
-## Status
-
-    git status
-
-## Status only staged files
-
-    git diff --name-only --cached
 
 ## Initialize/create repository without work tree
 
